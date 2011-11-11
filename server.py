@@ -2,7 +2,7 @@
   server.py - JSON front-end to native FRBR Redis Datastore
 """
 
-from bottle import get,post,request,run,debug
+from bottle import debug,get,post,request,run,template
 import redis,json,logging
 import config,sys
 from lib import common,dc,isbd,frbr,marc21
@@ -12,10 +12,20 @@ debug(True)
 @get('/')
 def index():
     """
-    Returns a JSON listing of available interfaces to FRBR
-    datastore.
+    Renders an HTML5 index page
     """
-    return json.dumps({'name':'JSON Interface to FRBR-Redis'})
+    ds_stats = [{"name":"frbr.Work",
+                 "count":len(common.redis_server.keys("frbr:Work:*"))},
+                {"name":"frbr.Expression",
+                 "count":len(common.redis_server.keys("frbr:Expression:*"))},
+                {"name":"frbr.Manifestation",
+                 "count":len(common.redis_server.keys("frbr:Manifestation:*"))},
+                {"name":"frbr.Item",
+                 "count":len(common.redis_server.keys("frbr:Manifestation:*"))}]
+
+
+    return template("index",ds_stats=ds_stats)
+    #return json.dumps({'name':'JSON Interface to FRBR-Redis'})
 
 @post('/init')
 def initialize():
