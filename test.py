@@ -4,9 +4,13 @@
 """
 __author__ = "Jeremy Nelson"
 import sys,unittest
-from tests import test_common
+from tests import test_common,test_frbr
 
-suite = unittest.TestSuite([test_common.suite()])
+loader = unittest.TestLoader()
 
-if __name__ == '__main__':
-    suite.run()
+suite = loader.loadTestsFromModule(test_common)
+suite.addTests(loader.loadTestsFromModule(test_frbr))
+#suite = loader.loadTestsFromModule(test_frbr)
+
+runner = unittest.TextTestRunner(verbosity=2)
+result = runner.run(suite)

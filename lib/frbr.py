@@ -1,6 +1,8 @@
 """
   frbr.py -- Models for FRBR Redis datastore
 """
+__author__ = "Jeremy Nelson"
+
 import datetime,os,logging
 import redis,urllib2
 import namespaces as ns
@@ -45,6 +47,24 @@ def load_rdf(rdf_url=FRBR_RDF_URL):
                                                                  redis_key))
 
 
+class Expression(common.BaseModel):
+    """
+    :class:`Expression` class includes attributes and roles with other Entities in 
+    the datastore.
+    """
+
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of :class:`Expression` 
+
+        :param redis_key: Redis key for FRBR Expression, default is frbr:Expression
+        """ 
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = 'frbr:Expression'
+        common.BaseModel.__init__(self,**kwargs) 
+
+    def realized_by(self,entity=None):
+        return self.get_or_set_property("realized by",entity)
 
 
 
@@ -54,18 +74,27 @@ class Work(common.BaseModel):
     the datastore.
     """
 
-
     def __init__(self,**kwargs):
         """
         Creates an instance of :class:`Work` 
 
         :param redis_key: Redis key for FRBR Work, default is frbr:Work
         """ 
-        if kwargs.has_key("redis_key"):
-            redis_key = kwargs.get("redis_key")
-        else:
-            kwargs['redis_key'] = '%s:Work' % ns.FRBR
-        super(common.BaseModel,self).__init__(kwargs)
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = 'frbr:Work'
+        common.BaseModel.__init__(self,**kwargs) 
+
+
+
+    def audience(self,audience=None):
+        """
+        Method returns entity or entities that created :class:`Work` instance 
+        
+        :param entity: Optional entity to add to the set of creators for the
+                       :class:`Work`
+        """
+        return self.get_or_set_property("intended audience",
+                                        audience)
 
  
     def created_by(self,entity=None):
@@ -75,7 +104,41 @@ class Work(common.BaseModel):
         :param entity: Optional entity to add to the set of creators for the
                        :class:`Work`
         """
-        return self.get_or_set_property(self.redis_key,"title",title)
+        return self.get_or_set_property("created by",entity)
+
+
+    def context(self,context=None):
+        """
+        Method returns :class:`Work` instance's context or set of contexts 
+        
+        :param context: Optional form to add to the set of forms for the
+                        :class:`Work`
+        """
+        return self.get_or_set_property("context",context)
+
+
+    def created_on(self,new_date=None):
+        """
+        Method returns the date of when :class:`Work` instance was originally
+        created
+        
+        :param new_date: Optional, replaces existing date or adds new date
+        """
+        if new_date is not None:
+            common.redis_server.hset(self.redis_key,"date created",new_date)
+        return common.redis_server.hget(self.redis_key,"date created")
+
+
+
+    def distingushing_characteristic(self,characteristic=None):
+        """
+        Method returns :class:`Work` instance's context or set of contexts 
+        
+        :param context: Optional form to add to the set of forms for the
+                        :class:`Work`
+        """
+        return self.get_or_set_property("distingushing characteristic",
+                                        characteristic)
 
 
     def form(self,form=None):
@@ -85,7 +148,18 @@ class Work(common.BaseModel):
         :param form: Optional form to add to the set of forms for the
                      :class:`Work`
         """
-        return self.get_or_set_property(self.redis_key,"title",title)
+        return self.get_or_set_property("form",form)
+
+
+    def termination(self,termination=None):
+        """
+        Method returns :class:`Work` instance's intended termination
+        
+        :param termination: Optional termintation date for the
+                            :class:`Work` instance.
+        """
+        return self.get_or_set_property("intended termination",
+                                        termination)
 
 
     def title(self,title=None):
@@ -95,6 +169,6 @@ class Work(common.BaseModel):
         :param title: Optional form to add to the set of forms for the
                       :class:`Work`
         """
-        return self.get_or_set_property(self.redis_key,"title",title)
+        return self.get_or_set_property("title",title)
 
   

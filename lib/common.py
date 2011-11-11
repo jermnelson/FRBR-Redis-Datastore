@@ -22,22 +22,12 @@ redis_server = redis.StrictRedis(host=REDIS_HOST,
                                  port=REDIS_PORT,
                                  db=REDIS_DB)
 
-def add_singleton(redis_key,value):
-    """
-    Function takes a redis_key, adds value to the redis_key member list,
-    and returns the ID of the new member.
-    """
-    new_ID = redis_server.incr('global:%s.id' % redis_key)
-    redis_server.set("%s:%s" % (redis_key,new_ID),
-                     value)
-    redis_server.save()
-    return new_ID
-    
-
 def create_key_from_url(raw_url):
     """
     Function parses url, reverses the net location to create a value for use
     as a Redis key.
+
+    :param raw_url: Raw url to extract key, required
     """
     org_url = urllib2.urlparse.urlparse(raw_url)
     new_key = ''
@@ -47,7 +37,7 @@ def create_key_from_url(raw_url):
     for part in netloc_list:
         new_key += '%s.' % part
     new_key = new_key[:-1] # Removes trailing period
-    new_key = new_key + org_url.path
+    new_key = new_key + org_url.path 
     return new_key
 
 def load_rdf_skos(redis_key,rdf_url):
@@ -92,18 +82,15 @@ class BaseModel(object):
                              default Redis server.
         """
         if kwargs.has_key("redis_key"):
-            self.redis_key = kwargs.get("redis_key")
+            self.redis_key = kwargs.pop("redis_key")
         if kwargs.has_key("redis_server"):
-            self.redis_server = kwargs.get("redis_server")
+            self.redis_server = kwargs.pop("redis_server")
         else:
             self.redis_server = redis_server
         self.redis_ID = self.redis_server.incr("global:%s" % self.redis_key)
         self.frbr_key = "%s:%s" % (self.redis_key,self.redis_ID)
-        for k,v in kwargs:
-            if k != 'redis_key':
-                self.frbr_server.hset(self.frbr_key,
-                                      k,
-                                      v)
+        for k,v in kwargs.iteritems():
+            self.redis_server.hset(self.frbr_key,k,v)
 
     def get_property(self,obj_property):
         """
@@ -112,7 +99,7 @@ class BaseModel(object):
         
         :param obj_property: Required, name of the property
         """
-        return self.hget(self.frbr_key,obj_property)
+        return self.redis_server.hget(self.frbr_key,obj_property)
           
         
     def get_or_set_property(self,obj_property,entity=None):
@@ -128,15 +115,15 @@ class BaseModel(object):
         property_key = "%s:%s" % (self.frbr_key,obj_property)
         if entity is not None:
             if existing_properties is not None:
-                if frbr_server.type(existing_properties) == set:
-                    frbr_server.sadd(property_key,
-                                     entity)
+                if self.redis_server.type(existing_properties) == set:
+                    self.redis_server.sadd(property_key,
+                                           entity)
                 else:
                     # Remove property as a singleton and replace with 
                     # a set, adding both existing and new entity
-                    frbr_server.hdel(property_key)
+                    self.redis_server.hdel(self.frbr_key,obj_property)
                     property_set_key = "%s_set" % property_key
-                    frbr_server.sadd(property_set_key,existing_properties)
-                    frbr_server.sadd(property_set_key,entity)
-                    frbr_server.hset(property_key,property_set_key)
+                    self.redis_server.sadd(property_set_key,existing_properties)
+                    self.redis_server.sadd(property_set_key,entity)
+                    self.redis_server.hset(self.frbr_key,obj_property,property_set_key)
         return self.get_property(obj_property)
