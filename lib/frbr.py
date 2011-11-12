@@ -63,9 +63,106 @@ class Expression(common.BaseModel):
             kwargs['redis_key'] = 'frbr:Expression'
         common.BaseModel.__init__(self,**kwargs) 
 
+    def date(self,date=None):
+        """
+        Method returns :class:`Expression` instance's date or set of date 
+       
+        :param date: Optional date to add to the set of dates for 
+                     :class:`Expression` 
+        """
+        return self.get_or_set_property("date",date)
+
+    def distingushing_characteristic(self,characteristic=None):
+        """
+        Method returns :class:`Expression` instance's context or set of contexts 
+        
+        :param context: Optional form to add to the set of forms for the
+                        :class:`Expression`
+        """
+        return self.get_or_set_property("distingushing characteristic",
+                                        characteristic)
+
+    def extensibility(self,extensibility=None):
+        """
+        Method returns :class:`Expression` instance's entity or set of
+        entities that extends the current instance.  
+        
+        :param context: Optional entity to add to the set of extensibility for the
+                        :class:`Expression`
+        """
+        return self.get_or_set_property("extensibility",
+                                        extensibility)
+    def extent(self,entity=None):
+        """
+        Method returns :class:`Expression` instance's entity or set of
+        entities that make up the extent for the instance.  
+        
+        :param context: Optional entity to add to the set of extent for the
+                        :class:`Expression`
+        """
+        return self.get_or_set_property("extent",
+                                        entity)
+
+
+    def form(self,form=None):
+        """
+        Method returns :class:`Expression` instance's form or set of forms 
+        
+        :param form: Optional form to add to the set of forms for the
+                     :class:`Expression`
+        """
+        return self.get_or_set_property("form",form)
+    
+
+    def language(self,language=None):
+        """
+        Method returns :class:`Expression` instance's form or set of forms 
+        
+        :param form: Optional form to add to the set of forms for the
+                     :class:`Expression`
+        """
+        return self.get_or_set_property("language",language)
+
+
+
     def realized_by(self,entity=None):
+        """
+        Method returns :class:`Expression` instance realized by either a Person or
+        CorporateBody.
+        
+        :param title: Optional form to add to the set of forms for the
+                      :class:`Expression`
+        """
         return self.get_or_set_property("realized by",entity)
 
+    def revisability(self,entity=None):
+        """
+        Method returns :class:`Expression` instance's revisability 
+        
+        :param form: Optional entity to add to the set of entity for the
+                     :class:`Expression`
+        """
+        return self.get_or_set_property("revisability",entity)
+
+    def summarization(self,summarization=None):
+        """
+        Method returns :class:`Expression` instance's title or set of titles 
+        
+        :param summarization: Optional summarization to add to the set of 
+                              summarizationforms for the :class:`Expression`
+        """
+        return self.get_or_set_property("summarization",summarization)
+
+
+
+    def title(self,title=None):
+        """
+        Method returns :class:`Expression` instance's title or set of titles 
+        
+        :param title: Optional form to add to the set of forms for the
+                      :class:`Expression`
+        """
+        return self.get_or_set_property("title",title)
 
 
 class Work(common.BaseModel):
