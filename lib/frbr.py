@@ -63,6 +63,27 @@ class Expression(common.BaseModel):
             kwargs['redis_key'] = 'frbr:Expression'
         common.BaseModel.__init__(self,**kwargs) 
 
+    def context(self,context=None):
+        """
+        Method returns :class:`Expression` instance's context or set of entities
+        that make up the context for the instance. 
+       
+        :param context: Optional context to add to the set of context entities for 
+                        :class:`Expression` 
+        """
+        return self.get_or_set_property("context",context)
+
+    def critical_response(self,entity=None):
+        """
+        Method returns :class:`Expression` instance's critical response or set of 
+        entities that make up the critical response for the instance. 
+       
+        :param entity: Optional entity to add to the set of context entities for 
+                       :class:`Expression` 
+        """
+        return self.get_or_set_property("critical response",entity)
+
+
     def date(self,date=None):
         """
         Method returns :class:`Expression` instance's date or set of date 
@@ -164,6 +185,119 @@ class Expression(common.BaseModel):
         """
         return self.get_or_set_property("title",title)
 
+
+class Manifestation(common.BaseModel):
+    """
+    :class:`Manifestation` class includes attributes and roles with other Entities in 
+    the datastore.
+    """
+
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of :class:`Manifestation` 
+
+        :param redis_key: Redis key for FRBR Manifestation, default is frbr:Manifestation
+        """ 
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = 'frbr:Manifestation'
+        common.BaseModel.__init__(self,**kwargs)
+
+    def date_of_distribution(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the date of distribution  
+        
+        :param title: Optional entity to add to the set of entities for the
+                      :class:`Manifestation`
+        """
+        return self.get_or_set_property("date of distribution",entity)
+
+
+    def date_of_publication(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the date of publication  
+        
+        :param title: Optional entity to add to the set of entities for the
+                      :class:`Manifestation`
+        """
+        return self.get_or_set_property("date of publication",entity)
+
+
+
+    def distributor(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the publisher.  
+        
+        :param title: Optional entity to add to the set of entities for the
+                      :class:`Manifestation`
+        """
+        return self.get_or_set_property("distributor",entity)
+
+
+    def edition_issue_designation(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates a difference from other manifestations of the same 
+        frbr:`Work` or frbr:`Expression`. 
+        
+        :param title: Optional entity to add to the set of entities for the
+                      :class:`Manifestation`
+        """
+        return self.get_or_set_property("edition or issue designation",entity)
+
+
+    def place_of_distribution(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the place of distribution.  
+      
+       :param title: Optional entity to add to the set of entities for the
+                     :class:`Manifestation`
+        """
+        return self.get_or_set_property("place of distribution",entity)
+
+    def place_of_publication(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the place of publication.  
+        
+        :param title: Optional entity to add to the set of entities for the
+                      :class:`Manifestation`
+        """
+        return self.get_or_set_property("place of publication",entity)
+
+    def publisher(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the publisher.  
+        
+        :param title: Optional entity to add to the set of entities for the
+                      :class:`Manifestation`
+        """
+        return self.get_or_set_property("publisher",entity)
+
+
+
+    def statement_of_responsiblity(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that make up the statement of responsiblity. 
+        
+        :param title: Optional entity to add to the set of entities for the
+                      :class:`Manifestation`
+        """
+        return self.get_or_set_property("statement of responsibility",entity)
+
+    def title(self,title=None):
+        """
+        Method returns :class:`Manifestation` instance's title or set of titles 
+        
+        :param title: Optional title to add to the set of titles for the
+                      :class:`Manifestation`
+        """
+        return self.get_or_set_property("title",title)
 
 class Work(common.BaseModel):
     """
