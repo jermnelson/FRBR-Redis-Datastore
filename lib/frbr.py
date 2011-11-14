@@ -93,33 +93,34 @@ class Expression(common.BaseModel):
         """
         return self.get_or_set_property("date",date)
 
-    def distingushing_characteristic(self,characteristic=None):
+    def distingushing_characteristic(self,entity=None):
         """
         Method returns :class:`Expression` instance's context or set of contexts 
         
-        :param context: Optional form to add to the set of forms for the
-                        :class:`Expression`
+        :param entity: Optional form to add to the set of forms for the
+                       :class:`Expression`
         """
         return self.get_or_set_property("distingushing characteristic",
-                                        characteristic)
+                                        entity)
 
-    def extensibility(self,extensibility=None):
+    def extensibility(self,entity=None):
         """
         Method returns :class:`Expression` instance's entity or set of
         entities that extends the current instance.  
         
-        :param context: Optional entity to add to the set of extensibility for the
-                        :class:`Expression`
+        :param entity: Optional entity to add to the set of extensibility for the
+                       :class:`Expression`
         """
         return self.get_or_set_property("extensibility",
-                                        extensibility)
+                                        entity)
+
     def extent(self,entity=None):
         """
         Method returns :class:`Expression` instance's entity or set of
         entities that make up the extent for the instance.  
         
-        :param context: Optional entity to add to the set of extent for the
-                        :class:`Expression`
+        :param entity: Optional entity to add to the set of extent for the
+                       :class:`Expression`
         """
         return self.get_or_set_property("extent",
                                         entity)
@@ -218,8 +219,8 @@ class Manifestation(common.BaseModel):
         Method returns :class:`Manifestation` instance's entity or set of entities
         that indicates the date of publication  
         
-        :param title: Optional entity to add to the set of entities for the
-                      :class:`Manifestation`
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
         """
         return self.get_or_set_property("date of publication",entity)
 
@@ -230,8 +231,8 @@ class Manifestation(common.BaseModel):
         Method returns :class:`Manifestation` instance's entity or set of entities
         that indicates the publisher.  
         
-        :param title: Optional entity to add to the set of entities for the
-                      :class:`Manifestation`
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
         """
         return self.get_or_set_property("distributor",entity)
 
@@ -242,10 +243,53 @@ class Manifestation(common.BaseModel):
         that indicates a difference from other manifestations of the same 
         frbr:`Work` or frbr:`Expression`. 
         
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
+        """
+        return self.get_or_set_property("edition or issue designation",entity)
+
+    def extent(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of
+        entities that make up the extent for the instance.  
+        
+        :param entity: Optional entity to add to the set of extent for the
+                       :class:`Manifestation`
+        """
+        return self.get_or_set_property("extent",
+                                        entity)
+
+
+    def fabricator(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the entity responsible for fabricating the instance.  
+        
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
+        """
+        return self.get_or_set_property("fabricator",entity)
+
+    def form(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the form of the instance.  
+        
         :param title: Optional entity to add to the set of entities for the
                       :class:`Manifestation`
         """
-        return self.get_or_set_property("edition or issue designation",entity)
+        return self.get_or_set_property("form",entity)
+
+
+    def manufacturer(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the entity responsible for manufacturing the instance.  
+        
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
+        """
+        return self.get_or_set_property("manufacturer",entity)
 
 
     def place_of_distribution(self,entity=None):
@@ -253,8 +297,8 @@ class Manifestation(common.BaseModel):
         Method returns :class:`Manifestation` instance's entity or set of entities
         that indicates the place of distribution.  
       
-       :param title: Optional entity to add to the set of entities for the
-                     :class:`Manifestation`
+       :param entity: Optional entity to add to the set of entities for the
+                      :class:`Manifestation`
         """
         return self.get_or_set_property("place of distribution",entity)
 
@@ -263,8 +307,8 @@ class Manifestation(common.BaseModel):
         Method returns :class:`Manifestation` instance's entity or set of entities
         that indicates the place of publication.  
         
-        :param title: Optional entity to add to the set of entities for the
-                      :class:`Manifestation`
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
         """
         return self.get_or_set_property("place of publication",entity)
 
@@ -273,11 +317,20 @@ class Manifestation(common.BaseModel):
         Method returns :class:`Manifestation` instance's entity or set of entities
         that indicates the publisher.  
         
-        :param title: Optional entity to add to the set of entities for the
-                      :class:`Manifestation`
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
         """
         return self.get_or_set_property("publisher",entity)
 
+    def series_statement(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that make up the series statement. 
+        
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
+        """
+        return self.get_or_set_property("series statement",entity)
 
 
     def statement_of_responsiblity(self,entity=None):
@@ -285,8 +338,8 @@ class Manifestation(common.BaseModel):
         Method returns :class:`Manifestation` instance's entity or set of entities
         that make up the statement of responsiblity. 
         
-        :param title: Optional entity to add to the set of entities for the
-                      :class:`Manifestation`
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
         """
         return self.get_or_set_property("statement of responsibility",entity)
 

@@ -37,12 +37,12 @@ class TestExpression(unittest.TestCase):
         redis_server.sadd(self.language_key,"en")
         self.realized_by_key = "frad:CorporateBody:%s" % redis_server.incr("frad:CorporateBody")
         redis_server.set(self.realized_by_key,"Litte, Brown and Company")
-        self.title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
-        redis_server.hset("mods:titleInfo:1","mods:title","Infinite Jest")
         self.revisability_key = "frbroo:RelatedWork:%s" % redis_server.incr("global:frbroo:RelateWork")
         redis_server.set(self.revisability_key,"false")
         self.summarization_key = "mods:abstract:%s" % redis_server.incr("global:mods:abstract")
         redis_server.set(self.summarization_key,"A novel set at a Tennis Academy in an alternative United States" )
+        self.title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset("mods:titleInfo:1","mods:title","Infinite Jest")
         parameters = {"context":self.context_key,
                       "critical response":self.critical_response_key,
                       "date":self.date_key,
@@ -118,7 +118,6 @@ class TestExpression(unittest.TestCase):
                           self.expression.revisability())
         self.assert_(redis_server.get(self.expression.revisability()))
                   
-
     def test_summarization(self):
         self.assertEquals(self.summarization_key,
                           self.expression.summarization())
@@ -150,15 +149,23 @@ class TestItem(unittest.TestCase):
 class TestManifestation(unittest.TestCase):
 
     def setUp(self):
-        self.corporate_body_key = "frad:CorporateBody:%s" % redis_server.incr("frad:CorporateBody")
+        self.corporate_body_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
         redis_server.set(self.corporate_body_key,"Little, Brown and Company")
         self.date_key = "xsd:DateTime:%s" % redis_server.incr("global:DateTime")
         redis_server.set(self.date_key,"1996") 
         self.ed_issue_designation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         redis_server.set(self.ed_issue_designation_key,"2nd edition")
+        self.extent_key = "mods:extent:%s" % redis_server.incr("global:mods:extent")
+        redis_server.set(self.extent_key,"Paperback with backing")
+        self.fabricator_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.set(self.fabricator_key,"Sample Corporate Name")
+        self.form_key = "rda:book:format:%s" % redis_server.incr("global:rda:book:format")
+        redis_server.set(self.form_key,"4to")
         self.place_key = "dc:Location:%s" % redis_server.incr("global:dc:Location")
         redis_server.hset(self.place_key,"city","New York City")
         redis_server.hset(self.place_key,"state","New York")
+        self.series_statement_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.series_statement_key,"Does not have a series statement")
         self.statement_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         redis_server.set(self.statement_key,"Written by David Foster Wallace")
         self.title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
@@ -167,9 +174,14 @@ class TestManifestation(unittest.TestCase):
                       "date of publication":self.date_key,
                       "distributor":self.corporate_body_key,
                       "edition or issue designation":self.ed_issue_designation_key,
+                      "extent": self.extent_key,
+                      "fabricator": self.fabricator_key,
+                      "form": self.form_key,
+                      "manufacturer": self.fabricator_key,
                       "place of distribution":self.place_key,
                       "place of publication":self.place_key,
                       "publisher":self.corporate_body_key,
+                      "series statement":self.series_statement_key,
                       "statement of responsibility":self.statement_key,
                       "title":self.title_key}
         self.manifestation = frbr.Manifestation(redis_server=redis_server,
@@ -206,6 +218,29 @@ class TestManifestation(unittest.TestCase):
         self.assertEquals(redis_server.get(self.manifestation.edition_issue_designation()),
                           "2nd edition")
 
+    def test_extent(self):
+        self.assertEquals(self.extent_key,
+                          self.manifestation.extent())
+        self.assertEquals(redis_server.get(self.manifestation.extent()),
+                          "Paperback with backing")
+
+    def test_fabricator(self):
+        self.assertEquals(self.fabricator_key,
+                          self.manifestation.fabricator())
+        self.assertEquals(redis_server.get(self.fabricator_key),
+                          "Sample Corporate Name")
+    def test_form(self):
+        self.assertEquals(self.form_key,
+                          self.manifestation.form())
+        self.assertEquals(redis_server.get(self.manifestation.form()),
+                          "4to")
+
+    def test_manufacturer(self):
+        self.assertEquals(self.fabricator_key,
+                          self.manifestation.manufacturer())
+        self.assertEquals(redis_server.get(self.manifestation.manufacturer()),
+                          "Sample Corporate Name")
+
     def test_place_of_distribution(self):
         self.assertEquals(self.place_key,
                           self.manifestation.place_of_distribution())
@@ -224,6 +259,12 @@ class TestManifestation(unittest.TestCase):
                           self.manifestation.publisher())
         self.assertEquals(redis_server.get(self.manifestation.publisher()),
                           "Little, Brown and Company")
+
+    def test_series_statement(self):
+        self.assertEquals(self.manifestation.series_statement(),
+                          self.series_statement_key)
+        self.assertEquals(redis_server.get(self.series_statement_key),
+                          "Does not have a series statement")
 
     def test_statement_of_responsiblity(self):
         self.assertEquals(self.statement_key,
