@@ -63,6 +63,8 @@ class Expression(common.BaseModel):
             kwargs['redis_key'] = 'frbr:Expression'
         common.BaseModel.__init__(self,**kwargs) 
 
+
+
     def context(self,context=None):
         """
         Method returns :class:`Expression` instance's context or set of entities
@@ -203,6 +205,17 @@ class Manifestation(common.BaseModel):
             kwargs['redis_key'] = 'frbr:Manifestation'
         common.BaseModel.__init__(self,**kwargs)
 
+    def capture_mode(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's context or set of entities
+        that describe the capure mode fo the instance. 
+       
+        :param entity: Optional context to add to the set of context entities for 
+                        :class:`Manifestation` 
+        """
+        return self.get_or_set_property("capture mode",entity)
+
+
     def date_of_distribution(self,entity=None):
         """
         Method returns :class:`Manifestation` instance's entity or set of entities
@@ -290,6 +303,16 @@ class Manifestation(common.BaseModel):
                        :class:`Manifestation`
         """
         return self.get_or_set_property("manufacturer",entity)
+
+    def physical_medium(self,entity=None):
+        """
+        Method returns :class:`Manifestation` instance's entity or set of entities
+        that indicates the physical medium of the instance.  
+        
+        :param entity: Optional entity to add to the set of entities for the
+                       :class:`Manifestation`
+        """
+        return self.get_or_set_property("physical medium",entity)
 
 
     def place_of_distribution(self,entity=None):

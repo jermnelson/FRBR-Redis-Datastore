@@ -149,6 +149,8 @@ class TestItem(unittest.TestCase):
 class TestManifestation(unittest.TestCase):
 
     def setUp(self):
+        self.capture_mode_key = "rdvocab:termList:typeRec:%s" % redis_server.incr("global:rdvocab:termList:typeRec")
+        redis_server.hset(self.capture_mode_key,"prefLabel:en","Analog")
         self.corporate_body_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
         redis_server.set(self.corporate_body_key,"Little, Brown and Company")
         self.date_key = "xsd:DateTime:%s" % redis_server.incr("global:DateTime")
@@ -161,6 +163,9 @@ class TestManifestation(unittest.TestCase):
         redis_server.set(self.fabricator_key,"Sample Corporate Name")
         self.form_key = "rda:book:format:%s" % redis_server.incr("global:rda:book:format")
         redis_server.set(self.form_key,"4to")
+        self.physical_medium_key = "rda:RDABaseMaterial:%s" % redis_server.incr("global:rda:RDABaseMaterial")
+        redis_server.hset(self.physical_medium_key,"URI","http://rdvocab.info/termList/RDAbaseMaterial/1011.rdf")
+        redis_server.hset(self.physical_medium_key,"label:en","paper")
         self.place_key = "dc:Location:%s" % redis_server.incr("global:dc:Location")
         redis_server.hset(self.place_key,"city","New York City")
         redis_server.hset(self.place_key,"state","New York")
@@ -170,7 +175,8 @@ class TestManifestation(unittest.TestCase):
         redis_server.set(self.statement_key,"Written by David Foster Wallace")
         self.title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
         redis_server.hset(self.title_key,"mods:title","Infinite Jest")
-        parameters = {"date of distribution":self.date_key,
+        parameters = {"capture mode":self.capture_mode_key,
+                      "date of distribution":self.date_key,
                       "date of publication":self.date_key,
                       "distributor":self.corporate_body_key,
                       "edition or issue designation":self.ed_issue_designation_key,
@@ -178,6 +184,7 @@ class TestManifestation(unittest.TestCase):
                       "fabricator": self.fabricator_key,
                       "form": self.form_key,
                       "manufacturer": self.fabricator_key,
+                      'physical medium': self.physical_medium_key,
                       "place of distribution":self.place_key,
                       "place of publication":self.place_key,
                       "publisher":self.corporate_body_key,
@@ -191,6 +198,13 @@ class TestManifestation(unittest.TestCase):
 
     def test_init(self):
         self.assert_(self.manifestation.redis_ID)
+
+    def test_capture_mode(self):
+        self.assertEquals(self.capture_mode_key,
+                          self.manifestation.capture_mode())
+        self.assertEquals(redis_server.hget(self.manifestation.capture_mode(),"prefLabel:en"),
+                          "Analog")
+        
 
     def test_date_of_distribution(self):
         self.assertEquals(self.date_key,
@@ -240,6 +254,15 @@ class TestManifestation(unittest.TestCase):
                           self.manifestation.manufacturer())
         self.assertEquals(redis_server.get(self.manifestation.manufacturer()),
                           "Sample Corporate Name")
+
+    def test_physical_medium(self):
+        physical_medium_key = self.manifestation.physical_medium()
+        self.assertEquals(self.physical_medium_key,
+                          physical_medium_key)
+        self.assertEquals(redis_server.hget(physical_medium_key,'URI'),
+                          "http://rdvocab.info/termList/RDAbaseMaterial/1011.rdf")
+        self.assertEquals(redis_server.hget(self.physical_medium_key,"label:en"),
+                          "paper")
 
     def test_place_of_distribution(self):
         self.assertEquals(self.place_key,
