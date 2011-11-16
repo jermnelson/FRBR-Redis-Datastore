@@ -1,5 +1,5 @@
 """
-  frbr.py -- Models for FRBR Redis datastore
+  :mod:`frbr` Models for FRBR Redis datastore
 """
 __author__ = "Jeremy Nelson"
 
