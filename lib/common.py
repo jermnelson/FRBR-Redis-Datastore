@@ -91,6 +91,7 @@ class BaseModel(object):
         self.frbr_key = "%s:%s" % (self.redis_key,self.redis_ID)
         for k,v in kwargs.iteritems():
             self.redis_server.hset(self.frbr_key,k,v)
+            setattr(self,k,v)
 
     def get_property(self,obj_property):
         """
