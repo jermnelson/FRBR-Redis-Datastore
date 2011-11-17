@@ -11,7 +11,15 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-
+   readme.rst
+   common.rst
+   frbr.rst
+   frad.rst
+   vra.rst
+   rda.rst
+   marc.rst
+   mods.rst
+    
 
 Indices and tables
 ==================
