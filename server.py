@@ -1,8 +1,8 @@
 """
-  server.py - JSON front-end to native FRBR Redis Datastore
+  :mod:`server` HTML5 and JSON front-end to native FRBR Redis Datastore
 """
 
-from bottle import debug,get,post,request,run,template
+from bottle import debug,get,post,request,route,run,static_file,template
 import redis,json,logging
 import config,sys
 from lib import common,dc,isbd,frbr,marc21
@@ -40,6 +40,10 @@ def initialize():
     frbr.load_rdf()
     return json.dumps(True)
 
+@route('/doc/index.html')
+def server_static():
+    return static_file('index.html', root='doc/_build/html/')
+
 
 @post('/:redis_key/add')
 def add_frbr_entity(redis_key):
@@ -66,8 +70,5 @@ def frbr_entity(redis_key,uid=None):
         return json.dumps(None)
     else:
         return json.dumps(entity)
-
-    
-
 
 run(host=config.WEB_HOST,port=config.WEB_PORT)
