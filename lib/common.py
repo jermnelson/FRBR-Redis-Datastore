@@ -1,6 +1,5 @@
 """
-  common.py -- Common functions and classes for supporting FRBR
-               Redis datastore
+  :mod:`common` -- Common functions and classes for supporting FRBR Redis datastore
 """
 __author__ = 'Jeremy Nelson'
 

@@ -9,12 +9,12 @@ and :mod:`tests.test_marc` provide a light-weight python
 class wrapper and associated unit tests for basic manipulation of a 
 `Redis <http://www.redis.io>`_ datastore.
 
-`lib.marc` Contents
-^^^^^^^^^^^^^^^^^^^
-.. automodule:: lib.marc
+`lib.marc21` Contents
+^^^^^^^^^^^^^^^^^^^^^
+.. automodule:: lib.marc21
    :members:
 
-`tests.test_marc` Contents
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. automodule:: tests.test_marc
+`tests.test_marc21` Contents
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. automodule:: tests.test_marc21
    :members:

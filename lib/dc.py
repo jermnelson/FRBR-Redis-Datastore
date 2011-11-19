@@ -1,5 +1,5 @@
 """
-  dc.py -- Dublin Core Redis set-up and support
+  :mod:`dc` -- Dublin Core Redis set-up and support
 """
 __author__ = 'Jeremy Nelson'
 

@@ -1,5 +1,5 @@
 """
-  marc21.py - MARC21 Vocabulary Redis set-up and support
+  :mod:`marc21` - MARC21 Vocabulary Redis set-up and support
 """
 __author__ = 'Jeremy Nelson'
 

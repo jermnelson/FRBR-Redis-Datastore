@@ -16,3 +16,8 @@ class wrapper and associated unit tests for basic manipulation of a
 ^^^^^^^^^^^^^^^^^^^^
 .. automodule:: test_frbr
    :members:
+
+`features.frbr_usecases` Contents
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. automodule:: frbr_usecases
+   :members:
