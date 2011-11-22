@@ -6,6 +6,7 @@ __author__ = "Jeremy Nelson"
 import unittest,redis,config
 import lib.common as common
 import lib.frad as frad
+import lib.frbr as frbr
 import lib.namespaces as ns
 
 redis_server = redis.StrictRedis(host=config.REDIS_HOST,
@@ -167,6 +168,9 @@ class TestFamily(unittest.TestCase):
         self.family = frad.Family(redis_server=redis_server,
                                   **params)
 
+    def test_init(self):
+        self.assert_(self.family.redis_ID)
+
 
     def test_date(self):
         self.assertEquals(self.date_key,
@@ -201,7 +205,82 @@ class TestFamily(unittest.TestCase):
     def tearDown(self):
         redis_server.flushdb()
 
-    
+class TestItem(unittest.TestCase):
+
+    def setUp(self):
+        self.item_key = "frbr:item:%s" % redis_server.incr("global:frbr:item")
+        self.custodial_history_key = "frad:item:custodial history:%s" %\
+                                     redis_server.incr("global:frad:item:custodial history")
+        redis_server.set(self.custodial_history_key,"Previously owned by Jane Doe")
+        redis_server.hset(self.item_key,
+                          "frad:item:custodial history",
+                          self.custodial_history_key) 
+        self.location_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.set(self.location_key,"Pikes Peak Library")
+        redis_server.hset(self.item_key,"frad:item:location",self.location_key)
+
+    def test_custodial_history(self):
+        self.assertEquals(self.custodial_history_key,
+                          redis_server.hget(self.item_key,"frad:item:custodial history"))
+        self.assertEquals(redis_server.get(redis_server.hget(self.item_key,
+                                                             "frad:item:custodial history")),
+                          "Previously owned by Jane Doe")
+
+    def test_location(self):
+        item_location_key = redis_server.hget(self.item_key,"frad:item:location")
+        self.assertEquals(self.location_key,
+                          item_location_key)
+        self.assertEquals(redis_server.get(redis_server.hget(self.item_key,"frad:item:location")),
+                          "Pikes Peak Library")
         
+        
+
+    def tearDown(self):
+        redis_server.flushdb()
+
+
+    
+class TestWork(unittest.TestCase):
+
+    def setUp(self):
+        self.history_key = "frad:history:%s" % redis_server.incr("global:frad:history")
+        redis_server.lpush(self.history_key,"Authored by John Doe")
+        redis_server.lpush(self.history_key,"Work conceived in 11/21/2011")
+        self.place_key = "united states:cities:%s" % \
+                         redis_server.incr("global:united states:cities")
+        redis_server.set(self.place_key,"Colorado Springs, CO")
+        self.subject_key = "dc:subject:%s" % redis_server.incr("dc:subject")
+        redis_server.set(self.subject_key,"Mathematics")
+        self.work_key = "frbr:work:%s" % redis_server.incr("frbr:work")
+        redis_server.hset(self.work_key,"frad:work:history",self.history_key)
+        redis_server.hset(self.work_key,"frad:work:place of origin",self.place_key)
+        redis_server.hset(self.work_key,"frad:work:subject",self.subject_key)
+        
+    def test_history(self):
+        work_history_key = redis_server.hget(self.work_key,"frad:work:history")
+        self.assertEquals(self.history_key,
+                          work_history_key)
+        self.assertEquals(redis_server.lrange(work_history_key,0,-1),
+                          ["Work conceived in 11/21/2011",
+                           "Authored by John Doe"])
+
+
+    def test_place(self):
+        self.assertEquals(self.place_key,
+                          redis_server.hget(self.work_key,"frad:work:place of origin"))
+        self.assertEquals(redis_server.get(self.place_key),
+                          "Colorado Springs, CO")
+ 
+    def test_subject(self):
+        self.assertEquals(self.subject_key,
+                          redis_server.hget(self.work_key,"frad:work:subject"))
+        self.assertEquals(redis_server.get(self.subject_key),
+                          "Mathematics")
+        
+        
+    def tearDown(self):
+        redis_server.flushdb()
+
+
                       
         
