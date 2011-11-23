@@ -1,3 +1,4 @@
+# -*- coding: cp1252 -*-
 """
  :mod:`test_vra`  Unit and behaviour-driven tests for :mod:`lib.vra`. Examples taken from
                   `VRA Core <http://www.loc.gov/standards/vracore/VRA_Core4_Element_Description.pdf>`_
@@ -206,8 +207,17 @@ class Testinscription(unittest.TestCase):
         redis_server.hset(self.author_key,"vocab","ULAN")
         redis_server.hset(self.author_key,"refid","500030596")
         redis_server.hset(self.author_key,"value","Andokides Painter")
+        self.text_key = "vra:text:%s" % redis_server.incr("global:vra:text")
+        redis_server.hset(self.text_key,"type","text")
+        redis_server.hset(self.text_key,"xml:lang","gr")
+        redis_server.hset(self.text_key,"value","ANDOKIDES EPOESE")
+        self.text2_key = "vra:text:%s" % redis_server.incr("global:vra:text")
+        redis_server.hset(self.text2_key,"type","translation")
+        redis_server.hset(self.text2_key,"xml:lang","en")
+        redis_server.hset(self.text2_key,"value","Andokides made this")
         params = {'author':self.author_key,
-                  'position':'On the foot, incised'}
+                  'position':'On the foot, incised',
+                  'text':[self.text_key,self.text2_key]}
         self.inscription = vra.inscription(redis_server=redis_server,**params)
 
     def test_init(self):
@@ -226,9 +236,171 @@ class Testinscription(unittest.TestCase):
     def test_position(self):
         self.assertEquals(self.inscription.position,
                           "On the foot, incised")
+
+    def test_text(self):
+        text_list = self.inscription.text
+        self.assertEquals(self.text_key,
+                          text_list[0])
+        self.assertEquals(self.text2_key,
+                          text_list[1])
+        self.assertEquals(redis_server.hget(text_list[0],"type"),
+                          "text")
+        self.assertEquals(redis_server.hget(text_list[0],"xml:lang"),
+                          "gr")
+        self.assertEquals(redis_server.hget(text_list[0],"value"),
+                          "ANDOKIDES EPOESE")
+        self.assertEquals(redis_server.hget(text_list[1],"xml:lang"),
+                          "en")
+        self.assertEquals(redis_server.hget(text_list[1],"value"),
+                          "Andokides made this")
+        
         
 
     def tearDown(self):
         redis_server.flushdb()    
 
+class Testlocation(unittest.TestCase):
 
+    def setUp(self):
+        self.city_key = "vra:name:%s" % redis_server.incr("global:vra:name")
+        redis_server.hset(self.city_key,"value","Paris")
+        redis_server.hset(self.city_key,"type","geographic")
+        redis_server.hset(self.city_key,"vocab","TGN")
+        redis_server.hset(self.city_key,"refid","700803")
+        redis_server.hset(self.city_key,"extent","inhabited place")
+        self.country_key = "vra:name:%s" % redis_server.incr("global:vra:name")
+        redis_server.hset(self.country_key,"value","France")
+        redis_server.hset(self.country_key,"type","geographic")
+        redis_server.hset(self.country_key,"vocab","TGN")
+        redis_server.hset(self.country_key,"refid","100007")
+        redis_server.hset(self.country_key,"extent","nation")        
+        self.louvre_key = "vra:name:%s" % redis_server.incr("global:vra:name")
+        redis_server.hset(self.louvre_key,"value","Musée du Louvre")
+        redis_server.hset(self.louvre_key,"type","corporate")
+        redis_server.hset(self.louvre_key,"xml:lang","fr")
+        self.refid_key = "vra:refid:%s" % redis_server.incr("global:vra:refid")
+        redis_server.hset(self.refid_key,"value","Inv. MR 299")
+        redis_server.hset(self.refid_key,"type","accession")
+        params = {'name':[self.city_key,
+                          self.country_key,
+                          self.louvre_key],
+                  'refid':self.refid_key,
+                  'type':'repository'}
+        self.location = vra.location(redis_server=redis_server,**params)
+
+    def test_init(self):
+        self.assert_(self.location.redis_ID)
+    
+
+    def test_location_city(self):
+        city_key = self.location.name[0]
+        self.assertEquals(self.city_key,
+                          city_key)
+        self.assertEquals(redis_server.hget(self.city_key,"type"),
+                          "geographic")
+        self.assertEquals(redis_server.hget(self.city_key,"vocab"),
+                          "TGN")
+        self.assertEquals(redis_server.hget(self.city_key,"value"),
+                          "Paris")
+        self.assertEquals(redis_server.hget(self.city_key,"refid"),
+                          "700803")
+        self.assertEquals(redis_server.hget(self.city_key,"extent"),
+                          "inhabited place")
+
+    def test_location_country(self):
+        country_key = self.location.name[1]
+        self.assertEquals(self.country_key,
+                          country_key)
+        self.assertEquals(redis_server.hget(country_key,"type"),
+                          "geographic")
+        self.assertEquals(redis_server.hget(country_key,"vocab"),
+                          "TGN")
+        self.assertEquals(redis_server.hget(country_key,"value"),
+                          "France")
+        self.assertEquals(redis_server.hget(country_key,"refid"),
+                          "100007")
+        self.assertEquals(redis_server.hget(country_key,"extent"),
+                          "nation")
+
+    def test_location_corporate(self):
+        louvre_key = self.location.name[2]
+        self.assertEquals(self.louvre_key,
+                          louvre_key)
+        self.assertEquals(redis_server.hget(louvre_key,"value"),
+                          "Musée du Louvre")
+        self.assertEquals(redis_server.hget(louvre_key,"type"),
+                          "corporate")
+        self.assertEquals(redis_server.hget(louvre_key,"xml:lang"),
+                          "fr")
+
+    def test_refid(self):
+        self.assertEquals(self.location.refid,
+                          self.refid_key)
+        self.assertEquals(redis_server.hget(self.location.refid,"value"),
+                          "Inv. MR 299")
+        self.assertEquals(redis_server.hget(self.location.refid,"type"),
+                          "accession")
+
+    def test_type(self):
+        self.assertEquals(self.location.type,"repository")
+        
+
+    def tearDown(self):
+        redis_server.flushdb()      
+
+class TestMaterial(unittest.TestCase):
+
+    def setUp(self):
+        params = {'refid':'30001505',
+                  'type':'medium',
+                  'value':'oil paint',
+                  'vocab':'AAT'}
+        self.material = vra.material(redis_server=redis_server,**params)
+
+    def test_init(self):
+        self.assert_(self.material.redis_ID)
+
+    def test_refid(self):
+        self.assertEquals(self.material.refid,
+                          '30001505')
+    def test_type(self):
+        self.assertEquals(self.material.type,
+                          'medium')
+
+    def test_value(self):
+        self.assertEquals(self.material.value,
+                          'oil paint')
+
+    def test_value(self):
+        self.assertEquals(self.material.vocab,
+                          'AAT')
+
+    def tearDown(self):
+        redis_server.flushdb()
+
+class TestMeasurements(unittest.TestCase):
+
+    def setUp(self):
+        params = {'type':'height',
+                  'unit':'cm',
+                  'value':3,
+                  'extent':'base'}
+        self.measurements = vra.measurements(redis_server=redis_server,**params)
+
+    def test_init(self):
+        self.assert_(self.measurements.redis_ID)
+
+    def test_extent(self):
+        self.assertEquals(self.measurements.extent,
+                          'base')
+
+    def test_type(self):
+        self.assertEquals(self.measurements.type,
+                          'height')
+
+    def test_type(self):
+        self.assertEquals(self.measurements.value,
+                          3)
+
+    def tearDown(self):
+        redis_server.flushdb()

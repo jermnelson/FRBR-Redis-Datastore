@@ -82,3 +82,50 @@ class inscription(common.BaseModel):
         common.BaseModel.__init__(self,**kwargs)
 
  
+class location(common.BaseModel):
+    """
+    :class:`location`
+    """
+
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of a :class:`location`
+
+        :param redis_key: Redis key for vra:location, default is
+                          vra:location
+        """
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = "vra:location"
+        common.BaseModel.__init__(self,**kwargs)
+
+class material(common.BaseModel):
+    """
+    :class:`material`
+    """
+
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of a :class:`material`
+
+        :param redis_key: Redis key for vra:material, default is
+                          vra:material
+        """
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = "vra:material"
+        common.BaseModel.__init__(self,**kwargs)
+
+class measurements(common.BaseModel):
+    """
+    :class:`measurements`
+    """
+
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of a :class:`measurements`
+
+        :param redis_key: Redis key for vra:measurements, default is
+                          vra:measurements
+        """
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = "vra:measurements"
+        common.BaseModel.__init__(self,**kwargs)        
