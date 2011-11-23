@@ -404,3 +404,94 @@ class TestMeasurements(unittest.TestCase):
 
     def tearDown(self):
         redis_server.flushdb()
+
+class TestRelation(unittest.TestCase):
+
+    def setUp(self):
+        self.url_key = 'xml:href:%s' % redis_server.incr('global:xml:href')
+        redis_server.set(self.url_key,
+                         "http://~seurat.berkeley.edu/images/554678.jpg")
+        params = {'href':self.url_key,
+                  'relids':'i_859348576',
+                  'type':'imageIs'}
+        self.relation = vra.relation(redis_server=redis_server,**params)
+
+    def test_init(self):
+        self.assert_(self.relation.redis_ID)
+
+    def test_relation_href(self):
+        self.assertEquals(self.url_key,
+                          self.relation.href)
+        self.assertEquals(redis_server.get(self.relation.href),
+                          "http://~seurat.berkeley.edu/images/554678.jpg")
+
+
+    def tearDown(self):
+        redis_server.flushdb()
+
+class TestRights(unittest.TestCase):
+
+    def setUp(self):
+        params = {'notes':"Contact information: PO Box 429, Englewood, NJ 07631 858-576-039",
+                  'rightsHolder':'Faith Ringgold',
+                  'type':'© Faith Ringgold. All rights reserved.'}
+        self.rights = vra.rights(redis_server=redis_server,**params)
+
+    def test_notes(self):
+        self.assertEquals(self.rights.notes,
+                          "Contact information: PO Box 429, Englewood, NJ 07631 858-576-039")
+
+    def test_rightsHolder(self):
+        self.assertEquals(self.rights.rightsHolder,
+                          'Faith Ringgold')
+
+    def test_type(self):
+        self.assertEquals(self.rights.type,
+                          '© Faith Ringgold. All rights reserved.')
+
+    def tearDown(self):
+        redis_server.flushdb()
+
+
+class Testsource(unittest.TestCase):
+
+    def setUp(self):
+        self.name_key = "vra:name:%s" % redis_server.incr("vra:name")
+        redis_server.hset(self.name_key,
+                          "value",
+                          "Gascoigne, Bamber, The Great Moghuls, New York: Harper & Row, 1971")
+        redis_server.hset(self.name_key,
+                          "type",
+                          "book")
+        self.refid_key = "vra:refid:%s" % redis_server.incr("vra:redis")
+        redis_server.hset(self.refid_key,
+                          "type",
+                          "ISBN")
+        redis_server.hset(self.refid_key,
+                          "value",
+                          "060114673")
+        params = {'name':self.name_key,
+                  'refid':self.refid_key}
+        self.source = vra.source(redis_server=redis_server,**params)
+
+    def test_init(self):
+        self.assert_(self.source.redis_ID)
+
+    def test_name(self):
+        self.assertEquals(self.name_key,
+                          self.source.name)
+        self.assertEquals(redis_server.hget(self.source.name,"value"), 
+                          "Gascoigne, Bamber, The Great Moghuls, New York: Harper & Row, 1971")
+        self.assertEquals(redis_server.hget(self.source.name,"type"),
+                          "book")
+
+    def test_redis(self):
+        self.assertEquals(self.refid_key,
+                          self.source.refid)
+        self.assertEquals(redis_server.hget(self.refid_key,"type"),
+                          "ISBN")
+        self.assertEquals(redis_server.hget(self.refid_key,"value"),
+                          "060114673")
+
+    def tearDown(self):
+        redis_server.flushdb()

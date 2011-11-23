@@ -128,4 +128,52 @@ class measurements(common.BaseModel):
         """
         if not kwargs.has_key("redis_key"):
             kwargs['redis_key'] = "vra:measurements"
-        common.BaseModel.__init__(self,**kwargs)        
+        common.BaseModel.__init__(self,**kwargs)       
+
+class relation(common.BaseModel):
+    """
+    :class:`relation`
+    """
+
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of a :class:`relation`
+
+        :param redis_key: Redis key for vra:relation, default is
+                          vra:relation
+        """
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = "vra:relation"
+        common.BaseModel.__init__(self,**kwargs)
+
+class rights(common.BaseModel):
+    """
+    :class:`rights`
+    """
+
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of a :class:`rights`
+
+        :param redis_key: Redis key for vra:rights, default is
+                          vra:rights
+        """
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = "vra:rights"
+        common.BaseModel.__init__(self,**kwargs)
+
+class source(common.BaseModel):
+    """
+    :class:`source`
+    """
+
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of a :class:`source`
+
+        :param redis_key: Redis key for vra:source, default is
+                          vra:source
+        """
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = "vra:source"
+        common.BaseModel.__init__(self,**kwargs)                             
