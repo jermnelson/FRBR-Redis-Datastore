@@ -4,6 +4,7 @@
 __author__ = "Jeremy Nelson"
 
 import unittest,redis,config
+import logging
 import lib.common as common
 import lib.frad as frad
 import lib.frbr as frbr
@@ -282,5 +283,82 @@ class TestWork(unittest.TestCase):
         redis_server.flushdb()
 
 
-                      
+class TestControlledAccessPoint(unittest.TestCase):
+
+    def setUp(self):
+        
+        self.corporate_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.corporate_key,'name','Library of Congress')
+        self.language_key = 'xml:lang:%s' % redis_server.incr('global:xml:lang')
+        redis_server.set(self.language_key,'en')
+        self.script_key = 'unicode:scripts:%s' % redis_server.incr('global:unicode:scripts')
+        redis_server.set(self.script_key,'Latin Extended-A') 
+        params = {'addition':'Art of Peace by Morihei Ueshiba',
+                  'designated usage':'authorized',
+                  'language of base access':self.language_key,
+                  'language of cataloguing':self.language_key,
+                  'script of base access':self.script_key,
+                  'script of cataloguing':self.script_key,
+                  'source':self.corporate_key,
+                  'status':'provisional',
+                  'transliteration scheme of base access':'ISO 3602',
+                  'transliteration scheme of cataloguing':'ISO 3602',
+                  'type':'collective uniform title',
+                  'undifferentiated':True}
+        self.controlled_access_point = frad.CorporateBody(redis_server=redis_server,
+                                                          **params)
+
+    def test_init(self):
+        self.assert_(self.controlled_access_point.redis_ID)
+        
+    def test_addition(self):
+        self.assertEquals(self.controlled_access_point.addition,
+                          'Art of Peace by Morihei Ueshiba')
+                          
+    def test_designated_usage(self):
+        designated_usage = getattr(self.controlled_access_point,
+                                   'designated usage')
+        self.assertEquals(designated_usage,
+                          'authorized')
+                          
+                          
+	def test_language_of_base_access(self):
+	    language_key = getattr(self.controlled_access_point,
+	                           'language of base access')
+	    self.assertEquals(self.language_key,
+	                      language_key)
+	    self.assertEquals(redis_server.get(language_key),
+	                      'en')
+	                      
+
+#	def test_language_of_cataloguing(self):
+#	    language_key = getattr(self.controlled_access_point,
+#                               'language of cataloguing')
+#        logging.error("Language key: %s" % language_key)
+#        self.assertEquals(self.language_key,
+#                          language_key)
+#        self.assertEquals(redis_server.get(language_key),
+#	                      'en')
+
+	                      
+	def test_script_of_base_access(self):
+	    script_key = getattr(self.controlled_access_point,
+	                         'script of base access')
+	    self.assertEquals(self.script_key,
+	                      script_key)
+	    self.assertEquals(redis_server.get(script_key),
+	                      'Latin Extended-A')
+	                      
+	                      
+	def test_script_of_cataloguing(self):
+	    script_key = getattr(self.controlled_access_point,
+	                         'script of cataloguing')
+	    self.assertEquals(self.script_key,
+	                      script_key)
+	    self.assertEquals(redis_server.get(script_key),
+	                      'Latin Extended-A')
+	    
+
+    def tearDown(self):
+        redis_server.flushdb()                  
         

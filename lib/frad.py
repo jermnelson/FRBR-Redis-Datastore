@@ -47,4 +47,19 @@ class Family(common.BaseModel):
             kwargs['redis_key'] = 'frad:Family'
         common.BaseModel.__init__(self,**kwargs)
 
+class ControlledAccessPoint(common.BaseModel):
+    """
+    :class:`ControlledAccessPoint` class includes attributes and roles with other
+    Entities in the datastore.
+    """
 
+    def __init__(self,**kwargs):
+        """
+        Creates an instance of :class:`ControlledAccessPoint` 
+
+        :param redis_key: Redis key for FRAD ControlledAccessPoint, default is
+                          frad:ControlledAccessPoint
+        """ 
+        if not kwargs.has_key("redis_key"):
+            kwargs['redis_key'] = 'frad:ControlledAccessPoint'
+        common.BaseModel.__init__(self,**kwargs)
