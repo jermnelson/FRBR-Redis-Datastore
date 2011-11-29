@@ -8,11 +8,14 @@ Supporting Documentation
 """
 __author__ = 'Jeremy Nelson'
 
-import common,os,datetime 
+import common,sys
 import namespaces as ns
-from lxml import etree
 
+import sys
 
-class CRMEntity(common.BaseModel):
-    """
-    :class:`CRMEntity` is the base  
+CIDOC_rdf_url = 'http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.2.rdfs'
+current_module = sys.modules[__name__]
+
+common.load_dynamic_classes(CIDOC_rdf_url,
+                            'cidoc',
+                            current_module)

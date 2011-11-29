@@ -62,6 +62,73 @@ def load_rdf_skos(redis_key,rdf_url):
                 print("Added %s to %s" % (label.text,
                                           redis_key))
     redis_server.save()
+
+def get_python_classname(raw_classname):
+    class_name = raw_classname.replace(" ","")
+    class_name = class_name.replace("-","")
+    return class_name
+
+def load_dynamic_classes(rdf_url,redis_prefix,current_module):
+    """
+    Function takes an URL to an RDF file, parses out and creates
+    classes based on the rdfs:Class element.
+
+    :param rdf_url: URL to the RDF file
+    :param current_module: Current module
+    """
+    ns_map = {'rdf':'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+              'rdfs':'http://www.w3.org/2000/01/rdf-schema#',
+              'xml':'http://www.w3.org/XML/1998/namespace'}
+    raw_rdf = urllib2.urlopen(rdf_url).read()
+    rdf = etree.XML(raw_rdf)
+    all_classes = rdf.findall('{%s}Class' % ns.RDFS)
+    for rdf_class in all_classes:
+        rdf_ID = rdf_class.get("{%s}ID" % ns.RDF)
+        label = rdf_class.find("{%s}label[@{%s}lang='en']" %\
+                               (ns.RDFS,
+                                ns.XML))
+        parent_classes = rdf_class.findall("{%s}subClassOf" %\
+                                           ns.RDFS)
+        super_classes = []
+        for parent in parent_classes:
+            parent_id = parent.get("{%s}resource" % ns.RDF)
+            parent_id = parent_id.replace("#","")
+            parent = rdf.find("{%s}Class[@{%s}ID='%s']" %\
+                              (ns.RDFS,
+                               ns.RDF,
+                               parent_id))
+            parent_label = parent.find("{%s}label[@{%s}lang='en']" %\
+                                       (ns.RDFS,
+                                        ns.XML))
+            super_classes.append(get_python_classname(parent_label.text))
+        if len(super_classes) < 1:
+            super_classes.append(object)
+        class_name = get_python_classname(label.text)
+        params = {'rdf_ID':rdf_ID,
+                  'redis_key': '%s:%s' % (redis_prefix,
+                                          class_name)}
+        all_prop_xpath = "{%s}Property/{%s}range[@{%s}resource='#%s']" %\
+                                     (ns.RDF,
+                                      ns.RDFS,
+                                      ns.RDF,
+                                      rdf_ID)
+        all_ranges = rdf.findall(all_prop_xpath)
+        
+        for rdf_range in all_ranges:
+            rdf_property = rdf_range.getparent()
+            prop_name = rdf_property.find("{%s}label[@{%s}lang='en']" %\
+                                          (ns.RDF,
+                                           ns.XML))
+        print("New class %s, super classes %s" %\
+              (class_name,super_classes))
+        
+        new_class = type('%s' % class_name,
+                         tuple(super_classes),
+                         params)
+        setattr(current_module,class_name,new_class)
+                        
+        
+        
     
 class BaseModel(object):
     """
