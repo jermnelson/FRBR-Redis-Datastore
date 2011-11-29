@@ -14,6 +14,7 @@ for row in marc_to_frbr:
 
 digit_re = re.compile(r"(\(\d*\))")
 
+
 class FRBRMap(object):
 
     def __init__(self,entity_name):
@@ -50,7 +51,7 @@ class FRBRMap(object):
         if subfields != 'n/a':
             self.roles[role][field_name]['subfields'].append(subfields)
 
-    
+marc_fields = dict()
                     
 expression_map = FRBRMap('Expression')
 item_map = FRBRMap("Item")

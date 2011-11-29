@@ -3,7 +3,7 @@
 """
 __author__ = 'Jeremy Nelson'
 
-import common
+import common,pymarc
 
 MARC21_006_RDF_URL = 'http://metadataregistry.org/vocabulary/show/id/211.rdf'
 
