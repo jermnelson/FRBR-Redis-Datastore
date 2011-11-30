@@ -120,17 +120,19 @@ def load_dynamic_classes(rdf_url,redis_prefix,current_module):
                                       ns.RDF,
                                       rdf_ID)
         all_ranges = rdf.findall(all_prop_xpath)
-        
+        properties = []
         for rdf_range in all_ranges:
             rdf_property = rdf_range.getparent()
             prop_name = rdf_property.find("{%s}label[@{%s}lang='en']" %\
-                                          (ns.RDF,
+                                          (ns.RDFS,
                                            ns.XML))
-        print("New class %s, super classes %s" %\
-              (class_name,super_classes))
+            if prop_name is not None:
+                properties.append(prop_name.text)
+        print("New class %s, properties %s" %\
+              (class_name,properties))
         
         new_class = type('%s' % class_name,
-                         tuple(super_classes),
+                         (BaseModel,),
                          params)
         setattr(current_module,class_name,new_class)
                         
