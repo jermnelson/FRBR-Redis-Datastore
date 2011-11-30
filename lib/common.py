@@ -104,10 +104,11 @@ def load_dynamic_classes(rdf_url,redis_prefix,current_module):
                               (ns.RDFS,
                                ns.RDF,
                                parent_id))
-            parent_label = parent.find("{%s}label[@{%s}lang='en']" %\
-                                       (ns.RDFS,
-                                        ns.XML))
-            super_classes.append(get_python_classname(parent_label.text))
+            if parent is not None:
+                parent_label = parent.find("{%s}label[@{%s}lang='en']" %\
+                                           (ns.RDFS,
+                                            ns.XML))
+                super_classes.append(get_python_classname(parent_label.text))
         if len(super_classes) < 1:
             super_classes.append(object)
         class_name = get_python_classname(label.text)
@@ -128,8 +129,8 @@ def load_dynamic_classes(rdf_url,redis_prefix,current_module):
                                            ns.XML))
             if prop_name is not None:
                 properties.append(prop_name.text)
-        print("New class %s, properties %s" %\
-              (class_name,properties))
+##        print("New class %s, properties %s" %\
+##              (class_name,properties))
         
         new_class = type('%s' % class_name,
                          (BaseModel,),
@@ -165,7 +166,13 @@ class BaseModel(object):
         self.redis_ID = self.redis_server.incr("global:%s" % self.redis_key)
         self.frbr_key = "%s:%s" % (self.redis_key,self.redis_ID)
         for k,v in kwargs.iteritems():
-            self.redis_server.hset(self.frbr_key,k,v)
+            if type(v) == list or type(v) == set:
+                new_key = "%s:%s" % (self.frbr_key,k)
+                for item in v:
+                    self.redis_server.sadd(new_key,item)
+                self.redis_server.hset(self.frbr_key,k,new_key)
+            else:
+                self.redis_server.hset(self.frbr_key,k,v)
             setattr(self,k,v)
 
     def get_property(self,obj_property):

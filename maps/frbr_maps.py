@@ -36,8 +36,12 @@ class MARCFixedFieldMapping(object):
             definition = concept.find('{%s}definition' % ns.SKOS)
             if label is not None:
                 if label.text != 'Published':
-                    redis_key = "%s:%s" % (base_redis_key,label.text)
-                    print(redis_key)
+                    
+                    redis_key = "%s:%s" % (base_redis_key,
+                                           redis_server.incr('global:%s' % base_redis_key))
+                    redis_server.hset(redis_key,
+                                      "text",
+                                      label.text)
                     redis_server.hset(redis_key,
                                       "notation",
                                       notation.text)
@@ -52,12 +56,23 @@ class MARCFixedFieldMapping(object):
         else:
             return None
                 
+marc006_form_of_material = MARCFixedFieldMapping('marc21:006:00',
+                                                 'http://metadataregistry.org/vocabulary/show/id/211.rdf')
+
+
 
 marc007_categories = MARCFixedFieldMapping('marc21:007:00',
                                            'http://metadataregistry.org/vocabulary/show/id/183.rdf')
 
-marc007_electronic = MARCFixedFieldMapping('marc21:007:00:electronic resource:specific material designation',
-                                           'http://metadataregistry.org/vocabulary/show/id/263.rdf')
+marc007_deterioration_stage = MARCFixedFieldMapping('%s:15' % marc007_categories.get_notation_key('m'),
+                                                    'http://metadataregistry.org/vocabulary/show/id/199.rdf')
+
+marc007_elect_mat_type = MARCFixedFieldMapping('%s:01' % marc007_categories.get_notation_key('c'),
+                                              'http://metadataregistry.org/vocabulary/show/id/263.rdf')
+
+marc007_elect_dimensions = MARCFixedFieldMapping('%s:04' % marc007_categories.get_notation_key('c'),
+                                                 'http://metadataregistry.org/vocabulary/show/id/200.rdf')
+
 
 class FRBRMap(object):
 
@@ -92,6 +107,8 @@ class FRBRMap(object):
 
 def entity_filter(raw_entity):
     entity = role_filter(raw_entity)
+    if entity.endswith(r'\x98'):
+        entity = entity[:-1]
     if entity.endswith('\x98'):
         entity = entity[:-1]
     return entity
