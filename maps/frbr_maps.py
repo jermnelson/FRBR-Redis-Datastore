@@ -4,7 +4,14 @@
 """
 __author__ = 'Jeremy Nelson'
 
-import urllib2,re
+import urllib2,re,os,sys
+from lxml import etree
+
+sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
+sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\lib\\'))
+import common
+import namespaces as ns
+
 marc_to_frbr = urllib2.urlopen('http://www.loc.gov/marc/marc-functional-analysis/source/FRBR_Web_Copy.txt').read().split("\n")
 marc_to_frbr_lst = []
 for row in marc_to_frbr:
@@ -14,12 +21,50 @@ for row in marc_to_frbr:
 
 digit_re = re.compile(r"(\(\d*\))")
 
+redis_server = common.redis_server
+
+class MARCFixedFieldMapping(object):
+
+    def __init__(self,base_redis_key,rdf_url):
+        self.notations = dict()
+        rdf_xml = etree.XML(urllib2.urlopen(rdf_url).read())
+        redis_server.hset(base_redis_key,'source URL',rdf_url)
+        all_concepts = rdf_xml.findall('{%s}Concept' % ns.SKOS)
+        for concept in all_concepts:
+            label = concept.find('{%s}prefLabel' % ns.SKOS)
+            notation = concept.find('{%s}notation' % ns.SKOS)
+            definition = concept.find('{%s}definition' % ns.SKOS)
+            if label is not None:
+                if label.text != 'Published':
+                    redis_key = "%s:%s" % (base_redis_key,label.text)
+                    print(redis_key)
+                    redis_server.hset(redis_key,
+                                      "notation",
+                                      notation.text)
+                    redis_server.hset(redis_key,
+                                      "definition",
+                                      definition.text)
+                    self.notations[notation.text] = redis_key
+
+    def get_notation_key(self,notation):
+        if self.notations.has_key(notation):
+            return self.notations[notation]
+        else:
+            return None
+                
+
+marc007_categories = MARCFixedFieldMapping('marc21:007:00',
+                                           'http://metadataregistry.org/vocabulary/show/id/183.rdf')
+
+marc007_electronic = MARCFixedFieldMapping('marc21:007:00:electronic resource:specific material designation',
+                                           'http://metadataregistry.org/vocabulary/show/id/263.rdf')
 
 class FRBRMap(object):
 
     def __init__(self,entity_name):
         self.entity_name = entity_name
         self.roles = dict()
+        
         
 
     def extract_value(self,role,marc_record):
@@ -35,13 +80,7 @@ class FRBRMap(object):
         return output
 
     def set_field(self,role,field_name,fixed,subfields):
-        role = role.lower()
-        role = role.replace("*",'')
-        role = role.replace("[",'')
-        role = role.replace("]",'')
-        role = role.replace("+","")
-        role = digit_re.sub('',role)
-        role = role.strip()
+        role = role_filter(role)
         if not self.roles.has_key(role):
             self.roles[role] = {field_name: {'fixed':[],'subfields':[]}}
         if not self.roles[role].has_key(field_name):
@@ -51,51 +90,57 @@ class FRBRMap(object):
         if subfields != 'n/a':
             self.roles[role][field_name]['subfields'].append(subfields)
 
+def entity_filter(raw_entity):
+    entity = role_filter(raw_entity)
+    if entity.endswith('\x98'):
+        entity = entity[:-1]
+    return entity
+
+def role_filter(raw_role):
+    role = raw_role.lower()
+    role = role.replace("*",'')
+    role = role.replace("?","")
+    role = role.replace("[",'')
+    role = role.replace("]",'')
+    role = role.replace("+","")
+    role = digit_re.sub('',role)
+    role = role.strip()
+    if role.endswith('\x85'):
+        role = role[:-1]
+    return role
+
 marc_fields = dict()
                     
-expression_map = FRBRMap('Expression')
-item_map = FRBRMap("Item")
-manifestation_map = FRBRMap("Manifestation")
-work_map = FRBRMap("Work")
 
 for row in marc_to_frbr_lst:
     if len(row) < 5:
         pass
     else:
-        marc_field = row[4]
+        marc_field = row[3][0:3]
+        marc_desc = row[7]
         subfield = row[5]
         fixed_pos = row[6]
-        entity = row[9]
-        role = row[10]
-        role = role.replace('of %s' % entity.lower(),'')
-        if entity.startswith('Expression'):
-            expression_map.set_field(role,marc_field,fixed_pos,subfield)
-        elif entity.startswith('Item'):
-            item_map.set_field(role,marc_field,fixed_pos,subfield)
-        elif entity.startswith('Manifestation'):
-            manifestation_map.set_field(role,marc_field,fixed_pos,subfield)
-        elif entity.startswith('Work'):
-            work_map.set_field(role,marc_field,fixed_pos,subfield)
-            
-print len(item_map.roles)
-print len(work_map.roles)
-            
-    
-##
-##for row in works:
-##	field_key = row[10].lower().replace('of work','')
-##	field_key = field_key.replace("[",'')
-##	field_key = field_key.replace("]",'')
-##	if work_fields.has_key(field_key):
-##		if work_fields[field_key].has_key(row[4]):
-##			work_fields[field_key][row[4]]['subfields'].append(row[6])
-##			work_fields[field_key][row[4]]['fixed'].append(row[5])
-##		else:
-##			work_fields[field_key][row[4]]['subfields'] = [row[6],]
-##			work_fields[field_key][row[4]]['fixed'] = [row[5],]
-##	else:
-##		work_fields[field_key] = {row[4]:{'subfields':[row[6],],
-##						  'fixed':[row[5],]}}
-
-
-    
+        entity = entity_filter(row[9])
+        role = role_filter(row[10])
+        if not marc_fields.has_key(marc_field):
+            marc_fields[marc_field] = {entity:{role:dict()}}
+        else:
+            if not marc_fields[marc_field].has_key(entity):
+                marc_fields[marc_field][entity] = {role:dict()}
+            else:
+                if not marc_fields[marc_field][entity].has_key(role):
+                    marc_fields[marc_field][entity][role] = dict()
+        if subfield != 'n/a':
+            if marc_fields[marc_field][entity][role].has_key('subfields'):
+                marc_fields[marc_field][entity][role]['subfields'].append((subfield,marc_desc))
+            else:
+                marc_fields[marc_field][entity][role]['subfields'] = [(subfield,marc_desc),]
+        if fixed_pos != 'n/a':
+            if marc_fields[marc_field][entity][role].has_key('fixed'):
+                if marc_fields[marc_field][entity][role]['fixed'].has_key(marc_desc):
+                    marc_fields[marc_field][entity][role]['fixed'][marc_desc].add(fixed_pos)
+                else:
+                    marc_fields[marc_field][entity][role]['fixed'][marc_desc] = set([fixed_pos,])
+            else:
+                marc_fields[marc_field][entity][role]['fixed'] = {marc_desc:set([fixed_pos,])}
+         

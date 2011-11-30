@@ -13,7 +13,7 @@ try:
     REDIS_PORT = config.REDIS_PORT
     REDIS_DB = config.REDIS_DB
 except ImportError:
-    REDIS_HOST = '192.168.64.128'
+    REDIS_HOST = '127.0.0.1'
     REDIS_PORT = 6379
     REDIS_DB = 0
 
@@ -64,6 +64,13 @@ def load_rdf_skos(redis_key,rdf_url):
     redis_server.save()
 
 def get_python_classname(raw_classname):
+    """
+    Helper function creates valid Python class name for
+    dynamic class creation at runtime.
+
+    :param raw_classname: String from parsed data structure
+    :rtype string: Valid Python class name
+    """
     class_name = raw_classname.replace(" ","")
     class_name = class_name.replace("-","")
     return class_name
