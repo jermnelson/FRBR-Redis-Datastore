@@ -8,9 +8,13 @@ import os,sys,time
 import threading,re
 import Queue,pymarc,redis
 
-sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
-sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\lib\\'))
-sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\maps\\'))
+#sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
+#sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\lib\\'))
+#sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\maps\\'))
+sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/'))
+sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/lib/'))
+sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/maps/'))
+
 
 import config,frbr,frbr_maps
 
@@ -203,19 +207,22 @@ def ItemExpansion(params):
 
 if __name__ == '__main__':
     start = time.time()
-    marc_reader = pymarc.MARCReader(open('C:\\Users\\jernelson\\Development\\ccweb.mrc','rb'))
+    #marc_reader = pymarc.MARCReader(open('C:\\Users\\jernelson\\Development\\ccweb.mrc','rb'))
+    marc_reader = pymarc.MARCReader(open('/home/jpnelson//tutt-all.mrc','rb'))
+
     total_records = 0
     for i,r in enumerate(marc_reader):
-        new_thread = MARCRecordImport(record_queue)
-        new_thread.setDaemon(True)
-        new_thread.start()
-        record_queue.put(r)
+        new_thread = MARCRecordImport(record_queue,r)
+        new_thread.process_record()
+        #new_thread.setDaemon(True)
+        #new_thread.start()
+        #record_queue.put(r)
         total_records += 1
         if not i%1000:
             sys.stderr.write(".")
         if not i%10000:
-            sys.stderr.write(i)
-    record_queue.join()
+            sys.stderr.write(str(i))
+    #record_queue.join()
     print("\n%s Records processed in %s" % (total_records,time.time() - start))
     
     
