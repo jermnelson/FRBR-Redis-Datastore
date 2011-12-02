@@ -8,7 +8,7 @@ __author__ = 'Jeremy Nelson'
 
 from lxml import etree
 import maps.marc2skos as marc2skos
-import unittest
+import unittest,logging
 import namespaces as ns
 
 
@@ -95,6 +95,31 @@ class TestCreateFixed(unittest.TestCase):
 
     def tearDown(self):
         pass
+
+class TestCreateSKOS(unittest.TestCase):
+
+    def setUp(self):
+        results = marc2skos.parse_csv_frbr(raw_rows)
+        self.expression_skos_rdf =  marc2skos.create_skos(results[0],'Expression')
+        self.item_skos_rdf = marc2skos.create_skos(results[1],'Item')
+        self.manifestation_skos_rdf = marc2skos.create_skos(results[2],'Manifestation')
+        self.work_skos_rdf = marc2skos.create_skos(results[3],'Work')
+
+    def test_expression_skos(self):
+        pass
+
+    def test_item_skos(self):
+        pass
+
+    def test_manifestation_skos(self):
+        pass
+
+    def test_work_skos(self):
+        pass
+
+    def tearDown(self):
+        pass
+
         
 class TestCreateSubfield(unittest.TestCase):
 
@@ -134,6 +159,143 @@ class TestCreateSubfield(unittest.TestCase):
     def tearDown(self):
         pass
 
+class TestGetMARCMap(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+    def test_row_one(self):
+        rows = raw_rows[0].split(",")
+        marc_map = marc2skos.get_marc_map(rows)
+        self.assert_(not marc_map['indicator-flag'])
+        self.assertEquals(marc_map['marc-tag'],
+                          "007Proj")
+        self.assertEquals(marc_map['field-name'],
+                          "007Proj")
+        self.assertEquals(marc_map['subfield'],
+                          'n/a')
+        self.assertEquals(marc_map['position'],
+                          '05')
+        self.assertEquals(marc_map['data element'],
+                          "Sound on medium or separate")
+        self.assert_(len(marc_map['additional-info']) < 1)
+        self.assertEquals(marc_map['entity-role'],
+                          'sound characteristic')
+                          
+                          
+    def test_row_two(self):
+        rows = raw_rows[1].split(",")
+        marc_map = marc2skos.get_marc_map(rows)
+        self.assert_(not marc_map['indicator-flag'])
+        self.assertEquals(marc_map['marc-tag'],
+                          "505")
+        self.assertEquals(marc_map['field-name'],
+                          "505")
+        self.assertEquals(marc_map['subfield'],
+                          'g')
+        self.assertEquals(marc_map['position'],
+                          'n/a')
+        self.assertEquals(marc_map['data element'],
+                          "Miscellaneous information")
+        self.assert_(len(marc_map['additional-info']) < 1)
+        self.assertEquals(marc_map['entity-role'],
+                          'summarization of content')        
+                          
+    def test_row_three(self):
+        rows = raw_rows[2].split(",")
+        marc_map = marc2skos.get_marc_map(rows)
+        self.assert_(marc_map['indicator-flag'])
+        self.assertEquals(marc_map['marc-tag'],
+                          "046")
+        self.assertEquals(marc_map['field-name'],
+                          "046")
+        self.assertEquals(marc_map['subfield'],
+                          'm')
+        self.assertEquals(marc_map['position'],
+                          'n/a')
+        self.assertEquals(marc_map['data element'],
+                          "Beginning of date valid")
+        self.assert_(len(marc_map['additional-info']) < 1)
+        self.assertEquals(marc_map['entity-role'],
+                          'date of publication distribution')
+
+    def test_row_four(self):
+        rows = raw_rows[3].split(",")
+        marc_map = marc2skos.get_marc_map(rows)
+        self.assert_(marc_map['indicator-flag'])
+        self.assertEquals(marc_map['marc-tag'],
+                          "100")
+        self.assertEquals(marc_map['field-name'],
+                          "100")
+        self.assertEquals(marc_map['subfield'],
+                          '4')
+        self.assertEquals(marc_map['position'],
+                          'n/a')
+        self.assertEquals(marc_map['data element'],
+                          "Relator code")
+        self.assert_(len(marc_map['additional-info']) < 1)
+        self.assertEquals(marc_map['entity-role'],
+                          'relationship')
+        
+    def test_row_five(self):
+        rows = raw_rows[4].split(",")
+        marc_map = marc2skos.get_marc_map(rows)
+        self.assert_(not marc_map['indicator-flag'])
+        self.assertEquals(marc_map['marc-tag'],
+                          "811")
+        self.assertEquals(marc_map['field-name'],
+                          "811")
+        self.assertEquals(marc_map['subfield'],
+                          'e')
+        self.assertEquals(marc_map['position'],
+                          'n/a')
+        self.assertEquals(marc_map['data element'],
+                          "Subordinate unit")
+        self.assert_(len(marc_map['additional-info']) < 1)
+        self.assertEquals(marc_map['entity-role'],
+                          'name of corporate body')
+
+    def test_row_six(self):
+        rows = raw_rows[5].split(",")
+        marc_map = marc2skos.get_marc_map(rows)
+        self.assert_(not marc_map['indicator-flag'])
+        self.assertEquals(marc_map['marc-tag'],
+                          "876")
+        self.assertEquals(marc_map['field-name'],
+                          "876")
+        self.assertEquals(marc_map['subfield'],
+                          'b')
+        self.assertEquals(marc_map['position'],
+                          'n/a')
+        self.assertEquals(marc_map['data element'],
+                          "Invalid or cancelled internal")
+        self.assert_(len(marc_map['additional-info']) < 1)
+        self.assertEquals(marc_map['entity-role'],
+                          'item identifier')
+
+
+    def test_row_five(self):
+        rows = raw_rows[5].split(",")
+        marc_map = marc2skos.get_marc_map(rows)
+        self.assert_(not marc_map['indicator-flag'])
+        self.assertEquals(marc_map['marc-tag'],
+                          "876")
+        self.assertEquals(marc_map['field-name'],
+                          "876")
+        self.assertEquals(marc_map['subfield'],
+                          'b')
+        self.assertEquals(marc_map['position'],
+                          'n/a')
+        self.assertEquals(marc_map['data element'],
+                          "Invalid or cancelled internal")
+        self.assert_(len(marc_map['additional-info']) < 1)
+        self.assertEquals(marc_map['entity-role'],
+                          'item identifier')
+
+        
+    def tearDown(self):
+        pass
+
 class TestNormalizeRole(unittest.TestCase):
 
     def setUp(self):
@@ -145,7 +307,7 @@ class TestNormalizeRole(unittest.TestCase):
 
     def test_distribution(self):
         self.assertEquals(marc2skos.normalize_role("Date of publication/distrib."),
-                          'date of publication/distribution')
+                          'date of publication distribution')
     def test_lower(self):
         self.assertEquals(marc2skos.normalize_role("Relator"),
                           "relator")
@@ -155,10 +317,22 @@ class TestNormalizeRole(unittest.TestCase):
                           'role of expression')
         self.assertEquals(marc2skos.normalize_role('form of work+'),
                           'form of work')
-        
 
-    
-        
+    def tearDown(self):
+        pass
+
+
+class TestParseCSVtoFRBR(unittest.TestCase):
+
+    def setUp(self):
+        results = marc2skos.parse_csv_frbr(raw_rows)
+        self.expression_lst = results[0]
+        self.item_lst = results[1]
+        self.manifestation_lst = results[2]
+        self.work_lst = results[3]
+
+    def test_work_list(self):
+        self.assert_(self.work_lst)
 
     def tearDown(self):
         pass

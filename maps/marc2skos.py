@@ -19,8 +19,8 @@ ITEM_RE = re.compile(r"[I|i]em*")
 MANIFESTATION_RE = re.compile(r"[M|m]anifestation*")
 WORK_RE = re.compile(r"[W|w]ork*")
 FIXED_POS_RE = re.compile(r"(\d+)-(\d+)")
-ROLE_RE = re.compile(r"[\[]*(\w+)[\*|\]|\+]")
-DISTRIB_RE = re.compile(r"(distrib.)")
+ROLE_RE = re.compile(r"(\w+)")
+DISTRIB_RE = re.compile(r"(distrib).*")
 
 
 def create_concept(parent_element,**kwargs):
@@ -149,6 +149,10 @@ def get_marc_map(row):
     :param row: List of MARC21 to entity and role mapping
     :rtype dict:
     """
+    for i,field in enumerate(row):
+        field = field.replace('"','')
+        field = field.replace("\x85",'')
+        row[i] = field
     return {'indicator-flag':bool(row[0]),
             'marc-tag':row[3],
             'field-name':row[4],
@@ -167,22 +171,33 @@ def normalize_role(role):
     :param role: Raw role from mapping csv
     :rtype string: Returns a normalized version of the entity's role
     """
-    role_regex = ROLE_RE.search(role)
+    normalized_str = ''
+    role_regex = ROLE_RE.findall(role)
     if role_regex is not None:
-        role = role_regex.groups()[0]
-    role = role.lower()
-    distrib_regex = DISTRIB_RE.search(role)
+        for term in role_regex:
+            normalized_str += ' %s' % term
+    if len(normalized_str) < 1:
+        normalized_str = role.lower()
+    else:
+        normalized_str = normalized_str.lower()
+    distrib_regex = DISTRIB_RE.search(normalized_str)
     if distrib_regex is not None:
-        role = DISTRIB_RE.sub('distribution',role)
-    return role
+        normalized_str = DISTRIB_RE.sub('distribution',normalized_str)
+    return normalized_str.strip()
         
     
+def parse_csv_frbr(raw_rows):
+    """
+    Takes a list of csv fields, assigns values to four dicts for FRBR Level
+    entities of Work,Expression,Manifestation, and Item using regular
+    expressions.
 
-if __name__ == '__main__':
-    print("Starting marc2skos utility")
-    marc_to_frbr = urllib2.urlopen(LOC_MARC_FUNC_CSV).read().split("\n")
+    :param raw_rows: String with common-separated fields
+    :rtype tuple: Returns a four element tuple with each element being a
+                  list of fields for a level one entity
+    """
     expr_lst,item_lst,manf_lst,work_lst = [],[],[],[]
-    for i,row in enumerate(marc_to_frbr):
+    for i,row in enumerate(raw_rows):
         row = row.replace('"','')
         rec = row.split(",")
         if len(rec) < 5:
@@ -200,6 +215,12 @@ if __name__ == '__main__':
             sys.stderr.write(str("."))
         else:
             sys.stderr.write(i)
+    return expr_lst,item_lst,manf_lst,work_lst
+        
+if __name__ == '__main__':
+    print("Starting marc2skos utility")
+    marc_to_frbr = urllib2.urlopen(LOC_MARC_FUNC_CSV).read().split("\n")
+    expr_lst,item_lst,manf_lst,work_lst = parse_csv_frbr(marc_to_frbr)
     print("Creating SKOS for entities")
     work_skos = create_skos(work_lst,'Work')
     print etree.tostring(work_skos)
