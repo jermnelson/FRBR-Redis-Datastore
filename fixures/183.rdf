@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<rdf:RDF
+    xmlns="http://www.w3.org/2004/02/skos/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:reg="http://metadataregistry.org/uri/schema/registry/">
+
+<!-- Scheme: MARC21-007: Category of material -->
+    <skos:ConceptScheme rdf:about="http://marc21rdf.info/terms/cat#">
+        <dc:title>MARC21-007: Category of material</dc:title>
+    </skos:ConceptScheme>
+
+<!-- Concept: electronic resource  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#c" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3486"/>
+				<skos:prefLabel xml:lang="en">electronic resource</skos:prefLabel>
+				<skos:definition xml:lang="en">Involves a medium intended to be used or processed by a computer.</skos:definition>
+				<skos:notation xml:lang="en">c</skos:notation>
+		</skos:Concept>
+<!-- Concept: globe  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#d" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3487"/>
+				<skos:prefLabel xml:lang="en">globe</skos:prefLabel>
+				<skos:definition xml:lang="en">The model of a celestial body, usually the earth or the celestial sphere, depicted on the surface of a sphere.</skos:definition>
+				<skos:notation xml:lang="en">d</skos:notation>
+		</skos:Concept>
+<!-- Concept: kit  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#o" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3493"/>
+				<skos:prefLabel xml:lang="en">kit</skos:prefLabel>
+				<skos:definition xml:lang="en">A mixture of various components issued as a unit and intended primarily for instructional purposes. No one component is identifiable as the predominant component of the item.</skos:definition>
+				<skos:notation xml:lang="en">o</skos:notation>
+				<skos:scopeNote xml:lang="en">Examples are packages of assorted materials, such as a set of K-12 social studies curriculum material (books, workbooks, guides, activities, etc.), or packages of educational test materials (tests, answer sheets, scoring guides, score charts, interpretative manuals, etc.).</skos:scopeNote>
+		</skos:Concept>
+<!-- Concept: map  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#a" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3485"/>
+				<skos:prefLabel xml:lang="en">map</skos:prefLabel>
+				<skos:definition xml:lang="en">Map</skos:definition>
+				<skos:notation xml:lang="en">a</skos:notation>
+				<skos:scopeNote xml:lang="en">Used for all cartographic materials except globes.</skos:scopeNote>
+		</skos:Concept>
+<!-- Concept: microform  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#h" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3490"/>
+				<skos:prefLabel xml:lang="en">microform</skos:prefLabel>
+				<skos:definition xml:lang="en">A generic term for any medium, transparent or opaque, bearing microimages. A microimage is a unit (e.g., a page) of textual, graphic, or computer-generated material that is contained on aperture cards, microfiche, microfilm, micro-opaques, or other microformats and that is too small to be read without magnification.</skos:definition>
+				<skos:notation xml:lang="en">h</skos:notation>
+				<skos:scopeNote xml:lang="en">Microforms may be reproductions of existing textual or graphic materials or they may be original publications.</skos:scopeNote>
+		</skos:Concept>
+<!-- Concept: motion picture  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#m" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3492"/>
+				<skos:prefLabel xml:lang="en">motion picture</skos:prefLabel>
+				<skos:definition xml:lang="en">A series of still pictures on film, with or without sound, designed to be projected in rapid succession to produce the optical effect of motion.</skos:definition>
+				<skos:notation xml:lang="en">m</skos:notation>
+		</skos:Concept>
+<!-- Concept: nonprojected graphic  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#k" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3491"/>
+				<skos:prefLabel xml:lang="en">nonprojected graphic</skos:prefLabel>
+				<skos:definition xml:lang="en">A two-dimensional pictorial representation whether opaque (e.g., print, photoprint, drawing) or transparent, but not intended to be projected for viewing (e.g., a photographic negative).</skos:definition>
+				<skos:notation xml:lang="en">k</skos:notation>
+		</skos:Concept>
+<!-- Concept: notated music  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#q" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3494"/>
+				<skos:prefLabel xml:lang="en">notated music</skos:prefLabel>
+				<skos:definition xml:lang="en">Graphic, non-realized representations of musical works, both in printed and digitized manifestations.</skos:definition>
+				<skos:notation xml:lang="en">q</skos:notation>
+				<skos:scopeNote xml:lang="en">Includes musical scores and/or parts, diagrammatic representations, tablature, instructions for chance compositions, pictures or paintings intended as musical compositions, square note notation, klavirskribo, chant notation, neumes, braille, and other ways of representing the four components of musical sound: pitch, duration, timbre, and loudness. Notated music is often the means for communicating to the performer(s) how the musical work notated therein is to be realized in sound.</skos:scopeNote>
+		</skos:Concept>
+<!-- Concept: projected graphic  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#g" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3489"/>
+				<skos:prefLabel xml:lang="en">projected graphic</skos:prefLabel>
+				<skos:definition xml:lang="en">A two-dimensional representation intended to be projected without motion by means of an optical device.</skos:definition>
+				<skos:notation xml:lang="en">g</skos:notation>
+				<skos:scopeNote xml:lang="en">For example, a filmstrip, slide, or transparency (includes x-rays).</skos:scopeNote>
+		</skos:Concept>
+<!-- Concept: remote-sensing image  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#r" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3495"/>
+				<skos:prefLabel xml:lang="en">remote-sensing image</skos:prefLabel>
+				<skos:definition xml:lang="en">An image produced by a recording device that is not in physical or intimate contact with the object under study.</skos:definition>
+				<skos:notation xml:lang="en">r</skos:notation>
+				<skos:scopeNote xml:lang="en">Includes remote-sensing maps.</skos:scopeNote>
+		</skos:Concept>
+<!-- Concept: sound recording  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#s" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3496"/>
+				<skos:prefLabel xml:lang="en">sound recording</skos:prefLabel>
+				<skos:definition xml:lang="en">A disc, tape, film, cylinder, or wire on which sound vibrations have been registered so that the sound may be reproduced, or paper rolls on which the notes of a musical composition are represented by perforations in the paper and from which sound can be mechanically produced.</skos:definition>
+				<skos:notation xml:lang="en">s</skos:notation>
+		</skos:Concept>
+<!-- Concept: tactile material  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#f" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3488"/>
+				<skos:prefLabel xml:lang="en">tactile material</skos:prefLabel>
+				<skos:definition xml:lang="en">Material intended to be read or interpreted by touch.</skos:definition>
+				<skos:notation xml:lang="en">f</skos:notation>
+		</skos:Concept>
+<!-- Concept: text  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#t" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3497"/>
+				<skos:prefLabel xml:lang="en">text</skos:prefLabel>
+				<skos:definition xml:lang="en">Printed or manuscript language material that is accessible to the naked eye.</skos:definition>
+				<skos:notation xml:lang="en">t</skos:notation>
+				<skos:scopeNote xml:lang="en">E.g., a book, a pamphlet, a broadside.</skos:scopeNote>
+		</skos:Concept>
+<!-- Concept: unspecified  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#z" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3499"/>
+				<skos:prefLabel xml:lang="en">unspecified</skos:prefLabel>
+				<skos:definition xml:lang="en">Item is not identified by one of the other values or that its multiple physical forms are not being specifically denoted.</skos:definition>
+				<skos:notation xml:lang="en">z</skos:notation>
+		</skos:Concept>
+<!-- Concept: videorecording  -->
+		<skos:Concept rdf:about="http://marc21rdf.info/terms/cat#v" xml:lang="en">
+				<skos:inScheme rdf:resource="http://marc21rdf.info/terms/cat#"/>
+				<reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1001"/>
+				<reg:identifier rdf:resource="3498"/>
+				<skos:prefLabel xml:lang="en">videorecording</skos:prefLabel>
+				<skos:definition xml:lang="en">A recording on which visual images, usually in motion and accompanied by sound, have been registered.</skos:definition>
+				<skos:notation xml:lang="en">v</skos:notation>
+				<skos:scopeNote xml:lang="en">Designed for playback by means of a television set.</skos:scopeNote>
+		</skos:Concept>
+
+<!-- Status properties used in this document  -->
+    <skos:Concept rdf:about="http://metadataregistry.org/uri/RegStatus/1001">
+        <skos:prefLabel xml:lang="en">Published</skos:prefLabel>
+    </skos:Concept>
+
+</rdf:RDF>

@@ -8,12 +8,12 @@ import os,sys,time
 import threading,re
 import Queue,pymarc,redis
 
-#sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
-#sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\lib\\'))
-#sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\maps\\'))
-sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/'))
-sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/lib/'))
-sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/maps/'))
+sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
+sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\lib\\'))
+sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\maps\\'))
+##sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/'))
+##sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/lib/'))
+##sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/maps/'))
 
 
 import config,frbr,frbr_maps
@@ -207,9 +207,9 @@ def ItemExpansion(params):
 
 if __name__ == '__main__':
     start = time.time()
-    #marc_reader = pymarc.MARCReader(open('C:\\Users\\jernelson\\Development\\ccweb.mrc','rb'))
-    marc_reader = pymarc.MARCReader(open('/home/jpnelson//tutt-all.mrc','rb'))
-
+    marc_reader = pymarc.MARCReader(open('C:\\Users\\jernelson\\Development\\tutt-10-25-11.mrc','rb'))
+    #marc_reader = pymarc.MARCReader(open('../../tutt-10-25-11.mrc','rb'))
+    print("Starting MARCtoFRBR Redis Import at %s" % start)
     total_records = 0
     for i,r in enumerate(marc_reader):
         new_thread = MARCRecordImport(record_queue,r)

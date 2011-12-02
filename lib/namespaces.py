@@ -9,6 +9,7 @@ DCT = "http://purl.org/dc/terms/"
 DCTERMS = DCT 
 FOAF = "http://xmlns.com/foaf/0.1/"
 MARCREL = "http://www.loc.gov/loc.terms/relators/"
+MARCXML = "http://www.loc.gov/MARC21/slim"
 PGTERMS = "http://www.gutenberg.org/2009/pgterms/"
 OWL = "http://www.w3.org/2002/07/owl#"
 RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"

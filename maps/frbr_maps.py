@@ -27,7 +27,10 @@ class MARCFixedFieldMapping(object):
 
     def __init__(self,base_redis_key,rdf_url):
         self.notations = dict()
-        rdf_xml = etree.XML(urllib2.urlopen(rdf_url).read())
+        try:
+            rdf_xml = etree.XML(open(rdf_url,'r').read())
+        except IOError:
+            rdf_xml = etree.XML(urllib2.urlopen(rdf_url).read())
         redis_server.hset(base_redis_key,'source URL',rdf_url)
         all_concepts = rdf_xml.findall('{%s}Concept' % ns.SKOS)
         for concept in all_concepts:
@@ -55,24 +58,31 @@ class MARCFixedFieldMapping(object):
             return self.notations[notation]
         else:
             return None
-                
-marc006_form_of_material = MARCFixedFieldMapping('marc21:006:00',
-                                                 'http://metadataregistry.org/vocabulary/show/id/211.rdf')
 
+print("Creating MARCFixedFieldMapping instances for MARC 006 and MARC 007 fields")               
+##marc006_form_of_material = MARCFixedFieldMapping('marc21:006:00',
+##                                                 'http://metadataregistry.org/vocabulary/show/id/211.rdf')
 
+##print("...created %s" % marc006_form_of_material)
 
 marc007_categories = MARCFixedFieldMapping('marc21:007:00',
-                                           'http://metadataregistry.org/vocabulary/show/id/183.rdf')
+                                           '..\\fixures\\183.rdf')
+##
+print("...created %s" % marc007_categories)
+##
+##marc007_deterioration_stage = MARCFixedFieldMapping('%s:15' % marc007_categories.get_notation_key('m'),
+##                                                    'http://metadataregistry.org/vocabulary/show/id/199.rdf')
+##
+##print("...created %s" % marc007_deterioration_stage)
+##marc007_elect_mat_type = MARCFixedFieldMapping('%s:01' % marc007_categories.get_notation_key('c'),
+##                                              'http://metadataregistry.org/vocabulary/show/id/263.rdf')
+##
+##
+##print("...created %s" % marc007_elect_mat_type)
+##marc007_elect_dimensions = MARCFixedFieldMapping('%s:04' % marc007_categories.get_notation_key('c'),
+##                                                 'http://metadataregistry.org/vocabulary/show/id/200.rdf')
 
-marc007_deterioration_stage = MARCFixedFieldMapping('%s:15' % marc007_categories.get_notation_key('m'),
-                                                    'http://metadataregistry.org/vocabulary/show/id/199.rdf')
-
-marc007_elect_mat_type = MARCFixedFieldMapping('%s:01' % marc007_categories.get_notation_key('c'),
-                                              'http://metadataregistry.org/vocabulary/show/id/263.rdf')
-
-marc007_elect_dimensions = MARCFixedFieldMapping('%s:04' % marc007_categories.get_notation_key('c'),
-                                                 'http://metadataregistry.org/vocabulary/show/id/200.rdf')
-
+##print("...created %s" % marc007_elect_dimensions)
 
 class FRBRMap(object):
 
@@ -128,7 +138,7 @@ def role_filter(raw_role):
 
 marc_fields = dict()
                     
-
+print("Iterating through CSV file of MARC to FRBR mappings")
 for row in marc_to_frbr_lst:
     if len(row) < 5:
         pass
@@ -149,15 +159,21 @@ for row in marc_to_frbr_lst:
                     marc_fields[marc_field][entity][role] = dict()
         if subfield != 'n/a':
             if marc_fields[marc_field][entity][role].has_key('subfields'):
-                marc_fields[marc_field][entity][role]['subfields'].append((subfield,marc_desc))
+                marc_fields[marc_field][entity][role]['subfields'].append((subfield,marc_desc.decode('utf8','ignore')))
             else:
-                marc_fields[marc_field][entity][role]['subfields'] = [(subfield,marc_desc),]
+                marc_fields[marc_field][entity][role]['subfields'] = [(subfield,marc_desc.decode('utf8','ignore')),]
         if fixed_pos != 'n/a':
             if marc_fields[marc_field][entity][role].has_key('fixed'):
                 if marc_fields[marc_field][entity][role]['fixed'].has_key(marc_desc):
-                    marc_fields[marc_field][entity][role]['fixed'][marc_desc].add(fixed_pos)
+                    marc_fields[marc_field][entity][role]['fixed'][marc_desc].append(u'%s' % fixed_pos)
                 else:
-                    marc_fields[marc_field][entity][role]['fixed'][marc_desc] = set([fixed_pos,])
+                    marc_fields[marc_field][entity][role]['fixed'][marc_desc] = [u'%s' % fixed_pos,]
             else:
-                marc_fields[marc_field][entity][role]['fixed'] = {marc_desc:set([fixed_pos,])}
-         
+                marc_fields[marc_field][entity][role]['fixed'] = {marc_desc:[u'%s' % fixed_pos,]}
+
+print("Creating json file from marc_fields dictionary")
+##import json
+##marc_fields_file = open("C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\fixures\\marc2frbr.json","w")
+##json.dump(marc_fields,marc_fields_file)
+##marc_fields_file.close()
+##print("Finished FRBR maps processing")

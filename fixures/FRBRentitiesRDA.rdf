@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xml:base="http://rdvocab.info/uri/schema/FRBRentitiesRDA"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:reg="http://metadataregistry.org/uri/profile/RegAp/"
+  xmlns:status="http://metadataregistry.org/uri/RegStatus/">
+
+<!-- Element Set: FRBR Entities for RDA -->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA">
+  <dc:title xml:lang="en">FRBR Entities for RDA</dc:title>
+  <skos:note  xml:lang="en">Registration of FRBR entities for use in RDA.  </skos:note>
+</rdf:Description>
+
+<!-- Classes -->
+
+<!--Class: Agent-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Agent">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Agent</reg:name>
+  <rdfs:label xml:lang="en">Agent</rdfs:label>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <skos:scopeNote xml:lang="en">Based on FRBRoo concept of Agent.</skos:scopeNote>
+  <reg:hasSubClass rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Person" />
+  <reg:hasSubClass rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/CorporateBody" />
+  <reg:hasSubClass rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Family" />
+</rdf:Description>
+
+
+<!--Class: Concept-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Concept">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Concept</reg:name>
+  <rdfs:label xml:lang="en">Concept</rdfs:label>
+  <skos:definition xml:lang="en">An abstract notion or idea.</skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:subClassOf rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Subject" />
+</rdf:Description>
+
+
+<!--Class: Corporate Body-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/CorporateBody">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">CorporateBody</reg:name>
+  <rdfs:label xml:lang="en">Corporate Body</rdfs:label>
+  <skos:definition xml:lang="en">An organization or group of individuals and/or organizations acting as a unit.</skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:subClassOf rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Agent" />
+</rdf:Description>
+
+
+<!--Class: Event-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Event">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Event</reg:name>
+  <rdfs:label xml:lang="en">Event</rdfs:label>
+  <skos:definition xml:lang="en">An action or occurrence.</skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:subClassOf rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Subject" />
+</rdf:Description>
+
+
+<!--Class: Expression-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Expression</reg:name>
+  <rdfs:label xml:lang="en">Expression</rdfs:label>
+  <skos:definition xml:lang="en">The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.</skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+</rdf:Description>
+
+
+<!--Class: Family-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Family">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Family</reg:name>
+  <rdfs:label xml:lang="en">Family</rdfs:label>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:subClassOf rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Agent" />
+</rdf:Description>
+
+
+<!--Class: Item-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Item</reg:name>
+  <rdfs:label xml:lang="en">Item</rdfs:label>
+  <skos:definition xml:lang="en">A single exemplar of a manifestation. </skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+</rdf:Description>
+
+
+<!--Class: Manifestation-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Manifestation</reg:name>
+  <rdfs:label xml:lang="en">Manifestation</rdfs:label>
+  <skos:definition xml:lang="en">The physical embodiment of an expression of a work. </skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+</rdf:Description>
+
+
+<!--Class: Name-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Name">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Name</reg:name>
+  <rdfs:label xml:lang="en">Name</rdfs:label>
+  <skos:definition xml:lang="en">A word, character, or group of words and/or characters by which a person, family, or corporate body is known.</skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+</rdf:Description>
+
+
+<!--Class: Object-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Object">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Object</reg:name>
+  <rdfs:label xml:lang="en">Object</rdfs:label>
+  <skos:definition xml:lang="en">A material thing.</skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:subClassOf rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Subject" />
+</rdf:Description>
+
+
+<!--Class: Person-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Person">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Person</reg:name>
+  <rdfs:label xml:lang="en">Person</rdfs:label>
+  <skos:definition xml:lang="en">An individual.</skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:subClassOf rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Agent" />
+</rdf:Description>
+
+
+<!--Class: Place-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Place">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Place</reg:name>
+  <rdfs:label xml:lang="en">Place</rdfs:label>
+  <skos:definition xml:lang="en">A location.</skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:subClassOf rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Subject" />
+</rdf:Description>
+
+
+<!--Class: Subject-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Subject">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Subject</reg:name>
+  <rdfs:label xml:lang="en">Subject</rdfs:label>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <reg:hasSubClass rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Concept" />
+  <reg:hasSubClass rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Place" />
+  <reg:hasSubClass rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Event" />
+  <reg:hasSubClass rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Object" />
+</rdf:Description>
+
+
+<!--Class: Work-->
+<rdf:Description rdf:about="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work">
+  <rdfs:isDefinedBy rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA" />
+  <reg:status rdf:resource="http://metadataregistry.org/uri/RegStatus/1002" />
+  <reg:name xml:lang="en">Work</reg:name>
+  <rdfs:label xml:lang="en">Work</rdfs:label>
+  <skos:definition xml:lang="en">A distinct intellectual or artistic creation. </skos:definition>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+</rdf:Description>
+
+
+<!-- Status properties used in this document  -->
+    <skos:Concept rdf:about="http://metadataregistry.org/uri/RegStatus/1002">
+        <skos:prefLabel xml:lang="en">New-Proposed</skos:prefLabel>
+    </skos:Concept>
+</rdf:RDF>
