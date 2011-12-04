@@ -106,16 +106,17 @@ class TestCreateSKOS(unittest.TestCase):
         self.work_skos_rdf = marc2skos.create_skos(results[3],'Work')
 
     def test_expression_skos(self):
-        pass
+        expression_xml = etree.tostring(self.expression_skos_rdf)
 
     def test_item_skos(self):
-        pass
+        item_xml = etree.tostring(self.item_skos_rdf)
 
     def test_manifestation_skos(self):
-        pass
+        manifestation_xml = etree.tostring(self.manifestation_skos_rdf)
+        print(manifestation_xml)
 
     def test_work_skos(self):
-        pass
+       work_xml = etree.tostring(self.work_skos_rdf) 
 
     def tearDown(self):
         pass

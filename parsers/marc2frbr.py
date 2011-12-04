@@ -204,31 +204,24 @@ def ItemExpansion(params):
                             [frbr_maps.marc006_form_of_material.get_notation_key(params['condition']),]
     return params
         
+def process_marc_file(marc_file):
+    """
+    Function takes a MARC21 file and iterates through each record applying mapping and expansion 
+    logic to import into a Redis datastore.
+
+    :param marc_file: MARC21 file format
+    """
+    marc_reader = pymarc.MARCReader(open(marc_file,'rb'))
+    total_records = 0
+    start = time.time()
+    print("Starting MARCtoFRBR Redis Import at %s" % start)
+    for record in marc_reader:
+        record_import = MARCRecordImport(record_queue,record)
+        if not total_records%1000:
+            sys.stderr.write(str("."))
+        if not i%10000:
+            sys.stderr.write(str(total_records))
+    print("\n%s Records processed in %s" % (total_records,time.time() - start))
 
 if __name__ == '__main__':
-    start = time.time()
-    marc_reader = pymarc.MARCReader(open('C:\\Users\\jernelson\\Development\\tutt-10-25-11.mrc','rb'))
-    #marc_reader = pymarc.MARCReader(open('../../tutt-10-25-11.mrc','rb'))
-    print("Starting MARCtoFRBR Redis Import at %s" % start)
-    total_records = 0
-    for i,r in enumerate(marc_reader):
-        new_thread = MARCRecordImport(record_queue,r)
-        new_thread.process_record()
-        #new_thread.setDaemon(True)
-        #new_thread.start()
-        #record_queue.put(r)
-        total_records += 1
-        if not i%1000:
-            sys.stderr.write(".")
-        if not i%10000:
-            sys.stderr.write(str(i))
-    #record_queue.join()
-    print("\n%s Records processed in %s" % (total_records,time.time() - start))
-    
-    
-                
-                
-            
-            
-
-    
+   process_marc_record("../fixures/ccweb.mrc") 

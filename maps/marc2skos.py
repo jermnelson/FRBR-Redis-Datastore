@@ -120,6 +120,8 @@ def create_skos(marc_mappings,entity,spec='frbr'):
                                                                            entity,
                                                                            marc_map['entity-role']),
                                   'marc-tag':marc_map['marc-tag'][0:3],
+                                  'fixed':marc_map['position'],
+                                  'subfield':marc_map['subfield'], 
                                   'scheme':scheme})
     return rdf_xml
 
@@ -214,7 +216,7 @@ def parse_csv_frbr(raw_rows):
         if i%100:
             sys.stderr.write(str("."))
         else:
-            sys.stderr.write(i)
+            sys.stderr.write(str(i))
     return expr_lst,item_lst,manf_lst,work_lst
         
 if __name__ == '__main__':
