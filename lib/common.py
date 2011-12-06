@@ -4,7 +4,7 @@
 __author__ = 'Jeremy Nelson'
 
 import urllib2,os,logging
-import redis
+import sys,redis
 import namespaces as ns
 from lxml import etree
 try:
@@ -27,6 +27,7 @@ def create_key_from_url(raw_url):
     as a Redis key.
 
     :param raw_url: Raw url to extract key, required
+    :rtype: String
     """
     org_url = urllib2.urlparse.urlparse(raw_url)
     new_key = ''
@@ -42,6 +43,9 @@ def create_key_from_url(raw_url):
 def load_rdf_skos(redis_key,rdf_url):
     """
     Loads skos:ConceptSchema coded in RDF from a URL
+
+    :param redis_key: Base Redis key
+    :param rdf_url: URL to RDF document
     """
     raw_rdf = urllib2.urlopen(rdf_url).read()
     skos_rdf = etree.XML(raw_rdf)
@@ -80,13 +84,19 @@ def load_dynamic_classes(rdf_url,redis_prefix,current_module):
     Function takes an URL to an RDF file, parses out and creates
     classes based on the rdfs:Class element.
 
-    :param rdf_url: URL to the RDF file
+    :param rdf_url: URL or file location to the RDF file
     :param current_module: Current module
     """
     ns_map = {'rdf':'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
               'rdfs':'http://www.w3.org/2000/01/rdf-schema#',
               'xml':'http://www.w3.org/XML/1998/namespace'}
-    raw_rdf = urllib2.urlopen(rdf_url).read()
+    try:
+        raw_rdf = urllib2.urlopen(rdf_url).read()
+    except ValueError:
+        raw_rdf = open(rdf_url,"r").read()
+    finally:
+        print("Error %s loading %s" % (sys.exc_info(),
+                                       rdf_url))
     rdf = etree.XML(raw_rdf)
     all_classes = rdf.findall('{%s}Class' % ns.RDFS)
     for rdf_class in all_classes:
