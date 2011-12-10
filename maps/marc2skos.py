@@ -220,12 +220,49 @@ def parse_csv_frbr(raw_rows):
     return expr_lst,item_lst,manf_lst,work_lst
         
 if __name__ == '__main__':
+    import os
+    os.chdir("maps")
     print("Starting marc2skos utility")
     marc_to_frbr = urllib2.urlopen(LOC_MARC_FUNC_CSV).read().split("\n")
     expr_lst,item_lst,manf_lst,work_lst = parse_csv_frbr(marc_to_frbr)
     print("Creating SKOS for entities")
     work_skos = create_skos(work_lst,'Work')
-    print etree.tostring(work_skos)
+    work_filename ="frbr-work-map-skos.rdf" 
+    work_fo = open(work_filename,"wb")
+    print("...Saving Work skos to %s" % work_filename)
+    work_fo.write(etree.tostring(work_skos,
+                                 encoding="utf-8",
+                                 pretty_print=True,
+                                 xml_declaration=True))
+    work_fo.close()
+    expr_skos = create_skos(expr_lst,'Expression')
+    expr_filename = "frbr-expression-map-skos.rdf"
+    expr_fo = open(expr_filename,"wb")
+    print("...Saving Expression skos to %s" % expr_filename)
+    expr_fo.write(etree.tostring(expr_skos,
+                                 encoding="utf-8",
+                                 pretty_print=True,
+                                 xml_declaration=True))
+    expr_fo.close()
+    manf_skos = create_skos(manf_lst,"Manifestation")
+    manf_filename = "frbr-manifestation-map-skos.rdf"
+    manf_fo = open(manf_filename,"wb")
+    print("...Saving Manifestation skos to %s" % manf_filename)
+    manf_fo.write(etree.tostring(manf_skos,
+                                 encoding="utf-8",
+                                 pretty_print=True,
+                                 xml_declaration=True))
+    manf_fo.close()
+    item_skos = create_skos(item_lst,"Item")
+    item_filename = "frbr-item-map-skos.rdf"
+    item_fo = open(item_filename,"wb")
+    print("...Saving Item skos to %s" % item_filename)
+    item_fo.write(etree.tostring(item_skos,
+                                 encoding="utf-8",
+                                 pretty_print=True,
+                                 xml_declaration=True))
+    item_fo.close()
+    print("Finished marc2skos utility")
     
                                 
     

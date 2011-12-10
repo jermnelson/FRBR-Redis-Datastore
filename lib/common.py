@@ -92,7 +92,7 @@ def load_dynamic_classes(rdf_url,redis_prefix,current_module):
               'xml':'http://www.w3.org/XML/1998/namespace'}
     try:
         raw_rdf = urllib2.urlopen(rdf_url).read()
-    except ValueError:
+    except urllib2.URLError:
         raw_rdf = open(rdf_url,"r").read()
     finally:
         print("Error %s loading %s" % (sys.exc_info(),

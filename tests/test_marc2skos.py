@@ -113,7 +113,7 @@ class TestCreateSKOS(unittest.TestCase):
 
     def test_manifestation_skos(self):
         manifestation_xml = etree.tostring(self.manifestation_skos_rdf)
-        print(manifestation_xml)
+        
 
     def test_work_skos(self):
        work_xml = etree.tostring(self.work_skos_rdf) 

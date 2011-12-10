@@ -4,11 +4,16 @@
 """
 __author__ = 'Jeremy Nelson'
 
-import sys
+import sys,os
 import common
 import namespaces as ns
 
-FRBRentitiesRDA_rdf = "../fixures/FRBRentitiesRDA.rdf"
+fixures_root = os.path.abspath('../frbr-redis-datastore/fixures')
+
+FRBRentitiesRDA_rdf = os.path.join(fixures_root,
+                                   "FRBRentitiesRDA.rdf")
+RDARelationshipsWEMI_rdf = os.path.join(fixures_root,
+                                        "RDARelationshipsWEMI.rdf")
 
 current_module = sys.modules[__name__]
 
