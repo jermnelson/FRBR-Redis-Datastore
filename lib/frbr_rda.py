@@ -17,6 +17,7 @@ RDARelationshipsWEMI_rdf = os.path.join(fixures_root,
 
 current_module = sys.modules[__name__]
 
-common.load_dynamic_classes(FRBRentitiesRDA_rdf,
-                            'frbr',
-                            current_module)
+common.load_rda_classes(FRBRentitiesRDA_rdf,
+                        RDARelationshipsWEMI_rdf,
+                        'frbr_rda',
+                        current_module)

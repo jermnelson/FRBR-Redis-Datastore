@@ -92,7 +92,7 @@ def load_dynamic_classes(rdf_url,redis_prefix,current_module):
               'xml':'http://www.w3.org/XML/1998/namespace'}
     try:
         raw_rdf = urllib2.urlopen(rdf_url).read()
-    except urllib2.URLError:
+    except (urllib2.URLError,ValueError):
         raw_rdf = open(rdf_url,"r").read()
     finally:
         print("Error %s loading %s" % (sys.exc_info(),
@@ -148,7 +148,46 @@ def load_dynamic_classes(rdf_url,redis_prefix,current_module):
         setattr(current_module,class_name,new_class)
                         
         
-        
+def load_rda_classes(rda_frbr_file,
+                     rda_rel_file,
+                     redis_prefix,
+                     current_module):
+    """
+    RDA loading function, takes RDA RDF file and a RDA relationship file and 
+    creates python classes with properties.
+    
+    :param rda_frbr_file: FRBR entity RDA RDF file
+    :param rda_rel_file: RDA Properties RDF file
+    :param redis_prefix: Redis Prefix 
+    :param current_moduel: Current module
+    """
+    raw_rda_frbr = open(rda_frbr_file,'rb').read()
+    raw_rda_rel = open(rda_rel_file,'rb').read()
+    rda_frbr = etree.XML(raw_rda_frbr)
+    rda_rel = etree.XML(raw_rda_rel)
+    all_desc = rda_frbr.findall("{%s}Description" % ns.RDF)
+    for desc in all_desc:
+        rda_url = desc.get('{%s}about' % ns.RDF)
+        all_properties = rda_rel.findall('{%s}Description/{%s}domain[@{%s}resource="%s"]' % (ns.RDF,
+                                                                                             ns.RDFS,
+                                                                                             ns.RDF,
+                                                                                             rda_url))
+        reg_name = desc.find('{%s}name' % ns.REG)
+        if reg_name is not None:
+            class_name = reg_name.text
+            logging.error(class_name)
+            params = {'redis_key': '%s:%s' % (redis_prefix,
+                                              class_name)}
+            for prop in all_properties:
+                parent = prop.getparent()
+                label = parent.find('{%s}label' % ns.RDFS)
+                params[label.text] = None
+            #logging.error("Params = %s" % params)
+            new_class = type('%s' % class_name,
+                             (BaseModel,),
+                             params)
+            setattr(current_module,class_name,new_class)
+         
     
 class BaseModel(object):
     """
