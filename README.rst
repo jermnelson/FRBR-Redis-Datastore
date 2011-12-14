@@ -10,3 +10,9 @@ into native `Redis <http://redis.io/>`_ keys-values structured as
 `FRBR <http://www.ifla.org/publications/functional-requirements-for-bibliographic-records>`_, 
 `FRBRoo <http://www.cidoc-crm.org/frbr_inro.html>`_ and 
 `FRAD <http://www.ifla.org/publications/functional-requirements-for-authority-data>`_ entities.
+
+Dependencies
+^^^^^^^^^^^^
+* `Redis <http://redis.io/>`_
+* `Python <http://www.python.org>`_
+* `Python Redis Module <https://github.com/andymccurdy/redis-py>`_
