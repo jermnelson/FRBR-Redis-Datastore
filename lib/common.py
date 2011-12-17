@@ -149,7 +149,7 @@ def load_dynamic_classes(rdf_url,redis_prefix,current_module):
                         
         
 def load_rda_classes(rda_frbr_file,
-                     rda_rel_file,
+                     rda_rel_files,
                      redis_prefix,
                      current_module):
     """
@@ -157,21 +157,28 @@ def load_rda_classes(rda_frbr_file,
     creates python classes with properties.
     
     :param rda_frbr_file: FRBR entity RDA RDF file
-    :param rda_rel_file: RDA Properties RDF file
+    :param rda_rel_files: List of RDA Properties RDF files
     :param redis_prefix: Redis Prefix 
     :param current_moduel: Current module
     """
     raw_rda_frbr = open(rda_frbr_file,'rb').read()
-    raw_rda_rel = open(rda_rel_file,'rb').read()
     rda_frbr = etree.XML(raw_rda_frbr)
-    rda_rel = etree.XML(raw_rda_rel)
+    rda_rels_xml = []
+    for filename in rda_rel_files:
+        raw_rda_rel = open(filename,'rb').read()
+        rda_rel = etree.XML(raw_rda_rel)
+        rda_rels_xml.append(rda_rel)
+    
     all_desc = rda_frbr.findall("{%s}Description" % ns.RDF)
     for desc in all_desc:
         rda_url = desc.get('{%s}about' % ns.RDF)
-        all_properties = rda_rel.findall('{%s}Description/{%s}domain[@{%s}resource="%s"]' % (ns.RDF,
-                                                                                             ns.RDFS,
-                                                                                             ns.RDF,
-                                                                                             rda_url))
+        all_properties = []
+        for rda_rel in rda_rels_xml:
+            rda_properties = rda_rel.findall('{%s}Description/{%s}domain[@{%s}resource="%s"]' % (ns.RDF,
+                                                                                                 ns.RDFS,
+                                                                                                 ns.RDF,
+                                                                                                 rda_url))
+            all_properties.extend(rda_properties)
         reg_name = desc.find('{%s}name' % ns.REG)
         if reg_name is not None:
             class_name = reg_name.text
