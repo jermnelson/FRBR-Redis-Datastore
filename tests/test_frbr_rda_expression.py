@@ -42,6 +42,25 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
         self.date_of_capture_key = "mods:dateCaptured:%s" % redis_server.incr("global:mods:dateCaptured")
         redis_server.hset(self.date_of_capture_key,"year","1945")
         self.date_of_expression_key = self.date_of_capture_key
+        self.duration_key = "mods:keyDate:%s" % redis_server.incr("global:mods:keyDate")
+        redis_server.hset(self.duration_key,
+                          "start",
+                          "1950")
+        redis_server.hset(self.duration_key,
+                          "end",
+                          "2010")
+        self.form_of_musical_notation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.form_of_musical_notation_key,"modern staff notation")
+        self.form_of_notated_movement_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.form_of_notated_movement_key,"Eshkol-Wachman Movement Notation")
+        self.form_of_notation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.form_of_tactile_notation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.format_of_notated_music_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.horizontal_scale_of_cartographic_content_key = "kvm:scale:%s" % redis_server.incr("global:kvm:scale")
+        redis_server.set(self.horizontal_scale_of_cartographic_content_key,"kilometers")
+        self.identifier_for_the_expression_key = "mods:identifier:%s" % redis_server.incr("global:mods:identifier")
+        self.illustrative_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.language_of_expression_key = "xml:lang:en"
         params = {'Accessibility content (Expression)':self.accessibility_content_key,
                   'Additional scale information (Expression)':self.additional_scale_information_key,
                   'Artistic and/or technical credit (Expression)':self.artistic_and_or_technical_credit_key,
@@ -55,7 +74,17 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
                   'Colour of three-dimensional form (Expression)':"black", 
                   'Content type (Expression)':self.content_type_key,
                   'Date of capture (Expression)':self.date_of_capture_key, 
-                  'Date of expression':self.date_of_expression_key}#, 'Duration (Expression)', 'Form of musical notation (Expression)', 'Form of notated movement (Expression)', 'Form of notation (Expression)', 'Form of tactile notation (Expression)', 'Format of notated music (Expression)', 'Horizontal scale of cartographic content (Expression)', 'Identifier for the expression', 'Illustrative content (Expression)', 'Language of expression', 'Language of the content (Expression)', 'Medium of performance of musical content (Expression)', 'Other details of cartographic content (Expression)', 'Other distinguishing characteristic of the expression', 'Performer, narrator, and/or presenter (Expression)', 'Place and date of capture (Expression)', 'Place of capture (Expression)', 'Projection of cartographic content (Expression)', 'Scale (Expression)', 'Scale of still image or three-dimensional form (Expression)', 'Script (Expression)', 'Sound content (Expression)', 'Source consulted (Expression)', 'Status of identification (Expression)', 'Summarization of the content (Expression)', 'Supplementary content (Expression)', 'Vertical scale of cartographic content (Expression)'}
+                  'Date of expression':self.date_of_expression_key,
+                  'Duration (Expression)':self.duration_key,
+                  'Form of musical notation (Expression)':self.form_of_musical_notation_key,
+                  'Form of notated movement (Expression)':self.form_of_notated_movement_key,
+                  'Form of notation (Expression)':self.form_of_notation_key,
+                  'Form of tactile notation (Expression)':self.form_of_tactile_notation_key,
+                  'Format of notated music (Expression)':self.format_of_notated_music_key,
+                  'Horizontal scale of cartographic content (Expression)':self.horizontal_scale_of_cartographic_content_key,
+                  'Identifier for the expression':self.identifier_for_the_expression_key,
+                  'Illustrative content (Expression)':self.illustrative_content_key,
+                  'Language of expression':self.language_of_expression_key}#, 'Language of the content (Expression)', 'Medium of performance of musical content (Expression)', 'Other details of cartographic content (Expression)', 'Other distinguishing characteristic of the expression', 'Performer, narrator, and/or presenter (Expression)', 'Place and date of capture (Expression)', 'Place of capture (Expression)', 'Projection of cartographic content (Expression)', 'Scale (Expression)', 'Scale of still image or three-dimensional form (Expression)', 'Script (Expression)', 'Sound content (Expression)', 'Source consulted (Expression)', 'Status of identification (Expression)', 'Summarization of the content (Expression)', 'Supplementary content (Expression)', 'Vertical scale of cartographic content (Expression)'}
         self.expression = frbr_rda.Expression(redis_server=redis_server,
                                               **params)
 
@@ -76,35 +105,54 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
                                                    'Additional scale information (Expression)')
         self.assertEquals(additional_scale_information_key,
                           self.additional_scale_information_key)
+        self.assertEquals(redis_server.hget(additional_scale_information_key,
+                                            "type"),
+                          "source dimensions")
 
     def test_artistic_and_or_technical_credit(self):
         artistic_and_or_technical_credit_key = getattr(self.expression,
                                                        'Artistic and/or technical credit (Expression)')
         self.assertEquals(self.artistic_and_or_technical_credit_key,
                           artistic_and_or_technical_credit_key)
+        self.assertEquals(redis_server.hget(artistic_and_or_technical_credit_key,
+                                            "frad:family"),
+                          "Wallace")
+        
 
     def test_aspect_ratio(self):
         aspect_ratio_key = getattr(self.expression,
                                   'Aspect ratio (Expression)')
         self.assertEquals(aspect_ratio_key,
                           self.aspect_ratio_key)
+        self.assertEquals(redis_server.get(aspect_ratio_key),
+                          "1:5")
 
     def test_award(self):
         award_key = getattr(self.expression,
                             'Award (Expression)')
         self.assertEquals(self.award_key,award_key)
+        self.assertEquals(redis_server.get(self.award_key),
+                          "Awarded first place")
 
     def test_cataloguers_note(self):
         cataloguers_note_key = getattr(self.expression,
                                        "Cataloguer's note (Expression)")
         self.assertEquals(self.cataloguers_note_key, 
                           cataloguers_note_key)
+        self.assertEquals(redis_server.hget(cataloguers_note_key,
+                                            "type"),
+                          "bibliographic history")
+        self.assertEquals(redis_server.hget(cataloguers_note_key,
+                                            "value"),
+                          "Test Cataloguer's Note")
 
     def test_colour_content(self):
         colour_content_key = getattr(self.expression,
                                      'Colour content (Expression)')
         self.assertEquals(self.colour_content_key, 
                           colour_content_key)
+        self.assertEquals(redis_server.get(colour_content_key),
+                          "256 Colors")
 
     def test_colour_content_resource(self):
         self.assertEquals(getattr(self.expression,
@@ -131,18 +179,94 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
                                    'Content type (Expression)')
         self.assertEquals(self.content_type_key,
                           content_type_key)
+        self.assertEquals(redis_server.get(self.content_type_key),
+                          "hypertext transfer protocol")
 
     def test_date_of_capture(self):
         date_of_capture_key = getattr(self.expression,
                                       'Date of capture (Expression)')
         self.assertEquals(self.date_of_capture_key, 
                           date_of_capture_key)
+        self.assertEquals(redis_server.hget(date_of_capture_key,
+                                            "year"),
+                          "1945")
 
     def test_date_of_expression(self):
         date_of_expression_key = getattr(self.expression,
                                          'Date of expression')
         self.assertEquals(self.date_of_expression_key,
                           date_of_expression_key)
+        self.assertEquals(redis_server.hget(date_of_expression_key,
+                                            "year"),
+                          "1945")
+
+    
+                          
+    def test_duration_key(self):
+        duration_key = getattr(self.expression,
+                               'Duration (Expression)')
+        self.assertEquals(duration_key,self.duration_key)
+        self.assertEquals(redis_server.hget(duration_key,
+                                            "start"),
+                          "1950")
+        self.assertEquals(redis_server.hget(duration_key,
+                                            "end"),
+                          "2010")
+
+    def test_form_of_musical_notation(self):
+        form_of_musical_notation_key = getattr(self.expression,
+                                               'Form of musical notation (Expression)')
+        self.assertEquals(self.form_of_musical_notation_key,
+                          form_of_musical_notation_key)
+
+    def test_form_of_notated_movement(self):
+        form_of_notated_movement_key = getattr(self.expression,
+                                               'Form of notated movement (Expression)')
+        self.assertEquals(self.form_of_notated_movement_key,
+                          form_of_notated_movement_key)
+
+    def test_form_of_notation(self):
+        form_of_notation_key = getattr(self.expression,
+                                       'Form of notation (Expression)')
+        self.assertEquals(self.form_of_notation_key,
+                          form_of_notation_key)
+
+    def test_form_of_tactile_notation(self):
+        form_of_tactile_notation_key = getattr(self.expression,
+                                               'Form of tactile notation (Expression)')
+        self.assertEquals(self.form_of_tactile_notation_key,
+                          form_of_tactile_notation_key)
+
+    def test_format_of_notated_music(self):
+        format_of_notated_music_key = getattr(self.expression,
+                                              'Format of notated music (Expression)')
+        self.assertEquals(self.format_of_notated_music_key,
+                          format_of_notated_music_key)
+
+    def test_horizontal_scale_of_cartographic_content(self):
+        horizontal_scale_of_cartographic_content_key = getattr(self.expression,
+                                                               'Horizontal scale of cartographic content (Expression)')
+        self.assertEquals(self.horizontal_scale_of_cartographic_content_key,
+                          horizontal_scale_of_cartographic_content_key)
+
+    def test_identifier_for_the_expression(self):
+        identifier_for_the_expression_key = getattr(self.expression,
+                                                    'Identifier for the expression')
+        self.assertEquals(self.identifier_for_the_expression_key,
+                          identifier_for_the_expression_key)
+
+    def test_illustrative_content(self):
+        illustrative_content_key = getattr(self.expression,
+                                           'Illustrative content (Expression)')
+        self.assertEquals(self.illustrative_content_key,
+                          illustrative_content_key)
+
+    def test_language_of_expression(self):
+        language_of_expression_key = getattr(self.expression,
+                                             'Language of expression')
+        self.assertEquals(self.language_of_expression_key,
+                          language_of_expression_key)
+		
 
     def tearDown(self):
         redis_server.flushdb()
