@@ -19,7 +19,43 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
 
     def setUp(self):
         self.accessibility_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
-        params = {'Accessibility content (Expression)':self.accessibility_content_key}#, 'Additional scale information (Expression)', 'Artistic and/or technical credit (Expression)', 'Aspect ratio (Expression)', 'Award (Expression)', "Cataloguer's note (Expression)", 'Colour content (Expression)', 'Colour content of resource designed for persons with visual impairments (Expression)', 'Colour of moving images (Expression)', 'Colour of still image (Expression)', 'Colour of three-dimensional form (Expression)', 'Content type (Expression)', 'Date of capture (Expression)', 'Date of expression', 'Duration (Expression)', 'Form of musical notation (Expression)', 'Form of notated movement (Expression)', 'Form of notation (Expression)', 'Form of tactile notation (Expression)', 'Format of notated music (Expression)', 'Horizontal scale of cartographic content (Expression)', 'Identifier for the expression', 'Illustrative content (Expression)', 'Language of expression', 'Language of the content (Expression)', 'Medium of performance of musical content (Expression)', 'Other details of cartographic content (Expression)', 'Other distinguishing characteristic of the expression', 'Performer, narrator, and/or presenter (Expression)', 'Place and date of capture (Expression)', 'Place of capture (Expression)', 'Projection of cartographic content (Expression)', 'Scale (Expression)', 'Scale of still image or three-dimensional form (Expression)', 'Script (Expression)', 'Sound content (Expression)', 'Source consulted (Expression)', 'Status of identification (Expression)', 'Summarization of the content (Expression)', 'Supplementary content (Expression)', 'Vertical scale of cartographic content (Expression)'}
+        redis_server.set(self.accessibility_content_key,"Test Expression Accessibility")
+        self.additional_scale_information_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.additional_scale_information_key,
+                          "type",
+                          "source dimensions")
+        self.artistic_and_or_technical_credit_key = "frad:person:%s" % redis_server.incr("global:frad:person")
+        redis_server.hset(self.artistic_and_or_technical_credit_key,
+                          "frad:family",
+                          "Wallace")
+        self.aspect_ratio_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.aspect_ratio_key,"1:5")
+        self.award_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.award_key,"Awarded first place")
+        self.cataloguers_note_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.cataloguers_note_key,"type","bibliographic history")
+        redis_server.hset(self.cataloguers_note_key,"value","Test Cataloguer's Note")
+        self.colour_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.colour_content_key,"256 Colors")
+        self.content_type_key = "mime:type:HTTP"
+        redis_server.set(self.content_type_key,"hypertext transfer protocol")
+        self.date_of_capture_key = "mods:dateCaptured:%s" % redis_server.incr("global:mods:dateCaptured")
+        redis_server.hset(self.date_of_capture_key,"year","1945")
+        self.date_of_expression_key = self.date_of_capture_key
+        params = {'Accessibility content (Expression)':self.accessibility_content_key,
+                  'Additional scale information (Expression)':self.additional_scale_information_key,
+                  'Artistic and/or technical credit (Expression)':self.artistic_and_or_technical_credit_key,
+                  'Aspect ratio (Expression)':self.aspect_ratio_key, 
+                  'Award (Expression)':self.award_key, 
+                  "Cataloguer's note (Expression)":self.cataloguers_note_key, 
+                  'Colour content (Expression)':self.colour_content_key, 
+                  'Colour content of resource designed for persons with visual impairments (Expression)':"No",
+                  'Colour of moving images (Expression)':"Multiple", 
+                  'Colour of still image (Expression)':["green","blue"], 
+                  'Colour of three-dimensional form (Expression)':"black", 
+                  'Content type (Expression)':self.content_type_key,
+                  'Date of capture (Expression)':self.date_of_capture_key, 
+                  'Date of expression':self.date_of_expression_key}#, 'Duration (Expression)', 'Form of musical notation (Expression)', 'Form of notated movement (Expression)', 'Form of notation (Expression)', 'Form of tactile notation (Expression)', 'Format of notated music (Expression)', 'Horizontal scale of cartographic content (Expression)', 'Identifier for the expression', 'Illustrative content (Expression)', 'Language of expression', 'Language of the content (Expression)', 'Medium of performance of musical content (Expression)', 'Other details of cartographic content (Expression)', 'Other distinguishing characteristic of the expression', 'Performer, narrator, and/or presenter (Expression)', 'Place and date of capture (Expression)', 'Place of capture (Expression)', 'Projection of cartographic content (Expression)', 'Scale (Expression)', 'Scale of still image or three-dimensional form (Expression)', 'Script (Expression)', 'Sound content (Expression)', 'Source consulted (Expression)', 'Status of identification (Expression)', 'Summarization of the content (Expression)', 'Supplementary content (Expression)', 'Vertical scale of cartographic content (Expression)'}
         self.expression = frbr_rda.Expression(redis_server=redis_server,
                                               **params)
 
@@ -31,6 +67,82 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
                                             'Accessibility content (Expression)')
         self.assertEquals(self.accessibility_content_key,
                           accessibility_content_key)
+        self.assertEquals(redis_server.hget(self.additional_scale_information_key,
+                                            "type"),
+                          "source dimensions")
+      
+    def test_additional_scale_information(self):
+        additional_scale_information_key = getattr(self.expression,
+                                                   'Additional scale information (Expression)')
+        self.assertEquals(additional_scale_information_key,
+                          self.additional_scale_information_key)
+
+    def test_artistic_and_or_technical_credit(self):
+        artistic_and_or_technical_credit_key = getattr(self.expression,
+                                                       'Artistic and/or technical credit (Expression)')
+        self.assertEquals(self.artistic_and_or_technical_credit_key,
+                          artistic_and_or_technical_credit_key)
+
+    def test_aspect_ratio(self):
+        aspect_ratio_key = getattr(self.expression,
+                                  'Aspect ratio (Expression)')
+        self.assertEquals(aspect_ratio_key,
+                          self.aspect_ratio_key)
+
+    def test_award(self):
+        award_key = getattr(self.expression,
+                            'Award (Expression)')
+        self.assertEquals(self.award_key,award_key)
+
+    def test_cataloguers_note(self):
+        cataloguers_note_key = getattr(self.expression,
+                                       "Cataloguer's note (Expression)")
+        self.assertEquals(self.cataloguers_note_key, 
+                          cataloguers_note_key)
+
+    def test_colour_content(self):
+        colour_content_key = getattr(self.expression,
+                                     'Colour content (Expression)')
+        self.assertEquals(self.colour_content_key, 
+                          colour_content_key)
+
+    def test_colour_content_resource(self):
+        self.assertEquals(getattr(self.expression,
+                                  'Colour content of resource designed for persons with visual impairments (Expression)'),
+                          "No")
+
+    def test_colour_moving_images(self):
+        self.assertEquals(getattr(self.expression,
+                                  'Colour of moving images (Expression)'),
+                          "Multiple")
+
+    def test_colour_still_image(self):
+        self.assertEquals(getattr(self.expression,
+                          'Colour of still image (Expression)'),
+                          ["green","blue"])
+
+    def test_colour_three_dimensional_form(self): 
+        self.assertEquals(getattr(self.expression,
+                                  'Colour of three-dimensional form (Expression)'),
+                          "black")
+
+    def test_content_type(self):
+        content_type_key = getattr(self.expression,
+                                   'Content type (Expression)')
+        self.assertEquals(self.content_type_key,
+                          content_type_key)
+
+    def test_date_of_capture(self):
+        date_of_capture_key = getattr(self.expression,
+                                      'Date of capture (Expression)')
+        self.assertEquals(self.date_of_capture_key, 
+                          date_of_capture_key)
+
+    def test_date_of_expression(self):
+        date_of_expression_key = getattr(self.expression,
+                                         'Date of expression')
+        self.assertEquals(self.date_of_expression_key,
+                          date_of_expression_key)
 
     def tearDown(self):
         redis_server.flushdb()

@@ -21,7 +21,106 @@ class TestWorkRDAGroup1Elements(unittest.TestCase):
         self.academic_degree_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         redis_server.set(self.academic_degree_key,
                          "Masters of Library and Information Science")
-        params = {'Academic degree (Work)':self.academic_degree_key} #"Cataloguer's note (Work)", 'Coordinates of cartographic content (Work)', 'Coverage of the content (Work)', 'Date of work', 'Dissertation or thesis information (Work)', 'Epoch (Work)', 'Equinox (Work)', 'Form of work', 'Granting institution or faculty (Work)', 'History of the work', 'Identifier for the work', 'Intended audience (Work)', 'Key (Work)', 'Longitude and latitude (Work)', 'Medium of performance (Work)', 'Nature of the content (Work)', 'Numeric designation of a musical work ', 'Other distinguishing characteristic of the work', 'Place of origin of the work', 'Preferred title for the work', 'Right ascension and declination (Work)', 'Signatory to a treaty, etc. (Work)', 'Source consulted (Work)', 'Status of identification (Work)', 'Strings of coordinate pairs (Work)', 'System of organization (Work)', 'Title of the work', 'Variant title for the work', 'Year degree granted (Work)'}
+        self.cataloguers_note_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.cataloguers_note_key,"type","bibliographic history")
+        redis_server.hset (self.cataloguers_note_key,"value","Test Cataloger's note")
+        self.coordinates_of_cartographic_content_key = "kml:LatLonBox:%s" % redis_server.incr("global:kml:LatLongBox")
+        redis_server.hset(self.coordinates_of_cartographic_content_key,"north",'48.25475939255556')
+        redis_server.hset(self.coordinates_of_cartographic_content_key,"south",'48.25207367852141')
+        self.coverage_of_the_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.coverage_of_the_content_key,"type","content")
+        redis_server.hset(self.coverage_of_the_content_key,"value","Test coverage of content")
+        self.date_of_work_key = "mods:dateCreated:%s" % redis_server.incr("global:mods:dateCreated")
+        redis_server.hset(self.date_of_work_key,"encoding","marc")
+        redis_server.hset(self.date_of_work_key,"qualifer","approximate")
+        redis_server.hset(self.date_of_work_key,"value","1921")
+        self.dissertation_or_thesis_information_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.dissertation_or_thesis_information_key,
+                          "type","thesis")
+        redis_server.hset(self.dissertation_or_thesis_information_key,
+                          "value","Test Thesis Information")
+        self.epoch_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.epoch_key,"Test Work Epoch")
+	self.equinox_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.equinox_key,"Test Equinox Note")
+        self.form_of_work_key = "mods:form:rda:tactile text"
+        self.granting_institution_or_faculty_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.granting_institution_or_faculty_key,"name",
+                          "Test Granting Institution for Work")
+        self.history_of_the_work_key = "cidoc crm:acquisition event:%s" % redis_server.incr("global:cidoc crm:acquisition event")
+        redis_server.set(self.history_of_the_work_key,"Test Work purchased on 2000-11-28")
+        self.identifier_for_the_work_key = "mods:identifier:doi:%s" % redis_server.incr("global:mods:identifier:doi")
+        redis_server.set(self.identifier_for_the_work_key,
+                         "ISSTA.2002.1048560")
+        self.intended_audience_key = "mods:targetAudience:adolescent"
+        self.key_key = "vra core:technique:%s" % redis_server.incr("global:vra core:technique")
+        redis_server.set(self.key_key,"B sharp")
+        self.longitude_and_latitude_key = "mods:cartographics:coordinates:%s" % redis_server.incr("global:mods:cartographics:coordinates")
+        redis_server.hset(self.longitude_and_latitude_key,"longitude","-35.00442")
+        redis_server.hset(self.longitude_and_latitude_key,"latitude","78.4456")
+        self.medium_of_performance_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.medium_of_performance_key,"Baritone (Musical instrument)")
+        self.nature_of_the_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.nature_of_the_content_key,"type","handwritten")
+        redis_server.hset(self.nature_of_the_content_key,"value","Test Nature of Content for Work")
+        self.numeric_designation_of_a_musical_work_key = "marc21:383:%s" % redis_server.incr("global:marc21:383")
+        redis_server.hset(self.numeric_designation_of_a_musical_work_key,"b","op. 8, no. 1-4")
+        self.other_distinguishing_characteristic_of_the_work_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.other_distinguishing_characteristic_of_the_work_key,
+                          "type",
+                          "source characteristics")
+        redis_server.hset(self.other_distinguishing_characteristic_of_the_work_key,
+                          "value",
+                          "Test Other distinguishing characteristic for Work")
+        self.place_of_origin_of_the_work_key = "mods:physicalLocation:%s" % redis_server.incr("global:mods:physicalLocation")
+        redis_server.set(self.place_of_origin_of_the_work_key,"Colorado Springs, CO")
+        self.preferred_title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.preferred_title_key,"type","preferred")
+        redis_server.hset(self.preferred_title_key,"title","Infinite Jest")
+        self.right_ascension_and_declination_key = "mods:accessCondition:%s" % redis_server.incr("global:mods:accessCondition")
+        redis_server.set(self.right_ascension_and_declination_key,
+                         "All Rights Reserves")
+        self.signatory_to_a_treaty_key = "mods:hierarchicalGeographic:country:%s" % redis_server.incr("global:mods:hierarchicalGeographic:country")
+        redis_server.set(self.signatory_to_a_treaty_key,"United States")
+        self.source_consulted_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.source_consulted_key,"name","Test Source Consulted Company")
+        self.system_of_organization_key = "mods:recordContentSource:%s" % redis_server.incr("global:mods:recordContentSource")
+        redis_server.set(self.system_of_organization_key,"LCSH")
+        self.variant_title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.variant_title_key,"type","variant")
+        redis_server.hset(self.variant_title_key,"title","The Infinite Jest")
+        self.year_degree_granted_key = "mods:dateOther:%s" % redis_server.incr("global:mods:dateOther")
+        redis_server.hset(self.year_degree_granted_key,"value","1994")
+        params = {'Academic degree (Work)':self.academic_degree_key,
+                  "Cataloguer's note (Work)":self.cataloguers_note_key,
+                  'Coordinates of cartographic content (Work)':self.coordinates_of_cartographic_content_key,
+                  'Coverage of the content (Work)':self.coverage_of_the_content_key,
+                  'Date of work':self.date_of_work_key,
+                  'Dissertation or thesis information (Work)':self.dissertation_or_thesis_information_key,
+                  'Epoch (Work)':self.epoch_key, 
+                  'Equinox (Work)':self.equinox_key,
+                  'Form of work':self.form_of_work_key,
+                  'Granting institution or faculty (Work)':self.granting_institution_or_faculty_key,
+                  'History of the work':self.history_of_the_work_key,
+                  'Identifier for the work':self.identifier_for_the_work_key,
+                  'Intended audience (Work)':self.intended_audience_key, 
+                  'Key (Work)':self.key_key, 
+                  'Longitude and latitude (Work)':self.longitude_and_latitude_key,
+                  'Medium of performance (Work)':self.medium_of_performance_key,
+                  'Nature of the content (Work)':self.nature_of_the_content_key, 
+                  'Numeric designation of a musical work':self.numeric_designation_of_a_musical_work_key,
+                  'Other distinguishing characteristic of the work':self.other_distinguishing_characteristic_of_the_work_key,
+                  'Place of origin of the work':self.place_of_origin_of_the_work_key,
+                  'Preferred title for the work':self.preferred_title_key, 
+                  'Right ascension and declination (Work)':self.right_ascension_and_declination_key, 
+                  'Signatory to a treaty, etc. (Work)':self.signatory_to_a_treaty_key, 
+                  'Source consulted (Work)':self.source_consulted_key, 
+                  'Status of identification (Work)':"preliminary", 
+                  'Strings of coordinate pairs (Work)':self.longitude_and_latitude_key, 
+                  'System of organization (Work)':self.system_of_organization_key, 
+                  'Title of the work':self.preferred_title_key,
+                  'Variant title for the work':self.variant_title_key, 
+                  'Year degree granted (Work)':self.year_degree_granted_key}
         self.work = frbr_rda.Work(redis_server=redis_server,
                                   **params)
 
@@ -35,6 +134,272 @@ class TestWorkRDAGroup1Elements(unittest.TestCase):
                           self.academic_degree_key)
         self.assertEquals(redis_server.get(academic_degree),
                           "Masters of Library and Information Science")
+
+
+    def test_cataloguers_note(self):
+        cataloguers_note_key = getattr(self.work,"Cataloguer's note (Work)")
+        self.assertEquals(cataloguers_note_key,
+                          self.cataloguers_note_key)
+        self.assertEquals(redis_server.hget(cataloguers_note_key,
+                                            "type"),
+                          "bibliographic history")
+        self.assertEquals(redis_server.hget(cataloguers_note_key,
+                                            "value"),
+                          "Test Cataloger's note")
+
+    def test_coordinates_of_cartographic_content(self):
+        coordinates_of_cartographic_content = getattr(self.work,
+                                                      'Coordinates of cartographic content (Work)')
+        self.assertEquals(coordinates_of_cartographic_content,
+                          self.coordinates_of_cartographic_content_key)
+        self.assertEquals(redis_server.hget(coordinates_of_cartographic_content,
+                                            "north"),
+                          '48.25475939255556')
+        self.assertEquals(redis_server.hget(coordinates_of_cartographic_content,
+                                            "south"),
+                          '48.25207367852141')
+
+    def test_coverage_of_the_content(self):
+        coverage_of_the_content_key = getattr(self.work,
+                                              'Coverage of the content (Work)')
+        self.assertEquals(coverage_of_the_content_key,
+                          self.coverage_of_the_content_key)
+        self.assertEquals(redis_server.hget(coverage_of_the_content_key,
+                                            "type"),
+                          "content")
+        self.assertEquals(redis_server.hget(coverage_of_the_content_key,
+                                            "value"), 
+                          "Test coverage of content")
+
+    def test_date_of_work(self):
+        date_of_work_key = getattr(self.work,'Date of work')
+        self.assertEquals(date_of_work_key,
+                          self.date_of_work_key)
+        self.assertEquals(redis_server.hget(date_of_work_key,
+                                            "encoding"),
+                          "marc")
+        self.assertEquals(redis_server.hget(date_of_work_key,
+                                            "qualifer"),
+                          "approximate")
+        self.assertEquals(redis_server.hget(date_of_work_key,
+                                            "value"),
+                          "1921")
+
+
+    def test_dissertation_or_thesis_information(self):
+        dissertation_or_thesis_information_key = getattr(self.work,
+                                                         'Dissertation or thesis information (Work)')
+        self.assertEquals(dissertation_or_thesis_information_key,
+                          self.dissertation_or_thesis_information_key)
+        self.assertEquals(redis_server.hget(self.dissertation_or_thesis_information_key,
+                                            "type"),
+                          "thesis")
+        self.assertEquals(redis_server.hget(self.dissertation_or_thesis_information_key,
+                                            "value"),
+                          "Test Thesis Information")
+
+    def test_epoch(self):
+        epoch_key = getattr(self.work,'Epoch (Work)')
+        self.assertEquals(epoch_key,self.epoch_key)
+        self.assertEquals(redis_server.get(self.epoch_key),
+                          "Test Work Epoch")
+ 
+    def test_equinox(self):
+        equinox_key = getattr(self.work,'Equinox (Work)')
+        self.assertEquals(equinox_key,self.equinox_key)
+        self.assertEquals(redis_server.get(self.equinox_key),
+                          "Test Equinox Note")
+
+    def test_form_of_work(self):
+        self.assertEquals(self.form_of_work_key, 
+                          getattr(self.work,'Form of work'))
+
+    def test_granting_institution_or_faculty(self):
+        granting_institution_or_faculty_key = getattr(self.work,
+                                                      'Granting institution or faculty (Work)')
+        self.assertEquals(self.granting_institution_or_faculty_key,
+                          granting_institution_or_faculty_key)
+
+        self.assertEqual(redis_server.hget(self.granting_institution_or_faculty_key,"name"),
+                         "Test Granting Institution for Work")
+
+    def test_history_of_the_work(self):
+        history_of_the_work_key = getattr(self.work,'History of the work')
+        self.assertEquals(self.history_of_the_work_key,
+                          history_of_the_work_key)
+        self.assertEquals(redis_server.get(self.history_of_the_work_key),
+                          "Test Work purchased on 2000-11-28")
+
+    def test_identifier_for_the_work(self):
+        identifier_for_the_work_key = getattr(self.work,
+                                              'Identifier for the work')
+        self.assertEquals(identifier_for_the_work_key,
+                          self.identifier_for_the_work_key)
+        self.assertEquals(redis_server.get(identifier_for_the_work_key),
+                          "ISSTA.2002.1048560")
+
+    def test_intended_audience(self):
+        self.assertEquals(getattr(self.work,
+                                  'Intended audience (Work)'),
+                          self.intended_audience_key)
+    
+
+    def test_key(self):
+        key_key = getattr(self.work,"Key (Work)")
+        self.assertEquals(key_key,
+                          self.key_key)
+        self.assertEquals(redis_server.get(key_key),
+                          "B sharp")
+
+    def test_longitude_and_latitude(self):
+        longitude_and_latitude_key = getattr(self.work,
+                                             'Longitude and latitude (Work)')
+        self.assertEquals(longitude_and_latitude_key,
+                          self.longitude_and_latitude_key)
+        self.assertEquals(redis_server.hget(longitude_and_latitude_key,
+                                            "longitude"),
+                          "-35.00442")
+        self.assertEquals(redis_server.hget(longitude_and_latitude_key,
+                                            "latitude"),
+                          "78.4456")
+
+    def test_medium_of_performance(self):
+        medium_of_performance_key = getattr(self.work,
+                                            'Medium of performance (Work)')
+        self.assertEquals(self.medium_of_performance_key,
+                          medium_of_performance_key)
+        self.assertEquals(redis_server.get(medium_of_performance_key),
+                          "Baritone (Musical instrument)")
+
+    def test_nature_of_the_content(self):
+        nature_of_the_content_key = getattr(self.work,
+                                            'Nature of the content (Work)')
+        self.assertEquals(redis_server.hget(nature_of_the_content_key,"type"),
+                          "handwritten")
+        self.assertEquals(redis_server.hget(nature_of_the_content_key,"value"),
+                          "Test Nature of Content for Work")
+
+    def test_numeric_designation_of_a_musical_work(self):
+        numeric_designation_of_a_musical_work_key = getattr(self.work,
+                                                            'Numeric designation of a musical work')
+        self.assertEquals(numeric_designation_of_a_musical_work_key,
+                          self.numeric_designation_of_a_musical_work_key)
+        self.assertEquals(redis_server.hget(self.numeric_designation_of_a_musical_work_key,"b"),
+                          "op. 8, no. 1-4")
+
+    def test_other_distinguishing_characteristic_of_the_work(self):
+        other_distinguishing_characteristic_of_the_work_key = getattr(self.work,
+                                                                      'Other distinguishing characteristic of the work')
+        self.assertEquals(other_distinguishing_characteristic_of_the_work_key,
+                          self.other_distinguishing_characteristic_of_the_work_key)
+        self.assertEquals(redis_server.hget(other_distinguishing_characteristic_of_the_work_key,
+                                            "type"),
+                          "source characteristics")
+        self.assertEquals(redis_server.hget(other_distinguishing_characteristic_of_the_work_key,
+                                            "value"),
+                          "Test Other distinguishing characteristic for Work")
+
+    def test_place_of_origin_of_the_work(self):
+        place_of_origin_of_the_work_key = getattr(self.work,
+                                                  'Place of origin of the work')
+        self.assertEquals(place_of_origin_of_the_work_key,
+                          self.place_of_origin_of_the_work_key)
+        self.assertEquals(redis_server.get(place_of_origin_of_the_work_key),
+                          "Colorado Springs, CO")
+
+    def test_preferred_title(self):
+        preferred_title_key = getattr(self.work,'Preferred title for the work')
+        self.assertEquals(self.preferred_title_key,preferred_title_key)
+        self.assertEquals(redis_server.hget(preferred_title_key,"type"),
+                          "preferred")
+        self.assertEquals(redis_server.hget(preferred_title_key,"title"),
+                          "Infinite Jest")
+ 
+    def test_right_ascension_and_declination(self):
+        right_ascension_and_declination_key = getattr(self.work,
+                                                      'Right ascension and declination (Work)')
+        self.assertEquals(self.right_ascension_and_declination_key,
+                          right_ascension_and_declination_key)
+        self.assertEquals(redis_server.get(right_ascension_and_declination_key),
+                          "All Rights Reserves")
+ 
+
+    def test_signatory_to_a_treaty(self):
+        signatory_to_a_treaty_key = getattr(self.work,
+                                            'Signatory to a treaty, etc. (Work)')
+        self.assertEquals(self.signatory_to_a_treaty_key, 
+                          signatory_to_a_treaty_key)
+        self.assertEquals(redis_server.get(signatory_to_a_treaty_key),
+                          "United States")
+
+
+    def test_source_consulted(self):
+        source_consulted_key = getattr(self.work,
+                                       'Source consulted (Work)')
+        self.assertEquals(self.source_consulted_key, 
+                          source_consulted_key)
+        self.assertEquals(redis_server.hget(self.source_consulted_key,
+                                            "name"),
+                          "Test Source Consulted Company")
+ 
+
+    def test_status_of_identification(self):
+        self.assertEquals(getattr(self.work,
+                                  'Status of identification (Work)'),
+                          "preliminary")
+
+    def test_strings_of_coordinate_pairs(self):
+        strings_of_coordinate_pairs_key = getattr(self.work,
+                                                  'Strings of coordinate pairs (Work)')
+        self.assertEquals(self.longitude_and_latitude_key,
+                          strings_of_coordinate_pairs_key)
+        self.assertEquals(redis_server.hget(strings_of_coordinate_pairs_key,
+                                            "longitude"),
+                          "-35.00442")
+        self.assertEquals(redis_server.hget(strings_of_coordinate_pairs_key,
+                                            "latitude"),
+                          "78.4456")
+
+    
+    def test_system_of_organization(self):
+        system_of_organization_key = getattr(self.work,
+                                             'System of organization (Work)')
+        self.assertEquals(self.system_of_organization_key, 
+                          system_of_organization_key)
+        self.assertEquals(redis_server.get(self.system_of_organization_key),
+                          "LCSH")
+
+    def test_title_of_the_work(self):
+        title_of_the_work_key = getattr(self.work,
+                                       'Title of the work')
+        self.assertEquals(self.preferred_title_key,
+                          title_of_the_work_key)
+        self.assertEquals(redis_server.hget(title_of_the_work_key,"type"),
+                          "preferred")
+        self.assertEquals(redis_server.hget(title_of_the_work_key,"title"),
+                          "Infinite Jest")
+ 
+
+    def test_variant_title_for_the_work(self):
+        variant_title_key = getattr(self.work,
+                                    'Variant title for the work')
+        self.assertEquals(self.variant_title_key, 
+                          variant_title_key)
+        self.assertEquals(redis_server.hget(variant_title_key,"type"),
+                          "variant")
+        self.assertEquals(redis_server.hget(variant_title_key,"title"),
+                          "The Infinite Jest")
+ 
+
+
+    def test_year_degree_granted(self):
+        year_degree_granted_key = getattr(self.work,
+                                          'Year degree granted (Work)')
+        self.assertEquals(self.year_degree_granted_key,
+                          year_degree_granted_key)
+        self.assertEquals(redis_server.hget(self.year_degree_granted_key,
+                                            "value"),
+                          "1994")
 
     def tearDown(self):
         redis_server.flushdb()
