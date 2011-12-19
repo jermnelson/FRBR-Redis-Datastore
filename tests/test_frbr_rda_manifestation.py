@@ -23,15 +23,146 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         redis_server.hset(self.abbreviated_title_key,"type","abbreviated")
         redis_server.hset(self.abbreviated_title_key,"text","Huck Finn")
         self.alt_chronological_first_issue_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.alt_chronological_first_issue_key,"Test Volume and Issue for Manifestation")
         self.alt_chronological_last_issue_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.alt_chronological_last_issue_key,"Test Volume and Issue for Manifestation")
         self.alt_numeric_first_issue_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.alt_numeric_first_issue_key,"Test Numeric Volume and Issue for Manifestation")
         self.alt_numeric_last_issue_key = "mods:note:%s" % redis_server.incr("global:mods:note")
-        self.applied_material_key = "mods:note:%s" % redis_server.incr("global:mods:note")
-        self.base_material_key = "mods:note:%s" % redis_server.incr("global:mods:note")
-        self.base_material_for_microfilm_key = "mods:note:%s" % redis_server.incr("global:mods:note")
-        self.book_format_key = "mods:note:%s" % redis_server.incr("global:mods:note")
-        self.broadcast_standard_key = "mods:note:%s" % redis_server.incr("global:mods:note")
-
+        redis_server.set(self.alt_numeric_last_issue_key,"Test Numeric Volume and Issue for Manifestation")
+        self.applied_material_key = "rdvocab:RDAbaseMaterial:1013"
+        redis_server.set(self.applied_material_key,"water colour")
+        self.base_material_key = "rdvocab:RDAbaseMaterial:1021"
+        redis_server.set(self.base_material_key,"vellum")
+        self.base_material_for_microfilm_key = "rdvocab:baseMicro:1003"
+        redis_server.set(self.base_material_for_microfilm_key,"Nitrate")
+        self.book_format_key = "rdvocab:bookFormat:1004"
+        redis_server.set(self.book_format_key,"12mo")
+        self.broadcast_standard_key = "rdvocab:broadcastStand:1002"
+        redis_server.set(self.broadcast_standard_key,"NTSC")
+        self.carrier_type_key = "rdvocab:RDACarrierType:1018"
+        redis_server.set(self.carrier_type_key,"online resource")
+        self.chronological_designation_first_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.chronological_designation_last_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.contact_information_key = "foaf:Person:%s" % redis_server.incr("global:foaf:Person")
+        redis_server.hset(self.contact_information_key,"foaf:familyName","Doe")
+        redis_server.hset(self.contact_information_key,"foaf:givenName","Jane")
+        self.configuration_of_playback_channels_key = "rdvocab:configPlayBack:1004"
+        redis_server.set(self.configuration_of_playback_channels_key,
+                         "Surround")
+        self.copyright_date_key = "mods:copyrightDate:%s" % redis_server.incr("global:mods:copyrightDate")
+        redis_server.hset(self.copyright_date_key,"encoding","marc")
+        redis_server.hset(self.copyright_date_key,"value","1997")
+        self.date_of_distribution_key = "mods:dateOther:%s" % redis_server.incr("global:mods:dateOther")
+        redis_server.set(self.date_of_distribution_key,"1998")
+        self.date_of_manufacture_key = "mods:dateOther:%s" % redis_server.incr("global:mods:dateOther")
+        redis_server.set(self.date_of_manufacture_key,"1998")
+        self.date_of_production_key = "mods:dateOther:%s" % redis_server.incr("global:mods:dateOther")
+        redis_server.set(self.date_of_production_key,"1999")
+        self.date_of_publication_key = "mods:dateOther:%s" % redis_server.incr("global:mods:dateOther")
+        redis_server.set(self.date_of_publication_key,"1998")
+        self.designation_of_edition_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.designation_of_edition_key,
+                          "Test Designation of Edition")
+        self.designation_of_a_named_revision_of_an_edition_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.designation_of_a_named_revision_of_an_edition_key,
+                         "Test Designation of a named revision -- 1st Edition")
+        self.digital_file_characteristic_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.digital_file_characteristic_key,
+                         "20 MB")
+        self.digital_representation_of_cartographic_content_key = "rdvocab:digiRepCarto:1008"
+        redis_server.set(self.digital_representation_of_cartographic_content_key,
+                         "Pixel")
+        self.dimensions_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.dimensions_key,"Test Dimensions 3x3")
+        self.dimensions_of_map_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.dimensions_of_map_key,"Test Dimensions of Map")
+        self.dimensions_of_still_image_key = "marc21:007:electrodim:v"
+        redis_server.set(self.dimensions_of_still_image_key,
+                         "8 in.")
+        self.distribution_statement_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.distribution_statement_key,"Test Distribution Statement")
+        self.distributor_name_key = "foaf:Organization:%s" % redis_server.incr("global:foaf:Organization")
+        redis_server.set(self.distributor_name_key,"Not a Name Distributor")
+        self.earlier_title_proper_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.earlier_title_proper_key,"type","alternate")
+        redis_server.hset(self.earlier_title_proper_key,"title","Test Earlier Proper Title")
+        self.edition_statement_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.edition_statement_key,"Test 3rd Edition Statement")
+        self.emulsion_on_microfilm_and_microfiche_key = "rdvocab:emulsionMicro:1003"
+        redis_server.set(self.emulsion_on_microfilm_and_microfiche_key,"Silver halide")
+        self.encoding_format_key = "rdvocab:encFormat:1031"
+        redis_server.set(self.encoding_format_key,"ASCII")
+        self.equipment_or_system_requirement_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.equipment_or_system_requirement_key,
+                         "Test Equipment or System Requirement")
+        self.extent_key = "rdvocab:extent:1031"
+        redis_server.set(self.extent_key,"Online resource")
+        self.extent_of_cartographic_resource_key = "rdvocab:extentCarto:1011"
+        redis_server.set(self.extent_of_cartographic_resource_key,
+                         "Diagrams")
+        self.extent_of_notated_music_key = "rdvocab:extentNoteMus:1006"
+        redis_server.set(self.extent_of_notated_music_key,"Vocal score")
+        self.extent_of_still_image_key = "rdvocab:extentImage:1015"
+        redis_server.set(self.extent_of_still_image_key,"Technical drawing")
+        self.extent_of_text_key = "rdvocab:extentText:1014"
+        redis_server.set(self.extent_of_text_key,"In various pagings")
+        self.extent_of_three_dimensional_form_key = "rdvocab:extentThreeDim:1005"
+        redis_server.set(self.extent_of_three_dimensional_form_key,
+                         "Jigsaw puzzle")
+        self.file_type_key = "rdvocab:fileType:1004"
+        redis_server.set(self.file_type_key,"Image file")
+        self.font_size_key = "rdvocab:RDAFontSize:1001"
+        redis_server.set(self.font_size_key,"Giant print")
+        self.frequency_key = "rdvocab:frequency:1012"
+        redis_server.set(self.frequency_key,"Semiannual")
+        self.generation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.generation_key,"Generation Test for Manifestation")
+        self.generation_of_audio_recording_key = "rdvocab:genAudio:1002"
+        redis_server.set(self.generation_of_audio_recording_key,
+                         "Tape duplication master")
+        self.generation_of_digital_resource_key = "rdvocab:genDigital:1002"
+        redis_server.set(self.generation_of_digital_resource_key,"Master")
+        self.generation_of_microform_key = "rdvocab:genMicroform:1004"
+        redis_server.set(self.generation_of_microform_key,
+                         "Mixed generation")
+        self.generation_of_motion_picture_film_key = "rdvocab:genMoPic:1004"
+        redis_server.set(self.generation_of_motion_picture_film_key,
+                         "Reference print")
+        self.generation_of_videotape_key = "rdvocab:genVideo:1003"
+        redis_server.set(self.generation_of_videotape_key,
+                         'Second generation show copy')
+        self.groove_characteristic_key = "rdvocab:groovePitch:1006"
+        redis_server.set(self.groove_characteristic_key,"Standard")
+        self.issn_of_series_key = "mods:identifier:%s" % redis_server.incr("global:mods:identifier")
+        redis_server.hset(self.issn_of_series_key,"type","issn")
+        redis_server.hset(self.issn_of_series_key,"value","11223344")
+        self.issn_of_subseries_key = "mods:identifier:%s" % redis_server.incr("global:mods:identifier")
+        redis_server.hset(self.issn_of_subseries_key,"type","issn")
+        redis_server.hset(self.issn_of_subseries_key,"value","22334455")
+        self.identifier_key = "mods:identifier:%s" % redis_server.incr("global:mods:identifier")
+        redis_server.hset(self.identifier_key,'type','local')
+        redis_server.hset(self.identifier_key,'value','CC Biology 1')
+        self.key_title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.key_title_key,"type","alternative")
+        redis_server.hset(self.key_title_key,"title","Test Key Title for Manifestation")
+        self.later_title_proper_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.later_title_proper_key,"type",
+                          "alternative")
+        redis_server.hset(self.later_title_proper_key,"title",
+                          "This is Test Laster Title Proper")
+        self.layout_key = "rdvocab:layout:1001"
+        redis_server.set(self.layout_key,
+                         "Double sided")
+        self.layout_of_cartographic_images_key = "rdvocab:layoutCartoImage:1001"
+        redis_server.set(self.layout_of_cartographic_images_key,
+                         "both sides")
+        self.layout_of_tactile_musical_notation_key = "rdvocab:layoutTacMusic:1005"
+        redis_server.set(self.layout_of_tactile_musical_notation_key,
+                         "Melody chord system")
+        self.layout_of_tactile_text_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.layout_of_tactile_text_key,
+                         "Test layout of tactile text")
         params = {'Abbreviated title (Manifestation)':self.abbreviated_title_key,
                   'Alternative Chronological Designation of First Issue or Part of Sequence (Manifestation)':self.alt_chronological_first_issue_key,
                   'Alternative Chronological Designation of Last Issue or Part of Sequence (Manifestation)':self.alt_chronological_last_issue_key,
@@ -41,8 +172,155 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                   'Base material (Manifestation)':self.base_material_key, 
                   'Base material for microfilm, microfiche, photographic film, and motion picture film (Manifestation)':self.base_material_for_microfilm_key, 
                   'Book format (Manifestation)':self.book_format_key,
-                  'Broadcast standard (Manifestation)':self.broadcast_standard_key}#,
-# 'Carrier type (Manifestation)', 'Chronological designation of first issue or part of sequence (Manifestation)', 'Chronological designation of last issue or part of sequence (Manifestation)', 'Configuration of playback channels (Manifestation)', 'Contact information (Manifestation)', 'Copyright date (Manifestation)', 'Date of distribution (Manifestation)', 'Date of manufacture (Manifestation)', 'Date of production (Manifestation)', 'Date of publication (Manifestation)', 'Designation of a named revision of an edition (Manifestation)', 'Designation of edition (Manifestation)', 'Digital file characteristic (Manifestation)', 'Digital representation of cartographic content (Manifestation)', 'Dimensions (Manifestation)', 'Dimensions of map, etc. (Manifestation)', 'Dimensions of still image (Manifestation)', 'Distribution statement (Manifestation)', "Distributor's name (Manifestation)", 'Earlier title proper (Manifestation)', 'Edition statement (Manifestation)', 'Emulsion on microfilm and microfiche (Manifestation)', 'Encoding format (Manifestation)', 'Equipment or system requirement (Manifestation)', 'Extent (Manifestation)', 'Extent of cartographic resource (Manifestation)', 'Extent of notated music (Manifestation)', 'Extent of still image (Manifestation)', 'Extent of text (Manifestation)', 'Extent of three-dimensional form (Manifestation)', 'File size (Manifestation)', 'File type (Manifestation)', 'Font size (Manifestation)', 'Frequency (Manifestation)', 'Generation (Manifestation)', 'Generation of audio recording (Manifestation)', 'Generation of digital resource (Manifestation)', 'Generation of microform (Manifestation)', 'Generation of motion picture film (Manifestation)', 'Generation of videotape (Manifestation)', 'Groove characteristic (Manifestation)', 'ISSN of series (Manifestation)', 'ISSN of subseries (Manifestation)', 'Identifier for the manifestation', 'Key title (Manifestation)', 'Later title proper (Manifestation)', 'Layout (Manifestation)', 'Layout of cartographic images (Manifestation)', 'Layout of tactile musical notation (Manifestation)', 'Layout of tactile text (Manifestation)', 'Manufacture statement (Manifestation)', "Manufacturer's name (Manifestation)", 'Media type (Manifestation)', 'Mode of issuance (Manifestation)', 'Mount (Manifestation)', 'Note (Manifestation)', 'Note on changes in carrier characteristics (Manifestation)', 'Note on copyright date (Manifestation)', 'Note on dimensions of manifestation', 'Note on distribution statement (Manifestation)', 'Note on edition statement (Manifestation)', 'Note on extent of manifestation', 'Note on frequency (Manifestation)', 'Note on issue, part, or iteration used as the basis for identification of the resource (Manifestation)', 'Note on manufacture statement (Manifestation)', 'Note on numbering of serials (Manifestation)', 'Note on production statement (Manifestation)', 'Note on publication statement (Manifestation)', 'Note on series statement (Manifestation)', 'Note on statement of responsibility (Manifestation)', 'Note on title (Manifestation)', 'Numbering of serials (Manifestation)', 'Numbering within series (Manifestation)', 'Numbering within subseries (Manifestation)', 'Numeric and/or alphabetic designation of first issue or part of sequence (Manifestation)', 'Numeric and/or alphabetic designation of last issue or part of sequence (Manifestation)', 'Other title information (Manifestation)', 'Other title information of series (Manifestation)', 'Other title information of subseries (Manifestation)', 'Parallel designation of a named revision of an edition (Manifestation)', 'Parallel designation of edition (Manifestation)', "Parallel distributor's name (Manifestation)", "Parallel manufacturer's name (Manifestation)", 'Parallel other title information (Manifestation)', 'Parallel other title information of series (Manifestation)', 'Parallel other title information of subseries (Manifestation)', 'Parallel place of distribution (Manifestation)', 'Parallel place of manufacture (Manifestation)', 'Parallel place of production (Manifestation)', 'Parallel place of publication (Manifestation)', "Parallel producer's name (Manifestation)", "Parallel publisher's name (Manifestation)", 'Parallel statement of responsibility relating to a named revision of an edition (Manifestation)', 'Parallel statement of responsibility relating to series (Manifestation)', 'Parallel statement of responsibility relating to subseries (Manifestation)', 'Parallel statement of responsibility relating to the edition (Manifestation)', 'Parallel statement of responsibility relating to title proper (Manifestation)', 'Parallel title proper (Manifiestation)', 'Parallel title proper of series (Manifestation)', 'Parallel title proper of subseries (Manifestation)', 'Place of distribution (Manifestation)', 'Place of manufacture (Manifestation)', 'Place of production (Manifestation)', 'Place of publication (Manifestation)', 'Plate number for music (Manifestation)', 'Playing speed (Manifestation)', 'Polarity (Manifestation)', 'Preferred citation (Manifestation)', 'Presentation format (Manifestation)', "Producer's name (Manifestation)", 'Production method (Manifestation)', 'Production method for manuscript (Manifestation)', 'Production method for tactile resource (Manifestation)', 'Production statement (Manifestation)', 'Projection characteristic of motion picture film (Manifestation)', 'Projection speed (Manifestation)', 'Publication statement (Manifestation)', "Publisher's name (Manifestation)", "Publisher's number for music (Manifestation)", 'Recording medium (Manifestation)', 'Reduction ration (Manifestation)', 'Regional encoding (Manifestation)', 'Resolution (Manifestation)', 'Restrictions on access (Manifestation)', 'Restrictions on use (Manifestation)', 'Series statement (Manifestation)', 'Sound characteristic (Manifestation)', 'Sound content (Manifestation)', 'Special playback characteristic (Manifestation)', 'Statement of responsibility (Manifestation)', 'Statement of responsibility relating to a named revision of an edition (Manifestation)', 'Statement of responsibility relating to series (Manifestation)', 'Statement of responsibility relating to subseries (Manifestation)', 'Statement of responsibility relating to the edition (Manifestation)', 'Statement of responsibility relating to title proper (Manifestation)', 'Tape configuration (Manifestation)', 'Terms of availability (Manifestation)', 'Title (Manifestation)', 'Title proper (Manifestation)', 'Title proper of series (Manifestation)', 'Title proper of subseries (Manifestation)', 'Track configuration (Manifestation)', 'Transmission speed (Manifestation)', 'Type of recording (Manifestation)', 'Uniform resource locator (Manifestation)', 'Variant title (Manifestation)', 'Video characteristic (Manifestation)', 'Video format (Manifestation)'}
+                  'Broadcast standard (Manifestation)':self.broadcast_standard_key,
+                  'Carrier type (Manifestation)':self.carrier_type_key,
+                  'Chronological designation of first issue or part of sequence (Manifestation)':self.chronological_designation_first_key,
+                  'Chronological designation of last issue or part of sequence (Manifestation)':self.chronological_designation_last_key,
+                  'Configuration of playback channels (Manifestation)':self.configuration_of_playback_channels_key,
+                  'Contact information (Manifestation)':self.contact_information_key,
+                  'Copyright date (Manifestation)':self.copyright_date_key,
+                  'Date of distribution (Manifestation)':self.date_of_distribution_key,
+                  'Date of manufacture (Manifestation)':self.date_of_manufacture_key,
+                  'Date of production (Manifestation)':self.date_of_production_key,
+                  'Date of publication (Manifestation)':self.date_of_publication_key,
+                  'Designation of a named revision of an edition (Manifestation)':self.designation_of_a_named_revision_of_an_edition_key,
+                  'Designation of edition (Manifestation)':self.designation_of_edition_key,
+                  'Digital file characteristic (Manifestation)':self.digital_file_characteristic_key,
+                  'Digital representation of cartographic content (Manifestation)':self.digital_representation_of_cartographic_content_key,
+                  'Dimensions (Manifestation)':self.dimensions_key,
+                  'Dimensions of map, etc. (Manifestation)':self.dimensions_of_map_key,
+                  'Dimensions of still image (Manifestation)':self.dimensions_of_still_image_key,
+                  'Distribution statement (Manifestation)':self.distribution_statement_key,
+                  "Distributor's name (Manifestation)":self.distributor_name_key,
+                  'Earlier title proper (Manifestation)':self.earlier_title_proper_key,
+                  'Edition statement (Manifestation)':self.edition_statement_key,
+                  'Emulsion on microfilm and microfiche (Manifestation)':self.emulsion_on_microfilm_and_microfiche_key,
+                  'Encoding format (Manifestation)':self.encoding_format_key,
+                  'Equipment or system requirement (Manifestation)':self.equipment_or_system_requirement_key,
+                  'Extent (Manifestation)':self.extent_key,
+                  'Extent of cartographic resource (Manifestation)':self.extent_of_cartographic_resource_key,
+                  'Extent of notated music (Manifestation)':self.extent_of_notated_music_key,
+                  'Extent of still image (Manifestation)':self.extent_of_still_image_key,
+                  'Extent of text (Manifestation)':self.extent_of_text_key,
+                  'Extent of three-dimensional form (Manifestation)':self.extent_of_three_dimensional_form_key,
+                  'File size (Manifestation)':"300 MB",
+                  'File type (Manifestation)':self.file_type_key,
+                  'Font size (Manifestation)':self.font_size_key,
+                  'Frequency (Manifestation)':self.frequency_key,
+                  'Generation (Manifestation)':self.generation_key,
+                  'Generation of audio recording (Manifestation)':self.generation_of_audio_recording_key,
+                  'Generation of digital resource (Manifestation)':self.generation_of_digital_resource_key,
+                  'Generation of microform (Manifestation)':self.generation_of_microform_key,
+                  'Generation of motion picture film (Manifestation)':self.generation_of_motion_picture_film_key,
+                  'Generation of videotape (Manifestation)':self.generation_of_videotape_key,
+                  'Groove characteristic (Manifestation)':self.groove_characteristic_key,
+                  'ISSN of series (Manifestation)':self.issn_of_series_key,
+                  'ISSN of subseries (Manifestation)':self.issn_of_subseries_key,
+                  'Identifier for the manifestation':self.identifier_key,
+                  'Key title (Manifestation)':self.key_title_key,
+                  'Later title proper (Manifestation)':self.later_title_proper_key,
+                  'Layout (Manifestation)':self.layout_key,
+                  'Layout of cartographic images (Manifestation)':self.layout_of_cartographic_images_key,
+                  'Layout of tactile musical notation (Manifestation)':self.layout_of_tactile_musical_notation_key,
+                  'Layout of tactile text (Manifestation)': self.layout_of_tactile_text_key}
+                  'Manufacture statement (Manifestation)':,
+                  "Manufacturer's name (Manifestation)":,
+                  'Media type (Manifestation)':,
+                  'Mode of issuance (Manifestation)':,
+                  'Mount (Manifestation)':,
+                  'Note (Manifestation)':,
+                  'Note on changes in carrier characteristics (Manifestation)':,
+                  'Note on copyright date (Manifestation)':,
+                  'Note on dimensions of manifestation':,
+                  'Note on distribution statement (Manifestation)':,
+                  'Note on edition statement (Manifestation)':,
+                  'Note on extent of manifestation':,
+                  'Note on frequency (Manifestation)':,
+                  'Note on issue, part, or iteration used as the basis for identification of the resource (Manifestation)':,
+                  'Note on manufacture statement (Manifestation)':,
+                  'Note on numbering of serials (Manifestation)':,
+                  'Note on production statement (Manifestation)':,
+                  'Note on publication statement (Manifestation)':,
+                  'Note on series statement (Manifestation)':,
+                  'Note on statement of responsibility (Manifestation)':,
+                  'Note on title (Manifestation)':,
+                  'Numbering of serials (Manifestation)':,
+                  'Numbering within series (Manifestation)':,
+                  'Numbering within subseries (Manifestation)':,
+                  'Numeric and/or alphabetic designation of first issue or part of sequence (Manifestation)':,
+                  'Numeric and/or alphabetic designation of last issue or part of sequence (Manifestation)':,
+                  'Other title information (Manifestation)':,
+                  'Other title information of series (Manifestation)':,
+                  'Other title information of subseries (Manifestation)':,
+                  'Parallel designation of a named revision of an edition (Manifestation)':,
+                  'Parallel designation of edition (Manifestation)':,
+                  "Parallel distributor's name (Manifestation)":,
+                  "Parallel manufacturer's name (Manifestation)":,
+                  'Parallel other title information (Manifestation)':,
+                  'Parallel other title information of series (Manifestation)':,
+                  'Parallel other title information of subseries (Manifestation)':,
+                  'Parallel place of distribution (Manifestation)':,
+                  'Parallel place of manufacture (Manifestation)':,
+                  'Parallel place of production (Manifestation)':,
+                  'Parallel place of publication (Manifestation)':,
+                  "Parallel producer's name (Manifestation)":,
+                  "Parallel publisher's name (Manifestation)":,
+                  'Parallel statement of responsibility relating to a named revision of an edition (Manifestation)':,
+                  'Parallel statement of responsibility relating to series (Manifestation)':,
+                  'Parallel statement of responsibility relating to subseries (Manifestation)':,
+                  'Parallel statement of responsibility relating to the edition (Manifestation)':,
+                  'Parallel statement of responsibility relating to title proper (Manifestation)':,
+                  'Parallel title proper (Manifiestation)':,
+                  'Parallel title proper of series (Manifestation)':,
+                  'Parallel title proper of subseries (Manifestation)':,
+                  'Place of distribution (Manifestation)':,
+                  'Place of manufacture (Manifestation)':,
+                  'Place of production (Manifestation)':,
+                  'Place of publication (Manifestation)':,
+                  'Plate number for music (Manifestation)':,
+                  'Playing speed (Manifestation)':,
+                  'Polarity (Manifestation)':,
+                  'Preferred citation (Manifestation)':,
+                  'Presentation format (Manifestation)':,
+                  "Producer's name (Manifestation)":,
+                  'Production method (Manifestation)':,
+                  'Production method for manuscript (Manifestation)':,
+                  'Production method for tactile resource (Manifestation)':,
+                  'Production statement (Manifestation)':,
+                  'Projection characteristic of motion picture film (Manifestation)':,
+                  'Projection speed (Manifestation)':,
+                  'Publication statement (Manifestation)':,
+                  "Publisher's name (Manifestation)":,
+                  "Publisher's number for music (Manifestation)":,
+                  'Recording medium (Manifestation)':,
+                  'Reduction ration (Manifestation)':,
+                  'Regional encoding (Manifestation)':,
+                  'Resolution (Manifestation)':,
+                  'Restrictions on access (Manifestation)':,
+                  'Restrictions on use (Manifestation)':,
+                  'Series statement (Manifestation)':,
+                  'Sound characteristic (Manifestation)':,
+                  'Sound content (Manifestation)':,
+                  'Special playback characteristic (Manifestation)':,
+                  'Statement of responsibility (Manifestation)':,
+                  'Statement of responsibility relating to a named revision of an edition (Manifestation)':,
+                  'Statement of responsibility relating to series (Manifestation)':,
+                  'Statement of responsibility relating to subseries (Manifestation)':,
+                  'Statement of responsibility relating to the edition (Manifestation)':,
+                  'Statement of responsibility relating to title proper (Manifestation)':,
+                  'Tape configuration (Manifestation)':,
+                  'Terms of availability (Manifestation)':,
+                  'Title (Manifestation)':,
+                  'Title proper (Manifestation)':,
+                  'Title proper of series (Manifestation)':,
+                  'Title proper of subseries (Manifestation)':,
+                  'Track configuration (Manifestation)':,
+                  'Transmission speed (Manifestation)':,
+                  'Type of recording (Manifestation)':,
+                  'Uniform resource locator (Manifestation)':,
+                  'Variant title (Manifestation)':,
+                  'Video characteristic (Manifestation)':,
+                  'Video format (Manifestation)':}
         self.manifestation = frbr_rda.Manifestation(redis_server=redis_server,
                                                     **params)
 
@@ -66,12 +344,16 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                                     'Alternative Chronological Designation of First Issue or Part of Sequence (Manifestation)')
         self.assertEquals(self.alt_chronological_first_issue_key,
                           alt_chronological_first_issue_key)
+        self.assertEquals(redis_server.get(self.alt_chronological_first_issue_key),
+                          "Test Volume and Issue for Manifestation")
 
     def test_alt_chronological_last_issue(self):
         alt_chronological_last_issue_key = getattr(self.manifestation,
                                                    'Alternative Chronological Designation of Last Issue or Part of Sequence (Manifestation)')
         self.assertEquals(self.alt_chronological_last_issue_key,
                           alt_chronological_last_issue_key)
+        self.assertEquals(redis_server.get(self.alt_chronological_last_issue_key),
+                          "Test Volume and Issue for Manifestation")
         
     def test_alt_numeric_first_issue_key(self):
         alt_numeric_first_issue_key = getattr(self.manifestation,
@@ -91,12 +373,16 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                        'Applied material (Manifestation)')
         self.assertEquals(applied_material_key,
                           self.applied_material_key)
+        self.assertEquals(redis_server.get(self.applied_material_key),
+                          "water colour")
 
     def test_base_material(self):
         base_material_key = getattr(self.manifestation,
                                     'Base material (Manifestation)')
         self.assertEquals(self.base_material_key, 
                           base_material_key)
+        self.assertEquals(redis_server.get(base_material_key),
+                          "vellum")
 
     def test_base_material_for_microfilm(self):
         base_material_for_microfilm_key = getattr(self.manifestation,
@@ -109,12 +395,416 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                   'Book format (Manifestation)')
         self.assertEquals(self.book_format_key,
                           book_format_key)
+        self.assertEquals(redis_server.get(book_format_key),
+                          "12mo")
 
     def test_broadcast_standard(self):
         broadcast_standard_key = getattr(self.manifestation,
                                          'Broadcast standard (Manifestation)')
         self.assertEquals(self.broadcast_standard_key,
                           broadcast_standard_key)
+        self.assertEquals(redis_server.get(broadcast_standard_key),
+                          "NTSC")
+
+    def test_contact_information(self):
+        contact_information_key = getattr(self.manifestation,
+                                          'Contact information (Manifestation)')
+        self.assertEquals(self.contact_information_key,
+                          contact_information_key)
+        self.assertEquals(redis_server.hget(contact_information_key,
+                                            "foaf:familyName")
+                          ,"Doe")
+        self.assertEquals(redis_server.hget(contact_information_key,
+                                            "foaf:givenName"),
+                          "Jane")
+
+    def test_configuration_of_playback_channels(self):
+        configuration_of_playback_channels_key = getattr(self.manifestation,
+                                                         'Configuration of playback channels (Manifestation)')
+        self.assertEquals(self.configuration_of_playback_channels_key,
+                          configuration_of_playback_channels_key)
+        self.assertEquals(redis_server.get(configuration_of_playback_channels_key),
+                          "Surround")
+
+    def test_copyright_date(self):
+        copyright_date_key = getattr(self.manifestation,
+                                     'Copyright date (Manifestation)')
+        self.assertEquals(self.copyright_date_key,
+                          copyright_date_key)
+        self.assertEquals(redis_server.hget(copyright_date_key,
+                                            "encoding"),
+                          "marc")
+        self.assertEquals(redis_server.hget(copyright_date_key,
+                                            "value"),
+                          "1997")
+
+    def test_date_of_distribution(self):
+        date_of_distribution_key = getattr(self.manifestation,
+                                           'Date of distribution (Manifestation)')
+        self.assertEquals(self.date_of_distribution_key,
+                          date_of_distribution_key)
+        self.assertEquals(redis_server.get(date_of_distribution_key),
+                          "1998")
+
+    def test_date_of_manufacture(self):
+        date_of_manufacture_key = getattr(self.manifestation,
+                                          'Date of manufacture (Manifestation)')
+        self.assertEquals(self.date_of_manufacture_key,
+                          date_of_manufacture_key)
+        self.assertEquals(redis_server.get(self.date_of_manufacture_key),
+                          "1998")
+
+    def test_date_of_production(self):
+        date_of_production_key = getattr(self.manifestation,
+                                         'Date of production (Manifestation)')
+        self.assertEquals(self.date_of_production_key,
+                          date_of_production_key)
+        self.assertEquals(redis_server.get(self.date_of_production_key),
+                          "1999")
+        
+
+    def test_date_of_publication(self):
+        date_of_publication_key = getattr(self.manifestation,
+                                          'Date of publication (Manifestation)')
+        self.assertEquals(self.date_of_publication_key,
+                          date_of_publication_key)
+        self.assertEquals(redis_server.get(self.date_of_publication_key),
+                          "1998")
+
+    def test_designation_of_a_named_revision_of_an_edition(self):
+        designation_of_a_named_revision_of_an_edition_key = getattr(self.manifestation,
+                                                                    'Designation of a named revision of an edition (Manifestation)')
+
+        self.assertEquals(self.designation_of_a_named_revision_of_an_edition_key,
+                          designation_of_a_named_revision_of_an_edition_key)
+        self.assertEquals(redis_server.get(designation_of_a_named_revision_of_an_edition_key),
+                          "Test Designation of a named revision -- 1st Edition")
+
+    def test_designation_of_edition(self):
+        designation_of_edition_key = getattr(self.manifestation,
+                                             'Designation of edition (Manifestation)')
+        self.assertEquals(self.designation_of_edition_key,
+                          designation_of_edition_key)
+        self.assertEquals(redis_server.get(designation_of_edition_key),
+                          "Test Designation of Edition")
+
+    def test_digital_file_characteristic(self):
+        digital_file_characteristic_key = getattr(self.manifestation,
+                                                  'Digital file characteristic (Manifestation)')
+        self.assertEquals(self.digital_file_characteristic_key,
+                          digital_file_characteristic_key)
+        self.assertEquals(redis_server.get(digital_file_characteristic_key),
+                          "20 MB")
+
+    def test_digital_representation_of_cartographic_content(self):
+        digital_representation_of_cartographic_content_key = getattr(self.manifestation,
+                                                                     'Digital representation of cartographic content (Manifestation)')
+        self.assertEquals(self.digital_representation_of_cartographic_content_key,
+                          digital_representation_of_cartographic_content_key)
+        self.assertEquals(redis_server.get(digital_representation_of_cartographic_content_key),
+                         "Pixel")
+
+    def test_dimensions(self):
+        dimensions_key = getattr(self.manifestation,
+                                 'Dimensions (Manifestation)')
+        self.assertEquals(self.dimensions_key,
+                          dimensions_key)
+        self.assertEquals(redis_server.get(self.dimensions_key),
+                          "Test Dimensions 3x3")
+
+    def test_dimensions_of_map(self):
+        dimensions_of_map_key = getattr(self.manifestation,
+                                        'Dimensions of map, etc. (Manifestation)')
+        self.assertEquals(self.dimensions_of_map_key,
+                          dimensions_of_map_key)
+        self.assertEquals(redis_server.get(self.dimensions_of_map_key),
+                          "Test Dimensions of Map")
+
+    def test_dimensions_of_still_image(self):
+        dimensions_of_still_image_key = getattr(self.manifestation,
+                                                'Dimensions of still image (Manifestation)')
+        self.assertEquals(self.dimensions_of_still_image_key,
+                          dimensions_of_still_image_key)
+
+    def test_distribution_statement(self):
+        distribution_statement_key = getattr(self.manifestation,
+                                             'Distribution statement (Manifestation)')
+        self.assertEquals(self.distribution_statement_key,
+                          distribution_statement_key)
+        self.assertEquals(redis_server.get(distribution_statement_key),
+                          "Test Distribution Statement")
+
+    def test_distributor_name(self):
+        distributor_name_key =  getattr(self.manifestation,
+                                        "Distributor's name (Manifestation)")
+        self.assertEquals(self.distributor_name_key,
+                          distributor_name_key)
+        self.assertEquals(redis_server.get(distributor_name_key),
+                          "Not a Name Distributor")
+
+    def test_earlier_title_proper(self):
+        earlier_title_proper_key = getattr(self.manifestation,
+                                           'Earlier title proper (Manifestation)')
+        self.assertEquals(self.earlier_title_proper_key,
+                          earlier_title_proper_key)
+        self.assertEquals(redis_server.hget(earlier_title_proper_key,
+                                            "type"),
+                          "alternate")
+        self.assertEquals(redis_server.hget(earlier_title_proper_key,
+                                            "title"),
+                          "Test Earlier Proper Title")
+
+    def test_edition_statement(self):
+        edition_statement_key = getattr(self.manifestation,
+                                        'Edition statement (Manifestation)')
+        self.assertEquals(self.edition_statement_key,
+                          edition_statement_key)
+        self.assertEquals(redis_server.get(edition_statement_key),
+                          "Test 3rd Edition Statement")
+
+
+    def test_emulsion_on_microfilm_and_microfiche(self):
+        emulsion_on_microfilm_and_microfiche_key = getattr(self.manifestation,
+                                                           'Emulsion on microfilm and microfiche (Manifestation)')
+        self.assertEquals(self.emulsion_on_microfilm_and_microfiche_key,
+                          emulsion_on_microfilm_and_microfiche_key)
+        self.assertEquals(redis_server.get(emulsion_on_microfilm_and_microfiche_key),
+                          "Silver halide")
+
+    def test_encoding_format(self):
+        encoding_format_key = getattr(self.manifestation,
+                                      'Encoding format (Manifestation)')
+        self.assertEquals(self.encoding_format_key,
+                          encoding_format_key)
+        self.assertEquals(redis_server.get(encoding_format_key),
+                          "ASCII")
+
+    def test_equipment_or_system_requirement(self):
+        equipment_or_system_requirement_key = getattr(self.manifestation,
+                                                      'Equipment or system requirement (Manifestation)')
+        self.assertEquals(self.equipment_or_system_requirement_key,
+                          equipment_or_system_requirement_key)
+        self.assertEquals(redis_server.get(equipment_or_system_requirement_key),
+                          "Test Equipment or System Requirement")
+
+    def test_extent(self):
+        extent_key = getattr(self.manifestation,
+                             'Extent (Manifestation)')
+        self.assertEquals(self.extent_key,
+                          extent_key)
+        self.assertEquals(redis_server.get(self.extent_key),
+                          "Online resource")
+
+    def test_extent_of_cartographic_resource(self):
+        extent_of_cartographic_resource_key = getattr(self.manifestation,
+                                                      'Extent of cartographic resource (Manifestation)')
+        self.assertEquals(self.extent_of_cartographic_resource_key,
+                          extent_of_cartographic_resource_key)
+        self.assertEquals(redis_server.get(extent_of_cartographic_resource_key),
+                         "Diagrams")
+
+
+    def test_extent_of_notated_music(self):
+        extent_of_notated_music_key = getattr(self.manifestation,
+                                              'Extent of notated music (Manifestation)')
+        self.assertEquals(self.extent_of_notated_music_key,
+                          extent_of_notated_music_key)
+        self.assertEquals(redis_server.get(extent_of_notated_music_key),
+                          "Vocal score")
+
+    def test_extent_of_still_image(self):
+        extent_of_still_image_key = getattr(self.manifestation,
+                                            'Extent of still image (Manifestation)')
+        self.assertEquals(self.extent_of_still_image_key,
+                          extent_of_still_image_key)
+        self.assertEquals(redis_server.get(extent_of_still_image_key),
+                          "Technical drawing")
+
+    def test_extent_of_text(self):
+        extent_of_text_key = getattr(self.manifestation,
+                                     'Extent of text (Manifestation)')
+        self.assertEquals(self.extent_of_text_key,
+                          extent_of_text_key)
+
+        self.assertEquals(redis_server.get(extent_of_text_key),
+                          "In various pagings")
+
+    def test_extent_of_three_dimensional_form(self):
+        extent_of_three_dimensional_form_key = getattr(self.manifestation,
+                                                       'Extent of three-dimensional form (Manifestation)')
+        self.assertEquals(self.extent_of_three_dimensional_form_key,
+                          extent_of_three_dimensional_form_key)
+        self.assertEquals(redis_server.get(extent_of_three_dimensional_form_key),
+                          "Jigsaw puzzle")
+
+    def test_file_size(self):
+        self.assertEquals(getattr(self.manifestation,
+                                  'File size (Manifestation)'),
+                          "300 MB")
+
+    def test_file_type(self):
+        file_type_key = getattr(self.manifestation,
+                                'File type (Manifestation)')
+        self.assertEquals(self.file_type_key,
+                          file_type_key)
+        self.assertEquals(redis_server.get(file_type_key),
+                          "Image file")
+
+    def test_font_size_key(self):
+        font_size_key = getattr(self.manifestation,
+                                'Font size (Manifestation)')
+        self.assertEquals(self.font_size_key,
+                          font_size_key)
+        self.assertEquals(redis_server.get(font_size_key),
+                          "Giant print")
+
+    def test_frequency(self):
+        frequency_key = getattr(self.manifestation,
+                                'Frequency (Manifestation)')
+        self.assertEquals(self.frequency_key,
+                          frequency_key)
+        self.assertEquals(redis_server.get(frequency_key),
+                          "Semiannual")
+
+    def test_generation(self):
+        generation_key = getattr(self.manifestation,
+                                 'Generation (Manifestation)')
+        self.assertEquals(self.generation_key,
+                          generation_key)
+        self.assertEquals(redis_server.get(generation_key),
+                          "Generation Test for Manifestation")
+
+    def test_generation_of_audio_recording(self):
+        generation_of_audio_recording_key = getattr(self.manifestation,
+                                                    'Generation of audio recording (Manifestation)')
+        self.assertEquals(self.generation_of_audio_recording_key,
+                          generation_of_audio_recording_key)
+        self.assertEquals(redis_server.get(generation_of_audio_recording_key),
+                         "Tape duplication master")
+
+    def test_generation_of_digital_resource(self):
+        generation_of_digital_resource_key = getattr(self.manifestation,
+                                                     'Generation of digital resource (Manifestation)')
+        self.assertEquals(self.generation_of_digital_resource_key,
+                          generation_of_digital_resource_key)
+        self.assertEquals(redis_server.get(generation_of_digital_resource_key),
+                          "Master")
+
+    def test_generation_of_microform(self):
+        generation_of_microform_key = getattr(self.manifestation,
+                                              'Generation of microform (Manifestation)')
+        self.assertEquals(self.generation_of_microform_key,
+                          generation_of_microform_key)
+        self.assertEquals(redis_server.get(generation_of_microform_key),
+                          "Mixed generation")
+
+    def test_generation_of_motion_picture_film(self):
+        generation_of_motion_picture_film_key = getattr(self.manifestation,
+                                                        'Generation of motion picture film (Manifestation)')
+        self.assertEquals(self.generation_of_motion_picture_film_key,
+                          generation_of_motion_picture_film_key)
+        self.assertEquals(redis_server.get(generation_of_motion_picture_film_key),
+                         "Reference print")
+
+    def test_generation_of_videotape(self):
+        generation_of_videotape_key = getattr(self.manifestation,
+                                             'Generation of videotape (Manifestation)')
+        self.assertEquals(self.generation_of_videotape_key,
+                          generation_of_videotape_key)
+        self.assertEquals(redis_server.get(generation_of_videotape_key),
+                         'Second generation show copy')
+
+    def test_groove_characteristic(self):
+        groove_characteristic_key = getattr(self.manifestation,
+                                            'Groove characteristic (Manifestation)')
+        self.assertEquals(self.groove_characteristic_key,
+                          groove_characteristic_key)
+        self.assertEquals(redis_server.get(groove_characteristic_key),
+                          "Standard")
+
+    def test_issn_of_series(self):
+        issn_of_series_key = getattr(self.manifestation,
+                                     'ISSN of series (Manifestation)')
+        self.assertEquals(self.issn_of_series_key,
+                          issn_of_series_key)
+        self.assertEquals(redis_server.hget(issn_of_series_key,"type"),
+                          "issn")
+        self.assertEquals(redis_server.hget(issn_of_series_key,"value"),
+                          "11223344")
+
+    def test_issn_of_subseries(self):
+        issn_of_subseries_key = getattr(self.manifestation,
+                                        'ISSN of subseries (Manifestation)')
+        self.assertEquals(self.issn_of_subseries_key,
+                          issn_of_subseries_key)
+        self.assertEquals(redis_server.hget(issn_of_subseries_key,"type"),
+                          "issn")
+        self.assertEquals(redis_server.hget(issn_of_subseries_key,"value"),
+                          "22334455")
+
+    def test_identifier(self):
+        identifier_key = getattr(self.manifestation,
+                                 'Identifier for the manifestation')
+        self.assertEquals(self.identifier_key,
+                          identifier_key)
+        self.assertEquals(redis_server.hget(identifier_key,'type'),
+                          'local')
+        self.assertEquals(redis_server.hget(identifier_key,'value'),
+                          'CC Biology 1')
+
+    def test_key_title(self):
+        key_title_key = getattr(self.manifestation,
+                                'Key title (Manifestation)')
+        self.assertEquals(self.key_title_key,
+                          key_title_key)
+        self.assertEquals(redis_server.hget(key_title_key,"type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(key_title_key,"title"),
+                          "Test Key Title for Manifestation")
+
+    def test_later_title_proper(self):
+        later_title_proper_key = getattr(self.manifestation,
+                                         'Later title proper (Manifestation)')
+        self.assertEquals(self.later_title_proper_key,
+                          later_title_proper_key)
+        self.assertEquals(redis_server.hget(later_title_proper_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(later_title_proper_key,
+                                            "title"),
+                          "This is Test Laster Title Proper")
+
+    def test_layout(self):
+        layout_key = getattr(self.manifestation,
+                             'Layout (Manifestation)')
+        self.assertEquals(self.layout_key,
+                          layout_key)
+        self.assertEquals(redis_server.get(self.layout_key),
+                         "Double sided")
+
+    def test_layout_of_cartographic_images(self):
+        layout_of_cartographic_images_key = getattr(self.manifestation,
+                                                    'Layout of cartographic images (Manifestation)')
+        self.assertEquals(self.layout_of_cartographic_images_key,
+                          layout_of_cartographic_images_key)
+        self.assertEquals(redis_server.get(layout_of_cartographic_images_key),
+                         "both sides")
+
+    def test_layout_of_tactile_musical_notation(self):
+        layout_of_tactile_musical_notation_key = getattr(self.manifestation,
+                                                         'Layout of tactile musical notation (Manifestation)')
+        self.assertEquals(self.layout_of_tactile_musical_notation_key,
+                          layout_of_tactile_musical_notation_key)
+        self.assertEquals(redis_server.get(layout_of_tactile_musical_notation_key),
+                         "Melody chord system")
+
+    def test_layout_of_tactile_text(self):
+        layout_of_tactile_text_key = getattr(self.manifestation,
+                                             'Layout of tactile text (Manifestation)')
+        self.assertEquals(self.layout_of_tactile_text_key,
+                          layout_of_tactile_text_key)
+        self.assertEquals(redis_server.get(layout_of_tactile_text_key),
+                         "Test layout of tactile text")
 
     def tearDown(self):
         redis_server.flushdb()
