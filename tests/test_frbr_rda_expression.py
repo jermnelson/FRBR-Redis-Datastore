@@ -54,6 +54,7 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
         self.form_of_notated_movement_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         redis_server.set(self.form_of_notated_movement_key,"Eshkol-Wachman Movement Notation")
         self.form_of_notation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.form_of_notation_key,"Test Expression Form of Notation")
         self.form_of_tactile_notation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         self.format_of_notated_music_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         self.horizontal_scale_of_cartographic_content_key = "kvm:scale:%s" % redis_server.incr("global:kvm:scale")
@@ -61,6 +62,39 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
         self.identifier_for_the_expression_key = "mods:identifier:%s" % redis_server.incr("global:mods:identifier")
         self.illustrative_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         self.language_of_expression_key = "xml:lang:en"
+        self.language_of_the_content_key = self.language_of_expression_key
+        self.medium_of_performance_of_musical_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.medium_of_performance_of_musical_content_key,"Baritone (Musical instrument)")
+        self.other_details_of_cartographic_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.other_distinguishing_characteristic_of_the_expression_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.other_distinguishing_characteristic_of_the_expression_key,
+                          "type",
+                          "source characteristics")
+        redis_server.hset(self.other_distinguishing_characteristic_of_the_expression_key,
+                          "value",
+                          "Test Source Characteristic")
+
+        self.performer_key = "frad:person:%s" % redis_server.incr("global:frad:person")
+        redis_server.set(self.performer_key,"Test Expression Perfomer")
+        self.scale_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.scale_of_still_image_or_three_dimensional_form_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.place_and_date_of_capture_key = "mods:originInfo:%s" % redis_server.incr("global:mods:originInfo")
+        self.place_of_capture_key = "mods:city:Colorado Springs"
+        redis_server.hset(self.place_and_date_of_capture_key,"place",self.place_of_capture_key)
+        redis_server.hset(self.place_and_date_of_capture_key,"mods:dateCaptured","2001")
+        self.projection_of_cartographic_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.script_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        self.scale_of_still_image_or_three_dimensional_form_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.scale_of_still_image_or_three_dimensional_form_key,"1:100,000")
+        self.sound_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.sound_content_key,"Test Sound Content for Expression")
+        self.source_consulted_key = "frbr:Work:%s" % redis_server.incr("global:frbr:Work")
+        redis_server.set(self.source_consulted_key,"Test Source Consulted for Expression")
+        self.summarization_of_the_content_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.summarization_of_the_content_key,"Test Expression Summary")
+        self.supplementary_content_key = "frbr:Expression:%s" % redis_server.incr("global:frbr:Expression")
+        self.vertical_scale_of_cartographic_content_key = "kvm:scale:%s" % redis_server.incr("global:kvm:scale")
+        redis_server.set(self.vertical_scale_of_cartographic_content_key,"meter")
         params = {'Accessibility content (Expression)':self.accessibility_content_key,
                   'Additional scale information (Expression)':self.additional_scale_information_key,
                   'Artistic and/or technical credit (Expression)':self.artistic_and_or_technical_credit_key,
@@ -84,7 +118,24 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
                   'Horizontal scale of cartographic content (Expression)':self.horizontal_scale_of_cartographic_content_key,
                   'Identifier for the expression':self.identifier_for_the_expression_key,
                   'Illustrative content (Expression)':self.illustrative_content_key,
-                  'Language of expression':self.language_of_expression_key}#, 'Language of the content (Expression)', 'Medium of performance of musical content (Expression)', 'Other details of cartographic content (Expression)', 'Other distinguishing characteristic of the expression', 'Performer, narrator, and/or presenter (Expression)', 'Place and date of capture (Expression)', 'Place of capture (Expression)', 'Projection of cartographic content (Expression)', 'Scale (Expression)', 'Scale of still image or three-dimensional form (Expression)', 'Script (Expression)', 'Sound content (Expression)', 'Source consulted (Expression)', 'Status of identification (Expression)', 'Summarization of the content (Expression)', 'Supplementary content (Expression)', 'Vertical scale of cartographic content (Expression)'}
+                  'Language of expression':self.language_of_expression_key, 
+                  'Language of the content (Expression)':self.language_of_the_content_key, 
+                  'Medium of performance of musical content (Expression)':self.medium_of_performance_of_musical_content_key, 
+                  'Other details of cartographic content (Expression)':self.other_details_of_cartographic_content_key, 
+                  'Other distinguishing characteristic of the expression':self.other_distinguishing_characteristic_of_the_expression_key, 
+                  'Performer, narrator, and/or presenter (Expression)':self.performer_key, 
+                  'Place and date of capture (Expression)':self.place_and_date_of_capture_key, 
+                  'Place of capture (Expression)':self.place_of_capture_key, 
+                  'Projection of cartographic content (Expression)':self.projection_of_cartographic_content_key, 
+                  'Scale (Expression)':self.scale_key,
+                  'Scale of still image or three-dimensional form (Expression)':self.scale_of_still_image_or_three_dimensional_form_key, 
+                  'Script (Expression)':self.script_key, 
+                  'Sound content (Expression)':self.sound_content_key, 
+                  'Source consulted (Expression)':self.source_consulted_key, 
+                  'Status of identification (Expression)':"established", 
+                  'Summarization of the content (Expression)':self.summarization_of_the_content_key, 
+                  'Supplementary content (Expression)':self.supplementary_content_key, 
+                  'Vertical scale of cartographic content (Expression)':self.vertical_scale_of_cartographic_content_key}
         self.expression = frbr_rda.Expression(redis_server=redis_server,
                                               **params)
 
@@ -218,18 +269,25 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
                                                'Form of musical notation (Expression)')
         self.assertEquals(self.form_of_musical_notation_key,
                           form_of_musical_notation_key)
-
+        self.assertEquals(redis_server.get(form_of_musical_notation_key),
+                          "modern staff notation")
+ 
     def test_form_of_notated_movement(self):
         form_of_notated_movement_key = getattr(self.expression,
                                                'Form of notated movement (Expression)')
         self.assertEquals(self.form_of_notated_movement_key,
                           form_of_notated_movement_key)
-
+        self.assertEquals(redis_server.get(form_of_notated_movement_key),
+                          "Eshkol-Wachman Movement Notation")
+        
     def test_form_of_notation(self):
         form_of_notation_key = getattr(self.expression,
                                        'Form of notation (Expression)')
         self.assertEquals(self.form_of_notation_key,
                           form_of_notation_key)
+        self.assertEquals(redis_server.get(self.form_of_notation_key),
+                          "Test Expression Form of Notation")
+
 
     def test_form_of_tactile_notation(self):
         form_of_tactile_notation_key = getattr(self.expression,
@@ -266,7 +324,119 @@ class TestExpressionRDAGroup1Elements(unittest.TestCase):
                                              'Language of expression')
         self.assertEquals(self.language_of_expression_key,
                           language_of_expression_key)
-		
+
+    def test_language_of_the_content(self):
+	language_of_the_content_key = getattr(self.expression,	
+                                              'Language of the content (Expression)')
+        self.assertEquals(self.language_of_the_content_key, 
+                          language_of_the_content_key)
+
+    def test_medium_of_performance_of_musical_content(self):
+        medium_of_performance_of_musical_content_key = getattr(self.expression,
+                                                               'Medium of performance of musical content (Expression)')
+
+        self.assertEquals(self.medium_of_performance_of_musical_content_key, 
+                          medium_of_performance_of_musical_content_key)
+
+    def test_other_details_of_cartographic_content(self):
+        other_details_of_cartographic_content_key = getattr(self.expression,
+                                                            'Other details of cartographic content (Expression)')
+        self.assertEquals(self.other_details_of_cartographic_content_key, 
+                          other_details_of_cartographic_content_key)
+
+    def test_other_distinguishing_characteristic_of_the_expression(self):
+        other_distinguishing_characteristic_of_the_expression_key = getattr(self.expression,
+                                                                            'Other distinguishing characteristic of the expression')
+        self.assertEquals(self.other_distinguishing_characteristic_of_the_expression_key, 
+                          other_distinguishing_characteristic_of_the_expression_key)
+ 
+    def test_performer_narrator(self):
+        performer_key = getattr(self.expression,
+                                'Performer, narrator, and/or presenter (Expression)')
+        self.assertEquals(self.performer_key,
+                          performer_key)
+
+    def test_place_and_date_of_capture(self):
+        place_and_date_of_capture_key = getattr(self.expression,
+                                                'Place and date of capture (Expression)')
+        self.assertEquals(self.place_and_date_of_capture_key, 
+                          place_and_date_of_capture_key)
+
+    def test_place_of_capture(self):
+        place_of_capture_key = getattr(self.expression,
+                                       'Place of capture (Expression)')
+        self.assertEquals(self.place_of_capture_key, 
+                          place_of_capture_key)
+
+    def test_projection_of_cartographic_content(self):
+        projection_of_cartographic_content_key = getattr(self.expression,
+                                                         'Projection of cartographic content (Expression)')
+        self.assertEquals(self.projection_of_cartographic_content_key, 
+                          projection_of_cartographic_content_key)
+
+    def test_scale(self):
+        scale_key = getattr(self.expression,
+                             'Scale (Expression)')
+        self.assertEquals(self.scale_key,
+                          scale_key)
+
+    def test_scale_of_still_image_or_three_dimensional_form(self):
+        scale_of_still_image_or_three_dimensional_form_key = getattr(self.expression,
+                                                                     'Scale of still image or three-dimensional form (Expression)')
+        self.assertEquals(self.scale_of_still_image_or_three_dimensional_form_key, 
+                          scale_of_still_image_or_three_dimensional_form_key)
+
+    def test_script(self):
+        script_key = getattr(self.expression,
+                             'Script (Expression)')
+        self.assertEquals(self.script_key,
+                          script_key)
+
+    def test_sound_content_key(self):
+        sound_content_key = getattr(self.expression,
+                                    'Sound content (Expression)')
+        self.assertEquals(self.sound_content_key, 
+                          sound_content_key)
+        self.assertEquals(redis_server.get(self.sound_content_key),
+                          "Test Sound Content for Expression")
+ 
+
+    def test_source_consulted(self):
+        source_consulted_key = getattr(self.expression,
+                                       'Source consulted (Expression)')
+        self.assertEquals(self.source_consulted_key, 
+                          source_consulted_key)
+        self.assertEquals(redis_server.get(source_consulted_key),
+                          "Test Source Consulted for Expression")
+
+    def test_status_of_identification(self):
+        self.assertEquals(getattr(self.expression,
+                                  'Status of identification (Expression)'),
+                          "established")
+
+    def test_summarization_of_the_content(self):
+        summarization_of_the_content_key = getattr(self.expression,
+                                                   'Summarization of the content (Expression)')
+        self.assertEquals(self.summarization_of_the_content_key, 
+                          summarization_of_the_content_key)
+        self.assertEquals(redis_server.get(self.summarization_of_the_content_key),
+                          "Test Expression Summary")
+     
+                                  
+    def test_supplementary_content(self):
+        supplementary_content_key = getattr(self.expression,
+                                            'Supplementary content (Expression)')
+        self.assertEquals(self.supplementary_content_key,
+                          supplementary_content_key)
+       
+    def test_vertical_scale_of_cartographic_content(self):
+        vertical_scale_of_cartographic_content_key = getattr(self.expression,
+                                                             'Vertical scale of cartographic content (Expression)')
+        self.assertEquals(self.vertical_scale_of_cartographic_content_key,
+                          vertical_scale_of_cartographic_content_key)
+        self.assertEquals(redis_server.get(self.vertical_scale_of_cartographic_content_key),
+                          "meter")
+
 
     def tearDown(self):
         redis_server.flushdb()
