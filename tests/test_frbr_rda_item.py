@@ -19,9 +19,51 @@ redis_server = redis.StrictRedis(host=config.REDIS_HOST,
 class TestItemRDAGroup1Elements(unittest.TestCase):
 
     def setUp(self):
-        self.contact_information_key = "foaf:person:%s" % redis_server.incr("global:foaf:person")
+        self.contact_information_key = "foaf:Person:%s" % redis_server.incr("global:foaf:Person")
         redis_server.set(self.contact_information_key,"Jane Librarian")
-        params = {'Contact information (Item)':self.contact_information_key}#, 'Custodial history of item', 'Dimensions (Item)', 'Dimensions of map, etc. (Item)', 'Dimensions of still image (Item)', 'Extent (Item)', 'Extent of cartographic resource (Item)', 'Extent of notated music (Item)', 'Extent of still image (Item)', 'Extent of text (Item)', 'Extent of three-dimensional form (Item)', 'Identifier for the item', 'Immediate source of acquisition of item', 'Item-specific carrier characteristic', 'Item-specific carrier characteristic of early printed resources', 'Note (Item)', 'Note on dimensions of item', 'Note on extent of item ', 'Preferred citation (Item)', 'Restrictions on access (Item)', 'Restrictions on use (Item)', 'Uniform resource locator (Item)'}
+        self.custodial_history_of_item_key = None
+        self.dimensions_key = None
+        self.dimensions_of_map_key = None
+        self.dimensions_of_still_image_key = None
+        self.extent_key = None
+        self.extent_of_cartographic_resource_key = None
+        self.extent_of_notated_music_key = None
+        self.extent_of_still_image_key = None
+        self.extent_of_text_key = None
+        self.extent_of_three_dimensional_form_key = None
+        self.identifier_for_the_item_key = None
+        self.immediate_source_of_acquisition_of_item_key = None
+        self.item_specific_carrier_characteristic_key = None
+        self.item_specific_carrier_characteristic_of_early_printed_resources_key = None
+        self.note_key = None
+        self.note_on_dimensions_of_item_key = None
+        self.note_on_extent_of_item_key = None
+        self.preferred_citation_key = None
+        self.restrictions_on_access_key = None
+        self.restrictions_on_use_key = None
+        self.uniform_resource_locator_key = None
+        params = {'Contact information (Item)':self.contact_information_key, 
+                  'Custodial history of item':self.custodial_history_of_item_key, 
+                  'Dimensions (Item)':self.dimensions_key,
+                  'Dimensions of map, etc. (Item)':self.dimensions_of_map_key, 
+                  'Dimensions of still image (Item)':self.dimensions_of_still_image_key, 
+                  'Extent (Item)':self.extent_key, 
+                  'Extent of cartographic resource (Item)':self.extent_of_cartographic_resource_key, 
+                  'Extent of notated music (Item)':self.extent_of_notated_music_key, 
+                  'Extent of still image (Item)':self.extent_of_still_image_key, 
+                  'Extent of text (Item)':self.extent_of_text_key, 
+                  'Extent of three-dimensional form (Item)':self.extent_of_three_dimensional_form_key, 
+                  'Identifier for the item':self.identifier_for_the_item_key, 
+                  'Immediate source of acquisition of item':self.immediate_source_of_acquisition_of_item_key, 
+                  'Item-specific carrier characteristic':self.item_specific_carrier_characteristic_key, 
+                  'Item-specific carrier characteristic of early printed resources':self.item_specific_carrier_characteristic_of_early_printed_resources_key, 
+                  'Note (Item)':self.note_key,
+                  'Note on dimensions of item':self.note_on_dimensions_of_item_key,
+                  'Note on extent of item':self.note_on_extent_of_item_key, 
+                  'Preferred citation (Item)':self.preferred_citation_key, 
+                  'Restrictions on access (Item)':self.restrictions_on_access_key, 
+                  'Restrictions on use (Item)':self.restrictions_on_use_key, 
+                  'Uniform resource locator (Item)':self.uniform_resource_locator_key}
         self.item = frbr_rda.Item(redis_server=redis_server,
                                   **params)
 

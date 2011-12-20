@@ -163,6 +163,104 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         self.layout_of_tactile_text_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         redis_server.set(self.layout_of_tactile_text_key,
                          "Test layout of tactile text")
+        self.manufacture_statement_key = None
+        self.manufacturers_name_key = None 
+        self.media_type_key = None
+        self.mode_of_issuance_key = None
+        self.mount_key = None
+        self.note_key = None
+        self.note_on_changes_in_carrier_characteristics_key = None
+        self.note_on_copyright_date_key = None
+        self.note_on_dimensions_of_manifestation_key = None
+        self.note_on_distribution_statement_key = None
+        self.note_on_edition_statement_key = None
+        self.note_on_extent_of_manifestation_key = None
+        self.note_on_frequency_key = None
+        self.note_on_issue_part_or_iteration_key = None
+        self.note_on_manufacture_statement_key = None
+        self.note_on_numbering_of_serials_key = None
+        self.note_on_production_statement_key = None
+        self.note_on_publication_statement_key = None
+        self.note_on_series_statement_key = None
+        self.note_on_statement_of_responsibility_key = None
+        self.note_on_title_key = None
+        self.numbering_of_serials_key = None
+        self.numbering_within_series_key = None
+        self.numbering_within_subseries_key = None
+        self.numeric_alphabetic_designation_of_first_issue_key = None
+        self.numeric_alphabetic_designation_of_last_issue_key = None
+        self.other_title_information_key = None
+        self.other_title_information_of_series_key = None
+        self.other_title_information_of_subseries_key = None
+        self.parallel_designation_of_named_revision_edition_key = None
+        self.parallel_designation_of_edition_key = None
+        self.parallel_distributors_name_key = None
+        self.parallel_manufacturers_name_key = None
+        self.parallel_other_title_information_key = None
+        self.parallel_other_title_information_of_series_key = None
+        self.parallel_other_title_information_of_subseries_key = None
+        self.parallel_place_of_distribution_key = None
+        self.parallel_place_of_manufacture_key = None
+        self.parallel_place_of_production_key = None
+        self.parallel_place_of_publication_key = None
+        self.parallel_producers_name_key = None
+        self.parallel_publisher_name_key = None
+        self.parallel_statement_of_responsibility_to_named_revision_edition_key = None
+        self.parallel_statement_of_responsibility_relating_to_series_key = None
+        self.parallel_statement_of_responsibility_relating_to_subseries_key = None
+        self.parallel_statement_of_responsibility_relating_edition_key = None
+        self.parallel_statement_of_responsibility_relating_to_title_proper_key = None
+        self.parallel_title_proper_key = None
+        self.parallel_title_proper_of_series_key = None
+        self.parallel_title_proper_of_subseries_key = None
+        self.place_of_distribution_key = None
+        self.place_of_manufacture_key = None
+        self.place_of_production_key = None
+        self.place_of_publication_key = None
+        self.plate_number_for_music_key = None
+        self.playing_speed_key = None
+        self.polarity_key = None
+        self.preferred_citation_key = None
+        self.presentation_format_key = None
+        self.producer_name_key = None
+        self.production_method_key = None
+        self.production_method_for_manuscript_key = None
+        self.production_method_for_tactile_resource_key = None
+        self.production_statement_key = None
+        self.projection_characteristic_of_motion_picture_film_key = None
+        self.projection_speed_key = None
+        self.publication_statement_key = None
+        self.publisher_name_key = None
+        self.publisher_number_for_music_key = None
+        self.recording_medium_key = None
+        self.reduction_ration_key = None
+        self.regional_encoding_key = None
+        self.resolution_key = None
+        self.restrictions_on_access_key = None
+        self.restrictions_on_use_key = None
+        self.series_statement_key = None
+        self.sound_characteristic_key = None
+        self.sound_content_key = None
+        self.special_playback_characteristic_key = None
+        self.statement_of_responsibility_key = None
+        self.statement_of_responsibility_relating_named_revision_edition_key = None
+        self.statement_of_responsibility_relating_to_series_key = None
+        self.statement_of_responsibility_relating_to_subseries_key = None
+        self.statement_of_responsibility_relating_to_the_edition_key = None
+        self.statement_of_responsibility_relating_to_title_proper_key = None
+        self.tape_configuration_key = None
+        self.terms_of_availability_key = None
+        self.title_key = None
+        self.title_proper_key = None
+        self.title_proper_of_series_key = None
+        self.title_proper_of_subseries_key = None
+        self.track_configuration_key = None
+        self.transmission_speed_key = None
+        self.type_of_recording_key = None
+        self.uniform_resource_locator_key = None
+        self.variant_title_key = None
+        self.video_characteristic_key = None
+        self.video_format_key = None
         params = {'Abbreviated title (Manifestation)':self.abbreviated_title_key,
                   'Alternative Chronological Designation of First Issue or Part of Sequence (Manifestation)':self.alt_chronological_first_issue_key,
                   'Alternative Chronological Designation of Last Issue or Part of Sequence (Manifestation)':self.alt_chronological_last_issue_key,
@@ -222,105 +320,105 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                   'Layout (Manifestation)':self.layout_key,
                   'Layout of cartographic images (Manifestation)':self.layout_of_cartographic_images_key,
                   'Layout of tactile musical notation (Manifestation)':self.layout_of_tactile_musical_notation_key,
-                  'Layout of tactile text (Manifestation)': self.layout_of_tactile_text_key}
-                  'Manufacture statement (Manifestation)':,
-                  "Manufacturer's name (Manifestation)":,
-                  'Media type (Manifestation)':,
-                  'Mode of issuance (Manifestation)':,
-                  'Mount (Manifestation)':,
-                  'Note (Manifestation)':,
-                  'Note on changes in carrier characteristics (Manifestation)':,
-                  'Note on copyright date (Manifestation)':,
-                  'Note on dimensions of manifestation':,
-                  'Note on distribution statement (Manifestation)':,
-                  'Note on edition statement (Manifestation)':,
-                  'Note on extent of manifestation':,
-                  'Note on frequency (Manifestation)':,
-                  'Note on issue, part, or iteration used as the basis for identification of the resource (Manifestation)':,
-                  'Note on manufacture statement (Manifestation)':,
-                  'Note on numbering of serials (Manifestation)':,
-                  'Note on production statement (Manifestation)':,
-                  'Note on publication statement (Manifestation)':,
-                  'Note on series statement (Manifestation)':,
-                  'Note on statement of responsibility (Manifestation)':,
-                  'Note on title (Manifestation)':,
-                  'Numbering of serials (Manifestation)':,
-                  'Numbering within series (Manifestation)':,
-                  'Numbering within subseries (Manifestation)':,
-                  'Numeric and/or alphabetic designation of first issue or part of sequence (Manifestation)':,
-                  'Numeric and/or alphabetic designation of last issue or part of sequence (Manifestation)':,
-                  'Other title information (Manifestation)':,
-                  'Other title information of series (Manifestation)':,
-                  'Other title information of subseries (Manifestation)':,
-                  'Parallel designation of a named revision of an edition (Manifestation)':,
-                  'Parallel designation of edition (Manifestation)':,
-                  "Parallel distributor's name (Manifestation)":,
-                  "Parallel manufacturer's name (Manifestation)":,
-                  'Parallel other title information (Manifestation)':,
-                  'Parallel other title information of series (Manifestation)':,
-                  'Parallel other title information of subseries (Manifestation)':,
-                  'Parallel place of distribution (Manifestation)':,
-                  'Parallel place of manufacture (Manifestation)':,
-                  'Parallel place of production (Manifestation)':,
-                  'Parallel place of publication (Manifestation)':,
-                  "Parallel producer's name (Manifestation)":,
-                  "Parallel publisher's name (Manifestation)":,
-                  'Parallel statement of responsibility relating to a named revision of an edition (Manifestation)':,
-                  'Parallel statement of responsibility relating to series (Manifestation)':,
-                  'Parallel statement of responsibility relating to subseries (Manifestation)':,
-                  'Parallel statement of responsibility relating to the edition (Manifestation)':,
-                  'Parallel statement of responsibility relating to title proper (Manifestation)':,
-                  'Parallel title proper (Manifiestation)':,
-                  'Parallel title proper of series (Manifestation)':,
-                  'Parallel title proper of subseries (Manifestation)':,
-                  'Place of distribution (Manifestation)':,
-                  'Place of manufacture (Manifestation)':,
-                  'Place of production (Manifestation)':,
-                  'Place of publication (Manifestation)':,
-                  'Plate number for music (Manifestation)':,
-                  'Playing speed (Manifestation)':,
-                  'Polarity (Manifestation)':,
-                  'Preferred citation (Manifestation)':,
-                  'Presentation format (Manifestation)':,
-                  "Producer's name (Manifestation)":,
-                  'Production method (Manifestation)':,
-                  'Production method for manuscript (Manifestation)':,
-                  'Production method for tactile resource (Manifestation)':,
-                  'Production statement (Manifestation)':,
-                  'Projection characteristic of motion picture film (Manifestation)':,
-                  'Projection speed (Manifestation)':,
-                  'Publication statement (Manifestation)':,
-                  "Publisher's name (Manifestation)":,
-                  "Publisher's number for music (Manifestation)":,
-                  'Recording medium (Manifestation)':,
-                  'Reduction ration (Manifestation)':,
-                  'Regional encoding (Manifestation)':,
-                  'Resolution (Manifestation)':,
-                  'Restrictions on access (Manifestation)':,
-                  'Restrictions on use (Manifestation)':,
-                  'Series statement (Manifestation)':,
-                  'Sound characteristic (Manifestation)':,
-                  'Sound content (Manifestation)':,
-                  'Special playback characteristic (Manifestation)':,
-                  'Statement of responsibility (Manifestation)':,
-                  'Statement of responsibility relating to a named revision of an edition (Manifestation)':,
-                  'Statement of responsibility relating to series (Manifestation)':,
-                  'Statement of responsibility relating to subseries (Manifestation)':,
-                  'Statement of responsibility relating to the edition (Manifestation)':,
-                  'Statement of responsibility relating to title proper (Manifestation)':,
-                  'Tape configuration (Manifestation)':,
-                  'Terms of availability (Manifestation)':,
-                  'Title (Manifestation)':,
-                  'Title proper (Manifestation)':,
-                  'Title proper of series (Manifestation)':,
-                  'Title proper of subseries (Manifestation)':,
-                  'Track configuration (Manifestation)':,
-                  'Transmission speed (Manifestation)':,
-                  'Type of recording (Manifestation)':,
-                  'Uniform resource locator (Manifestation)':,
-                  'Variant title (Manifestation)':,
-                  'Video characteristic (Manifestation)':,
-                  'Video format (Manifestation)':}
+                  'Layout of tactile text (Manifestation)': self.layout_of_tactile_text_key,
+                  'Manufacture statement (Manifestation)':self.manufacture_statement_key,
+                  "Manufacturer's name (Manifestation)":self.manufacturers_name_key,
+                  'Media type (Manifestation)':self.media_type_key,
+                  'Mode of issuance (Manifestation)':self.mode_of_issuance_key,
+                  'Mount (Manifestation)':self.mount_key,
+                  'Note (Manifestation)':self.note_key,
+                  'Note on changes in carrier characteristics (Manifestation)':self.note_on_changes_in_carrier_characteristics_key ,
+                  'Note on copyright date (Manifestation)':self.note_on_copyright_date_key,
+                  'Note on dimensions of manifestation':self.note_on_dimensions_of_manifestation_key,
+                  'Note on distribution statement (Manifestation)':self.note_on_distribution_statement_key,
+                  'Note on edition statement (Manifestation)':self.note_on_edition_statement_key,
+                  'Note on extent of manifestation':self.note_on_extent_of_manifestation_key,
+                  'Note on frequency (Manifestation)':self.note_on_frequency_key,
+                  'Note on issue, part, or iteration used as the basis for identification of the resource (Manifestation)':self.note_on_issue_part_or_iteration_key,
+                  'Note on manufacture statement (Manifestation)':self.note_on_manufacture_statement_key,
+                  'Note on numbering of serials (Manifestation)':self.note_on_numbering_of_serials_key,
+                  'Note on production statement (Manifestation)':self.note_on_production_statement_key,
+                  'Note on publication statement (Manifestation)':self.note_on_publication_statement_key,
+                  'Note on series statement (Manifestation)':self.note_on_series_statement_key,
+                  'Note on statement of responsibility (Manifestation)':self.note_on_statement_of_responsibility_key,
+                  'Note on title (Manifestation)':self.note_on_title_key,
+                  'Numbering of serials (Manifestation)':self.numbering_of_serials_key,
+                  'Numbering within series (Manifestation)':self.numbering_within_series_key,
+                  'Numbering within subseries (Manifestation)':self.numbering_within_subseries_key,
+                  'Numeric and/or alphabetic designation of first issue or part of sequence (Manifestation)':self.numeric_alphabetic_designation_of_first_issue_key,
+                  'Numeric and/or alphabetic designation of last issue or part of sequence (Manifestation)':self.numeric_alphabetic_designation_of_last_issue_key,
+                  'Other title information (Manifestation)':'self.other_title_information_key',
+                  'Other title information of series (Manifestation)':self.other_title_information_of_series_key,
+                  'Other title information of subseries (Manifestation)':self.other_title_information_of_subseries_key,
+                  'Parallel designation of a named revision of an edition (Manifestation)':self.parallel_designation_of_named_revision_edition_key,
+                  'Parallel designation of edition (Manifestation)':self.parallel_designation_of_edition_key,
+                  "Parallel distributor's name (Manifestation)":self.parallel_distributors_name_key,
+                  "Parallel manufacturer's name (Manifestation)":self.parallel_manufacturers_name_key,
+                  'Parallel other title information (Manifestation)':self.parallel_other_title_information_key,
+                  'Parallel other title information of series (Manifestation)':self.parallel_other_title_information_of_series_key,
+                  'Parallel other title information of subseries (Manifestation)':self.parallel_other_title_information_of_subseries_key,
+                  'Parallel place of distribution (Manifestation)':self.parallel_place_of_distribution_key,
+                  'Parallel place of manufacture (Manifestation)':self.parallel_place_of_manufacture_key,
+                  'Parallel place of production (Manifestation)':self.parallel_place_of_production_key,
+                  'Parallel place of publication (Manifestation)':self.parallel_place_of_publication_key,
+                  "Parallel producer's name (Manifestation)":self.parallel_producers_name_key,
+                  "Parallel publisher's name (Manifestation)":self.parallel_publisher_name_key,
+                  'Parallel statement of responsibility relating to a named revision of an edition (Manifestation)':self.parallel_statement_of_responsibility_to_named_revision_edition_key,
+                  'Parallel statement of responsibility relating to series (Manifestation)':self.parallel_statement_of_responsibility_relating_to_series_key,
+                  'Parallel statement of responsibility relating to subseries (Manifestation)':self.parallel_statement_of_responsibility_relating_to_subseries_key,
+                  'Parallel statement of responsibility relating to the edition (Manifestation)':self.parallel_statement_of_responsibility_relating_edition_key,
+                  'Parallel statement of responsibility relating to title proper (Manifestation)':self.parallel_statement_of_responsibility_relating_to_title_proper_key,
+                  'Parallel title proper (Manifiestation)':self.parallel_title_proper_key,
+                  'Parallel title proper of series (Manifestation)':self.parallel_title_proper_of_series_key,
+                  'Parallel title proper of subseries (Manifestation)':self.parallel_title_proper_of_subseries_key,
+                  'Place of distribution (Manifestation)':self.place_of_distribution_key,
+                  'Place of manufacture (Manifestation)':self.place_of_manufacture_key,
+                  'Place of production (Manifestation)':self.place_of_production_key,
+                  'Place of publication (Manifestation)':self.place_of_publication_key,
+                  'Plate number for music (Manifestation)':self.plate_number_for_music_key,
+                  'Playing speed (Manifestation)':self.playing_speed_key,
+                  'Polarity (Manifestation)':self.polarity_key,
+                  'Preferred citation (Manifestation)':self.preferred_citation_key,
+                  'Presentation format (Manifestation)':self.presentation_format_key,
+                  "Producer's name (Manifestation)":self.producer_name_key,
+                  'Production method (Manifestation)':self.production_method_key,
+                  'Production method for manuscript (Manifestation)':self.production_method_for_manuscript_key,
+                  'Production method for tactile resource (Manifestation)':self.production_method_for_tactile_resource_key,
+                  'Production statement (Manifestation)':self.production_statement_key,
+                  'Projection characteristic of motion picture film (Manifestation)':self.projection_characteristic_of_motion_picture_film_key,
+                  'Projection speed (Manifestation)':self.projection_speed_key,
+                  'Publication statement (Manifestation)':self.publication_statement_key,
+                  "Publisher's name (Manifestation)":self.publisher_name_key,
+                  "Publisher's number for music (Manifestation)":self.publisher_number_for_music_key,
+                  'Recording medium (Manifestation)':self.recording_medium_key,
+                  'Reduction ration (Manifestation)':self.reduction_ration_key,
+                  'Regional encoding (Manifestation)':self.regional_encoding_key,
+                  'Resolution (Manifestation)':self.resolution_key,
+                  'Restrictions on access (Manifestation)':self.restrictions_on_access_key,
+                  'Restrictions on use (Manifestation)':self.restrictions_on_use_key,
+                  'Series statement (Manifestation)':self.series_statement_key,
+                  'Sound characteristic (Manifestation)':self.sound_characteristic_key,
+                  'Sound content (Manifestation)':self.sound_content_key,
+                  'Special playback characteristic (Manifestation)':self.special_playback_characteristic_key,
+                  'Statement of responsibility (Manifestation)':self.statement_of_responsibility_key,
+                  'Statement of responsibility relating to a named revision of an edition (Manifestation)':self.statement_of_responsibility_relating_named_revision_edition_key,
+                  'Statement of responsibility relating to series (Manifestation)':self.statement_of_responsibility_relating_to_series_key,
+                  'Statement of responsibility relating to subseries (Manifestation)':self.statement_of_responsibility_relating_to_subseries_key,
+                  'Statement of responsibility relating to the edition (Manifestation)':self.statement_of_responsibility_relating_to_the_edition_key,
+                  'Statement of responsibility relating to title proper (Manifestation)':self.statement_of_responsibility_relating_to_title_proper_key,
+                  'Tape configuration (Manifestation)':self.tape_configuration_key,
+                  'Terms of availability (Manifestation)':self.terms_of_availability_key,
+                  'Title (Manifestation)':self.title_key,
+                  'Title proper (Manifestation)':self.title_proper_key,
+                  'Title proper of series (Manifestation)':self.title_proper_of_series_key,
+                  'Title proper of subseries (Manifestation)':self.title_proper_of_subseries_key,
+                  'Track configuration (Manifestation)':self.track_configuration_key,
+                  'Transmission speed (Manifestation)':self.transmission_speed_key,
+                  'Type of recording (Manifestation)':self.type_of_recording_key,
+                  'Uniform resource locator (Manifestation)':self.uniform_resource_locator_key,
+                  'Variant title (Manifestation)':self.variant_title_key,
+                  'Video characteristic (Manifestation)':self.video_characteristic_key,
+                  'Video format (Manifestation)':self.video_format_key}
         self.manifestation = frbr_rda.Manifestation(redis_server=redis_server,
                                                     **params)
 
