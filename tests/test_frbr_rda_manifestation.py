@@ -163,36 +163,128 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         self.layout_of_tactile_text_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         redis_server.set(self.layout_of_tactile_text_key,
                          "Test layout of tactile text")
-        self.manufacture_statement_key = None
-        self.manufacturers_name_key = None 
-        self.media_type_key = None
-        self.mode_of_issuance_key = None
-        self.mount_key = None
-        self.note_key = None
-        self.note_on_changes_in_carrier_characteristics_key = None
-        self.note_on_copyright_date_key = None
-        self.note_on_dimensions_of_manifestation_key = None
-        self.note_on_distribution_statement_key = None
-        self.note_on_edition_statement_key = None
-        self.note_on_extent_of_manifestation_key = None
-        self.note_on_frequency_key = None
-        self.note_on_issue_part_or_iteration_key = None
-        self.note_on_manufacture_statement_key = None
-        self.note_on_numbering_of_serials_key = None
-        self.note_on_production_statement_key = None
-        self.note_on_publication_statement_key = None
-        self.note_on_series_statement_key = None
-        self.note_on_statement_of_responsibility_key = None
-        self.note_on_title_key = None
-        self.numbering_of_serials_key = None
-        self.numbering_within_series_key = None
-        self.numbering_within_subseries_key = None
-        self.numeric_alphabetic_designation_of_first_issue_key = None
-        self.numeric_alphabetic_designation_of_last_issue_key = None
-        self.other_title_information_key = None
-        self.other_title_information_of_series_key = None
-        self.other_title_information_of_subseries_key = None
-        self.parallel_designation_of_named_revision_edition_key = None
+        self.manufacture_statement_key = "marc21:268:%s" % redis_server.incr("global:marc21:268")
+        self.manufacturers_name_key = "foaf:Organization:%s" % redis_server.incr("global:foaf:Organization")
+        redis_server.hset(self.manufacture_statement_key,"a","Cambridge")
+        redis_server.hset(self.manufacture_statement_key,"b",self.manufacturers_name_key)
+        redis_server.hset(self.manufacturers_name_key,"name","Kinsey Printing Company")
+        self.media_type_key = "rdvocab:RDAMediaType:1001"
+        redis_server.set(self.media_type_key,"audio")
+        self.mode_of_issuance_key = "rdvocab:ModeIssue:1004"
+        redis_server.set(self.mode_of_issuance_key,"integrating resource")
+        self.mount_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.mount_key,"Test Manifestation Mount key")
+        self.note_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_key,
+                         "Test generic note for Manifestation")
+        self.note_on_changes_in_carrier_characteristics_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_on_changes_in_carrier_characteristics_key,
+                         "Test changes in carrier characteristics for Manifestation")
+        self.note_on_copyright_date_key = "mods:copyrightDate:%s" % redis_server.incr("global:mods:copyrightDate")
+        redis_server.hset(self.note_on_copyright_date_key,"year","2003")
+        redis_server.hset(self.note_on_copyright_date_key,"note","Test copyright note")
+        self.note_on_dimensions_of_manifestation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_on_dimensions_of_manifestation_key,
+                         "Test Manifestation Dimension 4x4")
+        self.note_on_distribution_statement_key = "marc21:267:%s" % redis_server.incr("global:marc21:267")
+        redis_server.hset(self.note_on_distribution_statement_key,"note","No distribution Information")
+        self.note_on_edition_statement_key = "marc21:250:%s" % redis_server.incr("global:marc21:250")
+        redis_server.hset(self.note_on_edition_statement_key,"a","2nd ed.")
+        self.note_on_extent_of_manifestation_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_on_extent_of_manifestation_key,
+                         "Note for Test Manifestation Extent")
+        self.note_on_frequency_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_on_frequency_key,
+                         "Note for Test Manifestation Frequency")
+        self.note_on_issue_part_or_iteration_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_on_issue_part_or_iteration_key,
+                         "Note for Test Manifestation Issuence part")
+        self.note_on_manufacture_statement_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_on_manufacture_statement_key,
+                         "Note on Manufacture Statement for Manifestation")
+        self.note_on_numbering_of_serials_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.note_on_numbering_of_serials_key,
+                          "type",
+                          "numbering")
+        redis_server.hset(self.note_on_numbering_of_serials_key,
+                          "value",
+                          "Note on Numbering of Serials")
+        self.production_statement_key = "marc21:264:%s" % redis_server.incr("global:marc21:264")
+        self.note_on_production_statement_key = self.production_statement_key
+        redis_server.hset(self.note_on_production_statement_key,
+                          "note",
+                          "Note on Production Statement for Manifestation")
+        self.publication_statement_key = "marc21:266:%s" % redis_server.incr("global:marc21:266")
+        self.note_on_publication_statement_key = self.publication_statement_key
+        redis_server.hset(self.note_on_publication_statement_key,
+                          "note",
+                          "Note on Publication Statement for Manifestation")
+        self.series_statement_key = "marc21:490:%s" % redis_server.incr("global:marc21:490")
+        self.note_on_series_statement_key = self.series_statement_key
+        redis_server.hset(self.note_on_series_statement_key,
+                          "note",
+                          "Note on Series statement for Manifestation")
+        self.note_on_statement_of_responsibility_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.note_on_statement_of_responsibility_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.note_on_statement_of_responsibility_key,
+                          "value",
+                          "Note on Statement of Responsibility")
+        self.title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        self.note_on_title_key = self.title_key
+        redis_server.hset(self.note_on_title_key,
+                          "note",
+                          "Note on Test manifestation title")
+        self.numbering_of_serials_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.numbering_of_serials_key,
+                          "type",
+                          "numbering")
+        redis_server.hset(self.numbering_of_serials_key,
+                          "value",
+                          "Numbering of Serials")
+        self.numbering_within_series_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.numbering_within_series_key,
+                          "type",
+                          "numbering")
+        redis_server.hset(self.numbering_within_series_key,
+                          "value",
+                          "Numbering within series")
+        self.numbering_within_subseries_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.numbering_within_subseries_key,
+                          "type",
+                          "numbering")
+        redis_server.hset(self.numbering_within_subseries_key,
+                          "value",
+                          "Numbering within subseries")
+        self.numeric_alphabetic_designation_of_first_issue_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.numeric_alphabetic_designation_of_first_issue_key,
+                         "Numeric Alphabetic Designation of First Issue")
+        self.numeric_alphabetic_designation_of_last_issue_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.numeric_alphabetic_designation_of_last_issue_key,
+                         "Numeric Alphabetic Designation of Last Issue")
+        self.other_title_information_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.other_title_information_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.other_title_information_key,
+                          "title",
+                          "Other title information")
+        self.other_title_information_of_series_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.other_title_information_of_series_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.other_title_information_of_series_key,
+                          "title",
+                          "Other title information of series")
+        self.other_title_information_of_subseries_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.other_title_information_of_subseries_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.other_title_information_of_subseries_key,
+                          "title",
+                          "Other title information of subseries")
+        self.parallel_designation_of_named_revision_edition_key = "mods:note:%s" % redis_server.incr("global:mods:note")
         self.parallel_designation_of_edition_key = None
         self.parallel_distributors_name_key = None
         self.parallel_manufacturers_name_key = None
@@ -219,26 +311,47 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         self.place_of_publication_key = None
         self.plate_number_for_music_key = None
         self.playing_speed_key = None
-        self.polarity_key = None
+        self.polarity_key = "rdvocab:RDAPolarity:1001"
+        redis_server.set(self.polarity_key,"Positive")
         self.preferred_citation_key = None
-        self.presentation_format_key = None
+        self.presentation_format_key = "rdvocab:presFormat:1004"
+        redis_server.set(self.presentation_format_key,
+                         "IMAX")
         self.producer_name_key = None
         self.production_method_key = None
         self.production_method_for_manuscript_key = None
         self.production_method_for_tactile_resource_key = None
-        self.production_statement_key = None
-        self.projection_characteristic_of_motion_picture_film_key = None
-        self.projection_speed_key = None
-        self.publication_statement_key = None
-        self.publisher_name_key = None
-        self.publisher_number_for_music_key = None
+        
+        self.projection_characteristic_of_motion_picture_film_key = "pbcore:essenceTrackStandard:video:dvb-c"
+        
+        redis_server.set(self.projection_characteristic_of_motion_picture_film_key,
+                         "DVB-C")
+        redis_server.hset(self.publication_statement_key,
+                          "a",
+                          "New York")
+        redis_server.hset(self.publication_statement_key,
+                          "b",
+                          "Vintage Books")
+        redis_server.hset(self.publication_statement_key,
+                          "c",
+                          "2006")        
+        self.publisher_name_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.publisher_name_key,
+                          "name",
+                          "Brown, Little, LTD")
+        self.publisher_number_for_music_key = "mods:identifier:%s" % redis_server.incr("global:mods:identifier")
+        redis_server.hset(self.publisher_number_for_music_key,
+                          "type",
+                          "music publisher")
+        redis_server.hset(self.publisher_number_for_music_key,
+                          "value",
+                          "09026-62715-3")
         self.recording_medium_key = None
         self.reduction_ration_key = None
         self.regional_encoding_key = None
         self.resolution_key = None
         self.restrictions_on_access_key = None
         self.restrictions_on_use_key = None
-        self.series_statement_key = None
         self.sound_characteristic_key = None
         self.sound_content_key = None
         self.special_playback_characteristic_key = None
@@ -250,7 +363,6 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         self.statement_of_responsibility_relating_to_title_proper_key = None
         self.tape_configuration_key = None
         self.terms_of_availability_key = None
-        self.title_key = None
         self.title_proper_key = None
         self.title_proper_of_series_key = None
         self.title_proper_of_subseries_key = None
@@ -347,7 +459,7 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                   'Numbering within subseries (Manifestation)':self.numbering_within_subseries_key,
                   'Numeric and/or alphabetic designation of first issue or part of sequence (Manifestation)':self.numeric_alphabetic_designation_of_first_issue_key,
                   'Numeric and/or alphabetic designation of last issue or part of sequence (Manifestation)':self.numeric_alphabetic_designation_of_last_issue_key,
-                  'Other title information (Manifestation)':'self.other_title_information_key',
+                  'Other title information (Manifestation)':self.other_title_information_key,
                   'Other title information of series (Manifestation)':self.other_title_information_of_series_key,
                   'Other title information of subseries (Manifestation)':self.other_title_information_of_subseries_key,
                   'Parallel designation of a named revision of an edition (Manifestation)':self.parallel_designation_of_named_revision_edition_key,
@@ -386,7 +498,7 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                   'Production method for tactile resource (Manifestation)':self.production_method_for_tactile_resource_key,
                   'Production statement (Manifestation)':self.production_statement_key,
                   'Projection characteristic of motion picture film (Manifestation)':self.projection_characteristic_of_motion_picture_film_key,
-                  'Projection speed (Manifestation)':self.projection_speed_key,
+                  'Projection speed (Manifestation)':"24fps",
                   'Publication statement (Manifestation)':self.publication_statement_key,
                   "Publisher's name (Manifestation)":self.publisher_name_key,
                   "Publisher's number for music (Manifestation)":self.publisher_number_for_music_key,
@@ -904,6 +1016,550 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         self.assertEquals(redis_server.get(layout_of_tactile_text_key),
                          "Test layout of tactile text")
 
+    def test_manufacture_statement(self):
+        manufacture_statement_key = getattr(self.manifestation,
+                                            'Manufacture statement (Manifestation)')
+        self.assertEquals(self.manufacture_statement_key,
+                          manufacture_statement_key)
+        self.assertEquals(redis_server.hget(manufacture_statement_key,"a"),
+                          "Cambridge")
+        self.assertEquals(redis_server.hget(manufacture_statement_key,"b"),
+                          self.manufacturers_name_key)
+
+    def test_manufacturers_name(self):
+        manufacturers_name_key = getattr(self.manifestation,
+                                         "Manufacturer's name (Manifestation)")
+        self.assertEquals(self.manufacturers_name_key,
+                          manufacturers_name_key)
+        self.assertEquals(redis_server.hget(manufacturers_name_key,"name"),
+                          "Kinsey Printing Company")
+
+    def test_media_type(self):
+        media_type_key = getattr(self.manifestation,
+                                 'Media type (Manifestation)')
+        self.assertEquals(self.media_type_key,
+                          media_type_key)
+        self.assertEquals(redis_server.get(self.media_type_key),
+                          "audio")
+
+    def test_mode_of_issuance(self):
+        mode_of_issuance_key = getattr(self.manifestation,
+                                       'Mode of issuance (Manifestation)')
+        self.assertEquals(self.mode_of_issuance_key,
+                          mode_of_issuance_key)
+        self.assertEquals(redis_server.get(mode_of_issuance_key),
+                          "integrating resource")
+
+    def test_mount(self):
+        mount_key = getattr(self.manifestation,
+                            'Mount (Manifestation)')
+        self.assertEquals(self.mount_key,
+                          mount_key)
+        self.assertEquals(redis_server.get(mount_key),
+                          "Test Manifestation Mount key")
+
+    def test_note(self):
+        note_key = getattr(self.manifestation,
+                           'Note (Manifestation)')
+        self.assertEquals(self.note_key,
+                          note_key)
+        self.assertEquals(redis_server.get(note_key),
+                          "Test generic note for Manifestation")
+
+    def test_note_on_changes_in_carrier_characteristics(self):
+        note_on_changes_in_carrier_characteristics_key = getattr(self.manifestation,
+                                                                 'Note on changes in carrier characteristics (Manifestation)')
+        self.assertEquals(self.note_on_changes_in_carrier_characteristics_key,
+                          note_on_changes_in_carrier_characteristics_key)
+        self.assertEquals(redis_server.get(note_on_changes_in_carrier_characteristics_key),
+                          "Test changes in carrier characteristics for Manifestation")
+
+    def test_note_on_copyright_date(self):
+        note_on_copyright_date_key = getattr(self.manifestation,
+                                             'Note on copyright date (Manifestation)')
+        self.assertEquals(self.note_on_copyright_date_key,
+                          note_on_copyright_date_key)
+        self.assertEquals(redis_server.hget(note_on_copyright_date_key,
+                                            "year"),
+                          "2003")
+        self.assertEquals(redis_server.hget(note_on_copyright_date_key,
+                                            "note"),
+                          "Test copyright note")
+
+    def test_note_on_dimensions_of_manifestation(self):
+        note_on_dimensions_of_manifestation_key = getattr(self.manifestation,
+                                                          'Note on dimensions of manifestation')
+        self.assertEquals(self.note_on_dimensions_of_manifestation_key,
+                          note_on_dimensions_of_manifestation_key)
+        self.assertEquals(redis_server.get(note_on_dimensions_of_manifestation_key),
+                          "Test Manifestation Dimension 4x4")
+
+    def test_note_on_distribution_statement(self):
+        note_on_distribution_statement_key = getattr(self.manifestation,
+                                                     'Note on distribution statement (Manifestation)')
+        self.assertEquals(self.note_on_distribution_statement_key,
+                          note_on_distribution_statement_key)
+        self.assertEquals(redis_server.hget(self.note_on_distribution_statement_key,
+                                            "note"),
+                          "No distribution Information")
+
+    def test_note_on_edition_statement(self):
+        note_on_edition_statement_key = getattr(self.manifestation,
+                                                'Note on edition statement (Manifestation)')
+        self.assertEquals(self.note_on_edition_statement_key,
+                          note_on_edition_statement_key)
+        self.assertEquals(redis_server.get(self.note_on_extent_of_manifestation_key),
+                          "Note for Test Manifestation Extent")
+
+
+    def test_note_on_extent_of_manifestation(self):
+        note_on_extent_of_manifestation_key = getattr(self.manifestation,
+                                                      'Note on extent of manifestation')
+        self.assertEquals(self.note_on_extent_of_manifestation_key,
+                          note_on_extent_of_manifestation_key)
+        self.assertEquals(redis_server.get(note_on_extent_of_manifestation_key),
+                          "Note for Test Manifestation Extent")
+        
+
+    def test_note_on_frequency(self):
+        note_on_frequency_key = getattr(self.manifestation,
+                                        'Note on frequency (Manifestation)')
+        self.assertEquals(self.note_on_frequency_key,
+                          note_on_frequency_key)
+        self.assertEquals(redis_server.get(note_on_frequency_key),
+                          "Note for Test Manifestation Frequency")
+
+    def test_note_on_issue_part_or_iteration(self):
+        note_on_issue_part_or_iteration_key = getattr(self.manifestation,
+                                                      'Note on issue, part, or iteration used as the basis for identification of the resource (Manifestation)')
+        self.assertEquals(self.note_on_issue_part_or_iteration_key,
+                          note_on_issue_part_or_iteration_key)
+        self.assertEquals(redis_server.get(note_on_issue_part_or_iteration_key),
+                          "Note for Test Manifestation Issuence part")
+
+
+    def test_note_on_manufacture_statement(self):
+        note_on_manufacture_statement_key = getattr(self.manifestation,
+                                                    'Note on manufacture statement (Manifestation)')
+        self.assertEquals(self.note_on_manufacture_statement_key,
+                          note_on_manufacture_statement_key)
+        self.assertEquals(redis_server.get(note_on_manufacture_statement_key),
+                          "Note on Manufacture Statement for Manifestation")
+
+
+    def test_note_on_numbering_of_serials(self):
+        note_on_numbering_of_serials_key = getattr(self.manifestation,
+                                                   'Note on numbering of serials (Manifestation)')
+        self.assertEquals(self.note_on_numbering_of_serials_key,
+                          note_on_numbering_of_serials_key)
+        self.assertEquals(redis_server.hget(note_on_numbering_of_serials_key,
+                          "type"),
+                          "numbering")
+        
+        
+    def test_note_on_production_statement(self):
+        note_on_production_statement_key = getattr(self.manifestation,
+                                                   'Note on production statement (Manifestation)')
+        self.assertEquals(self.note_on_production_statement_key,
+                          note_on_production_statement_key)
+        self.assertEquals(redis_server.hget(self.note_on_production_statement_key,
+                                            "note"),
+                          "Note on Production Statement for Manifestation")
+
+
+    def test_note_on_publication_statement(self):
+        note_on_publication_statement_key = getattr(self.manifestation,
+                                                    'Note on publication statement (Manifestation)')
+        self.assertEquals(self.note_on_publication_statement_key,
+                          note_on_publication_statement_key)
+        self.assertEquals(redis_server.hget(note_on_publication_statement_key,
+                                            "note"),
+                          "Note on Publication Statement for Manifestation")
+
+    def test_note_on_series_statement(self):
+        note_on_series_statement_key = getattr(self.manifestation,
+                                               'Note on series statement (Manifestation)')
+        self.assertEquals(self.note_on_series_statement_key,
+                          note_on_series_statement_key)
+        self.assertEquals(redis_server.hget(note_on_series_statement_key,
+                                            "note"),
+                          "Note on Series statement for Manifestation")
+
+    def test_note_on_statement_of_responsibility(self):
+        note_on_statement_of_responsibility_key = getattr(self.manifestation,
+                                                          'Note on statement of responsibility (Manifestation)')
+        self.assertEquals(self.note_on_statement_of_responsibility_key,
+                          note_on_statement_of_responsibility_key)
+        self.assertEquals(redis_server.hget(note_on_statement_of_responsibility_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(note_on_statement_of_responsibility_key,
+                                            "value"),
+                          "Note on Statement of Responsibility")
+
+    def test_note_on_title(self):
+        note_on_title_key = getattr(self.manifestation,
+                                    'Note on title (Manifestation)')
+        self.assertEquals(self.note_on_title_key,
+                          note_on_title_key)
+        self.assertEquals(redis_server.hget(self.note_on_title_key,
+                                            "note"),
+                          "Note on Test manifestation title")
+
+    def test_numbering_of_serials_key(self):
+        numbering_of_serials_key = getattr(self.manifestation,
+                                           'Numbering of serials (Manifestation)')
+        self.assertEquals(self.numbering_of_serials_key,
+                          numbering_of_serials_key)
+        self.assertEquals(redis_server.hget(numbering_of_serials_key,
+                          "value"),
+                          "Numbering of Serials")
+
+    def test_numbering_within_series(self):
+        numbering_within_series_key = getattr(self.manifestation,
+                                              'Numbering within series (Manifestation)')
+        self.assertEquals(self.numbering_within_series_key,
+                          numbering_within_series_key)
+        self.assertEquals(redis_server.hget(numbering_within_series_key,
+                                            "type"),
+                          "numbering")
+        self.assertEquals(redis_server.hget(numbering_within_series_key,
+                                            "value"),
+                          "Numbering within series")
+        
+
+    def test_numbering_within_subseries(self):
+        numbering_within_subseries_key = getattr(self.manifestation,
+                                                 'Numbering within subseries (Manifestation)')
+        self.assertEquals(self.numbering_within_subseries_key,
+                          numbering_within_subseries_key)
+        self.assertEquals(redis_server.hget(numbering_within_subseries_key,
+                          "type"),
+                          "numbering")
+        self.assertEquals(redis_server.hget(numbering_within_subseries_key,
+                          "value"),
+                          "Numbering within subseries")
+
+    def test_numeric_alphabetic_designation_of_first_issue(self):
+        numeric_alphabetic_designation_of_first_issue_key = getattr(self.manifestation,
+                                                                    'Numeric and/or alphabetic designation of first issue or part of sequence (Manifestation)')
+        self.assertEquals(self.numeric_alphabetic_designation_of_first_issue_key,
+                          numeric_alphabetic_designation_of_first_issue_key)
+        self.assertEquals(redis_server.get(numeric_alphabetic_designation_of_first_issue_key),
+                         "Numeric Alphabetic Designation of First Issue")
+
+
+    def test_numeric_alphabetic_designation_of_last_issue(self):
+        numeric_alphabetic_designation_of_last_issue_key = getattr(self.manifestation,
+                                                                   'Numeric and/or alphabetic designation of last issue or part of sequence (Manifestation)')
+        self.assertEquals(self.numeric_alphabetic_designation_of_last_issue_key,
+                          numeric_alphabetic_designation_of_last_issue_key)
+        self.assertEquals(redis_server.get(self.numeric_alphabetic_designation_of_last_issue_key),
+                          "Numeric Alphabetic Designation of Last Issue")
+
+    def test_other_title_information(self):
+         other_title_information_key = getattr(self.manifestation,
+                                               'Other title information (Manifestation)')
+         self.assertEquals(self.other_title_information_key,
+                           other_title_information_key)
+         self.assertEquals(redis_server.hget(other_title_information_key,
+                                             "type"),
+                          "alternative")
+         self.assertEquals(redis_server.hget(other_title_information_key,
+                                             "title"),
+                          "Other title information")
+         
+    def test_other_title_information_of_series(self):
+        other_title_information_of_series_key = getattr(self.manifestation,
+                                                        'Other title information of series (Manifestation)')
+        self.assertEquals(self.other_title_information_of_series_key,
+                          other_title_information_of_series_key)
+        self.assertEquals(redis_server.hget(other_title_information_of_series_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(other_title_information_of_series_key,
+                                            "title"),
+                          "Other title information of series")
+
+    def test_other_title_information_of_subseries(self):
+        other_title_information_of_subseries_key = getattr(self.manifestation,
+                                                           'Other title information of subseries (Manifestation)')
+        self.assertEquals(self.other_title_information_of_subseries_key,
+                          other_title_information_of_subseries_key)
+        self.assertEquals(redis_server.hget(other_title_information_of_subseries_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(other_title_information_of_subseries_key,
+                                            "title"),
+                          "Other title information of subseries")
+
+
+    def test_parallel_designation_of_named_revision_edition(self):
+        parallel_designation_of_named_revision_edition_key = getattr(self.manifestation,
+                                                                     'Parallel designation of a named revision of an edition (Manifestation)')
+        self.assertEquals(self.parallel_designation_of_named_revision_edition_key,
+                          parallel_designation_of_named_revision_edition_key)
+
+    def test_parallel_designation_of_edition(self):
+        parallel_designation_of_edition_key = getattr(self.manifestation,
+                                                      'Parallel designation of edition (Manifestation)')
+        self.assertEquals(self.parallel_designation_of_edition_key,
+                          parallel_designation_of_edition_key)
+
+    def test_parallel_distributors_name(self):
+        parallel_distributors_name_key = getattr(self.manifestation,
+                                                 "Parallel distributor's name (Manifestation)")
+        self.assertEquals(self.parallel_distributors_name_key,
+                          parallel_distributors_name_key)
+
+    def test_parallel_manufacturers_name(self):
+        parallel_manufacturers_name_key = getattr(self.manifestation,
+                                                  "Parallel manufacturer's name (Manifestation)")
+        self.assertEquals(self.parallel_manufacturers_name_key,
+                          parallel_manufacturers_name_key)
+
+    def test_parallel_other_title_information(self):
+        parallel_other_title_information_key = getattr(self.manifestation,
+                                                       'Parallel other title information (Manifestation)')
+        self.assertEquals(self.parallel_other_title_information_key,
+                          parallel_other_title_information_key)
+
+    def test_parallel_other_title_information_of_series(self):
+        parallel_other_title_information_of_series_key = getattr(self.manifestation,
+                                                                 'Parallel other title information of series (Manifestation)')
+        self.assertEquals(self.parallel_other_title_information_of_series_key,
+                          parallel_other_title_information_of_series_key)
+
+    def test_parallel_other_title_information_of_subseries(self):
+        parallel_other_title_information_of_subseries_key = getattr(self.manifestation,
+                                                                    'Parallel other title information of subseries (Manifestation)')
+        self.assertEquals(self.parallel_other_title_information_of_subseries_key,
+                          parallel_other_title_information_of_subseries_key)
+
+    def test_parallel_place_of_distribution(self):
+        parallel_place_of_distribution_key = getattr(self.manifestation,
+                                                     'Parallel place of distribution (Manifestation)')
+        self.assertEquals(self.parallel_place_of_distribution_key,
+                          parallel_place_of_distribution_key)
+
+    def test_parallel_place_of_manufacture(self):
+        parallel_place_of_manufacture_key = getattr(self.manifestation,
+                                                    'Parallel place of manufacture (Manifestation)')
+        self.assertEquals(self.parallel_place_of_manufacture_key,
+                          parallel_place_of_manufacture_key)
+
+    def test_parallel_place_of_production(self):
+        parallel_place_of_production_key = getattr(self.manifestation,
+                                                   'Parallel place of production (Manifestation)')
+        self.assertEquals(self.parallel_place_of_production_key,
+                          parallel_place_of_production_key)
+
+    def test_parallel_place_of_publication(self):
+        parallel_place_of_publication_key = getattr(self.manifestation,
+                                                    'Parallel place of publication (Manifestation)')
+        self.assertEquals(self.parallel_place_of_publication_key,
+                          parallel_place_of_publication_key)
+
+    def test_parallel_producers_name(self):
+        parallel_producers_name_key = getattr(self.manifestation,
+                                              "Parallel producer's name (Manifestation)")
+        self.assertEquals(self.parallel_producers_name_key,
+                          parallel_producers_name_key)
+
+    def test_parallel_publisher_name(self):
+        parallel_publisher_name_key = getattr(self.manifestation,
+                                              "Parallel publisher's name (Manifestation)")
+        self.assertEquals(self.parallel_publisher_name_key,
+                          parallel_publisher_name_key)
+
+    def test_parallel_statement_of_responsibility_to_named_revision_edition(self):
+        parallel_statement_of_responsibility_to_named_revision_edition_key = getattr(self.manifestation,
+                                                                                     'Parallel statement of responsibility relating to a named revision of an edition (Manifestation)')
+        self.assertEquals(self.parallel_statement_of_responsibility_to_named_revision_edition_key,
+                          parallel_statement_of_responsibility_to_named_revision_edition_key)
+
+    def test_parallel_statement_of_responsibility_relating_to_series_key(self):
+        parallel_statement_of_responsibility_relating_to_series_key = getattr(self.manifestation,
+                                                                              'Parallel statement of responsibility relating to series (Manifestation)')
+        self.assertEquals(self.parallel_statement_of_responsibility_relating_to_series_key,
+                          parallel_statement_of_responsibility_relating_to_series_key)
+
+    def test_parallel_statement_of_responsibility_relating_to_subseries(self):
+        parallel_statement_of_responsibility_relating_to_subseries_key = getattr(self.manifestation,
+                                                                                 'Parallel statement of responsibility relating to subseries (Manifestation)')
+        self.assertEquals(self.parallel_statement_of_responsibility_relating_to_subseries_key,
+                          parallel_statement_of_responsibility_relating_to_subseries_key)
+
+    def test_parallel_statement_of_responsibility_relating_edition(self):
+        parallel_statement_of_responsibility_relating_edition_key = getattr(self.manifestation,
+                                                                            'Parallel statement of responsibility relating to the edition (Manifestation)')
+        self.assertEquals(self.parallel_statement_of_responsibility_relating_edition_key,
+                          parallel_statement_of_responsibility_relating_edition_key)
+
+    def test_parallel_statement_of_responsibility_relating_to_title_proper(self):
+        parallel_statement_of_responsibility_relating_to_title_proper_key = getattr(self.manifestation,
+                                                                                    'Parallel statement of responsibility relating to title proper (Manifestation)')
+        self.assertEquals(self.parallel_statement_of_responsibility_relating_to_title_proper_key,
+                          parallel_statement_of_responsibility_relating_to_title_proper_key)
+
+    def test_parallel_title_proper(self):
+        parallel_title_proper_key = getattr(self.manifestation,
+                                            'Parallel title proper (Manifiestation)')
+        self.assertEquals(self.parallel_title_proper_key,
+                          parallel_title_proper_key)
+
+    def test_parallel_title_proper_of_series(self):
+        parallel_title_proper_of_series_key = getattr(self.manifestation,
+                                                      'Parallel title proper of series (Manifestation)')
+        self.assertEquals(self.parallel_title_proper_of_series_key,
+                          parallel_title_proper_of_series_key)
+
+
+    def test_parallel_title_proper_of_subseries(self):
+        parallel_title_proper_of_subseries_key = getattr(self.manifestation,
+                                                         'Parallel title proper of subseries (Manifestation)')
+        self.assertEquals(self.parallel_title_proper_of_subseries_key,
+                          parallel_title_proper_of_subseries_key)
+
+    def test_place_of_distribution(self):
+        place_of_distribution_key = getattr(self.manifestation,
+                                            'Place of distribution (Manifestation)')
+        self.assertEquals(self.place_of_distribution_key,
+                          place_of_distribution_key)
+
+    def test_place_of_manufacture(self):
+        place_of_manufacture_key = getattr(self.manifestation,
+                                           'Place of manufacture (Manifestation)')
+        self.assertEquals(self.place_of_manufacture_key,
+                          place_of_manufacture_key)
+
+    def test_place_of_production(self):
+        place_of_production_key = getattr(self.manifestation,
+                                          'Place of production (Manifestation)')
+        self.assertEquals(self.place_of_production_key,
+                          place_of_production_key)
+
+    def test_place_of_publication(self):
+        place_of_publication_key = getattr(self.manifestation,
+                                           'Place of publication (Manifestation)')
+        self.assertEquals(self.place_of_publication_key,
+                          place_of_publication_key)
+
+    def test_plate_number_for_music(self):
+        plate_number_for_music_key = getattr(self.manifestation,
+                                             'Plate number for music (Manifestation)')
+        self.assertEquals(self.plate_number_for_music_key,
+                          plate_number_for_music_key)
+
+    def test_playing_speed(self):
+        playing_speed_key = getattr(self.manifestation,
+                                    'Playing speed (Manifestation)')
+        self.assertEquals(self.playing_speed_key,
+                          playing_speed_key)
+
+    def test_polarity(self):
+        polarity_key = getattr(self.manifestation,
+                               'Polarity (Manifestation)')
+        self.assertEquals(self.polarity_key,
+                          polarity_key)
+        self.assertEquals(redis_server.get(polarity_key),
+                          "Positive")
+
+    def test_preferred_citation(self):
+        preferred_citation_key = getattr(self.manifestation,
+                                         'Preferred citation (Manifestation)')
+        self.assertEquals(self.preferred_citation_key,
+                          preferred_citation_key)
+
+    def test_presentation_format(self):
+        presentation_format_key = getattr(self.manifestation,
+                                          'Presentation format (Manifestation)')
+        self.assertEquals(self.presentation_format_key,
+                          presentation_format_key)
+        self.assertEquals(redis_server.get(self.presentation_format_key),
+                          "IMAX")
+
+    def test_producer_name(self):
+        producer_name_key = getattr(self.manifestation,
+                                    "Producer's name (Manifestation)")
+        self.assertEquals(self.producer_name_key,
+                          producer_name_key)
+
+    def test_production_method(self):
+        production_method_key = getattr(self.manifestation,
+                                        'Production method (Manifestation)')
+        self.assertEquals(self.production_method_key,
+                          production_method_key)
+
+    def test_production_method_for_manuscript(self):
+        production_method_for_manuscript_key = getattr(self.manifestation,
+                                                       'Production method for manuscript (Manifestation)')
+        self.assertEquals(self.production_method_for_manuscript_key,
+                          production_method_for_manuscript_key)
+
+    def test_production_method_for_tactile_resource(self):
+        production_method_for_tactile_resource_key = getattr(self.manifestation,
+                                                             'Production method for tactile resource (Manifestation)')
+        self.assertEquals(self.production_method_for_tactile_resource_key,
+                          production_method_for_tactile_resource_key)
+
+    def test_production_statement(self):
+        production_statement_key = getattr(self.manifestation,
+                                           'Production statement (Manifestation)')
+        self.assertEquals(self.production_statement_key,
+                          production_statement_key)
+
+    def test_projection_characteristic_of_motion_picture_film(self):
+        projection_characteristic_of_motion_picture_film_key = getattr(self.manifestation,
+                                                                       'Projection characteristic of motion picture film (Manifestation)')
+        self.assertEquals(self.projection_characteristic_of_motion_picture_film_key,
+                          projection_characteristic_of_motion_picture_film_key)
+        self.assertEquals(redis_server.get(projection_characteristic_of_motion_picture_film_key),
+                         "DVB-C")
+
+    def test_projection_speed(self):
+        self.assertEquals(getattr(self.manifestation,
+                                  'Projection speed (Manifestation)'),
+                          "24fps")
+        
+
+    def test_publication_statement(self):
+        publication_statement_key = getattr(self.manifestation,
+                                            'Publication statement (Manifestation)')
+        self.assertEquals(self.publication_statement_key,
+                          publication_statement_key)
+        self.assertEquals(redis_server.hget(publication_statement_key,"a"),
+                          "New York")
+        self.assertEquals(redis_server.hget(publication_statement_key,"b"),
+                          "Vintage Books")
+        self.assertEquals(redis_server.hget(publication_statement_key,"c"),
+                          "2006")
+                          
+
+    def test_publisher_name(self):
+        publisher_name_key = getattr(self.manifestation,
+                                     "Publisher's name (Manifestation)")
+        self.assertEquals(self.publisher_name_key,
+                          publisher_name_key)
+        self.assertEquals(redis_server.hget(self.publisher_name_key,
+                                            "name"),
+                          "Brown, Little, LTD")
+        
+
+    def test_publisher_number_for_music(self):
+        publisher_number_for_music_key = getattr(self.manifestation,
+                                                 "Publisher's number for music (Manifestation)")
+        self.assertEquals(self.publisher_number_for_music_key,
+                          publisher_number_for_music_key)
+        self.assertEquals(redis_server.hget(self.publisher_number_for_music_key,
+                                            "type"),
+                          "music publisher")
+        self.assertEquals(redis_server.hget(publisher_number_for_music_key,
+                                            "value"),
+                          "09026-62715-3")
+
+
+        
     def tearDown(self):
         redis_server.flushdb()
 
