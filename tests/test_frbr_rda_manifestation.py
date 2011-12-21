@@ -285,43 +285,186 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                           "title",
                           "Other title information of subseries")
         self.parallel_designation_of_named_revision_edition_key = "mods:note:%s" % redis_server.incr("global:mods:note")
-        self.parallel_designation_of_edition_key = None
-        self.parallel_distributors_name_key = None
-        self.parallel_manufacturers_name_key = None
-        self.parallel_other_title_information_key = None
-        self.parallel_other_title_information_of_series_key = None
-        self.parallel_other_title_information_of_subseries_key = None
-        self.parallel_place_of_distribution_key = None
-        self.parallel_place_of_manufacture_key = None
-        self.parallel_place_of_production_key = None
-        self.parallel_place_of_publication_key = None
-        self.parallel_producers_name_key = None
-        self.parallel_publisher_name_key = None
-        self.parallel_statement_of_responsibility_to_named_revision_edition_key = None
-        self.parallel_statement_of_responsibility_relating_to_series_key = None
-        self.parallel_statement_of_responsibility_relating_to_subseries_key = None
-        self.parallel_statement_of_responsibility_relating_edition_key = None
-        self.parallel_statement_of_responsibility_relating_to_title_proper_key = None
-        self.parallel_title_proper_key = None
-        self.parallel_title_proper_of_series_key = None
-        self.parallel_title_proper_of_subseries_key = None
-        self.place_of_distribution_key = None
-        self.place_of_manufacture_key = None
-        self.place_of_production_key = None
-        self.place_of_publication_key = None
-        self.plate_number_for_music_key = None
-        self.playing_speed_key = None
+        redis_server.set(self.parallel_designation_of_named_revision_edition_key,
+                         "Test Parallel Designation of named revision for an edition")
+        self.parallel_designation_of_edition_key  = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.parallel_designation_of_edition_key,
+                         "Test Parallel Designation of Edition")
+        self.parallel_distributors_name_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.parallel_distributors_name_key,
+                          "name",
+                          "Test Parallel Distributor's name")
+        self.parallel_manufacturers_name_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.parallel_manufacturers_name_key,
+                          "name",
+                          "Test Parallel Manufacturer's name")
+        self.parallel_other_title_information_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.parallel_other_title_information_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.parallel_other_title_information_key,
+                          "title",
+                          "Test parallel Other Title")
+        self.parallel_other_title_information_of_series_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.parallel_other_title_information_of_series_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.parallel_other_title_information_of_series_key,
+                          "title",
+                          "Test parallel Other Title of Series")
+        self.parallel_other_title_information_of_subseries_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.parallel_other_title_information_of_subseries_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.parallel_other_title_information_of_subseries_key,
+                          "title",
+                          "Test parallel Other Title of Subseries")
+        self.parallel_place_of_distribution_key = "mods:hierarchialGeographic:%s" % redis_server.incr("global:mods:hierarchialGeographic")
+        redis_server.hset(self.parallel_place_of_distribution_key,
+                          "type",
+                          "city")
+        redis_server.hset(self.parallel_place_of_distribution_key,
+                          "name",
+                          "New York")
+        self.parallel_place_of_manufacture_key = "mods:hierarchialGeographic:%s" % redis_server.incr("global:mods:hierarchialGeographic")
+        redis_server.hset(self.parallel_place_of_manufacture_key,
+                          "type",
+                          "city")
+        redis_server.hset(self.parallel_place_of_manufacture_key,
+                          "name",
+                          "Chicago")
+        self.parallel_place_of_production_key = "mods:hierarchialGeographic:%s" % redis_server.incr("global:mods:hierarchialGeographic")
+        redis_server.hset(self.parallel_place_of_production_key,
+                          "type",
+                          "city")
+        redis_server.hset(self.parallel_place_of_production_key,
+                          "name",
+                          "London")
+        self.parallel_place_of_publication_key = "mods:hierarchialGeographic:%s" % redis_server.incr("global:mods:hierarchialGeographic")
+        redis_server.hset(self.parallel_place_of_publication_key,
+                          "type",
+                          "city")
+        redis_server.hset(self.parallel_place_of_publication_key,
+                          "name",
+                          "New York")
+        self.parallel_producers_name_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.parallel_producers_name_key,
+                          "name",
+                          "Test parallel producer's name")
+        self.parallel_publisher_name_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.parallel_publisher_name_key,
+                          "name",
+                          "Test parallel publisher name")
+        self.parallel_statement_of_responsibility_to_named_revision_edition_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.parallel_statement_of_responsibility_to_named_revision_edition_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.parallel_statement_of_responsibility_to_named_revision_edition_key,
+                          "value",
+                          "Test parallel statement of responsibility to named revision edition")
+        self.parallel_statement_of_responsibility_relating_to_series_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.parallel_statement_of_responsibility_relating_to_series_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.parallel_statement_of_responsibility_relating_to_series_key,
+                          "value",
+                          "Test parallel statement of responsibility to series")
+        self.parallel_statement_of_responsibility_relating_to_subseries_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.parallel_statement_of_responsibility_relating_to_subseries_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.parallel_statement_of_responsibility_relating_to_subseries_key,
+                          "value",
+                          "Test parallel statement of responsibility to subseries")
+        self.parallel_statement_of_responsibility_relating_edition_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.parallel_statement_of_responsibility_relating_edition_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.parallel_statement_of_responsibility_relating_edition_key,
+                          "value",
+                          "Test parallel statement of responsibility to edition")
+        self.parallel_statement_of_responsibility_relating_to_title_proper_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.parallel_statement_of_responsibility_relating_to_title_proper_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.parallel_statement_of_responsibility_relating_to_title_proper_key,
+                          "value",
+                          "Test parallel statement of responsibility to title proper")
+        self.parallel_title_proper_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.parallel_title_proper_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.parallel_title_proper_key,
+                          "title",
+                          "Test title proper")
+        self.parallel_title_proper_of_series_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.parallel_title_proper_of_series_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.parallel_title_proper_of_series_key,
+                          "title",
+                          "Test title proper of series")
+        self.parallel_title_proper_of_subseries_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.parallel_title_proper_of_subseries_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.parallel_title_proper_of_subseries_key,
+                          "title",
+                          "Test title proper of subseries")
+        self.place_of_distribution_key = "mods:hierarchialGeographic:%s" % redis_server.incr("global:mods:hierarchialGeographic")
+        redis_server.hset(self.place_of_distribution_key,
+                          "type",
+                          "city")
+        redis_server.hset(self.place_of_distribution_key,
+                          "name",
+                          "Chicago")
+        self.place_of_manufacture_key = "mods:hierarchialGeographic:%s" % redis_server.incr("global:mods:hierarchialGeographic")
+        redis_server.hset(self.place_of_manufacture_key,
+                          "type",
+                          "city")
+        redis_server.hset(self.place_of_manufacture_key,
+                          "name",
+                          "Chicago")
+        self.place_of_production_key = "mods:hierarchialGeographic:%s" % redis_server.incr("global:mods:hierarchialGeographic")
+        redis_server.hset(self.place_of_production_key,
+                          "type",
+                          "city")
+        redis_server.hset(self.place_of_production_key,
+                          "name",
+                          "London")
+        self.place_of_publication_key = "mods:hierarchialGeographic:%s" % redis_server.incr("global:mods:hierarchialGeographic")
+        redis_server.hset(self.place_of_publication_key,
+                          "type",
+                          "city")
+        redis_server.hset(self.place_of_publication_key,
+                          "name",
+                          "New York")
+        self.plate_number_for_music_key = "marc21:028:%s" % redis_server.incr("global:marc21:028")
+        self.playing_speed_key = "pbcore:essenceTrackPlaybackSpeed:7-1-1"
+        redis_server.set(self.playing_speed_key,
+                         "7 1/2")
         self.polarity_key = "rdvocab:RDAPolarity:1001"
         redis_server.set(self.polarity_key,"Positive")
-        self.preferred_citation_key = None
+        self.preferred_citation_key = "marc21:524:%s" % redis_server.incr('global:marc21:524')
+        redis_server.hset(self.preferred_citation_key,
+                          "a",
+                          "James Hazen Hyde Papers, 1891-1941, New York Historical Society")
         self.presentation_format_key = "rdvocab:presFormat:1004"
         redis_server.set(self.presentation_format_key,
                          "IMAX")
-        self.producer_name_key = None
-        self.production_method_key = None
-        self.production_method_for_manuscript_key = None
-        self.production_method_for_tactile_resource_key = None
-        
+        self.producer_name_key = "frad:Name:%s" % redis_server.incr("global:frad:Name")
+        redis_server.hset(self.producer_name_key,
+                          "name",
+                          "Test Producer Name for Manifestation")
+        self.production_method_key = "rdvocab:RDAproductionMethod:1014"
+        redis_server.set(self.production_method_key,
+                         "photogravure")
+        self.production_method_for_manuscript_key = "rdvocab:prodManuscript:1001"
+        redis_server.set(self.production_method_for_manuscript_key,
+                         "holograph")
+        self.production_method_for_tactile_resource_key = "rdvocab:prodTactile:1002"
+        redis_server.set(self.production_method_for_tactile_resource_key,
+                         "solid dot")
         self.projection_characteristic_of_motion_picture_film_key = "pbcore:essenceTrackStandard:video:dvb-c"
         
         redis_server.set(self.projection_characteristic_of_motion_picture_film_key,
@@ -346,7 +489,7 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         redis_server.hset(self.publisher_number_for_music_key,
                           "value",
                           "09026-62715-3")
-        self.recording_medium_key = None
+        self.recording_medium_key = "rdvocab:recMedium:1002"
         self.reduction_ration_key = None
         self.regional_encoding_key = None
         self.resolution_key = None
@@ -1299,78 +1442,136 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                                                      'Parallel designation of a named revision of an edition (Manifestation)')
         self.assertEquals(self.parallel_designation_of_named_revision_edition_key,
                           parallel_designation_of_named_revision_edition_key)
+        self.assertEquals(redis_server.get(parallel_designation_of_named_revision_edition_key),
+                          "Test Parallel Designation of named revision for an edition")
 
     def test_parallel_designation_of_edition(self):
         parallel_designation_of_edition_key = getattr(self.manifestation,
                                                       'Parallel designation of edition (Manifestation)')
         self.assertEquals(self.parallel_designation_of_edition_key,
                           parallel_designation_of_edition_key)
+        self.assertEquals(redis_server.get(parallel_designation_of_edition_key),
+                          "Test Parallel Designation of Edition")
 
     def test_parallel_distributors_name(self):
         parallel_distributors_name_key = getattr(self.manifestation,
                                                  "Parallel distributor's name (Manifestation)")
         self.assertEquals(self.parallel_distributors_name_key,
                           parallel_distributors_name_key)
+        self.assertEquals(redis_server.hget(parallel_distributors_name_key,
+                                            "name"),
+                          "Test Parallel Distributor's name")
 
     def test_parallel_manufacturers_name(self):
         parallel_manufacturers_name_key = getattr(self.manifestation,
                                                   "Parallel manufacturer's name (Manifestation)")
         self.assertEquals(self.parallel_manufacturers_name_key,
                           parallel_manufacturers_name_key)
+        self.assertEquals(redis_server.hget(parallel_manufacturers_name_key,
+                                            "name"),
+                          "Test Parallel Manufacturer's name")
 
     def test_parallel_other_title_information(self):
         parallel_other_title_information_key = getattr(self.manifestation,
                                                        'Parallel other title information (Manifestation)')
         self.assertEquals(self.parallel_other_title_information_key,
                           parallel_other_title_information_key)
+        self.assertEquals(redis_server.hget(parallel_other_title_information_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(parallel_other_title_information_key,
+                                            "title"),
+                          "Test parallel Other Title")
 
     def test_parallel_other_title_information_of_series(self):
         parallel_other_title_information_of_series_key = getattr(self.manifestation,
                                                                  'Parallel other title information of series (Manifestation)')
         self.assertEquals(self.parallel_other_title_information_of_series_key,
                           parallel_other_title_information_of_series_key)
+        self.assertEquals(redis_server.hget(parallel_other_title_information_of_series_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(parallel_other_title_information_of_series_key,
+                                            "title"),
+                          "Test parallel Other Title of Series")
 
     def test_parallel_other_title_information_of_subseries(self):
         parallel_other_title_information_of_subseries_key = getattr(self.manifestation,
                                                                     'Parallel other title information of subseries (Manifestation)')
         self.assertEquals(self.parallel_other_title_information_of_subseries_key,
                           parallel_other_title_information_of_subseries_key)
+        self.assertEquals(redis_server.hget(parallel_other_title_information_of_subseries_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(parallel_other_title_information_of_subseries_key,
+                                            "title"),
+                          "Test parallel Other Title of Subseries")
 
     def test_parallel_place_of_distribution(self):
         parallel_place_of_distribution_key = getattr(self.manifestation,
                                                      'Parallel place of distribution (Manifestation)')
         self.assertEquals(self.parallel_place_of_distribution_key,
                           parallel_place_of_distribution_key)
+        self.assertEquals(redis_server.hget(parallel_place_of_distribution_key,
+                                            "type"),
+                          "city")
+        self.assertEquals(redis_server.hget(parallel_place_of_distribution_key,
+                                            "name"),
+                          "New York")
 
     def test_parallel_place_of_manufacture(self):
         parallel_place_of_manufacture_key = getattr(self.manifestation,
                                                     'Parallel place of manufacture (Manifestation)')
         self.assertEquals(self.parallel_place_of_manufacture_key,
                           parallel_place_of_manufacture_key)
+        self.assertEquals(redis_server.hget(parallel_place_of_manufacture_key,
+                                            "type"),
+                          "city")
+        self.assertEquals(redis_server.hget(parallel_place_of_manufacture_key,
+                                            "name"),
+                          "Chicago")
 
     def test_parallel_place_of_production(self):
         parallel_place_of_production_key = getattr(self.manifestation,
                                                    'Parallel place of production (Manifestation)')
         self.assertEquals(self.parallel_place_of_production_key,
                           parallel_place_of_production_key)
+        self.assertEquals(redis_server.hget(parallel_place_of_production_key,
+                                            "type"),
+                          "city")
+        self.assertEquals(redis_server.hget(parallel_place_of_production_key,
+                                            "name"),
+                          "London")
 
     def test_parallel_place_of_publication(self):
         parallel_place_of_publication_key = getattr(self.manifestation,
                                                     'Parallel place of publication (Manifestation)')
         self.assertEquals(self.parallel_place_of_publication_key,
                           parallel_place_of_publication_key)
+        self.assertEquals(redis_server.hget(parallel_place_of_publication_key,
+                                            "type"),
+                          "city")
+        self.assertEquals(redis_server.hget(parallel_place_of_publication_key,
+                                            "name"),
+                          "New York")
 
     def test_parallel_producers_name(self):
         parallel_producers_name_key = getattr(self.manifestation,
                                               "Parallel producer's name (Manifestation)")
         self.assertEquals(self.parallel_producers_name_key,
                           parallel_producers_name_key)
+        self.assertEquals(redis_server.hget(parallel_producers_name_key,
+                                            "name"),
+                          "Test parallel producer's name")
 
     def test_parallel_publisher_name(self):
         parallel_publisher_name_key = getattr(self.manifestation,
                                               "Parallel publisher's name (Manifestation)")
         self.assertEquals(self.parallel_publisher_name_key,
                           parallel_publisher_name_key)
+        self.assertEquals(redis_server.hget(parallel_publisher_name_key,
+                                            "name"),
+                          "Test parallel publisher name")
 
     def test_parallel_statement_of_responsibility_to_named_revision_edition(self):
         parallel_statement_of_responsibility_to_named_revision_edition_key = getattr(self.manifestation,
@@ -1383,36 +1584,73 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                                                               'Parallel statement of responsibility relating to series (Manifestation)')
         self.assertEquals(self.parallel_statement_of_responsibility_relating_to_series_key,
                           parallel_statement_of_responsibility_relating_to_series_key)
+        self.assertEquals(redis_server.hget(parallel_statement_of_responsibility_relating_to_series_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(parallel_statement_of_responsibility_relating_to_series_key,
+                                            "value"),
+                          "Test parallel statement of responsibility to series")
+
 
     def test_parallel_statement_of_responsibility_relating_to_subseries(self):
         parallel_statement_of_responsibility_relating_to_subseries_key = getattr(self.manifestation,
                                                                                  'Parallel statement of responsibility relating to subseries (Manifestation)')
         self.assertEquals(self.parallel_statement_of_responsibility_relating_to_subseries_key,
                           parallel_statement_of_responsibility_relating_to_subseries_key)
+        self.assertEquals(redis_server.hget(parallel_statement_of_responsibility_relating_to_subseries_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(parallel_statement_of_responsibility_relating_to_subseries_key,
+                                            "value"),
+                          "Test parallel statement of responsibility to subseries")
 
     def test_parallel_statement_of_responsibility_relating_edition(self):
         parallel_statement_of_responsibility_relating_edition_key = getattr(self.manifestation,
                                                                             'Parallel statement of responsibility relating to the edition (Manifestation)')
         self.assertEquals(self.parallel_statement_of_responsibility_relating_edition_key,
                           parallel_statement_of_responsibility_relating_edition_key)
+        self.assertEquals(redis_server.hget(parallel_statement_of_responsibility_relating_edition_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(parallel_statement_of_responsibility_relating_edition_key,
+                                            "value"),
+                          "Test parallel statement of responsibility to edition")
 
     def test_parallel_statement_of_responsibility_relating_to_title_proper(self):
         parallel_statement_of_responsibility_relating_to_title_proper_key = getattr(self.manifestation,
                                                                                     'Parallel statement of responsibility relating to title proper (Manifestation)')
         self.assertEquals(self.parallel_statement_of_responsibility_relating_to_title_proper_key,
                           parallel_statement_of_responsibility_relating_to_title_proper_key)
+        self.assertEquals(redis_server.hget(parallel_statement_of_responsibility_relating_to_title_proper_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(self.parallel_statement_of_responsibility_relating_to_title_proper_key,
+                                            "value"),
+                          "Test parallel statement of responsibility to title proper")
 
     def test_parallel_title_proper(self):
         parallel_title_proper_key = getattr(self.manifestation,
                                             'Parallel title proper (Manifiestation)')
         self.assertEquals(self.parallel_title_proper_key,
                           parallel_title_proper_key)
+        self.assertEquals(redis_server.hget(parallel_title_proper_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(parallel_title_proper_key,
+                                            "title"),
+                          "Test title proper")
 
     def test_parallel_title_proper_of_series(self):
         parallel_title_proper_of_series_key = getattr(self.manifestation,
                                                       'Parallel title proper of series (Manifestation)')
         self.assertEquals(self.parallel_title_proper_of_series_key,
                           parallel_title_proper_of_series_key)
+        self.assertEquals(redis_server.hget(parallel_title_proper_of_series_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(parallel_title_proper_of_series_key,
+                                            "title"),
+                          "Test title proper of series")
 
 
     def test_parallel_title_proper_of_subseries(self):
@@ -1420,30 +1658,60 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                                          'Parallel title proper of subseries (Manifestation)')
         self.assertEquals(self.parallel_title_proper_of_subseries_key,
                           parallel_title_proper_of_subseries_key)
+        self.assertEquals(redis_server.hget(parallel_title_proper_of_subseries_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(parallel_title_proper_of_subseries_key,
+                                            "title"),
+                          "Test title proper of subseries")
 
     def test_place_of_distribution(self):
         place_of_distribution_key = getattr(self.manifestation,
                                             'Place of distribution (Manifestation)')
         self.assertEquals(self.place_of_distribution_key,
                           place_of_distribution_key)
+        self.assertEquals(redis_server.hget(place_of_distribution_key,
+                                            "type"),
+                          "city")
+        self.assertEquals(redis_server.hget(place_of_distribution_key,
+                                            "name"),
+                          "Chicago")
 
     def test_place_of_manufacture(self):
         place_of_manufacture_key = getattr(self.manifestation,
                                            'Place of manufacture (Manifestation)')
         self.assertEquals(self.place_of_manufacture_key,
                           place_of_manufacture_key)
+        self.assertEquals(redis_server.hget(place_of_manufacture_key,
+                                            "type"),
+                          "city")
+        self.assertEquals(redis_server.hget(place_of_manufacture_key,
+                                            "name"),
+                          "Chicago")
 
     def test_place_of_production(self):
         place_of_production_key = getattr(self.manifestation,
                                           'Place of production (Manifestation)')
         self.assertEquals(self.place_of_production_key,
                           place_of_production_key)
+        self.assertEquals(redis_server.hget(place_of_production_key,
+                                            "type"),
+                          "city")
+        self.assertEquals(redis_server.hget(place_of_production_key,
+                                            "name"),
+                          "London")
 
     def test_place_of_publication(self):
         place_of_publication_key = getattr(self.manifestation,
                                            'Place of publication (Manifestation)')
         self.assertEquals(self.place_of_publication_key,
                           place_of_publication_key)
+        self.assertEquals(redis_server.hget(place_of_publication_key,
+                                            "type"),
+                          "city")
+        redis_server.hset(place_of_publication_key,
+                          "name",
+                          "New York")
 
     def test_plate_number_for_music(self):
         plate_number_for_music_key = getattr(self.manifestation,
@@ -1456,6 +1724,8 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                     'Playing speed (Manifestation)')
         self.assertEquals(self.playing_speed_key,
                           playing_speed_key)
+        self.assertEquals(redis_server.get(playing_speed_key),
+                          "7 1/2")
 
     def test_polarity(self):
         polarity_key = getattr(self.manifestation,
@@ -1470,6 +1740,9 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                          'Preferred citation (Manifestation)')
         self.assertEquals(self.preferred_citation_key,
                           preferred_citation_key)
+        self.assertEquals(redis_server.hget(self.preferred_citation_key,
+                                            "a"),
+                          "James Hazen Hyde Papers, 1891-1941, New York Historical Society")
 
     def test_presentation_format(self):
         presentation_format_key = getattr(self.manifestation,
@@ -1484,24 +1757,33 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                     "Producer's name (Manifestation)")
         self.assertEquals(self.producer_name_key,
                           producer_name_key)
+        self.assertEquals(redis_server.hget(producer_name_key,
+                          "name"),
+                          "Test Producer Name for Manifestation")
 
     def test_production_method(self):
         production_method_key = getattr(self.manifestation,
                                         'Production method (Manifestation)')
         self.assertEquals(self.production_method_key,
                           production_method_key)
+        self.assertEquals(redis_server.get(production_method_key),
+                          "photogravure")
 
     def test_production_method_for_manuscript(self):
         production_method_for_manuscript_key = getattr(self.manifestation,
                                                        'Production method for manuscript (Manifestation)')
         self.assertEquals(self.production_method_for_manuscript_key,
                           production_method_for_manuscript_key)
+        self.assertEquals(redis_server.get(production_method_for_manuscript_key),
+                          "holograph")
 
     def test_production_method_for_tactile_resource(self):
         production_method_for_tactile_resource_key = getattr(self.manifestation,
                                                              'Production method for tactile resource (Manifestation)')
         self.assertEquals(self.production_method_for_tactile_resource_key,
                           production_method_for_tactile_resource_key)
+        self.assertEquals(redis_server.get(production_method_for_tactile_resource_key),
+                          "solid dot")
 
     def test_production_statement(self):
         production_statement_key = getattr(self.manifestation,
