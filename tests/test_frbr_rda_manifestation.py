@@ -220,6 +220,9 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                           "note",
                           "Note on Publication Statement for Manifestation")
         self.series_statement_key = "marc21:490:%s" % redis_server.incr("global:marc21:490")
+        redis_server.hset(self.series_statement_key,
+                          "value",
+                          "Test Series Statement")
         self.note_on_series_statement_key = self.series_statement_key
         redis_server.hset(self.note_on_series_statement_key,
                           "note",
@@ -490,18 +493,69 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                           "value",
                           "09026-62715-3")
         self.recording_medium_key = "rdvocab:recMedium:1002"
-        self.reduction_ration_key = None
-        self.regional_encoding_key = None
-        self.resolution_key = None
-        self.restrictions_on_access_key = None
-        self.restrictions_on_use_key = None
-        self.sound_characteristic_key = None
-        self.sound_content_key = None
-        self.special_playback_characteristic_key = None
-        self.statement_of_responsibility_key = None
-        self.statement_of_responsibility_relating_named_revision_edition_key = None
-        self.statement_of_responsibility_relating_to_series_key = None
-        self.statement_of_responsibility_relating_to_subseries_key = None
+        redis_server.set(self.recording_medium_key,
+                         "Magneto-optical")
+        self.reduction_ration_key = "rdvocab:RDAReductionRatio:1005"
+        redis_server.set(self.reduction_ration_key,
+                         "ultra high reduction")
+        self.regional_encoding_key = "DVD:region:0"
+        redis_server.set(self.regional_encoding_key,
+                         "United States, Canada, Bermuda, U.S. territories")
+        self.resolution_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.resolution_key,
+                         "3.1 megapixels")
+        self.restrictions_on_access_key = "mods:accessCondition:%s" % redis_server.incr("global:mods:accessCondition")
+        redis_server.hset(self.restrictions_on_access_key,
+                          "type",
+                          "restriction on access")
+        redis_server.hset(self.restrictions_on_access_key,
+                          "value",
+                          "Available to subscribers only")
+
+        self.restrictions_on_use_key = "mods:accessCondition:%s" % redis_server.incr("global:mods:accessCondition")
+        redis_server.hset(self.restrictions_on_use_key,
+                          "type",
+                          "restriction on use")
+        redis_server.hset(self.restrictions_on_use_key,
+                          "value",
+                          "In Library use only")
+        self.sound_characteristic_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.sound_characteristic_key,
+                         "Test sound characteristic")
+        self.sound_content_key = "rdvocab:soundCont:1002"
+        redis_server.set(self.sound_content_key,
+                         "silent")
+        self.special_playback_characteristic_key = "rdvocab:specPlayback:1004"
+        redis_server.set(self.special_playback_characteristic_key,
+                         "Dolby")
+        self.statement_of_responsibility_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.statement_of_responsibility_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.statement_of_responsibility_key,
+                          "value",
+                          "Test Statement of Responsibility")
+        self.statement_of_responsibility_relating_named_revision_edition_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.statement_of_responsibility_relating_named_revision_edition_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.statement_of_responsibility_relating_named_revision_edition_key,
+                          "value",
+                          "Test Statement of Responsibility relating to named revision of edition")
+        self.statement_of_responsibility_relating_to_series_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.statement_of_responsibility_relating_to_series_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.statement_of_responsibility_relating_to_series_key,
+                          "value",
+                          "Test Statement of Responsibility relating to series")
+        self.statement_of_responsibility_relating_to_subseries_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.statement_of_responsibility_relating_to_subseries_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.statement_of_responsibility_relating_to_subseries_key,
+                          "value",
+                          "Test Statement of Responsibility relating to subseries")
         self.statement_of_responsibility_relating_to_the_edition_key = None
         self.statement_of_responsibility_relating_to_title_proper_key = None
         self.tape_configuration_key = None
@@ -1840,6 +1894,154 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                             "value"),
                           "09026-62715-3")
 
+    def test_recording_medium(self):
+        recording_medium_key = getattr(self.manifestation,
+                                       'Recording medium (Manifestation)')
+        self.assertEquals(self.recording_medium_key,
+                          recording_medium_key)
+        self.assertEquals(redis_server.get(recording_medium_key),
+                          "Magneto-optical")
+
+    def test_reduction_ration(self):
+        reduction_ration_key = getattr(self.manifestation,
+                                       'Reduction ration (Manifestation)')
+        self.assertEquals(self.reduction_ration_key,
+                          reduction_ration_key)
+        self.assertEquals(redis_server.get(self.reduction_ration_key),
+                          "ultra high reduction")
+
+    def test_regional_encoding(self):
+        regional_encoding_key = getattr(self.manifestation,
+                                        'Regional encoding (Manifestation)')
+        self.assertEquals(self.regional_encoding_key,
+                          regional_encoding_key)
+        self.assertEquals(redis_server.get(regional_encoding_key),
+                          "United States, Canada, Bermuda, U.S. territories")
+
+    def test_resolution(self):
+        resolution_key = getattr(self.manifestation,
+                                 'Resolution (Manifestation)')
+        self.assertEquals(self.resolution_key,
+                          resolution_key)
+        self.assertEquals(redis_server.get(self.resolution_key),
+                          "3.1 megapixels")
+
+    def test_restrictions_on_access(self):
+        restrictions_on_access_key = getattr(self.manifestation,
+                                             'Restrictions on access (Manifestation)')
+        self.assertEquals(self.restrictions_on_access_key,
+                          restrictions_on_access_key)
+        self.assertEquals(redis_server.hget(restrictions_on_access_key,
+                                            "type"),
+                          "restriction on access")
+        self.assertEquals(redis_server.hget(restrictions_on_access_key,
+                                            "value"),
+                          "Available to subscribers only")
+
+
+    def test_restrictions_on_use(self):
+        restrictions_on_use_key = getattr(self.manifestation,
+                                          'Restrictions on use (Manifestation)')
+        self.assertEquals(self.restrictions_on_use_key,
+                          restrictions_on_use_key)
+        self.assertEquals(redis_server.hget(restrictions_on_use_key,
+                                            "type"),
+                          "restriction on use")
+        self.assertEquals(redis_server.hget(restrictions_on_use_key,
+                                            "value"),
+                          "In Library use only")
+
+    def test_series_statement(self):
+        series_statement_key = getattr(self.manifestation,
+                                       'Series statement (Manifestation)')
+        self.assertEquals(self.series_statement_key,
+                          series_statement_key)
+        self.assertEquals(redis_server.hget(series_statement_key,
+                                            "value"),
+                          "Test Series Statement")
+
+    def test_sound_characteristic(self):
+        sound_characteristic_key = getattr(self.manifestation,
+                                           'Sound characteristic (Manifestation)')
+        self.assertEquals(self.sound_characteristic_key,
+                          sound_characteristic_key)
+        self.assertEquals(redis_server.get(sound_characteristic_key),
+                          "Test sound characteristic")
+
+    def test_sound_content(self):
+        sound_content_key = getattr(self.manifestation,
+                                    'Sound content (Manifestation)')
+        self.assertEquals(self.sound_content_key,
+                          sound_content_key)
+        self.assertEquals(redis_server.get(self.sound_content_key),
+                          "silent")
+
+    def test_special_playback_characteristic(self):
+        special_playback_characteristic_key = getattr(self.manifestation,
+                                                      'Special playback characteristic (Manifestation)')
+        self.assertEquals(self.special_playback_characteristic_key,
+                          special_playback_characteristic_key)
+        self.assertEquals(redis_server.get(special_playback_characteristic_key),
+                          "Dolby")
+
+    def test_statement_of_responsibility(self):
+        statement_of_responsibility_key = getattr(self.manifestation,
+                                                  'Statement of responsibility (Manifestation)')
+        self.assertEquals(self.statement_of_responsibility_key,
+                          statement_of_responsibility_key)
+        self.assertEquals(redis_server.hget(statement_of_responsibility_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(statement_of_responsibility_key,
+                                            "value"),
+                          "Test Statement of Responsibility")
+    def test_statement_of_responsibility_relating_named_revision_edition(self):
+        statement_of_responsibility_relating_named_revision_edition_key = getattr(self.manifestation,
+                                                                                  'Statement of responsibility relating to a named revision of an edition (Manifestation)')
+        self.assertEquals(self.statement_of_responsibility_relating_named_revision_edition_key,
+                          statement_of_responsibility_relating_named_revision_edition_key)
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_named_revision_edition_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_named_revision_edition_key,
+                                            "value"),
+                          "Test Statement of Responsibility relating to named revision of edition")
+
+    def test_statement_of_responsibility_relating_to_series(self):
+        statement_of_responsibility_relating_to_series_key = getattr(self.manifestation,
+                                                                     'Statement of responsibility relating to series (Manifestation)')
+        self.assertEquals(self.statement_of_responsibility_relating_to_series_key,
+                          statement_of_responsibility_relating_to_series_key)
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_to_series_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_to_series_key,
+                                            "value"),
+                          "Test Statement of Responsibility relating to series")
+
+    def test_statement_of_responsibility_relating_to_subseries(self):
+        statement_of_responsibility_relating_to_subseries_key = getattr(self.manifestation,
+                                                                        'Statement of responsibility relating to subseries (Manifestation)')
+        self.assertEquals(self.statement_of_responsibility_relating_to_subseries_key,
+                          statement_of_responsibility_relating_to_subseries_key)
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_to_subseries_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_to_subseries_key,
+                                            "value"),
+                          "Test Statement of Responsibility relating to subseries")
+
+    def test_statement_of_responsibility_relating_to_the_edition(self):
+        statement_of_responsibility_relating_to_the_edition_key = getattr(self.manifestation,
+                                                                          'Statement of responsibility relating to the edition (Manifestation)')
+        self.assertEquals(self.statement_of_responsibility_relating_to_the_edition_key,
+                          statement_of_responsibility_relating_to_the_edition_key)
+
+    def test_statement_of_responsibility_relating_to_title_proper(self):
+        statement_of_responsibility_relating_to_title_proper_key = getattr(self.manifestation,
+                                                                           'Statement of responsibility relating to title proper (Manifestation)')
+        self.assertEquals(self.statement_of_responsibility_relating_to_title_proper_key,
+                          statement_of_responsibility_relating_to_title_proper_key)
 
         
     def tearDown(self):
