@@ -21,27 +21,102 @@ class TestItemRDAGroup1Elements(unittest.TestCase):
     def setUp(self):
         self.contact_information_key = "foaf:Person:%s" % redis_server.incr("global:foaf:Person")
         redis_server.set(self.contact_information_key,"Jane Librarian")
-        self.custodial_history_of_item_key = None
-        self.dimensions_key = None
-        self.dimensions_of_map_key = None
+        self.custodial_history_of_item_key = "ead:admininfo:custodhist:%s" % redis_server.incr("global:ead:admininfo:custodhist")
+        redis_server.set(self.custodial_history_of_item_key,
+                         '''The Ocean Falls Corporation records remained in the custody of Pacific Mills Ltd., and its successor companies, until the mill and townsite were taken over by the B.C. provincial government in 1973.''')
+        self.dimensions_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.dimensions_key,
+                          "type",
+                          "source dimensions")
+        redis_server.hset(self.dimensions_key,
+                          "value",
+                          "Test item dimensions")
+        self.dimensions_of_map_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.dimensions_of_map_key,
+                          "type",
+                          "source dimensions")
+        redis_server.hset(self.dimensions_of_map_key,
+                          "value",
+                          "Test item dimensions of map")
         self.dimensions_of_still_image_key = None
-        self.extent_key = None
-        self.extent_of_cartographic_resource_key = None
-        self.extent_of_notated_music_key = None
-        self.extent_of_still_image_key = None
-        self.extent_of_text_key = None
-        self.extent_of_three_dimensional_form_key = None
-        self.identifier_for_the_item_key = None
-        self.immediate_source_of_acquisition_of_item_key = None
-        self.item_specific_carrier_characteristic_key = None
-        self.item_specific_carrier_characteristic_of_early_printed_resources_key = None
-        self.note_key = None
-        self.note_on_dimensions_of_item_key = None
-        self.note_on_extent_of_item_key = None
-        self.preferred_citation_key = None
-        self.restrictions_on_access_key = None
-        self.restrictions_on_use_key = None
-        self.uniform_resource_locator_key = None
+        redis_server.hset(self.dimensions_of_still_image_key,
+                          "type",
+                          "source dimensions")
+        redis_server.hset(self.dimensions_of_still_image_key,
+                          "value",
+                          "Test item dimensions of still image")
+        self.extent_key = "rdvocab:extent:1093"
+        redis_server.set(self.extent_key,
+                         "Videodisc")
+        self.extent_of_cartographic_resource_key = "rdvocab:extentCarto:1014"
+        redis_server.set(self.extent_of_cartographic_resource_key,
+                         "Models")
+        self.extent_of_notated_music_key = "rdvocab:extenttNoteMus:1018"
+        redis_server.set(self.extent_of_notated_music_key,
+                         "Vocal scores")
+        self.extent_of_still_image_key = "rdvocab:extentImage:1016"
+        redis_server.set(self.extent_of_still_image_key,
+                         "Wall chart")
+        self.extent_of_text_key = "rdvocab:extentText:1002"
+        redis_server.set(self.extent_of_text_key,
+                         "Leaf")
+        self.extent_of_three_dimensional_form_key = "rdvocab:extentThreeDim:1009"
+        redis_server.set(self.extent_of_three_dimensional_form_key,
+                         "Sculpture")
+        self.identifier_for_the_item_key = "mods:identifier:%s" % redis_server.incr("global:mods:identifier")
+        redis_server.hset(self.identifier_for_the_item_key,
+                          "type",
+                          "barcode")
+        redis_server.hset(self.identifier_for_the_item_key,
+                          "value",
+                          "11557800130")
+        self.immediate_source_of_acquisition_of_item_key = "frad:CorporateBody:%s" % redis_server.incr("global:frad:CorporateBody")
+        redis_server.hset(self.immediate_source_of_acquisition_of_item_key,
+                          "name",
+                          "Amazon")
+        self.item_specific_carrier_characteristic_key = "rdvocab:RDACarrierType:1042"
+        redis_server.set(self.item_specific_carrier_characteristic_key,
+                         "stereograph card")
+        self.item_specific_carrier_characteristic_of_early_printed_resources_key = "rdvocab:RDACarrierType:1048"
+        redis_server.set(self.item_specific_carrier_characteristic_of_early_printed_resources_key,
+                         "sheet")
+        self.note_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_key,
+                         "Test item note")
+        self.note_on_dimensions_of_item_key = "mods:note:%s"  % redis_server.incr("global:mods:note")
+        redis_server.hset(self.note_on_dimensions_of_item_key,
+                          "type",
+                          "source dimensions")
+        redis_server.hset(self.note_on_dimensions_of_item_key,
+                          "value",
+                          "Test note on dimensions of item")
+        self.note_on_extent_of_item_key = "mods:note:%s"  % redis_server.incr("global:mods:note")
+        redis_server.set(self.note_on_extent_of_item_key,
+                         "Test note on extent of item")
+        self.preferred_citation_key = "mods:note:%s"  % redis_server.incr("global:mods:note")
+        redis_server.hset(self.preferred_citation_key,
+                          "type",
+                          "preferred citation")
+        redis_server.hset(self.preferred_citation_key,
+                          "value",
+                          "MLA")
+        self.restrictions_on_access_key = "mods:accessCondition:%s" % redis_server.incr("global:mods:accessCondition")
+        redis_server.hset(self.restrictions_on_access_key,
+                          "type",
+                          "restriction on access")
+        redis_server.hset(self.restrictions_on_access_key,
+                          "value",
+                          "Test Item restriction on access")
+        self.restrictions_on_use_key = "mods:accessCondition:%s" % redis_server.incr("global:mods:accessCondition")
+        redis_server.hset(self.restrictions_on_use_key,
+                          "type",
+                          "use and reproduction")
+        redis_server.hset(self.restrictions_on_use_key,
+                          "value",
+                          "Test Item restriction on use")
+        self.uniform_resource_locator_key = "mods:url:%s" % redis_server.incr("global:mods:url")
+        redis_server.set(self.uniform_resource_locator_key,
+                         "http://example.com/Item")
         params = {'Contact information (Item)':self.contact_information_key, 
                   'Custodial history of item':self.custodial_history_of_item_key, 
                   'Dimensions (Item)':self.dimensions_key,
@@ -78,8 +153,207 @@ class TestItemRDAGroup1Elements(unittest.TestCase):
         self.assertEquals(redis_server.get(contact_information_key),
                           "Jane Librarian")
         
+    def test_custodial_history_of_item(self):
+        custodial_history_of_item_key = getattr(self.item,
+                                                'Custodial history of item')
+        self.assertEquals(self.custodial_history_of_item_key,
+                          custodial_history_of_item_key)
+        self.assertEquals(redis_server.get(custodial_history_of_item_key),
+                          '''The Ocean Falls Corporation records remained in the custody of Pacific Mills Ltd., and its successor companies, until the mill and townsite were taken over by the B.C. provincial government in 1973.''')
 
-                                          
+    def test_dimensions(self):
+        dimensions_key = getattr(self.item,
+                                 'Dimensions (Item)')
+        self.assertEquals(self.dimensions_key,
+                          dimensions_key)
+        self.assertEquals(redis_server.hget(dimensions_key,
+                                            "type"),
+                          "source dimensions")
+        self.assertEquals(redis_server.hget(dimensions_key,
+                                            "value"),
+                          "Test item dimensions")
+
+    def dimensions_of_map(self):
+        dimensions_of_map_key = getattr(self.item,
+                                        'Dimensions of map, etc. (Item)')
+        self.assertEquals(dimensions_of_map_key,
+                          self.dimensions_of_map_key)
+        self.assertEquals(redis_server.hget(dimensions_of_map_key,
+                                            "type"),
+                          "source dimensions")
+        self.assertEquals(redis_server.hget(dimensions_of_map_key,
+                                            "value"),
+                          "Test item dimensions of map")
+
+    def test_dimensions_of_still_image(self):
+        dimensions_of_still_image_key = getattr(self.item,
+                                                'Dimensions of still image (Item)')
+        self.assertEquals(self.dimensions_of_still_image_key,
+                          dimensions_of_still_image_key)
+        self.assertEquals(redis_server.hget(dimensions_of_still_image_key,
+                                            "type"),
+                          "source dimensions")
+        self.assertEquals(redis_server.hget(dimensions_of_still_image_key,
+                                            "value"),
+                          "Test item dimensions of still image")
+        
+    def test_extent(self):
+        extent_key = getattr(self.item,
+                             'Extent (Item)')
+        self.assertEquals(self.extent_key,
+                          extent_key)
+        self.assertEquals(redis_server.get(extent_key),
+                          "Videodisc")
+
+    def test_extent_of_cartographic_resource(self):
+        extent_of_cartographic_resource_key = getattr(self.item,
+                                                      'Extent of cartographic resource (Item)')
+        self.assertEquals(self.extent_of_cartographic_resource_key,
+                          extent_of_cartographic_resource_key)
+        self.assertEquals(redis_server.get(extent_of_cartographic_resource_key),
+                          "Models")
+
+    def test_extent_of_notated_music(self):
+        extent_of_notated_music_key = getattr(self.item,
+                                              'Extent of notated music (Item)')
+        self.assertEquals(self.extent_of_notated_music_key,
+                          extent_of_notated_music_key)
+        self.assertEquals(redis_server.get(extent_of_notated_music_key),
+                          "Vocal scores")
+
+    def test_extent_of_still_image(self):
+        extent_of_still_image_key = getattr(self.item,
+                                            'Extent of still image (Item)')
+        self.assertEquals(self.extent_of_still_image_key,
+                          extent_of_still_image_key)
+        self.assertEquals(redis_server.get(extent_of_still_image_key),
+                          "Wall chart")
+
+    def test_extent_of_text(self):
+        extent_of_text_key = getattr(self.item,
+                                     'Extent of text (Item)')
+        self.assertEquals(self.extent_of_text_key,
+                          extent_of_text_key)
+
+        self.assertEquals(redis_server.get(extent_of_text_key),
+                          "Leaf")
+
+    def test_extent_of_three_dimensional_form(self):
+        extent_of_three_dimensional_form_key = getattr(self.item,
+                                                       'Extent of three-dimensional form (Item)')
+        self.assertEquals(self.extent_of_three_dimensional_form_key,
+                          extent_of_three_dimensional_form_key)
+        self.assertEquals(redis_server.get(extent_of_three_dimensional_form_key),
+                          "Sculpture")
+
+    def test_identifier_for_the_item(self):
+        identifier_for_the_item_key = getattr(self.item,
+                                              'Identifier for the item')
+        self.assertEquals(self.identifier_for_the_item_key,
+                          identifier_for_the_item_key)
+        self.assertEquals(redis_server.hget(identifier_for_the_item_key,
+                                            "type"),
+                          "barcode")
+        self.assertEquals(redis_server.hget(identifier_for_the_item_key,
+                                            "value"),
+                          "11557800130")
+
+    def test_immediate_source_of_acquisition_of_item(self):
+        immediate_source_of_acquisition_of_item_key = getattr(self.item,
+                                                              'Immediate source of acquisition of item')
+        self.assertEquals(self.immediate_source_of_acquisition_of_item_key,
+                          immediate_source_of_acquisition_of_item_key)
+        self.assertEquals(redis_server.hget(immediate_source_of_acquisition_of_item_key,
+                                            "name"),
+                          "Amazon")
+    def test_item_specific_carrier_characteristic(self):
+        item_specific_carrier_characteristic_key = getattr(self.item,
+                                                           'Item-specific carrier characteristic')
+        self.assertEquals(self.item_specific_carrier_characteristic_key,
+                          item_specific_carrier_characteristic_key)
+        self.assertEquals(redis_server.get(item_specific_carrier_characteristic_key),
+                          "stereograph card")
+
+    def test_item_specific_carrier_characteristic_of_early_printed_resources(self):
+        item_specific_carrier_characteristic_of_early_printed_resources_key = getattr(self.item,
+                                                                                      'Item-specific carrier characteristic of early printed resources')
+        self.assertEquals(self.item_specific_carrier_characteristic_of_early_printed_resources_key,
+                          item_specific_carrier_characteristic_of_early_printed_resources_key)
+        self.assertEquals(redis_server.get(item_specific_carrier_characteristic_of_early_printed_resources_key),
+                          "sheet")
+
+    def test_note(self):
+        note_key = getattr(self.item,
+                           'Note (Item)')
+        self.assertEquals(self.note_key,
+                          note_key)
+        self.assertEquals(redis_server.get(self.note_key),
+                          "Test item note")
+
+    def test_note_on_dimensions_of_item(self):
+        note_on_dimensions_of_item_key = getattr(self.item,
+                                                 'Note on dimensions of item')
+        self.assertEquals(self.note_on_dimensions_of_item_key,
+                          note_on_dimensions_of_item_key)
+        self.assertEquals(redis_server.hget(note_on_dimensions_of_item_key,
+                                            "type"),
+                          "source dimensions")
+        self.assertEquals(redis_server.hget(note_on_dimensions_of_item_key,
+                                            "value"),
+                          "Test note on dimensions of item")
+        
+    def test_note_on_extent_of_item(self):
+        note_on_extent_of_item_key = getattr(self.item,
+                                             'Note on extent of item')
+        self.assertEquals(self.note_on_extent_of_item_key,
+                          note_on_extent_of_item_key)
+        
+        self.assertEquals(redis_server.get(note_on_extent_of_item_key),
+                          "Test note on extent of item")
+
+    def test_preferred_citation(self):
+        preferred_citation_key = getattr(self.item,
+                                         'Preferred citation (Item)')
+        self.assertEquals(self.preferred_citation_key,
+                          preferred_citation_key)
+        self.assertEquals(redis_server.hget(preferred_citation_key,
+                                            "type"),
+                          "preferred citation")
+        self.assertEquals(redis_server.hget(preferred_citation_key,
+                                            "value"),
+                          "MLA")
+
+    def test_restrictions_on_access(self):
+        restrictions_on_access_key = getattr(self.item,
+                                             'Restrictions on access (Item)')
+        self.assertEquals(self.restrictions_on_access_key,
+                          restrictions_on_access_key)
+        self.assertEquals(redis_server.hget(restrictions_on_access_key,
+                                            "type"),
+                          "restriction on access")
+        self.assertEquals(redis_server.hget(restrictions_on_access_key,
+                                            "value"),
+                          "Test Item restriction on access")
+
+    def test_restrictions_on_use(self):
+        restrictions_on_use_key =  getattr(self.item,
+                                           'Restrictions on use (Item)')
+        self.assertEquals(self.restrictions_on_use_key,
+                          restrictions_on_use_key)
+        self.assertEquals(redis_server.hget(restrictions_on_use_key,
+                                            "type"),
+                          "use and reproduction")
+        self.assertEquals(redis_server.hget(self.restrictions_on_use_key,
+                                            "value"),
+                          "Test Item restriction on use")
+
+    def test_uniform_resource_locator(self):
+        uniform_resource_locator_key = getattr(self.item,
+                                               'Uniform resource locator (Item)')
+        self.assertEquals(self.uniform_resource_locator_key,
+                          uniform_resource_locator_key)
+        self.assertEquals(redis_server.get(uniform_resource_locator_key),
+                          "http://example.com/Item")
 
     def tearDown(self):
         redis_server.flushdb()

@@ -15,6 +15,33 @@
 	<!-- <script src="http://mrdoob.github.com/three.js/build/Three.js"  type="text/javascript" ></script> 
 	<script src="js/frbr-3D.js"  type="text/javascript"></script>-->
 	<script src="js/frbr-canvas.js" type="text/javascript"></script>
+  <style type="text/css">
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+      .container {
+        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
+
+ .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+  </style>
 	<body>
 
     <div class="topbar">
@@ -39,13 +66,12 @@
 
       <div class="content">
         <div class="page-header">
-          <h1>FRBR Datastore Visualizations 
-		  <small>Built with <a href="http://redis.io/">Redis.io</a> and <a href="http://bottlepy.org/docs/dev/">Bottle</a></small></h1>
+	  <h1>FRBR Datastore Visualizations 
+	    <small>Built with <a href="http://redis.io/">Redis.io</a> and <a href="http://bottlepy.org/docs/dev/">Bottle</a></small></h1> 
         </div>
         <div class="row">
           <div class="span10">
             <h2>Main content</h2>
-			<canvas id="threeDcanvas" height="300" width="300"> </canvas>
           </div>
           <div class="span4">
             <h3>Secondary content</h3>

@@ -1,0 +1,1865 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdf:Description xml:lang="en" rdf:about="marc2skos-frbr-item.rdf"/>
+  <skos:Concept xml:lang="en" rdf:about="MARC 013 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="013" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 014 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="014" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 015 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="015" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 017 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="017" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 017 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="017" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 018 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="018" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 020 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="020" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 022 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="022" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 024 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="024" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 026 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="026" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 027 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="027" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 028 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="028" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 028 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="028" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 030 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="030" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 032 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="032" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 033 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="033" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 034 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="034" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 035 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="035" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 036 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="036" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 037 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="037" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 038 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="038" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 040 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="040" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 043 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="043" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 044 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="044" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 045 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="045" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 046 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="046" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 050 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="050" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 052 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="052" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 055 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="055" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 072 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="072" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 080 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="080" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 082 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="082" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 084 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="084" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 086 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="086" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 088 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="088" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 100 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="100" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 110 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="110" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 111 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="111" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 130 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="130" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 210 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="210" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 210 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="210" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 222 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="222" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 240 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="240" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 242 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="242" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 242 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="242" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 243 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="243" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 243 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="243" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 245 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="245" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 245 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="245" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 246 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="246" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 246 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="246" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 247 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="247" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 247 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="247" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 247 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="247" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 250 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="250" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 254 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="254" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 255 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="255" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 256 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="256" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 257 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="257" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 260 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="260" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 263 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="263" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 270 to FRBR Item'type of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="270" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">i</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 270 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="270" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 300 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="300" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 306 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="306" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 307 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="307" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 310 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="310" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 321 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="321" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 340 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="340" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 351 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="351" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 355 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="355" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 357 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="357" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 362 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="362" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 440 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="440" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 490 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="490" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 490 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="490" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 500 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="500" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 501 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="501" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 502 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="502" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 504 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="504" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 505 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="505" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 505 to FRBR Item'level of content designation mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="505" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 505 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="505" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 506 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="506" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 507 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="507" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 508 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="508" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 510 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="510" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 511 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="511" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 511 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="511" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 513 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="513" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 515 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="515" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 516 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="516" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 516 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="516" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 518 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="518" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 520 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="520" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 521 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="521" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 521 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="521" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 522 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="522" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 522 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="522" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 524 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="524" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 524 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="524" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 525 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="525" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 526 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="526" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 526 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="526" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 530 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="530" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 533 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="533" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 534 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="534" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 535 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="535" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 536 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="536" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 538 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="538" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 540 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="540" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 541 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="541" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 544 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="544" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 545 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="545" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 546 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="546" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 547 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="547" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 550 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="550" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 555 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="555" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 555 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="555" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 556 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="556" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 556 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="556" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 561 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="561" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 562 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="562" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 563 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="563" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 565 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="565" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 565 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="565" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 567 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="567" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 567 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="567" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 580 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="580" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 581 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="581" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 581 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="581" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 583 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="583" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 584 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="584" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 585 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="585" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 586 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="586" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 600 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="600" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 610 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="610" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 611 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="611" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 630 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="630" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 648 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="648" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 650 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="650" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 651 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="651" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 653 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="653" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 654 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="654" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 655 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="655" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 656 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="656" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 657 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="657" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 658 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="658" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 700 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="700" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 710 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="710" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 711 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="711" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 720 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="720" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 730 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="730" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 740 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="740" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 752 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="752" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 753 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="753" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 754 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="754" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 760 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="760" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 760 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="760" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 760 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="760" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 762 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="762" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 762 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="762" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 762 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="762" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 765 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="765" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 765 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="765" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 765 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="765" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 767 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="767" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 767 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="767" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 767 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="767" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 770 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="770" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 770 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="770" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 770 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="770" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 772 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="772" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 772 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="772" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 772 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="772" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 773 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="773" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 773 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="773" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 773 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="773" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 774 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="774" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 774 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="774" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 774 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="774" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 775 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="775" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 775 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="775" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 775 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="775" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 776 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="776" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 776 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="776" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 776 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="776" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 777 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="777" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 777 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="777" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 777 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="777" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 780 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="780" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 780 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="780" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 780 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="780" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 785 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="785" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 785 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="785" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 785 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="785" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 786 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="786" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 786 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="786" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 786 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="786" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 787 to FRBR Item'function of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="787" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 787 to FRBR Item'field display constant mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="787" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 787 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="787" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 800 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="800" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 810 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="810" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 811 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="811" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 830 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="830" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 842 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="842" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 843 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="843" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 844 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="844" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 845 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="845" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 852 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="852" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 853 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="853" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 854 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="854" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 855 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="855" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 856 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="856" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 863 to FRBR Item'field encoding level mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="863" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 863 to FRBR Item'form of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="863" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 863 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="863" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 864 to FRBR Item'field encoding level mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="864" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 864 to FRBR Item'form of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="864" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 864 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="864" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 865 to FRBR Item'field encoding level mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="865" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 865 to FRBR Item'form of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="865" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 865 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="865" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 866 to FRBR Item'field encoding level mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="866" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 866 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="866" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 867 to FRBR Item'field encoding level mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="867" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 867 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="867" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 868 to FRBR Item'field encoding level mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="868" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 868 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="868" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 876 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="876" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 877 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="877" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 878 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="878" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 880 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="880" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 886 to FRBR Item'type of field mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="886" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 365 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="365" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 366 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="366" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 538 to FRBR Item'n a mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="538" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">I</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Item'n a mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">q</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 031 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="031" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 258 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="258" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 662 to FRBR Item'parallel mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>
+    <skos:closeMatch rdfs:about="662" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">6</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+</rdf:RDF>

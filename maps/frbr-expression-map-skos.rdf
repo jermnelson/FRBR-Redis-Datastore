@@ -1,0 +1,1454 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdf:Description xml:lang="en" rdf:about="marc2skos-frbr-expression.rdf"/>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006 to FRBR Expression'form of expression 1 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Comp/ER to FRBR Expression'form of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Comp/ER to FRBR Expression'form of expression 3 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>09</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Map to FRBR Expression'form of expression 4 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Map to FRBR Expression'representation of relief mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>1</skos:member>
+        <skos:member>2</skos:member>
+        <skos:member>3</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Map to FRBR Expression'projection mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>5</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Music to FRBR Expression'form of expression 8 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Music to FRBR Expression'type of score mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>03</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Continuing to FRBR Expression'expected frequency mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Continuing to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Visual to FRBR Expression'form of expression 12 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Visual to FRBR Expression'extent of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>1</skos:member>
+        <skos:member>2</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Visual to FRBR Expression'technique mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>17</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 006Mixed to FRBR Expression'form of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="006" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Map to FRBR Expression'form of expression 16 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Globe to FRBR Expression'form of expression 18 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Tact to FRBR Expression'symbology mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Tact to FRBR Expression'symbology mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>02</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Tact to FRBR Expression'symbology mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>3</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Tact to FRBR Expression'symbology mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>05</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Tact to FRBR Expression'symbology mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>6</skos:member>
+        <skos:member>7</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Tact to FRBR Expression'symbology mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>09</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007NPG to FRBR Expression'form of expression 19 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Music to FRBR Expression'form of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007RSI to FRBR Expression'sub category rsi mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007RSI to FRBR Expression'special characteristic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>03</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007RSI to FRBR Expression'special characteristic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>04</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007RSI to FRBR Expression'special characteristic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>05</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007RSI to FRBR Expression'special characteristic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>06</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007RSI to FRBR Expression'special characteristic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>07</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007RSI to FRBR Expression'special characteristic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>08</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007RSI to FRBR Expression'recording technique mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>9</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007SR to FRBR Expression'form of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 007Text to FRBR Expression'form of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="007" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>00</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 008All to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="008" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>35</skos:member>
+        <skos:member>36</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 034 to FRBR Expression'scale mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="034" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 034 to FRBR Expression'scale mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="034" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 034 to FRBR Expression'scale mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="034" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">h</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Expression'translation mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>01</skos:member>
+      </skos:OrderedCollection>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">d</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">e</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">f</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">g</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 041 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="041" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">h</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 100 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="100" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 110 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="110" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 111 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="111" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 130 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="130" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 130 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="130" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 240 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="240" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 240 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="240" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 243 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="243" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 243 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="243" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 245 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="245" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">s</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 254 to FRBR Expression'type of score mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="254" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 255 to FRBR Expression'scale mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="255" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 255 to FRBR Expression'projection mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="255" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 256 to FRBR Expression'extent of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="256" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 306 to FRBR Expression'extent of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="306" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 310 to FRBR Expression'expected frequency mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="310" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 321 to FRBR Expression'expected frequency mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="321" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">d</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">e</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">f</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">g</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">h</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">I</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">j</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">k</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">m</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">n</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'special characteristic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">p</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">q</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">r</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">s</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">t</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">u</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">w</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 342 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="342" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">2</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">d</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">e</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">f</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">g</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">h</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 343 to FRBR Expression'geodetic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="343" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">I</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Expression'file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Expression'file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Expression'file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Expression'file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">d</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Expression'file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">e</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Expression'file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">f</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Expression'file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">g</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 352 to FRBR Expression'file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="352" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">I</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 505 to FRBR Expression'summarization of content mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="505" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 505 to FRBR Expression'summarization of content mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="505" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">g</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 505 to FRBR Expression'summarization of content mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="505" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">r</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 505 to FRBR Expression'summarization of content mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="505" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">t</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 507 to FRBR Expression'scale mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="507" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 507 to FRBR Expression'scale mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="507" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">d</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">e</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">f</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">g</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">h</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">i</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">j</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'quality of data set mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">k</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 514 to FRBR Expression'special characteristic mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="514" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">m</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 516 to FRBR Expression'form of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="516" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 533 to FRBR Expression'expected frequency mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="533" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>/12</skos:member>
+      </skos:OrderedCollection>
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">7</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 533 to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="533" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>/13</skos:member>
+      </skos:OrderedCollection>
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">7</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 546 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="546" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">d</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">e</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">f</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">g</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">h</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">i</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">j</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">k</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">m</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">n</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 552 to FRBR Expression'entities and attributes mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="552" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">p</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 562 to FRBR Expression'other distinguishing mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="562" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 565 to FRBR Expression'case file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="565" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 565 to FRBR Expression'case file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="565" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">b</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 565 to FRBR Expression'case file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="565" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 565 to FRBR Expression'case file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="565" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">d</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 565 to FRBR Expression'case file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="565" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">e</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 567 to FRBR Expression'case file characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="567" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 586 to FRBR Expression'critical response mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="586" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 600 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="600" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 600 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="600" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 610 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="610" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 610 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="610" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 611 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="611" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 630 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="630" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 630 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="630" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 700 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="700" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 700 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="700" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 710 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="710" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 710 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="710" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 711 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="711" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 730 to FRBR Expression'2 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="730" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 730 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="730" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 765 to FRBR Expression'translation mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="765" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">i</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 767 to FRBR Expression'translation mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="767" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">i</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 775 to FRBR Expression'translation revision 77 mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="775" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">i</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 800 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="800" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 800 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="800" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 810 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="810" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 810 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="810" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 811 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="811" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 830 to FRBR Expression'language of expression mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="830" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">l</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 830 to FRBR Expression'other distinguishing characteristics mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="830" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">o</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 843 to FRBR Expression'expected frequency mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="843" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>/12</skos:member>
+      </skos:OrderedCollection>
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">7</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 843 to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="843" xml:lang="en">
+      <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+      <skos:OrderedCollection>
+        <skos:member>/13</skos:member>
+      </skos:OrderedCollection>
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">7</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 853 to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="853" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">n </skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 853 to FRBR Expression'expected frequency mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="853" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">w</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 853 to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="853" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">y</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 854 to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="854" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">n </skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 854 to FRBR Expression'expected frequency mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="854" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">w</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 854 to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="854" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">y</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 855  to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="855" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">n </skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 855 to FRBR Expression'expected frequency mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="855" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">w</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 855 to FRBR Expression'expected regularity mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="855" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">y</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 365 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="365" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">a</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 365 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="365" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 365 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="365" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">h</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 365 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="365" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">i</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 365 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="365" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">j</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 365 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="365" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">k</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 366 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="366" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">c</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 366 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="366" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">f</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 366 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="366" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">j</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+  <skos:Concept xml:lang="en" rdf:about="MARC 366 to FRBR Expression'source of data element mapping">
+    <skos:inScheme rdf:resource="marc2skos-frbr-expression.rdf"/>
+    <skos:closeMatch rdfs:about="366" xml:lang="en">
+      <skos:prefLabel xml:lang="en">subfield</skos:prefLabel>
+      <skos:notation xml:lang="en">k</skos:notation>
+    </skos:closeMatch>
+  </skos:Concept>
+</rdf:RDF>

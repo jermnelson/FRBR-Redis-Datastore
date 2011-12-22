@@ -556,20 +556,87 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         redis_server.hset(self.statement_of_responsibility_relating_to_subseries_key,
                           "value",
                           "Test Statement of Responsibility relating to subseries")
-        self.statement_of_responsibility_relating_to_the_edition_key = None
-        self.statement_of_responsibility_relating_to_title_proper_key = None
-        self.tape_configuration_key = None
-        self.terms_of_availability_key = None
-        self.title_proper_key = None
-        self.title_proper_of_series_key = None
-        self.title_proper_of_subseries_key = None
-        self.track_configuration_key = None
-        self.transmission_speed_key = None
-        self.type_of_recording_key = None
-        self.uniform_resource_locator_key = None
-        self.variant_title_key = None
-        self.video_characteristic_key = None
-        self.video_format_key = None
+        self.statement_of_responsibility_relating_to_the_edition_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.statement_of_responsibility_relating_to_the_edition_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.statement_of_responsibility_relating_to_the_edition_key,
+                          "value",
+                          "Test Statement of Responsibility relating to edition")
+        self.statement_of_responsibility_relating_to_title_proper_key  = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.hset(self.statement_of_responsibility_relating_to_title_proper_key,
+                          "type",
+                          "statement of responsibility")
+        redis_server.hset(self.statement_of_responsibility_relating_to_title_proper_key,
+                          "value",
+                          "Test Statement of Responsibility relating to title proper")
+        self.tape_configuration_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.tape_configuration_key,
+                         "8 track")
+        self.terms_of_availability_key = "mods:accessCondition:%s" % redis_server.incr("global:mods:accessCondition")
+        redis_server.hset(self.terms_of_availability_key,
+                          "type",
+                          "restriction on access")
+        redis_server.hset(self.terms_of_availability_key,
+                          "value",
+                          "Available to subscribers only")
+        
+        redis_server.hset(self.title_key,
+                          "type",
+                          "uniform")
+        redis_server.hset(self.title_key,
+                          "title",
+                          "Test Uniform Title")
+        self.title_proper_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.title_proper_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.title_proper_key,
+                          "title",
+                          "Test Title Proper")
+        self.title_proper_of_series_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.title_proper_of_series_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.title_proper_of_series_key,
+                          "title",
+                          "Test Title Proper of Series")
+        self.title_proper_of_subseries_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.title_proper_of_subseries_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.title_proper_of_subseries_key,
+                          "title",
+                          "Test Title Proper of Subseries")
+        self.track_configuration_key = "rdvocab:trackConfig:1001"
+        redis_server.set(self.track_configuration_key,
+                         "Centre track")
+        self.transmission_speed_key = "mods:note:%s" % redis_server.incr("global:mods:note")
+        redis_server.set(self.transmission_speed_key,
+                         '56 kilobytes per second')
+        self.type_of_recording_key = "rdvocab:typeRec:1001"
+        redis_server.set(self.type_of_recording_key,
+                         "Analog")
+        self.uniform_resource_locator_key = "url:%s" % redis_server.incr("global:url")
+        redis_server.set(self.uniform_resource_locator_key,
+                         'http://example.com/Manifestation')
+        self.variant_title_key = "mods:titleInfo:%s" % redis_server.incr("global:mods:titleInfo")
+        redis_server.hset(self.variant_title_key,
+                          "type",
+                          "alternative")
+        redis_server.hset(self.variant_title_key,
+                          "title",
+                          "Test Variant Title")
+        self.video_characteristic_key = "mods:note:%s" % redis_server.incr('global:mods:note')
+        redis_server.hset(self.video_characteristic_key,
+                          "type",
+                          "source characteristics")
+        redis_server.hset(self.video_characteristic_key,
+                          "value",
+                          "Test video characteristics")
+        self.video_format_key = "rdvocab:videoFormat:1011"
+        redis_server.set(self.video_format_key,
+                         "Quadruplex")
         params = {'Abbreviated title (Manifestation)':self.abbreviated_title_key,
                   'Alternative Chronological Designation of First Issue or Part of Sequence (Manifestation)':self.alt_chronological_first_issue_key,
                   'Alternative Chronological Designation of Last Issue or Part of Sequence (Manifestation)':self.alt_chronological_last_issue_key,
@@ -1995,6 +2062,7 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
         self.assertEquals(redis_server.hget(statement_of_responsibility_key,
                                             "value"),
                           "Test Statement of Responsibility")
+        
     def test_statement_of_responsibility_relating_named_revision_edition(self):
         statement_of_responsibility_relating_named_revision_edition_key = getattr(self.manifestation,
                                                                                   'Statement of responsibility relating to a named revision of an edition (Manifestation)')
@@ -2036,13 +2104,158 @@ class TestManifestationRDAGroup1Elements(unittest.TestCase):
                                                                           'Statement of responsibility relating to the edition (Manifestation)')
         self.assertEquals(self.statement_of_responsibility_relating_to_the_edition_key,
                           statement_of_responsibility_relating_to_the_edition_key)
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_to_the_edition_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_to_the_edition_key,
+                                            "value"),
+                          "Test Statement of Responsibility relating to edition")
 
     def test_statement_of_responsibility_relating_to_title_proper(self):
         statement_of_responsibility_relating_to_title_proper_key = getattr(self.manifestation,
                                                                            'Statement of responsibility relating to title proper (Manifestation)')
         self.assertEquals(self.statement_of_responsibility_relating_to_title_proper_key,
                           statement_of_responsibility_relating_to_title_proper_key)
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_to_title_proper_key,
+                                            "type"),
+                          "statement of responsibility")
+        self.assertEquals(redis_server.hget(statement_of_responsibility_relating_to_title_proper_key,
+                                            "value"),
+                          "Test Statement of Responsibility relating to title proper")
 
+    def test_tape_configuration(self):
+        tape_configuration_key = getattr(self.manifestation,
+                                         'Tape configuration (Manifestation)')
+        self.assertEquals(self.tape_configuration_key,
+                          tape_configuration_key)
+        self.assertEquals(redis_server.get(tape_configuration_key),
+                          "8 track")
+
+    def test_terms_of_availability(self):
+        terms_of_availability_key = getattr(self.manifestation,
+                                            'Terms of availability (Manifestation)')
+        self.assertEquals(self.terms_of_availability_key,
+                          terms_of_availability_key)
+        self.assertEquals(redis_server.hget(terms_of_availability_key,
+                                            "type"),
+                          "restriction on access")
+        self.assertEquals(redis_server.hget(terms_of_availability_key,
+                                            "value"),
+                          "Available to subscribers only")
+
+    def test_title(self):
+        title_key = getattr(self.manifestation,
+                            'Title (Manifestation)')
+
+        self.assertEquals(self.title_key,
+                          title_key)
+        self.assertEquals(redis_server.hget(title_key,
+                                            "type"),
+                          "uniform")
+        self.assertEquals(redis_server.hget(title_key,
+                                            "title"),
+                          "Test Uniform Title")
+
+    def test_title_proper(self):
+        title_proper_key = getattr(self.manifestation,
+                                   'Title proper (Manifestation)')
+        self.assertEquals(self.title_proper_key,
+                          title_proper_key)
+        self.assertEquals(redis_server.hget(title_proper_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(title_proper_key,
+                                            "title"),
+                          "Test Title Proper")
+
+    def test_title_proper_of_series(self):
+        title_proper_of_series_key = getattr(self.manifestation,
+                                             'Title proper of series (Manifestation)')
+        self.assertEquals(self.title_proper_of_series_key,
+                          title_proper_of_series_key)
+        self.assertEquals(redis_server.hget(title_proper_of_series_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(title_proper_of_series_key,
+                                            "title"),
+                          "Test Title Proper of Series")
+
+    def test_title_proper_of_subseries(self):
+        title_proper_of_subseries_key = getattr(self.manifestation,
+                                                'Title proper of subseries (Manifestation)')
+        self.assertEquals(self.title_proper_of_subseries_key,
+                          title_proper_of_subseries_key)
+        self.assertEquals(redis_server.hget(title_proper_of_subseries_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(title_proper_of_subseries_key,
+                                            "title"),
+                          "Test Title Proper of Subseries")
+
+    def test_track_configuration(self):
+        track_configuration_key = getattr(self.manifestation,
+                                          'Track configuration (Manifestation)')
+        self.assertEquals(self.track_configuration_key,
+                          track_configuration_key)
+        self.assertEquals(redis_server.get(track_configuration_key),
+                         "Centre track")
+
+    def test_transmission_speed(self):
+        transmission_speed_key = getattr(self.manifestation,
+                                         'Transmission speed (Manifestation)')
+        self.assertEquals(self.transmission_speed_key,
+                          transmission_speed_key)
+        self.assertEquals(redis_server.get(transmission_speed_key),
+                          '56 kilobytes per second')
+        
+    def test_type_of_recording(self):
+        type_of_recording_key = getattr(self.manifestation,
+                                        'Type of recording (Manifestation)')
+        self.assertEquals(self.type_of_recording_key,
+                          type_of_recording_key)
+        self.assertEquals(redis_server.get(type_of_recording_key),
+                         "Analog")
+
+    def test_uniform_resource_locator(self):
+        uniform_resource_locator_key = getattr(self.manifestation,
+                                               'Uniform resource locator (Manifestation)')
+        self.assertEquals(self.uniform_resource_locator_key,
+                          uniform_resource_locator_key)
+        self.assertEquals(redis_server.get(uniform_resource_locator_key),
+                          'http://example.com/Manifestation')
+
+    def test_variant_title(self):
+        variant_title_key = getattr(self.manifestation,
+                                    'Variant title (Manifestation)')
+        self.assertEquals(self.variant_title_key,
+                          variant_title_key)
+        self.assertEquals(redis_server.hget(variant_title_key,
+                                            "type"),
+                          "alternative")
+        self.assertEquals(redis_server.hget(variant_title_key,
+                                            "title"),
+                          "Test Variant Title")
+
+    def test_video_characteristic(self):
+        video_characteristic_key = getattr(self.manifestation,
+                                           'Video characteristic (Manifestation)')
+        self.assertEquals(self.video_characteristic_key,
+                          video_characteristic_key)
+        self.assertEquals(redis_server.hget(video_characteristic_key,
+                                            "type"),
+                          "source characteristics")
+        self.assertEquals(redis_server.hget(video_characteristic_key,
+                                            "value"),
+                          "Test video characteristics")
+                          
+
+    def test_video_format(self):
+        video_format_key = getattr(self.manifestation,
+                                   'Video format (Manifestation)')
+        self.assertEquals(self.video_format_key,
+                          video_format_key)
+        self.assertEquals(redis_server.get(video_format_key),
+                         "Quadruplex")
         
     def tearDown(self):
         redis_server.flushdb()
