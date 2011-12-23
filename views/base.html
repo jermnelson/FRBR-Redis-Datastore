@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%block name="head_title">FRBR Redis Datastore ${active_page}</%block></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/default.css" />
+    <%block name="more_css"></%block>
+    <script src="/js/jquery-1.7.1.min.js" type="text/javascript" ></script>
+    <%block name="more_js"></%block>
+  </head>
+  <body>
+
+  <%block name="topbar">
+  <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">FRBR-Redis Datastore</a>
+          <ul class="nav">
+          % if active_page == 'home':
+            <li class="active"><a href="#">Home</a></li>
+          % else:
+            <li><a href="#">Home</a></li>
+          % endif
+          % if active_page == 'about':
+            <li class="active"><a href="/about.html">About</a></li>
+          % else:
+            <li><a href="/about.html">About</a></li>
+          % endif
+          % if active_page == 'visual':
+            <li class="active"><a href="/visualizations/index.html">Visualizations</a>
+          % else:
+            <li><a href="/visualizations/index.html">Visualizations</a>
+          % endif
+          % if active_page == 'contact':
+	    <li class="active"><a href="#contact">Contact</a></li>
+          % else:
+            <li><a href="#contact">Contact</a></li>
+          % endif
+          </ul>
+          <form action="" class="pull-right">
+            <input class="input-small" type="text" placeholder="Username">
+            <input class="input-small" type="password" placeholder="Password">
+            <button class="btn" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+  </div>
+  </%block>
+  <body>
+  <div class="container">
+    ${self.body()}
+
+   <%block name="footer">
+   <footer>
+        <p>&copy; Jeremy Nelson &amp; Colorado College 2011</p>
+   </footer>
+   </%block>
+
+  </div>
+  </body>
+</html>
