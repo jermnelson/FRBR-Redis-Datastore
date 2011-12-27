@@ -8,6 +8,7 @@ DC = "http://purl.org/dc/elements/1.1/"
 DCT = "http://purl.org/dc/terms/"
 DCTERMS = DCT 
 FOAF = "http://xmlns.com/foaf/0.1/"
+MARC = "http://www.loc.gov/standards/marcxml#"
 MARCREL = "http://www.loc.gov/loc.terms/relators/"
 MARCXML = "http://www.loc.gov/MARC21/slim"
 PGTERMS = "http://www.gutenberg.org/2009/pgterms/"

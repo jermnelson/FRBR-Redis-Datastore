@@ -187,8 +187,10 @@ def load_rda_classes(rda_frbr_file,
                                               class_name)}
             for prop in all_properties:
                 parent = prop.getparent()
-                label = parent.find('{%s}label' % ns.RDFS)
-                params[label.text] = None
+                name = parent.find('{%s}name' % ns.REG)
+                params[name.text] = None
+                #label = parent.find('{%s}label' % ns.RDFS)
+                #params[label.text] = None
             #logging.error("Params = %s" % params)
             new_class = type('%s' % class_name,
                              (BaseModel,),

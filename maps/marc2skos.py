@@ -88,6 +88,19 @@ def create_fixed(parent,fixed):
                                       '{%s}member' % ns.SKOS)
             member.text = fixed
         
+
+def create_skos_mapping(marc_listing,
+                        property_url,
+                        entity_url,
+                        is_ordered=True,):
+    nsmap = {'marc': ns.MARC,
+             'rdf' : ns.RDF,
+             'rdfs': ns.RDFS,
+             'skos': ns.SKOS}
+    rdf_xml = etree.Element("{%s}RDF" % ns.RDF,
+                            nsmap=nsmap)
+    
+    
                                         
 
 def create_skos(marc_mappings,entity,spec='frbr'):
