@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:marc="http://www.loc.gov/standards/marcxml#">
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/contactInformationItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Contact information</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/custodialHistoryOfItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Custodial history of item</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dimensionsItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Dimensions</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dimensionsOfMapEtcItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Dimensions of map, etc.</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dimensionsOfStillImageItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Dimensions of still image</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Extent</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfCartographicResourceItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Extent of cartographic resource</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfNotatedMusicItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Extent of notated music</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfStillImageItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Extent of still image</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfTextItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Extent of text</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfThreeDimensionalFormItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Extent of three-dimensional form</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/identifierForTheItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Identifier for the item</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/immediateSourceOfAcquisitionOfItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Immediate source of acquisition of item</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/item-specificCarrierCharacteristic">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Item-specific carrier characteristic</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/item-specificCarrierCharacteristicOfEarlyPrintedResources">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Item-specific carrier characteristic of early printed resources</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Note</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnDimensionsOfItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Note on dimensions of item</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnExtentOfItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Note on extent of item</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/preferredCitationItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Preferred citation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/restrictionsOnAccessItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Restrictions on access</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/restrictionsOnUseItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Restrictions on use</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/uniformResourceLocatorItem">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item"/>
+    <rdfs:label>Uniform resource locator</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+</rdf:RDF>

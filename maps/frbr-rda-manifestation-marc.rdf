@@ -1,0 +1,793 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:marc="http://www.loc.gov/standards/marcxml#">
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/abbreviatedTitleManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Abbreviated title</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/alternativeChronologicalDesignationOfFirstIssueOrPartOfSequenceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Alternative Chronological Designation of First Issue or Part of Sequence</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/alternativeChronologicalDesignationOfLastIssueOrPartOfSequenceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Alternative Chronological Designation of Last Issue or Part of Sequence</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/alternativeNumericAndOrAlphabeticDesignationOfFirstIssueOrPartOfSequenceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Alternative Numeric and/or Alphabetic Designation of First Issue or Part of Sequence</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/alternativeNumericAndOrAlphabeticDesignationOfLastIssueOrPartOfSequenceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Alternative Numeric and/or Alphabetic Designation of Last Issue or Part of Sequence</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/appliedMaterialManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Applied material</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/baseMaterialforMicrofilmMicrofichePhotographicFilmAndMotionPictureFilmManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Base material for microfilm, microfiche, photographic film, and motion picture film</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/baseMaterialManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Base material</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/bookFormatManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Book format</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/broadcastStandardManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Broadcast standard</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/carrierTypeManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Carrier type</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/chronologicalDesignationOfFirstIssueOrPartOfSequenceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Chronological designation of first issue or part of sequence</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/chronologicalDesignationOfLastIssueOrPartOfSequenceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Chronological designation of last issue or part of sequence</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/configurationOfPlaybackChannelsManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Configuration of playback channels</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/contactInformationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Contact information</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/copyrightDateManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Copyright date</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dateOfDistributionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Date of distribution</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dateOfManufactureManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Date of manufacture</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dateOfProductionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Date of production</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dateOfPublicationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Date of publication</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/designationOfANamedRevisionOfAnEditionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Designation of a named revision of an edition</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/designationOfEditionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Designation of edition</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/digitalFileCharacteristicManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Digital file characteristic</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/digitalRepresentationOfCartographicContentManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Digital representation of cartographic content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dimensionsManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Dimensions</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dimensionsOfMapEtcManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Dimensions of map, etc.</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dimensionsOfStillImageManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Dimensions of still image</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/distributionStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Distribution statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/distributorsNameManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Distributor's name</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/earlierTitleProperManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Earlier title proper</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/editionStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Edition statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/emulsionOnMicrofilmAndMicroficheManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Emulsion on microfilm and microfiche</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/encodingFormatManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Encoding format</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/equipmentOrSystemRequirementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Equipment or system requirement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Extent</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfCartographicResourceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Extent of cartographic resource</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfNotatedMusicManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Extent of notated music</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfStillImageManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Extent of still image</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfTextManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Extent of text</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/extentOfThreeDimensionalFormManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Extent of three-dimensional form</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/fileSizeManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>File size</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/fileTypeManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>File type</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/fontSizeManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Font size</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/frequencyManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Frequency</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/generationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Generation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/generationOfAudioRecordingManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Generation of audio recording</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/generationOfDigitalResourceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Generation of digital resource</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/generationOfMicroformManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Generation of microform</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/generationOfMotionPictureFilmManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Generation of motion picture film</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/generationOfVideotapeManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Generation of videotape</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/grooveCharacteristicManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Groove characteristic</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/identifierForTheManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Identifier for the manifestation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/issnOfSeriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>ISSN of series</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/issnOfSubseriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>ISSN of subseries</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/keyTitleManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Key title</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/laterTitleProperManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Later title proper</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/layoutManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Layout</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/layoutOfCartographicImagesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Layout of cartographic images</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/layoutOfTactileMusicalNotationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Layout of tactile musical notation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/layoutOfTactileTextManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Layout of tactile text</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/manufacturersNameManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Manufacturer's name</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/manufactureStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Manufacture statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/mediaTypeManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Media type</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/modeOfIssuanceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Mode of issuance</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/mountManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Mount</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnChangesInCarrierCharacteristicsManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on changes in carrier characteristics</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnCopyrightDateManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on copyright date</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnDimensionsOfManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on dimensions of manifestation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnDistributionStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on distribution statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnEditionStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on edition statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnExtentOfManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on extent of manifestation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnFrequencyManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on frequency</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnIssuePartOrIterationUsedAsTheBasisForIdentificationOfTheResourceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on issue, part, or iteration used as the basis for identification of the resource</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnManufactureStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on manufacture statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnNumberingOfSerialsManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on numbering of serials</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnProductionStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on production statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnPublicationStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on publication statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnSeriesStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on series statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnStatementOfResponsibilityManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on statement of responsibility</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/noteOnTitleManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Note on title</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/numberingOfSerialsManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Numbering of serials</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/numberingWithinSeriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Numbering within series</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/numberingWithinSubseriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Numbering within subseries</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/numericAndOrAlphabeticDesignationOfFirstIssueOrPartOfSequenceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Numeric and/or alphabetic designation of first issue or part of sequence</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/numericAndOrAlphabeticDesignationOfLastIssueOrPartOfSequenceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Numeric and/or alphabetic designation of last issue or part of sequence</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/otherTitleInformationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Other title information</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/otherTitleInformationOfSeriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Other title information of series</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/otherTitleInformationOfSubseriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Other title information of subseries</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelDesignationOfANamedRevisionOfAnEditionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel designation of a named revision of an edition</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelDesignationOfEditionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel designation of edition</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelDistributorsNameManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel distributor's name</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelManufacturersNameManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel manufacturer's name</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelOtherTitleInformationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel other title information</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelOtherTitleInformationOfSeriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel other title information of series</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelOtherTitleInformationOfSubseriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel other title information of subseries</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelPlaceOfDistributionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel place of distribution</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelPlaceOfManufactureManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel place of manufacture</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelPlaceOfProductionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel place of production</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelPlaceOfPublicationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel place of publication</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelProducersNameManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel producer's name</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelPublishersNameManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel publisher's name</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelStatementOfResponsibilityRelatingToANamedRevisionOfAnEditionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel statement of responsibility relating to a named revision of an edition</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelStatementOfResponsibilityRelatingToSeriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel statement of responsibility relating to series</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelStatementOfResponsibilityRelatingToSubseriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel statement of responsibility relating to subseries</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelStatementOfResponsibilityRelatingToTheEditionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel statement of responsibility relating to the edition</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelStatementOfResponsibilityRelatingToTitleProperManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel statement of responsibility relating to title proper</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelTitleProperManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel title proper</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelTitleProperOfSeriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel title proper of series</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/parallelTitleProperOfSubseriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Parallel title proper of subseries</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/placeOfDistributionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Place of distribution</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/placeOfManufactureManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Place of manufacture</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/placeOfProductionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Place of production</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/placeOfPublicationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Place of publication</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/plateNumberForMusicManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Plate number for music</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/playingSpeedManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Playing speed</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/polarityManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Polarity</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/preferredCitationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Preferred citation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/presentationFormatManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Presentation format</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/producersNameManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Producer's name</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/productionMethodForManuscriptManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Production method for manuscript</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/productionMethodForTactileResourceManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Production method for tactile resource</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/productionMethodManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Production method</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/productionStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Production statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/projectionCharacteristicOfMotionPictureFilmManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Projection characteristic of motion picture film</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/projectionSpeedManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Projection speed</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/publicationStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Publication statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/publishersNameManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Publisher's name</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/publishersNumberForMusicManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Publisher's number for music</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/recordingMediumManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Recording medium</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/reductionRatioManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Reduction ration</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/regionalEncodingManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Regional encoding</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/resolutionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Resolution</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/restrictionsOnAccessManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Restrictions on access</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/restrictionsOnUseManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Restrictions on use</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/seriesStatementManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Series statement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/soundCharacteristicManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Sound characteristic</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/soundContentManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Sound content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/specialPlaybackCharacteristicManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Special playback characteristic</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/statementOfResponsibilityManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Statement of responsibility</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/statementOfResponsibilityRelatingToANamedRevisionOfAnEditionManifestatiion">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Statement of responsibility relating to a named revision of an edition</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/StatementOfResponsibilityRelatingToEditionManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Statement of responsibility relating to the edition</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/statementOfResponsibilityRelatingToSeriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Statement of responsibility relating to series</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/statementOfResponsibilityRelatingToSubseriesManifestatiion">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Statement of responsibility relating to subseries</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/statementOfResponsibilityRelatingToTitleProperManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Statement of responsibility relating to title proper</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/tapeConfigurationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Tape configuration</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/termsOfAvailabilityManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Terms of availability</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/titleManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Title</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/titleProperManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Title proper</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/titleProperOfSeriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Title proper of series</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/titleProperOfSubseriesManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Title proper of subseries</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/trackConfigurationManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Track configuration</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/transmissionSpeedManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Transmission speed</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/typeOfRecordingManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Type of recording</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/uniformResourceLocatorManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Uniform resource locator</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/variantTitleManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Variant title</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/videoCharacteristicManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Video characteristic</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/videoFormatManifestation">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation"/>
+    <rdfs:label>Video format</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+</rdf:RDF>

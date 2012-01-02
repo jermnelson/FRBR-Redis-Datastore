@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:marc="http://www.loc.gov/standards/marcxml#">
+
+
+<rdf:Description rdf:about="http://rdvocab.info/Elements/dateOfWork">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" />
+ <skos:OrderedCollection>
+  <skos:member>
+    <marc:datafield marc:tag="245" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="f" />
+     <marc:subfield marc:code="g" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+    <marc:datafield marc:tag="100" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="f" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+    <marc:datafield marc:tag="110" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="f" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+    <marc:datafield marc:tag="111" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="f" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+    <marc:datafield marc:tag="130" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="d" />
+     <marc:subfield marc:code="f" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+    <marc:datafield marc:tag="240" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="d" />
+     <marc:subfield marc:code="f" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+    <marc:datafield marc:tag="243" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="d" />
+     <marc:subfield marc:code="f" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+    <marc:datafield marc:tag="600" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="f" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+    <marc:datafield marc:tag="610" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="f" />
+    </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="611" marc:ind1="" marc:ind2="">
+     <marc:subfield marc:code="f" />
+   </marc:datafield>
+  </skos:member>
+ </skos:OrderedCollection>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://rdvocab.info/Elements/titleOfTheWork">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" /> 
+ <skos:OrderedCollection>
+  <skos:member xml:lang="en">
+     <marc:datafield marc:tag="100" marc:ind1="" marc:ind2="">
+      <marc:subfield marc:code="n" />
+      <marc:subfield marc:code="p" />
+      <marc:subfield marc:code="t" />
+     </marc:datafield>
+     </skos:member>
+  </skos:OrderedCollection>
+</rdf:Description>
+
+</rdf:RDF>

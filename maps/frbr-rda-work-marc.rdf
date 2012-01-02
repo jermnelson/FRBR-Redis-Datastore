@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:marc="http://www.loc.gov/standards/marcxml#">
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/academicDegreeWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Academic degree</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/cataloguersNoteWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Cataloguer's note</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/coordinatesOfCartographicContentWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Coordinates of cartographic content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/coverageOfTheContentWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Coverage of the content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dateOfWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Date of work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dissertationOrThesisInformationWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Dissertation or thesis information</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/epochWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Epoch</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/equinoxWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Equinox</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/formOfWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Form of work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/grantingInstitutionOrFacultyWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Granting institution or faculty</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/historyOfTheWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>History of the work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/identifierForTheWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Identifier for the work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/intendedAudienceWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Intended audience</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/keyWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Key</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/longitudeAndLatitudeWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Longitude and latitude</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/mediumOfPerformanceWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Medium of performance</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/natureOfTheContentWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Nature of the content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/numericDesignationOfAMusicalWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Numeric designation of a musical work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/otherDistinguishingCharacteristicOfTheWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Other distinguishing characteristic of the work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/placeOfOriginOfTheWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Place of origin of the work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/preferredTitleForTheWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Preferred title for the work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/rightAscensionAndDeclinationWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Right ascension and declination</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/signatoryToATreatyEtcWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Signatory to a treaty, etc.</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/sourceConsultedWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Source consulted</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/statusOfIdentificationWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Status of identification</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/stringsOfCoordinatePairsWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Strings of coordinate pairs</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/systemOfOrganizationWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>System of organization</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/titleOfTheWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Title of the work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/variantTitleForTheWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Variant title for the work</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/yearDegreeGrantedWork">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work"/>
+    <rdfs:label>Year degree granted</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+</rdf:RDF>

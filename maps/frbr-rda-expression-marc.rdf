@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:marc="http://www.loc.gov/standards/marcxml#">
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/accessibilityContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Accessibility content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/additionalScaleInformationExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Additional scale information</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/artisticAndOrTechnicalCreditExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Artistic and/or technical credit</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/aspectRatioExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Aspect ratio</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/awardExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Award</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/catalogersNoteExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Cataloguer's note</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/colourContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Colour content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/colourContentOfResourceDesignedForPersonsWithVisualImpairmentsExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Colour content of resource designed for persons with visual impairments</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/colourOfMovingImagesExpressions">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Colour of moving images</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/colourOfStillImageExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Colour of still image</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/colourOfThree-dimensionalFormExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Colour of three-dimensional form</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/contentTypeExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Content type</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dateOfCaptureExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Date of capture</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/dateOfExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Date of expression</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/durationExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Duration</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/formatOfNotatedMusicExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Format of notated music</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/formOfMusicalNotationExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Form of musical notation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/formOfNotatedMovementExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Form of notated movement</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/formOfNotationExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Form of notation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/formOfTactileNotationExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Form of tactile notation</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/horizontalScaleOfCartographicContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Horizontal scale of cartographic content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/identifierForTheExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Identifier for the expression</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/illustrativeContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Illustrative content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/languageOfExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Language of expression</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/languageOfTheContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Language of the content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/mediumOfPerformanceOfMusicalContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Medium of performance of musical content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/otherDetailsOfCartographicContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Other details of cartographic content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/otherDistinguishingCharacteristicOfTheExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Other distinguishing characteristic of the expression</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/performerNarratorAndOrPresenterExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Performer, narrator, and/or presenter</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/placeAndDateOfCaptureExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Place and date of capture</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/placeOfCaptureExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Place of capture</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/projectionOfCartographicContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Projection of cartographic content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/scaleExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Scale</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/scaleOfStillImageOrThreeDimensionalFormExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Scale of still image or three-dimensional form</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/scriptExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Script</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/soundContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Sound content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/sourceConsultedExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Source consulted</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/statusOfIdentificationExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Status of identification</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/summarizationOfTheContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Summarization of the content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/supplementaryContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Supplementary content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdvocab.info/Elements/verticalScaleCartographicContentExpression">
+    <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression"/>
+    <rdfs:label>Vertical scale of cartographic content</rdfs:label>
+    <skos:Collection/>
+  </rdf:Description>
+</rdf:RDF>

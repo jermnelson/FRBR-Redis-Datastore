@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>NoSQL Bibliographic Records: 
+           Implementing a Native FRBR Datastore With Redis
+           <%block name="head_title"></%block>       
+           
+    </title>
+    <meta name="description" content="Code4Lib 2012 Conference Presentation">
+    <meta name="author" content="Jeremy Nelson">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      div.space_bk {
+		  background:url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Space_Needle_2011-07-04.jpg/121px-Space_Needle_2011-07-04.jpg) bottom right no-repeat;
+	  }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/examples/images/favicon.ico">
+    <link rel="apple-touch-icon" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Code4Lib 2012 Presentation</a>
+          <ul class="nav">
+            % if section == 'home':
+            <li class="active">
+            % else:
+            <li>
+            %endif
+            <a href="index.html">Home</a></li>
+            % if section == 'background':
+            <li class="active">
+            % else:
+            <li>
+            % endif
+            <a href="background.html">Background</a></li>
+            % if section == 'cube':
+            <li class="active">
+            % else:
+            <li>
+            % endif
+            <a href="record2cube.html">Record to Cube</a></li>
+            % if section == 'engineering':
+            <li class="active">
+            % else:
+            <li>
+            % endif
+            <a href="engineering.html">Engineering</a></li>
+            % if section == 'salvos':
+            <li class="active">
+            % else:
+            <li>
+            % endif
+            <a href="salvos.html">Parting Salvos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+     <%block name="container">
+      <div class="hero-unit space_bk">
+        <h1 style="color:#600">Code4Lib 2012</h1>
+        <h2>NoSQL Bibliographic Records: Implementing a Native FRBR Datastore with Redis</h2>
+        <p style="margin-left:3em;margin-top:1.25em;">Jeremy Nelson<br/>
+         Colorado College<br/>
+         Tutt Library</p>
+         <p><a class="btn primary large">Begin »</a></p>
+      </div>
+
+      <!-- Main sections of Presentation -->
+      <div class="row">
+        <div class="span6">
+          <h2>Background</h2>
+          <p>The <a href="#">FRBR-to-Redis-Datastore</a> project depends
+           on a basic understanding of the following biblographic record
+           technologies: <a href="#">MARC</a>, 
+           <a href="#">MODS</a>, and <a href="#">FRBR</a>.
+          </p>
+          <p>
+           The October 2011 Library of Congress
+           <a href="http://www.loc.gov/marc/transition/news/framework-103111.html">annoucement</a>
+           regarding a <a href="#">Bibliographic Framework for the Digital Age</a> and
+           a <a href="">NoSQL</a> technology called <a href="http://redis.io">Redis</a> 
+           provide the development requirements and datastore implmentation for this
+           project.
+           </p>
+          
+          <p><a class="btn" href="background.html">View details »</a></p>
+          
+        </div>
+        <div class="span5">
+          <h2>Record to Cube</h2>
+           <p> 
+           The underlying concept of the FRBR Redis Datastore is the
+           Biblographic Cube. Instead of trying to creating a single, 
+           flat a canonical biblographic record; the datastore 
+           orchastractes a network of key-value biblographic 
+           associations with FRBR entities.          
+           </p>
+           <p>
+           Better visualized as moving from a flat record (Dublin 
+           Core, MARC21, MODS XML,
+           etc.) to a cube of FRBR entities interseting with parallel 
+           planes of metadata.
+           </p>
+          <p><a class="btn" href="#">View details »</a></p>
+       </div>
+        <div class="span5">
+          <h2>Engineering</h2>
+          
+          <p>Redis's set of data primitives including sets, hashes, and lists implemented as
+             serialized caching objects provided the datastore for representing FRBR entities.</p>
+          <p>The rich set of work done by the RDA Vocabularie communitie including their
+          SKOS representations of FRBR RDA provides the organizing structure for the FRBR entities.</p>
+          Intially focusing on interoperability for existing MARC collections
+          of records captured by legacy ILS systems and with current
+          repository systems with MODS metadata. Other metadata schemas 
+          mentioned are implementation stages.
+          </p>
+          <p></p>
+          
+          <p><a class="btn" href="#">View details »</a></p>
+        </div>
+      </div>
+     
+     <%block name="footer">
+      <footer>
+        <p>© Jeremy Nelson, Colorado College 2012</p>
+      </footer>
+      </%block>
+
+    </%block>
+    </div> <!-- /container -->
+
+  
+
+</body></html>
