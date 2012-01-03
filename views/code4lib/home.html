@@ -1,0 +1,64 @@
+  <%inherit file="base.html" />
+  <div class="hero-unit space_bk">
+        <h1 style="color:#600">Code4Lib 2012</h1>
+        <h2>NoSQL Bibliographic Records: Implementing a Native FRBR Datastore with Redis</h2>
+        <p style="margin-left:3em;margin-top:1.25em;">Jeremy Nelson<br/>
+         Colorado College<br/>
+         Tutt Library</p>
+         <p><a class="btn primary large" href="background.html">Begin »</a></p>
+      </div>
+
+      <!-- Main sections of Presentation -->
+      <div class="row">
+        <div class="span6">
+          <h2>Background</h2>  
+          <p>The <a href="#">FRBR-to-Redis-Datastore</a> platform project begins
+           with a basic understanding of the following biblographic record
+           technologies <a href="background/data.html">MARC, MODS, and FRBR</a> 
+           implemented using a <a href="background/nosql.html">NoSQL</a> technology called 
+           <a href="http://redis.io">Redis</a>. 
+          </p>
+          <p>With a recent Library of Congress 
+           <a href="http://www.loc.gov/marc/transition/news/framework-103111.html">annoucement,</a>
+           <a href="background/loc_annou">Bibliographic Framework for the Digital Age</a> as
+            software development requirements The <a href="#">FRBR-to-Redis-Datastore</a> platform project
+            a proof-of-concept using the MARC catalog and digital repository of a small academic library.
+           </p>
+          
+          <p><a class="btn" href="background.html">View details »</a></p>
+          
+        </div>
+        <div class="span5">
+          <h2>Record to Cube</h2>
+           <p> 
+           The underlying concept of the FRBR Redis Datastore is the
+           Biblographic Cube. Instead of trying to creating a single, 
+           flat a canonical biblographic record; the datastore 
+           orchastractes a network of key-value biblographic 
+           associations with FRBR entities.          
+           </p>
+           <p>
+           Better visualized as moving from a flat record (Dublin 
+           Core, MARC21, MODS XML,
+           etc.) to a cube of FRBR entities interseting with parallel 
+           planes of metadata.
+           </p>
+          <p><a class="btn" href="#">View details »</a></p>
+       </div>
+        <div class="span5">
+          <h2>Engineering</h2>
+          
+          <p>Redis's set of data primitives including sets, hashes, and lists implemented as
+             serialized caching objects provided the datastore for representing FRBR entities.</p>
+          <p>The rich set of work done by the RDA Vocabularie communitie including their
+          SKOS representations of FRBR RDA provides the organizing structure for the FRBR entities.</p>
+          Intially focusing on interoperability for existing MARC collections
+          of records captured by legacy ILS systems and with current
+          repository systems with MODS metadata. Other metadata schemas 
+          mentioned are implementation stages.
+          </p>
+          <p></p>
+          
+          <p><a class="btn" href="#">View details »</a></p>
+        </div>
+      </div>

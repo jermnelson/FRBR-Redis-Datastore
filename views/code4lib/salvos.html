@@ -1,0 +1,62 @@
+<%inherit file="presentation-inside.html" />
+
+<%block name="more_js">
+<script type="javascript">
+ function bremix() {
+	 document.getElementById('brand-remax').attrib('display') = 'box';
+ }
+
+</script>
+</%block>
+
+## START content DIV
+<div class="content">
+ ## START hero DIV
+ <div class="hero-unit">
+  <h1 class="cc_royal">Parting Salvos</h1>
+  <p>Some finishing thoughts about (one) possible future 
+     of cataloging and libraries</p>
+  <h2>Thank-you!</h2>
+ ## END hero DIV
+ </div>
+
+ ## START Brand DIV
+ <div class="hero-unit" id="brand-remax" style="display:none; background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Stewart_Brand_-Sausalito%2C_California%2C_USA_-at_home-14Dec2010.jpg/320px-Stewart_Brand_-Sausalito%2C_California%2C_USA_-at_home-14Dec2010.jpg) top right no-repeat;">
+ <h2>We are all catalogers we might as we well get good at it</h2>
+ <p>Remix of Steward Brand's quote from the first page of the Whole Earth
+    catalog</p>
+ ## END Brand DIV
+ </div>
+ 
+
+ 
+ ## FIRST row DIV
+ <div class="row">
+  ## START What? Why? DIV
+  <div class="span6">
+   <p><a class="btn info large">Catalog What? Why?</a></p>
+  ## END What? Why? DIV
+  </div>
+  ## START Stross Comment DIV
+  <div class="span5">
+  <p><a class="btn info large">Charles Stross Comment</a></p>
+  ## END Stross Comment DIV
+  </div>
+  ## START Brand Remix DIV
+  <div class="span5">
+    <p><a class="btn info large" onclick="bremix()">Stewart Brand Remix</a></p>
+  ## END Brand Remis DIV
+  </div>
+ ## END row DIV
+ </div>
+
+## END content DIV
+</div>
+
+## START Stross Div
+<div class="hero-unit">
+
+
+</div>
+
+

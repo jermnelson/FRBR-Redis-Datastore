@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>NoSQL Bibliographic Records: 
+           Implementing a Native FRBR Datastore With Redis
+           <%block name="head_title"></%block>       
+           
+    </title>
+    <meta name="description" content="Code4Lib 2012 Conference Presentation">
+    <meta name="author" content="Jeremy Nelson">
+    <%block name="more_meta"></%block>
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      div.space_bk {
+		  background:url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Space_Needle_2011-07-04.jpg/121px-Space_Needle_2011-07-04.jpg) bottom right no-repeat;
+	  }
+	  h1.cc_royal {
+		  color:#600;
+	  }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/examples/images/favicon.ico">
+    <link rel="apple-touch-icon" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-114x114.png">
+    <%block name="more_css"></%block>
+    <%block name="more_js"></%block>
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Code4Lib 2012 Presentation</a>
+          <ul class="nav">
+            % if section == 'home':
+            <li class="active">
+            % else:
+            <li>
+            %endif
+            <a href="/">Home</a></li>
+            % if section == 'background':
+            <li class="active dropdown">
+            % else:
+            <li class="dropdown">
+            % endif
+             <a href="/background.html" class="dropdown-toggle">Background</a>
+             <ul class="dropdown-menu">
+              <li><a href="background/data.html">MARC21, MODS, and FRBR</a></li>
+              <li><a href="background/nosql.html">NoSQL and Redis</a></li>
+              <li><a href="background/loc_framework.html">Library of Congress Bibliographic Framework</a></li>
+             </ul>
+            </li>
+            % if section == 'cube':
+            <li class="active dropdown">
+            % else:
+            <li class="dropdown">
+            % endif
+             <a href="/record2cube.html" class="dropdown-toggle">Record to Cube</a>
+               <ul class="dropdown-menu">
+				<li><a href="record2cube/about.html">About</a></li>
+				<li><a href="record2cube/single.html">Single FRBR Cube</a></li>
+				<li><a href="record2cube/multiple.html">Multiple Cubes</a></li>
+			   </ul>
+            </li>
+            % if section == 'engineering':
+            <li class="active dropdown">
+            % else:
+            <li class="dropdown">
+            % endif
+             <a href="/engineering.html" class="dropdown-toggle">Engineering</a>
+               <ul class="dropdown-menu">
+				<li><a href="engineering/frbr-redis-datastore.html">FRBR-Redis Datastore Overview</a></li>
+				<li><a href="engineering/skos.html">SKOS mappings and utilities</a></li>
+				<li><a href="engineering/testing.html">Unit and BBD testing</a></li>
+				<li><a href="future.html">Future directions</a></li>
+			   </ul>
+            </li>
+            % if section == 'salvos':
+            <li class="active">
+            % else:
+            <li>
+            % endif
+            <a href="/salvos.html">Parting Salvos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+     <%block name="slide"></%block>
+     ${self.body()} 
+
+     <%block name="footer">
+      <footer>
+        <p>© Jeremy Nelson, Colorado College 2012</p>
+      </footer>
+      </%block>
+
+    </div> <!-- /container -->
+
+  
+
+</body></html>
