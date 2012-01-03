@@ -9,11 +9,11 @@
      development requirements used in the  
   <a href="#">FRBR-to-Redis-Datastore</a>.
   </p>        
-  <p><a class="btn primary large" href="/record2cube.html">Record-To-Cube &raquo;</a></p>
+  <p><a class="btn primary large" href="/background/loc_summary.html">Summary &raquo;</a></p>
  </div>
  
  <div class="row">
-  ## 
+  ## Begin LOC Bib Framework Summary DIV
   <div class="span6">
    <h2>Summary</h2>
    <p>
@@ -29,38 +29,45 @@
      <li>Complex to set-up; IR model works for FRBR-based datastore</li>
      <li>Tried to migration attempts from 
    </ul>
-   <p><a class="btn" onclick="loadDetail('hadoop.html')">Details
+   <p><a class="btn" href="/background/loc_summary.html">Details
       &raquo;</a></p>
   </div>
-  ## END Google BigTable and Hadoop  Section
-  ## START Other classes of nosql Section
+  ## END Begin LOC Bib Framework Summary
+  ## START FRBR-to-Redis Datastore Requirements DIV
   <div class="span5">
-   <h2>Other Summary </h2>
-   <p>Document based - </p>
-   <p>Cassandra - </p>
-   <p>Cache based - </p>
+   <h2>FRBR-to-Redis Datastore Project Requirements</h2>
+   <p>The <a href="#">FRBR-to-Redis Datastore</a> project uses
+      the Framework as the base requirements for software 
+      development
+   </p>
    <ul>
-    <li>Used by Colorado College's Fedora Commons Digital Archives</li>
+    <li>Broad accommodation of content rules and data models.</li>
+    <li>Provision for types of data that logically accompany or support bibliographic description</li>
+    <li>Accommodation of textual data, linked data with URIs instead of text, and both</li>
+    <li>Consideration of the relationships between and recommendations for 
+        communications format tagging, record input conventions, and system 
+        storage/manipulation.</li>
+    <li>Consideration of the needs of all sizes and types of libraries, from 
+        small public to large research.</li>
+    <li>Continuation of maintenance of MARC until no longer necessary.</li>
+    <li>Compatibility with MARC-based records.</li>
+    <li>Provision of transformation from MARC 21 to a new bibliographic environment.</li>
    </ul>
-   <p><a class="btn" onclick="loadDetail('other_nosql.html')">Details 
+   <p><a class="btn" href="/background/loc_requirements.html">Details 
       &raquo;</a></p>
   </div>
-  ## END Other classes of nosql Section
+  ## END FRBR-to-Redis Datastore Requirements DIV
   ## START Redis Section
   <div class="span5">
-  <h2>Relationship to <a href="/engineering/testing.html">Unit and BBD Testing</a></h2>
-  <p>The key-value <a href='http://redis.io'>Redis.io</a> cache nature
-  means Redis is fast, small, and easy is to deploy, key requirements 
-  of the LOC bibliographic frameworks and cructial for smaller and leaner
-  libraries and cultural information technology organizations.</p>
-  <ul>
-    <li>Fast, C code</li>
-    <li>Multiple language bindings including Python, Ruby, PHP, Perl,
-    C#, and Java. (Tired of language </li>
-    <li>Easier to represent multi-deminsional nature of bibliographic
-     records without the overhead of datastore technology</li>
-  </ul>
-  <p><a class="btn" onclick="loadDetail('mods.html')">Details 
+  <h2>Relationship to <a href="/engineering/testing.html">Unit and 
+      BBD</a> Testing</h2>
+  <p>
+   This report is used to create the unit testing of specific
+   code in <a href="#">FRBR-to-Redis Datastore</a> using a combination of
+   unit and BBD tests more throughly explained here and in the
+   engineering section on <a href="/engineering/testing.html">testing</a>.
+  </p>
+  <p><a class="btn" href="/background/loc_testing.html">Details 
       &raquo;</a></p>
   </div>
   ## END Redis Section

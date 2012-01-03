@@ -1,0 +1,36 @@
+<%inherit file="slide.html" />
+
+
+<%block name="main_content">
+  <h1 class="cc_royal">Redis</h1>
+  <p>The key-value cache nature of Redis means it is fast, 
+     small, and easy is to deploy, meeting key requirements of the LOC 
+      bibliographic frameworks
+  </p>
+  <p>Critical for smaller, leaner libraries with like-minded cultural 
+     information technology organizations to run with-out larger 
+     setup or operational complexity
+  </p>
+    <p>
+     <a class="btn primary large" href="/background/loc_framework.html">
+     LOC Bibliographic Framework &raquo;</a>
+  </p>
+</%block>
+
+<%block name="sidebar_content">
+<div class="well">
+ <h3>Quick Redis Setup</h3>
+ <p>(Assumes you are running under a Linux VM)</p>
+ <p>Open a terminal window and run the following commands</b>
+ <pre>
+  $ wget http://redis.googlecode.com/files/redis-2.4.5.tar.gz
+  $ tar xzf redis-2.4.5.tar.gz
+  $ cd redis-2.4.5
+  $ make
+ </pre>
+ <h3>Now run the redis server</h3>
+ <pre>
+  $ src/redis-server
+ </pre>
+</div>
+</%block>

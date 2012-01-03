@@ -1,16 +1,14 @@
 <%inherit file="presentation-inside.html" />
 
 <%block name="more_js">
- <script>
- 
- </script>
+ <script src="/js/default.js"></script>
 </%block>
 <div class="content">
  <div class="hero-unit" id="main-content">
   <h1 class="cc_royal">MARC21, MODS, &amp; FRBR</h1>
   <p>The FRBR-to-Redis-Datastore project begins with a basic 
      understanding of MARC, MODS, and FRBR biblographic record technologies.</p>
-  <p><a class="btn primary large" href="/background/nosql.html">NoSQL &amp; Redis &raquo;</a></p>
+  <p><a class="btn primary large" href="/background/marc21.html">MARC21 &raquo;</a></p>
  </div>
  
  <div class="row">
@@ -27,7 +25,7 @@
      <li>Colorado College's legacy ILS uses MARC21 for print holdings 
          and purchased electronic resources</li>
    </ul>
-   <p><a class="btn" onclick="loadDetail('marc21')">Details
+   <p><a class="btn" href="/background/marc21.html">Details
       &raquo;</a></p>
   </div>
   ## END MARC21 Section
@@ -38,7 +36,7 @@
    <ul>
     <li>Used by Colorado College's Fedora Commons Digital Archives</li>
    </ul>
-   <p><a class="btn" onclick="loadDetail('mods.html')">Details
+   <p><a class="btn" href="/background/mods.html">Details
       &raquo;</a></p>
   </div>
   ## END MODS Section
@@ -51,7 +49,7 @@
     <li>Multiple mappings including FRBRoo, VRA, MARC, and MODS already
         exist or are being considered</li>
   </ul>
-  <p><a class="btn" onclick="loadDetail('mods.html')">Details 
+  <p><a class="btn" href="/background/frbr.html">Details 
       &raquo;</a></p>
   </div>
   ## END FRBR Section
