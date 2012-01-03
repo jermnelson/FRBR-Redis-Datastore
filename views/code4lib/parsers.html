@@ -1,0 +1,33 @@
+<%inherit file="slide.html" />
+
+
+<%block name="main_content">
+  <h1 class="cc_royal">Cython and Parsering</h1>
+  <p>To increase the parsering of hundred of thousands of MARC 
+     records involved using the cython...</p>
+  <p>
+     <a class="btn primary large" href="/engineering.html">Engineering &raquo;</a>
+  </p>
+</%block>
+
+<%block name="sidebar_content">
+<div class="well">
+ <h5>Summary</h5>
+ <p>The <a href="http://cython.org">Cython</a> programming language is
+ used in the core record parsers of the <a href="#">FRBR-to-Redis datastore</a>
+ project using <a href="https://github.com/edsu/pymarc">PyMARC</a> for 
+ MARC21 records and <a href="http://lxml.de">lxml</a> for XML-based 
+ vocabularies like <a href="http://www.w3.org/2009/08/skos-reference/skos.html">SKOS</a>,
+ MODS, RDA, VRACore, Dublin Core, and many others.
+ </p>
+</div>
+</%block>
+
+<%block name="subtopic_one">
+<h2>Cython Code Fragment</h2>
+<pre>
+ def parse_record(record):
+    print("In MARC to Python %s" % record)
+</pre>
+<button class="btn info">Load All</button>
+</%block>

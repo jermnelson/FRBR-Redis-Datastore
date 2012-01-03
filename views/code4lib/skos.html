@@ -1,0 +1,38 @@
+<%inherit file="slide.html" />
+
+<%block name="main_content">
+  <h1 class="cc_royal">SKOS and RDA</h1>
+  <p>Simple Knowledge Organization System Namespace 
+  (<a href="http://www.w3.org/2009/08/skos-reference/skos.html">SKOS</a>) along with
+  an FRBR-based bibliographic rule-set called Resource Description and
+  Access (<a href="http://en.wikipedia.org/wiki/Resource_Description_and_Access">RDA</a>).</p>
+   <p>
+     <a class="btn primary large" href="/engineering.html">Engineering &raquo;</a>
+   </p>
+</%block>
+
+<%block name="sidebar_content">
+<div class="well">
+ <a data-placement="below" href="http://metadataregistry.org/"><img src="http://metadataregistry.org/images/open_metadata_logo_with_interoperability.png" width="230" style="float:right" /></a>
+ <h3>Thanks to rdvocab.info</h3>
+ <p>The <a href="#">FRBR-to-Redis datastore</a> project would not have been
+  possible without the availablity of the RDF-encoded FRBR RDA SKOS vocabularies
+  made availabe by the Metadata Registry organization at their 
+  <a href="http://rdvocab.info">rdvocab.info</a></p>
+ 
+</div>
+</%block>
+
+<%block name="subtopic_one">
+<h2>Summary</h2>
+<p>To create the associations between the different schemas and mappings, 
+SKOS was chosen to construct these elements and concepts mappings between 
+MARC21 and MODS with their respective FRBR entities
+</p>
+</%block>
+  
+<%block name="subtopic_two">
+<div style="align:center">
+<button class="btn success" onclick="alert('Load SVG or 3D animation')">Load FRBR-SKOS Demo</button>
+</div>
+</%block>

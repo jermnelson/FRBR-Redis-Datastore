@@ -1,15 +1,21 @@
 <%inherit file="presentation-inside.html" />
+
+<%block name="more_js">
+ <script>
+ 
+ </script>
+</%block>
 <div class="content">
  <div class="hero-unit" id="main-content">
   <h1 class="cc_royal">MARC21, MODS, &amp; FRBR</h1>
   <p>The FRBR-to-Redis-Datastore project begins with a basic 
      understanding of MARC, MODS, and FRBR biblographic record technologies.</p>
-  <p><a class="btn primary large" href="background/nosql.html">NoSQL &amp; Redis &raquo;</a></p>
+  <p><a class="btn primary large" href="/background/nosql.html">NoSQL &amp; Redis &raquo;</a></p>
  </div>
  
  <div class="row">
   ## MARC21 Section
-  <div class="span6">
+  <div class="span6" id="c1r1">
    <h2>MARC21<a name="marc21"></a></h2>
    <p>MARC21 is the current data carrier for library bibliographic 
       records.</p>
@@ -21,12 +27,12 @@
      <li>Colorado College's legacy ILS uses MARC21 for print holdings 
          and purchased electronic resources</li>
    </ul>
-   <p><a class="btn" onclick="loadDetail('marc21.html')">Details
+   <p><a class="btn" onclick="loadDetail('marc21')">Details
       &raquo;</a></p>
   </div>
   ## END MARC21 Section
   ## START MODS Section
-  <div class="span5">
+  <div class="span5" id="c2r1">
    <h2>MODS<a name="mods"></a></h2>
    <p>The Metadata Object Description Schema or MODS...</p>
    <ul>
@@ -37,7 +43,7 @@
   </div>
   ## END MODS Section
   ## START FRBR Section
-  <div class="span5">
+  <div class="span5" id="c3r1">
   <h2>FRBR<a name="frbr"></a></h2>
   <p>Functional Requirements for Bibliographic Records or FRBR...</p>
   <ul>

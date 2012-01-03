@@ -36,6 +36,8 @@
     <link rel="apple-touch-icon" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-114x114.png">
+    <script src="/js/jquery-1.7.1.min.js"></script>
+    <script src="/js/bootstrap-dropdown.js"></script>
     <%block name="more_css"></%block>
     <%block name="more_js"></%block>
   </head>
@@ -45,49 +47,64 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="#">Code4Lib 2012 Presentation</a>
-          <ul class="nav">
+          <a class="brand" href="/">Code4Lib 2012 Presentation</a>
+          <ul class="nav secondary-nav">
             % if section == 'home':
             <li class="active">
             % else:
             <li>
             %endif
             <a href="/">Home</a></li>
+            <li data-dropdown="dropdown" class="dropdown
             % if section == 'background':
-            <li class="active dropdown">
-            % else:
-            <li class="dropdown">
+             active
             % endif
-             <a href="/background.html" class="dropdown-toggle">Background</a>
+            ">
+             <a href="#" class="dropdown-toggle">Background</a>
              <ul class="dropdown-menu">
-              <li><a href="background/data.html">MARC21, MODS, and FRBR</a></li>
-              <li><a href="background/nosql.html">NoSQL and Redis</a></li>
-              <li><a href="background/loc_framework.html">Library of Congress Bibliographic Framework</a></li>
+              <li><a href="/background/data.html">MARC21, MODS, and FRBR</a></li>
+              <li class="divider"></li>
+              <li><a href="/background/nosql.html">NoSQL and Redis</a></li>
+              <li class="divider"></li>
+              <li><a href="/background/loc_framework.html">Library of Congress Bibliographic Framework</a></li>
              </ul>
             </li>
+            <li data-dropdown="dropdown" class="dropdown
             % if section == 'cube':
-            <li class="active dropdown">
-            % else:
-            <li class="dropdown">
+            active
             % endif
-             <a href="/record2cube.html" class="dropdown-toggle">Record to Cube</a>
+            ">
+             <a href="#" class="dropdown-toggle">Record to Cube</a>
                <ul class="dropdown-menu">
-				<li><a href="record2cube/about.html">About</a></li>
-				<li><a href="record2cube/single.html">Single FRBR Cube</a></li>
-				<li><a href="record2cube/multiple.html">Multiple Cubes</a></li>
+				<li><a href="/record2cube.html">About</a></li>
+				<li class="divider"></li>
+				<li><a href="/record2cube/record.html">Record/Flat View</a></li>
+				<li class="divider"></li>
+				<li><a href="/record2cube/single.html">Single FRBR Cube</a></li>
+				<li class="divider"></li>
+				<li><a href="/record2cube/multiple.html">Multiple Cubes</a></li>
 			   </ul>
             </li>
+            <li data-dropdown="dropdown" class="dropdown
             % if section == 'engineering':
-            <li class="active dropdown">
-            % else:
-            <li class="dropdown">
+            active
             % endif
-             <a href="/engineering.html" class="dropdown-toggle">Engineering</a>
+            ">
+             <a href="#" class="dropdown-toggle">Engineering</a>
                <ul class="dropdown-menu">
-				<li><a href="engineering/frbr-redis-datastore.html">FRBR-Redis Datastore Overview</a></li>
-				<li><a href="engineering/skos.html">SKOS mappings and utilities</a></li>
-				<li><a href="engineering/testing.html">Unit and BBD testing</a></li>
-				<li><a href="future.html">Future directions</a></li>
+				<li><a href="/engineering.html">FRBR-Redis Datastore Overview</a></li>
+				<li class="divider"></li>
+				<li><a href="/engineering/python.html">Python with LXML, Redis, and PyMARC</a></li>
+				<li class="divider"></li>
+				<li><a href="/engineering/skos.html">SKOS and RDA mappings and utilities</a></li>
+				<li class="divider"></li>
+				<li><a href="/engineering/parsers.html">Cython Parsers</a></li>
+				<li class="divider"></li>
+				<li><a href="/engineering/testing.html">Unit and BBD testing</a></li>
+				<li class="divider"></li>
+				<li><a href="/engineering/web.html">Client-side Frameworks</a></li>
+				<li class="divider"></li>
+				<li><a href="/future.html">The Future</a></li>
 			   </ul>
             </li>
             % if section == 'salvos':

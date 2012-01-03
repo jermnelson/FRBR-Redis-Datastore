@@ -1,0 +1,42 @@
+<%inherit file="base.html" />
+<%block name="slide">
+## START content DIV
+<div class="content">
+ ## START row 1 DIV
+ <div class="row">
+  ## START hero content DIV
+  <div class="hero-unit span9" id="main-content">
+  <%block name="main_content"></%block>
+  ## END hero content DIV
+  </div>
+ 
+
+  
+  ## START sidebar DIV
+  <div class="sidebar span5" id="sidebar-content">
+  <%block name="sidebar_content"></%block>
+  ## END sidebar DIV
+  </div>
+  
+ ## END row 1 DIV
+ </div> 
+ 
+ ## START row 2 DIV
+ <div class="row">
+  ## START subtopic one DIV
+  <div class="span7" id="subtopic-one">
+  <%block name="subtopic_one"></%block>
+  ## END subtopic one DIV
+  </div>
+  
+  ## START subtopic two DIV
+  <div class="span6" id="subtopic-two">
+  <%block name="subtopic_two"></%block>
+  ## END subtopic two DIV 
+  </div>
+  
+ ## END row 2 DIV
+ </div>
+## END content DIV
+</div>
+</%block>
