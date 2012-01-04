@@ -1,0 +1,37 @@
+<%inherit file="presentation-inside.html" />
+## START content DIV
+<div class="content">
+ ## START row 1 DIV
+ <div class="row">
+  ## START Main Visualization For Flat View
+  <div class="span10" id="visualization">
+  % if xml_text:
+  <pre>
+  ${xml_text}
+  </pre>
+  % else:
+  <h2>Please select schema and WEMI entities</h2>
+  % endif
+  ## END Main Visualization For Flat View
+  </div>
+  
+  ## START Schema/Format and WEMI entities selection
+  <div class="well span4">
+   <form>
+   <h5>Select Schema or Formats</h5>
+   <select name="schema">
+    <option value="dc">Dublin Core</option>
+    <option value="mods">MODS</option>
+    <option value="marc">MARC21</option>
+   </select>
+   <h5>Select WEMI Entities</h5>
+   <select name="wemi-redis-id">
+    <option value="REDIS_ID">Code4Lib 2012 Presentation's WEMI Entities</option>
+   </select>
+   <br/>
+   <input type="submit" value="Display" class="btn" />
+  </div>
+ ## END row 1 DIV
+ </div>
+## END content DIV
+</div>

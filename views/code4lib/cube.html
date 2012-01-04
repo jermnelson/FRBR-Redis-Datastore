@@ -4,24 +4,32 @@
   <div class="span10" id="visualization">
   <h1 class="cc_royal">Bibliographic Cube</h1>
   <p>The underlying concept of the FRBR Redis Datastore is the 
-     Biblographic Cube. Instead of trying to creating a single, flat 
-     canonical biblographic record; the datastore orchastractes a 
-     network of key-value biblographic associations with FRBR entities.
+     Bibliographic Cube. Instead of trying to creating a single, flat 
+     canonical bibliographic record; the datastore orchestrates a 
+     network of key-value bibliographic associations with FRBR entities.
   </p>
   <p>This is better visualized as moving from a flat record 
      (Dublin Core, MARC21, MODS XML, etc.) to a cube of FRBR entities 
-     interseting with parallel planes of metadata. 
+     intersecting with parallel planes of metadata called branes. 
   </p>
-  
- <p><a class="btn primary large" href="/engineering.html">Engineering &raquo;</a></p>
+  <div class="well">
+   <form action="/record2cube/record.html">
+    <h2>Select Available FRBR Entities</h2>
+    <select name="wemi-redis-id" id="wemi-redis-id">
+     <option value="REDIS_ID">Code4Lib 2012 Presentation's WEMI Entities</option>
+    </select>
+    <input type="submit" value="Visual as a Record" class="btn" />
+   </form>
+  </div>
+  <p><a class="btn primary large" href="/engineering.html">Engineering &raquo;</a></p>
   </div>
   <div class="span4 sidebar">
    <div class="well">
-    <h5>Progressions</h5>
+    <h5>Visual Progressions</h5>
     <ul>
-     <li><a href="record2cube/record.html">Record or Flat</a></li>
-     <li><a href="record2cube/single.html">Cube</a></li>
-     <li><a href="record2cube/multiple.html">Multiple Cubes</a></li>
+     <li><a href="/record2cube/record.html">Record or Flat</a></li>
+     <li><a href="/record2cube/single.html">Cube</a></li>
+     <li><a href="/record2cube/multiple.html">Multiple Cubes</a></li>
     </ul>
    </div>
   </div>

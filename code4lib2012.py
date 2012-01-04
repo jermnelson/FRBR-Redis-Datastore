@@ -18,6 +18,22 @@ conference_templates = TemplateLookup(directories=[os.path.join(os.path.dirname(
                                       encoding_errors='replace')
 
 
+code4lib_redis = redis.StrictRedis(host=config.REDIS_HOST,
+                                   port=config.REDIS_PORT,
+                                   db=config.REDIS_CODE4LIB_DB)
+
+class Project(object):
+
+    def __init__(self):
+        pass
+
+project = Project()
+setattr(project,'name','FRBR-Redis-datastore')
+setattr(project,'url','https://bitbucket.org/tomichi_informatics/frbr-redis-datastore')
+
+        
+        
+
 @route('/js/:filename')
 def send_static_js(filename):
     root = "%s/views/js" % os.getcwd()
@@ -37,7 +53,8 @@ def index():
     Index page for presentation
     """
     home_page = conference_templates.get_template('home.html')
-    return home_page.render(section="home")
+    return home_page.render(section="home",
+                            project=project)
 
 def check_exists(pagename):
     if pagename is None:
@@ -50,27 +67,44 @@ def check_exists(pagename):
 @route('/background.html')
 def background_base():
     background_page = conference_templates.get_template('data.html')
-    return background_page.render(section="background")
+    return background_page.render(section="background",
+                                  project=project)
 
 @route('/record2cube.html')
 def cube_base():
     template = conference_templates.get_template('cube.html')
-    return template.render(section="cube")
+    return template.render(section="cube",
+                           project=project)
 
 @route('/future.html')
 def future():
     template = conference_templates.get_template('future.html')
-    return template.render(section="engineering")
+    return template.render(section="engineering",
+                           project=project)
     
 @route('/engineering.html')
 def engineering_base():
     template = conference_templates.get_template('engineering.html')
-    return template.render(section="engineering")
+    return template.render(section="engineering",
+                           project=project)
 
 @route('/salvos.html')
 def engineering_base():
     template = conference_templates.get_template('salvos.html')
-    return template.render(section="salvos")
+    return template.render(section="salvos",
+                           project=project)
+
+@get('/record2cube/record.html')
+def flat_view():
+    if hasattr(request.forms,'wemi-redis-id'):
+        wemi_redis_key = getattr(request.forms,'wemi-redis-id')
+        wemi = code4lib_redis.get(wemi_redis_key)
+    template = conference_templates.get_template('flat.html')
+    return template.render(section="cube",
+                           project=project)
+        
+     
+     
 
 @route('/:section/:slide')
 def section_slide(section=None,
@@ -86,7 +120,8 @@ def section_slide(section=None,
             return engineering_base()
     template = conference_templates.get_template(slide)
     return template.render(section=section,
-                           slide=slide)
+                           slide=slide,
+                           project=project)
     
 
 
