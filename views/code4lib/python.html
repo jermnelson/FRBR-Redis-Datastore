@@ -12,28 +12,20 @@
 
 <%block name="sidebar_content">
 <div class="well">
- <h5>Python Language</h5>
- <ul>
-  <li>Rich third party support</li>
-
- </ul>
- <h5>LXML Module</h5>
- <img style="float:right" src="http://lxml.de/python-xml.png" />
- <p>
- The <a href="http://lxml.de/">lxml</a> is an xml python library used for MODS,
- RDA, SKOS, and general XML processing needs in the 
- <a href="#">FRBR-to-Redis datastore</a> project.</p>
+ <h5>Python Modules Used</h5>
+ <p>by ${project.name}</p>
+ <select multiple="multiple" size="5" class="large">
+ % for py_module in module_listing:
+  <option value="${py_module['redis_key']}">${py_module['module']} ${py_module['version']}</option>
+ % endfor
+ </select>
  
-<h5>PyMARC Module</h5>
- <p>Ed Summer's <a href="">PyMARC</a> module is used in interaction of the 
- <a href="#">FRBR-Redis datastore</a> with MARC21 files</p>
-
-
-<h5>Redis.py Module</h5>
-<p>Andy McCurdy's <a href="https://github.com/andymccurdy/redis-py">Redis.py</a>
-Python module is used for most utility and general datstore interaction with the
-C Redis store.</p>
-
+</div>
+<div class="alert-message success">
+ <p><strong>Installation instructions </strong> for 
+ ${project.name} are
+ available <a href="${project.url}">here</a>, included is this
+ presentation!
 </div>
 </%block>
 
@@ -49,3 +41,27 @@ C Redis store.</p>
  </ul>
 </%block>
 
+##START Python Modules Wizard DIV
+<div class="modal hide fade span10">
+ ##START modal-header DIV
+ <div class="modal-header">
+ 
+ ##END modal-header DIV
+ </div>
+ 
+ ##START modal-body DIV
+ <div class="modal-body">
+  <div class="active-py-module" id="lxml-module">
+   
+  
+  </div>
+ ##END modal-body DIV
+ </div>
+ 
+ ##START modal-footer DIV
+ <div class="modal-footer">
+ 
+ ##END modal-footer DIV
+ </div>
+##END Python Modules Wizard DIV
+</div>

@@ -112,6 +112,24 @@ def redis_slide():
                            project=project,
                            redis_server=code4lib_redis or None)
 
+@get('/engineering/python.html')
+def python_slide():
+    template = conference_templates.get_template('python.html')
+    module_listing = []
+    #! Should move this to FRBR-Redis project setup, populate
+    #! Redis datastore with this requirements data
+    requirements_file = open('requirements.txt','rb').read()
+    for row in requirements_file.split("\n"):
+        rec = row.split("==")
+        if len(rec) > 1:
+            module_listing.append({'module':rec[0],
+                                   'version':rec[1],
+                                   'redis_key':None})
+    return template.render(section='engineering',
+                           slide='python.html',
+                           project=project,
+                           module_listing=module_listing)
+
 @route('/:section/:slide')
 def section_slide(section=None,
                   slide=None):
