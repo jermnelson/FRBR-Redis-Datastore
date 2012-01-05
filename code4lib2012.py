@@ -104,7 +104,13 @@ def flat_view():
                            project=project)
         
      
-     
+@get('/background/redis.html')
+def redis_slide():
+    template = conference_templates.get_template('redis.html')
+    return template.render(section='background',
+                           slide='redis.html',
+                           project=project,
+                           redis_server=code4lib_redis or None)
 
 @route('/:section/:slide')
 def section_slide(section=None,

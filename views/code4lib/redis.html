@@ -13,24 +13,161 @@
   </p>
     <p>
      <a class="btn primary large" href="/background/loc_framework.html">
-     LOC Bibliographic Framework &raquo;</a>
+     Library Of Congress Bibliographic Framework &raquo;</a>
   </p>
 </%block>
 
 <%block name="sidebar_content">
-<div class="well">
- <h3>Quick Redis Setup</h3>
- <p>(Assumes you are running under a Linux VM)</p>
- <p>Open a terminal window and run the following commands</b>
- <pre>
+<div>
+ <div class="alert-message error">
+ <p><strong>Quick Redis Setup</strong></p>
+ <p>
+ (Assumes you are running under a Linux VM
+  with wget and make already installed)</p>
+ <p>Open a terminal window and run the following commands:</p>
+ <pre style="color: black;">
   $ wget http://redis.googlecode.com/files/redis-2.4.5.tar.gz
   $ tar xzf redis-2.4.5.tar.gz
   $ cd redis-2.4.5
   $ make
  </pre>
- <h3>Now run the redis server</h3>
- <pre>
+ <p>Now run the redis server</p>
+ <pre style="color: black;">
   $ src/redis-server
  </pre>
+ </div>
 </div>
 </%block>
+
+
+<div class="row">
+ ## START Key-value DIV
+ <div class="span6">
+  <h3>Key-Value Store</h3>
+  <p>Also know as data-structure server, when the Redis datastore is
+     queried with a key, that key can contain any of the following:
+  <ul>
+   <li>strings</li>
+   <li>hashes</li>
+   <li>lists</li>
+   <li>sets</li>
+   <li>sorted-sets</li>
+  </ul>
+ ## START Key-value DIV
+ </div>
+ 
+ ## START alert and presentation redis server DIV
+ <div class="span5">
+  <div class="alert-message success">
+   <strong>Redis key-value data structures</strong> are
+   descriptive enough to model bibliographic records 
+   using FRBR as a framework of keys and
+   any arbitary metadata format or schema as values in
+   <a href="${project.url}">${project.name}</a> project.
+  </div>
+  
+  <button class="btn info" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="code4lib2012-redis-info" >Presentation Redis Info</button>
+ ## END alert and presentation redis server DIV
+ </div>
+ 
+ ## START other redis DIV
+ <div class="span4 well">
+  <h3>What about Redis and?...</h3>
+  <p>
+   <a href="#" ><img src="http://www.ruby-lang.org/images/logo.gif" width="175" /></a>
+  </p>
+  <p>
+   <a href="#"><img src="http://static.php.net/www.php.net/images/php_snow_2008.gif"></a>
+  </p>
+  <p>
+   <a href="#">Java</a>
+  </p>
+  <p>
+   
+  </p>
+ ## END other redis DIV
+ </div>
+ 
+</div>
+
+## START Code4Lib Redis Modal DIV
+<div class="modal hide fade" id="code4lib2012-redis-info">
+ ##START modal-header DIV
+ <div class="modal-header">
+  <a href="#" class="close">&times;</a>
+  <h3>Code4Lib 2012 Redis Server Info</h3>
+ ##END modal-header DIV
+ </div>
+ 
+ ##START modal-body DIV
+ <div class="modal-body">
+ % if not redis_server:
+  <div class="alert-message error"><a class="close" href="#">x</a>
+  <p><strong>Error!</strong> Code4Lib 2012 Presentation Redis Server
+  Not Active</p>
+  </div>
+ % else:
+ <%
+   redis_info = redis_server.info()
+ %>
+  <table class="condensed zebra-stripes">
+  <thead>
+    <tr>
+     <th>Redis Server Setting</th>
+     <th>Value</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <th>AOF Enabled</th>
+     <td>${bool(redis_info['aof_enabled'])}</td>
+    </tr>
+    <tr>
+     <th>Changes Since Last Save</th>
+     <td>${redis_info['changes_since_last_save']}</td>
+    </tr>
+    <tr>
+     <th>Connected Clients</th>
+     <td>${redis_info['connected_clients']}</td>
+    </tr>
+    <tr>
+     <th>Datastore last saved on</th>
+     <td>${redis_info['last_save_time']}</td>
+    </tr>
+    <tr>
+     <th>Redis Version</th>
+     <td>${redis_info['redis_version']}</td>
+    </tr>
+    <tr>
+     <th>Uptime in Days</th>
+     <td>${redis_info['uptime_in_days']}</td>
+    </tr>
+    <tr>
+     <th>Uptime in Seconds</th>
+     <td>${redis_info['uptime_in_seconds']}</td>
+    </tr>
+    <tr>
+     <th>Used Memory</th>
+     <td>${redis_info['used_memory_human']}</td>
+    </tr>
+    <tr>
+      <th>Virtual Machine?</th>
+      <td>${bool(redis_info['vm_enabled'])}</td>
+     
+      </td>
+    </tr>
+   </tbody>
+  </table>
+ % endif
+ ##END modal-body DIV
+ </div>
+ 
+ ##START modal-footer DIV
+ <div class="modal-footer">
+  <button class="btn primary" onclick="$('#code4lib2012-redis-info').modal('hide')">Close</button>
+ ##END modal-footer DIV
+ </div>
+
+## END Code4Lib Redis Modal DIV
+</div>
