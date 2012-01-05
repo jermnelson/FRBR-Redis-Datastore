@@ -1,10 +1,16 @@
 <%inherit file="slide.html" />
 
+<%block name="more_js">
+<script type="text/javascript">
+</script>
+</%block>
 
 <%block name="main_content">
   <h1 class="cc_royal">MODS</h1>
   <p>The Metadata Object Description Schema or 
-     <a href="http://www.loc.gov/standards/mods/">MODS</a>...</p>
+     <a href="http://www.loc.gov/standards/mods/">MODS</a> is a 
+     Library of Congress sponsor bibliographic XML schema defining
+     elements and attributes including a subset of MARC 21 features.</p>
   <ul class="main-content">
    <li>Used by Colorado College's 
        <a href="#">Fedora Commons Digital Archives</a></li>
@@ -18,7 +24,103 @@
  <%block name="sidebar_content">
  <div class="well">
   <h3>Examples</h3>
- 
+  <p style="text-align:center;">
+   <button class="btn success" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="mods-journal-example">Journal Article</button>
+  </p>
+  <p style="text-align:center;">
+   <button class="btn success" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="mods-movie-example">Motion Picture</button>
+  </p>
  </div>
  </%block>
  
+ ## START MODS LOC Journal Article MODS Example DIV
+ <div class="modal hide fade span10" id="mods-journal-example">
+  ## START MODS LOC Modal Header DIV
+  <div class="modal-header">
+   <a href="#" class="close">&times;</a>
+   <h3>MODS Journal Article Example</h3>
+  ## END MODS LOC Modal Header DIV
+  </div>
+  ## START MODS LOC Modal Body DIV
+  <div class="modal-body">
+  ## START MODS Journal Article PRE DIV
+  <pre class="prettyprint linenums" style="font-size: 1.1em;">
+  &lt;mods&gt;
+    &lt;titleInfo&gt;
+      &lt;title&gt;Emergence and Dissolvence in the Self-Organization of Complex Systems&lt;/title&gt;
+    &lt;/titleInfo&gt;
+  &lt;/mods&gt;
+  &lt;name type="personal"&gt;
+	&lt;namePart type="family"&gt;Testa&lt;/namePart&gt;
+	&lt;namePart type="given">Bernard&lt;/namePart&gt;
+	&lt;role&gt;
+	 &lt;roleTerm&gt;author&lt;/roleTerm&gt;
+	&lt;/role&gt;
+  &lt;/name&gt;
+    .
+    .
+    .
+ &lt;identifier type="uri"&gt;http://www.mdpi.org/entropy/papers/e2010001.pdf&lt;/identifier&gt;
+  ## END MODS Journal Article PRE DIV
+  </pre>
+  ## END MODS LOC Modal Body DIV
+  </div>
+  ## START MODS LOC Modal Footer DIV
+  <div class="modal-footer">
+   <p>Full MODS example available at Library of Congress MODS website 
+    at 
+    <a href="http://www.loc.gov/standards/mods/v3/modsjournal.xml">http://www.loc.gov/standards/mods/v3/modsjournal.xml</a>
+   </p>
+   <a href="#" onclick="$('#mods-journal-example').modal('hide')" class="btn primary">Close</a>
+  ## END MODS LOC Modal Footer DIV
+  </div>
+ ## END MODS LOC Journal Article MODS Example DIV
+ </div>
+ 
+## START MODS LOC Movie MODS Example DIV
+ <div class="modal hide fade span10" id="mods-movie-example">
+  ## START MODS LOC Modal Header DIV
+  <div class="modal-header">
+   <a href="#" class="close">&times;</a>
+   <h3>MODS Movie Example</h3>
+  ## END MODS LOC Modal Header DIV
+  </div>
+  
+  ## START MODS LOC Movie Body DIV
+  <div class="modal-body">
+   ## START XML text PRE
+   <pre style="font-size: 1.1em;">
+    &lt;?xml version='1.0' encoding='UTF-8' ?&gt;
+    &lt;mods xmlns:xlink="http://www.w3.org/1999/xlink" 
+             version="3.0" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xmlns="http://www.loc.gov/mods/v3" 
+             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd"&gt;
+	
+        &lt;titleInfo&gt;
+         &lt;nonSort&gt;The &lt;/nonSort&gt;
+          &lt;title>Cast iron story [motion picture] /&lt;/title&gt;
+	       .
+	       .
+	       .
+        &lt;/titleInfo&gt;
+     &lt;/mods
+   ## END XML text PRE
+   </pre>
+  ## END MODS LOC Movie Body DIV
+  </div>
+  
+  ## START MODS LOC Modal Footer DIV
+  <div class="modal-footer">
+   <p>Full MODS example available at Library of Congress MODS website 
+    at 
+    <a href="http://www.loc.gov/standards/mods/v3/mods80700998.xml">http://www.loc.gov/standards/mods/v3/mods80700998.xml</a>
+   </p>
+   <a href="#" onclick="$('#mods-movie-example').modal('hide')" class="btn primary">Close</a>
+  ## END MODS LOC Modal Footer DIV
+  </div>
+  ## END MODS LOC Movie Body DIV
+  </div>
+  
