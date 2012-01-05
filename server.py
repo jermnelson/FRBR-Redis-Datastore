@@ -2,10 +2,11 @@
   :mod:`server` HTML5 and JSON front-end to native FRBR Redis Datastore
 """
 
-from bottle import debug,get,post,request,route,run,static_file,template
+from bottle import abort,debug,get,post,request,route,run,static_file,template
 import redis,json,logging
 import os,config,sys
-from lib import common,dc,isbd,frbr,marc21
+
+from lib import common,dc,isbd,frbr,frbr_rda,marc21
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
@@ -81,7 +82,39 @@ def about():
     about_template = templates_lookup.get_template('about.html')
     return about_template.render(active_page='about')
 
-    
+@get("/frbr/:name")
+def frbr_forms(name):
+    """
+    Function displays a form to add, edit, delete
+ 
+    :param name: Name of FRBR Entity
+    """
+    if not hasattr(frbr_rda,name):
+        abort(404,"%s not found")
+    frbr_form_template = templates_lookup.get_template('frbr_forms.html')
+    entity_class = getattr(frbr_rda,name)
+    # Checks for Redis key
+    if hasattr(request,"query"):
+        tmp_redis_key = request.query.redis_key
+        entity = common.redis_server.get(tmp_redis_key)
+    else:
+        entity = None
+    return frbr_form_template.render(active_page='crud',
+                                     entity=entity,
+                                     name=name,
+                                     entity_class=entity_class)
+
+@post("/frbr/:name/:action")
+def frbr_action(name,
+                action="add"):
+    """
+    :param name: Name of FRBR entity
+    :param action: Action should be one of four (add,delete,edit,info)
+    """
+    if ["add","delete","edit","info"].count(action) < 1:
+        abort(404,"%s not found" % action)
+    if not hasattr(frbr_rda,name):
+        abort(404,"%s not found" % name) 
 
 @post('/:redis_key/add')
 def add_frbr_entity(redis_key):

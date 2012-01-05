@@ -1,6 +1,8 @@
 <%inherit file="slide.html" />
 
 <%block name="more_js">
+<script src="/js/raphael-min.js" type="text/javascript"></script>
+<script src="/js/default.js" type="text/javascript"></script>
 <script>
  $(function () {
   $("a[rel=popover]")
@@ -11,7 +13,9 @@
    .click(function(e) {
           e.preventDefault()
          })
-  }); 
+  });
+ var paper = Raphael("frbr-redis-ds-illustration");
+ 
 </script>
 </%block>
 
@@ -67,6 +71,8 @@
  <p><strong>What about?</strong> 
     Group 2 Elements like Person, Places, or FRAD?
   <a href="${project.url}">${project.name}</a> uses these and more.
+  <button class="btn info" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="frbr-redis-ds-illustration" >Illustrate</button>
 </div>
 </%block>
 
@@ -113,3 +119,34 @@
 </div>
 </%block>
 
+##START FRBR-Redis datastore visualization DIV
+<div class="modal hide fade span10" id="frbr-redis-ds-illustration">
+ ##START modal-header DIV
+ <div class="modal-header">
+  <a href="#" class="close">&times;</a>
+  <h2>${project.name} Illustration</h2>
+ ##END modal-header DIV
+ </div>
+
+ ##START modal-body DIV
+ <div class="modal-body">
+  ##START visual-content DIV
+  <div id="visual-content">
+
+  ##END visual-content DIV
+  </div>
+  
+  ##START modal-footer DIV
+  <div class="modal-footer">
+    <button class="btn primary" onclick="$('#frbr-redis-ds-illustration').modal('hide')">Close</button>
+    <button class="btn" onclick="frbrDisplay()">Refresh</button>
+
+  ##END modal-footer DIV
+  </div>
+ ##END modal-body DIV
+ </div>
+
+## END FRBR-Redis datastore visualization DIV
+</div>
+
+</div>
