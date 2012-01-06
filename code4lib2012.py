@@ -107,10 +107,15 @@ def flat_view():
 @get('/background/redis.html')
 def redis_slide():
     template = conference_templates.get_template('redis.html')
+    try:
+        code4lib_redis.info()
+        redis_server = code4lib_redis
+    except redis.ConnectionError:
+        redis_server = None
     return template.render(section='background',
                            slide='redis.html',
                            project=project,
-                           redis_server=code4lib_redis or None)
+                           redis_server=redis_server)
 
 @get('/engineering/python.html')
 def python_slide():
