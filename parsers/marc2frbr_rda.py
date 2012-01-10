@@ -44,6 +44,86 @@ class MARCSKOSMapper(object):
                 raw_values = marc_record[marc_fieldname].get_subfields(codes)
                 if len(raw_values) > 0:
                     return raw_values
+
+
+    def applyRuleCollection(self,
+                        collection,
+                        marc_record):
+        """
+        :param collection: SKOS Collection element
+        :param marc_record: MARC record
+        """
+        for member in collection:
+            # Check to see if exact match is required
+            exact_match = member.find('{%s}exactMatch' % ns.SKOS)
+            if exact_match is not None:
+                # Found rule to apply to before attempting any
+                # MARC mappings
+                pass
+            datafield = member.find('{%s}datafield' % ns.MARC)
+            if datafield is not None:
+                print(extractVariableRule(datafield,marc_record))
+            fixedfield = member.find('{%s}controlfield' % ns.MARC)
+            if fixedfield is not None:
+                print(extracFixedFule(fixedfield,marc_record))
+            
+
+    def extractFixedRule(self,
+                         element,
+                         marc_record):
+        """
+        :param element: fixed or controled MARC XML element
+        :param marc_record: MARC record
+        """
+        marc_fieldname = element.attrib['{%s}tag' % ns.MARC]
+        redis_key = 'marc21:%s:' % marc_fieldname
+        # Assumes zero count position
+        position = element.text
+        redis_key += position
+        field = marc_record[marc_fieldname]
+        if field is None:
+            return None
+        data = field.data[position]
+        if data is None:
+            return None
+        else:
+            return(redis_key,data)
+
+    def extractVariableRule(self,
+                            element,
+                            marc_record):
+        """
+        :param element: datafield MARC XML element
+        :param marc_record: MARC record
+        """
+        marc_fieldname = element.attrib['{%s}tag' % ns.MARC]
+        redis_key = 'marc21:%s:' % marc_fieldname
+        # tries to extracts all subfields
+        subfields = marc_field.findall('{%s}subfield' % ns.MARC)
+        codes,redis_values = [],[]
+        for marc_sub in subfields:
+            subfield = subfields.attrib['{%s}code' % ns.MARC]
+            field = marc_record[marc_fieldname]
+            if field is None:
+                return None
+            raw_value = field.get_subfields([subfield,])
+            if raw_value is not None or len(raw_value) > 0:
+                redis_key += subfield
+                redis_values.append(raw_value)
+            
+        if len(redis_values) == 1:
+            return (redis_key,redis_values[0])
+        elif len(redis_values) < 1:
+            return None
+        else:
+            return (redis_key,redis_values)
+
+    
+            
+        
+
+
+                                         
                 
                 
         
@@ -73,6 +153,7 @@ class MARCtoWorkMap(MARCSKOSMapper):
         for mapping in descriptions:
             about = mapping.attrib['{%s}about' % ns.RDF]
             work_property = os.path.split(about)[1]
+            
             
             
         

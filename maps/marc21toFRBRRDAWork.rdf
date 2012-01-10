@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+         xmlns:skos='http://www.w3.org/2004/02/skos/core#'
+		 xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
+		 xmlns:marc="http://www.loc.gov/standards/marcxml#">
+
+
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#academicDegreeWork">
+ <skos:prefLabel>FRBR RDA Academic Degree MARC 21 Mapping</skos:prefLabel>
+ <rdfs:about rdf:resource="http://rdvocab.info/Elements/academicDegreeWork" />
+ <rdf:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" />
+ <skos:Collection />
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#coverageOfTheContentWork">
+ <skos:prefLabel>FRBR RDA Coverage of the content (Work) MARC 21 Mapping</skos:prefLabel>
+ <rdfs:about rdf:resource="http://rdvocab.info/Elements/coverageOfTheContentWork" />
+ <rdf:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" />
+ <skos:Collection />
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#dateOfWork">
+ <skos:prefLabel>FRBR RDA Date of Work MARC 21 Mapping</skos:prefLabel>
+ <rdfs:about rdf:resource="http://rdvocab.info/Elements/dateOfWork" />
+ <skos:Collection>
+  <skos:member>
+   <marc:datafield marc:tag="100">
+     <marc:subfield marc:code="f" />
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="110">
+     <marc:subfield marc:code="d" />
+     <marc:subfield marc:code="f" />
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="111">
+    <marc:subfield marc:code="f" />
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="130">
+    <marc:subfield marc:code="d" />	   
+    <marc:subfield marc:code="f" />
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="240">
+    <marc:subfield marc:code="d" />	   
+    <marc:subfield marc:code="f" />
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="243">
+    <marc:subfield marc:code="d" />	   
+    <marc:subfield marc:code="f" />
+   </marc:datafield>
+  </skos:member>  
+  <skos:member>
+   <marc:datafield marc:tag="245">
+    <marc:subfield marc:code="f" />	   
+    <marc:subfield marc:code="g" />
+   </marc:datafield>
+  </skos:member> 
+  <skos:member>
+   <marc:datafield marc:tag="600">
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member> 
+  <skos:member>
+   <marc:datafield marc:tag="610">
+    <marc:subfield marc:code="d" />
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member> 
+  <skos:member>
+   <marc:datafield marc:tag="611">
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member> 
+  <skos:member>
+   <marc:datafield marc:tag="630">
+    <marc:subfield marc:code="d" />	
+    <marc:subfield marc:code="f" />
+   </marc:datafield>
+  </skos:member> 
+  <skos:member>
+   <marc:datafield marc:tag="700">
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member>  
+  <skos:member>
+   <marc:datafield marc:tag="710">
+    <marc:subfield marc:code="d" />	
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="711">
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="730">
+    <marc:subfield marc:code="d" />	
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="800">
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="810">
+	<marc:subfield marc:code="d" />	
+    <marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="811">
+	<marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="830">
+	<marc:subfield marc:code="d" />
+	<marc:subfield marc:code="f" />	
+   </marc:datafield>
+  </skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#epochWork">
+ <skos:prefLabel>FRBR RDA Epoch (Work) MARC 21 Mapping</skos:prefLabel>
+ <rdfs:about rdf:resource="http://rdvocab.info/Elements/epochWork" />
+ <skos:Collection />
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#equinoxWork">
+ <skos:prefLabel>FRBR RDA Equinox MARC 21 Mapping</skos:prefLabel>
+ <rdfs:about rdf:resource="http://rdvocab.info/Elements/equinoxWork" />
+ <skos:Collection>
+  <skos:member>
+   <marc:datafield marc:tag="034">
+    <marc:subfield marc:code="p" /> 
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield marc:tag="255">
+    <marc:subfield marc:code="e" />
+   </marc:datafield>
+  </skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#formOfWork">
+ <skos:prefLabel>FRBR RDA Form of Work MARC 21 Mapping</skos:prefLabel>
+ <rdfs:about rdf:resource="http://rdvocab.info/Elements/formOfWork" />
+ <skos:Collection>
+  <skos:member>
+   <skos:exactMatch>
+    <marc:controlfield marc:tag="ldr">6</marc:controlfield>
+    <skos:notation>a</skos:notation>
+   </skos:exactMatch>
+   <marc:controlfield marc:tag="006">1</marc:controlfield>
+   <marc:controlfield marc:tag="006">2</marc:controlfield>
+   <marc:controlfield marc:tag="006">3</marc:controlfield>
+   <marc:controlfield marc:tag="006">4</marc:controlfield>
+   <marc:controlfield marc:tag="006">7</marc:controlfield>
+   <marc:controlfield marc:tag="006">8</marc:controlfield>
+   <marc:controlfield marc:tag="006">9</marc:controlfield>
+   <marc:controlfield marc:tag="006">10</marc:controlfield>
+   <marc:controlfield marc:tag="006">14</marc:controlfield>
+   <marc:controlfield marc:tag="006">17</marc:controlfield>
+  </skos:member>
+  <!-- Mapping for Catographic material //-->
+  <skos:member>
+   <skos:exactMatch>
+    <marc:controlfield marc:tag="ldr">6</marc:controlfield>
+    <skos:notation>e</skos:notation>
+    <skos:notation>f</skos:notation>
+   </skos:exactMatch>
+   <marc:controlfield marc:tag="006">8</marc:controlfield>
+   <marc:controlfield marc:tag="006">14</marc:controlfield>
+   <marc:controlfield marc:tag="006">16</marc:controlfield>
+   <marc:controlfield marc:tag="006">17</marc:controlfield>
+  </skos:member>
+  <!-- Mapping for Music material //-->
+  <skos:member>
+   <skos:exactMatch>
+    <marc:controlfield marc:tag="ldr">6</marc:controlfield>
+    <skos:notation>c</skos:notation>
+    <skos:notation>d</skos:notation>
+    <skos:notation>j</skos:notation>
+   </skos:exactMatch>
+   <marc:controlfield marc:tag="006">1</marc:controlfield>
+   <marc:controlfield marc:tag="006">2</marc:controlfield>
+   <marc:controlfield marc:tag="006">7</marc:controlfield>
+   <marc:controlfield marc:tag="006">8</marc:controlfield>   
+   <marc:controlfield marc:tag="006">9</marc:controlfield>
+   <marc:controlfield marc:tag="006">10</marc:controlfield>   
+   <marc:controlfield marc:tag="006">11</marc:controlfield>
+   <marc:controlfield marc:tag="006">12</marc:controlfield>
+  </skos:member>
+  
+  <skos:member>
+   <marc:datafield tag="047">
+    <marc:subfield code="a" />
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield tag="100">
+    <marc:subfield code="k" />
+   </marc:datafield>
+  </skos:member>
+  <skos:member>
+   <marc:datafield tag="110">
+    <marc:subfield code="k" />
+   </marc:datafield>
+  </skos:member>
+ </skos:Collection>
+</rdf:Description>
+	
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#identifierForTheWork">
+<skos:prefLabel>FRBR RDA identifier for the Work MARC 21 Mapping</skos:prefLabel>
+<rdfs:about rdf:resource="http://rdvocab.info/Elements/identifierForTheWork" />
+<skos:Collection />
+</rdf:Description>
+ 
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#intendedAudienceWork">
+<skos:prefLabel>FRBR RDA intended audience for the Work MARC 21 Mapping</skos:prefLabel>
+<rdfs:about rdf:resource="http://rdvocab.info/Elements/intendedAudienceWork" />
+<skos:Collection>
+ <skos:member>
+  <marc:controlfield marc:tag="006">5</marc:controlfield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="521">
+   <marc:subfield marc:code="a" />
+  </marc:datafield>
+ </skos:member>
+</skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#mediumOfPerformanceWork">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/mediumOfPerformanceWork" />
+<skos:prefLabel>FRBR RDA medium of Performace for Work MARC 21 Mapping</skos:prefLabel>
+<skos:Collection>
+ <skos:member>
+  <marc:datafield marc:tag="048">
+   <marc:subfield marc:code="a" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="600">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="610">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="630">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="700">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="710">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="730">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="800">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="810">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="830">
+   <marc:subfield marc:code="m" />
+  </marc:datafield>
+ </skos:member>  
+</skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf#titleOfTheWork">
+<skos:prefLabel>FRBR RDA title of the Work MARC 21 Mapping</skos:prefLabel>
+<rdfs:about rdf:resource="http://rdvocab.info/Elements/titleOfTheWork" />
+<skos:Collection>
+
+ <skos:member>
+  <marc:datafield marc:tag="100">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield> 
+ </skos:member>
+
+<skos:member>
+  <marc:datafield marc:tag="110">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield> 
+ </skos:member>
+
+<skos:member>
+  <marc:datafield marc:tag="111">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield> 
+ </skos:member>
+
+<skos:member>
+  <marc:datafield marc:tag="130">
+   <marc:subfield marc:code="a" />
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield> 
+ </skos:member>
+
+<skos:member>
+  <marc:datafield marc:tag="240">
+   <marc:subfield marc:code="a" />
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+  </marc:datafield> 
+ </skos:member>
+
+<skos:member>
+  <marc:datafield marc:tag="243">
+   <marc:subfield marc:code="a" />
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+  </marc:datafield> 
+ </skos:member>
+
+ <skos:member>
+  <marc:datafield marc:tag="600">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="610">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="630">
+   <marc:subfield marc:code="a" />
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="700">
+   <marc:subfield marc:code="n" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="710">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="711">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="730">
+   <marc:subfield marc:code="a" />
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="740">
+   <marc:subfield marc:code="a" />
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>    
+  <marc:datafield marc:tag="760">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>    
+  <marc:datafield marc:tag="762">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>    
+  <marc:datafield marc:tag="765">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>    
+  <marc:datafield marc:tag="767">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>    
+  <marc:datafield marc:tag="770">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>    
+ <marc:datafield marc:tag="772">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>    
+ <marc:datafield marc:tag="773">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>    
+ <marc:datafield marc:tag="774">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>    
+ <marc:datafield marc:tag="775">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+<skos:member>    
+ <marc:datafield marc:tag="776">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member> 
+<skos:member>    
+ <marc:datafield marc:tag="777">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member> 
+<skos:member>    
+ <marc:datafield marc:tag="780">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member>
+<skos:member>    
+ <marc:datafield marc:tag="785">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member> 
+<skos:member>    
+ <marc:datafield marc:tag="786">
+   <marc:subfield marc:code="s" />
+  </marc:datafield>
+ </skos:member> 
+<skos:member>    
+ <marc:datafield marc:tag="800">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+ </marc:datafield>
+</skos:member> 
+<skos:member>    
+ <marc:datafield marc:tag="810">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+ </marc:datafield>
+</skos:member> 
+<skos:member>    
+ <marc:datafield marc:tag="811">
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+ </marc:datafield>
+</skos:member> 
+<skos:member>    
+ <marc:datafield marc:tag="830">
+   <marc:subfield marc:code="a" />
+   <marc:subfield marc:code="n" />
+   <marc:subfield marc:code="p" />
+   <marc:subfield marc:code="t" />
+ </marc:datafield>
+</skos:member> 
+
+</skos:Collection>
+</rdf:Description>
+</rdf:RDF>
