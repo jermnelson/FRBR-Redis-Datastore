@@ -3,15 +3,67 @@
          xmlns:skos='http://www.w3.org/2004/02/skos/core#'
 		 xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
 		 xmlns:marc="http://www.loc.gov/standards/marcxml#">
+
+
+
 	
-<rdf:Description rdf:about="marc21toFRBRExpression.rdf/criticalResponse">
-<rdf:about rdf:resource="http://ifla.info/FRBR/criticalResponse" />
+<rdf:Description rdf:about="marc21toFRBRExpression/criticalResponse">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/hasCriticalResponseToTheExpression" />
 <skos:prefLabel>FRBR critical response of Expression for MARC 21 mapping</skos:prefLabel>
 <skos:Collection>
  <skos:member>
   <marc:datafield marc:tag="586">
    <marc:subfield marc:code="a"/>
   </marc:datafield>
+ </skos:member>
+</skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRExpression/date">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/hasDateOfExpression" />
+<skos:Collection />
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRExpression/extent">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/hasExtentOfTheExpression" />
+<skos:Collection>
+ <skos:member>
+   <skos:exactMatch>
+    <marc:leader>6</marc:leader>
+    <skos:notation>k</skos:notation>
+   </skos:exactMatch>
+   <marc:controlfield marc:tag="006">1,2</marc:controlfield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="256">
+	<marc:subfield marc:code="a" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="306">
+	<marc:subfield marc:code="a" />
+  </marc:datafield>
+ </skos:member>
+</skos:Collection>
+</rdf:Description>
+		
+<rdf:Description rdf:about="marc21toFRBRExpression/form">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/hasFormOfExpression" />
+<skos:Collection>
+ <skos:member>
+  <marc:controlfield marc:tag="007">0</marc:controlfield>
+ </skos:member>
+</skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:about="marc21toFRBRExpression/formOfMusicalNotationExpression">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/formOfMusicalNotationExpression" />
+<skos:Collection>
+ <skos:member>
+  <skos:exactMatch>
+   <marc:controlfield marc:tag="007">0</marc:controlfield>
+   <skos:notation>q</skos:notation>
+  </skos:exactMatch>
  </skos:member>
 </skos:Collection>
 </rdf:Description>
@@ -86,7 +138,18 @@
 </skos:Collection>
 </rdf:Description>
 		 
-<rdf:Description rdf:about="marc21toFRBRRDAExpression.rdf/summarizationOfTheContentExpression">
+<rdf:Description rdf:about="marc21toFRBRExpression/otherDistinguishingCharacteristicOfTheExpression">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/otherDistinguishingCharacteristicOfTheExpression" />
+<skos:Collection>
+ <skos:member>
+  <marc:datafield marc:tag="730">
+   <marc:subfield marc:code="o" />
+  </marc:datafield>
+ </skos:member>
+</skos:Collection>
+</rdf:Description>
+		 
+<rdf:Description rdf:about="marc21toFRBRExpression/summarizationOfTheContentExpression">
 <rdf:about rdf:resource="http://rdvocab.info/Elements/summarizationOfTheContentExpression" />
 <skos:prefLabel>FRBR RDA Expression's summarization of content MARC21 Mapping</skos:prefLabel>
 <skos:Collection>

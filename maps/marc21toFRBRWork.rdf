@@ -5,21 +5,22 @@
 		 xmlns:marc="http://www.loc.gov/standards/marcxml#">
 
 
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/academicDegreeWork">
+<rdf:Description rdf:about="marc21toFRBRWork/academicDegreeWork">
  <skos:prefLabel>FRBR RDA Academic Degree MARC 21 Mapping</skos:prefLabel>
  <rdfs:about rdf:resource="http://rdvocab.info/Elements/academicDegreeWork" />
  <rdf:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" />
  <skos:Collection />
 </rdf:Description>
 
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/coverageOfTheContentWork">
+<rdf:Description rdf:about="marc21toFRBRWork/coverageOfTheContentWork">
  <skos:prefLabel>FRBR RDA Coverage of the content (Work) MARC 21 Mapping</skos:prefLabel>
  <rdfs:about rdf:resource="http://rdvocab.info/Elements/coverageOfTheContentWork" />
  <rdf:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" />
  <skos:Collection />
 </rdf:Description>
 
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/dateOfWork">
+
+<rdf:Description rdf:about="marc21toFRBRWork/dateOfWork">
  <skos:prefLabel>FRBR RDA Date of Work MARC 21 Mapping</skos:prefLabel>
  <rdfs:about rdf:resource="http://rdvocab.info/Elements/dateOfWork" />
  <skos:Collection>
@@ -132,13 +133,13 @@
  </skos:Collection>
 </rdf:Description>
 
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/epochWork">
+<rdf:Description rdf:about="marc21toFRBRWork/epochWork">
  <skos:prefLabel>FRBR RDA Epoch (Work) MARC 21 Mapping</skos:prefLabel>
  <rdfs:about rdf:resource="http://rdvocab.info/Elements/epochWork" />
  <skos:Collection />
 </rdf:Description>
 
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/equinoxWork">
+<rdf:Description rdf:about="marc21toFRBRWork/equinoxWork">
  <skos:prefLabel>FRBR RDA Equinox MARC 21 Mapping</skos:prefLabel>
  <rdfs:about rdf:resource="http://rdvocab.info/Elements/equinoxWork" />
  <skos:Collection>
@@ -155,13 +156,13 @@
  </skos:Collection>
 </rdf:Description>
 
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/formOfWork">
+<rdf:Description rdf:about="marc21toFRBRWork/formOfWork">
  <skos:prefLabel>FRBR RDA Form of Work MARC 21 Mapping</skos:prefLabel>
  <rdfs:about rdf:resource="http://rdvocab.info/Elements/formOfWork" />
  <skos:Collection>
   <skos:member>
    <skos:exactMatch>
-    <marc:controlfield marc:tag="ldr">6</marc:controlfield>
+    <marc:leader>6</marc:leader>
     <skos:notation>a</skos:notation>
    </skos:exactMatch>
    <marc:controlfield marc:tag="006">1,2,3,4,7,8,9,10,14,17</marc:controlfield>
@@ -169,19 +170,16 @@
   <!-- Mapping for Catographic material //-->
   <skos:member>
    <skos:exactMatch>
-    <marc:controlfield marc:tag="ldr">6</marc:controlfield>
-    <skos:notation>e</skos:notation>
-    <skos:notation>f</skos:notation>
+    <marc:leader>6</marc:leader>
+    <skos:notation>e,f</skos:notation>
    </skos:exactMatch>
    <marc:controlfield marc:tag="006">8,14,16,17</marc:controlfield>
   </skos:member>
   <!-- Mapping for Music material //-->
   <skos:member>
    <skos:exactMatch>
-    <marc:controlfield marc:tag="ldr">6</marc:controlfield>
-    <skos:notation>c</skos:notation>
-    <skos:notation>d</skos:notation>
-    <skos:notation>j</skos:notation>
+    <marc:leader>6</marc:leader>
+    <skos:notation>c,d,j</skos:notation>
    </skos:exactMatch>
    <marc:controlfield marc:tag="006">1,2,7,8,9,10,11,12</marc:controlfield>
   </skos:member>
@@ -204,13 +202,13 @@
  </skos:Collection>
 </rdf:Description>
 	
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/identifierForTheWork">
+<rdf:Description rdf:about="marc21toFRBRWork/identifierForTheWork">
 <skos:prefLabel>FRBR RDA identifier for the Work MARC 21 Mapping</skos:prefLabel>
 <rdfs:about rdf:resource="http://rdvocab.info/Elements/identifierForTheWork" />
 <skos:Collection />
 </rdf:Description>
  
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/intendedAudienceWork">
+<rdf:Description rdf:about="marc21toFRBRWork/intendedAudienceWork">
 <skos:prefLabel>FRBR RDA intended audience for the Work MARC 21 Mapping</skos:prefLabel>
 <rdfs:about rdf:resource="http://rdvocab.info/Elements/intendedAudienceWork" />
 <skos:Collection>
@@ -225,7 +223,7 @@
 </skos:Collection>
 </rdf:Description>
 
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/mediumOfPerformanceWork">
+<rdf:Description rdf:about="marc21toFRBRWork/mediumOfPerformanceWork">
 <rdf:about rdf:resource="http://rdvocab.info/Elements/mediumOfPerformanceWork" />
 <skos:prefLabel>FRBR RDA medium of Performace for Work MARC 21 Mapping</skos:prefLabel>
 <skos:Collection>
@@ -282,7 +280,7 @@
 </skos:Collection>
 </rdf:Description>
 
-<rdf:Description rdf:about="marc21toFRBRRDAWork.rdf/titleOfTheWork">
+<rdf:Description rdf:about="marc21toFRBRWork/titleOfTheWork">
 <skos:prefLabel>FRBR RDA title of the Work MARC 21 Mapping</skos:prefLabel>
 <rdfs:about rdf:resource="http://rdvocab.info/Elements/titleOfTheWork" />
 <skos:Collection>

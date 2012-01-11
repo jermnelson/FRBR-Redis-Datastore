@@ -4,11 +4,12 @@
 
 """
 __author__ = 'Jeremy Nelson'
+
 import __init__
 import os,sys,logging,datetime
 import pymarc,config,redis
 from lxml import etree
-from lib.frbr_rda import Work
+from lib.frbr import Work,Expression,Manifestation,Item
 import lib.namespaces as ns
 
 class MARCSKOSMapper(object):
@@ -143,14 +144,63 @@ class MARCSKOSMapper(object):
            
             raw_value = field.get_subfields(subfield)
             if len(raw_value) > 0:
-                new_redis_key = "%s:%s" % (redis_key,subfield)
-                redis_keys.append(new_redis_key)
-                self.redis_server.set(new_redis_key,
-                                      raw_value[0])
+                self.redis_server.hset(redis_key,
+                                       subfield,
+                                       raw_value[0])
+                hash_bang_key = "%s#%s" % (redis_key,subfield)
+                redis_keys.append(hash_bang_key)
         
         return redis_keys
 
-        
+
+class MARCtoExpressionMap(MARCSKOSMapper):
+    """
+    The :class:`MARCtoExpressionMap` class takes a SKOS file and creates
+    a FRBR :class:`Expression` instances based on values of a MARC21 record
+    """
+
+    def __init__(self,
+                 redis_marc_key,
+                 redis_server,
+                 skos=None,
+                 expression=None):
+        """
+        :param redis_marc_key: Redis MARC Record Key
+        :param redis_server: Redis server
+        :param skos: Optional SKOS Mapping file
+        :param expression: Optional passed in FRBR Expression
+        """
+        if skos is None:
+            skos = "maps/marc21toFRBRExpression.rdf"
+        if expression is None:
+            self.entity = Expression()
+        else:
+            self.entity = expression
+        MARCSKOSMapper.__init__(self,
+                                redis_marc_key,
+                                redis_server,
+                                skos)
+
+
+    def process(self,
+                marc_record):
+        """
+        Function takes SKOS mapping and parsers MARC record
+        based on values.
+
+        :param marc_record: MARC record
+        """
+        descriptions = self.skos.findall('{%s}Description' % ns.RDF)
+        print("..processing Expression")
+        for mapping in descriptions:
+            about = mapping.attrib['{%s}about' % ns.RDF]
+            expression_property = os.path.split(about)[1]
+            rule_collection = mapping.find('{%s}Collection' % ns.SKOS)
+            self.applyRuleCollection(expression_property,
+                                     rule_collection,
+                                     marc_record)
+            
+
 
 class MARCtoWorkMap(MARCSKOSMapper):
     """
@@ -169,8 +219,7 @@ class MARCtoWorkMap(MARCSKOSMapper):
         :param redis_marc_key: Redis MARC Record Key
         :param redis_server: Redis server
         :param skos: Optional SKOS Mapping file
-        :param work: Optional passed in FRBR RDA Work
-        
+        :param work: Optional passed in FRBR Work
         """
         if skos is None:
             skos = 'maps/marc21toFRBRWork.rdf'
@@ -197,11 +246,10 @@ class MARCtoWorkMap(MARCSKOSMapper):
         for mapping in descriptions:
             about = mapping.attrib['{%s}about' % ns.RDF]
             work_property = os.path.split(about)[1]
-            if hasattr(self.entity,work_property):
-                rule_collection = mapping.find('{%s}Collection' % ns.SKOS)
-                self.applyRuleCollection(work_property,
-                                         rule_collection,
-                                         marc_record)
+            rule_collection = mapping.find('{%s}Collection' % ns.SKOS)
+            self.applyRuleCollection(work_property,
+                                     rule_collection,
+                                     marc_record)
                 
         
                     
@@ -215,7 +263,7 @@ if __name__ == '__main__':
     redis_server = redis.StrictRedis(host=config.REDIS_HOST,
                                  port=config.REDIS_PORT,
                                  db=config.REDIS_DB)
-    print("Running MARC21 to Redis FRBR RDA standalone mode on %s" %\
+    print("Running MARC21 to Redis FRBR standalone mode on %s" %\
           datetime.datetime.now().isoformat())
     from pymarc import MARCReader
     reader = MARCReader(open('fixures/ccweb.mrc','rb'))
@@ -225,8 +273,11 @@ if __name__ == '__main__':
         work_parser = MARCtoWorkMap(marc_rec_key,
                                     redis_server)
         work_parser.process(row)
+        expression_parser = MARCtoExpressionMap(marc_rec_key,
+                                                redis_server)
+        expression_parser.process(row)
                         
     ##redis_server.flushdb()
 ##    work_parser = MARCtoWorkMap('%s/maps/marc21toFRBRRDAWork.rdf' % os.curdir())
-    print("Finished running MARC21 to Redis FRBR RDA standalone mode on %s" % datetime.datetime.now().isoformat())
+    print("Finished running MARC21 to Redis FRBR standalone mode on %s" % datetime.datetime.now().isoformat())
     

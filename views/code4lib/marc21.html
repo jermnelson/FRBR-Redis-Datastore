@@ -54,6 +54,18 @@
   work done by the Library of Congress in mapping MARC21 fields to 
   FRBR entities as well as the RDA-specific MARC fields.
  </p>
+</div>
+</%block>
 
+<%block name="subtopic_two">
+<div class="well">
+ <h2>Redis Datastore Structure</h2>
+ <p>
+  To store a MARC21 record in <a href="/background/redis.html">Redis</a>
+  the <a href="${project.url}">${project.name}</a> uses the following
+  structure:
+  <code>marc21:{incremented key number}:marc field</code>.
+ </p>
+ 
 </div>
 </%block>

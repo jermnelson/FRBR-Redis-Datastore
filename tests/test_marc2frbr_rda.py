@@ -27,7 +27,18 @@ class TestMARCSKOSMapper(unittest.TestCase):
         pass
 
     def tearDown(self):
+        redis_server.flushdb()
+
+class TestMARCtoExpressionMap(unittest.TestCase):
+
+    def setUp(self):
         pass
+
+    def test_process(self):
+        pass
+
+    def tearDown(self):
+        redis_server.flushdb()
 
 class TestMARCtoWorkMap(unittest.TestCase):
 
@@ -38,5 +49,5 @@ class TestMARCtoWorkMap(unittest.TestCase):
         pass
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
