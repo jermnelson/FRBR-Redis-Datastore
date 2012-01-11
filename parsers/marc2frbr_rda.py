@@ -3,18 +3,29 @@
  datastore using RDA properties for FRBR elements.
 
 """
+__author__ = 'Jeremy Nelson'
+import __init__
 import os,sys,logging,datetime
-import pymarc
+import pymarc,config,redis
 from lxml import etree
 from lib.frbr_rda import Work
 import lib.namespaces as ns
 
 class MARCSKOSMapper(object):
 
-    def __init__(self,skos):
+    def __init__(self,
+                 redis_marc_key,
+                 redis_server,
+                 skos):
         """
+
+        :param redis_marc_key: Redis MARC key, unique Redis key for MARC record
+                               that is being mapped to FRBR entities
+        :param redis_server: Redis server
         :param skos: SKOS filename
         """
+        self.redis_key = redis_marc_key
+        self.redis_server = redis_server
         raw_skos = open(skos,'rb').read()
         self.skos = etree.XML(raw_skos)
 
@@ -48,9 +59,16 @@ class MARCSKOSMapper(object):
 
 
     def applyRuleCollection(self,
-                        collection,
-                        marc_record):
+                            entity_property,
+                            collection,
+                            marc_record):
         """
+        Method applies a collection of rules about one or more MARC fields
+        pertaining to a single FRBR RDA entity. Extracts and adds values to
+        the record's Redis keystore and then adds key as a value to entity
+        property's key in Redis.
+
+        :param entity_property: Entity's property
         :param collection: SKOS Collection element
         :param marc_record: MARC record
         """
@@ -63,32 +81,45 @@ class MARCSKOSMapper(object):
                 pass
             datafield = member.find('{%s}datafield' % ns.MARC)
             if datafield is not None:
-                print(self.extractVariableRule(datafield,marc_record))
+                result = self.extractVariableRule(datafield,marc_record)
+                if result is not None and len(result) > 0:
+                    self.entity.set_property(entity_property,
+                                             result)
             fixedfield = member.find('{%s}controlfield' % ns.MARC)
             if fixedfield is not None:
-                print(self.extractFixedRule(fixedfield,marc_record))
+                result = self.extractFixedRule(fixedfield,marc_record)
+                if result is not None and len(result) > 0:
+                    self.entity.set_property(entity_property,
+                                             result)
+        
             
 
     def extractFixedRule(self,
                          element,
                          marc_record):
         """
-        :param element: fixed or controled MARC XML element
+        :param element: fixed or controlled MARC XML element
         :param marc_record: MARC record
         """
         marc_fieldname = element.attrib['{%s}tag' % ns.MARC]
-        redis_key = 'marc21:%s:' % marc_fieldname
-        # Assumes zero count position
-        position = element.text
-        redis_key += position
+        redis_key = '%s:%s:' % (self.redis_key,
+                                marc_fieldname)
+        # Convert csv values if present to list
+        csv = element.text.split(",")
         field = marc_record[marc_fieldname]
         if field is None:
             return None
-        data = field.data[position]
-        if data is None:
+        data = ''
+        for position in csv:
+            raw_data = field.data[int(position)]
+            redis_key += position
+            data += raw_data
+        
+        if data is None or len(data.strip()) < 1:
             return None
         else:
-            return(redis_key,data)
+            self.redis_server.set(redis_key,data)
+            return redis_key
 
 
     def extractVariableRule(self,
@@ -102,24 +133,22 @@ class MARCSKOSMapper(object):
         field = marc_record[marc_fieldname]
         if field is None:
             return None
-        redis_key = 'marc21:%s:' % marc_fieldname
+        redis_key = '%s:%s' % (self.redis_key,
+                               marc_fieldname)
         # tries to extracts all subfields
         subfields = element.findall('{%s}subfield' % ns.MARC)
-        codes,redis_values = [],[]
+        redis_keys = []
         for marc_sub in subfields:
             subfield = marc_sub.attrib['{%s}code' % ns.MARC]
            
             raw_value = field.get_subfields(subfield)
             if len(raw_value) > 0:
-                redis_key += subfield
-                redis_values.append(raw_value)
-            
-        if len(redis_values) == 1:
-            return (redis_key,redis_values[0])
-        elif len(redis_values) < 1:
-            return None
-        else:
-            return (redis_key,redis_values)
+                new_redis_key = "%s:%s" % (redis_key,subfield)
+                redis_keys.append(new_redis_key)
+                self.redis_server.set(new_redis_key,
+                                      raw_value[0])
+        
+        return redis_keys
 
         
 
@@ -130,18 +159,29 @@ class MARCtoWorkMap(MARCSKOSMapper):
     """
 
     def __init__(self,
+                 redis_marc_key,
+                 redis_server,
                  skos=None,
-                 work=None,):
+                 work=None):
         """
-        Initialize new instance of `MARCtoWorkMap` clas
+        Initialize new instance of `MARCtoWorkMap` class
 
-        :param work: Optional passed in FRBR RDA Work
+        :param redis_marc_key: Redis MARC Record Key
+        :param redis_server: Redis server
         :param skos: Optional SKOS Mapping file
+        :param work: Optional passed in FRBR RDA Work
+        
         """
         if skos is None:
-            skos = 'maps/marc21toFRBRRDAWork.rdf'
-        self.work=work
-        MARCSKOSMapper.__init__(self,skos)
+            skos = 'maps/marc21toFRBRWork.rdf'
+        if work is None:
+            self.entity = Work()
+        else:
+            self.entity=work
+        MARCSKOSMapper.__init__(self,
+                                redis_marc_key,
+                                redis_server,
+                                skos)
         
 
 
@@ -153,22 +193,40 @@ class MARCtoWorkMap(MARCSKOSMapper):
         :param marc_record: MARC record
         """
         descriptions = self.skos.findall('{%s}Description' % ns.RDF)
-        print("Processing Work")
+        print("..processing Work")
         for mapping in descriptions:
             about = mapping.attrib['{%s}about' % ns.RDF]
             work_property = os.path.split(about)[1]
-            print(work_property)
-            rule_collection = mapping.find('{%s}Collection' % ns.SKOS)
-            self.applyRuleCollection(rule_collection,marc_record)
+            if hasattr(self.entity,work_property):
+                rule_collection = mapping.find('{%s}Collection' % ns.SKOS)
+                self.applyRuleCollection(work_property,
+                                         rule_collection,
+                                         marc_record)
+                
+        
+                    
+            
             
             
             
         
 
 if __name__ == '__main__':
+    redis_server = redis.StrictRedis(host=config.REDIS_HOST,
+                                 port=config.REDIS_PORT,
+                                 db=config.REDIS_DB)
     print("Running MARC21 to Redis FRBR RDA standalone mode on %s" %\
           datetime.datetime.now().isoformat())
-    marc_filename = '%s/fixures/ccweb.mrc' % os.curdir()
-    work_parser = MARCtoWorkMap('%s/maps/marc21toFRBRRDAWork.rdf' % os.curdir())
+    from pymarc import MARCReader
+    reader = MARCReader(open('fixures/ccweb.mrc','rb'))
+    recs = []
+    for row in reader:
+        marc_rec_key = "marc21:%s" % redis_server.incr("global:marc21")
+        work_parser = MARCtoWorkMap(marc_rec_key,
+                                    redis_server)
+        work_parser.process(row)
+                        
+    ##redis_server.flushdb()
+##    work_parser = MARCtoWorkMap('%s/maps/marc21toFRBRRDAWork.rdf' % os.curdir())
     print("Finished running MARC21 to Redis FRBR RDA standalone mode on %s" % datetime.datetime.now().isoformat())
     

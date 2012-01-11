@@ -182,7 +182,6 @@ def load_rda_classes(rda_frbr_file,
         reg_name = desc.find('{%s}name' % ns.REG)
         if reg_name is not None:
             class_name = reg_name.text
-            logging.error(class_name)
             params = {'redis_key': '%s:%s' % (redis_prefix,
                                               class_name)}
             for prop in all_properties:
@@ -268,3 +267,35 @@ class BaseModel(object):
                     self.redis_server.sadd(property_set_key,entity)
                     self.redis_server.hset(self.frbr_key,obj_property,property_set_key)
         return self.get_property(obj_property)
+
+    def set_property(self,obj_property,value):
+        """
+        Method sets property to value. If obj_property already exists
+        and value is de-duped and turned into a set if needed.
+
+        :param obj_property: name of property
+        :param value: Value of property
+        """
+        existing_properties = self.get_property(obj_property)
+        if existing_properties is None:
+            if type(value) == list:
+                if len(value) == 1:
+                    self.redis_server.hset(self.frbr_key,
+                                           obj_property,
+                                           value[0])
+                else:
+                    new_redis_key = "%s:%s" % (self.frbr_key,
+                                               obj_property)
+                    for row in value:
+                        self.redis_server.sadd(new_redis_key,
+                                               row)
+                    self.redis_server.hset(self.frbr_key,
+                                           obj_property,
+                                           new_redis_key)
+            else:
+                self.redis_server.hset(self.frbr_key,
+                                       obj_property,
+                                       value)
+                
+        
+        

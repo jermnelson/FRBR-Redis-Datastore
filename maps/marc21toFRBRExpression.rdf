@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+         xmlns:skos='http://www.w3.org/2004/02/skos/core#'
+		 xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
+		 xmlns:marc="http://www.loc.gov/standards/marcxml#">
+	
+<rdf:Description rdf:about="marc21toFRBRExpression.rdf/criticalResponse">
+<rdf:about rdf:resource="http://ifla.info/FRBR/criticalResponse" />
+<skos:prefLabel>FRBR critical response of Expression for MARC 21 mapping</skos:prefLabel>
+<skos:Collection>
+ <skos:member>
+  <marc:datafield marc:tag="586">
+   <marc:subfield marc:code="a"/>
+  </marc:datafield>
+ </skos:member>
+</skos:Collection>
+</rdf:Description>
+		 
+<rdf:Description rdf:about="marc21toFRBRExpression.rdf/languageOfExpression">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/languageOfExpression" />
+<skos:prefLabel>FRBR RDA language of Expression for MARC 21 mapping</skos:prefLabel>
+<skos:Collection>
+ <skos:member>
+  <marc:datafield marc:tag="546">
+   <marc:subfield marc:code="a" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="600">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="610">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="611">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="630">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="700">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="710">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="711">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="800">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="810">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>  
+ <skos:member>
+  <marc:datafield marc:tag="811">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member> 
+ <skos:member>
+  <marc:datafield marc:tag="830">
+   <marc:subfield marc:code="l" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:controlfield marc:tag="008">35,36,37</marc:controlfield>
+ </skos:member>  
+</skos:Collection>
+</rdf:Description>
+		 
+<rdf:Description rdf:about="marc21toFRBRRDAExpression.rdf/summarizationOfTheContentExpression">
+<rdf:about rdf:resource="http://rdvocab.info/Elements/summarizationOfTheContentExpression" />
+<skos:prefLabel>FRBR RDA Expression's summarization of content MARC21 Mapping</skos:prefLabel>
+<skos:Collection>
+ <skos:member>
+  <marc:datafield marc:tag="505">
+   <marc:subfield marc:code="a" />
+   <marc:subfield marc:code="g" />
+   <marc:subfield marc:code="t" />
+  </marc:datafield>
+ </skos:member>
+ <skos:member>
+  <marc:datafield marc:tag="520">
+    <marc:subfield marc:code="a" />
+  </marc:datafield>
+ </skos:member>
+</skos:Collection>
+</rdf:Description>
+		 
+</rdf:RDF>
