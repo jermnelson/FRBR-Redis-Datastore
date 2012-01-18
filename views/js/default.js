@@ -17,3 +17,19 @@ function frbrDisplay() {
   //var item = paper.rect(25,25,55,55);
   
 }
+
+function salvoAnimation() {
+ $('#brand-remix').hide();
+	
+}
+
+function salvoAnimation2(action) {
+ if(action == 'start') {
+   $(".content").css('opacity',0.1);
+   $('#charles-stross-galatic-cataloger').show('slow');
+ } else {
+   $('#charles-stross-galatic-cataloger').fadeOut('slow');
+   $(".content").css('opacity',1);
+ }
+}
+

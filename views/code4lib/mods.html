@@ -35,6 +35,29 @@
  </div>
  </%block>
  
+ <%block name="subtopic_one">
+ ## START MODS XPATH as Redis Key DIV
+ <div class="">
+  <h2>XML, XPATH, and Redis Key-Value</h2>
+  <p>To represent the MODS's XML structure in the key-value
+     data structure of <a href="/background/redis.html">Redis</a>,
+     we use a modified version of the XML query language, XPATH, as a
+     hash key for the MODS record. While this may sound complicated, it
+     is actually easier to see as this examples show:
+   </p>
+   <table class="condensed bordered zebra-striped">
+   <thead>
+    <tr>
+     <th>MODS XPath</th>
+     <th>Redis Hash</th>
+     <th>Key</th>
+     <th>Value</th>
+   </thead>
+   </table>
+ ## END MODS XPATH as Redis Key DIV
+ </div>
+ </%block>
+ 
  ## START MODS LOC Journal Article MODS Example DIV
  <div class="modal hide fade span10" id="mods-journal-example">
   ## START MODS LOC Modal Header DIV

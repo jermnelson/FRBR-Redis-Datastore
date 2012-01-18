@@ -88,11 +88,12 @@ def engineering_base():
     return template.render(section="engineering",
                            project=project)
 
-@route('/salvos.html')
-def engineering_base():
-    template = conference_templates.get_template('salvos.html')
-    return template.render(section="salvos",
+@get('/salvo.html')
+def salvo():
+    template = conference_templates.get_template('salvo.html')
+    return template.render(section="salvo",
                            project=project)
+
 
 @get('/record2cube/record.html')
 def flat_view():

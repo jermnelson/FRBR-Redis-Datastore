@@ -1,12 +1,25 @@
 <%inherit file="presentation-inside.html" />
 
 <%block name="more_js">
-<script type="javascript">
- function bremix() {
-	 document.getElementById('brand-remax').attrib('display') = 'box';
- }
-
+<script src="/js/default.js"></script>
+<script>
+ $(document).ready(function() {
+	$("#charles-stross-galatic-cataloger").hide();
+	$("#Microsoft-Research-Future-of-Writing").hide();
+	$("#internet-of-things").hide();
+ });
 </script>
+</%block>
+
+<%block name="more_css">
+<style>
+ #charles-stross-galatic-cataloger {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  width: 640px;
+ }
+</style>
 </%block>
 
 ## START content DIV
@@ -20,14 +33,6 @@
  ## END hero DIV
  </div>
 
- ## START Brand DIV
- <div class="hero-unit" id="brand-remax" style="display:none;">
- <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Stewart_Brand_-Sausalito%2C_California%2C_USA_-at_home-14Dec2010.jpg/320px-Stewart_Brand_-Sausalito%2C_California%2C_USA_-at_home-14Dec2010.jpg" style="float:left" />
- <h2 style="color:gold">We are all catalogers we might as we well get good at it</h2>
- <p>Remix of Steward Brand's quote from the first page of the Whole Earth
-    catalog</p>
- ## END Brand DIV
- </div>
  
 
  
@@ -35,17 +40,18 @@
  <div class="row">
   ## START What? Why? DIV
   <div class="span6">
-   <p><a class="btn info large">Catalog What? Where? Why?</a></p>
+   <p><a class="btn info large" onclick="salvoAnimation()">Catalog What? Where? Why?</a></p>
   ## END What? Why? DIV
   </div>
   ## START Stross Comment DIV
   <div class="span5">
-  <p><a class="btn info large">Charles Stross Comment</a></p>
+  <p><a class="btn info large" onclick="salvoAnimation2('start')">Charles Stross Comment</a></p>
   ## END Stross Comment DIV
   </div>
   ## START Brand Remix DIV
   <div class="span5">
-    <p><a class="btn info large" onclick="bremix()">Stewart Brand Remix</a></p>
+    <p><a class="btn info large" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="brand-remix">Stewart Brand Remix</a></p>
   ## END Brand Remis DIV
   </div>
  ## END row DIV
@@ -53,6 +59,15 @@
 
 ## END content DIV
 </div>
+
+ ## START Brand DIV
+ <div class="modal hide fade span10" id="brand-remix">
+ <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Stewart_Brand_-Sausalito%2C_California%2C_USA_-at_home-14Dec2010.jpg/320px-Stewart_Brand_-Sausalito%2C_California%2C_USA_-at_home-14Dec2010.jpg" style="float:left" />
+ <h2 style="color:gold">We are all catalogers we might as we well get good at it</h2>
+ <p>Remix of Steward Brand's quote from the first page of the Whole Earth
+    catalog</p>
+ ## END Brand DIV
+ </div>
 
 ## START Stross Div
 <div class="hero-unit" id="charles-stross-galatic-cataloger" 
@@ -62,7 +77,7 @@
 <p>
  Magic is just computational realisim, making what we do even more
  voodoo. Do you ever imagine being a cataloger in a Lovercraftain, Lucas,
- Poter, Dungeons and Dragons, or Tokken universies?
+ Potter, Dungeons and Dragons, or Tokken universies?
 </p>
 <p>
  However! Unlike all of those other fields, we as librarians, information
@@ -73,6 +88,9 @@
 <p>
  So imagine your FRBR artifacts cataloged with your communitiy's metadata
  branes, creating the augmented world of smart splimes.
+</p>
+<p>
+<a class="btn alert large" onclick="salvoAnimation2()">Close</a>
 </p>
 ## END Stross Div
 </div>
@@ -100,4 +118,13 @@ predicted.
 ## END MS Future of Writing
 </div>
 
+## START Internet of Things DIV
+<div id="internet-of-things">
+<h2>Internet of Things</h2>
+<p>Does 
+ <a href="http://www.theinternetofthings.eu/">the Internet of Things</a> 
+ need a catalog?</p>
+<p>Does YOUR catalog add value your artifacts both real and imagined?</p>
 
+## END Internet of Things DIV
+</div>

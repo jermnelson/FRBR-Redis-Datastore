@@ -1,10 +1,10 @@
   <%inherit file="base.html" />
   <div class="hero-unit space_bk">
-        <h1 style="color:#600">Code4Lib 2012</h1>
-        <h2>NoSQL Bibliographic Records: Implementing a Native FRBR Datastore with Redis</h2>
-        <p style="margin-left:3em;margin-top:1.25em;">Jeremy Nelson<br/>
-         Colorado College<br/>
-         Tutt Library</p>
+        <h1 class="cc_royal">Code4Lib 2012</h1>
+        <h2 property="dc:title">NoSQL Bibliographic Records: Implementing a Native FRBR Datastore with Redis</h2>
+        <p style="margin-left:3em;margin-top:1.25em;"><span property="dc:creator">Jeremy Nelson</span><br/>
+         <span property="dc:publisher">Colorado College<br/>
+         Tutt Library</span></p>
          <p><a class="btn primary large" href="background.html">Begin »</a></p>
       </div>
 
@@ -12,19 +12,27 @@
       <div class="row">
         <div class="span6">
           <h2>Background</h2>  
-          <p>The <a href="#">FRBR-to-Redis-Datastore</a> platform project begins
-           with a basic understanding of the following bibliographic record
-           technologies <a href="background/data.html">MARC, MODS, and FRBR</a> 
-           implemented using a <a href="/background/nosql.html">NoSQL</a> technology called 
-           <a href="/background/redis.html">Redis</a>. 
+          <p>Using the Library of Congress 
+             <a href="/background/loc_framework.html">Bibliographic Framework for the Digital Age</a> 
+             as a starting point for software development requirements; the 
+             <a href="${project.url}">${project.name}</a> project
+             uses a legacy MARC catalog and digital repository of a 
+             small academic library to consolidate and expand services 
+             of its cataloging and systems to the users and community of 
+             a top-tier liberal arts college.
+           </p>          
+          <p>The <a href="#">FRBR-to-Redis-Datastore</a> project begins
+           with a basic understanding of the 
+           <a href="background/data.html">MARC, MODS, and FRBR</a> 
+           implemented using a <a href="/background/nosql.html">NoSQL</a> 
+           technology called <a href="/background/redis.html">Redis</a>. 
           </p>
-          <p>With a recent Library of Congress 
-           <a href="http://www.loc.gov/marc/transition/news/framework-103111.html">annoucement,</a>
-           <a href="/background/loc_framework.html">Bibliographic Framework for the Digital Age</a> as
-            software development requirements The <a href="${project.url}">${project.name}</a> platform project
-            a proof-of-concept using the MARC catalog and digital repository of a small academic library.
-           </p>
-          
+
+          <p>
+           This presentation guides you through the theories
+           and technologies behind one such proof-of-concept bibliographic 
+           framework for the 21st century.
+          </p>
           <p><a class="btn" href="/background.html">View details »</a></p>
           
         </div>
