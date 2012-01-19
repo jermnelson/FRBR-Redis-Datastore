@@ -12,6 +12,7 @@
      Library of Congress sponsor bibliographic XML schema defining
      elements and attributes including a subset of MARC 21 features.</p>
   <ul class="main-content">
+   
    <li>Used by Colorado College's 
        <a href="#">Fedora Commons Digital Archives</a></li>
   
@@ -32,20 +33,24 @@
    <button class="btn success" data-keyboard="true" data-backdrop="true" 
     data-controls-modal="mods-movie-example">Motion Picture</button>
   </p>
+  <p style="text-align:center;">
+   <button class="btn success" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="mods-thesis-example">Colorado College Thesis</button>
+  </p>
  </div>
  </%block>
  
  <%block name="subtopic_one">
- ## START MODS XPATH as Redis Key DIV
+ ## START MODS XPATH as Redis's Key DIV
  <div class="">
   <h2>XML, XPATH, and Redis Key-Value</h2>
   <p>To represent the MODS's XML structure in the key-value
      data structure of <a href="/background/redis.html">Redis</a>,
-     we use a modified version of the XML query language, XPATH, as a
-     hash key for the MODS record. While this may sound complicated, it
-     is actually easier to see as this examples show:
+     ${project.name} project uses a modified version of the XML query language,
+     XPATH, as a hash key for the MODS record. While this may 
+     sound complicated, it is actually easier to see as this examples show:
    </p>
-   <table class="condensed bordered zebra-striped">
+   <table class="condensed bordered-table zebra-striped">
    <thead>
     <tr>
      <th>MODS XPath</th>
@@ -53,6 +58,9 @@
      <th>Key</th>
      <th>Value</th>
    </thead>
+   <tbody>
+   
+   </tbody>
    </table>
  ## END MODS XPATH as Redis Key DIV
  </div>
@@ -113,25 +121,55 @@
   
   ## START MODS LOC Movie Body DIV
   <div class="modal-body">
-   ## START XML text PRE
-   <pre style="font-size: 1.1em;">
-    &lt;?xml version='1.0' encoding='UTF-8' ?&gt;
-    &lt;mods xmlns:xlink="http://www.w3.org/1999/xlink" 
-             version="3.0" 
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-             xmlns="http://www.loc.gov/mods/v3" 
-             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd"&gt;
-	
-        &lt;titleInfo&gt;
-         &lt;nonSort&gt;The &lt;/nonSort&gt;
-          &lt;title>Cast iron story [motion picture] /&lt;/title&gt;
-	       .
-	       .
-	       .
-        &lt;/titleInfo&gt;
-     &lt;/mods
-   ## END XML text PRE
-   </pre>
+   <textarea cols="60" rows="25">
+   <mods xmlns:xlink="http://www.w3.org/1999/xlink" version="3.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+		<titleInfo>
+			<nonSort>The</nonSort>
+			<title>Urban Question as a Scale Question</title>
+			<subTitle>Reflections on Henri Lefebre, Urban Theory and the Politics of Scale</subTitle>
+		</titleInfo>
+		<name type="personal">
+			<namePart type="given">Neil</namePart>
+
+			<namePart type="family">Brenner</namePart>
+			<role>
+				<roleTerm type="text">author</roleTerm>
+			</role>
+		</name>
+		<typeOfResource>text</typeOfResource>
+		<genre>article</genre>
+
+		<originInfo>
+			<issuance>monographic</issuance>
+		</originInfo>
+		<relatedItem type="host">
+			<titleInfo>
+				<title>International Journal of Urban and Regional Research</title>
+			</titleInfo>
+			<originInfo>
+
+			<issuance>continuing</issuance>
+		</originInfo>
+			<part>
+				<detail type="volume">
+					<number>24</number>
+				</detail>
+				<detail type="issue">
+					<number>2</number>
+
+					<caption>no.</caption>
+				</detail>
+				<extent unit="pages">
+					<start>361</start>
+					<end>378</end>
+				</extent>
+				<date>2000</date>
+
+			</part>
+		</relatedItem>
+		<identifier>BrennerN2000a</identifier>
+	</mods>
+   </textarea>
   ## END MODS LOC Movie Body DIV
   </div>
   
@@ -147,3 +185,25 @@
   ## END MODS LOC Movie Body DIV
   </div>
   
+  ## START MODS CC Thesis DIV
+  <div class="modal hide fade span10" id="mods-thesis-example">
+   ## START MODS LOC Modal Header DIV
+   <div class="modal-header">
+   <a href="#" class="close">&times;</a>
+   <h3>Colorado College Thesis Example</h3>
+   ## END MODS LOC Modal Header DIV  
+   </div>
+   <div class="modal-body">
+   <textarea cols="30" rows="20">
+   <mods>
+    <titleInfo>
+     <title>NoSQL Bibliographic Records</title>
+    </titleInfo>
+   </mods>
+   </textarea>
+   </div>
+   <div class="modal-footer">
+    
+   </div>
+  ## END MODS CC Thesis DIV
+  </div>
