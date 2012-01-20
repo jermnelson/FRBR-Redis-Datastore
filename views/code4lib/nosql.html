@@ -10,31 +10,37 @@
  <div class="hero-unit" id="main-content">
   <h1 class="cc_royal">NoSQL &amp; Redis</h1>
   <p>NoSQL is a class of newer data storage 
-    technologies that are sidestepping the traditional 
-    normalized relationship datastore with enforced consistency 
-    and defined schema.</p>
+    technologies that sidestep traditional 
+    normalized databases that use SQL and schemas. While a comprehensive
+    review of NoSQL technogolies was not preformed for the 
+    <a href="${project.url}">${project.name}</a> project; Redis was selected
+    for its easy of deployment and flexiblity in exploring new data 
+    structures for representing bibliographic records.
+   </p>
    <a href="http://nosql-database.org/">http://nosql-database.org/</a>,
    <a href="http://en.wikipedia.org/wiki/NoSQL">http://en.wikipedia.org/wiki/NoSQL</a>
           
-  <p><a class="btn primary large" href="/background/hadoop.html">BigTable and Hadoop &raquo;</a></p>
+  <p><a class="btn primary large" href="/background/hadoop.html">Bigtable and Hadoop &raquo;</a></p>
  </div>
  
  <div class="row">
-  ## Google BigTable and Hadoop
+  ## Google Bigtable and Hadoop
   <div class="span6" style="background: url(http://hadoop.apache.org/images/hadoop-logo.jpg) bottom right no-repeat;">
    <h2>BigTable and Hadoop<a name="bigtable.html"></a></h2>
    <p>
-     NoSQL or, non-SQL could agruable be traced to BigTable...
+     The current 
    
    </p>
    <ul>
-     <li>Start of NoSQL can be traced to BigTable by Google Engineers</li>
-     <li>Google App Engine provides access to BigTable but with propertariy
-         restrictions and tied to Google's Cloud.
-     <li>Hadoop is the fastest growing open-source implementation of 
-         BigTable</li>
-     <li>Complex to set-up; IR model works for FRBR-based datastore</li>
-     <li>Tried to migration attempts from 
+     <li><a href="http://dl.acm.org/citation.cfm?doid=1365815.1365816">Bigtable</a> by Chang, Dean, etc, engineers with
+         Google</li>
+     <li><a href="http://code.google.com/appengine">Google App Engine</a>
+         provides access to Google propertariy implementation of BigTable and 
+         GFS but is limited by restrictions and is tied to Google's Cloud.</li>
+     <li><a href="http://hadoop.apache.org/">Hadoop</a> is one of the 
+         fastest growing open-source implementation of BigTable</li>
+     <li>Hadoop can be complex to set-up; model would seem to work for 
+         well for an FRBR-based datastore</li>
    </ul>
    <p><a class="btn" href="/background/hadoop.html">Details
       &raquo;</a></p>
@@ -43,12 +49,17 @@
   ## START Other classes of nosql Section
   <div class="span5">
    <h2>Other NoSQL <a name="other_nosql"></a></h2>
-   <p>Document based - </p>
-   <p>Cassandra - </p>
-   <p>Cache based - </p>
-   <ul>
-    <li>Used by Colorado College's Fedora Commons Digital Archives</li>
-   </ul>
+   <p>There are many other NoSQL datastore technologies including document stores like 
+    <a href="http://couchdb.apache.org/">CouchDB</a> and 
+    <a href="http://www.mongodb.org/">MongoDB</a>. More well-known graph 
+    datastores <a href="https://github.com/twitter/flockdb">FlockDB</a> and
+    <a href="http://neo4j.org/">Neo4j</a>. 
+   <p>Facebook donated their 
+     <a href="http://cassandra.apache.org/">Cassandra</a> technology to the
+     Apache foundation, that along with Amazon's 
+     <a href="http://aws.amazon.com/DynamoDB/">Dynamo</a> are
+     examples of eventually‐consistent key‐value stores.
+   </p>
    <p><a class="btn" href="/background/other_nosql.html">Details 
       &raquo;</a></p>
   </div>
@@ -63,9 +74,9 @@
   <ul>
     <li>Fast, C code</li>
     <li>Multiple language bindings including Python, Ruby, PHP, Perl,
-    C#, and Java. (Tired of language </li>
-    <li>Easier to represent multi-deminsional nature of bibliographic
-     records without the overhead of datastore technology</li>
+    C#, and Java. </li>
+    <li>Easy to represent multi-deminsional nature of bibliographic
+     records</li>
   </ul>
   <p><a class="btn" href="/background/redis.html">Details 
       &raquo;</a></p>

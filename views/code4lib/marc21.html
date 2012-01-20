@@ -58,14 +58,67 @@
 </%block>
 
 <%block name="subtopic_two">
-<div class="well">
+<div class="">
  <h2>Redis Datastore Structure</h2>
  <p>
   To store a MARC21 record in <a href="/background/redis.html">Redis</a>
   the <a href="${project.url}">${project.name}</a> uses the following
-  structure:
-  <code>marc21:{incremented key number}:marc field</code>.
+  structure based on a <a onclick="">three Python classes</a> for MARC21
+  records using the 
+  <a href="https://github.com/iamteem/redisco">redisco</a> module:
+  <code>MARC21Record:{incremented key number}:marc field</code>.
  </p>
- 
+ <table class="condensed-table bordered-table zebra-striped">
+  <thead>
+   <tr>
+    <th>MARC21 records</th>
+    <th>Redis Datastore Keys</th>
+    <th>Ingestion Time*</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>1</td>
+    <td>~350</td>
+    <td></td>
+   </tr>
+   <tr>
+    <td>1,000</td>
+    <td>298,580</td>
+    <td>8 minutes</td>
+   </tr>
+   <tr>
+    <td>10,000</td>
+    <td>2,973,828</td>
+    <td>1h 20minutes</td>
+   </tr>
+   <tr>
+    <td>50,000</td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td>100,000</td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td>250,000</td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td>500,000</td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td>~875,804</td>
+    <td></td>
+    <td></td>
+   </tr>
+  </tbody>
+ </table>
+ * Time with pure Python code without Cython optimization
 </div>
 </%block>

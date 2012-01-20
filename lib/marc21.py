@@ -3,11 +3,11 @@
 """
 __author__ = 'Jeremy Nelson'
 
-import common,pymarc,redisco
-from redisco import models
+import common,pymarc,sys,time
+from redisco import models,connection_setup
 
-redisco.connection_setup(host=common.REDIS_HOST,
-                         port=common.REDIS_PORT)
+connection_setup(host=common.REDIS_HOST,
+                 port=common.REDIS_PORT)
 
 MARC21_006_RDF_URL = 'http://metadataregistry.org/vocabulary/show/id/211.rdf'
 
@@ -40,6 +40,9 @@ class MARC21Record(models.Model):
     marc_fields = models.ListField(MARC21Field)
     leader = models.Attribute()
 
+
+marc21:1:
+
 def load_marc21(marc_record):
     """
     Loads a MARC21 record into Redis datastore
@@ -56,10 +59,15 @@ def load_marc21(marc_record):
                 if not i%2:
                     code = v
                 else:
-                    new_subfield = MARC21Subfield(code=code,
-                                                  value=v)
-                    new_subfield.save()
-                    new_field.subfields.append(new_subfield)
+                    try:
+                        new_subfield = MARC21Subfield(code=code,
+                                                      value=v)
+                        new_subfield.save()
+                        new_field.subfields.append(new_subfield)
+                    except UnicodeDecodeError:
+                        print("UnicodeDecodeError unable to save subfield %s for tag %s" %\
+                              (code,field.tag))
+                        
         if hasattr(field,'indicators'):
             new_field.indicators = field.indicators
         new_field.save()
@@ -67,3 +75,27 @@ def load_marc21(marc_record):
     redis_marc21.save()
     return redis_marc21
 
+def benchmark(reader,num_rec):
+    """
+    Function benchmarks the loading of MARC21 records using these classes into
+    the FRBR-Redis datastore, returns a dict of results
+
+    :param reader: pymarc reader of MARC21 records
+    :param num_recs: Number of MARC21 records to load
+    """
+    time1 = time.time()
+    for i,record in enumerate(reader):
+        if i >= num_rec:
+            break
+        else:
+            load_marc21(record)
+        if i % 1000:
+            sys.stderr.write(".")
+        else:
+            sys.stderr.write(str(i))
+    time2 = time.time()
+    return {'MARC21 records':num_rec,
+            'Started':time1,
+            'Ended':time2,
+            'Duration':time2-time1}
+        

@@ -3,14 +3,10 @@
 
 <%block name="main_content">
   <h1 class="cc_royal">Redis</h1>
-  <p>The key-value cache nature of Redis means it is fast, 
-     small, and easy is to deploy, meeting key requirements of the LOC 
-      bibliographic frameworks
-  </p>
-  <p>For smaller, leaner libraries with like-minded cultural 
-     information technology organizations, or SysOps in the latest
-     IT jargon, data scalablity and availability is always a challenge
-     balancing with larger setup or operational complexity
+  <p> Redis is an open-source, key-value datastore that is 
+      small, and easy is to deploy. Redis operates on in-memory dataset
+      for great performance and can either periodically dump the data
+      to disk or append the data to disk with each command to a log.
   </p>
     <p>
      <a class="btn primary large" href="/background/loc_framework.html">
@@ -74,18 +70,22 @@
  
  ## START other redis DIV
  <div class="span4 well">
-  <h3>What about Redis and?...</h3>
-  <p>
-   <a href="#" ><img src="http://www.ruby-lang.org/images/logo.gif" width="175" /></a>
+  <h3>What about Redis ...?</h3>
+  <p style="text-align:center">
+   <a href="#" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="ruby-redis"><img src="http://www.ruby-lang.org/images/logo.gif" width="175" /></a>
+  </p>
+  <p style="text-align:center">
+   <a href="#" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="php-redis"><img src="http://static.php.net/www.php.net/images/php_snow_2008.gif"></a>
+  </p>
+  <p style="text-align:center">
+   <a href="#" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="java-redis"><img src="http://upload.wikimedia.org/wikipedia/en/3/39/Java_logo.svg" height="125" /></a>
   </p>
   <p>
-   <a href="#"><img src="http://static.php.net/www.php.net/images/php_snow_2008.gif"></a>
-  </p>
-  <p>
-   <a href="#">Java</a>
-  </p>
-  <p>
-   
+   Complete list of Redis client libraries are available at
+   <a href="http://redis.io/clients">http://redis.io/clients</a>.
   </p>
  ## END other redis DIV
  </div>
@@ -112,7 +112,7 @@
  <%
    redis_info = redis_server.info()
  %>
-  <table class="condensed zebra-stripes">
+  <table class="condensed-table zebra-stripes">
   <thead>
     <tr>
      <th>Redis Server Setting</th>
@@ -163,12 +163,85 @@
  % endif
  ##END modal-body DIV
  </div>
- 
  ##START modal-footer DIV
  <div class="modal-footer">
   <button class="btn primary" onclick="$('#code4lib2012-redis-info').modal('hide')">Close</button>
  ##END modal-footer DIV
  </div>
-
 ## END Code4Lib Redis Modal DIV
+</div>
+
+## START Ruby Modal DIV
+<div class="modal hide fade" id="ruby-redis">
+ ## START Ruby Modal Header 
+ <div class="modal-header">
+ <a href="#" class="close">&times;</a>
+ <h3>Redis Ruby Client</h3>
+ ## END Ruby Modal Header 
+ </div>
+ ## START Ruby Modal Body
+ <div class="modal-body">
+ <p><img src="http://www.ruby-lang.org/images/logo.gif" width="175" style="float: left" /> 
+   Redis has a mature and stable Ruby client library available on 
+ Github at 
+ <a href="https://github.com/ezmobius/redis-rb">https://github.com/ezmobius/redis-rb</a>.
+ </p>
+ ## END Ruby Modal Body
+ </div>
+ ## START Ruby Modal Footer
+ <div class='modal-footer'>
+  <button class="btn primary" onclick="$('#ruby-redis').modal('hide')">Close</button>
+ ## END Ruby Modal Footer
+ </div>
+## END Ruby Modal DIV
+</div>
+
+## START PHP Modal DIV
+<div class="modal hide fade" id="php-redis">
+ ## START PHP Modal Header 
+ <div class="modal-header">
+ <a href="#" class="close">&times;</a>
+ <h3>Redis PHP Clients</h3>
+ ## END PHP Modal Header 
+ </div>
+ ## START PHP Modal Body
+ <div class="modal-body">
+ <p><img src="http://static.php.net/www.php.net/images/php_snow_2008.gif" style="float: right" /> 
+   Redis has a number of mature and stable PHP client libraries including:
+   <ul>
+    <li><a href="https://github.com/nrk/predisb">Predis</a></li>
+    <li><a href="https://github.com/nicolasff/phpredis">phpredis</a></li>
+   </ul>
+ </p>
+ ## END PHP Modal Body
+ </div>
+ ## START PHP Modal Footer
+ <div class='modal-footer'>
+  <button class="btn primary" onclick="$('#php-redis').modal('hide')">Close</button>
+ ## END PHP Modal Footer
+ </div>
+## END PHP Modal DIV
+</div>
+
+## START JAVA Modal DIV
+<div class="modal hide fade" id="java-redis">
+ ## START JAVA Modal Header 
+ <div class="modal-header">
+ <a href="#" class="close">&times;</a>
+ <h3>Redis Java Clients</h3>
+ ## END JAVA Modal Header 
+ </div>
+ ## START JAVA Modal Body
+ <div class="modal-body">
+ <p><img src="http://upload.wikimedia.org/wikipedia/en/3/39/Java_logo.svg" height="125" /> 
+   The recommended Redis Java library is <a href="https://github.com/nrk/predisb">Jedis</a>
+ </p>
+ ## END JAVA Modal Body
+ </div>
+ ## START JAVA Modal Footer
+ <div class='modal-footer'>
+  <button class="btn primary" onclick="$('#java-redis').modal('hide')">Close</button>
+ ## END JAVA Modal Footer
+ </div>
+## END JAVA Modal DIV
 </div>

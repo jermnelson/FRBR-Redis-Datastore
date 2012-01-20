@@ -3,13 +3,36 @@
 
 <%block name="main_content">
   <h1 class="cc_royal">Other NoSQL</h1>
-  <p>Other non-SQL or hybrid datastore for different purposes include
-     document-based systems such as <a href="#">CouchDB</a> and .., 
-     Facebook open-sourced
-     their own version of BigTable called <a href="#">Cassandra</a>
-  </p>
+   <p>There are many other NoSQL datastore technologies including document stores like 
+    <a href="http://couchdb.apache.org/">CouchDB</a> and 
+    <a href="http://www.mongodb.org/">MongoDB</a>. More well-known graph 
+    datastores <a href="https://github.com/twitter/flockdb">FlockDB</a> and
+    <a href="http://neo4j.org/">Neo4j</a>. 
+   <p>Facebook donated their 
+     <a href="http://cassandra.apache.org/">Cassandra</a> technology to the
+     Apache foundation, that along with Amazon's 
+     <a href="http://aws.amazon.com/DynamoDB/">Dynamo</a> are
+     examples of eventually‐consistent key‐value stores.
+   </p>
     <p>
      <a class="btn primary large" href="/background/redis.html">Why 
      Redis &raquo;</a>
   </p>
+</%block>
+
+<%block name="sidebar_content">
+<div class="cc_box">
+ <h2 style="text-align:center">Opinion</h2>
+ <p>Other NoSQL datastores beside 
+ <a href="/background/redis.html">Redis</a> may be good candidates
+ using the same design and implementation approach as the 
+ <a href="${project.url}">${project.name}</a>; however, any datastore 
+ should support the requirements set forth by the 
+ Library of Congress 
+ <a href="/background/loc_framework.html">Bibliographic Framework for 
+ the Digital Age</a> including the important consideration that any
+ datastore should be relatively easy-to-use for even small libraries and
+ organizations with little or no information technology support.
+ </p> 
+</div>
 </%block>

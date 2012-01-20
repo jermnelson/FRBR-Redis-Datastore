@@ -1,0 +1,18 @@
+body {
+  padding-top: 60px;
+}
+ 
+div.space_bk {
+  background:url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Space_Needle_2011-07-04.jpg/121px-Space_Needle_2011-07-04.jpg) bottom right no-repeat;
+}
+
+
+div.cc_box {
+  background-color: #F7E49D;
+  border: 3px ridge #D1CCB9;
+  padding: 1em;
+}
+
+h1.cc_royal {
+ color:#600;
+}

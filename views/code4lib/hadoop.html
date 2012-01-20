@@ -4,9 +4,9 @@
 <%block name="main_content">
   <h1 class="cc_royal">BigTable &amp; Hadoop</h1>
   <ul class="main-content">
-    <li>Started Big Data revolution with Google Engineer's 
-        xxx publishing their paper on Google's storage
-        BigTable</li>
+    <li>Started Big Data revolution with publication by Google Engineer Chang, Dean, Ghemawat, et. al
+        <a href="http://dl.acm.org/citation.cfm?doid=1365815.1365816">paper</a> on Google's storage
+        technology in 2008 called BigTable</li>
     <li><a href="http://apache.hadoop.org/">Hadoop</a> is an official
          Apache project with a strong community of developers, sponsers,
          and users</li>
@@ -25,7 +25,17 @@
   Microsoft, MySQL, or Postgre, and used by many
   current legacy systems to store MARC records offer
   one alternative but lack the flexiblity to 
-  <h5>What about Solr or Full-text Searching?</h5>
+  <h5>What about Solr?</h5>
+  <p>
+   <a href="http://lucene.apache.org/solr/">Solr</a> 
+   addresses a different problem than data storage and is more of
+   search and retrival technology than a NoSQL datastore. Although 
+   there is often overlapp when a full-text searching is implemented in 
+   an SQL database index or NoSQL index. While currently in planning,
+   <a href="${project.url}">${project.name}</a> will use Solr to for
+   end-user and application searching of FRBR entities and retrieve
+   entities from the Redis datastore.
+  </p>
  </div>
 </%block>
 
@@ -48,10 +58,10 @@
  <h3>eCataloger and Googe App Engine</h3>
  <img width="100" src="http://code.google.com/appengine/images/appengine_lowres.png" style="float:right" />
  <p>The <a href="http://code.google.com/p/ecataloger">eCataloger</a> 
- project is an early example to create a native FRBR datastore using a NoSQL
- datastore. The eCataloger was used for a small
- college's ELibrary and supporting operational government publications 
- and serials management application. More information is available
+ project is an early example of creating a native FRBR datastore using 
+ a NoSQL datastore. The eCataloger was used for a small
+ college's public ELibrary and forinternal government publications 
+ and serials management applications. More information is available
  at <a href="http://journal.code4lib.org/articles/4357">this December 2010 
  article</a> from Code4Lib.
 </div>

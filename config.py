@@ -3,7 +3,7 @@
 """
 __author__ = "Jeremy Nelson"
 
-REDIS_HOST = 'solr.coloradocollege.edu'
+REDIS_HOST = 'tuttdemo'
 #REDIS_HOST = '0.0.0.0'
 REDIS_PORT = 6379
 REDIS_DB = 0
