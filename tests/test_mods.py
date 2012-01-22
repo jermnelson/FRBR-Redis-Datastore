@@ -57,12 +57,28 @@ class TestThesis(unittest.TestCase):
         self.assertEquals(self.bibliography.value_of,
                           "Includes bibliographical references")
 
+	def test_dataset_abstract(self):
+	    self.assertEquals(self.dataset_abstract.displayLabel,
+	                      "Dataset Abstract")
+	                      
+	def test_dataset_info(self):
+	    self.assertEquals(self.dataset_info.displayLabel,
+	                      "Dataset Information")
+
     def test_genre(self):
         genre = self.mods.genres[0]
         self.assertEquals(genre.authority,
                           "marcgt")
         self.assertEquals(genre.value_of,
                           "thesis")
+                          
+    def test_physical_description(self):
+        pass
+        
+    def test_type_of_resource(self):
+        type_of_resource = self.mods.typeOfResources[0]
+        self.assertEquals(type_of_resource.value_of,
+                          "text")
 
     def test_thesis_note1(self):
         self.assertEquals(self.thesis_note1.mods_type,

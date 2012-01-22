@@ -103,7 +103,58 @@ class note(models.Model):
         set_attributes(note_element,self)
         self.value_of = note_element.text
         self.save()
+       
 
+class form(models.Model):
+    """
+    form MODS element in Redis datastore
+    """
+    
+
+class physicalDescription(models.Model):
+    """
+    physicalDescription MODS element in Redis datastore
+    """
+    altRepGroup = models.Attribute()
+    displayLabel = models.Attribute()
+    lang = models.Attribute()
+    script = models.Attribute()
+    transliteration = models.Attribute()
+    xml_lang = models.Attribute()
+    
+    def load_xml(self,
+                 physical_description_element):
+        """
+        Method takes MODS xml element and updates values in Redis
+        datastore
+        
+        :param physical_description_element: physicalDescription MODS element
+        """
+        set_attributes(physical_description_element)
+        self.save()
+    
+class typeOfResource(models.Model):
+    """
+    typeOfResource MODS element in Redis datastore
+    """
+    collection = models.Attribute()
+    manuscript = models.Attribute()
+    displayLabel = models.Attribute()
+    usage = models.Attribute()
+    value_of = models.Attribute()
+    
+    def load_xml(self,
+                 type_of_resource_element):
+        """
+        Method takes MODS xml and updates values in Redis datastore
+        based on XML values
+        
+        :param type_of_resource_element: typeOfResource XML element
+        """
+        set_attributes(type_of_resource_element)
+        self.value_of = type_of_resource_element.text
+        self.save()
+        
 class mods(models.Model):
     """
      Root MODS element in Redis datastore
@@ -120,14 +171,14 @@ class mods(models.Model):
     notes = models.ListField(note)
 ##    originInfo
 ##    part
-##    physicalDescription
+    physicalDescriptions = models.ListField(physicalDescription)
 ##    recordInfo
 ##    relatedItem
 ##    subject
 ##    tableOfContents
 ##    targetAudience
 ##    titleInfo
-##    typeOfResource
+    typeOfResources = models.ListField(typeOfResource)
     mods_ID = models.Attribute()
     version = models.Attribute(default="3.4")
 
