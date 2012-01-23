@@ -9,8 +9,10 @@
   <mods:note displayLabel="Dataset Abstract"/>
   <mods:note displayLabel="Dataset Information"/>
   <mods:physicalDescription>
-    <mods:digitalOrigin/>
+    <mods:form authority="RDA carrier terms">online resource</mods:form>
+    <mods:digitalOrigin>born digital</mods:digitalOrigin>
     <mods:extent>76p. ill. map(s).</mods:extent>
+    <mods:reformattingQuality>preservation</mods:reformattingQuality>
   </mods:physicalDescription>
   <mods:name type="personal">
     <mods:role>
@@ -37,7 +39,7 @@
     </mods:role>
   </mods:name>
   <mods:subject>
-    <mods:topic>Corporate Social Responsibilit</mods:topic>
+    <mods:topic>Corporate Social Responsibility</mods:topic>
   </mods:subject>
   <mods:subject>
     <mods:topic>Stakeholder Theory</mods:topic>

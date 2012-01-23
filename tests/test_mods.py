@@ -51,19 +51,85 @@ class TestThesis(unittest.TestCase):
         self.assertEquals(abstract.value_of[0:45],
                           u"The modern corporation's relationship to society has undergone drastic changes between the 1960s and the present day, in large part because the general public has held corporations to increasingly higher ethical and moral standards.  While originally this relationship manifested itself only as punishment for extreme environmental and human rights violations, as made evident in the divestment movement in Apartheid South Africa and the backlash against Exxon after the Exxon Valdez oil spill, in the past twenty years firms are increasingly rewarded for going beyond the bare minimums set by regulators.  Firms like Costco and WholeFoods exemplify this new trend in corporate America, and the current research tests whether a relationship exists between a firm's corporate social responsibility scores and its financial performance.  Formally, the research predicts a positive correlation between strong corporate social responsibility and financial performance for firms listed in the S&amp;P 500 in the consumer goods industry.  The study relies on corporate social responsibility information provided by the KLD MSCI STATS database as well as financial information from the Mergent online database to test the theory on S&amp;P 500 firms in the consumer goods industry."[0:45])
 
+    def test_advisor(self):
+        advisor = self.mods.names[1]
+        self.assertEquals(advisor.roles[0].roleTerms[0].mods_type,
+                          "text")
+        self.assertEquals(advisor.roles[0].roleTerms[0].authority,
+                          "marcrt")
+        self.assertEquals(advisor.roles[0].roleTerms[0].value_of,
+                          "advisor")
+        self.assertEquals(advisor.mods_type,
+                          "personal")
+        self.assertEquals(advisor.nameParts[0].value_of,
+                          "Laux, Judy")
+
     def test_bibliography(self):
         self.assertEquals(self.bibliography.mods_type,
                           "bibliography")
         self.assertEquals(self.bibliography.value_of,
                           "Includes bibliographical references")
 
-	def test_dataset_abstract(self):
+    def test_creator(self):
+        creator = self.mods.names[0]
+        self.assertEquals(creator.roles[0].roleTerms[0].mods_type,
+                          "creator")
+        self.assertEquals(creator.roles[0].roleTerms[0].authority,
+                          "marcrt")
+        self.assertEquals(creator.mods_type,
+                          "personal")
+        self.assertEquals(creator.nameParts[0].value_of,
+                          "Callihan, Corey")
+
+
+    def test_dataset_abstract(self):
 	    self.assertEquals(self.dataset_abstract.displayLabel,
-	                      "Dataset Abstract")
+	                  "Dataset Abstract")
 	                      
-	def test_dataset_info(self):
+    def test_dataset_info(self):
 	    self.assertEquals(self.dataset_info.displayLabel,
-	                      "Dataset Information")
+	                  "Dataset Information")
+
+    def test_department(self):
+        department = self.mods.names[2]
+        self.assertEquals(department.roles[0].roleTerms[0].mods_type,
+                          "text")
+        self.assertEquals(department.roles[0].roleTerms[0].authority,
+                          "marcrt")
+        self.assertEquals(department.roles[0].roleTerms[0].value_of,
+                          "sponsor")
+        self.assertEquals(department.nameParts[0].value_of,
+                          "Department of Economics and Business")
+                          
+    def test_degree_grantor(self):
+        institution = self.mods.names[3]
+        self.assertEquals(institution.roles[0].roleTerms[0].mods_type,
+                          "text")
+        self.assertEquals(institution.roles[0].roleTerms[0].authority,
+                          "marcrt")
+        self.assertEquals(institution.roles[0].roleTerms[0].value_of,
+                          "degree grantor")
+        self.assertEquals(institution.nameParts[0].value_of,
+                          "Colorado College")
+
+
+    def test_digital_origin(self):
+        digital_origin = self.mods.physicalDescriptions[0].digitalOrigin
+        self.assertEquals(digital_origin.value_of,
+                          "born digital")
+
+    def test_extent(self):
+        extent = self.mods.physicalDescriptions[0].extents[0]
+        self.assertEquals(extent.value_of,
+                          "76p. ill. map(s).")
+
+
+    def test_form(self):
+        form = self.mods.physicalDescriptions[0].forms[0]
+        self.assertEquals(form.authority,
+                          "RDA carrier terms")
+        self.assertEquals(form.value_of,
+                          "online resource")
 
     def test_genre(self):
         genre = self.mods.genres[0]
@@ -73,8 +139,20 @@ class TestThesis(unittest.TestCase):
                           "thesis")
                           
     def test_physical_description(self):
-        pass
+        self.assert_(self.mods.physicalDescriptions[0])
         
+    def test_keywords(self):
+        self.assertEquals(self.mods.subjects[0].topics[0].value_of,
+                          "Corporate Social Responsibility")
+        self.assertEquals(self.mods.subjects[1].topics[0].value_of,
+                          "Stakeholder Theory")
+        
+        
+    def test_titleInfo(self):
+        title_info = self.mods.titleInfos[0]
+        self.assertEquals(title_info.title.value_of,
+                          "Corporate Social Responsibility & The Consumer Goods Industry")
+                          
     def test_type_of_resource(self):
         type_of_resource = self.mods.typeOfResources[0]
         self.assertEquals(type_of_resource.value_of,

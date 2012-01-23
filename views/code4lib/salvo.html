@@ -41,7 +41,8 @@
  <div class="row">
   ## START What? Why? DIV
   <div class="span6">
-   <p><a class="btn info large" onclick="salvoAnimation()">Catalog What? Where? Why?</a></p>
+   <p><a class="btn info large" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="cataloging-future">Catalog What? Where? Why?</a></p>
   ## END What? Why? DIV
   </div>
   ## START Stross Comment DIV
@@ -61,12 +62,39 @@
 ## END content DIV
 </div>
 
+## START Cataloger Future DIV
+<div class="modal hide fade span10" id="cataloging-future">
+ <div class="modal-header">
+  <a class="close" href="#">x</a>
+  <h2>Internet of Things, Spimes, Augmented Reality, and other hyped terms...</h2>
+ </div>
+ <div class="modal-body">
+ <h2>...will all need catalogs!</h2>
+ <blockquote>
+ <p>Good and relevant cataloging establishes the long-now memory of our
+    real and imagined artifacts</p>
+ </blockquote>
+ </div>
+ <div class="modal-footer">
+  <a class="btn info large" onclick="$('#cataloging-future').modal('hide')">Close</a>
+ </div>
+## END Cataloger Future DIV
+</div>
+
  ## START Brand DIV
  <div class="modal hide fade span10" id="brand-remix">
- <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Stewart_Brand_-Sausalito%2C_California%2C_USA_-at_home-14Dec2010.jpg/320px-Stewart_Brand_-Sausalito%2C_California%2C_USA_-at_home-14Dec2010.jpg" style="float:left" />
- <h2 style="color:gold">We are all catalogers we might as we well get good at it</h2>
- <p>Remix of Steward Brand's quote from the first page of the Whole Earth
+  <div class="modal-header">
+   <a href="#" class="close">x</a>
+   <img src="/img/Stewart-Brand.jpg" style="float:left" />
+ <h2 style="color:#003479;">We are all catalogers we might as we well get good at it</h2>
+  </div>
+  <div class="modal-body">
+   <p>Remix of Steward Brand's quote from the first page of the Whole Earth
     catalog</p>
+  </div>
+  <div class="modal-footer">
+   <a class="btn alert large" onclick="$('#brand-remix').modal('hide')">Close</a>
+  </div>
  ## END Brand DIV
  </div>
 
@@ -89,7 +117,7 @@
 </p>
 <p>
  So imagine your FRBR artifacts cataloged with your communitiy's metadata
- branes, creating the augmented world of smart splimes.
+ branes, creating the augmented world of smart spimes.
 </p>
 <p>
 <a class="btn alert large" onclick="salvoAnimation2()">Close</a>

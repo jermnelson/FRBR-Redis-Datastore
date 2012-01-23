@@ -5,6 +5,54 @@
   <role>
    <roleTerm>author</roleTerm>
   </role>
+  <namePart type="given">Jeremy</namePart>
+  <namePart type="family">Nelson</namePart>
+ </name>
+ <name type="personal">
+  <role>
+   <roleTerm>author</roleTerm>
+  </role>
+  <namePart type="given">Alan</namePart>
+  <namePart type="family">Cleary</namePart>
+ </name>
+ <titleInfo>
+  <title>FRBRizing an E-Library</title>
+  <subTitle>Migrating from Dublin Core to FRBR and MODS</subTitle>
+ </titleInfo>
+ <abstract>Western State College in Gunnison, Colorado developed an open-source eCataloger Framework, based on Dublin Core metadata, on Google.s App Engine to manage and serve electronic resources to the library.s patrons. Pressed to find new solutions for failing manual workflows for serials and government document resource management, the eCataloger Framework was extended to FRBR to automate and enhance serials management and government documents receiving. Based on successfully FRBRizing the eCataloger, Western State College converted their e-Library management from Dublin Core to FRBR and MODS. This paper examines the processes of each of these implementations using Python, AJAX, and jQuery, the details of the FRBR data model, including using FRBRoo, and the successful user interface supported by a FRBRized catalog.</abstract>
+ <typeOfResource>text</typeOfResource>
+ <genre>article</genre>
+ <relatedItem type="host">
+  <titleInfo>
+   <title>Code4Lib Journal</title>
+  </titleInfo>
+   <originInfo>
+   <issuance>continuing</issuance>
+  </originInfo>
+  <part>
+   <detail type="issue">
+    <number>12</number>
+   </detail>
+  </part>
+  <date>2010-12-21</date>
+  <identifier type="issn">1940-5758</identifier>
+ </relatedItem>
+ <location>
+  <url>http://journal.code4lib.org/articles/4357</url>
+ </location>
+  <recordInfo>
+   <recordCreationDate>2012-01-22</recordCreationDate>
+   <recordOrigin>
+    Original MODS record cataloging by Jeremy Nelson for 2012 Code4Lib 
+    presentation.
+   </recordOrigin>
+ </recordInfo>
+</mods>
+<mods>
+ <name type="personal">
+  <role>
+   <roleTerm>author</roleTerm>
+  </role>
  <namePart type="given">Fay</namePart>
  <namePart type="family">Chang</namePart>
  </name>
@@ -142,6 +190,26 @@
  </titleInfo>
  <recordInfo>
    <recordCreationDate>2012-01-21</recordCreationDate>
+   <recordOrigin>
+    Original MODS record cataloging by Jeremy Nelson for 2012 Code4Lib 
+    presentation.
+   </recordOrigin>
+ </recordInfo>
+</mods>
+<mods>
+ <titleInfo>
+  <title>Apache Hadoop</title>
+ </titleInfo>
+ <typeOfResource>software, multimedia</typeOfResource>
+ <genre>web site</genre>
+ <subject>
+  <topic>no sql</topic>
+ </subject>
+ <location>
+  <url>http://hadoop.apache.org/</url>
+ </location>
+ <recordInfo>
+   <recordCreationDate>2012-01-22</recordCreationDate>
    <recordOrigin>
     Original MODS record cataloging by Jeremy Nelson for 2012 Code4Lib 
     presentation.

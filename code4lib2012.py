@@ -47,6 +47,13 @@ def send_static_js(filename):
                        root=root)
 
 
+@route('/img/:filename')
+def send_static_img(filename):
+    root = "%s/views/img" % os.getcwd()
+    return static_file(filename,
+                       root=root)
+
+
 @get('/')
 def index():
     """
