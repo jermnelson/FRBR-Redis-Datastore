@@ -23,17 +23,22 @@ function drawWEMIDemo() {
   var expression_label = paper.text(340,280,"frbr:Expression");
   var manifestation_label = paper.text(320,300,"frbr:Manifestation");
   var item_label = paper.text(320,320,"frbr:Item");
-  var mods_brane = paper.rect(75,140,270,190);
-  mods_brane.attr("stroke","#000");
-  mods_brane.rotate("-45",85,200);
+  var mods_brane = paper.path("M175,300L175,50L80,110L80,140M80,330L80,340L175,300");
+  var mods_label = paper.text(155,70,"MODS");
+  var marc21_brane = paper.path("M200,305L200,50L175,65M120,330L120,340L200,305");
+  var marc_label = paper.text(200,70,"MARC21"); 
+//  var mods_brane = paper.rect(75,140,270,190);
+//  mods_brane.attr("stroke","#000");
+//  mods_brane.rotate("-45",85,200);
 } 
 
 function animateWEMIDemo() {
  init();
- animiate();
+ animate()
 }
 
 function init() {
+  $("#visualization").empty();
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
   camera.position.z = 1000;
