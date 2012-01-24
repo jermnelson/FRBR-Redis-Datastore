@@ -6,7 +6,7 @@ __author__ = "Jeremy Nelson"
 import os,sys,config,re
 from mako.template import Template
 from mako.lookup import TemplateLookup
-from bottle import debug,get,post,request,route,run,static_file#,FlupFCGIServer
+from bottle import debug,get,post,request,route,run,static_file,FlupFCGIServer
 import redis
 
 debug(True)
@@ -176,8 +176,8 @@ def section_slide(section=None,
     
 
 
-##run(server=FlupFCGIServer,
-##    host=config.WEB_HOST,
-##    port=config.PRESENTATION_PORT)
-run(host=config.WEB_HOST,
+run(server=FlupFCGIServer,
+    host=config.WEB_HOST,
     port=config.PRESENTATION_PORT)
+#run(host=config.WEB_HOST,
+#    port=config.PRESENTATION_PORT)

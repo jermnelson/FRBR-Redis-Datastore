@@ -43,28 +43,79 @@
  </%block>
  
  <%block name="subtopic_one">
- ## START MODS XPATH as Redis's Key DIV
- <div class="">
-  <h2>XML, XPATH, and Redis Key-Value</h2>
-  <p>To represent the MODS's XML structure in the key-value
-     data structure of <a href="/background/redis.html">Redis</a>,
-     ${project.name} project uses a modified version of the XML query language,
-     XPATH, as a hash key for the MODS record. While this may 
-     sound complicated, it is actually easier to see as this examples show:
+ ## START MODS, Redis, and Python DIV
+ <div class="" >
+   <h2>MODS Python </h2>
+   <p>
+    The initial strategy to represent MODS's XML structure in the key-value 
+    data structure of <a href="/background/redis.html">Redis</a> is to
+    create a <a href="https://github.com/iamteem/redisco">Redisco</a> 
+     MODS class that uses <a href="">LXML</a> to load a MODS XML. This
+     is an example of a title element.
    </p>
-   <table class="condensed bordered-table zebra-striped">
+   <pre class="prettyprint">
+   class title(baseMODS):
+        """
+        title MODS element in Redis datastore
+        """
+        value_of = models.Attribute()
+    
+        def load_xml(self,
+                     title_element):
+            """
+            Method takes MODS xml and updates values in Redis datastore
+            based on XML values
+        
+            :param title_element: title XML element
+            """
+            set_attributes(title_element,self)
+            self.value_of = title_element.text
+            self.save()
+   </pre>
+ ## END MODS, Redis, and Python DIV
+ </div>
+ </%block>
+ 
+ <%block name="subtopic_two">
+ ## START Redis Key-Value DIV
+ <div class="well">
+  <h2>Redis
+  <p>
+   The Python MODS class instance stores the MODS metadat in the Redis
+   datastore in the following structure:
+  </p>
+  <table class="collapsed-table zebra-striped bordered-table">
    <thead>
     <tr>
-     <th>MODS XPath</th>
-     <th>Redis Hash</th>
-     <th>Key</th>
-     <th>Value</th>
+     <th>Redis Key</th>
+     <th>Redis Type</th>
+     <th>Example</th>
+    </tr>
    </thead>
    <tbody>
-   
+   <tr>
+    <td>mods:1</td>
+    <td>hash</td>
+    <td>version:3.4</td>
+   </tr>
+   <tr>
+    <td>mods:1:titleInfos</td>
+    <td>list</td>
+    <td>1</td>
+   </tr>
+   <tr>
+    <td>titleInfo:1</td>
+    <td>hash</td>
+    <td>title_id:1</td>
+   </tr>
+   <tr>
+    <td>title:1</td>
+    <td>hash</td>
+    <td>value_of:'FRBRizing an E-Library'</td>
+   </tr>
    </tbody>
-   </table>
- ## END MODS XPATH as Redis Key DIV
+  </table>
+ ## END DIV
  </div>
  </%block>
  
@@ -123,7 +174,7 @@
   
   ## START MODS LOC Movie Body DIV
   <div class="modal-body">
-   <textarea cols="60" rows="25">
+   <textarea rows="15" class="xxlarge">
    <mods xmlns:xlink="http://www.w3.org/1999/xlink" version="3.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
 		<titleInfo>
 			<nonSort>The</nonSort>
@@ -196,7 +247,7 @@
    ## END MODS LOC Modal Header DIV  
    </div>
    <div class="modal-body">
-   <textarea cols="30" rows="20">
+   <textarea class="xxlarge" rows="10">
    <mods>
     <titleInfo>
      <title>NoSQL Bibliographic Records</title>
