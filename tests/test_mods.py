@@ -146,6 +146,25 @@ class TestThesis(unittest.TestCase):
                           "Corporate Social Responsibility")
         self.assertEquals(self.mods.subjects[1].topics[0].value_of,
                           "Stakeholder Theory")
+
+    def test_location(self):
+        self.assertEquals(self.mods.locations[0].urls[0].usage,
+                          "primary display")
+        self.assertEquals(self.mods.locations[0].urls[0].value_of,
+                          'http://hdl.handle.net/10176/coccc:5332')
+
+    def test_originInfo(self):
+        originInfo = self.mods.originInfos[0]
+        self.assertEquals(originInfo.publishers[0].value_of,
+                          'Colorado College')
+        self.assertEquals(originInfo.dateIssued.keyDate,
+                          "yes")
+        self.assertEquals(originInfo.dateIssued.value_of,
+                          "2011")
+        self.assertEquals(originInfo.places[0].placeTerms[0].value_of,
+                          "Colorado Springs, Colo")
+        self.assertEquals(originInfo.dateCreated.value_of,
+                          "2011")
         
         
     def test_titleInfo(self):

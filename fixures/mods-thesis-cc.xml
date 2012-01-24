@@ -53,7 +53,7 @@
   <mods:originInfo>
     <mods:publisher>Colorado College</mods:publisher>
     <mods:dateIssued keyDate="yes">2011</mods:dateIssued>
-    <mods:place>Colorado Springs, Colo</mods:place>
+    <mods:place><mods:placeTerm>Colorado Springs, Colo</mods:placeTerm></mods:place>
     <mods:dateCreated>2011</mods:dateCreated>
   </mods:originInfo>
   <mods:location>

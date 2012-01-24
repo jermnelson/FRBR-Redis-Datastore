@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+<modsCollection xmlns="http://www.loc.gov/mods/v3">
 <mods>
  <name type="personal">
   <role>
@@ -125,7 +125,7 @@
   <role>
    <roleTerm>author</roleTerm>
  </role>
-  <namePart type="given">Robert<namePart>
+  <namePart type="given">Robert</namePart>
   <namePart type="middle initial">E</namePart> 
   <namePart type="family">Gruber</namePart>
  </name>
@@ -187,7 +187,7 @@
  </subject>
  <location>
   <url>http://nosql-database.org/</url>
- </titleInfo>
+ </location>
  <recordInfo>
    <recordCreationDate>2012-01-21</recordCreationDate>
    <recordOrigin>
@@ -216,4 +216,4 @@
    </recordOrigin>
  </recordInfo>
 </mods>
-<modsCollection>
+</modsCollection>

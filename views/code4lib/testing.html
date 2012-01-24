@@ -1,13 +1,22 @@
 <%inherit file="slide.html" />
 
+<%block name="more_js">
+<script>
+ $(document).ready(function() {
+   $("#unit-test-log").hide();	  
+  });	
+</script>
+</%block>
 
 <%block name="main_content">
   <h1 class="cc_royal">Unit and BBD Testing</h1>
-  <p>Unit testing of software </p>
-  <p>Behavior Driven Development (BBD) based testing is a welcome developed that started in the Ruby
-     community and now is being adopted in Python through the 
-     <a href="https://github.com/gabrielfalcao/lettuce">lettuce</a> python
-     module.
+  <p>In <a href="${project.url}">${project.name}</a> Unit tests of code
+     are the current method of exploring the functionality of the NoSQL &amp; Redis
+     as a Bibliographic datastore with the current number of active unit
+     tests at <span class="label important" style="font-size:1em">${active_unit_tests}</span></p>
+  <p>Behavior Driven Development (BBD) based testing is a welcome development that started 
+     in the Ruby community and now is being adopted in Python through module's 
+     as <a href="http://lettuce.it/">lettuce</a>.
   </p>
   <p>
      <a class="btn primary large" href="/engineering/web.html">Client-side Web &amp; Javascript &raquo;</a>
@@ -20,6 +29,14 @@
  <p>Unit and BBD Testing as experimental
      methodology</p>
  <p>...</p>
+</div>
+
+<div style="text-align:center">
+ <p>
+ <a class="btn success large" onclick="$('#unit-test-log').show()" href="#">Show Unit Test Log</a>
+ </p>
+ <p>
+ <a class="btn success large" onclick="$('#bbd-test-log').show()" href="#">Show BBD Test Log</a>
 </div>
 </%block>
 
@@ -35,3 +52,16 @@
     this user requirement.
 </div>
 </%block>
+
+## START Unit Test Log DIV
+<div class="unit_test_log" id="unit-test-log">
+<a href="#" class="close" onclick="$('#unit-test-log').hide()">x</a>
+<h2>Unit Test Log</h2>
+<pre>
+${unit_test_results}
+</pre>
+<p style="text-align:right">
+<a href="#" class="btn primary large" onclick="$('#unit-test-log').hide()">Close</a>
+</p>
+## END Unit Test Log DIV
+</div>

@@ -3,10 +3,10 @@
  presented by Jeremy Nelson on the FRBR-Redis datastore project.
 """
 __author__ = "Jeremy Nelson"
-import os,sys,config
+import os,sys,config,re
 from mako.template import Template
 from mako.lookup import TemplateLookup
-from bottle import debug,get,post,request,route,run,static_file,FlupFCGIServer
+from bottle import debug,get,post,request,route,run,static_file#,FlupFCGIServer
 import redis
 
 debug(True)
@@ -27,6 +27,7 @@ class Project(object):
     def __init__(self):
         pass
 
+unit_test_info_re = re.compile(r"Ran (\d+) tests in (\d+.\d+)")
 project = Project()
 setattr(project,'name','FRBR-Redis-datastore')
 setattr(project,'url','https://bitbucket.org/tomichi_informatics/frbr-redis-datastore')
@@ -128,10 +129,8 @@ def redis_slide():
 @get('/engineering/python.html')
 def python_slide():
     template = conference_templates.get_template('python.html')
-    module_listing = []
-    #! Should move this to FRBR-Redis project setup, populate
-    #! Redis datastore with this requirements data
     requirements_file = open('requirements.txt','rb').read()
+    module_listing = []
     for row in requirements_file.split("\n"):
         rec = row.split("==")
         if len(rec) > 1:
@@ -142,6 +141,21 @@ def python_slide():
                            slide='python.html',
                            project=project,
                            module_listing=module_listing)
+
+@get('/engineering/testing.html')
+def testing_slide():
+    template = conference_templates.get_template('testing.html')
+    unit_testing_log = open('log/unit-tests.log','r').read()
+    unittesting_results = unit_test_info_re.search(unit_testing_log)
+    if unittesting_results is None:
+        active_unit_tests = 'ERROR'
+    else:
+        active_unit_tests = unittesting_results.groups()[0]
+    return template.render(section='engineering',
+                           slide='testing.html',
+                           project=project,
+                           active_unit_tests=active_unit_tests,
+                           unit_test_results=unit_testing_log)
 
 @route('/:section/:slide')
 def section_slide(section=None,
@@ -162,7 +176,8 @@ def section_slide(section=None,
     
 
 
-run(server=FlupFCGIServer,
-    host=config.WEB_HOST,
+##run(server=FlupFCGIServer,
+##    host=config.WEB_HOST,
+##    port=config.PRESENTATION_PORT)
+run(host=config.WEB_HOST,
     port=config.PRESENTATION_PORT)
-        

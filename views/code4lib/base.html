@@ -45,6 +45,9 @@
       <div class="fill">
         <div class="container">
           <a class="brand" href="/">Code4Lib 2012 Presentation</a>
+          % if active_timer:
+          <span class="timer">00:00</span>
+          % endif
           <ul class="nav secondary-nav">
             % if section == 'home':
             <li class="active">

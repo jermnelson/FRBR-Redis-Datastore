@@ -38,6 +38,16 @@ class baseMODS(models.Model):
     script = models.Attribute()
     transliteration = models.Attribute()    
     xml_lang = models.Attribute()
+
+class baseMODSDate(models.Model):
+    """
+    base MODS date class contains common attributes used by date elements
+    in MODS schema
+    """
+    encoding = models.Attribute()
+    point = models.Attribute()
+    keyDate = models.Attribute()
+    qualifier = models.Attribute()
     
 class abstract(baseMODS):
     """
@@ -78,6 +88,58 @@ class affiliation(baseMODS):
         set_attributes(affiliation_element,self)
         self.value_of = affiliation_element.text
         self.save()
+
+class dateCaptured(baseMODSDate):
+    """
+    dateCaptured MODS element in Redis datastore
+    """
+    value_of = models.Attribute()
+
+    def load_xml(self,
+                 date_created_element):
+        """
+        Method takes MODS element and sets Redis datastore values
+
+        :param date_captured_element: dateCaptured XML element
+        """
+        set_attributes(date_captured_element,self)
+        self.value_of = date_captured_element.text
+        self.save()
+
+class dateCreated(baseMODSDate):
+    """
+    dateCreated MODS element in Redis datastore
+    """
+    value_of = models.Attribute()
+
+    def load_xml(self,
+                 date_created_element):
+        """
+        Method takes MODS element and sets Redis datastore values
+
+        :param date_created_element: dateCreated XML element
+        """
+        set_attributes(date_created_element,self)
+        self.value_of = date_created_element.text
+        self.save()
+
+class dateIssued(baseMODSDate):
+    """
+    dateIssued MODS element in Redis datastore
+    """
+    keyDate = models.Attribute()
+    value_of = models.Attribute()
+
+    def load_xml(self,
+                 date_issued_element):
+        """
+        Method takes MODS element and sets Redis datastore values
+
+        :param date_issued_element: dateIssued XML element
+        """
+        set_attributes(date_issued_element,self)
+        self.value_of = date_issued_element.text
+        self.save()        
 
 class description(baseMODS):
     """
@@ -194,7 +256,54 @@ class genre(baseMODS):
         set_attributes(genre_element,self)
         self.value_of = genre_element.text
         self.save()
+
+class url(models.Model):
+    """
+    url MODS element in Redis datastore
+    """
+    access = models.Attribute()
+    dateLastAccessed = models.Attribute()
+    displayLabel = models.Attribute()
+    note = models.Attribute()
+    usage = models.Attribute()
+    value_of = models.Attribute()
+
+    def load_xml(self,
+                 url_element):
+        """
+        Method takes a MODS element and sets Redis attributes
+
+        :param url_element: url XML element
+        """
+        set_attributes(url_element,self)
+        self.value_of = url_element.text
+        self.save()
+    
+
+class location(baseMODS):
+    """
+    location MODS element in Redis datastore
+    """
+    altRepGroup = models.Attribute()
+    displayLabel = models.Attribute()
+    urls = models.ListField(url)
+
+    def load_xml(self,
+                 location_element):
+        """
+        Method takes a MODS element and sets Redis attributes
+
+        :param location_element: location XML element
+        """
+        set_attributes(location_element,self)
+        url_elements = location_element.findall('{%s}url' % ns.MODS)
+        for element in url_elements:
+            new_url = url()
+            new_url.load_xml(element)
+            self.urls.append(new_url)
+        self.save()
         
+    
 class namePart(baseMODS):
     """
     name MODS element in Redis datastore
@@ -335,8 +444,68 @@ class note(baseMODS):
         self.value_of = note_element.text
         self.save()
        
+class placeTerm(baseMODS):
+    """
+    placeTerm MODS element in Redis datastore
+    """
+    authority = models.Attribute()
+    authorityURI = models.Attribute()
+    mods_type = models.Attribute()
+    value_of = models.Attribute()
+    valueURI = models.Attribute()
 
+    def load_xml(self,
+                 place_term_element):
+        """
+        Method takes MODS xml element and updates values in Redis
+        datastore
+        
+        :param place_element: place MODS element
+        """
+        set_attributes(place_term_element,self)
+        self.value_of = place_term_element.text
+        self.save()
 
+class place(baseMODS):
+    """
+    place MODS element in Redis datastore
+    """
+    placeTerms = models.ListField(placeTerm)
+
+    def load_xml(self,
+                 place_element):
+        """
+        Method takes MODS xml element and updates values in Redis
+        datastore
+        
+        :param place_element: place MODS element
+        """
+        set_attributes(place_element,self)
+        placeterm_elements = place_element.findall('{%s}placeTerm' % ns.MODS)
+        for element in placeterm_elements:
+            new_place_term = placeTerm()
+            new_place_term.load_xml(element)
+            self.placeTerms.append(new_place_term)
+        self.save()
+
+class publisher(baseMODS):
+    """
+    publiser MODS element in Redis datastore
+    """
+    supplied = models.Attribute()
+    value_of = models.Attribute()
+
+    def load_xml(self,
+                 publisher_element):
+        """
+        Method takes MODS xml element and updates values in Redis
+        datastore
+        
+        :param publisher_element: publisher MODS element
+        """
+        set_attributes(publisher_element,self)
+        self.value_of = publisher_element.text
+        self.save()
 
 class reformattingQuality(models.Model):
     """
@@ -353,6 +522,49 @@ class reformattingQuality(models.Model):
         """
         self.value_of = reformatting_quality_element
         self.save()
+
+class originInfo(baseMODS):
+    """
+    originInfo MODS element in Redis datastore
+    """
+    altRepGroup = models.Attribute()
+    dateCreated = models.ReferenceField(dateCreated)
+    dateIssued = models.ReferenceField(dateIssued)
+    displayLabel = models.Attribute()
+    places = models.ListField(place)
+    publishers = models.ListField(publisher)
+
+    def load_xml(self,
+                 origin_info_element):
+        """
+        Method takes MODS xml element and updates values in Redis
+        datastore
+        
+        :param origin_info_element: originInfo MODS element
+        """
+        set_attributes(origin_info_element,self)
+        dateCreated_element = origin_info_element.find('{%s}dateCreated' % ns.MODS)
+        if dateCreated_element is not None:
+            new_date_created = dateCreated()
+            new_date_created.load_xml(dateCreated_element)
+            self.dateCreated = new_date_created
+        dateIssued_element = origin_info_element.find('{%s}dateIssued' % ns.MODS)
+        if dateIssued_element is not None:
+            new_date_issued = dateIssued()
+            new_date_issued.load_xml(dateIssued_element)
+            self.dateIssued = new_date_issued
+        place_elements = origin_info_element.findall('{%s}place' % ns.MODS)
+        for element in place_elements:
+            new_place = place()
+            new_place.load_xml(element)
+            self.places.append(new_place)
+        publishers = origin_info_element.findall('{%s}publisher' % ns.MODS)
+        for element in publishers:
+            new_publisher = publisher()
+            new_publisher.load_xml(element)
+            self.publishers.append(new_publisher)
+        self.save()
+        
 
 
 class physicalDescription(baseMODS):
@@ -552,10 +764,10 @@ class mods(models.Model):
     genres = models.ListField(genre)
 ##    identifier
 ##    language
-##    location
+    locations = models.ListField(location)
     names = models.ListField(name)
     notes = models.ListField(note)
-##    originInfo
+    originInfos= models.ListField(originInfo)
 ##    part
     physicalDescriptions = models.ListField(physicalDescription)
 ##    recordInfo
@@ -584,6 +796,11 @@ class mods(models.Model):
             new_genre = genre()
             new_genre.load_xml(element)
             self.genres.append(new_genre)
+        location_elements = mods_xml.findall('{%s}location' % ns.MODS)
+        for element in location_elements:
+            new_location = location()
+            new_location.load_xml(element)
+            self.locations.append(new_location)
         name_elements = mods_xml.findall('{%s}name' % ns.MODS)
         for element in name_elements:
             new_name = name()
@@ -594,6 +811,11 @@ class mods(models.Model):
             new_note = note()
             new_note.load_xml(element)
             self.notes.append(new_note)
+        origin_info_elements = mods_xml.findall('{%s}originInfo' % ns.MODS)
+        for element in origin_info_elements:
+            new_origin_info = originInfo()
+            new_origin_info.load_xml(element)
+            self.originInfos.append(new_origin_info)
         physical_descriptions = mods_xml.findall('{%s}physicalDescription' % ns.MODS)
         for element in physical_descriptions:
             new_physical_desc = physicalDescription()
