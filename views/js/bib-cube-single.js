@@ -3,6 +3,8 @@ var HEIGHT = 480;
 var SPACER = 15;
 var camera, scene, renderer, geometry, material, mesh;
 
+var work_cube, expr_cube, manf_cube, item_cube, mods_plane;
+var work_material, expr_material, manf_material, item_material;
 
 function drawWEMIDemo() {
   $("#visualization").empty();
@@ -26,7 +28,9 @@ function drawWEMIDemo() {
   var mods_brane = paper.path("M175,300L175,50L80,110L80,140M80,330L80,340L175,300");
   var mods_label = paper.text(155,70,"MODS");
   var marc21_brane = paper.path("M200,305L200,50L175,65M120,330L120,340L200,305");
-  var marc_label = paper.text(200,70,"MARC21"); 
+  var marc_label = paper.text(200,70,"MARC21");
+  var dc_brane = paper.path("M235,305L235,50L200,70M155,330L155,340L235,305");
+  var dc_label = paper.text(250,70,"Dublin Core");
 //  var mods_brane = paper.rect(75,140,270,190);
 //  mods_brane.attr("stroke","#000");
 //  mods_brane.rotate("-45",85,200);
@@ -38,34 +42,86 @@ function animateWEMIDemo() {
 }
 
 function init() {
+  var WIDTH = 400, HEIGHT = 300;
+  var VIEW_ANGLE = 45, 
+      ASPECT = WIDTH / HEIGHT,
+      NEAR = 0.1,
+      FAR = 10000;
+      
   $("#visualization").empty();
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+  camera = new THREE.PerspectiveCamera( VIEW_ANGLE,
+                                        ASPECT,
+                                        NEAR,
+                                        FAR);
   camera.position.z = 1000;
-  scene.add( camera );
+  scene.add(camera);
 
-  geometry = new THREE.CubeGeometry( 200, 200, 200 );
+  geometry = new THREE.CubeGeometry( 100, 50, 75 );
   material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
 
   mesh = new THREE.Mesh( geometry, material );
-  scene.add( mesh );
-
+  //scene.add( mesh );
+  
+  
+  work_material = new THREE.MeshBasicMaterial( { color: 0x0064CD, wireframe: true });
+  work_cube = new THREE.Mesh( geometry, work_material);
+  work_cube.position.x = -150;
+  work_cube.position.z = 250;
+  scene.add(work_cube);
+  
+  
+  
+  
+  expr_material = new THREE.MeshBasicMaterial( { color: 0xa52a2a, wireframe: true } );
+  expr_cube = new THREE.Mesh( geometry, expr_material );
+  expr_cube.position.y = work_cube.position.y + 55;
+  expr_cube.position.x = work_cube.position.x;
+  expr_cube.position.z = 250;
+  scene.add(expr_cube);
+  
+  manf_material = new THREE.MeshBasicMaterial( { color: 0x008000, wireframe: true } );
+  manf_cube = new THREE.Mesh( geometry, manf_material);
+  manf_cube.position.y = expr_cube.position.y + 55;
+  manf_cube.position.x = expr_cube.position.x;
+  manf_cube.position.z = 250;
+  scene.add(manf_cube);
+  
+  item_material =  new THREE.MeshBasicMaterial( { color: 0xF3C73f, wireframe: true } );
+  item_cube = new THREE.Mesh( geometry, item_material);
+  item_cube.position.y = manf_cube.position.y + 55;
+  item_cube.position.x = manf_cube.position.x;
+  item_cube.position.z = 250;
+  scene.add(item_cube);
+  var plane_material = new THREE.MeshBasicMaterial( {color: 0xff0000, wireframe: true} );
+  
+  mods_plane = new THREE.Mesh( new THREE.PlaneGeometry( 200, 300, 4, 4), plane_material);
+  mods_plane.overdraw = true;
+  mods_plane.position.x = 100;
+  mods_plane.position.y = 100;
+  mods_plane.doubleSided = true;
+  mods_plane.rotation.y = -180;
+  scene.add(mods_plane);
+  
+  
+   
   renderer = new THREE.CanvasRenderer();
-  renderer.setSize( window.innerWidth, window.innerHeight );
-
-  document.body.appendChild( renderer.domElement );
+  //renderer.setSize( window.innerWidth, window.innerHeight );
+  renderer.setSize( 640, 480 );
+  $("#visualization").append(renderer.domElement);
 
 }
 
 function animate() {
-// note: three.js includes requestAnimationFrame shim
  requestAnimationFrame( animate );
-render();
+ render();
 }
 
 function render() {
- mesh.rotation.x += 0.01;
- mesh.rotation.y += 0.02;
+ work_cube.rotation.y = expr_cube.rotation.y = manf_cube.rotation.y = item_cube.rotation.y += 0.01;
+ mods_plane.position.x -= .5;
+ //mesh.rotation.x += 0.01;
+ //mesh.rotation.y += 0.02;
  renderer.render( scene, camera );
 }
 

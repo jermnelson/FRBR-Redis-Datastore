@@ -10,8 +10,8 @@
       <li>Interoperability is a core requirement of LOC Bibliographic
           Framework</li>
       <li>Colorado College's currently uses its legacy ILS to manage over 
-         <span class="label success">860,000</span> 
-         MARC21 records for print holdings and purchased 
+         <span class="label success" style="font-size:1em">860,000</span> 
+         MARC21 records for its print holdings and purchased 
          electronic resources</li>
      </ul>
   <p>
@@ -20,53 +20,77 @@
 </%block>
 
 <%block name="sidebar_content">
- <div class="well">
-  <h5>MARC21, A Brief History</h5>
-  <table class="condensed-table zebra-striped">
-   <thead>
-    <tr>
-     <th>Date</th>
-     <th>Event</th>
-    </tr>
-   </thead>
-   <tbody>
-   % if events:
-   % for event in events:
-    <tr>
-      <td>${event.date}</td><td>${event.name}</td>
-    </tr>
-   % endfor
-   % else:
-    <tr>
-      <td>1960</td><td>TEST START MARC21</td>
-    </tr>
-   % endif
-  </table>
- </div>
+<div class="alert-message block-message success">
+<h3>MARC 21</h3>
+<p>MARC 21 three basic components are</p>
+<ul>
+ <li><i>communication format structure</i> - data exchange between systems</li>
+ <li><i>data element set</i> - ISO 2709 format structure with familiar 
+  MARC fields, variable and fixed length fields and codes</li>
+ <li><i>data</i> - content of records and general rule sets including
+ AACR2,  RDA, and DAC</li>
+</ul>
+</div>
 </%block>
 
 <%block name="subtopic_one">
 <div>
- <h3>Relationship to FRBR</h3>
+ <h2>Transitional Python Classes</h2>
  <p>
-  The MARC21 relationship to FRBR in the 
-  <a href="${project.url}">${project.name}</a> uses existing
-  work done by the Library of Congress in mapping MARC21 fields to 
-  FRBR entities as well as the RDA-specific MARC fields.
+  To facilite development of this proof-of-concept,
+  ${project.name} uses the three simple 
+  <a href="https://github.com/iamteem/redisco">Redisco</a>
+  Python models that provide lightweight object-mappings from MARC21
+  records using <a href="https://github.com/edsu/pymarc">pymarc</a> to 
+  Redis.
  </p>
+</div>
+<div class="alert-message block-message info">
+<p><strong>MARC21Record</strong> Python Class</p>
+<pre>
+class MARC21Record(models.Model):
+    """
+    Basic MARC Record in the Redis datastore
+    """
+    marc_fields = models.ListField(MARC21Field)
+    leader = models.Attribute()
+</pre>
+</div>
+<div class="alert-message block-message info">
+<p><strong>MARC21Field</strong> Python Class</p>
+<pre>
+class MARC21Field(models.Model):
+    """
+    Basic MARC Field in the Redis datastore
+    """
+    tag = models.Attribute()
+    data = models.Attribute()
+    indicators = models.ListField(str)
+    subfields = models.ListField(MARC21Subfield)
+</pre>
+</div>
+<div class="alert-message block-message info">
+<p><strong>MARC21Subfield</strong> Python Class</p>
+<pre>
+class MARC21Subfield(models.Model):
+    """
+    MARC Subfield in the Redis datastore
+    """
+    code = models.Attribute()
+    value = models.Attribute()
+</pre>
 </div>
 </%block>
 
 <%block name="subtopic_two">
 <div class="">
- <h2>Redis Datastore Structure</h2>
+ <h2>Redis Datastore</h2>
  <p>
-  To store a MARC21 record in <a href="/background/redis.html">Redis</a>
-  the <a href="${project.url}">${project.name}</a> uses the following
-  structure based on a <a onclick="">three Python classes</a> for MARC21
-  records using the 
-  <a href="https://github.com/iamteem/redisco">redisco</a> module:
-  <code>MARC21Record:{incremented key number}:marc field</code>.
+  Using <a href="https://github.com/iamteem/redisco">Redisco</a> 
+  transitional object Redis models to store a MARC21 record in 
+  <a href="/background/redis.html">Redis</a> in
+  <a href="${project.url}">${project.name}</a> has the following 
+  Redis datastore characteristics:
  </p>
  <table class="condensed-table bordered-table zebra-striped">
   <thead>
@@ -121,4 +145,15 @@
  </table>
  * Time with pure Python code without Cython optimization
 </div>
+<br/>
+<div class="well">
+ <h3>Relationship to FRBR</h3>
+ <p>
+  The MARC21 relationship to FRBR in the 
+  <a href="${project.url}">${project.name}</a> uses existing
+  work done by the Library of Congress in mapping MARC21 fields to 
+  FRBR entities as well as the RDA-specific MARC fields.
+ </p>
+</div>
+
 </%block>

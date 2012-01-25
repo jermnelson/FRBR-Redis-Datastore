@@ -3,16 +3,16 @@
 
 <%block name="main_content">
   <h1 class="cc_royal">Project Requirements</h1>
-  <p>The <a href="#">FRBR-to-Redis Datastore project</a> uses the Library of Congress
+  <p>The <a href="${project.url}">${project.name}</a> uses the Library of Congress
   <i>Bibliographic Framework for the Digital Age</i> for requirements
-  in our AGLE-style software development</p>
+  in its AGLE-style software development</p>
    <p>
      <a class="btn primary large" href="/background/loc_testing.html">Framework Testing &raquo;</a>
   </p>
 </%block>
 
 <%block name="sidebar_content">
-<div>
+<div class="">
    <ol>
     <li>Broad accommodation of content rules and data models.
         <span class="label notice">More</span></li>
@@ -27,5 +27,11 @@
     <li>Compatibility with MARC-based records.</li>
     <li>Provision of transformation from MARC 21 to a new bibliographic environment.</li>
    </ol>
+</div>
+</%block>
+
+<%block name="subtopic_one">
+<div class="">
+ 
 </div>
 </%block>
