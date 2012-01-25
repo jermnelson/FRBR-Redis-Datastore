@@ -26,10 +26,12 @@ function salvoAnimation() {
 function salvoAnimation2(action) {
  if(action == 'start') {
    $(".content").css('opacity',0.1);
+   $("footer").css('opacity',0.1);
    $('#charles-stross-galatic-cataloger').show('slow');
  } else {
    $('#charles-stross-galatic-cataloger').fadeOut('slow');
    $(".content").css('opacity',1);
+   $("footer").css('opacity',1);
  }
 }
 

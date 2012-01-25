@@ -6,8 +6,8 @@ from lettuce import *
 import sys,os
 import redis
 
-##sys.path.insert(0, os.path.abspath('/home/jpnelson/frbr-redis-datastore/'))
-sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
+sys.path.insert(0, os.path.abspath('/home/jpnelson/frbr-redis-datastore/'))
+##sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
 import config
 
 
