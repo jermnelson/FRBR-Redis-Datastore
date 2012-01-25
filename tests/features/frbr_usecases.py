@@ -6,9 +6,7 @@ from lettuce import *
 import sys,os
 import redis
 
-sys.path.insert(0, os.path.abspath('/home/jpnelson/frbr-redis-datastore/'))
-##sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
-import config
+import __init__
 
 
 redis_server = redis.StrictRedis(host=config.REDIS_HOST,
@@ -27,7 +25,7 @@ def have_role_value(step,role,value):
     world.value = value
 
 @step("the user interacts with the datastore to (\w+) the (\w+)")
-def perform_task_with_entity_name(self,task,entity_name):
+def perform_task_with_entity_name(step,task,entity_name):
     """
     Function attempts to retrieve the entity from the REDIS datastore
 
@@ -37,7 +35,7 @@ def perform_task_with_entity_name(self,task,entity_name):
     world.entity = getattr(redis_server,task,entity_name,world.role,world.value)
 
 @step("the user access the (\w+) with the (\w+) of (\w+)")
-def check_entity(entity_name,role,expected_value):
+def check_entity(step,entity_name,role,expected_value):
     """
     Function tests if user's task retrieves the expected values from the 
     datastore

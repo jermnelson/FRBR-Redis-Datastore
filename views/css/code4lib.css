@@ -9,8 +9,10 @@ div.space_bk {
 
 div.cc_box {
   background-color: #F7E49D;
-  border: 3px ridge #D1CCB9;
+  border: 2px ridge #D1CCB9;
   padding: 1em;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 div.unit_test_log {

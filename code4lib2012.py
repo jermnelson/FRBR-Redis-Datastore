@@ -176,8 +176,8 @@ def section_slide(section=None,
     
 
 
-run(server=FlupFCGIServer,
-    host=config.WEB_HOST,
-    port=config.PRESENTATION_PORT)
-##run(host=config.WEB_HOST,
+##run(server=FlupFCGIServer,
+##    host=config.WEB_HOST,
 ##    port=config.PRESENTATION_PORT)
+run(host=config.WEB_HOST,
+    port=config.PRESENTATION_PORT)

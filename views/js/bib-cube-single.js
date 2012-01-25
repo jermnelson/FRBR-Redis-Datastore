@@ -54,7 +54,7 @@ function init() {
                                         ASPECT,
                                         NEAR,
                                         FAR);
-  camera.position.z = 1000;
+  camera.position.z = 900;
   scene.add(camera);
 
   geometry = new THREE.CubeGeometry( 100, 50, 75 );
