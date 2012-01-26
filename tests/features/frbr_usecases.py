@@ -7,7 +7,7 @@ import sys,os
 import redis
 
 import __init__
-
+import config
 
 redis_server = redis.StrictRedis(host=config.REDIS_HOST,
                                  port=config.REDIS_PORT,

@@ -15,6 +15,10 @@ div.cc_box {
   border-radius: 15px;
 }
 
+div.cc-discovery {
+ background: url(/img/cc-discovery.png) top right no-repeat;
+}
+
 div.unit_test_log {
   background-color: #FFF;
   position: absolute;

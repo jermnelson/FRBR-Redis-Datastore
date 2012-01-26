@@ -63,10 +63,12 @@
         def load_xml(self,
                      title_element):
             """
-            Method takes MODS xml and updates values in Redis datastore
+            Method takes MODS xml and updates 
+            values in Redis datastore
             based on XML values
         
-            :param title_element: title XML element
+            :param title_element: title XML 
+                                  element
             """
             set_attributes(title_element,self)
             self.value_of = title_element.text
@@ -78,7 +80,7 @@
  
  <%block name="subtopic_two">
  ## START Redis Key-Value DIV
- <div class="">
+ <div class="well">
   <h2>Redis Datastore</h2>
   <p>
    The Python MODS class instance stores the MODS XML in the Redis

@@ -3,9 +3,10 @@
 
 <%block name="main_content">
   <h1 class="cc_royal">Relationship to Unit and BBD Testing</h1>
-  <p>The Library of Congress <a href="#">A Bibliographic Framework for
-   the Digital Age</a> report for quality assurance testing of specific 
-   code in FRBR-to-Redis Datastore using a combination of unit and BBD 
+  <p>The Library of Congress 
+   <a href="http://www.loc.gov/marc/transition/news/framework-103111.html">A Bibliographic Framework for the Digital Age</a> 
+   provides the basis for quality assurance testing of specific 
+   code in <a href="${project.url}">${project.name}</a> using a combination of unit and Behavior Driven Development (BDD) 
    tests more throughly explained here and in the engineering 
    section on <a href="/engineering/testing.html">testing</a>.
   </p>
@@ -13,3 +14,112 @@
      <a class="btn primary large" href="/record2cube.html">Record to Cube Visualizations &raquo;</a>
   </p> 
 </%block>
+
+<%block name="sidebar_content">
+<div class="alert-message block-message info">
+ <p>
+ <a class="btn default"  data-keyboard="true" data-backdrop="true"
+    data-controls-modal="loc-unit-test">Unit Test Example Snippet</a>
+ </p>
+</div>
+
+<div class="alert-message block-message success">
+ <p>
+ <a class="btn default" data-keyboard="true" data-backdrop="true"
+  data-controls-modal="loc-bdd-test">BDD Test Example Snippet</a>
+ </p>
+</div>
+</%block>
+
+<%block name="subtopic_one">
+<div>
+ <h3>Unit Testing and the Bibliographic Framework</h3>
+ <p> 
+  While the unit tests in ${project.name} are not as directly 
+  matched to specifics in the Bibliographic Framework as BBD tests are,
+  the unit tests do provide comprehensive coverage of core representation
+  of important standards and schemas that are required or mentioned in the 
+  announcement such as MARC21, MODS, and VRA Core. Also, when testing 
+  functionality of various FRBR entities with their RDA properties, goals of
+  the bibliographical framework are being addressed in an indirect way as 
+  well.
+</div>
+</%block>
+
+<%block name="subtopic_two">
+<div>
+ <h3>BDD and Bibliographic Framework</h3>
+ <p>
+  Each <a href="/background/loc_requirements.html">requirement</a> in
+  the Library of Congress Bibliographic framework is used in at least 
+  one Behavior Driven Development Feature. For the first five requirements,
+  there is a one-to-one requirement to feature match with each feature having
+  multiple scenarios that describe specific  expectations that ${project.name}
+  should meet in order to meet that requirement. For requirements six, seven,
+  and eight, which all deal with MARC 21, were condensed into a single feature
+  with multiple scenarios testing the specifics of each of those requirements.
+ </p>
+</div>
+</%block>
+
+## START LOC Bib Unit Test Example DIV
+<div class="modal hide fade" id="loc-unit-test">
+ <div class="modal-header">
+  <a href="#" class="close">x</a>
+  <h2>Unit Test Example</h2>
+  <p>
+  From <a href="#">tests/test_mods.py</a>
+  </p>
+ </div> 
+ <div class="modal-body">
+ <pre class="prettyprint">
+  class TestThesis(unittest.TestCase):
+
+    def test_extent(self):
+        extent = self.mods.physicalDescriptions[0].extents[0]
+        self.assertEquals(extent.value_of,
+                          "76p. ill. map(s).")
+
+    def test_form(self):
+        form = self.mods.physicalDescriptions[0].forms[0]
+        self.assertEquals(form.authority,
+                          "RDA carrier terms")
+        self.assertEquals(form.value_of,
+                          "online resource")
+
+    def test_genre(self):
+        genre = self.mods.genres[0]
+        self.assertEquals(genre.authority,
+                          "marcgt")
+        self.assertEquals(genre.value_of,
+                          "thesis")
+ </pre>
+ </div>
+ <div class="modal-footer">
+  <a class="btn primary large" onclick="$('#loc-unit-test').modal('hide')">Close</a>
+ </div>
+## END LOC Bib Unit Test Example DIV
+</div>
+
+## START LOC BDD Test Example DIV
+<div class="modal hide fade" id="loc-bdd-test">
+ <div class="modal-header">
+  <a href="#" class="close">x</a>
+  <h2>BDD Test Example</h2>
+ </div>
+ <div class="modal-body">
+ <pre class="prettyprint">
+ Scenario: Represent RDA carrier types for FRBR Manifestation as a content rule
+  Given a microfiche FRBR Manifestation entity in the datastore
+  When the entity has a RDA carrierTypeManifestation
+  Then the carrierTypeManifestation value will be microfiche
+
+
+ </pre>
+ </div>
+ <div class="modal-footer">
+  <a class="btn primary large" onclick="$('#loc-bdd-test').modal('hide')">Close</a>
+ </div>
+## END LOC BDD Test Example DIV
+</div>
+

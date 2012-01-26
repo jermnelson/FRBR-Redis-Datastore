@@ -2,7 +2,7 @@
 
 <%block name="main_content">
  <h1 class="cc_royal">Python</h1>
- <p>Engineering <a href="#">FRBR-to-Redis Datastore</a> using Python 
+ <p>Engineered <a href="${project.url}">${project.name}</a> using Python 
     and open-source third-party modules.</p>
     <p>
      <a class="btn primary large" href="/engineering/skos.html">SKOS &amp; RDA &raquo;</a>
@@ -30,8 +30,8 @@
 </%block>
 
 <%block name="subtopic_one">
+ <div class="cc-discovery">
  <h2>Colorado College's <a href="http://discovery.coloradocollege.edu">Discovery Layer</a></h2>
- ##<iframe style="float:right" src="http://discovery.coloradocollege.edu"></iframe>
  <ul>
     <li>Implemented in <a href="https://www.djangoproject.com/">Django</a></li>
     <li>Djanjo <a href="https://github.com/jermnelson/ccetd">ETD</a> Application
@@ -41,6 +41,22 @@
     <li>Solr interactions built using <a href="https://github.com/tow/sunburnt">Sunburnt</a>.
     <li>Licensed under Apache 2 and available at <a href="https://github.com/jermnelson/Discover-Aristotle">Discover Aristotle</a></li>
  </ul>
+ </div>
+</%block>
+
+<%block name="subtopic_two">
+ <div class="alert-message block-message warning">
+ <img src="/img/python-xml-title.png" alt="lxml" style="float:left" />
+ <h3>A cool object hack with <a href="http://lxml.de/">lxml</a> and RDF.</h3>
+ <p>
+ For CIDOC CRM, FRBRoo, and FRBR RDA classes, it was not necessary to 
+ hand-code all of the various python classes and properties but in 
+ ${project.name} using duck-typing and lxml, Resource Description Framework (RDF)
+ files describing the classes for these specifications and properties already existed
+ and so a lightweight container class was created and utilitized with the 
+ <a href="#">redis</a> module to provide a object-mapper to the Redis datastore.
+ </p>
+ </div>
 </%block>
 
 ##START Python Modules Wizard DIV
@@ -54,7 +70,8 @@
  ##START modal-body DIV
  <div class="modal-body">
   <div class="active-py-module" id="lxml-module">
-   
+   Why not Ruby for this project?
+   I'm not clever enough!
   
   </div>
  ##END modal-body DIV

@@ -14,7 +14,7 @@
      are the current method of exploring the functionality of the NoSQL &amp; Redis
      as a Bibliographic datastore with the current number of active unit
      tests at <span class="label important" style="font-size:1em">${active_unit_tests}</span></p>
-  <p>Behavior Driven Development (BBD) based testing is a welcome development that started 
+  <p>Behavior Driven Development (BDD) based testing is a welcome development that started 
      in the Ruby community and now is being adopted in Python through modules such 
      as <a href="http://lettuce.it/">lettuce</a>.
   </p>
@@ -26,7 +26,7 @@
 <%block name="sidebar_content">
 <div class="well">
  <h5>FRBR as a Mid-level Theory</h5>
- <p>Unit and BBD Testing as experimental
+ <p>Unit and BDD Testing as experimental
      methodology</p>
  <p>...</p>
 </div>
@@ -36,18 +36,19 @@
  <a class="btn success large" onclick="$('#unit-test-log').show()" href="#">Show Unit Test Log</a>
  </p>
  <p>
- <a class="btn success large" onclick="$('#bbd-test-log').show()" href="#">Show BBD Test Log</a>
+ <a class="btn success large" onclick="$('#bbd-test-log').show()" href="#">Show BDD Test Log</a>
 </div>
 </%block>
 
 <%block name="subtopic_one">
 <div class="well">
- <h3>BBD</h3>
+ <h3>BDD</h3>
  <p>The <a href="/background/loc_framework.html">Library of Congress 
     Bibliographic Framework for Digital Works</a>, along with other metadata
     standards and schemas such as RDA, FRBR specification, as well as 
     technical documentation is used to create the unit testing of specific
-    code in <a href="#">FRBR-to-Redis Datastore</a>.Described user sceniarios or use cases are especially valued as BBD features are
+    code in <a href="${project.url}">${project.name}</a>. Described user 
+    sceniarios or use cases are especially valued as BDD features are
     created for each and then tested to see if the datastore can meet
     this user requirement.
 </div>
