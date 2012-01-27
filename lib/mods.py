@@ -360,8 +360,10 @@ class languageTerm(models.Model):
     languageTerm MODS element in Redis datastore
     """
     authority = models.Attribute()
+    authorityURI = models.Attribute()
     mods_type = models.Attribute()
     value_of = models.Attribute()
+    valueURI = models.Attribute()
 
     def load_xml(self,
                  language_term_element):
@@ -498,6 +500,7 @@ class name(baseMODS):
     nameTitleGroup = models.Attribute()
     roles = models.ListField(role)
     usage = models.Attribute()
+    valueURI = models.Attribute()
     xlink = models.Attribute()
     
     def load_xml(self,
@@ -665,7 +668,7 @@ class originInfo(baseMODS):
     """
     altRepGroup = models.Attribute()
     dateCreated = models.ReferenceField(dateCreated)
-    dateIssued = models.ReferenceField(dateIssued)
+    dateIssueds = models.ListField(dateIssued)
     displayLabel = models.Attribute()
     issuance = models.Attribute()
     places = models.ListField(place)
@@ -685,11 +688,11 @@ class originInfo(baseMODS):
             new_date_created = dateCreated()
             new_date_created.load_xml(dateCreated_element)
             self.dateCreated = new_date_created
-        dateIssued_element = origin_info_element.find('{%s}dateIssued' % ns.MODS)
-        if dateIssued_element is not None:
+        dateIssued_elements = origin_info_element.findall('{%s}dateIssued' % ns.MODS)
+        for element in dateIssued_elements:
             new_date_issued = dateIssued()
-            new_date_issued.load_xml(dateIssued_element)
-            self.dateIssued = new_date_issued
+            new_date_issued.load_xml(element)
+            self.dateIssueds.append(new_date_issued)
         issuance_element = origin_info_element.find('{%s}issuance' % ns.MODS)
         if issuance_element is not None:
             self.issuance = issuance_element.text
@@ -838,7 +841,7 @@ class subject(baseMODS):
         self.save()
         
         
-class subtitle(baseMODS):
+class subTitle(baseMODS):
     """
     subtitle MODS element in Redis datastore
     """
@@ -887,7 +890,7 @@ class titleInfo(baseMODS):
     mods_ID = models.Attribute()
     mods_type = models.Attribute()
     nonSort = models.Attribute()
-    subtitles = models.ListField(subtitle)
+    subTitles = models.ListField(subTitle)
     supplied = models.Attribute()
     title = models.ReferenceField(title)
     valueURI = models.Attribute()
@@ -911,6 +914,11 @@ class titleInfo(baseMODS):
         nonsort_element = title_info_element.find('{%s}nonSort' % ns.MODS)
         if nonsort_element is not None:
             self.nonSort = nonsort_element.text
+        subTitles = title_info_element.findall('{%s}subTitle' % ns.MODS)
+        for element in subTitles:
+            new_subTitle = subTitle()
+            new_subTitle.load_xml(element)
+            self.subTitles.append(new_subTitle)
         self.save()
         
 class typeOfResource(baseMODS):

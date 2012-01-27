@@ -36,15 +36,112 @@ class TestMODSBookToFRBR(unittest.TestCase):
         mods_doc = etree.XML(mods_book_fixure)
         self.mods = mods.mods()
         self.mods.load_xml(mods_doc)
+        author_params = {
+            'Name': self.mods.names[0]}
+        author = frbr.Person(redis_server=redis_server,
+                             **author_params)
         work_params = {
-           'titleOfTheWork':self.mods.titleInfos[0]}
+            'creators':author,
+            'formOfWork':self.mods.typeOfResources[0],
+            'titleOfTheWork':self.mods.titleInfos[0]}
         self.work = frbr.Work(redis_server=redis_server,
                               **work_params)
+        expression_params = {
+            'contentTypeExpression':self.mods.genres[0],
+            'dateOfExpression':self.mods.originInfos[0].dateIssueds,
+            'languageOfTheContentExpression':self.mods.languages[0].languageTerms[0]}
+        
+        self.expression = frbr.Expression(redis_server=redis_server,
+                                          **expression_params)
+
+        manifestation_params = {
+            'modeOfIssuanceManifestation':self.mods.originInfos[0].issuance,
+            'noteOnStatementOfResponsibilityManifestation':self.mods.notes[0],
+            'placeOfPublicationManifestation':self.mods.originInfos[0].places,
+            'publishersNameManifestation':self.mods.originInfos[0].publishers[0]}
+        self.manifestation = frbr.Manifestation(redis_server=redis_server,
+                                                **manifestation_params)
+
+    def test_author(self):
+        self.assertEquals(self.work.creators.Name.mods_type,
+                          'personal')
+        self.assertEquals(self.work.creators.Name.authorityURI,
+                          "http://id.loc.gov/authorities/names")
+        self.assertEquals(self.work.creators.Name.valueURI,
+                          "http://id.loc.gov/authorities/names/n92101908")
+        self.assertEquals(self.work.creators.Name.nameParts[0].value_of,
+                          'Alterman, Eric')
+
+    def test_content_type(self):
+        self.assertEquals(self.expression.contentTypeExpression.value_of,
+                          'bibliography')
+        self.assertEquals(self.expression.contentTypeExpression.authority,
+                          'marcgt')
+
+    def test_date_of_expression(self):
+        self.assertEquals(self.expression.dateOfExpression[0].value_of,
+                          'c1999')
+        self.assertEquals(self.expression.dateOfExpression[1].encoding,
+                          "marc")
+        self.assertEquals(self.expression.dateOfExpression[1].value_of,
+                          "1999")
+                          
+
+    def test_form_of_work(self):
+        self.assertEquals(self.work.formOfWork.value_of,
+                          'text')
+
+    def test_issuance(self):
+        self.assertEquals(self.manifestation.modeOfIssuanceManifestation,
+                          'monographic')
+
+
+    def test_language(self):
+        self.assertEquals(self.expression.languageOfTheContentExpression.authority,
+                          "iso639-2b")
+        self.assertEquals(self.expression.languageOfTheContentExpression.mods_type,
+                          "code")
+        self.assertEquals(self.expression.languageOfTheContentExpression.value_of,
+                          "eng")
+        self.assertEquals(self.expression.languageOfTheContentExpression.authorityURI,
+                          "http://id.loc.gov/vocabulary/iso639-2")
+        self.assertEquals(self.expression.languageOfTheContentExpression.valueURI,
+                          "http://id.loc.gov/vocabulary/iso639-2/eng")
+    
+
+    def test_note_statement_of_responsibility(self):
+        self.assertEquals(self.manifestation.noteOnStatementOfResponsibilityManifestation.mods_type,
+                          "statement of responsibility")
+        self.assertEquals(self.manifestation.noteOnStatementOfResponsibilityManifestation.value_of,
+                          "Eric Alterman.")
+
+    def test_place_of_publication(self):
+        self.assertEquals(self.manifestation.placeOfPublicationManifestation[0].placeTerms[0].authority,
+                          "marccountry")
+        self.assertEquals(self.manifestation.placeOfPublicationManifestation[0].placeTerms[0].mods_type,
+                          "code")
+        self.assertEquals(self.manifestation.placeOfPublicationManifestation[0].placeTerms[0].authorityURI,
+                          "http://id.loc.gov/vocabulary/countries")
+        self.assertEquals(self.manifestation.placeOfPublicationManifestation[0].placeTerms[0].valueURI,
+                          "http://id.loc.gov/vocabulary/countries/nyu")
+        self.assertEquals(self.manifestation.placeOfPublicationManifestation[0].placeTerms[0].value_of,
+                          "nyu")
+        self.assertEquals(self.manifestation.placeOfPublicationManifestation[1].placeTerms[0].mods_type,
+                          "text")
+        self.assertEquals(self.manifestation.placeOfPublicationManifestation[1].placeTerms[0].value_of,
+                          "Ithaca, N.Y")
+
+    def test_publisher(self):
+        self.assertEquals(self.manifestation.publishersNameManifestation.value_of,
+                          'Cornell University Press')
+
+    
+            
 
     def test_title(self):
         self.assertEquals(self.work.titleOfTheWork.title.value_of,
                          'Sound and fury')
-        self.assertEquals(self.work.titleOfTheWork.subTitle.value_of,
+        self.assertEquals(self.work.titleOfTheWork.subTitles[0].value_of,
                           'the making of the punditocracy')
 
     def tearDown(self):
@@ -78,6 +175,7 @@ class TestMODSeJournalToFRBR(unittest.TestCase):
         self.work = frbr.Work(redis_server=redis_server,
                               **work_params)
         expression_params = {
+            
             }
         self.expression = frbr.Expression(redis_server=redis_server,
                                           **expression_params)
@@ -105,6 +203,7 @@ class TestMODSeJournalToFRBR(unittest.TestCase):
                           'Kier')
         self.assertEquals(second_author.given,
                           'Lamont B.')
+
 
     def test_extent(self):
         extent = self.manifestation.extentManifestation
@@ -179,7 +278,7 @@ class TestMODSMotionPictureToFRBR(unittest.TestCase):
                               **work_params)
         expression_params = {
             'contentTypeExpression':self.mods.genres[0],
-            'dateOfExpression':self.mods.originInfos[0].dateIssued,
+            'dateOfExpression':self.mods.originInfos[0].dateIssueds[0],
             'languageOfTheContentExpression':self.mods.languages[0].languageTerms[0]}
         self.expression = frbr.Expression(redis_server=redis_server,
                                           **expression_params)

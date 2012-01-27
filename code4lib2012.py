@@ -30,7 +30,7 @@ class Project(object):
 unit_test_info_re = re.compile(r"Ran (\d+) tests in (\d+.\d+)")
 project = Project()
 setattr(project,'name','FRBR-Redis-Datastore')
-setattr(project,'url','https://bitbucket.org/tomichi_informatics/frbr-redis-datastore')
+setattr(project,'url','https://github.com/jermnelson/FRBR-Redis-Datastore')
 
         
         
@@ -174,10 +174,16 @@ def section_slide(section=None,
                            slide=slide,
                            project=project)
     
-
-
-##run(server=FlupFCGIServer,
-##    host=config.WEB_HOST,
-##    port=config.PRESENTATION_PORT)
-run(host=config.WEB_HOST,
-    port=config.PRESENTATION_PORT)
+if __name__ == '__main__':
+    print("Run Code4Lib 2012 %s Presentation" % project.name)
+    print("Please select hosting option:")
+    print("\t1) Standalone")
+    print("\t2) FCGI")
+    prompt = raw_input(r">> ")
+    if prompt.lower() == '1':
+        run(host=config.WEB_HOST,
+            port=config.PRESENTATION_PORT)
+    elif prompt.lower() == '2':
+        run(server=FlupFCGIServer,
+            host=config.WEB_HOST,
+            port=config.PRESENTATION_PORT)
