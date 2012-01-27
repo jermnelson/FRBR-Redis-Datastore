@@ -1,115 +1,141 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<mods xmlns:xlink="http://www.w3.org/1999/xlink" version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
-	
-  <titleInfo>
-		
-    <nonSort>The </nonSort>
-		
-    <title>Cast iron story [motion picture] /</title>
-	
-  </titleInfo>
-	
-  <name type="corporate">
-		
-    <namePart>Walter J. Klein Company</namePart>
-	
-  </name>
-	
-  <typeOfResource>moving image</typeOfResource>
-	
-  <genre authority="marcgt">motion picture</genre>
-	
-  <originInfo>
-		
-    <place>
-      <placeTerm authority="marccountry" type="code">ncu</placeTerm>
-    </place>
-    <place>
-      <placeTerm type="text">Charlotte, N.C</placeTerm>
-    </place>
-		
-    <publisher>W.J. Klein Co</publisher>
-		
-    <dateIssued>1978</dateIssued>
-		
-    <issuance>monographic</issuance>
-	
-  </originInfo>
-	
-  <language>
-    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
-  </language>
-	
-  <physicalDescription>
-		
-    <extent>1 film reel (15 min.) : sd., col. ; 16 mm.</extent>
-	
-  </physicalDescription>
-	
-  <abstract>Shows how cast iron bathtubs are manufactured, illustrating each step from the sculpturing of the wood patterns through the casting and enameling processes.</abstract>
-	
-  <targetAudience>adult</targetAudience>
-	
-  <note type="statement of responsibility">Walter J. Klein Company.</note>
-	
-  <note>Title from data sheet.</note>
-	
-  <note>Intended audience: Junior high school students through adults.</note>
-	
-  <note>Issued also as super 8 mm. and as videorecording.</note>
-	
-  <subject authority="lcsh">
-		
-    <topic>Bathtubs</topic>
-	
-  </subject>
-	
-  <subject authority="lcsh">
-		
-    <topic>Cast-iron</topic>
-	
-  </subject>
-	
-  <subject authority="lcsh">
-		
-    <topic>Iron-founding</topic>
-	
-  </subject>
-	
-  <subject authority="lcshac">
-		
-    <topic>Bathtubs</topic>
-	
-  </subject>
-	
-  <subject authority="lcshac">
-		
-    <topic>&lt;B&gt;Hello World&lt;/B&gt;Cast-iron</topic>
-	
-  </subject>
-	
-  <subject authority="lcshac">
-		
-    <topic>Iron founding</topic>
-	
-  </subject>
-	
-  <classification authority="lcc">TH6493</classification>
-	
-  <classification edition="11" authority="ddc">683</classification>
-	
-	
-	
-  <recordInfo>
-		
-    <recordContentSource>Walter J. Klein Co.</recordContentSource>
-		
-    <recordCreationDate encoding="marc">820106</recordCreationDate>
-		
-    <recordChangeDate encoding="iso8601">19980501135351.7</recordChangeDate>
-		
-    <recordIdentifier>11510774</recordIdentifier>
-	
-  </recordInfo>
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns:xlink="http://www.w3.org/1999/xlink" version="3.4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3"
+	xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
 
+	<titleInfo>
+		<title>3 Viennese arias :</title>
+		<subTitle>for soprano, obbligato clarinet in B flat, and piano</subTitle>
+	</titleInfo>
+
+	<name type="personal" authorityURI="http://id.loc.gov/authorities/names"
+		valueURI="http://id.loc.gov/authorities/names/n81100426">
+		<namePart>Lawson, Colin (Colin James)</namePart>
+	</name>
+
+	<typeOfResource>notated music</typeOfResource>
+
+	<originInfo>
+		<place>
+			<placeTerm authority="marccountry" type="code"
+				authorityURI="http://id.loc.gov/vocabulary/countries"
+				valueURI="http://id.loc.gov/vocabulary/countries/enk">enk</placeTerm>
+		</place>
+		<place>
+			<placeTerm type="text">London</placeTerm>
+		</place>
+		<publisher>Nova Music</publisher>
+		<dateIssued>c1984</dateIssued>
+		<dateIssued encoding="marc">1984</dateIssued>
+		<issuance>monographic</issuance>
+	</originInfo>
+
+	<language>
+		<languageTerm authority="iso639-2b" type="code"
+			authorityURI="http://id.loc.gov/vocabulary/iso639-2"
+			valueURI="http://id.loc.gov/vocabulary/iso639-2/ita">ita</languageTerm>
+	</language>
+	<language objectPart="libretto">
+		<languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+	</language>
+
+	<physicalDescription>
+		<form authority="marcform">print</form>
+		<extent>1 score (12 p.) + 2 parts ; 31 cm.</extent>
+	</physicalDescription>
+
+	<tableOfContents>Tutto in pianto il cor struggete / Emperor Joseph I -- E sempre inquieto quel
+		core infelice : from Endimione / G. Bononcini -- L'adorata genitrice : from Muzio [i.e.
+		Mutio] Scevola / G. Bononcini.</tableOfContents>
+
+	<note type="statement of responsibility">G.B. Bononcini and Emperor Joseph I ; edited by Colin
+		Lawson.</note>
+	<note>Opera excerpts.</note>
+	<note>Acc. arr. for piano; obbligato for the 2nd-3rd excerpts originally for chalumeau.</note>
+	<note>Italian words.</note>
+	<note>Cover title.</note>
+	<note>The 1st excerpt composed for inclusion in M.A. Ziani's Chilonida.</note>
+	<note>Texts with English translations on cover p. [2].</note>
+
+	<subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
+		valueURI="http://id.loc.gov/authorities/subjects/sh2008108658">
+		<topic valueURI="http://id.loc.gov/authorities/subjects/sh85094914">Operas</topic>
+		<genre valueURI="http://id.loc.gov/authorities/subjects/sh99001548">Excerpts,
+			Arranged</genre>
+		<genre valueURI="http://id.loc.gov/authorities/subjects/sh99001780">Scores and parts</genre>
+	</subject>
+
+	<subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects">
+		<topic valueURI="http://id.loc.gov/authorities/subjects/sh85125142">Songs (High voice) with
+			instrumental ensemble</topic>
+		<genre valueURI="http://id.loc.gov/authorities/subjects/sh99001780">Scores and parts</genre>
+	</subject>
+
+	<classification authority="lcc">M1506 .A14 1984</classification>
+
+	<relatedItem type="series">
+		<titleInfo>
+			<title>Music for voice and instrument</title>
+		</titleInfo>
+	</relatedItem>
+
+	<relatedItem type="constituent">
+		<titleInfo type="uniform" authorityURI="http://id.loc.gov/authorities/names"
+			valueURI="http://id.loc.gov/authorities/names/no97083914">
+			<title>Tutto in pianto il cor struggete</title>
+		</titleInfo>
+		<name type="personal" authorityURI="http://id.loc.gov/authorities/names"
+			valueURI="http://id.loc.gov/authorities/names/n79055650">
+			<namePart>Joseph I, Holy Roman Emperor,</namePart>
+			<namePart type="date">1678-1711</namePart>
+		</name>
+	</relatedItem>
+
+	<relatedItem type="constituent">
+		<titleInfo type="uniform" authorityURI="http://id.loc.gov/authorities/names"
+			valueURI="http://id.loc.gov/authorities/names/n85337311">
+			<title>Endimione.</title>
+			<partName>E sempre inquieto quel core infelice.</partName>
+		</titleInfo>
+		<name type="personal" authorityURI="http://id.loc.gov/authorities/names"
+			valueURI="http://id.loc.gov/authorities/names/n81005197">
+			<namePart>Bononcini, Giovanni,</namePart>
+			<namePart type="date">1670-1747</namePart>
+		</name>
+	</relatedItem>
+
+	<relatedItem type="constituent">
+		<titleInfo type="uniform" authorityURI="http://id.loc.gov/authorities/names"
+			valueURI="http://id.loc.gov/authorities/names/n85337312">
+			<title>Mutio Scevola.</title>
+			<partName>Adorata genitrice.</partName>
+		</titleInfo>
+		<name type="personal" authorityURI="http://id.loc.gov/authorities/names"
+			valueURI="http://id.loc.gov/authorities/names/n81005197">
+			<namePart>Bononcini, Giovanni,</namePart>
+			<namePart type="date">1670-1747</namePart>
+		</name>
+	</relatedItem>
+
+	<relatedItem type="constituent">
+		<titleInfo>
+			<title>Three Viennese arias.</title>
+		</titleInfo>
+	</relatedItem>
+
+	<relatedItem type="constituent">
+		<titleInfo>
+			<title>Viennese arias.</title>
+		</titleInfo>
+	</relatedItem>
+
+	<recordInfo>
+		<descriptionStandard>aacr</descriptionStandard>
+		<recordContentSource>DLC</recordContentSource>
+		<recordCreationDate encoding="marc">850813</recordCreationDate>
+		<recordChangeDate encoding="iso8601">19950601141653.9</recordChangeDate>
+		<recordIdentifier>5594130</recordIdentifier>
+		<recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4.xsl
+			(Revision 1.74), valueURIs and authority URIs added by hand 20120124</recordOrigin>
+	</recordInfo>
 </mods>

@@ -22,13 +22,14 @@ connection_setup(host=config.REDIS_HOST,
                  port=config.REDIS_PORT,
                  db=config.REDIS_TEST_DB)
 
+mods_file = open('fixures/mods-thesis-cc.xml','rb')
+raw_thesis_xml = mods_file.read()
+mods_file.close()
+
 class TestThesis(unittest.TestCase):
 
     def setUp(self):
-        mods_file = open('fixures/mods-thesis-cc.xml','rb')
-        raw_xml = mods_file.read()
-        mods_file.close()
-        mods_doc = etree.XML(raw_xml)
+        mods_doc = etree.XML(raw_thesis_xml)
         self.mods = mods.mods()
         self.mods.load_xml(mods_doc)
         self.maxDiff = None

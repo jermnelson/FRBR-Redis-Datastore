@@ -1,5 +1,5 @@
 """
- :mod:`test_frbr`  Unit and behaviour-driven tests for :mod:`lib.frbr`
+ :mod:`test_frbr`  Unit tests for :mod:`lib.frbr`
 """
 __author__ = "Jeremy Nelson"
 

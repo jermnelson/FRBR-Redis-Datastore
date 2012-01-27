@@ -25,7 +25,7 @@ class TestAgent(unittest.TestCase):
         self.assert_(self.agent.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 class TestConcept(unittest.TestCase):
  
@@ -36,7 +36,7 @@ class TestConcept(unittest.TestCase):
         self.assert_(self.concept.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 
 class TestCorporateBody(unittest.TestCase):
@@ -48,7 +48,7 @@ class TestCorporateBody(unittest.TestCase):
         self.assert_(self.corporate_body.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 
 class TestEvent(unittest.TestCase):
@@ -60,7 +60,7 @@ class TestEvent(unittest.TestCase):
         self.assert_(self.event.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 
 
@@ -75,7 +75,7 @@ class TestFamily(unittest.TestCase):
         self.assert_(self.family.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 
 
@@ -90,7 +90,7 @@ class TestName(unittest.TestCase):
         self.assert_(self.name.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 class TestObject(unittest.TestCase):
  
@@ -103,7 +103,7 @@ class TestObject(unittest.TestCase):
         self.assert_(self.Object.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 class TestPerson(unittest.TestCase):
  
@@ -116,7 +116,7 @@ class TestPerson(unittest.TestCase):
         self.assert_(self.person.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 class TestPlace(unittest.TestCase):
  
@@ -129,7 +129,7 @@ class TestPlace(unittest.TestCase):
         self.assert_(self.place.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 class TestSubject(unittest.TestCase):
  
@@ -142,7 +142,7 @@ class TestSubject(unittest.TestCase):
         self.assert_(self.subject.redis_ID)
 
     def tearDown(self):
-        pass
+        redis_server.flushdb()
 
 
 

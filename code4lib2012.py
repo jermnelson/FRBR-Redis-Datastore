@@ -29,7 +29,7 @@ class Project(object):
 
 unit_test_info_re = re.compile(r"Ran (\d+) tests in (\d+.\d+)")
 project = Project()
-setattr(project,'name','FRBR-Redis-datastore')
+setattr(project,'name','FRBR-Redis-Datastore')
 setattr(project,'url','https://bitbucket.org/tomichi_informatics/frbr-redis-datastore')
 
         
@@ -74,7 +74,7 @@ def check_exists(pagename):
 
 @route('/background.html')
 def background_base():
-    background_page = conference_templates.get_template('data.html')
+    background_page = conference_templates.get_template('loc_framework.html')
     return background_page.render(section="background",
                                   project=project)
 
