@@ -10,21 +10,55 @@
  ## END hero DIV
  </div>
  
+ 
  ## START row DIV
  <div class="row">
+  ## START Colorado College MARC21 &amp; DACC MODS DC Records DIV
+  <div class="span5">
+   <h3>CC's MARC21 &amp; DACC</h3>
+   <p>
+    Full import of Colorado College's 875,590 MARC21 records and <i>NEED NUMBER OF DACC records</i>
+    into FRBR Redis Native datastore.
+   </p>
+   <p>
+    Next, in collaboration with the Colorado Alliance of Research Libraries, scale and import
+    the Alliance collection of MARC and ADR records at a Consortuium scale to see how well Redis
+    handles workflows at that increased scale and usage frequency. Redis publish/subscribe holds 
+    real promise for optimizing realtime lending of FRBR items in a successfully inter library-loan
+    service in the inter-mountain West.
+   </p>
+  ## END Colorado College MARC21 Records DIV
+  </div>
+
   ## START timeline 1 DIV
-  <div class="span6 well" id="q2_32012">
-   <h3>April-September 2012</h3>
+  <div class="span5">
+   <h3>Next steps</h3>
    <ul>
     <li>Finish Solr interoperablity</li>
-    <li>Build Item operational modules using <a href="#">Aristotle</a>
+    <li>Build operational modules using <a href="#">Aristotle</a>
         for end-user UI.
     </li>
     <li>Begin native C FRBR-Redis datastore</li>
    </ul>
    ## END timeline 2 DIV
   </div>
+  
  
+  ## START DIV 
+  <div class="span5 alert-message block-message success">
+   <h3>Statistically mapping of metadata</h3>
+   <p>
+    After we reach a certain critical mass of ingested material,
+    we'll be able to look at the Redis statistical distribution of
+    attributes. These attibutes can be analized and optimized as Redis
+    data primiatives and offer interesting research possibilities of 
+    automatic metadata recognition.
+   </p>
+   <p>
+   Another statistical relation is being able to directly map usage analytics to FRBR 
+   bibliographic attributes as they are used by our users in realtime.
+  ## END DIV
+  </div>
  
  ## END row DIV
  </div>

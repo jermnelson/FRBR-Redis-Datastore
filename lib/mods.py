@@ -89,6 +89,31 @@ class affiliation(baseMODS):
         self.value_of = affiliation_element.text
         self.save()
 
+class classification(baseMODS):
+    """
+    class classification MODS element in Redis datastore
+    """
+    altRepGroup = models.Attribute()
+    authority = models.Attribute()
+    authorityURI = models.Attribute()
+    displayLabel = models.Attribute()
+    edition = models.Attribute()
+    usage = models.Attribute()
+    value_of = models.Attribute()
+    valueURI = models.Attribute()
+
+    def load_xml(self,
+                 classification_element):
+        """
+        Method takes MODS element and sets Redis datastore values
+
+        :param date_captured_element: dateCaptured XML element
+        """
+        set_attributes(classification_element,self)
+        self.value_of = classification_element.text
+        self.save()
+
+
 class date(baseMODSDate):
     """
     date MDOS element in Redis datastore
@@ -790,6 +815,48 @@ class physicalDescription(baseMODS):
             self.reformattingQualities.append(new_reformat_quality)
         self.save()
         
+class geographic(baseMODS):
+    """
+    geographic MOCS element in Redis datastore
+    """
+    authority = models.Attribute()
+    authorityURI = models.Attribute()
+    value_of = models.Attribute()
+    valueURI = models.Attribute()
+    
+    def load_xml(self,
+                 geographic_element):
+        """
+        Method takes MODS xml and updates values in Redis datastore
+        based on XML values
+        
+        :param geographic_element: geographic XML element
+        """
+        set_attributes(geographic_element,self)
+        self.value_of = geographic_element.text
+        self.save()
+        
+class temporal(baseMODS):
+    """
+    temporal MOCS element in Redis datastore
+    """
+    authority = models.Attribute()
+    authorityURI = models.Attribute()
+    value_of = models.Attribute()
+    valueURI = models.Attribute()
+    
+    def load_xml(self,
+                 temporal_element):
+        """
+        Method takes MODS xml and updates values in Redis datastore
+        based on XML values
+        
+        :param temporal_element: temporal XML element
+        """
+        set_attributes(temporal_element,self)
+        self.value_of = temporal_element.text
+        self.save()
+
 class topic(baseMODS):
     """
     topic MOCS element in Redis datastore
@@ -819,8 +886,10 @@ class subject(baseMODS):
     authority = models.Attribute()
     authorityURI = models.Attribute()
     displayLabel = models.Attribute()
+    geographics = models.ListField(geographic)
     mods_ID = models.Attribute()
     usage = models.Attribute()
+    temporals = models.ListField(temporal)
     topics = models.ListField(topic)
     valueURI = models.Attribute()
     
@@ -833,6 +902,16 @@ class subject(baseMODS):
         :param subject_element: subject XML element
         """
         set_attributes(subject_element,self)
+        geographic_elements = subject_element.findall('{%s}geographic' % ns.MODS)
+        for element in geographic_elements:
+            new_geographic = geographic()
+            new_geographic.load_xml(element)
+            self.geographics.append(new_geographic)
+        temporal_elements = subject_element.findall('{%s}temporal' % ns.MODS)
+        for element in temporal_elements:
+            new_temporal = temporal()
+            new_temporal.load_xml(element)
+            self.temporals.append(new_temporal)
         topic_elements = subject_element.findall('{%s}topic' % ns.MODS)
         for element in topic_elements:
             new_topic = topic()
@@ -1103,7 +1182,7 @@ class mods(models.Model):
     """
     abstracts = models.ListField(abstract)
 ##    accessCondition
-##    classification
+    classifications = models.ListField(classification)
 ##    extension
     genres = models.ListField(genre)
     identifiers = models.ListField(identifier)
@@ -1135,6 +1214,11 @@ class mods(models.Model):
             new_abstract = abstract()
             new_abstract.load_xml(element)
             self.abstracts.append(new_abstract)
+        classification_elements = mods_xml.findall('{%s}classification' % ns.MODS)
+        for element in classification_elements:
+            new_classification = classification()
+            new_classification.load_xml(element)
+            self.classifications.append(new_classification)
         genre_elements = mods_xml.findall('{%s}genre' % ns.MODS)
         for element in genre_elements:
             new_genre = genre()

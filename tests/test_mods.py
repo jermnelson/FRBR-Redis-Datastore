@@ -158,9 +158,9 @@ class TestThesis(unittest.TestCase):
         originInfo = self.mods.originInfos[0]
         self.assertEquals(originInfo.publishers[0].value_of,
                           'Colorado College')
-        self.assertEquals(originInfo.dateIssued.keyDate,
+        self.assertEquals(originInfo.dateIssueds[0].keyDate,
                           "yes")
-        self.assertEquals(originInfo.dateIssued.value_of,
+        self.assertEquals(originInfo.dateIssueds[0].value_of,
                           "2011")
         self.assertEquals(originInfo.places[0].placeTerms[0].value_of,
                           "Colorado Springs, Colo")

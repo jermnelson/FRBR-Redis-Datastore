@@ -20,6 +20,10 @@ mods_motionpicture_file = open('fixures/modsmotionpicture.xml','rb')
 mods_motionpicture_fixure = mods_motionpicture_file.read()
 mods_motionpicture_file.close()
 
+mods_music_file = open('fixures/modsmusic.xml','rb')
+mods_music_fixure = mods_music_file.read()
+mods_music_file.close()
+
 redis_server = redis.StrictRedis(host=config.REDIS_HOST,
                                  port=config.REDIS_PORT,
                                  db=config.REDIS_TEST_DB)
@@ -43,12 +47,16 @@ class TestMODSBookToFRBR(unittest.TestCase):
         work_params = {
             'creators':author,
             'formOfWork':self.mods.typeOfResources[0],
+            'subjects':self.mods.subjects,
             'titleOfTheWork':self.mods.titleInfos[0]}
+            
+            
         self.work = frbr.Work(redis_server=redis_server,
                               **work_params)
         expression_params = {
             'contentTypeExpression':self.mods.genres[0],
             'dateOfExpression':self.mods.originInfos[0].dateIssueds,
+            'identifierForTheExpression':self.mods.classifications + self.mods.identifiers,
             'languageOfTheContentExpression':self.mods.languages[0].languageTerms[0]}
         
         self.expression = frbr.Expression(redis_server=redis_server,
@@ -71,6 +79,18 @@ class TestMODSBookToFRBR(unittest.TestCase):
                           "http://id.loc.gov/authorities/names/n92101908")
         self.assertEquals(self.work.creators.Name.nameParts[0].value_of,
                           'Alterman, Eric')
+                          
+    def test_classifications(self):
+         self.assertEquals(self.expression.identifierForTheExpression[0].authority,
+                           "lcc")
+         self.assertEquals(self.expression.identifierForTheExpression[0].value_of,
+                          "PN4888.P6 A48 1999")
+         self.assertEquals(self.expression.identifierForTheExpression[1].edition,
+                           "21")
+         self.assertEquals(self.expression.identifierForTheExpression[1].authority,
+                           "ddc")
+         self.assertEquals(self.expression.identifierForTheExpression[1].value_of,                  
+                           "071/.3")
 
     def test_content_type(self):
         self.assertEquals(self.expression.contentTypeExpression.value_of,
@@ -90,6 +110,17 @@ class TestMODSBookToFRBR(unittest.TestCase):
     def test_form_of_work(self):
         self.assertEquals(self.work.formOfWork.value_of,
                           'text')
+                          
+    def test_identifiers(self):
+        self.assertEquals(self.expression.identifierForTheExpression[2].mods_type,
+                          "isbn")
+        self.assertEquals(self.expression.identifierForTheExpression[2].value_of,
+                          "0801486394 (pbk. : acid-free, recycled paper)")
+        self.assertEquals(self.expression.identifierForTheExpression[3].mods_type,
+                          "lccn")
+        self.assertEquals(self.expression.identifierForTheExpression[3].value_of,
+                          "99042030")
+
 
     def test_issuance(self):
         self.assertEquals(self.manifestation.modeOfIssuanceManifestation,
@@ -134,9 +165,111 @@ class TestMODSBookToFRBR(unittest.TestCase):
     def test_publisher(self):
         self.assertEquals(self.manifestation.publishersNameManifestation.value_of,
                           'Cornell University Press')
-
+                          
     
-            
+
+    def test_subject_one(self):
+        self.assertEquals(self.work.subjects[0].authority,
+                          "lcsh")
+        self.assertEquals(self.work.subjects[0].authorityURI,
+                          "http://id.loc.gov/authorities/subjects")
+    	self.assertEquals(self.work.subjects[0].topics[0].valueURI,
+    	                  "http://id.loc.gov/authorities/subjects/sh85070736")
+    	self.assertEquals(self.work.subjects[0].topics[0].value_of,
+    	                  "Journalism")
+    	self.assertEquals(self.work.subjects[0].topics[1].valueURI,
+    	                  "http://id.loc.gov/authorities/subjects/sh00005651")
+    	self.assertEquals(self.work.subjects[0].topics[1].value_of,
+    	                  "Political aspects")
+    	self.assertEquals(self.work.subjects[0].geographics[0].valueURI,
+    	                  "http://id.loc.gov/authorities/names/n78095330")
+    	self.assertEquals(self.work.subjects[0].geographics[0].value_of,
+    	                  "United States")
+    	                  
+    def test_subject_two(self):
+        subject = self.work.subjects[1]
+        self.assertEquals(subject.authority,"lcsh")
+        self.assertEquals(subject.authorityURI,
+                          "http://id.loc.gov/authorities/subjects")
+        self.assertEquals(subject.geographics[0].valueURI,
+                          "http://id.loc.gov/authorities/names/n78095330")
+        self.assertEquals(subject.geographics[0].value_of,
+                          "United States")
+    	self.assertEquals(subject.topics[0].valueURI,
+    	                  "http://id.loc.gov/authorities/subjects/sh2002011436")
+    	self.assertEquals(subject.topics[0].value_of,
+    					  "Politics and government")
+    	self.assertEquals(subject.temporals[0].valueURI,
+    	                  "http://id.loc.gov/authorities/subjects/sh2002012476")
+    	self.assertEquals(subject.temporals[0].value_of,
+    	                  "20th century")
+    	                  
+    def test_subject_three(self):
+        subject = self.work.subjects[2]
+        self.assertEquals(subject.authority,"lcsh")
+        self.assertEquals(subject.authorityURI,
+                          "http://id.loc.gov/authorities/subjects")
+        self.assertEquals(subject.valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh2008107507")
+        self.assertEquals(subject.topics[0].valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh85081863")
+        self.assertEquals(subject.topics[0].value_of,
+                          "Mass media")
+        self.assertEquals(subject.topics[1].valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh00005651")
+        self.assertEquals(subject.topics[1].value_of,
+                          "Political aspects")
+        self.assertEquals(subject.geographics[0].valueURI,
+                          "http://id.loc.gov/authorities/names/n78095330")
+        self.assertEquals(subject.geographics[0].value_of,
+                          "United States")
+        
+    def test_subject_four(self):
+        subject = self.work.subjects[3]
+        self.assertEquals(subject.authority,
+                          "lcsh")
+        self.assertEquals(subject.authorityURI,
+                          "http://id.loc.gov/authorities/subjects")
+        self.assertEquals(subject.valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh2010115992")
+        self.assertEquals(subject.topics[0].valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh85133490")
+        self.assertEquals(subject.topics[0].value_of,
+                          "Television and politics")
+        self.assertEquals(subject.geographics[0].valueURI,
+                         "http://id.loc.gov/authorities/names/n78095330")
+        self.assertEquals(subject.geographics[0].value_of,
+                          "United States")
+                          
+    def test_subject_five(self):
+        subject = self.work.subjects[4]
+        self.assertEquals(subject.authority,
+                          "lcsh")
+        self.assertEquals(subject.authorityURI,
+                          "http://id.loc.gov/authorities/subjects")
+        self.assertEquals(subject.valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh2008109555")
+        self.assertEquals(subject.topics[0].valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh85106514")
+        self.assertEquals(subject.topics[0].value_of,
+                          "Press and politics")
+        self.assertEquals(subject.geographics[0].valueURI,
+                          "http://id.loc.gov/authorities/names/n78095330")
+        self.assertEquals(subject.geographics[0].value_of,
+                          "United States")
+                          
+    def test_subject_six(self):
+        subject = self.work.subjects[5]
+        self.assertEquals(subject.authority,
+                          "lcsh")
+        self.assertEquals(subject.authorityURI,
+                          "http://id.loc.gov/authorities/subjects")
+        self.assertEquals(subject.topics[0].value_of,
+                          "Talk shows")
+        self.assertEquals(subject.geographics[0].valueURI,
+                          "http://id.loc.gov/authorities/names/n78095330")
+        self.assertEquals(subject.geographics[0].value_of,
+                          "United States")
 
     def test_title(self):
         self.assertEquals(self.work.titleOfTheWork.title.value_of,
@@ -419,7 +552,47 @@ class TestMODSMotionPictureToFRBR(unittest.TestCase):
     def tearDown(self):
         redis_server.flushdb()
         
+class TestMODSMusicPictureToFRBR(unittest.TestCase):
+
+    def setUp(self):
+        mods_doc = etree.XML(mods_music_fixure)
+        self.mods = mods.mods()
+        self.mods.load_xml(mods_doc)
+        work_params = {
+            'creators':self.mods.names[0],
+            'formOfWork':self.mods.typeOfResources[0],
+            'titleOfTheWork':self.mods.titleInfos[0]}
+        self.work = frbr.Work(redis_server=redis_server,
+                              **work_params)
+        manifestation_params = {
+            'modeOfIssuanceManifestation':self.mods.originInfos[0].issuance}
+        self.manifestation = frbr.Manifestation(redis_server=redis_server,
+                                                **manifestation_params)
+             
+    def test_creator(self):
+        self.assertEquals(self.work.creators.mods_type,
+                          "personal")
+        self.assertEquals(self.work.creators.authorityURI,
+                          "http://id.loc.gov/authorities/names")
+        self.assertEquals(self.work.creators.valueURI,
+		          "http://id.loc.gov/authorities/names/n81100426")
+	self.assertEquals(self.work.creators.nameParts[0].value_of,
+		          "Lawson, Colin (Colin James)")
+
+    def test_form_of_work(self):
+        self.assertEquals(self.work.formOfWork.value_of,
+                          'notated music')
+
+    def test_issuance(self):
+        self.assertEquals(self.manifestation.modeOfIssuanceManifestation,
+                          "monographic")
         
+    def test_title(self):
+        self.assertEquals(self.work.titleOfTheWork.title.value_of,
+                          '3 Viennese arias :')
+        self.assertEquals(self.work.titleOfTheWork.subTitles[0].value_of,
+                          'for soprano, obbligato clarinet in B flat, and piano')
         
-        
+    def tearDown(self):
+        redis_server.flushdb()
     

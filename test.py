@@ -32,5 +32,5 @@ test_log.write("Unit tests for FRBR Redis Datastore ran on %s\n" % datetime.date
 runner = unittest.TextTestRunner(stream=test_log,verbosity=2)
 result = runner.run(suite)
 test_log.close()
-##runner = unittest.TextTestRunner(verbosity=2)
-##result = runner.run(suite)
+# runner = unittest.TextTestRunner(verbosity=2)
+# result = runner.run(suite)
