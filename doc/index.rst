@@ -20,6 +20,7 @@ Contents:
    marc.rst
    mods.rst
    maps.rst
+   cidoc_crm.rst
    
     
 

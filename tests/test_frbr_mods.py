@@ -564,8 +564,17 @@ class TestMODSMusicPictureToFRBR(unittest.TestCase):
             'titleOfTheWork':self.mods.titleInfos[0]}
         self.work = frbr.Work(redis_server=redis_server,
                               **work_params)
+        expression_params = {
+            'dateOfExpression':self.mods.originInfos[0].dateIssueds,
+            'languageOfTheContentExpression':self.mods.languages[1],
+            'languageOfExpression':self.mods.languages[0].languageTerms[0]}
+
+        self.expression = frbr.Expression(redis_server=redis_server,
+                                          **expression_params)
         manifestation_params = {
-            'modeOfIssuanceManifestation':self.mods.originInfos[0].issuance}
+            'modeOfIssuanceManifestation':self.mods.originInfos[0].issuance,
+            'placeOfProductionManifestation':self.mods.originInfos[0].places,
+            'publishersNameManifestation':self.mods.originInfos[0].publishers[0]}
         self.manifestation = frbr.Manifestation(redis_server=redis_server,
                                                 **manifestation_params)
              
@@ -579,6 +588,15 @@ class TestMODSMusicPictureToFRBR(unittest.TestCase):
 	self.assertEquals(self.work.creators.nameParts[0].value_of,
 		          "Lawson, Colin (Colin James)")
 
+    def test_date_of_expressions(self):
+        self.assertEquals(self.expression.dateOfExpression[0].value_of,
+                          'c1984')
+        self.assertEquals(self.expression.dateOfExpression[1].encoding,
+                          "marc")
+        self.assertEquals(self.expression.dateOfExpression[1].value_of,
+                          "1984")
+
+
     def test_form_of_work(self):
         self.assertEquals(self.work.formOfWork.value_of,
                           'notated music')
@@ -586,6 +604,48 @@ class TestMODSMusicPictureToFRBR(unittest.TestCase):
     def test_issuance(self):
         self.assertEquals(self.manifestation.modeOfIssuanceManifestation,
                           "monographic")
+
+    def test_language(self):
+        self.assertEquals(self.expression.languageOfExpression.authority,
+                          "iso639-2b")
+        self.assertEquals(self.expression.languageOfExpression.mods_type,
+                          "code")
+        self.assertEquals(self.expression.languageOfExpression.authorityURI,
+                          "http://id.loc.gov/vocabulary/iso639-2")
+        self.assertEquals(self.expression.languageOfExpression.valueURI,
+                          "http://id.loc.gov/vocabulary/iso639-2/ita")
+        self.assertEquals(self.expression.languageOfExpression.value_of,
+                          "ita")
+
+    def test_language_libretto(self):
+        self.assertEquals(self.expression.languageOfTheContentExpression.objectPart,
+                          "libretto")
+        self.assertEquals(self.expression.languageOfTheContentExpression.languageTerms[0].mods_type,
+                          "code")
+        self.assertEquals(self.expression.languageOfTheContentExpression.languageTerms[0].authority,
+                          "iso639-2b")
+        self.assertEquals(self.expression.languageOfTheContentExpression.languageTerms[0].value_of,
+                          "eng")
+
+    def test_place_of_publication(self):
+        self.assertEquals(self.manifestation.placeOfProductionManifestation[0].placeTerms[0].authority,
+                          "marccountry")
+        self.assertEquals(self.manifestation.placeOfProductionManifestation[0].placeTerms[0].mods_type,
+                          "code")
+        self.assertEquals(self.manifestation.placeOfProductionManifestation[0].placeTerms[0].authorityURI,
+                          "http://id.loc.gov/vocabulary/countries")
+        self.assertEquals(self.manifestation.placeOfProductionManifestation[0].placeTerms[0].valueURI,
+                          "http://id.loc.gov/vocabulary/countries/enk")
+        self.assertEquals(self.manifestation.placeOfProductionManifestation[0].placeTerms[0].value_of,
+                          "enk")
+        self.assertEquals(self.manifestation.placeOfProductionManifestation[1].placeTerms[0].mods_type,
+                          "text")
+        self.assertEquals(self.manifestation.placeOfProductionManifestation[1].placeTerms[0].value_of,
+                          "London")
+
+    def test_publisher(self):
+        self.assertEquals(self.manifestation.publishersNameManifestation.value_of,
+                          "Nova Music")
         
     def test_title(self):
         self.assertEquals(self.work.titleOfTheWork.title.value_of,

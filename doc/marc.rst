@@ -18,3 +18,12 @@ class wrapper and associated unit tests for basic manipulation of a
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: tests.test_marc21
    :members:
+
+`tests.test_marc2frbr_rda` Contents
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. automodule:: tests.test_marc2frbr_rda
+   :members:
+
+`tests.test_marc2skos` Contents
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. automodule:: tests.test_marc2skos

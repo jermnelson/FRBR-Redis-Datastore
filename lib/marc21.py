@@ -41,8 +41,6 @@ class MARC21Record(models.Model):
     leader = models.Attribute()
 
 
-marc21:1:
-
 def load_marc21(marc_record):
     """
     Loads a MARC21 record into Redis datastore

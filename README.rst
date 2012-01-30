@@ -2,7 +2,7 @@ README
 ======
 
 The `frbr-redis-datastore` project is a proof-of-concept native noSQL 
-bibiliographic datastore that transparently interoperates with 
+bibiliographic datastore that interoperates with 
 `Library of Congress's <http://www.loc.gov>`_ `MARC <http://www.loc.gov/marc/>`_
 `MODS <http://www.loc.gov/standards/mods>`_, `VRA Core <http://www.vraweb.org/projects/vracore4/>`_,
 `CIDOC CRM <http://www.cidoc-crm.org/>`_, `RDA Vocabularies <http://rdvocab.info/>`_, and others
