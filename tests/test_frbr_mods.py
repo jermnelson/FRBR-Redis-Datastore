@@ -24,6 +24,10 @@ mods_music_file = open('fixures/modsmusic.xml','rb')
 mods_music_fixure = mods_music_file.read()
 mods_music_file.close()
 
+mods_oral_history_file = open('fixures/mods-oral-history-cc.xml','rb')
+mods_oral_history_fixure = mods_oral_history_file.read()
+mods_oral_history_file.close()
+
 redis_server = redis.StrictRedis(host=config.REDIS_HOST,
                                  port=config.REDIS_PORT,
                                  db=config.REDIS_TEST_DB)
@@ -743,7 +747,7 @@ class TestMODSMusicToFRBR(unittest.TestCase):
 	self.assertEquals(self.work.containsWork[1].titleOfTheWork.valueURI,
                           "http://id.loc.gov/authorities/names/n85337311")
 	self.assertEquals(self.work.containsWork[1].titleOfTheWork.title.value_of,
-                          'Tutto in pianto il cor struggete')
+                          'Endimione.')
 	self.assertEquals(self.work.containsWork[1].titleOfTheWork.partName,
                           'E sempre inquieto quel core infelice.')
 	self.assertEquals(self.work.containsWork[1].creators.mods_type,
@@ -777,7 +781,7 @@ class TestMODSMusicToFRBR(unittest.TestCase):
                           "http://id.loc.gov/authorities/names")
 	self.assertEquals(constituent_work.creators.valueURI,
                           "http://id.loc.gov/authorities/names/n81005197")
-	self.assertEquals(constituent_work.creators.nameParts[0],
+	self.assertEquals(constituent_work.creators.nameParts[0].value_of,
                           'Bononcini, Giovanni,')
 	self.assertEquals(constituent_work.creators.nameParts[1].mods_type,
                           "date")
@@ -785,14 +789,14 @@ class TestMODSMusicToFRBR(unittest.TestCase):
                           "1670-1747")
 
     def test_related_item_constituent_four(self):
-        constituent_work = self.work.containsWork[4]
+        constituent_work = self.work.containsWork[3]
         self.assertEquals(constituent_work.titleOfTheWork.title.value_of,
                           "Three Viennese arias.")
 
     def test_related_item_constituent_five(self):
-        constituent_work = self.work.containsWork[5]
+        constituent_work = self.work.containsWork[4]
         self.assertEquals(constituent_work.titleOfTheWork.title.value_of,
-                          "Viennese arias")
+                          "Viennese arias.")
 
     def test_statement_of_responsibility(self):
         self.assertEquals(self.manifestation.noteOnStatementOfResponsibilityManifestation.mods_type,
@@ -841,4 +845,75 @@ class TestMODSMusicToFRBR(unittest.TestCase):
         
     def tearDown(self):
         redis_server.flushdb()
-    
+   
+
+class TestMODSOralHistoryToFRBR(unittest.TestCase):
+
+    def setUp(self):
+        mods_doc = etree.XML(mods_oral_history_fixure)
+        redis_mods = mods.mods()
+        redis_mods.load_xml(mods_doc)
+        self.work = frbr.Work(redis_server=redis_server,
+                              **{'creators':redis_mods.names[0],
+                                 'formOfWork':redis_mods.typeOfResources[0],
+                                 'titleOfTheWork':redis_mods.titleInfos[0],
+                                  'subjects':redis_mods.subjects})
+        expression_params = {'dateOfCaptureExpression':redis_mods.originInfos[0].dateCaptured,
+                             'dateOfExpression':redis_mods.originInfos[0].dateCreated,
+                             'languageOfExpression':redis_mods.languages[0]}
+        self.expression = frbr.Expression(redis_server=redis_server,
+                                          **expression_params)
+        manifestation_params = {'placeOfProductionManifestation':redis_mods.originInfos[0].places[0],
+                                'publishersNameManifestation':redis_mods.originInfos[0].publishers[0]}
+        self.manifestation = frbr.Manifestation(redis_server=redis_server,
+                                                **manifestation_params)
+
+    def test_creator(self):
+        self.assertEquals(self.work.creators.nameParts[0].value_of,
+                          'Finley, Judith Reid, 1936-')
+        self.assertEquals(self.work.creators.roles[0].roleTerms[0].authority,
+                          'marcrelator')
+        self.assertEquals(self.work.creators.roles[0].roleTerms[0].mods_type,
+                          'text')
+        self.assertEquals(self.work.creators.roles[0].roleTerms[0].value_of,
+                          'creator')
+
+    def test_date_captured(self):
+        self.assertEquals(self.expression.dateOfCaptureExpression.value_of,
+                          '2010-05-21')
+
+    def test_date_created(self):
+        self.assertEquals(self.expression.dateOfExpression.keyDate,
+                          "yes")
+        self.assertEquals(self.expression.dateOfExpression.value_of,
+                          '1995-03-08')
+    def test_form_of_work(self):
+         self.assertEquals(self.work.formOfWork.value_of,
+                           'mixed material')
+
+    def test_language(self):
+        self.assertEquals(self.expression.languageOfExpression.languageTerms[0].value_of,
+                          "eng")
+
+    def test_place_of_production(self):
+        self.assertEquals(self.manifestation.placeOfProductionManifestation.placeTerms[0].value_of,
+                          'Colorado Springs, Colorado')
+
+    def test_publisher(self):
+        self.assertEquals(self.manifestation.publishersNameManifestation.value_of,
+                          "Colorado College")
+
+    def test_subject_one(self):
+        self.assertEquals(self.work.subjects[0].topics[0].value_of,
+                          'Oral history')
+
+    def test_subject_two(self):
+        self.assertEquals(self.work.subjects[1].topics[0].value_of,
+                          'Universities and colleges')
+
+    def test_title(self):
+        self.assertEquals(self.work.titleOfTheWork.title.value_of,
+                          'Gamer, Carlton')
+
+    def tearDown(self):
+        redis_server.flushdb() 

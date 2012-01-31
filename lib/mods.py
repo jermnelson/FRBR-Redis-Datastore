@@ -140,7 +140,7 @@ class dateCaptured(baseMODSDate):
     value_of = models.Attribute()
 
     def load_xml(self,
-                 date_created_element):
+                 date_captured_element):
         """
         Method takes MODS element and sets Redis datastore values
 
@@ -154,6 +154,7 @@ class dateCreated(baseMODSDate):
     """
     dateCreated MODS element in Redis datastore
     """
+    keyDate = models.Attribute()
     value_of = models.Attribute()
 
     def load_xml(self,
@@ -164,6 +165,7 @@ class dateCreated(baseMODSDate):
         :param date_created_element: dateCreated XML element
         """
         set_attributes(date_created_element,self)
+        
         self.value_of = date_created_element.text
         self.save()
 
@@ -694,6 +696,7 @@ class originInfo(baseMODS):
     originInfo MODS element in Redis datastore
     """
     altRepGroup = models.Attribute()
+    dateCaptured = models.ReferenceField(dateCaptured)
     dateCreated = models.ReferenceField(dateCreated)
     dateIssueds = models.ListField(dateIssued)
     displayLabel = models.Attribute()
@@ -710,6 +713,11 @@ class originInfo(baseMODS):
         :param origin_info_element: originInfo MODS element
         """
         set_attributes(origin_info_element,self)
+        dateCaptured_element = origin_info_element.find('{%s}dateCaptured' % ns.MODS)
+        if dateCaptured_element is not None:
+            new_date_captured = dateCaptured()
+            new_date_captured.load_xml(dateCaptured_element)
+            self.dateCaptured = new_date_captured 
         dateCreated_element = origin_info_element.find('{%s}dateCreated' % ns.MODS)
         if dateCreated_element is not None:
             new_date_created = dateCreated()
