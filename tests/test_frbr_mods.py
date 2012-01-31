@@ -552,27 +552,53 @@ class TestMODSMotionPictureToFRBR(unittest.TestCase):
     def tearDown(self):
         redis_server.flushdb()
         
-class TestMODSMusicPictureToFRBR(unittest.TestCase):
+class TestMODSMusicToFRBR(unittest.TestCase):
 
     def setUp(self):
         mods_doc = etree.XML(mods_music_fixure)
         self.mods = mods.mods()
         self.mods.load_xml(mods_doc)
+        constituent_work_one = frbr.Work(redis_server=redis_server,
+                                         **{'titleOfTheWork':self.mods.relatedItems[1].titleInfos[0],
+                                            'creators':self.mods.relatedItems[1].names[0]})
+        constituent_work_two = frbr.Work(redis_server=redis_server,
+                                         **{'creators':self.mods.relatedItems[2].names[0],
+                                            'titleOfTheWork':self.mods.relatedItems[2].titleInfos[0]})
+        constituent_work_three = frbr.Work(redis_server=redis_server,
+                                           **{'creators':self.mods.relatedItems[3].names[0],
+                                              'titleOfTheWork':self.mods.relatedItems[3].titleInfos[0]})
+        constituent_work_four = frbr.Work(redis_server=redis_server,
+                                          **{'titleOfTheWork':self.mods.relatedItems[4].titleInfos[0]})
+        constituent_work_five = frbr.Work(redis_server=redis_server,
+                                          **{'titleOfTheWork':self.mods.relatedItems[5].titleInfos[0]})        
         work_params = {
             'creators':self.mods.names[0],
+            'containsWork':[constituent_work_one,
+                            constituent_work_two,
+                            constituent_work_three,
+                            constituent_work_four,
+                            constituent_work_five],
             'formOfWork':self.mods.typeOfResources[0],
+            'subjects':self.mods.subjects,
             'titleOfTheWork':self.mods.titleInfos[0]}
         self.work = frbr.Work(redis_server=redis_server,
                               **work_params)
+        
         expression_params = {
             'dateOfExpression':self.mods.originInfos[0].dateIssueds,
+            'formatOfNotatedMusicExpression':self.mods.physicalDescriptions[0].forms[0],
+            'identifierForTheExpression':self.mods.classifications,
             'languageOfTheContentExpression':self.mods.languages[1],
             'languageOfExpression':self.mods.languages[0].languageTerms[0]}
 
         self.expression = frbr.Expression(redis_server=redis_server,
                                           **expression_params)
         manifestation_params = {
+            'extentManifestation':self.mods.physicalDescriptions[0].extents[0],
             'modeOfIssuanceManifestation':self.mods.originInfos[0].issuance,
+            'noteManifestation':self.mods.notes[1:],
+            'noteOnStatementOfResponsibilityManifestation':self.mods.notes[0],
+            'parallelOtherTitleInformationOfSeriesManifestation':self.mods.relatedItems[0].titleInfos[0],
             'placeOfProductionManifestation':self.mods.originInfos[0].places,
             'publishersNameManifestation':self.mods.originInfos[0].publishers[0]}
         self.manifestation = frbr.Manifestation(redis_server=redis_server,
@@ -595,6 +621,26 @@ class TestMODSMusicPictureToFRBR(unittest.TestCase):
                           "marc")
         self.assertEquals(self.expression.dateOfExpression[1].value_of,
                           "1984")
+
+    def test_classification(self):
+        self.assertEquals(self.expression.identifierForTheExpression[0].authority,
+                          'lcc')
+        self.assertEquals(self.expression.identifierForTheExpression[0].value_of,
+                          'M1506 .A14 1984')
+
+    
+
+    def test_extent(self):
+        self.assertEquals(self.manifestation.extentManifestation.value_of,
+                          '1 score (12 p.) + 2 parts ; 31 cm.')
+
+    def test_format_of_notated_music(self):
+        self.assertEquals(self.expression.formatOfNotatedMusicExpression.authority,
+                          'marcform')
+        self.assertEquals(self.expression.formatOfNotatedMusicExpression.value_of,
+                          "print")
+
+    
 
 
     def test_form_of_work(self):
@@ -627,6 +673,21 @@ class TestMODSMusicPictureToFRBR(unittest.TestCase):
         self.assertEquals(self.expression.languageOfTheContentExpression.languageTerms[0].value_of,
                           "eng")
 
+    def test_notes(self):
+        self.assertEquals(self.manifestation.noteManifestation[0].value_of,
+                          'Opera excerpts.')
+        self.assertEquals(self.manifestation.noteManifestation[1].value_of,
+                          'Acc. arr. for piano; obbligato for the 2nd-3rd excerpts originally for chalumeau.')
+        self.assertEquals(self.manifestation.noteManifestation[2].value_of,
+                          'Italian words.')
+        self.assertEquals(self.manifestation.noteManifestation[3].value_of,
+                          'Cover title.')
+        self.assertEquals(self.manifestation.noteManifestation[4].value_of,
+                          "The 1st excerpt composed for inclusion in M.A. Ziani's Chilonida.")
+        self.assertEquals(self.manifestation.noteManifestation[5].value_of,
+                          'Texts with English translations on cover p. [2].')        
+        
+
     def test_place_of_publication(self):
         self.assertEquals(self.manifestation.placeOfProductionManifestation[0].placeTerms[0].authority,
                           "marccountry")
@@ -646,6 +707,131 @@ class TestMODSMusicPictureToFRBR(unittest.TestCase):
     def test_publisher(self):
         self.assertEquals(self.manifestation.publishersNameManifestation.value_of,
                           "Nova Music")
+
+    def test_related_item_series(self):
+        self.assertEquals(self.manifestation.parallelOtherTitleInformationOfSeriesManifestation.title.value_of,
+                          'Music for voice and instrument')
+
+    def test_related_item_constituent_one(self):
+        self.assertEquals(self.work.containsWork[0].titleOfTheWork.mods_type,
+                          "uniform")
+        self.assertEquals(self.work.containsWork[0].titleOfTheWork.authorityURI,
+                          "http://id.loc.gov/authorities/names")
+	self.assertEquals(self.work.containsWork[0].titleOfTheWork.valueURI,
+                          "http://id.loc.gov/authorities/names/no97083914")
+	self.assertEquals(self.work.containsWork[0].titleOfTheWork.title.value_of,
+                          'Tutto in pianto il cor struggete')
+	self.assertEquals(self.work.containsWork[0].creators.mods_type,
+                          "personal")
+	self.assertEquals(self.work.containsWork[0].creators.authorityURI,
+                          "http://id.loc.gov/authorities/names")
+	self.assertEquals(self.work.containsWork[0].creators.valueURI,
+                          "http://id.loc.gov/authorities/names/n79055650")
+	self.assertEquals(self.work.containsWork[0].creators.nameParts[0].value_of,
+                          'Joseph I, Holy Roman Emperor,')
+	self.assertEquals(self.work.containsWork[0].creators.nameParts[1].mods_type,
+                          "date")
+	self.assertEquals(self.work.containsWork[0].creators.nameParts[1].value_of,
+                          "1678-1711")
+	
+
+    def test_related_item_constituent_two(self):
+        self.assertEquals(self.work.containsWork[1].titleOfTheWork.mods_type,
+                          "uniform")
+        self.assertEquals(self.work.containsWork[1].titleOfTheWork.authorityURI,
+                          "http://id.loc.gov/authorities/names")
+	self.assertEquals(self.work.containsWork[1].titleOfTheWork.valueURI,
+                          "http://id.loc.gov/authorities/names/n85337311")
+	self.assertEquals(self.work.containsWork[1].titleOfTheWork.title.value_of,
+                          'Tutto in pianto il cor struggete')
+	self.assertEquals(self.work.containsWork[1].titleOfTheWork.partName,
+                          'E sempre inquieto quel core infelice.')
+	self.assertEquals(self.work.containsWork[1].creators.mods_type,
+                          "personal")
+	self.assertEquals(self.work.containsWork[1].creators.authorityURI,
+                          "http://id.loc.gov/authorities/names")
+	self.assertEquals(self.work.containsWork[1].creators.valueURI,
+                          "http://id.loc.gov/authorities/names/n81005197")
+	self.assertEquals(self.work.containsWork[1].creators.nameParts[0].value_of,
+                          'Bononcini, Giovanni,')
+	self.assertEquals(self.work.containsWork[1].creators.nameParts[1].mods_type,
+                          "date")
+	self.assertEquals(self.work.containsWork[1].creators.nameParts[1].value_of,
+                          "1670-1747")
+
+    def test_related_item_constituent_three(self):
+        constituent_work = self.work.containsWork[2]
+        self.assertEquals(constituent_work.titleOfTheWork.mods_type,
+                          "uniform")
+        self.assertEquals(constituent_work.titleOfTheWork.authorityURI,
+                          "http://id.loc.gov/authorities/names")
+	self.assertEquals(constituent_work.titleOfTheWork.valueURI,
+                          "http://id.loc.gov/authorities/names/n85337312")
+	self.assertEquals(constituent_work.titleOfTheWork.title.value_of,
+                          'Mutio Scevola.')
+	self.assertEquals(constituent_work.titleOfTheWork.partName,
+                          'Adorata genitrice.')
+	self.assertEquals(constituent_work.creators.mods_type,
+                          "personal")
+	self.assertEquals(constituent_work.creators.authorityURI,
+                          "http://id.loc.gov/authorities/names")
+	self.assertEquals(constituent_work.creators.valueURI,
+                          "http://id.loc.gov/authorities/names/n81005197")
+	self.assertEquals(constituent_work.creators.nameParts[0],
+                          'Bononcini, Giovanni,')
+	self.assertEquals(constituent_work.creators.nameParts[1].mods_type,
+                          "date")
+	self.assertEquals(constituent_work.creators.nameParts[1].value_of,
+                          "1670-1747")
+
+    def test_related_item_constituent_four(self):
+        constituent_work = self.work.containsWork[4]
+        self.assertEquals(constituent_work.titleOfTheWork.title.value_of,
+                          "Three Viennese arias.")
+
+    def test_related_item_constituent_five(self):
+        constituent_work = self.work.containsWork[5]
+        self.assertEquals(constituent_work.titleOfTheWork.title.value_of,
+                          "Viennese arias")
+
+    def test_statement_of_responsibility(self):
+        self.assertEquals(self.manifestation.noteOnStatementOfResponsibilityManifestation.mods_type,
+                          'statement of responsibility')
+        self.assertEquals(self.manifestation.noteOnStatementOfResponsibilityManifestation.value_of,
+                          'G.B. Bononcini and Emperor Joseph I ; edited by Colin Lawson.')
+
+    def test_subject_one(self):
+        subject = self.work.subjects[0]
+        self.assertEquals(subject.authority,
+                          "lcsh")
+        self.assertEquals(subject.authorityURI,
+                          "http://id.loc.gov/authorities/subjects")
+	self.assertEquals(subject.valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh2008108658")
+	self.assertEquals(subject.topics[0].valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh85094914")
+	self.assertEquals(subject.topics[0].value_of,
+                          "Operas")
+	self.assertEquals(subject.genres[0].valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh99001548")
+	self.assertEquals(subject.genres[0].value_of,
+                          "Excerpts, Arranged")
+	self.assertEquals(subject.genres[1].valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh99001780"),
+	self.assertEquals(subject.genres[1].value_of,
+                          "Scores and parts")
+
+    def test_subject_two(self):
+        subject = self.work.subjects[1]
+        self.assertEquals(subject.authority,
+                          "lcsh")
+        self.assertEquals(subject.authorityURI,
+                          "http://id.loc.gov/authorities/subjects")
+        self.assertEquals(subject.topics[0].valueURI,
+                          "http://id.loc.gov/authorities/subjects/sh85125142")
+        self.assertEquals(subject.topics[0].value_of,
+                          "Songs (High voice) with instrumental ensemble")
+        
         
     def test_title(self):
         self.assertEquals(self.work.titleOfTheWork.title.value_of,

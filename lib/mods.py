@@ -464,7 +464,9 @@ class namePart(baseMODS):
         set_attributes(namepart_element,self)
         self.value_of = namepart_element.text
         self.save()
-        
+
+
+
 class roleTerm(baseMODS):
     """
     roleTerm MODS element in Redis datastore
@@ -886,6 +888,7 @@ class subject(baseMODS):
     authority = models.Attribute()
     authorityURI = models.Attribute()
     displayLabel = models.Attribute()
+    genres = models.ListField(genre)
     geographics = models.ListField(geographic)
     mods_ID = models.Attribute()
     usage = models.Attribute()
@@ -902,6 +905,11 @@ class subject(baseMODS):
         :param subject_element: subject XML element
         """
         set_attributes(subject_element,self)
+        genre_elements = subject_element.findall('{%s}genre' % ns.MODS)
+        for element in genre_elements:
+            new_genre = genre()
+            new_genre.load_xml(element)
+            self.genres.append(new_genre)
         geographic_elements = subject_element.findall('{%s}geographic' % ns.MODS)
         for element in geographic_elements:
             new_geographic = geographic()
@@ -932,12 +940,33 @@ class subTitle(baseMODS):
         Method takes MODS xml and updates values in Redis datastore
         based on XML values
         
-        :param subtitle_element: title XML element
+        :param subtitle_element: subTitle XML element
         """
         set_attributes(subtitle_element,self)
         self.value_of = subtitle_element.text
         self.save()
         
+
+class tableOfContents(baseMODS):
+    """
+    tableOfContents MODS element in Redis datastore
+    """
+    displayLabel = models.Attribute()
+    mods_type = models.Attribute()
+    xlink = models.Attribute()
+    xml_lang = models.Attribute()
+
+    def load_xml(self,
+                 toc_element):
+        """
+        Method takes MODS xml and updates values in Redis datastore
+        based on XML values
+        
+        :param subtitle_element: title XML element
+        """
+        set_attributes(toc_element,self)
+        self.value_of = toc_element.text
+        self.save()
     
 class title(baseMODS):
     """
@@ -969,6 +998,7 @@ class titleInfo(baseMODS):
     mods_ID = models.Attribute()
     mods_type = models.Attribute()
     nonSort = models.Attribute()
+    partName = models.Attribute()
     subTitles = models.ListField(subTitle)
     supplied = models.Attribute()
     title = models.ReferenceField(title)
@@ -993,6 +1023,9 @@ class titleInfo(baseMODS):
         nonsort_element = title_info_element.find('{%s}nonSort' % ns.MODS)
         if nonsort_element is not None:
             self.nonSort = nonsort_element.text
+        partname_element = title_info_element.find('{%s}partName' % ns.MODS)
+        if partname_element is not None:
+            self.partName = partname_element.text
         subTitles = title_info_element.findall('{%s}subTitle' % ns.MODS)
         for element in subTitles:
             new_subTitle = subTitle()
@@ -1142,6 +1175,7 @@ class relatedItem(baseMODS):
     relatedItem MODS element in Redis datastore
     """
     mods_type = models.Attribute()
+    names = models.ListField(name)
     originInfos= models.ListField(originInfo)
     parts = models.ListField(part)
     titleInfos = models.ListField(titleInfo)
@@ -1155,6 +1189,11 @@ class relatedItem(baseMODS):
         :param related_item_element: relatedItem XML element
         """
         set_attributes(related_item_element,self)
+        name_elements = related_item_element.findall('{%s}name' % ns.MODS)
+        for element in name_elements:
+            new_name = name()
+            new_name.load_xml(element)
+            self.names.append(new_name)        
         origin_info_elements = related_item_element.findall('{%s}originInfo' % ns.MODS)
         for element in origin_info_elements:
             new_origin_info = originInfo()
@@ -1196,7 +1235,7 @@ class mods(models.Model):
     recordInfo = models.ReferenceField(recordInfo)
     relatedItems = models.ListField(relatedItem)
     subjects = models.ListField(subject)
-##    tableOfContents
+    tableOfContents = models.ListField(tableOfContents)
     targetAudiences = models.ListField(targetAudience)
     titleInfos = models.ListField(titleInfo)
     typeOfResources = models.ListField(typeOfResource)
@@ -1275,6 +1314,11 @@ class mods(models.Model):
             new_target_audience.load_xml(element)
             self.targetAudiences.append(new_target_audience)
         titleInfos = mods_xml.findall('{%s}titleInfo' % ns.MODS)
+        toc_elements = mods_xml.findall('{%s}tableOfContents' % ns.MODS)
+        for element in toc_elements:
+            new_toc = tableOfContents()
+            new_toc.load_xml(element)
+            self.tableOfContents.append(new_toc)
         for element in titleInfos:
             new_titleInfo = titleInfo()
             new_titleInfo.load_xml(element)
