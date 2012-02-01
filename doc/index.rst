@@ -13,6 +13,7 @@ Contents:
 
    readme.rst
    install.rst
+   configure-run.rst
    common.rst
    frbr.rst
    frad.rst
