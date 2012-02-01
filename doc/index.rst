@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    readme.rst
+   install.rst
    common.rst
    frbr.rst
    frad.rst

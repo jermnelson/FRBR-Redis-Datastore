@@ -2,7 +2,7 @@
 
 
 <%block name="main_content">
-  <h1 class="cc_royal">Relationship to Unit and BBD Testing</h1>
+  <h1 class="cc_royal">Relationship to Unit and BDD Testing</h1>
   <p>The Library of Congress 
    <a href="http://www.loc.gov/marc/transition/news/framework-103111.html">A Bibliographic Framework for the Digital Age</a> 
    provides the basis for quality assurance testing of specific 
@@ -37,7 +37,7 @@
  <h3>Unit Testing and the Bibliographic Framework</h3>
  <p> 
   While the unit tests in ${project.name} are not as directly 
-  matched to specifics in the Bibliographic Framework as BBD tests are,
+  matched to specifics in the Bibliographic Framework as BDD tests are,
   the unit tests do provide comprehensive coverage of core representation
   of important standards and schemas that are required or mentioned in the 
   announcement such as MARC21, MODS, and VRA Core. Also, when testing 
@@ -57,7 +57,7 @@
   there is a one-to-one requirement to feature match with each feature having
   multiple scenarios that describe specific  expectations that ${project.name}
   should meet in order to meet that requirement. For requirements six, seven,
-  and eight, which all deal with MARC 21, were condensed into a single feature
+  and eight, which all deal with MARC 21, are condensed into a single feature
   with multiple scenarios testing the specifics of each of those requirements.
  </p>
 </div>
@@ -69,7 +69,7 @@
   <a href="#" class="close">x</a>
   <h2>Unit Test Example</h2>
   <p>
-  From <a href="#">tests/test_mods.py</a>
+  From <a href="https://github.com/jermnelson/FRBR-Redis-Datastore/blob/master/tests/test_mods.py">tests/test_mods.py</a>
   </p>
  </div> 
  <div class="modal-body">
@@ -107,6 +107,7 @@
  <div class="modal-header">
   <a href="#" class="close">x</a>
   <h2>BDD Test Example</h2>
+  <a href="https://github.com/jermnelson/FRBR-Redis-Datastore/blob/master/tests/features/loc.1.feature">tests/features/loc.1.feature</a>
  </div>
  <div class="modal-body">
  <pre class="prettyprint">

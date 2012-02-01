@@ -1,4 +1,6 @@
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
   <rdf:Description xml:lang="en" rdf:about="marc2skos-frbr-item.rdf"/>
   <skos:Concept xml:lang="en" rdf:about="MARC 013 to FRBR Item'parallel mapping">
     <skos:inScheme rdf:resource="marc2skos-frbr-item.rdf"/>

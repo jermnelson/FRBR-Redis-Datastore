@@ -853,20 +853,40 @@ class TestMODSOralHistoryToFRBR(unittest.TestCase):
         mods_doc = etree.XML(mods_oral_history_fixure)
         redis_mods = mods.mods()
         redis_mods.load_xml(mods_doc)
+        self.series_work = frbr.Work(redis_server=redis_server,
+                                     **{'titleOfTheWork':redis_mods.relatedItems[0].titleInfos[0]})
         self.work = frbr.Work(redis_server=redis_server,
-                              **{'creators':redis_mods.names[0],
+                              **{'containedInWork':self.series_work,
+                                 'creators':redis_mods.names[0],
                                  'formOfWork':redis_mods.typeOfResources[0],
                                  'titleOfTheWork':redis_mods.titleInfos[0],
-                                  'subjects':redis_mods.subjects})
-        expression_params = {'dateOfCaptureExpression':redis_mods.originInfos[0].dateCaptured,
-                             'dateOfExpression':redis_mods.originInfos[0].dateCreated,
-                             'languageOfExpression':redis_mods.languages[0]}
+                                 'subjects':redis_mods.subjects})
+        expression_params = {
+            'abstractOfExpression':redis_mods.abstracts[0],
+            'dateOfCaptureExpression':redis_mods.originInfos[0].dateCaptured,
+            'dateOfExpression':redis_mods.originInfos[0].dateCreated,
+            'languageOfExpression':redis_mods.languages[0]}
         self.expression = frbr.Expression(redis_server=redis_server,
                                           **expression_params)
-        manifestation_params = {'placeOfProductionManifestation':redis_mods.originInfos[0].places[0],
-                                'publishersNameManifestation':redis_mods.originInfos[0].publishers[0]}
+        manifestation_params = {
+            'electronicReproductionManifestation':redis_mods.physicalDescriptions[0].digitalOrigin,
+            'noteOnChangesInCarrierCharacteristicsManifestation':redis_mods.notes[1],
+            'placeOfProductionManifestation':redis_mods.originInfos[0].places[0],
+            'publishersNameManifestation':redis_mods.originInfos[0].publishers[0],
+            'titleProperOfSeriesManifestation':redis_mods.relatedItems[0].titleInfos[0],
+            'uniformResourceLocatorManifestation':redis_mods.locations[0].urls[0]}
+        
         self.manifestation = frbr.Manifestation(redis_server=redis_server,
                                                 **manifestation_params)
+
+    def test_abstract(self):
+        self.assertEquals(self.expression.abstractOfExpression.value_of,
+                          'A noted composer and music theorist, Professor Carlton Gamer received his Bachelors in Music from Northwestern University in 1950, and his Masters from Boston University in 1951. He came to Colorado College first in 1953 as an accompanist for the dance program. From 1954 through 1960, he was a full-time instructor in the music department. He became assistant professor in 1960; associate professor in 1966; and served as a full professor from 1974 until his retirement in 1994. Besides his talents as a composer and teacher of music, Professor Gamer also has had a great interest in Asian culture and philosophy and mathematical thought. As a conscientious objector, Professor Gamer counseled many young men about the draft.')
+
+    def test_contained_in_work(self):
+        self.assertEquals(self.work.containedInWork,
+                          self.series_work)
+        
 
     def test_creator(self):
         self.assertEquals(self.work.creators.nameParts[0].value_of,
@@ -887,6 +907,11 @@ class TestMODSOralHistoryToFRBR(unittest.TestCase):
                           "yes")
         self.assertEquals(self.expression.dateOfExpression.value_of,
                           '1995-03-08')
+
+    def test_electronic_reproduction(self):
+        self.assertEquals(self.manifestation.electronicReproductionManifestation.value_of,
+                          'reformatted digital')
+        
     def test_form_of_work(self):
          self.assertEquals(self.work.formOfWork.value_of,
                            'mixed material')
@@ -894,6 +919,10 @@ class TestMODSOralHistoryToFRBR(unittest.TestCase):
     def test_language(self):
         self.assertEquals(self.expression.languageOfExpression.languageTerms[0].value_of,
                           "eng")
+
+    def test_note_changes_in_carrier(self):
+        self.assertEquals(self.manifestation.noteOnChangesInCarrierCharacteristicsManifestation.value_of,
+                          'Digitized from the original Special Collections Audio tape R76. This interview is part of a larger collection totaling 89 individuals. Interview transcripts converted to PDF/A from Microsoft Word. Other file materials, biographical data sheets, indexes, legal releases scanned from originals and converted to text searchable PDF/A using Fujitsu 4150 scanner and Scandallpro software version 1.5. Scanned at 400 dpi. Photos scanned at 500 dpi and saved as jpeg. There are 131 preservation wave files (44.1 kHz, 16-bit) and 131 delivery mp3 files (128 kbps) in the set. Each file represents up to an hour of material, equivalent to one side of a reel-to-reel tape or both sides of a cassette tape. The 262 files are now located on both of two hard drives in Special Collections, the master drive (A1) formatted for Mac and a backup drive (B1) formatted for PC. (.wav preservation masters created by Tom Sanny using Final Cut Pro. Analog tapes digitized as QuickTime 44k16b .mov files. Dead air edited out and sound levels adjusted ; .wav files exported using FCP QuickTime Conversion tool ; .mp3 files created from .wav files using Switch.) All files are monaural.')
 
     def test_place_of_production(self):
         self.assertEquals(self.manifestation.placeOfProductionManifestation.placeTerms[0].value_of,
@@ -903,6 +932,12 @@ class TestMODSOralHistoryToFRBR(unittest.TestCase):
         self.assertEquals(self.manifestation.publishersNameManifestation.value_of,
                           "Colorado College")
 
+    def test_series_title(self):
+        self.assertEquals(self.manifestation.titleProperOfSeriesManifestation.value_of,
+                          self.series_work.titleOfTheWork.value_of)
+        self.assertEquals(self.manifestation.titleProperOfSeriesManifestation.title.value_of,
+                          'Colorado College Oral History Collection')
+
     def test_subject_one(self):
         self.assertEquals(self.work.subjects[0].topics[0].value_of,
                           'Oral history')
@@ -911,9 +946,75 @@ class TestMODSOralHistoryToFRBR(unittest.TestCase):
         self.assertEquals(self.work.subjects[1].topics[0].value_of,
                           'Universities and colleges')
 
+    def test_subject_three(self):
+        self.assertEquals(self.work.subjects[2].topics[0].value_of,
+                          'Faculty')
+
+    def test_subject_four(self):
+        self.assertEquals(self.work.subjects[3].topics[0].value_of,
+                          'Music')
+
+    def test_subject_five(self):
+        self.assertEquals(self.work.subjects[4].names[0].mods_type,
+                          'corporate')
+        self.assertEquals(self.work.subjects[4].names[0].nameParts[0].value_of,
+                          'Colorado College')
+
+    def test_subject_six(self):
+        self.assertEquals(self.work.subjects[5].names[0].mods_type,
+                          'corporate')
+        self.assertEquals(self.work.subjects[5].names[0].nameParts[0].value_of,
+                          'Colorado College. Dept. of Music')
+
+    def test_subject_seven(self):
+        self.assertEquals(self.work.subjects[6].names[0].mods_type,
+                          'personal')
+        self.assertEquals(self.work.subjects[6].names[0].nameParts[0].value_of,
+                          'Gamer, Carlton')
+
+    def test_subject_temporal(self):
+        temporal_one = self.work.subjects[7]
+        temporal_two = self.work.subjects[8]
+        temporal_three = self.work.subjects[9]
+        temporal_four = self.work.subjects[10]
+        temporal_five = self.work.subjects[11]
+        self.assertEquals(temporal_one.temporals[0].value_of,
+                          '1950-1959')
+        self.assertEquals(temporal_two.temporals[0].value_of,
+                          '1960-1969')
+        self.assertEquals(temporal_three.temporals[0].value_of,
+                          '1970-1979')
+        self.assertEquals(temporal_four.temporals[0].value_of,
+                          '1980-1989')
+        self.assertEquals(temporal_five.temporals[0].value_of,
+                          '1990-1999')
+
+    def test_subject_geographic(self):
+        geographic_one = self.work.subjects[12]
+        geographic_two = self.work.subjects[13]
+        self.assertEquals(geographic_one.geographics[0].value_of,
+                          'Colorado')
+        self.assertEquals(geographic_two.geographics[0].value_of,
+                          'Colorado Springs (Colo.)')
+
+    def test_subject_genres(self):
+        genre_one = self.work.subjects[14]
+        genre_two = self.work.subjects[15]
+        self.assertEquals(genre_one.genres[0].value_of,
+                          'Personal narratives')
+        self.assertEquals(genre_two.genres[0].value_of,
+                          'Audio recording')
+        
+
     def test_title(self):
         self.assertEquals(self.work.titleOfTheWork.title.value_of,
                           'Gamer, Carlton')
+
+    def test_url(self):
+        self.assertEquals(self.manifestation.uniformResourceLocatorManifestation.usage,
+                          'primary display')
+        self.assertEquals(self.manifestation.uniformResourceLocatorManifestation.value_of,
+                          'http://hdl.handle.net/10176/coccc:3049')
 
     def tearDown(self):
         redis_server.flushdb() 

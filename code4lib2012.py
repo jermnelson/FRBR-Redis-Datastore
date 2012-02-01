@@ -8,6 +8,7 @@ from mako.template import Template
 from mako.lookup import TemplateLookup
 from bottle import debug,get,post,request,route,run,static_file,FlupFCGIServer
 import redis
+import fixures.code4lib2012.datastore as datastore
 
 debug(True)
 
@@ -32,8 +33,11 @@ project = Project()
 setattr(project,'name','FRBR-Redis-Datastore')
 setattr(project,'url','https://github.com/jermnelson/FRBR-Redis-Datastore')
 
-        
-        
+# LOAD LOC MODS collection
+loc_mods = []
+
+# LOAD CC MARC collection
+cc_marc = []
 
 @route('/js/:filename')
 def send_static_js(filename):
@@ -174,19 +178,19 @@ def section_slide(section=None,
                            slide=slide,
                            project=project)
     
-#if __name__ == '__main__':
-#    print("Run Code4Lib 2012 %s Presentation" % project.name)
-#    print("Please select hosting option:")
-#    print("\t1) Standalone")
-#    print("\t2) FCGI")
-#    prompt = raw_input(r">> ")
-#    if prompt.lower() == '1':
-#        run(host=config.WEB_HOST,
-#            port=config.PRESENTATION_PORT)
-#    elif prompt.lower() == '2':
-#        run(server=FlupFCGIServer,
-#            host=config.WEB_HOST,
- #           port=config.PRESENTATION_PORT)
-run(server=FlupFCGIServer,
-    host=config.WEB_HOST,
-    port=config.PRESENTATION_PORT)
+if __name__ == '__main__':
+    print("Run Code4Lib 2012 %s Presentation" % project.name)
+    print("Please select hosting option:")
+    print("\t1) Standalone")
+    print("\t2) FCGI")
+    prompt = raw_input(r">> ")
+    if prompt.lower() == '1':
+        run(host=config.WEB_HOST,
+            port=config.PRESENTATION_PORT)
+    elif prompt.lower() == '2':
+        run(server=FlupFCGIServer,
+            host=config.WEB_HOST,
+            port=config.PRESENTATION_PORT)
+##run(server=FlupFCGIServer,
+##    host=config.WEB_HOST,
+##    port=config.PRESENTATION_PORT)

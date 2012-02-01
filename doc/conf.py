@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# FRBR Redis Datastore documentation build configuration file, created by
-# sphinx-quickstart on Fri Nov 11 07:46:50 2011.
+# FRBR-Redis-Datastore documentation build configuration file, created by
+# sphinx-quickstart on Tue Jan 31 09:09:46 2012.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
@@ -16,11 +16,7 @@ import sys, os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, os.path.abspath('../tests/'))
-sys.path.insert(0, os.path.abspath('../tests/features/'))
-sys.path.insert(0, os.path.abspath('../lib/'))
-sys.path.insert(0, os.path.abspath('../maps/'))
+#sys.path.insert(0, os.path.abspath('.'))
 
 # -- General configuration -----------------------------------------------------
 
@@ -29,7 +25,7 @@ sys.path.insert(0, os.path.abspath('../maps/'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.viewcode']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -44,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'FRBR Redis Datastore'
-copyright = u'2011, Jeremy Nelson'
+project = u'FRBR-Redis-Datastore'
+copyright = u'2012, Jeremy Nelson'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -168,26 +164,21 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'FRBRRedisDatastoredoc'
+htmlhelp_basename = 'FRBR-Redis-Datastoredoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
 
-latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+# The paper size ('letter' or 'a4').
+#latex_paper_size = 'letter'
 
 # The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
-
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
-}
+#latex_font_size = '10pt'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'FRBRRedisDatastore.tex', u'FRBR Redis Datastore Documentation',
+  ('index', 'FRBR-Redis-Datastore.tex', u'FRBR-Redis-Datastore Documentation',
    u'Jeremy Nelson', 'manual'),
 ]
 
@@ -205,6 +196,9 @@ latex_documents = [
 # If true, show URL addresses after external links.
 #latex_show_urls = False
 
+# Additional stuff for the LaTeX preamble.
+#latex_preamble = ''
+
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []
 
@@ -217,30 +211,6 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'frbrredisdatastore', u'FRBR Redis Datastore Documentation',
+    ('index', 'frbr-redis-datastore', u'FRBR-Redis-Datastore Documentation',
      [u'Jeremy Nelson'], 1)
 ]
-
-# If true, show URL addresses after external links.
-#man_show_urls = False
-
-
-# -- Options for Texinfo output ------------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-  ('index', 'FRBRRedisDatastore', u'FRBR Redis Datastore Documentation',
-   u'Jeremy Nelson', 'FRBRRedisDatastore', 'One line description of project.',
-   'Miscellaneous'),
-]
-
-# Documents to append as an appendix to all manuals.
-#texinfo_appendices = []
-
-# If false, no module index is generated.
-#texinfo_domain_indices = True
-
-# How to display URL addresses: 'footnote', 'no', or 'inline'.
-#texinfo_show_urls = 'footnote'

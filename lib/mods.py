@@ -899,6 +899,7 @@ class subject(baseMODS):
     genres = models.ListField(genre)
     geographics = models.ListField(geographic)
     mods_ID = models.Attribute()
+    names = models.ListField(name)
     usage = models.Attribute()
     temporals = models.ListField(temporal)
     topics = models.ListField(topic)
@@ -923,6 +924,11 @@ class subject(baseMODS):
             new_geographic = geographic()
             new_geographic.load_xml(element)
             self.geographics.append(new_geographic)
+        name_elements = subject_element.findall('{%s}name' % ns.MODS)
+        for element in name_elements:
+            new_name = name()
+            new_name.load_xml(element)
+            self.names.append(new_name)
         temporal_elements = subject_element.findall('{%s}temporal' % ns.MODS)
         for element in temporal_elements:
             new_temporal = temporal()

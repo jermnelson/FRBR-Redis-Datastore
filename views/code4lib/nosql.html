@@ -12,12 +12,12 @@
   <p>NoSQL is a class of newer data storage 
     technologies that sidestep traditional 
     normalized databases that use SQL and schemas. While a comprehensive
-    review of NoSQL projects was not done, investigation was done on some
-    commerical and open-source until Redis was selected and was started as
-    a distinct
-    <a href="${project.url}">${project.name}</a> project. Redis was selected 
-    for its easy of deployment and flexiblity in exploring new data 
-    structures for representing bibliographic records.
+    review of NoSQL projects was not done, investigation was done on a few
+    commercial and open-source NoSQL projects when Redis was discovered 
+    and work was started on <a href="${project.url}">${project.name}</a> 
+    as a distinct project. Redis was selected for its easy of deployment 
+    and flexibility in exploring new data structures for representing 
+    bibliographic records.
    </p>
    
    ##<a href="http://nosql-database.org/">http://nosql-database.org/</a>,
@@ -31,14 +31,17 @@
   <div class="span6" style="background: url(http://hadoop.apache.org/images/hadoop-logo.jpg) bottom right no-repeat;">
    <h2>BigTable, Google App Engine, and Hadoop<a name="bigtable.html"></a></h2>
    <ul>
-     <li><a href="http://dl.acm.org/citation.cfm?doid=1365815.1365816">Bigtable</a> original distributed storage system for managing structured data at
-     Google</li>
+     <li><a href="http://dl.acm.org/citation.cfm?doid=1365815.1365816">Bigtable</a> is the
+     original distributed storage system for managing structured data at
+     Google and the inspiration of Hadoop and Cassandra NoSQL open-source
+     projects.
+     </li>
      <li><a href="http://code.google.com/appengine">Google App Engine</a>
          provides access to Google proprietary implementation of BigTable and 
          GFS but is limited by restrictions and is tied to Google's Cloud.</li>
      <li><a href="http://hadoop.apache.org/">Hadoop</a> is one of the 
-         fastest growing open-source implementation of BigTable</li>
-     <li>Hadoop can be complex to set-up; model would seem to work for 
+         fastest growing open-source implementation of BigTable. It 
+         can be complex to set-up; but would seem to work for 
          well for an FRBR-based datastore</li>
    </ul>
    <p><a class="btn" href="/background/hadoop.html">Details
@@ -50,7 +53,7 @@
    <h2>Other NoSQL <a name="other_nosql"></a></h2>
    <p>There are many other NoSQL datastore technologies including document stores like 
     <a href="http://couchdb.apache.org/">CouchDB</a> and 
-    <a href="http://www.mongodb.org/">MongoDB</a>. More well-known graph 
+    <a href="http://www.mongodb.org/">MongoDB</a> and more well-known graph 
     datastores <a href="https://github.com/twitter/flockdb">FlockDB</a> and
     <a href="http://neo4j.org/">Neo4j</a>. 
    <p>Facebook donated their 
@@ -66,10 +69,10 @@
   ## START Redis Section
   <div class="span5" style="background: url(http://redis.io/images/redis.png) top right no-repeat;">
   <h2>Why Redis?<a name="frbr"></a></h2>
-  <p>The key-value <a href='http://redis.io'>Redis.io</a> cache nature
-  means Redis is fast, small, and easy is to deploy, key requirements 
-  of the LOC bibliographic frameworks and cructial for smaller and leaner
-  libraries and cultural information technology organizations.</p>
+  <p>The key-value <a href='http://redis.io'>Redis.io</a> nature
+  means Redis is fast, small, and easy to deploy; key requirements 
+  of the LOC bibliographic frameworks and crucial for smaller
+  libraries and leaner cultural IT organizations.</p>
   <ul>
     <li>Fast, C code</li>
     <li>Multiple language bindings including Python, Ruby, PHP, Perl,

@@ -4,7 +4,7 @@
 <%block name="main_content">
   <h1 class="cc_royal">BigTable &amp; Hadoop</h1>
   <ul class="main-content">
-    <li>Started Big Data revolution with publication by Google Engineer Chang, Dean, Ghemawat, et. al
+    <li>Started Big Data revolution with publication by Google Engineer Chang, Dean, Ghemawat, etc.
         <a href="http://dl.acm.org/citation.cfm?doid=1365815.1365816">paper</a> on Google's storage
         technology in 2008 called BigTable</li>
     <li><a href="http://apache.hadoop.org/">Hadoop</a> is an official
@@ -19,23 +19,24 @@
 </%block>
 
 <%block name="sidebar_content">
- <div class="well">
+ <div class="alert-message block-message alert">
   <h5>What about Relational Databases?</h5>
-  <p>A relational database, such as from Oracle,
+  <p>A relational database, from Oracle,
   Microsoft, MySQL, or Postgre, and used by many
-  current legacy systems to store MARC records offer
-  one alternative but lack the flexiblity to represent 
-  arbitarity data schemas.</p>
+  current ILS systems to store MARC records offer
+  one alternative but lack the flexibility to represent 
+  arbitrarily data schemas and have issues scaling out to 
+  hundreds of millions of records</p>
   <h5>What about Solr?</h5>
   <p>
    <a href="http://lucene.apache.org/solr/">Solr</a> 
    addresses a different problem than data storage and is more of
-   search and retrival technology than a NoSQL datastore. Although 
-   there is often overlapp when a full-text searching is implemented in 
+   search and retrieval technology than a NoSQL datastore. Although 
+   there is often overlap when a full-text searching is implemented in 
    an SQL database index or NoSQL index. While currently in planning,
-   <a href="${project.url}">${project.name}</a> will use Solr to for
+   <a href="${project.url}">${project.name}</a> will use Solr for
    end-user and application searching of FRBR entities and retrieve
-   entities from the Redis datastore.
+   entities.
   </p>
  </div>
 </%block>
@@ -48,7 +49,7 @@
 </p>
 <div class="alert-message info">
  A native Hadoop version of FRBR using similar design principles
- as the <a href="#">FRBR-to-Redis datastore</a> project is certainly
+ as the <a href="${project.url}">${project.name}</a> project is certainly
  possible!
 </div>
 </ul>
@@ -61,7 +62,7 @@
  <p>The <a href="http://code.google.com/p/ecataloger">eCataloger</a> 
  project is an early example of creating a native FRBR datastore using 
  a NoSQL datastore. The eCataloger was used for a small
- college's public ELibrary and forinternal government publications 
+ college's public ELibrary and for internal government publications 
  and serials management applications. More information is available
  at <a href="http://journal.code4lib.org/articles/4357">this December 2010 
  article</a> from Code4Lib.
