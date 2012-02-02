@@ -9,7 +9,10 @@ from mako.lookup import TemplateLookup
 from bottle import debug,get,post,request,route,run,static_file,FlupFCGIServer
 import redis
 import fixures.code4lib2012.datastore as datastore
-
+from redisco import connection_setup
+import lib.mods as mods
+import frbr_rda as frbr
+from lxml import etree
 debug(True)
 
 conference_templates = TemplateLookup(directories=[os.path.join(os.path.dirname(__file__),
@@ -22,6 +25,10 @@ conference_templates = TemplateLookup(directories=[os.path.join(os.path.dirname(
 code4lib_redis = redis.StrictRedis(host=config.REDIS_HOST,
                                    port=config.REDIS_PORT,
                                    db=config.REDIS_CODE4LIB_DB)
+
+connection_setup(host=config.REDIS_HOST,
+                 port=config.REDIS_PORT,
+                 db=config.REDIS_CODE4LIB_DB)
 
 class Project(object):
 
@@ -36,7 +43,26 @@ setattr(project,'url','https://github.com/jermnelson/FRBR-Redis-Datastore')
 #! RUN CHECK TO SEE IF LOG directory exists, otherwise create
 
 # LOAD LOC MODS collection
-loc_mods = []
+loc_mods = {}
+for filename in ['modsbook.xml',
+                 'modsmusic.xml']:
+    file_object = open('fixures/%s' % filename,'rb')
+    file_contents = file_object.read()
+    file_object.close()
+    new_mods = mods.mods()
+    new_doc = etree.XML(file_contents)
+    new_mods.load_xml(new_doc)
+    work = frbr.Work(redis_server=code4lib_redis,
+                     **{'titleOfTheWork':new_mods.titleInfos[0]})
+    expression = frbr.Expression(redis_server=code4lib_redis,
+                                 **{'dateOfExpression':new_mods.originInfos[0].dateIssueds})
+    manifestation = frbr.Manifestation(redis_server=code4lib_redis,
+                                       **{'publishersNameManifestation':new_mods.originInfos[0].publishers[0]})
+    loc_mods[filename] = {'mods':new_mods,
+                          'mods_xml':new_doc,
+                          'work':work,
+                          'expression':expression,
+                          'manifestation':manifestation}
 
 # LOAD CC MARC collection
 cc_marc = []
@@ -118,12 +144,18 @@ def salvo():
 @route('/code4lib/record2cube/record.html')
 @get('/record2cube/record.html')
 def flat_view():
+    xml_text = None
+    print("BEFORE hasattr request")
     if hasattr(request.forms,'wemi-redis-id'):
+        print("IN REQUEST HANDLER")
         wemi_redis_key = getattr(request.forms,'wemi-redis-id')
         wemi = code4lib_redis.get(wemi_redis_key)
+        xml_text = etree.tostring(loc_mods[wemi]['mods_xml'])
     template = conference_templates.get_template('flat.html')
     return template.render(section="cube",
-                           project=project)
+                           project=project,
+                           xml_text=xml_text,
+                           redis_entities=loc_mods)
         
 @route('/code4lib/background/redis.html')
 @get('/background/redis.html')

@@ -4,11 +4,11 @@
  ## START row 1 DIV
  <div class="row">
   ## START Main Visualization For Flat View
-  <div class="span10" id="visualization">
+  <div class="span7" id="visualization">
   % if xml_text:
-  <pre>
+  <textarea style="width:550px" rows="20">
   ${xml_text}
-  </pre>
+  </textarea>
   % else:
   <h2>Please select schema and WEMI entities</h2>
   % endif
@@ -17,7 +17,7 @@
   
   ## START Schema/Format and WEMI entities selection
   <div class="well span4">
-   <form>
+   <form action="/code4lib/record2cube/record.html">
    <h5>Select Schema or Formats</h5>
    <select name="schema">
     <option value="dc">Dublin Core</option>
@@ -26,12 +26,18 @@
    </select>
    <h5>Select WEMI Entities</h5>
    <select name="wemi-redis-id">
-    <option value="REDIS_ID">Code4Lib 2012 Presentation's WEMI Entities</option>
+    % for k,v in redis_entities.iteritems():
+    <option value="${k}">${v['work'].titleOfTheWork.title.value_of}</option>
+    % endfor
    </select>
    <br/>
    <input type="submit" value="Display" class="btn" />
   </div>
+  
+
  ## END row 1 DIV
  </div>
 ## END content DIV
 </div>
+
+
