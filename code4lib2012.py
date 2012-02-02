@@ -33,32 +33,36 @@ project = Project()
 setattr(project,'name','FRBR-Redis-Datastore')
 setattr(project,'url','https://github.com/jermnelson/FRBR-Redis-Datastore')
 
+#! RUN CHECK TO SEE IF LOG directory exists, otherwise create
+
 # LOAD LOC MODS collection
 loc_mods = []
 
 # LOAD CC MARC collection
 cc_marc = []
 
+@route('/code4lib/js/:filename')
 @route('/js/:filename')
 def send_static_js(filename):
     root = "%s/views/js" % os.getcwd()
     return static_file(filename,
                        root=root)
 
+@route('/code4lib/css/:filename')
 @route('/css/:filename')
 def send_static_js(filename):
     root = "%s/views/css" % os.getcwd()
     return static_file(filename,
                        root=root)
 
-
+@route('/code4lib/img/:filename')
 @route('/img/:filename')
 def send_static_img(filename):
     root = "%s/views/img" % os.getcwd()
     return static_file(filename,
                        root=root)
 
-
+@route('/code4lib/')
 @get('/')
 def index():
     """
@@ -76,37 +80,42 @@ def check_exists(pagename):
         return False
     return pagename
 
+@route('/code4lib/background.html')
 @route('/background.html')
 def background_base():
     background_page = conference_templates.get_template('loc_framework.html')
     return background_page.render(section="background",
                                   project=project)
 
+@route('/code4lib/record2cube.html')
 @route('/record2cube.html')
 def cube_base():
     template = conference_templates.get_template('cube.html')
     return template.render(section="cube",
                            project=project)
 
+@route('/code4lib/future.html')
 @route('/future.html')
 def future():
     template = conference_templates.get_template('future.html')
     return template.render(section="engineering",
                            project=project)
-    
+
+@route('/code4lib/engineering.html')
 @route('/engineering.html')
 def engineering_base():
     template = conference_templates.get_template('engineering.html')
     return template.render(section="engineering",
                            project=project)
 
+@route('/code4lib/salvo.html')
 @get('/salvo.html')
 def salvo():
     template = conference_templates.get_template('salvo.html')
     return template.render(section="salvo",
                            project=project)
 
-
+@route('/code4lib/record2cube/record.html')
 @get('/record2cube/record.html')
 def flat_view():
     if hasattr(request.forms,'wemi-redis-id'):
@@ -116,7 +125,7 @@ def flat_view():
     return template.render(section="cube",
                            project=project)
         
-     
+@route('/code4lib/background/redis.html')
 @get('/background/redis.html')
 def redis_slide():
     template = conference_templates.get_template('redis.html')
@@ -130,6 +139,7 @@ def redis_slide():
                            project=project,
                            redis_server=redis_server)
 
+@route('/code4lib/engineering/python.html')
 @get('/engineering/python.html')
 def python_slide():
     template = conference_templates.get_template('python.html')
@@ -146,6 +156,7 @@ def python_slide():
                            project=project,
                            module_listing=module_listing)
 
+@route('/code4lib/engineering/testing.html')
 @get('/engineering/testing.html')
 def testing_slide():
     template = conference_templates.get_template('testing.html')
@@ -161,6 +172,7 @@ def testing_slide():
                            active_unit_tests=active_unit_tests,
                            unit_test_results=unit_testing_log)
 
+@route('/code4lib/:section/:slide')
 @route('/:section/:slide')
 def section_slide(section=None,
                   slide=None):
