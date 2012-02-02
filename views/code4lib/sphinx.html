@@ -6,11 +6,11 @@
   <p>Source Code in the <a href="${project.url}">${project.name}</a> uses
    the <a href="http://sphinx.pocoo.org/">Sphinx</a> Python documentation 
    generator along with 
-   <a href="http://docutils.sourceforge.net/rst.html">reStructedText</a> for
+   <a href="http://docutils.sourceforge.net/rst.html">reStructured</a> for
    code and technical documentation
    </p>
   <p>
-     <a class="btn btn-primary btn-large" href="/engineering/testing.html">Unit
+     <a class="btn btn-primary btn-large" href="/code4lib/engineering/testing.html">Unit
      &amp; Behavior Driven Development Testing &raquo;</a>
   </p>
 </%block>
@@ -28,13 +28,32 @@
 </%block>
 
 <%block name="subtopic_one">
-<h2>Installing ${project.name}</h2>
+<h2>Documentation for ${project.name}</h2>
 <p>
- Installation instructions to install 
-
+ Installation instructions and other technical document for the 
+ ${project.name} project are written in the reStructured format.
 </p>
+<pre>
+Installing FRBR Redis Datastore
+===============================
+Directions for installing `FRBR-Redis-Datastore` on an Ubuntu_ 11.10 
+server. Directions for installing `FRBR-Redis-Datastore` on
+Windows or Macintosh are similar but will require different installation
+directions for some of the project's dependencies.
+
+.. _Ubuntu: http://www.ubuntu.com
+
+
+Install Redis
+-------------
+#. Use ``wget`` to download Redis tar file
+   ``$ wget http://redis.googlecode.com/files/redis-2.4.6.tar.gz``
+#. Untar the file
+   ``$ tar xzf redis-2.4.6.tar.gz``
+#. Run make
+   ``$ make``
+</pre>
 </%block>
 
 <%block name="subtopic_two">
-<div class="
 </%block>

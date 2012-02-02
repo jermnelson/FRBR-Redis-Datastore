@@ -2,18 +2,19 @@
 
 
 <%block name="main_content">
-  <h1 class="cc_royal">BigTable &amp; Hadoop</h1>
+  <h1 class="cc_royal">BigTable &amp; <img src="/code4lib/img/hadoop-logo.jpg" style="padding-top: .25em;" /></h1>
   <ul class="main-content">
     <li>Started Big Data revolution with publication by Google Engineer Chang, Dean, Ghemawat, etc.
         <a href="http://dl.acm.org/citation.cfm?doid=1365815.1365816">paper</a> on Google's storage
         technology in 2008 called BigTable</li>
-    <li><a href="http://apache.hadoop.org/">Hadoop</a> is an official
-         Apache project with a strong community of developers, sponsers,
+    <li >
+        <a href="http://apache.hadoop.org/">Hadoop</a> is an official
+         Apache open-source project with a strong community of developers, sponsers,
          and users</li>
      
   </ul>
   <p>
-     <a class="btn btn-primary btn-large" href="/background/other_nosql.html">Other 
+     <a class="btn btn-primary btn-large" href="/code4lib/background/other_nosql.html">Other 
      NoSQL &raquo;</a>
   </p>
 </%block>
@@ -42,11 +43,13 @@
 </%block>
 
 <%block name="subtopic_one">
+<div >
 <h2>Well, Why not Hadoop?</h2>
 <p>
  Hadoop was just too complicated compared to the
  simple three-step Redis server set-up. 
 </p>
+</div>
 <div class="alert alert-block alert-info">
  A native Hadoop version of FRBR using similar design principles
  as the <a href="${project.url}">${project.name}</a> project is certainly
@@ -58,7 +61,7 @@
 <%block name="subtopic_two">
 <div class="well aside">
  <h3>eCataloger and Googe App Engine</h3>
- <img width="100" src="http://code.google.com/appengine/images/appengine_lowres.png" style="float:right" />
+ <img width="100" src="http://code.google.com/appengine/images/appengine_lowres.png" style="float:left" />
  <p>The <a href="http://code.google.com/p/ecataloger">eCataloger</a> 
  project is an early example of creating a native FRBR datastore using 
  a NoSQL datastore. The eCataloger was used for a small

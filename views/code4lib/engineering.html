@@ -4,11 +4,11 @@
  <div class="hero-unit" id="main-content">
   <h1 class="cc_royal">Engineering</h1>
   <p>The Engineering choices of the 
-     <a href="#">FRBR-to-Redis Datastore</a> project including tools and
+     <a href="${project.url}">${project.name}</a> project including tools and
      technologies along with typical open-source methodological approaches
      and philosophies</p>
    <p>
-     <a class="btn btn-primary btn-large" href="/engineering/python.html">Python with LXML, Redis, and PyMARC &raquo;</a></p>
+     <a class="btn btn-primary btn-large" href="/code4lib/engineering/python.html">Python with LXML, Redis, and PyMARC &raquo;</a></p>
  </div>
  
  ## START First ROW of Tools
@@ -20,7 +20,7 @@
    The primary server and utilities tools are developed in the Python or
    C programming languages..
   </p>
-  <p><a class="btn" href="/engineering/python.html">Details 
+  <p><a class="btn" href="/code4lib/engineering/python.html">Details 
       &raquo;</a></p>
   ## END Python modules DIV
   </div>
@@ -31,7 +31,7 @@
        mappings, SKOS was chosen to construct these elements and
        concepts mappings between MARC21 and MODS with their 
        respective FRBR entities</p>
-    <p><a class="btn" href='/engineering/skos.html'>Details 
+    <p><a class="btn" href='/code4lib/engineering/skos.html'>Details 
       &raquo;</a></p> 
   ## END SKOS, RDF, RDA DIV
   </div>
@@ -46,7 +46,7 @@
       code and technical documentation currently available at 
       <a href="http://frbr-redis-datastore.readthedocs.org/">http://frbr-redis-datastore.readthedocs.org/</a>
     </p>
-    <p><a class="btn" href="/engineering/sphinx.html">Details 
+    <p><a class="btn" href="/code4lib/engineering/sphinx.html">Details 
       &raquo;</a></p> 
    ## END Sphinx Python Documentation  DIV
   </div>
@@ -57,9 +57,16 @@
   ## START Unit Testing
   <div class="span4">
    <h2>Unit and BDD Testing</h2>
-    <p>Unit testing... </p>
-    <p>BDD testing with lettuce...</p>
-  <p><a class="btn" href="/engineering/testing.html">Details 
+    <p>Unit tests of code are the current method of 
+       exploring the functionality of the NoSQL &amp; Redis 
+       as a Bibliographic datastore in <a href="${project.url}">${project.name}</a> 
+    </p>
+    <p>Behavior Driven Development (BDD) features are used to describe
+       and test requirements from the 
+       <a href="/code4lib/background/loc_framework.html">Libary of Congress Bibliographic Framework</a>
+       using the Python module <a href="http://lettuce.it/">lettuce</a>.
+     </p>
+    <p><a class="btn" href="/code4lib/engineering/testing.html">Details 
       &raquo;</a></p> 
   ## END Unit Testing
    </div>
@@ -69,11 +76,12 @@
    <p>To assist in the development this presentation and the project's
       HTML user-interface, the following the frameworks are used:
    <ul>
-     <li><a href="#">Bootstrap</a></li>
-     <li><a href="#">jQuery</a></li>
-     <li><a href="#">Rapha&euml;l</a></li>
+     <li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a></li>
+     <li><a href="http://jqueryui.com/">jQuery</a></li>
+     <li><a href="http://raphaeljs.com/">Rapha&euml;l</a></li>
+     <li><a href="https://github.com/mrdoob/three.js/">Three.js</a>
    </ul>
-   <p><a class="btn" href="/engineering/web.html">Details 
+   <p><a class="btn" href="/code4lib/engineering/web.html">Details 
       &raquo;</a></p> 
   ## END Client Web DIV
   </div>
@@ -82,11 +90,8 @@
   <div class="span4">
    <h2>Source Code</h2>
    <p>The primary source code is licensed under the
-    Apache 2 open-source hosted at Bitbucked
-    <a href="#">FRBR-to-Redis datastore</a>. The source
-    code documentation is generated using 
-    <a href="http://sphinx.pocoo.org/">Sphinx</a> and
-    is available at <a href="#">readthedocs.org</a>.
+    Apache 2 open-source hosted at Github
+    <a href="${project.url}">${project.url}</a>. 
    </p>
    <p>
     The Aristotle Django Discovery Layer will be used as an 
@@ -96,7 +101,7 @@
     <a href="https://github.com/jermnelson/Discover-Aristotle">
     https://github.com/jermnelson/Discover-Aristotle</a>.
    </p>
-    <p><a class="btn" href="/engineering/source_code.html">Details 
+    <p><a class="btn" href="/code4lib/engineering/source_code.html">Details 
       &raquo;</a></p> 
   ## END Source code repositories DIV
   </div>

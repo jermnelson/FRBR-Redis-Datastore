@@ -1,12 +1,22 @@
 <%inherit file="presentation-inside.html" />
 
 <%block name="more_js">
-<script src="/js/default.js"></script>
+<script src="/code4lib/js/default.js"></script>
 <script>
  $(document).ready(function() {
 	$("#charles-stross-galatic-cataloger").hide();
 	$("#Microsoft-Research-Future-of-Writing").hide();
 	$("#internet-of-things").hide();
+ });
+ $(function () {
+   $("a[rel=popover]")
+     .popover({
+      offset: 10,
+      html: true
+    })
+   .click(function(e) {
+     e.preventDefault()
+    })
  });
 </script>
 </%block>
@@ -26,14 +36,14 @@
 ## START content DIV
 <div class="content">
 
-  <img src="/img/Carol.png" style="float:left;padding:.5em;height:215px"  />
+  <img src="/code4lib/img/Carol.png" style="float:left;padding:.5em;height:215px"  />
  ## START hero DIV
  <div class="hero-unit">
   <h1 class="cc_royal">Parting Salvo</h1>
   <p>Some finishing thoughts about (one) possible future 
      of cataloging and libraries</p>
   <h2>Thank-you!</h2>
-  <p>Jeremy Nelson jeremy.nelson at coloradocollege.edu</p>
+  <p>Jeremy Nelson jeremy.nelson@coloradocollege.edu</p>
  ## END hero DIV
  </div>
  
@@ -87,7 +97,7 @@
  <div class="modal hide fade span10" id="brand-remix">
   <div class="modal-header">
    <a href="#" class="close">x</a>
-   <img src="/img/Stewart-Brand.jpg" style="float:left;padding-right:.5em" />
+   <img src="/code4lib/img/Stewart-Brand.jpg" style="float:left;padding-right:.5em" />
  <h2 style="color:#003479;">We are all catalogers we might as we well get good at it</h2>
   </div>
   <div class="modal-body">
@@ -102,7 +112,7 @@
 
 ## START Stross Div
 <div class="hero-unit" id="charles-stross-galatic-cataloger" 
- style="background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Charles_Stross_May09.jpg/240px-Charles_Stross_May09.jpg) top right no-repeat;">
+ style="background: url(/code4lib/img/Charles_Stross_may09.jpg) top right no-repeat;">
 <h1 class="cc_royal">The Codex Mathemagica</h1>
 <h2>Charles Stross's Laundry Series</h2>
 <blockquote style="background-color:#99FF99">
@@ -120,9 +130,12 @@
 </blockquote>
 <p>
  In Charles Stross's James Bond meets H.P. Lovecraft Laundry series, 
- Magic is just a branch of applied mathematics, with some of the best 
- librarians working at a secret library branch of British intelligence 
- as zombies!!!
+ magic is just a branch of applied mathematics, where a secret 
+ branch of British intelligence has it's main library located in an 
+ abandoned London subway.  Most of these librarians are 
+ <a href="#" data-placement="top" rel="popover" title="Charles Stross with a Zombie Librarian" 
+  data-content="<img src='/code4lib/img/me_and_Charles_Stross_jan12.jpg' />">
+ zombies</a>!!!
 </p>
 <p>
  Unlike other fields, we as librarians, information

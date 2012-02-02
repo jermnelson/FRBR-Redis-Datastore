@@ -5,7 +5,7 @@
  <p>Engineered <a href="${project.url}">${project.name}</a> using Python 
     and open-source third-party modules.</p>
     <p>
-     <a class="btn btn-primary btn-large" href="/engineering/skos.html">SKOS &amp; RDA &raquo;</a>
+     <a class="btn btn-primary btn-large" href="/code4lib/engineering/skos.html">SKOS &amp; RDA &raquo;</a>
    </p>
 </%block>
 
@@ -24,8 +24,9 @@
 <div class="alert alert-success">
  <p><strong>Installation instructions </strong> for 
  ${project.name} are
- available <a href="${project.url}">here</a>, included is this
- presentation!
+ available <a href="http://frbr-redis-datastore.readthedocs.org/en/latest/install.html">here</a>. After installing
+ <a href="${project.url}">${project.name}</a>, you'll be able to access this
+ presentation as well!
 </div>
 </%block>
 
@@ -39,14 +40,14 @@
        Repository also implemented using Emory University's
        <a href="https://github.com/emory-libraries/eulfedora">Eulfedora</a>
     <li>Solr interactions built using <a href="https://github.com/tow/sunburnt">Sunburnt</a>.
-    <li>Licensed under Apache 2 and available at <a href="https://github.com/jermnelson/Discover-Aristotle">Discover Aristotle</a></li>
+    <li>Licensed under Apache 2 and available at Discover Aristotle's <a href="https://github.com/jermnelson/Discover-Aristotle">github repository</a></li>
  </ul>
  </div>
 </%block>
 
 <%block name="subtopic_two">
  <div class="alert alert-block alert-warning">
- <img src="/img/python-xml-title.png" alt="lxml" style="float:left" />
+ <img src="/code4lib/img/python-xml-title.png" alt="lxml" style="float:left" />
  <h3>A cool hack with <a href="http://lxml.de/">lxml</a> and RDF.</h3>
  <p>
  For CIDOC CRM, FRBRoo, and FRBR RDA classes, it was not necessary to 
@@ -54,7 +55,7 @@
  ${project.name} using duck-typing and lxml, Resource Description Framework (RDF)
  files describing the classes for these specifications and properties already existed
  and so a lightweight container class was created and utilitized with the 
- <a href="#">redis</a> module to provide a object-mapper to the Redis datastore.
+ <a href="https://github.com/andymccurdy/redis-py">redis</a> module to provide a object-mapper to the Redis datastore.
  </p>
  </div>
 </%block>

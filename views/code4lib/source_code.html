@@ -2,20 +2,27 @@
 
 <%block name="main_content">
   <h1 class="cc_royal">Source Code</h1>
-  <p>The primary source code is licensed under the Apache 2 open-source 
-  hosted at Github <a href="${project.url}">${project.url}</a>.
+  <p>The primary source code for ${project.name} is licensed under the Apache 2 open-source 
+     license and the code repository is hosted at 
+     Github <a href="${project.url}">${project.url}</a>.
   </p>
   <p>The source code documentation is generated using Sphinx and is 
      available at 
      <a href="http://frbr-redis-datastore.readthedocs.org/">http://frbr-redis-datastore.readthedocs.org/</a>
   </p>
-  <p>The Aristotle Django Discovery Layer will be used as an 
+    <p>
+     <a class="btn btn-primary btn-large" href="/code4lib/future.html">The Future &raquo;</a>
+   </p>
+</%block>
+
+<%block name="sidebar_content">
+<div class="alert alert-block alert-info">
+ <h2>Aristotle</h2>
+ <p>The Aristotle Django Discovery Layer will be used as an 
      administrative and Solr search front-end to the Redis datastore 
      for Colorado College's Tutt Library. 
      This source code is currently available at 
-     https://github.com/jermnelson/Discover-Aristotle. 
+     <a href="https://github.com/jermnelson/Discover-Aristotle">https://github.com/jermnelson/Discover-Aristotle.</a>
   </p>
-   <p>
-     <a class="btn btn-primary btn-large" href="/future.html">The Future &raquo;</a>
-   </p>
+</div>
 </%block>

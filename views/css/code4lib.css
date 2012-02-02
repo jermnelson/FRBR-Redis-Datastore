@@ -3,7 +3,7 @@ body {
 }
  
 div.space_bk {
-  background:url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Space_Needle_2011-07-04.jpg/121px-Space_Needle_2011-07-04.jpg) bottom right no-repeat;
+  background:url(/code4lib/img/seattle-space-needle.jpg) bottom right no-repeat;
 }
 
 
@@ -16,7 +16,9 @@ div.cc_box {
 }
 
 div.cc-discovery {
- background: url(/img/cc-discovery.png) top right no-repeat;
+ background: url(/code4lib/img/cc-discovery.png) top right no-repeat;
+ font-size: 1.1em;
+ height: 250px;
 }
 
 div.marc-sorry {
