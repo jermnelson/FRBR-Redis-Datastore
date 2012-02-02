@@ -10,17 +10,17 @@
       <li>Interoperability is a core requirement of LOC Bibliographic
           Framework</li>
       <li>Colorado College's currently uses its legacy ILS to manage over 
-         <span class="label success" style="font-size:1em">875,590</span> 
+         <span class="label label-success" style="font-size:1em">875,590</span> 
          MARC21 records for its print holdings and 
          electronic resources</li>
      </ul>
   <p>
-    <a class="btn primary large" href="/background/mods.html">MODS &raquo;</a>
+    <a class="btn btn-primary btn-large" href="/background/mods.html">MODS &raquo;</a>
   </p>
 </%block>
 
 <%block name="sidebar_content">
-<div class="alert-message block-message success">
+<div class="alert alert-block alert-success">
 <h3>MARC 21</h3>
 <p>MARC 21 three basic components are</p>
 <ul>
@@ -44,7 +44,7 @@
   records using <a href="https://github.com/edsu/pymarc">pymarc</a>.
  </p>
 </div>
-<div class="alert-message block-message info">
+<div class="alert alert-block alert-info">
 <p><strong>MARC21Record</strong> Python Class</p>
 <pre class="prettyprint">
 class MARC21Record(models.Model):
@@ -55,7 +55,7 @@ class MARC21Record(models.Model):
     leader = models.Attribute()
 </pre>
 </div>
-<div class="alert-message block-message info">
+<div class="alert alert-block alert-info">
 <p><strong>MARC21Field</strong> Python Class</p>
 <pre class="prettyprint">
 class MARC21Field(models.Model):
@@ -68,7 +68,7 @@ class MARC21Field(models.Model):
     subfields = models.ListField(MARC21Subfield)
 </pre>
 </div>
-<div class="alert-message block-message info">
+<div class="alert alert-block alert-info">
 <p><strong>MARC21Subfield</strong> Python Class</p>
 <pre class="prettyprint">
 class MARC21Subfield(models.Model):

@@ -25,36 +25,35 @@
 
 ## START content DIV
 <div class="content">
+
+  <img src="/img/Carol.png" style="float:left;padding:.5em;height:215px"  />
  ## START hero DIV
- <img src="/img/Carol.png" style="float:left;padding-right:1em;" height="250px"/>
  <div class="hero-unit">
   <h1 class="cc_royal">Parting Salvo</h1>
   <p>Some finishing thoughts about (one) possible future 
      of cataloging and libraries</p>
   <h2>Thank-you!</h2>
+  <p>Jeremy Nelson<br/> jeremy.nelson at coloradocollege.edu</p>
   
  ## END hero DIV
  </div>
-
- 
-
  
  ## FIRST row DIV
  <div class="row">
   ## START What? Why? DIV
-  <div class="span6">
-   <p><a class="btn info large" data-keyboard="true" data-backdrop="true" 
+  <div class="span4">
+   <p><a class="btn btn-info btn-large" data-keyboard="true" data-backdrop="true" 
     data-controls-modal="cataloging-future">Catalog What? Where? Why?</a></p>
   ## END What? Why? DIV
   </div>
   ## START Stross Comment DIV
-  <div class="span5">
-  <p><a class="btn info large" onclick="salvoAnimation2('start')">Charles Stross Comment</a></p>
+  <div class="span4">
+  <p><a class="btn btn-info btn-large" onclick="salvoAnimation2('start')">Charles Stross Comment</a></p>
   ## END Stross Comment DIV
   </div>
   ## START Brand Remix DIV
-  <div class="span5">
-    <p><a class="btn info large" data-keyboard="true" data-backdrop="true" 
+  <div class="span4">
+    <p><a class="btn btn-info btn-large" data-keyboard="true" data-backdrop="true" 
     data-controls-modal="brand-remix">Stewart Brand Remix</a></p>
   ## END Brand Remis DIV
   </div>
@@ -68,17 +67,19 @@
 <div class="modal hide fade span10" id="cataloging-future">
  <div class="modal-header">
   <a class="close" href="#">x</a>
-  <h2>Internet of Things, Spimes, Augmented Reality, and other hyped terms...</h2>
+  <h2><a href="http://www.theinternetofthings.eu/">Internet of Things</a>, 
+      <a href="http://www.youtube.com/watch?v=2FOAtxafuK0">Spimes</a>, 
+      <a href="http://www.howstuffworks.com/augmented-reality.htm">Augmented Reality</a>, and other hyped terms...</h2>
  </div>
  <div class="modal-body">
- <h2>...will all need catalogs!</h2>
+ <h2>... all need catalogs!</h2>
  <blockquote>
- <p>Good and relevant cataloging establishes the long-now memory of our
+ <p style="font-size:120%">Good and relevant cataloging establishes the <a href="http://longnow.org/about/">long-now</a> memory of our
     real and imagined artifacts</p>
  </blockquote>
  </div>
  <div class="modal-footer">
-  <a class="btn info large" onclick="$('#cataloging-future').modal('hide')">Close</a>
+  <a class="btn btn-info btn-large" onclick="$('#cataloging-future').modal('hide')">Close</a>
  </div>
 ## END Cataloger Future DIV
 </div>
@@ -87,7 +88,7 @@
  <div class="modal hide fade span10" id="brand-remix">
   <div class="modal-header">
    <a href="#" class="close">x</a>
-   <img src="/img/Stewart-Brand.jpg" style="float:left" />
+   <img src="/img/Stewart-Brand.jpg" style="float:left;padding-right:.5em" />
  <h2 style="color:#003479;">We are all catalogers we might as we well get good at it</h2>
   </div>
   <div class="modal-body">
@@ -95,7 +96,7 @@
     catalog</p>
   </div>
   <div class="modal-footer">
-   <a class="btn alert large" onclick="$('#brand-remix').modal('hide')">Close</a>
+   <a class="btn btn-primary btn-large" onclick="$('#brand-remix').modal('hide')">Close</a>
   </div>
  ## END Brand DIV
  </div>
@@ -104,25 +105,38 @@
 <div class="hero-unit" id="charles-stross-galatic-cataloger" 
  style="background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Charles_Stross_May09.jpg/240px-Charles_Stross_May09.jpg) top right no-repeat;">
 <h1 class="cc_royal">The Codex Mathemagica</h1>
-<h2>Charles Stross Laundry Series</h2>
+<h2>Charles Stross's Laundry Series</h2>
+<blockquote style="background-color:#99FF99">
+ <p>
+  We don't use the Dewey Decimal Catalogue to locate volumes here; our
+  requirements are sufficiently specialised that we have to use the system
+  devised by Professor Angell of Brown University and subsequently known as
+  the Codex Mathemagica. I've spent the past few weeks getting my head 
+  around the more arcane aspects of a cataloguing system that uses surreal
+  number theory and can cope with N-dimensional library space of Borges.
+ </p>
+ <p>
+  -- The Atrocity Archives
+ </p>
+</blockquote>
 <p>
- Magic is just computational realisim, making what we do even more
- voodoo. Do you ever imagine being a cataloger in a Lovercraftain, Lucas,
- <a href="http://harrypotter.wikia.com/wiki/Hogwarts_Library">Potter</a>, 
- Dungeons and Dragons, or Tokken universies?
+ In Charles Stross's James Bond meets H.P. Lovecraft Laundry series, 
+ Magic is just a branch of applied mathematics, with some of the best 
+ librarians working at a secret library branch of British intelligence 
+ as zombies!!!
 </p>
 <p>
- However! Unlike all of those other fields, we as librarians, information
+ Unlike other fields, we as librarians, information
  technologists, and curious individuals can and do apply imaginary 
  topics to never existing artifacts using the same technology we use for
  tangible objects. 
 </p>
 <p>
  So imagine your FRBR artifacts cataloged with your communitiy's metadata
- branes, creating the augmented world of smart spimes.
+ creating the augmented world of smart spimes or .
 </p>
 <p>
-<a class="btn alert large" onclick="salvoAnimation2()">Close</a>
+<a class="btn btn-primary btn-large" onclick="salvoAnimation2()">Close</a>
 </p>
 ## END Stross Div
 </div>

@@ -9,17 +9,17 @@
       to disk or append the data to disk with each command to a log.
   </p>
   <p>
-     <a class="btn primary large" href="/record2cube.html">Record to Cube Visualizations &raquo;</a>
+     <a class="btn btn-primary btn-large" href="/record2cube.html">Record to Cube Visualizations &raquo;</a>
   </p>
 </%block>
 
 <%block name="sidebar_content">
 <div>
- <div class="alert-message error">
+ <div class="marc-sorry">
  <p><strong>Quick Redis Setup</strong></p>
  <p>
- (Assumes you are running under a Linux VM
-  with wget and make already installed)</p>
+ (Assumes you are running under Linux 
+  with <code>wget</code> and <code>make</code> already installed)</p>
  <p>Open a terminal window and run the following commands:</p>
  <pre style="color: black;">
   $ wget http://redis.googlecode.com/files/redis-2.4.6.tar.gz
@@ -38,7 +38,7 @@
 
 <div class="row">
  ## START Key-value DIV
- <div class="span6">
+ <div class="span3">
   <h3>Key-Value Store</h3>
   <p>Also know as data-structure server, when the Redis datastore is
      queried with a key, that value can contain any of the following:
@@ -53,8 +53,8 @@
  </div>
  
  ## START alert and presentation redis server DIV
- <div class="span5">
-  <div class="alert-message success">
+ <div class="span4">
+  <div class="alert alert-success">
    <strong>Redis key-value data structures</strong> are
    descriptive enough to model bibliographic records 
    using FRBR as a framework of keys and
@@ -63,7 +63,7 @@
   </div>
  
   <p style="text-align:center"> 
-  <button class="btn info" data-keyboard="true" data-backdrop="true" 
+  <button class="btn btn-info" data-keyboard="true" data-backdrop="true" 
     data-controls-modal="code4lib2012-redis-info" >Presentation Redis Info</button>
   </p>
  ## END alert and presentation redis server DIV
@@ -82,7 +82,7 @@
   </p>
   <p style="text-align:center">
    <a href="#" data-keyboard="true" data-backdrop="true" 
-    data-controls-modal="java-redis"><img src="http://upload.wikimedia.org/wikipedia/en/3/39/Java_logo.svg" height="125" /></a>
+    data-controls-modal="java-redis"><img width="120" src="http://upload.wikimedia.org/wikipedia/en/3/39/Java_logo.svg" height="125" /></a>
   </p>
   <p>
    Complete list of Redis client libraries are available at
@@ -113,7 +113,7 @@
  <%
    redis_info = redis_server.info()
  %>
-  <table class="condensed-table zebra-stripes">
+  <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
      <th>Redis Server Setting</th>
@@ -166,7 +166,7 @@
  </div>
  ##START modal-footer DIV
  <div class="modal-footer">
-  <button class="btn primary" onclick="$('#code4lib2012-redis-info').modal('hide')">Close</button>
+  <button class="btn btn-primary" onclick="$('#code4lib2012-redis-info').modal('hide')">Close</button>
  ##END modal-footer DIV
  </div>
 ## END Code4Lib Redis Modal DIV
@@ -191,7 +191,7 @@
  </div>
  ## START Ruby Modal Footer
  <div class='modal-footer'>
-  <button class="btn primary" onclick="$('#ruby-redis').modal('hide')">Close</button>
+  <button class="btn btn-primary" onclick="$('#ruby-redis').modal('hide')">Close</button>
  ## END Ruby Modal Footer
  </div>
 ## END Ruby Modal DIV
@@ -218,7 +218,7 @@
  </div>
  ## START PHP Modal Footer
  <div class='modal-footer'>
-  <button class="btn primary" onclick="$('#php-redis').modal('hide')">Close</button>
+  <button class="btn btn-primary" onclick="$('#php-redis').modal('hide')">Close</button>
  ## END PHP Modal Footer
  </div>
 ## END PHP Modal DIV
@@ -241,7 +241,7 @@
  </div>
  ## START JAVA Modal Footer
  <div class='modal-footer'>
-  <button class="btn primary" onclick="$('#java-redis').modal('hide')">Close</button>
+  <button class="btn btn-primary" onclick="$('#java-redis').modal('hide')">Close</button>
  ## END JAVA Modal Footer
  </div>
 ## END JAVA Modal DIV

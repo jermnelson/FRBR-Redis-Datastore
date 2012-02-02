@@ -19,6 +19,17 @@ div.cc-discovery {
  background: url(/img/cc-discovery.png) top right no-repeat;
 }
 
+div.marc-sorry {
+ background-color: #C43C35;
+ border: 2px ridge #C43C35;
+ color: #fff;
+ font-size: 1.1em;
+ padding: .5em;
+ -moz-border-radius: 5px;
+ border-radius: 5px;
+ width: 80%;
+}
+
 div.unit_test_log {
   background-color: #FFF;
   position: absolute;
@@ -27,4 +38,8 @@ div.unit_test_log {
 
 h1.cc_royal {
  color:#600;
+}
+
+textarea.xml-display {
+ width: 90%;
 }

@@ -19,7 +19,7 @@
   
   </ul>
   <p>
-    <a class="btn primary large" href="/background/frbr.html">FRBR &raquo;</a>
+    <a class="btn btn-primary btn-large" href="/background/frbr.html">FRBR &raquo;</a>
   </p>
  </%block>
  
@@ -27,15 +27,15 @@
  <div class="well">
   <h3>Examples</h3>
   <p style="text-align:center;">
-   <button class="btn success" data-keyboard="true" data-backdrop="true" 
+   <button class="btn btn-success" data-keyboard="true" data-backdrop="true" 
     data-controls-modal="mods-journal-example">Journal Article</button>
   </p>
   <p style="text-align:center;">
-   <button class="btn success" data-keyboard="true" data-backdrop="true" 
+   <button class="btn btn-success" data-keyboard="true" data-backdrop="true" 
     data-controls-modal="mods-movie-example">Motion Picture</button>
   </p>
   <p style="text-align:center;">
-   <button class="btn success" data-keyboard="true" data-backdrop="true" 
+   <button class="btn btn-success" data-keyboard="true" data-backdrop="true" 
     data-controls-modal="mods-thesis-example">Colorado College Thesis</button>
   </p>
  </div>
@@ -44,7 +44,7 @@
  
  <%block name="subtopic_one">
  ## START MODS, Redis, and Python DIV
- <div class="alert-message block-message warning" >
+ <div class="alert alert-block alert-warning" >
    <h2>MODS Python </h2>
    <p>
     The initial strategy to represent MODS's XML structure in the key-value 
@@ -81,13 +81,13 @@
  
  <%block name="subtopic_two">
  ## START Redis Key-Value DIV
- <div class="well">
+ <div class="">
   <h2>Redis Datastore</h2>
   <p>
    The Python MODS class instance stores the MODS XML in the Redis
    datastore with the following structure:
   </p>
-  <table class="collapsed-table zebra-striped bordered-table">
+  <table class="table table-bordered table-striped table-condensed">
    <thead>
     <tr>
      <th>Redis Key</th>
@@ -177,15 +177,15 @@
   
   ## START MODS LOC Movie Body DIV
   <div class="modal-body">
-   <textarea rows="15" class="xxlarge">
+   <textarea rows="15" class="xml-display">
    <mods xmlns:xlink="http://www.w3.org/1999/xlink" version="3.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
-		<titleInfo>
-			<nonSort>The</nonSort>
-			<title>Urban Question as a Scale Question</title>
-			<subTitle>Reflections on Henri Lefebre, Urban Theory and the Politics of Scale</subTitle>
-		</titleInfo>
-		<name type="personal">
-			<namePart type="given">Neil</namePart>
+    <titleInfo>
+	<nonSort>The</nonSort>
+	 <title>Urban Question as a Scale Question</title>
+	 <subTitle>Reflections on Henri Lefebre, Urban Theory and the Politics of Scale</subTitle>
+    </titleInfo>
+    <name type="personal">
+	<namePart type="given">Neil</namePart>
 
 			<namePart type="family">Brenner</namePart>
 			<role>
@@ -235,7 +235,7 @@
     at 
     <a href="http://www.loc.gov/standards/mods/v3/mods80700998.xml">http://www.loc.gov/standards/mods/v3/mods80700998.xml</a>
    </p>
-   <a href="#" onclick="$('#mods-movie-example').modal('hide')" class="btn primary">Close</a>
+   <a href="#" onclick="$('#mods-movie-example').modal('hide')" class="btn btn-primary">Close</a>
   ## END MODS LOC Modal Footer DIV
   </div>
   ## END MODS LOC Movie Body DIV
@@ -250,7 +250,7 @@
    ## END MODS LOC Modal Header DIV  
    </div>
    <div class="modal-body">
-   <textarea class="xxlarge" rows="10">
+   <textarea class="xml-display" rows="10">
    <mods>
     <titleInfo>
      <title>NoSQL Bibliographic Records</title>
@@ -259,7 +259,7 @@
    </textarea>
    </div>
    <div class="modal-footer">
-    <a class="btn primary" onclick="$('#mods-thesis-example').modal('hide')">Close</a>
+    <a class="btn btn-primary" onclick="$('#mods-thesis-example').modal('hide')">Close</a>
    </div>
   ## END MODS CC Thesis DIV
   </div>

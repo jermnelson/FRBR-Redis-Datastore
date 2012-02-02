@@ -13,13 +13,13 @@
   <p>In <a href="${project.url}">${project.name}</a> Unit tests of code
      are the current method of exploring the functionality of the NoSQL &amp; Redis
      as a Bibliographic datastore with the current number of active unit
-     tests at <span class="label important" style="font-size:1em">${active_unit_tests}</span></p>
+     tests at <span class="label label-important" style="font-size:1em">${active_unit_tests}</span></p>
   <p>Behavior Driven Development (BDD) based testing is a welcome development that started 
      in the Ruby community and now is being adopted in Python through modules such 
      as <a href="http://lettuce.it/">lettuce</a>.
   </p>
   <p>
-     <a class="btn primary large" href="/engineering/web.html">Client-side Web &amp; Javascript &raquo;</a>
+     <a class="btn btn-primary btn-large" href="/engineering/web.html">Client-side Web &amp; Javascript &raquo;</a>
   </p>
 </%block>
 
@@ -33,10 +33,10 @@
 
 <div style="text-align:center">
  <p>
- <a class="btn success large" onclick="$('#unit-test-log').show()" href="#">Show Unit Test Log</a>
+ <a class="btn btn-success btn-large" onclick="$('#unit-test-log').show()" href="#">Show Unit Test Log</a>
  </p>
  <p>
- <a class="btn success large" onclick="$('#bbd-test-log').show()" href="#">Show BDD Test Log</a>
+ <a class="btn btn-success btn-large" onclick="$('#bbd-test-log').show()" href="#">Show BDD Test Log</a>
 </div>
 </%block>
 
@@ -62,7 +62,7 @@
 ${unit_test_results}
 </pre>
 <p style="text-align:right">
-<a href="#" class="btn primary large" onclick="$('#unit-test-log').hide()">Close</a>
+<a href="#" class="btn btn-primary btn-large" onclick="$('#unit-test-log').hide()">Close</a>
 </p>
 ## END Unit Test Log DIV
 </div>
