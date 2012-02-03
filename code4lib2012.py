@@ -145,12 +145,9 @@ def salvo():
 @get('/record2cube/record.html')
 def flat_view():
     xml_text = None
-    print("BEFORE hasattr request")
-    if hasattr(request.forms,'wemi-redis-id'):
-        print("IN REQUEST HANDLER")
-        wemi_redis_key = getattr(request.forms,'wemi-redis-id')
-        wemi = code4lib_redis.get(wemi_redis_key)
-        xml_text = etree.tostring(loc_mods[wemi]['mods_xml'])
+    if request.params.dict.has_key('wemi-redis-id'):
+        wemi_filename = request.params['wemi-redis-id']
+        xml_text = etree.tostring(loc_mods[wemi_filename]['mods_xml'])
     template = conference_templates.get_template('flat.html')
     return template.render(section="cube",
                            project=project,

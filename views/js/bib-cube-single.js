@@ -6,7 +6,7 @@ var camera, scene, renderer, geometry, material, mesh;
 var work_cube, expr_cube, manf_cube, item_cube, mods_plane;
 var work_material, expr_material, manf_material, item_material;
 
-function drawWEMIDemo() {
+function drawWEMIDemoOld() {
   $("#visualization").empty();
   var paper = Raphael("visualization",WIDTH,HEIGHT);
   var item_plane = paper.rect(75,140,270,190);
@@ -35,6 +35,27 @@ function drawWEMIDemo() {
 //  mods_brane.attr("stroke","#000");
 //  mods_brane.rotate("-45",85,200);
 } 
+
+function drawWEMIDemo() {
+  $("#visualization").empty();
+  var paper = Raphael("visualization",WIDTH,HEIGHT);
+  var wemi_front = paper.rect(140,220,100,100);
+  wemi_front.attr("stroke","#4B0082");
+  var wemi_path = paper.path("M140,220L240,170L340,170L240,220M240,320L340,270L340,170");
+  wemi_path.attr("stroke","#4B0082");
+  var work_label = paper.text(170,240,"frbr:Work");
+  work_label.attr("stroke","#4B0082");
+  var expr_path = paper.path("M165,208L265,208L265,308");
+  expr_path.attr("stroke","#4B0082");
+  //var expr_label = paper.text(225,200,"frbr:Expression");
+  //expr_label.attr("stroke","#4B0082");
+  var manif_path = paper.path("M189,196L289,196L289,296");
+  manif_path.attr("stroke","#4B0082");
+  var item_path = paper.path("M214,183L314,183L314,283");
+  item_path.attr("stroke","#4B0082");
+  var marc_plane = paper.rect(110,110,60,40);
+  marc_plane.attr("stroke","#006400");
+}
 
 function animateWEMIDemo() {
  init();
