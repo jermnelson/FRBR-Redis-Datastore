@@ -91,7 +91,7 @@ class MARC21Subfield(models.Model):
   <a href="${project.url}">${project.name}</a> has the following 
   characteristics in the Redis datastore:
  </p>
- <table class="condensed-table bordered-table zebra-striped">
+ <table class="table table-bordered table-striped table-condensed">
   <thead>
    <tr>
     <th>Redis Key</th>
@@ -101,24 +101,29 @@ class MARC21Subfield(models.Model):
   </thead>
   <tbody>
    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>MARC21Record:1</td>
+    <td>hash</td>
+    <td>leader:'01184nam  2200313Ia 4500'</td>
    </tr>
    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>MARC21Record:1:marc_fields</td>
+    <td>list</td>
+    <td>['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']</td>
    </tr>
    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>MARC21Field:5</td>
+    <td>hash</td>
+    <td>tag:"035"</td>
    </tr>
    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>MARC21Field:5:subfields</td>
+    <td>list</td>
+    <td>['1', '2', '3']</td>
+   </tr>
+   <tr>
+    <td>MARC21Subfield:2</td>
+    <td>hash</td>
+    <td>code:'b'<br/>value:'tbp'</td>
    </tr>
   </tbody>
  </table>

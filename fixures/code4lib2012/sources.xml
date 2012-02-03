@@ -216,4 +216,79 @@
    </recordOrigin>
  </recordInfo>
 </mods>
+<mods>
+<titleInfo>
+ <title>Linked Data - Connect Distributed Data across the Web</title>
+</titleInfo>
+<typeOfResource>software, multimedia</typeOfResource>
+<genre>web site</genre>
+<location>
+	<url>http://linkeddata.org/</url>
+</location>
+<recordInfo>
+ <recordCreationDate>2012-02-03</recordCreationDate>
+ <recordInfo>
+    Original MODS record cataloging by Jeremy Nelson for 2012 Code4Lib 
+    presentation.
+ </recordInfo>
+</recordInfo>
+</mods>
+<mods>
+<titleInfo>
+ <title>Resource Description Framework (RDF)</title>
+</titleInfo>
+<typeOfResource>software, multimedia</typeOfResource>
+<genre>web site</genre>
+<location>
+ <url>http://www.w3.org/RDF/</url>
+</location>
+<recordInfo>
+ <recordCreationDate>2012-02-03</recordCreationDate>
+ <recordInfo>
+    Original MODS record cataloging by Jeremy Nelson for 2012 Code4Lib 
+    presentation.
+ </recordInfo>
+</recordInfo>
+</mods>
+<mods>
+<titleInfo>
+<title>
+	Functional Requirements for Bibliographic Records - Final Report
+</title>
+</titleInfo>
+<typeOfResource>software, multimedia</typeOfResource>
+<genre>web site</genre>
+<location>
+<url>http://archive.ifla.org/VII/s13/frbr/frbr_current3.htm</url>
+</location>
+<originInfo>
+ <publisher>International Federation of Library Associations and Institutions (IFLA)</publisher>
+</originInfo>
+<recordInfo>
+ <recordCreationDate>2012-02-03</recordCreationDate>
+ <recordInfo>
+    Original MODS record cataloging by Jeremy Nelson for 2012 Code4Lib 
+    presentation.
+ </recordInfo>
+</recordInfo>
+</mods>
+<mods>
+<titleInfo>
+ <title>FRBR object-oriented definition and mapping to FRBRER</title>
+</titleInfo>
+<originInfo>
+ <publisher>CIDOC CRM</publisher>
+</originInfo>
+<typeOfResource>text</typeOfResource>
+<location>
+ <url>http://www.cidoc-crm.org/docs/frbr_oo/frbr_docs/FRBRoo_V1.0.2.pdf</url>
+</location>
+<recordInfo>
+ <recordCreationDate>2012-02-03</recordCreationDate>
+ <recordInfo>
+    Original MODS record cataloging by Jeremy Nelson for 2012 Code4Lib 
+    presentation.
+ </recordInfo>
+</recordInfo>
+</mods>
 </modsCollection>

@@ -36,14 +36,13 @@
 <div>
  <h3>Unit Testing and the Bibliographic Framework</h3>
  <p> 
-  While the unit tests in ${project.name} are not as directly 
-  matched to specifics in the Bibliographic Framework as BDD tests are,
-  the unit tests do provide comprehensive coverage of core representation
-  of important standards and schemas that are required or mentioned in the 
+  While the unit tests in ${project.name} are not directly 
+  matched to specifics requiements or section in the Bibliographic Framework 
+  as BDD tests are, the unit tests do provide comprehensive coverage of 
+  important standards and schemas that are required or mentioned in the 
   announcement such as MARC21, MODS, and VRA Core. Also, when testing 
   functionality of various FRBR entities with their RDA properties, goals of
-  the bibliographical framework are being addressed in an indirect way as 
-  well.
+  the bibliographical framework are being addressed as well.
 </div>
 </%block>
 
@@ -111,7 +110,16 @@
  </div>
  <div class="modal-body">
  <pre class="prettyprint">
- Scenario: Represent RDA carrier types for FRBR Manifestation as a content rule
+ Feature: Broad accommodation of content rules and data models
+   In order for a bibliographic framework to accommodate RDA, 
+      AACR2, DACS, VRA Core and CCO
+   As a system
+   It needs to be able to represent and manipulate 
+     content rules and data models for RDA, AACR2, 
+     DACS, VRA Core and CCO
+ 
+ Scenario: Represent RDA carrier types for FRBR Manifestation 
+           as a content rule
   Given a microfiche FRBR Manifestation entity in the datastore
   When the entity has a RDA carrierTypeManifestation
   Then the carrierTypeManifestation value will be microfiche

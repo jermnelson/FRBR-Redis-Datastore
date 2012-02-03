@@ -13,10 +13,7 @@
      Library of Congress sponsor bibliographic XML schema defining
      elements and attributes including a subset of MARC 21 features.</p>
   <ul class="main-content">
-   
-   <li>Used by Colorado College's 
-       <a href="#">Fedora Commons Digital Archives</a></li>
-  
+    <li>Used in Colorado College's Fedora Commons Digital Repository</li>
   </ul>
   <p>
     <a class="btn btn-primary btn-large" href="/code4lib/background/frbr.html">FRBR &raquo;</a>
@@ -178,48 +175,67 @@
   ## START MODS LOC Movie Body DIV
   <div class="modal-body">
    <textarea rows="15" class="xml-display">
-   <mods xmlns:xlink="http://www.w3.org/1999/xlink" version="3.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
-    <titleInfo>
-	<nonSort>The</nonSort>
-	 <title>Urban Question as a Scale Question</title>
-	 <subTitle>Reflections on Henri Lefebre, Urban Theory and the Politics of Scale</subTitle>
-    </titleInfo>
-    <name type="personal">
-	<namePart type="given">Neil</namePart>
-	<namePart type="family">Brenner</namePart>
-	<role>
-	 <roleTerm type="text">author</roleTerm>
-	</role>
-    </name>
-    <typeOfResource>text</typeOfResource>
-    <genre>article</genre>
-    <originInfo>
-     <issuance>monographic</issuance>
-    </originInfo>
-    <relatedItem type="host">
-    <titleInfo>
-     <title>International Journal of Urban and Regional Research</title>
-    </titleInfo>
-    <originInfo>
-     <issuance>continuing</issuance>
-    </originInfo>
-    <part>
-    <detail type="volume">
-     <number>24</number>
-    </detail>
-    <detail type="issue">
-     <number>2</number>
-     <caption>no.</caption>
-    </detail>
-    <extent unit="pages">
-     <start>361</start>
-     <end>378</end>
-    </extent>
-    <date>2000</date>
-   </part>
-  </relatedItem>
-  <identifier>BrennerN2000a</identifier>
- </mods>
+<?xml version='1.0' encoding='UTF-8' ?>
+<mods xmlns:xlink="http://www.w3.org/1999/xlink" version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+<titleInfo>
+<nonSort>The </nonSort>
+ <title>Cast iron story [motion picture] /</title>
+  </titleInfo>
+  <name type="corporate">
+    <namePart>Walter J. Klein Company</namePart>
+  </name>
+  <typeOfResource>moving image</typeOfResource>
+  <genre authority="marcgt">motion picture</genre>
+  <originInfo>
+    <place>
+      <placeTerm authority="marccountry" type="code">ncu</placeTerm>
+    </place>
+    <place>
+      <placeTerm type="text">Charlotte, N.C</placeTerm>
+    </place>
+    <publisher>W.J. Klein Co</publisher>
+    <dateIssued>1978</dateIssued>		
+    <issuance>monographic</issuance>
+  </originInfo>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+  </language>
+  <physicalDescription>
+    <extent>1 film reel (15 min.) : sd., col. ; 16 mm.</extent>
+  </physicalDescription>
+  <abstract>Shows how cast iron bathtubs are manufactured, illustrating each step from the sculpturing of the wood patterns through the casting and enameling processes.</abstract>
+  <targetAudience>adult</targetAudience>
+  <note type="statement of responsibility">Walter J. Klein Company.</note>
+  <note>Title from data sheet.</note>
+  <note>Intended audience: Junior high school students through adults.</note>
+  <note>Issued also as super 8 mm. and as videorecording.</note>
+  <subject authority="lcsh">
+    <topic>Bathtubs</topic>
+  </subject>
+  <subject authority="lcsh">
+    <topic>Cast-iron</topic>
+  </subject>
+  <subject authority="lcsh">
+    <topic>Iron-founding</topic>
+  </subject>
+  <subject authority="lcshac">
+    <topic>Bathtubs</topic>
+  </subject>
+  <subject authority="lcshac">
+    <topic>&lt;B&gt;Hello World&lt;/B&gt;Cast-iron</topic>
+  </subject>
+  <subject authority="lcshac">
+    <topic>Iron founding</topic>
+  </subject>
+  <classification authority="lcc">TH6493</classification>
+  <classification edition="11" authority="ddc">683</classification>
+  <recordInfo>		
+    <recordContentSource>Walter J. Klein Co.</recordContentSource>
+    <recordCreationDate encoding="marc">820106</recordCreationDate>		
+    <recordChangeDate encoding="iso8601">19980501135351.7</recordChangeDate>
+    <recordIdentifier>11510774</recordIdentifier>
+  </recordInfo>
+</mods>
  </textarea>
   ## END MODS LOC Movie Body DIV
   </div>
@@ -246,12 +262,69 @@
    </div>
    <div class="modal-body">
    <textarea class="xml-display" rows="10">
-   <mods>
-    <titleInfo>
-     <title>NoSQL Bibliographic Records</title>
-    </titleInfo>
-   </mods>
-   </textarea>
+<mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+  <mods:abstract>The modern corporation's relationship to society has undergone drastic changes between the 1960s and the present day, in large part because the general public has held corporations to increasingly higher ethical and moral standards.  While originally this relationship manifested itself only as punishment for extreme environmental and human rights violations, as made evident in the divestment movement in Apartheid South Africa and the backlash against Exxon after the Exxon Valdez oil spill, in the past twenty years firms are increasingly rewarded for going beyond the bare minimums set by regulators.  Firms like Costco and WholeFoods exemplify this new trend in corporate America, and the current research tests whether a relationship exists between a firm's corporate social responsibility scores and its financial performance.  Formally, the research predicts a positive correlation between strong corporate social responsibility and financial performance for firms listed in the S&amp;P 500 in the consumer goods industry.  The study relies on corporate social responsibility information provided by the KLD MSCI STATS database as well as financial information from the Mergent online database to test the theory on S&amp;P 500 firms in the consumer goods industry.</mods:abstract>
+  <mods:genre authority="marcgt">thesis</mods:genre>
+  <mods:typeOfResource>text</mods:typeOfResource>
+  <mods:note type="thesis">Senior Thesis -- Colorado College</mods:note>
+  <mods:note type="thesis" displayLabel="Degree Name">Bachelor of Arts</mods:note>
+  <mods:note type="thesis" displayLabel="Degree Type">Bachelor of Arts</mods:note>
+  <mods:note type="bibliography">Includes bibliographical references</mods:note>
+  <mods:note displayLabel="Dataset Abstract"/>
+  <mods:note displayLabel="Dataset Information"/>
+  <mods:physicalDescription>
+    <mods:form authority="RDA carrier terms">online resource</mods:form>
+    <mods:digitalOrigin>born digital</mods:digitalOrigin>
+    <mods:extent>76p. ill. map(s).</mods:extent>
+    <mods:reformattingQuality>preservation</mods:reformattingQuality>
+  </mods:physicalDescription>
+  <mods:name type="personal">
+    <mods:role>
+      <mods:roleTerm type="creator" authority="marcrt"/>
+    </mods:role>
+    <mods:namePart>Callihan, Corey</mods:namePart>
+  </mods:name>
+  <mods:name type="personal">
+    <mods:role>
+      <mods:roleTerm type="text" authority="marcrt">advisor</mods:roleTerm>
+    </mods:role>
+    <mods:namePart>Laux, Judy</mods:namePart>
+  </mods:name>
+  <mods:name type="corporate">
+    <mods:role>
+      <mods:roleTerm type="text" authority="marcrt">sponsor</mods:roleTerm>
+    </mods:role>
+    <mods:namePart>Department of Economics and Business</mods:namePart>
+  </mods:name>
+  <mods:name type="corporate">
+    <mods:namePart>Colorado College</mods:namePart>
+    <mods:role>
+      <mods:roleTerm type="text" authority="marcrt">degree grantor</mods:roleTerm>
+    </mods:role>
+  </mods:name>
+  <mods:subject>
+    <mods:topic>Corporate Social Responsibility</mods:topic>
+  </mods:subject>
+  <mods:subject>
+    <mods:topic>Stakeholder Theory</mods:topic>
+  </mods:subject>
+  <mods:subject>
+    <mods:topic>Consumer Goods</mods:topic>
+  </mods:subject>
+  <mods:titleInfo>
+    <mods:title>Corporate Social Responsibility &amp; The Consumer Goods Industry</mods:title>
+  </mods:titleInfo>
+  <mods:originInfo>
+    <mods:publisher>Colorado College</mods:publisher>
+    <mods:dateIssued keyDate="yes">2011</mods:dateIssued>
+    <mods:place><mods:placeTerm>Colorado Springs, Colo</mods:placeTerm></mods:place>
+    <mods:dateCreated>2011</mods:dateCreated>
+  </mods:originInfo>
+  <mods:location>
+    <mods:url usage="primary display">http://hdl.handle.net/10176/coccc:5332</mods:url>
+  </mods:location>
+</mods:mods>
+</textarea>
    </div>
    <div class="modal-footer">
     <a class="btn btn-primary" onclick="$('#mods-thesis-example').modal('hide')">Close</a>

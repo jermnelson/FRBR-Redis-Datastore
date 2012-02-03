@@ -55,14 +55,19 @@ for filename in ['modsbook.xml',
     work = frbr.Work(redis_server=code4lib_redis,
                      **{'titleOfTheWork':new_mods.titleInfos[0]})
     expression = frbr.Expression(redis_server=code4lib_redis,
-                                 **{'dateOfExpression':new_mods.originInfos[0].dateIssueds})
+                                 **{'dateOfExpression':new_mods.originInfos[0].dateIssueds,
+                                    'realizationOf':work})
     manifestation = frbr.Manifestation(redis_server=code4lib_redis,
-                                       **{'publishersNameManifestation':new_mods.originInfos[0].publishers[0]})
+                                       **{'publishersNameManifestation':new_mods.originInfos[0].publishers[0],
+                                          'embodimentOf':expression})
+    item = frbr.Item(redis_server=code4lib_redis,
+                     **{'examplarOf':manifestation})
     loc_mods[filename] = {'mods':new_mods,
                           'mods_xml':new_doc,
                           'work':work,
                           'expression':expression,
-                          'manifestation':manifestation}
+                          'manifestation':manifestation,
+                          'item':item}
 
 # LOAD CC MARC collection
 cc_marc = []

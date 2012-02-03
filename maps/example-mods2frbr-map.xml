@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+<!--
+    Example of SKOS MODS Mapping for FRBR Entities for ingestion
+    into Redis datastore.  This example mapping only covers a few
+    RDA properties for the core WEMI entities and provides mappings
+    to/from MODS elements. The source for these mappings include the
+    Library of Congress RDA to MODS XPATH mapping work at 
+    http://www.loc.gov/standards/mods/rdaMODSmapping.xls
+    and the RDA Vocabularies at http://rdvocab.info/
+-->
+
+<!-- FRBR RDA Work Properties to MODS Mappings -->
+<rdf:Description rdf:ID="MODStoWORK">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" />
+ <rdf:Property rdf:resource="http://rdvocab.info/Elements/titleOfTheWork" />
+ <skos:Collection>
+  <skos:member>/titleInfo/title</skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:ID="MODStoWORK">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" />
+ <rdf:Property rdf:resource="http://rdvocab.info/Elements/formOfWork" />
+ <skos:Collection>
+  <skos:member>/typeOfResource</skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+<!-- FRBR RDA Expression Properties to MODS Mappings -->
+<rdf:Description rdf:ID="MODStoExpression">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression" />
+ <rdf:Property rdf:resource="http://rdvocab.info/Elements/dateOfExpression" />
+ <skos:Collection>
+  <skos:member>/originInfo/dateCreated</skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:ID="MODStoExpression">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression" />
+ <rdf:Property rdf:resource="http://rdvocab.info/Elements/languageOfExpression" />
+ <skos:Collection>
+  <skos:member>/language</skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+<!-- FRBR RDA Manifestation Properties to MODS Mappings -->
+<rdf:Description rdf:ID="MODStoManifestation">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation" />
+ <rdf:Property rdf:resource="http://rdvocab.info/Elements/noteOnStatementOfResponsibilityManifestation" />
+ <skos:Collection>
+  <skos:member>/note[@type="statement of responsibility"]</skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+<rdf:Description rdf:ID="MODStoManifestation">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation" />
+ <rdf:Property rdf:resource="http://rdvocab.info/Elements/placeOfProductionManifestation" />
+ <skos:Collection>
+  <skos:member>/originInfo/place/placeTerm</skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+<!-- FRBR RDA Item Properites to MODS Mappings -->
+<rdf:Description rdf:ID="MODStoItem">
+ <rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Item" />
+ <rdf:Property rdf:resource="http://rdvocab.info/Elements/custodialHistoryOfItem" />
+ <skos:Collection>
+  <skos:member>/note[@type="ownership"]</skos:member>
+ </skos:Collection>
+</rdf:Description>
+
+</rdf:RDF>

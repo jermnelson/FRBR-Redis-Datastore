@@ -40,6 +40,47 @@ MARC21 and MODS with their respective FRBR entities
   
 <%block name="subtopic_two">
 <div style="align:center">
-<button class="btn btn-success" onclick="alert('Load SVG or 3D animation')">Load FRBR-SKOS Demo</button>
+<button class="btn btn-success" data-keyboard="true" data-backdrop="true" 
+    data-controls-modal="frbr-skos-example">Load FRBR-SKOS Example Mapping</button>
 </div>
 </%block>
+
+## START FRBR-SKOS Example Mapping DIV
+<div id="frbr-skos-example" class="modal hide fade">
+ <div class="modal-header">
+  <a href="#" class="close">&times;</a>
+  <h2>MARC21 &amp; and MODS to FRBR RDA SKOS Examples</h2>
+ </div>
+ <div class="modal-body">
+   <h3>MARC to FRBR Work SKOS Example</h3>
+   <pre class="prettyprint">
+   &lt;rdf:Description rdf:about="http://rdvocab.info/Elements/titleOfTheWork"&gt;
+ &lt;rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work" /&gt; 
+ &lt;skos:OrderedCollection&gt;
+  &lt;skos:member xml:lang="en"&gt;
+     &lt;marc:datafield marc:tag="100" marc:ind1="" marc:ind2=""&gt;
+      &lt;marc:subfield marc:code="n" /&gt;
+      &lt;marc:subfield marc:code="p" /&gt;
+      &lt;marc:subfield marc:code="t" /&gt;
+     &lt;/marc:datafield&gt;
+     &lt;/skos:member&gt;
+  &lt;/skos:OrderedCollection&gt;
+&lt;/rdf:Description&gt;
+   </pre>
+   <h3>MODS to FRBR Expression Example</h3>
+   <pre class="prettyprint">
+&lt;rdf:Description rdf:ID="MODStoExpression"&gt;
+ &lt;rdfs:domain rdf:resource="http://rdvocab.info/uri/schema/FRBRentitiesRDA/Expression" /&gt;
+ &lt;rdf:Property rdf:resource="http://rdvocab.info/Elements/languageOfExpression" /&gt;
+ &lt;skos:Collection&gt;
+  &lt;skos:member&gt;language&lt;/skos:member&gt;
+ &lt;/skos:Collection&gt;
+&lt;/rdf:Description&gt;   
+   
+   </pre>
+ </div>
+ <div class="modal-footer">
+   <button class="btn btn-primary" onclick="$('#frbr-skos-example').modal('hide')">Close</button>
+ </div>
+## END FRBR-SKOS Example Mapping DIV
+</div>
