@@ -21,10 +21,10 @@ item_mapper = {}
 
 def load_mods_skos(skos_filename):
     """
-    Function loads a MODS to FRBR SKOS mapping file and creates
+    Function loads a MODS to FRBR SKOS mapping file and populates
     MODS FRBR RDA WEMI mapper objects
 
-    :param mods_frbr_skos:
+    :param mods_frbr_skos: MODStoFRBR SKOS filename
     """
     xml_fileobject = open(skos_filename,'rb')
     xml_contents = xml_fileobject.read()
@@ -50,9 +50,7 @@ def load_mods_skos(skos_filename):
             item_mapper[rda_name] = mods_xpath_matchers
         else:
             raise ValueError("Unknown FRBR RDA entity URI of %s" % frbr_entity_uri)
-        
-        
-        
+            
         
     
         

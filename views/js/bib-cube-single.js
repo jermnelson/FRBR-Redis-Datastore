@@ -6,7 +6,7 @@ var camera, scene, renderer, geometry, material, mesh;
 var work_cube, expr_cube, manf_cube, item_cube, mods_plane;
 var work_material, expr_material, manf_material, item_material;
 
-function drawWEMIDemoOld() {
+function drawWEMIDemo() {
   $("#visualization").empty();
   var paper = Raphael("visualization",WIDTH,HEIGHT);
   var item_plane = paper.rect(75,140,270,190);
@@ -36,7 +36,7 @@ function drawWEMIDemoOld() {
 //  mods_brane.rotate("-45",85,200);
 } 
 
-function drawWEMIDemo() {
+function drawWEMIDemo2() {
   $("#visualization").empty();
   var paper = Raphael("visualization",WIDTH,HEIGHT);
   var wemi_front = paper.rect(140,220,100,100);
@@ -44,17 +44,38 @@ function drawWEMIDemo() {
   var wemi_path = paper.path("M140,220L240,170L340,170L240,220M240,320L340,270L340,170");
   wemi_path.attr("stroke","#4B0082");
   var work_label = paper.text(170,240,"frbr:Work");
-  work_label.attr("stroke","#4B0082");
+  work_label.attr("fill","#4B0082");
   var expr_path = paper.path("M165,208L265,208L265,308");
   expr_path.attr("stroke","#4B0082");
-  //var expr_label = paper.text(225,200,"frbr:Expression");
-  //expr_label.attr("stroke","#4B0082");
+  var expr_label = paper.text(225,202,"frbr:Expression");
+  expr_label.attr("fill","#4B0082");
   var manif_path = paper.path("M189,196L289,196L289,296");
   manif_path.attr("stroke","#4B0082");
+  var manif_label = paper.text(248,189,"frbr:Manifestation");
+  manif_label.attr("fill","#4B0082");
   var item_path = paper.path("M214,183L314,183L314,283");
   item_path.attr("stroke","#4B0082");
+  var item_label = paper.text(255,176,"frbr:Item");
+  item_label.attr("fill","#4B0082");
+  var redis_ds = paper.circle(340,320,30);
+  redis_ds.attr("fill","#FF0000");
+  redis_ds.attr("stroke","#FF0000");
+  var redis_label = paper.text(330,320,"Redis");
+  redis_label.attr("fill","#FFFFFF");
   var marc_plane = paper.rect(110,110,60,40);
   marc_plane.attr("stroke","#006400");
+  var marc_label = paper.text(135,125,"MARC21");
+  marc_label.attr("fill","#006400");
+  var mods_plane = paper.rect(40,150,60,40);
+  mods_plane.attr("stroke","#006400");
+  var mods_label = paper.text(65,170,"MODS");
+  mods_label.attr("fill","#006400");
+  var metadata_plane = paper.rect(180,80,60,40);
+  metadata_plane.attr("stroke","#006400");
+  var metadata_label = paper.text(210,100,"VRA Core,\nDublin Core\netc.");
+  metadata_label.attr("fill","#006400");
+  // var formOfWork
+  
 }
 
 function animateWEMIDemo() {

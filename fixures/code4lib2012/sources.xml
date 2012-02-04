@@ -291,4 +291,51 @@
  </recordInfo>
 </recordInfo>
 </mods>
+<mods>
+<titleInfo>
+ <title>FRBR as an interdisciplinary high-middle-range theory for information science — a theoretical perspective</title>
+</titleInfo>
+<name type="personal">
+ <namePart>Renear, Allen H.</namePart>
+  <role>
+   <roleTerm>author</roleTerm>
+ </role>
+</name>
+<name>
+<namePart>Dubin, Dave</namePart>
+<role>
+   <roleTerm>author</roleTerm>
+ </role>
+</name>
+<typeOfResource>text</typeOfResource>
+<genre>Conference Paper / Presentation</genre>
+<subject>
+ <topic>FRBR</topic>
+</subject>
+<subject>
+ <topic>information science</topic>
+</subject>
+<subject>
+ <topic>R. K. Merton</topic>
+</subject>
+<subject>
+ <topic>theory</topic>
+</subject>
+<subject>
+ <topic>conceptual modeling</topic>
+</subject>
+<subject>
+ <topic>ontology</topic>
+</subject>
+<location>
+<url>http://hdl.handle.net/2142/15105</url>
+</location>
+<recordInfo>
+ <recordCreationDate>2012-02-03</recordCreationDate>
+ <recordInfo>
+    Original MODS record cataloging by Jeremy Nelson for 2012 Code4Lib 
+    presentation.
+ </recordInfo>
+</recordInfo>
+</mods>
 </modsCollection>
