@@ -8,15 +8,16 @@ Feature: Provision for types of data that logically accompany or support bibliog
        When a user ingest a MODS XML record into the Redis datastore
        Then the user can access the MODS brane of the FRBR WEMI cube
 
-   Scenario: Extract a MODS record
-       Given a native FRBR WEMI cube in the Redis datastore
-       When a user extracts a MODS record
-       Then the user will have a MODS XML record
-
-   Scenario: Store a title for an ebook
-      Given a title of an ebook
-      When a user stores information about the ebook
-      Then the title of the ebook is stored
+   Scenario: Ingest a Dublin Core record
+       Given an existing DC XML record
+       When a user ingest a DC XML record into the Redis datastore
+       Then the user can access the DC brane of the FRBR WEMI cube
+       
+   Scenario: Ingest a VRA Core record
+       Given an existing VRACore XML record
+       When a user ingest a VRACore XML record into the Redis datastore
+       Then the user can access the VRACore brane of the FRBR WEMI cube
+  
       
       
 

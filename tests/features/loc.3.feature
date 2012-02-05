@@ -6,9 +6,9 @@ Feature: Accommodation of textual data, linked data with URIs instead of text, a
    Scenario: Store textual data about bibliographic record
       Given a chunk of textual data from a bibliographic record
       When a user stores the data
-      Then the data is stored
+      Then the data can be retrieved from the datastore
       
    Scenario: Store URI data about bibliographic record
       Given a URI from a bibliographic record
-      When a user stores the data
-      Then the data is stored
+      When a user stores the URI
+      Then the URI can be retrieved from the datastore

@@ -32,7 +32,7 @@ def perform_task_with_entity_name(step,task,entity_name):
     :param task: The user's task
     :param entity_name: FRBR entity's name 
     """
-    world.entity = getattr(redis_server,task,entity_name,world.role,world.value)
+    world.entity = redis_server.hget(entity_name,world.role,world.value)
 
 @step("the user access the (\w+) with the (\w+) of (\w+)")
 def check_entity(step,entity_name,role,expected_value):

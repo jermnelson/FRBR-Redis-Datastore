@@ -110,20 +110,17 @@
  </div>
  <div class="modal-body">
  <pre class="prettyprint">
- Feature: Broad accommodation of content rules and data models
-   In order for a bibliographic framework to accommodate RDA, 
-      AACR2, DACS, VRA Core and CCO
+Feature: Provision for types of data that logically accompany or 
+        support bibliographic description
+   In order for a bibliographic framework to provision type of data that 
+      logically accompany or support bibliographic description
    As a system
-   It needs to be able to represent and manipulate 
-     content rules and data models for RDA, AACR2, 
-     DACS, VRA Core and CCO
- 
- Scenario: Represent RDA carrier types for FRBR Manifestation 
-           as a content rule
-  Given a microfiche FRBR Manifestation entity in the datastore
-  When the entity has a RDA carrierTypeManifestation
-  Then the carrierTypeManifestation value will be microfiche
+   It needs to be able to store bibliographic metadata for an entity
 
+   Scenario: Ingest a MODS record
+       Given an existing MODS XML record
+       When a user ingest a MODS XML record into the Redis datastore
+       Then the user can access the MODS brane of the FRBR WEMI cube
 
  </pre>
  </div>

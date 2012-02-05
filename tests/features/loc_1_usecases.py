@@ -5,6 +5,7 @@
  requirement:
      Broad accommodation of content rules and data models
 """
+__author__ = "Jeremy Nelson"
 from lettuce import *
 import sys,os
 import redis
@@ -25,7 +26,7 @@ def extract_frbr_entity(step,entity_name):
     """
     world.frbr_entity = "frbr:%s" % entity_name
 
-@step("the entity has a (\w+) (\w+")
+@step("the entity has a (\w+) (\w+)")
 def retrieve_value(step,standard,entity_property):
     """
     Function attempts to retrieve entity property from datastore
@@ -36,7 +37,7 @@ def retrieve_value(step,standard,entity_property):
     world.redis_property_key = entity_property
     world.value = redis_server.get(world.frbr_entity,entity_property)
 
-@set("the (\w+) value will be (\w+)")
+@step("the (\w+) value will be (\w+)")
 def check_entity_value(step,entity_property,value):
     """
     Function checks to see if entity_property is of the expected value

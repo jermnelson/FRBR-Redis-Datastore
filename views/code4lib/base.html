@@ -47,9 +47,6 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="/code4lib/">Code4Lib 2012 Presentation</a>
-          % if active_timer:
-          <span class="timer">00:00</span>
-          % endif
           <ul class="nav secondary-nav">
             % if section == 'home':
             <li class="active">
@@ -71,20 +68,12 @@
               <li><a href="/code4lib/background/nosql.html">NoSQL and Redis</a></li>
              </ul>
             </li>
-            <li data-dropdown="dropdown" class="dropdown
+            <li 
             % if section == 'cube':
             active
             % endif
             ">
-             <a href="#" class="dropdown-toggle">Record-to-Cube</a>
-               <ul class="dropdown-menu">
-		<li><a href="/code4lib/record2cube.html">About</a></li>
-		<li class="divider"></li>
-		<li><a href="/code4lib/record2cube/record.html">Record/Flat View</a></li>
-		<li class="divider"></li>
-		<li><a href="/code4lib/record2cube/single.html">Single FRBR Cube</a></li>
-		 </ul>
-            </li>
+             <a href="/code4lib/record2cube/single.html" >Record-to-Cube</a></li>   
             <li data-dropdown="dropdown" class="dropdown
             % if section == 'engineering':
             active
