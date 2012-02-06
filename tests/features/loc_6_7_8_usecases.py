@@ -13,12 +13,12 @@ from lettuce import *
 import sys,os
 import redis
 from redisco import connection_setup
-import lib.marc21 as marc21
 from pymarc import MARCReader
 from lxml import etree
 
 import __init__
 import config
+import lib.marc21 as marc21
 
 marc_filelocation = 'C:/Users/jernelson/Development/frbr-redis-datastore/fixures/tutt-pride-prejudice.mrc'
 

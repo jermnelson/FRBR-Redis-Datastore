@@ -5,6 +5,7 @@ var camera, scene, renderer, geometry, material, mesh;
 
 var work_cube, expr_cube, manf_cube, item_cube, mods_plane;
 var work_material, expr_material, manf_material, item_material;
+var work_label;
 
 function drawWEMIDemo() {
   $("#visualization").empty();
@@ -74,8 +75,26 @@ function drawWEMIDemo2() {
   metadata_plane.attr("stroke","#006400");
   var metadata_label = paper.text(210,100,"VRA Core,\nDublin Core\netc.");
   metadata_label.attr("fill","#006400");
-  // var formOfWork
-  
+  var formOfWork_path = paper.path("M70,190L70,195L140,240");
+  formOfWork_path.attr("stroke","#006400");
+  var formOfWork_label = paper.text(95,220,"<typeOfResource>");
+  formOfWork_label.rotate(33);
+  formOfWork_label.attr("fill","#006400");
+  var date_issued_path = paper.path("M70,195L180,200");
+  date_issued_path.attr("stroke","#006400");
+  var date_issued_label = paper.text(113,203,"<dateIssued>");
+  date_issued_label.attr("fill","#006400");
+  date_issued_label.rotate(5);
+  var issuance_path = paper.path("M100,170L198,192");
+  issuance_path.attr("stroke","#006400");
+  var issuance_label = paper.text(130,182,"<issuance>");
+  issuance_label.attr("fill","#006400");
+  issuance_label.rotate(10);
+  var extent_path = paper.path("M100,170L230,175");
+  extent_path.attr("stroke","#006400");
+  var extent_label = paper.text(145,166,"<extent>");
+  extent_label.attr("fill","#006400");
+
 }
 
 function animateWEMIDemo() {
@@ -91,6 +110,7 @@ function init() {
       FAR = 10000;
       
   $("#visualization").empty();
+
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera( VIEW_ANGLE,
                                         ASPECT,
@@ -104,15 +124,14 @@ function init() {
 
   mesh = new THREE.Mesh( geometry, material );
   //scene.add( mesh );
-  
+ 
   
   work_material = new THREE.MeshBasicMaterial( { color: 0x0064CD, wireframe: true });
   work_cube = new THREE.Mesh( geometry, work_material);
   work_cube.position.x = -150;
   work_cube.position.z = 250;
   scene.add(work_cube);
-  
-  
+    
   
   
   expr_material = new THREE.MeshBasicMaterial( { color: 0xa52a2a, wireframe: true } );
