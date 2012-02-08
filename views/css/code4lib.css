@@ -1,6 +1,8 @@
 body {
   padding-top: 60px;
 }
+
+a.wemi:link { color: white; }
  
 div.space_bk {
   background:url(/code4lib/img/seattle-space-needle.jpg) bottom right no-repeat;
