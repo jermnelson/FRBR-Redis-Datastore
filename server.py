@@ -13,7 +13,9 @@ from mako.lookup import TemplateLookup
 
 debug(True)
 templates_lookup = TemplateLookup(directories=[os.path.join(os.path.dirname(__file__),
-                                                            'views')])
+                                                            'views'),
+                                               os.path.join(os.path.dirname(__file__),
+                                                            'views/utilities')])
 
 @get('/')
 def index():
@@ -81,6 +83,15 @@ def about():
     """
     about_template = templates_lookup.get_template('about.html')
     return about_template.render(active_page='about')
+
+@route('/utilities/skos.html')
+def skos_utility():
+    """
+    Function displays a form to create, update, replace, or delete
+    a SKOS metadata form.
+    """
+    skos_mapper = templates_lookup.get_template('skos.html')
+    return skos_mapper.render(active_page='skos')
 
 @get("/frbr/:name")
 def frbr_forms(name):

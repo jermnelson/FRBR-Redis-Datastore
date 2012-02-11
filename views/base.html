@@ -1,62 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title><%block name="head_title">FRBR Redis Datastore ${active_page}</%block></title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/default.css" />
+    <title>FRBR-Redis Datastore Utilities
+           <%block name="head_title"></%block>       
+           
+    </title>
+    <meta name="description" content="FRBR-Redis Datastore Utilities">
+    <meta name="author" content="Jeremy Nelson">
+    <%block name="more_meta"></%block>
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.responsive" rel="stylesheet">
+    <link href="/css/prettify.css" rel="stylesheet" type="text/css" />
+    <link href="/css/code4lib.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/examples/images/favicon.ico">
+    <link rel="apple-touch-icon" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-114x114.png">
+    <script src="/js/jquery-1.7.1.min.js"></script>
+    <script src="/js/prettify.js" type="text/javascript"></script>
+    <script src="/js/bootstrap-alerts.js"></script>
+    <script src="/js/bootstrap-dropdown.js"></script>
+    <script src="/js/bootstrap-modal.js"></script>
+    <script src="/js/bootstrap-twipsy.js"></script>
+    <script src="/js/bootstrap-tooltip.js"></script>
+    <script src="/js/bootstrap-popover.js"></script>
     <%block name="more_css"></%block>
-    <script src="/js/jquery-1.7.1.min.js" type="text/javascript" ></script>
     <%block name="more_js"></%block>
   </head>
-  <body>
 
-  <%block name="topbar">
-  <div class="topbar">
-      <div class="fill">
+  <body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#">FRBR-Redis Datastore</a>
-          <ul class="nav">
-          % if active_page == 'home':
-            <li class="active"><a href="#">Home</a></li>
-          % else:
-            <li><a href="#">Home</a></li>
-          % endif
-          % if active_page == 'about':
-            <li class="active"><a href="/about.html">About</a></li>
-          % else:
-            <li><a href="/about.html">About</a></li>
-          % endif
-          % if active_page == 'visual':
-            <li class="active"><a href="/visualizations/index.html">Visualizations</a>
-          % else:
-            <li><a href="/visualizations/index.html">Visualizations</a>
-          % endif
-          % if active_page == 'contact':
-	    <li class="active"><a href="#contact">Contact</a></li>
-          % else:
-            <li><a href="#contact">Contact</a></li>
-          % endif
-          </ul>
-          <form action="" class="pull-right">
-            <input class="input-small" type="text" placeholder="Username">
-            <input class="input-small" type="password" placeholder="Password">
-            <button class="btn" type="submit">Sign in</button>
-          </form>
+          <a class="brand" href="/">FRBR-Redis Datastore Utilities</a>
+          <ul class="nav secondary-nav">
+            % if section == 'home':
+            <li class="active">
+            % else:
+            <li>
+            %endif
+            <a href="/">Home</a></li>
+            <li data-dropdown="dropdown" class="dropdown
+            % if section == 'utilities':
+             active
+            % endif
+            ">
+             <a href="#" class="dropdown-toggle">Utilities</a>
+             <ul class="dropdown-menu">
+              <li><a href="/utilities/skos.html">SKOS Mapper</a></li>
+            </ul>
+            </li>
+            <li data-dropdown="dropdown" class="dropdown
+            % if section == 'help':
+            active
+            % endif
+            ">
+             <a href="#" class="dropdown-toggle">Help</a>
+               <ul class="dropdown-menu">
+               <li><a href="/help.html">Technical Documentation</a></li>
+               <li class="divider"></li>
+		      <li><a href="/code4lib/index.html">Code4Lib Presentation</a></li>
+		      <li class="divider"></li>
+		      <li><a href="/about.html">About</a></li>
+	      </ul>
+        </li>
+        </ul>
         </div>
       </div>
-  </div>
-  </%block>
-  <body>
-  <div class="container">
-    ${self.body()}
+    </div>
 
-   <%block name="footer">
-   <footer>
-        <p>&copy; Jeremy Nelson &amp; Colorado College 2011</p>
-   </footer>
-   </%block>
+    <div class="container">
+     <%block name="slide"></%block>
+     ${self.body()} 
 
-  </div>
-  </body>
-</html>
+     <%block name="footer">
+      <footer>
+       <p style="text-align:center">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" rel="dct:type"></span><br/><a xmlns:cc="http://creativecommons.org/ns#" href="http://discovery.coloradocollege.edu/code4lib/" property="cc:attributionName" rel="cc:attributionURL"> Jeremy Nelson, Colorado College</a>
+       </p>
+      </footer>
+      </%block>
+
+    </div> <!-- /container -->
+
+  
+
+</body></html>

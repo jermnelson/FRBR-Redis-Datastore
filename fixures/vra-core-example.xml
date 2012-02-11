@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+
+<work id="w_1" source="Core 4 Sample Database (VCat)" refid="1">
+
+<agentSet>
+
+<display>unknown (French)</display>
+
+<notes/>
+
+<agent>
+
+<name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+
+<role>architect</role>
+
+</agent>
+
+</agentSet>
+
+<culturalContextSet>
+
+<culturalContext>French</culturalContext>
+
+</culturalContextSet>
+
+<dateSet>
+
+<display>begun 1194 (creation); consecrated 1260 (other)</display>
+
+<notes>Louis IX (Saint Louis) present for consecration in 1260.</notes>
+
+<date type="creation">
+
+<earliestDate>1194</earliestDate>
+
+<latestDate>1194</latestDate>
+
+</date>
+
+<date type="other">
+
+<earliestDate>1260</earliestDate>
+
+<latestDate>1260</latestDate>
+
+</date>
+
+</dateSet>
+
+<descriptionSet>
+
+<description>Noted for innovations in architectural construction and large number of sculptures and much-stained glass windows. The present cathedral was constructed on the foundations of the earlier church; the oldest parts of the cathedral are the crypt and Royal Portal (West Portal), remnants of a Romanesque church destroyed by fire in 1194.</description>
+
+</descriptionSet>
+
+<locationSet>
+
+<display>Chartres, Centre, France</display>
+
+<notes>Eure-et-Loir (department)</notes>
+
+<location type="site">
+
+<name type="geographic" vocab="TGN" refid="7008267" extent="inhabited place">Chartres</name>
+
+<name type="geographic" vocab="TGN" refid="7002877" extent="region">Centre</name>
+
+<name type="geographic" vocab="TGN" refid="1000070" extent="nation">France</name>
+
+<name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+
+</location>
+
+</locationSet>
+
+<materialSet>
+
+<display>stone; limestone</display>
+
+<notes/>
+
+<material/>
+
+</materialSet>
+
+<measurementsSet>
+
+<display>34 m (height)  x 130 m (length)</display>
+
+<notes/>
+
+<measurements type="height" unit="m">34</measurements>
+
+<measurements type="length" unit="m">130</measurements>
+
+</measurementsSet>
+
+<sourceSet>
+
+<display>CCO (Cataloging Cultural Objects) Catalog Examples; http://www.vrafoundation.org/ccoweb/cco/examplesindex.html (accessed 12/22/2008)</display>
+
+<notes/>
+
+<source/>
+
+</sourceSet>
+
+<stylePeriodSet>
+
+<display>Gothic (Medieval); Romanesque</display>
+
+<stylePeriod vocab="AAT" refid="300020775">Gothic (Medieval)</stylePeriod>
+
+<stylePeriod vocab="AAT" refid="300020768">Romanesque</stylePeriod>
+
+</stylePeriodSet>
+
+<subjectSet>
+
+<display>architectural exteriors; architectural interiors; New Testament; Old Testament and Apocrypha; rulers and leaders; saints; Mary, Blessed Virgin, Saint; religion and mythology; worship</display>
+
+<notes/>
+
+<subject>
+
+<term type="iconographicTopic" vocab="LCSAF" refid="n 81018544">Mary, Blessed Virgin, Saint</term>
+
+</subject>
+
+</subjectSet>
+
+<techniqueSet>
+
+<display>construction (assembling)</display>
+
+<notes/>
+
+<technique vocab="AAT" refid="300054608">construction (assembling)</technique>
+
+</techniqueSet>
+
+<titleSet>
+
+<display>Chartres Cathedral</display>
+
+<title type="cited" pref="true" xml:lang="en">Chartres Cathedral</title>
+
+<title type="cited" pref="false" xml:lang="fr">Notre-Dame de Chartres </title>
+
+<title type="cited" pref="false" xml:lang="fr">Cathédrale Notre-Dame de Chartres</title>
+
+</titleSet>
+
+<worktypeSet>
+
+<display>buildings; basilicas; buildings; religious buildings; churches; cathedrals</display>
+
+<worktype vocab="AAT" refid="300007501">cathedral</worktype>
+
+<worktype vocab="AAT" refid="300170443">basilica</worktype>
+
+</worktypeSet>
+
+</work>
+
+<image id="i_100" href="http://aal.ucsd.edu/vracore4/example001.html" refid="100" source="VRA Data Standards Committee, Core 4 Sample Records">
+
+<agentSet>
+
+<display>Wiedenhoeft, Ronald</display>
+
+<notes/>
+
+<agent/>
+
+</agentSet>
+
+<dateSet>
+
+<display>06/15/90 (creation)</display>
+
+<notes/>
+
+<date/>
+
+</dateSet>
+
+<measurementsSet>
+
+<display>18 MB</display>
+
+<notes/>
+
+<measurements/>
+
+</measurementsSet>
+
+<relationSet>
+
+<relation type="imageOf" refid="1" source="Core 4 Sample Database (VCat)"/>
+
+</relationSet>
+
+<rightsSet>
+
+<display>© Dr. Ronald V. Wiedenhoeft</display>
+
+<rights/>
+
+</rightsSet>
+
+<sourceSet>
+
+<display>Saskia Ltd. Cultural Documentation Kfa-0165</display>
+
+<source>
+
+<name type="vendor">Saskia Ltd. Cultural Documentation</name>
+
+<refid type="vendor">Kfa-0165</refid>
+
+</source>
+
+</sourceSet>
+
+<subjectSet>
+
+<display>bell towers; spires; rose window</display>
+
+<notes/>
+
+<subject>
+
+<term/>
+
+</subject>
+
+</subjectSet>
+
+<techniqueSet>
+
+<display>digital imaging</display>
+
+<notes/>
+
+<technique/>
+
+</techniqueSet>
+
+<titleSet>
+
+<display>Total view of West facade</display>
+
+<title type="generalView">Total view of West facade</title>
+
+</titleSet>
+
+<worktypeSet>
+
+<display>digital image</display>
+
+<notes/>
+
+<worktype/>
+
+</worktypeSet>
+
+</image>
+
+</vra>
