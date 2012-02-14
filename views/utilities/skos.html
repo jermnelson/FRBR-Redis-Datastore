@@ -1,5 +1,10 @@
 <%inherit file="base.html" />
 <%block name="more_js">
+<script>
+$(function() {
+  $("#frbr-skos-form").tab('show');
+});
+</script>
 </%block>
 
 
@@ -12,57 +17,72 @@
       to FRBR Entities</small></h1>
    ## END content DIV
    </div>
+   <form>
+    
+   ## START row
    <div class="row">
-    <form>
-    ## START 
-    <div class="well span8">
-     <ul class="nav nav-tabs">
-      ## START FRBR Entity Property TAB
-      <li class="active"><a href="#">FRBR Entity</a>
-		 <label>FRBR Entity</label>
-		 <select id="frbr-entity">
-		  <option value="work">Work</option>
-		  <option value="expression">Expression</option>
-		  <option value="manifestation">Manifestation</option>
-		  <option value="item">Item</option>
-		 </select>
-		 <span class="help-inline">Select FRBR Entity</span>
-		 <label>Property</label>
-		 <input type="text" id="frbr-entity-property-name" ></input>
-		 <span class="help-inline">Name of Property</span>
-		 <label>URI of Property</label>
-		 <input type="text" id="frbr-entity-property-uri">
-		 <span class="help-inline">URI of Property</input>
-	  ## END FRBR Entity Property TAB
-	  </li>
-	  ## START Metadata Schema or Format TAB
-	  <li><a href="#">Schema</a>
-	   <label>Metadata Schema or Format Name</label>
-	   <input type="text" id="metadata-schema"></input>
-	   <span class="help-inline">Name of metadata schema or format </span>
-	   <label>Namespace URI</label>
-	   <input type="text" id="metadata-schema-uri"></input>
-	   <span class="help-inline">Namespace URI of metadata schema or format </span>
-	  ## END Metadata Schema or Format TAB
-	  </li>
-	  ## START SKOS Collection TAB
-	  <li><a href="#">SKOS Collection</a>
+    <div class="span8">
+     <ul id="frbr-skos-form" class="nav nav-tabs">
+      <li class="active"><a href="#frbr-entity" data-toggle="tab">FRBR Entity</a></li>
+      <li><a href="#schema" data-toggle="tab">Schema</a></li>
+      <li><a href="#skos-collection" data-toggle="tab">SKOS Collection</a>
+     </ul>
+   
+     ## START tab-content DIV
+      <div class="tab-content">
+       ## START FRBR Entity Property TAB
+       <div class="tab-pane active" id="frbr-entity">
+	 <label>FRBR Entity</label>
+      	  <select id="frbr-entity">
+	   <option value="work">Work</option>
+           <option value="expression">Expression</option>
+	   <option value="manifestation">Manifestation</option>
+	   <option value="item">Item</option>
+	  </select>
+          <span class="help-inline">Select FRBR Entity</span>
+ 	 <label>Property</label>
+	 <input type="text" id="frbr-entity-property-name" ></input>
+         <span class="help-inline">Name of Property</span>
+	
+	 <label>URI of Property</label>
+         <input type="text" id="frbr-entity-property-uri">
+	 <span class="help-inline">URI of Property</input>
+	## END FRBR Entity Property TAB
+        </div>
+        ## START Metadata Schema or Format TAB
+	<div class="tab-pane" id="schema">
+	 <label>Metadata Schema or Format Name</label>
+	  <input type="text" id="metadata-schema"></input>
+	  <span class="help-inline">Name of metadata schema or format </span>
+	  <label>Namespace URI</label>
+	  <input type="text" id="metadata-schema-uri"></input>
+	  <span class="help-inline">Namespace URI of metadata schema or format </span>
+	## END Metadata Schema or Format TAB
+	</div>
+	## START SKOS Collection TAB
+        <div class="tab-pane" id="skos-collection">
 	   <p>For the FRBR Entity and Property, a SKOS map collection or
 	      ordered collection is associated with that collection. The
 	      default collection will match ANY of the members in a collection
 	      to the FRBR entity's property, an ordered collection starts
 	      with the first member and stops matching after the first match
 	      is found.</p>
-	  ## END SKOS Collection TAB
-	  </li>
-     </ul>
-    ## END 
+           <input type="checkbox" value="yes" id="orderedCollection"> Ordered Collection</input>
+	## END SKOS Collection TAB
+	</div>
+     ## END tab-content DIV
+     </div>
     </div>
-    <div class="span3">
-     <button class="btn btn-primary" onclick="alert('TODO: Load existing mapping of selected FRBR entity')">Load</button>
-     <button class="btn" onclick="alert('TODO: Save mapping of FRBR entity')">Save</button>
+
+     <div class="span3">
+      <div class="btn-group">
+       <button class="btn btn-primary" onclick="alert('TODO: Load existing mapping of selected FRBR entity')">Load</button>
+       <button class="btn" onclick="alert('TODO: Save mapping of FRBR entity')">Save</button>
+      </div>
+
+    ## END row
     </div>
-     </form>
+    </form>
 ## END content DIV
  </div>
-   
+</div> 
