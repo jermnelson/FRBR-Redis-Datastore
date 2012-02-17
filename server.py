@@ -62,7 +62,12 @@ def send_static_js(filename):
 @route('/css/:filename')
 def send_static_js(filename):
     root = "%s/views/css" % os.getcwd()
-    #"/home/jpnelson/frbr-redis-datastore/views/css"
+    return static_file(filename,
+                       root=root)
+
+@route('/img/:filename')
+def send_static_js(filename):
+    root = "%s/views/img" % os.getcwd()
     return static_file(filename,
                        root=root)
 
@@ -92,6 +97,14 @@ def skos_utility():
     """
     skos_mapper = templates_lookup.get_template('skos.html')
     return skos_mapper.render(active_page='skos')
+
+@post('/utilities/skos/save')
+def save_skos():
+    """
+    Function for AJAX call to save SKOS metadata form
+    """
+    print(request.forms)
+    return 'Success'
 
 @get("/frbr/:name")
 def frbr_forms(name):

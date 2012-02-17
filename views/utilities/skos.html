@@ -73,11 +73,12 @@ $(function() {
            <button class="btn" data-keyboard="true" data-backdrop="true" data-controls-modal="add-member" >Add Member</button>
            
         </p>
-        <table class="table table-bordered table-striped table-condensed">
+        <table class="table table-bordered table-striped table-condensed" id="rule-table">
          <thead>
           <tr>
            <th>Rule</th>
            <th>Value</th>
+           <th>Action</th>
           </tr>
          </thead>
          <tbody>
@@ -117,7 +118,7 @@ $(function() {
  </div>
  <div class="modal-footer">
   <a href="#" onclick="$('#add-member').modal('hide')" class="btn">Close</a>
-  <button class="btn btn-success"  onclick="alert('TODO: Save mapping of FRBR entity')">Save</button>
+  <button class="btn btn-success"  onclick="add_member()">Save</button>
  </div>
 ## END Add Member DIV
 </div>
