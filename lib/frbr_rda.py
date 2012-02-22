@@ -8,8 +8,9 @@ import sys,os
 import common
 import namespaces as ns
 
-fixures_root = os.path.abspath('../frbr-redis-datastore/fixures')
-
+current_dir = os.path.abspath(os.path.dirname(__file__))
+fixures_root = os.path.join(os.path.split(current_dir)[0],
+                            'fixures')
 FRBRentitiesRDA_rdf = os.path.join(fixures_root,
                                    "FRBRentitiesRDA.rdf")
 RDAGroup1Elements_rdf = os.path.join(fixures_root,

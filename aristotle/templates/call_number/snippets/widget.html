@@ -1,0 +1,17 @@
+{% load i18n %}
+{% comment %}START call-number-browser DIV{% endcomment %}
+<div id="call-number-browser">
+ <h2>Browse by call number:</h2>
+ <span id="current-callnumber">{{ call_number }}</span>
+ {% comment %}START nearby-entities DIV{% endcomment %}
+ <div id="nearby-entities">
+  {% comment %}START nearby-entities OL{% endcomment %}
+  <ol>
+   
+  
+  {% comment %}END nearby-entities OL{% endcomment %}
+  </ol>
+ {% comment %}END nearby-entities DIV{% endcomment %}
+ </div>
+{% comment %}END call-number-browser DIV{% endcomment %}
+</div>

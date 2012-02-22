@@ -1,0 +1,21 @@
+#call-number-browser {
+ background-color: #F1ECE8;
+ font-family: "Lucida Grande","Lucida Sans Unicode","Arial Unicode MS",Helvetica,sans-serif;
+}
+
+#current-callnumber {
+
+}
+
+#nearby-entities {
+  background-color: #FFFFFF;
+  box-shadow: 1px 1px 1px #666666;
+}
+
+#nearby-entities ol {
+  list-style: none outside none;
+}
+
+#nearby-entities li {
+  border-bottom: 1px dotted #666666;
+}

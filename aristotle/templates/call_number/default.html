@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block head-title %}{% trans "FRBR-Redis Datastore Call Number App" %}{% endblock %}
+
+
+{% block body %}
+ {% comment %}START content DIV{% endcomment %}
+ <div class="content">
+  {% comment %}START page-header DIV{% endcomment %}
+  <div class="page-header">
+    <h1>{% trans "Call Number App" %} 
+    <small>{% trans "Web, mobile, and embedded widget for browsing and searching call numbers" %}</small>
+    </h1>
+  {% comment %}END page-header DIV{% endcomment %}
+  </div>
+  
+ {% comment %}END content DIV{% endcomment %}
+ </div>
+{% endblock %}
