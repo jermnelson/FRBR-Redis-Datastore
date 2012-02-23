@@ -20,6 +20,7 @@
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/bootstrap.min.responsive" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/prettify.css" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}css/default.css" rel="stylesheet" type="text/css" />
     {% block more-css %}{% endblock %}
     
 
@@ -29,63 +30,34 @@
     <link rel="apple-touch-icon" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon-114x114.png">
-    <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
-    <script src="{{ STATIC_URL }}js/prettify.js" type="text/javascript"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap-alerts.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap-modal.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap-tab.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap-twipsy.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap-tooltip.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap-popover.js"></script>
-    <script src="{{ STATIC_URL }}js/utilities.js"></script>
-    {% block more-js %}{% endblock %}
+
   </head>
 
   <body onload="prettyPrint()">
-
+    {% comment %}START navbar DIV{% endcomment %}
     <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="/">FRBR-Redis Datastore</a>
-          <ul class="nav secondary-nav">
-		  {% comment %}
-            % if section == 'home':
-            <li class="active">
-            % else:
-            <li>
-            %endif
-            <a href="/">Home</a></li>
-            <li data-dropdown="dropdown" class="dropdown
-            % if section == 'utilities':
-             active
-            % endif
-            ">
-             <a href="#" class="dropdown-toggle">Utilities</a>
-             <ul class="dropdown-menu">
-              <li><a href="/utilities/skos.html">SKOS Mapper</a></li>
-            </ul>
-            </li>
-            <li data-dropdown="dropdown" class="dropdown
-            % if section == 'help':
-            active
-            % endif
-            ">
-             <a href="#" class="dropdown-toggle">Help</a>
-               <ul class="dropdown-menu">
-               <li><a href="/help.html">Technical Documentation</a></li>
-               <li class="divider"></li>
-		      <li><a href="/code4lib/index.html">Code4Lib Presentation</a></li>
-		      <li class="divider"></li>
-		      <li><a href="/about.html">About</a></li>
-		    {% endcomment %}
-	      </ul>
-        </li>
-        </ul>
-        </div>
-      </div>
+	 {% comment %}START navbar-inner DIV{% endcomment %}
+     <div class="navbar-inner">
+	  {% comment %}START container DIV{% endcomment %}
+      <div class="container">
+	   <a class="brand" href="/">FRBR-Redis Datastore</a>
+	   {% comment %}START secondary-nav UL{% endcomment %}
+	   <ul class="nav secondary-nav">
+		 <li data-dropdown="dropdown" class="dropdown">
+		   <a href="#" class="dropdown-toggle">Apps</a>
+		   <ul class="dropdown-menu">
+		     <li><a href="/call_number">Call Number App</a></li>
+		   </ul>
+		 </li>
+	   {% comment %}END secondary-nav UL{% endcomment %}   
+	   </ul>
+	  {% comment %}END container DIV{% endcomment %}
+	  </div>
+     {% comment %}START navbar-inner DIV{% endcomment %}
+     </div>
+    {% comment %}END navbar DIV{% endcomment %}
     </div>
-
+    
     {% comment %}START container DIV{% endcomment %}
     <div class="container">
      {% block body %}{% endblock %}
@@ -102,6 +74,16 @@
     {% comment %}END container DIV{% endcomment %}
     </div> <!-- /container -->
 
+    <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+    <script src="{{ STATIC_URL }}js/prettify.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-alerts.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-modal.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-tab.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-twipsy.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-tooltip.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-popover.js"></script>
+    <script src="{{ STATIC_URL }}js/utilities.js"></script>
+    {% block more-js %}{% endblock %}
   
-
 </body></html>

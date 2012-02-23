@@ -2,16 +2,59 @@
 {% comment %}START call-number-browser DIV{% endcomment %}
 <div id="call-number-browser">
  <h2>Browse by call number:</h2>
- <span id="current-callnumber">{{ call_number }}</span>
+ <span id="current-callnumber">{{ current.call_number }}</span>
  {% comment %}START nearby-entities DIV{% endcomment %}
  <div id="nearby-entities">
   {% comment %}START nearby-entities OL{% endcomment %}
   <ol>
+  {% for entity in previous %}
+   <li>
+     <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title }}</a></div>
+     <div class="call-number-entity">     {% for author in entity.author %}
+     {{ author }}
+     {% if not forloop.last %},{% endif %}
+     {% endfor %}
+     </div>
+     <div class="call-number-entity">{{ entity.location }} &raquo;
+     {{ entity.call_number }}
+     </div>
+   </li>
+  {% endfor %}
+   <li class="current">
+     <div class="call-number-entity">{{ current.title }}</div>
+     <div class="call-number-entity">
+	  {{ current.author }}
+	 </div>
+     <div class="call-number-entity">{{ current.location }} &raquo;
+     {{ current.call_number }} {{ current.bib_number }}
+     </div>
+   </li>
+   {% for entity in next %}
+   <li>
+     <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title }}</a></div>
+     <div class="call-number-entity">
+     {% for author in entity.author %}
+     {{ author }}
+     {% if not forloop.last %},{% endif %}
+     {% endfor %}
+     </div>
+     <div class="call-number-entity">{{ entity.location }} &raquo;
+     {{ entity.call_number }}
+     </div>
+   </li>
    
-  
+   {% endfor %}
   {% comment %}END nearby-entities OL{% endcomment %}
   </ol>
+  {% comment %}START browse-controls DIV{% endcomment %}
+  <div id="browse-controls">
+   <div class="previous">&lt;Previous</div>
+   <div class="full_view">Expand</div>
+   <div class="next">Next &gt;</div>
+  {% comment %}END browse-controls DIV{% endcomment %}
+  </div>
  {% comment %}END nearby-entities DIV{% endcomment %}
  </div>
+ <br/>
 {% comment %}END call-number-browser DIV{% endcomment %}
 </div>

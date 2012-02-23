@@ -3,6 +3,9 @@
 
 {% block head-title %}{% trans "FRBR-Redis Datastore Call Number App" %}{% endblock %}
 
+{% block more-css %}
+<link href="{{ STATIC_URL }}call_number/css/call_number.css" rel="stylesheet" type="text/css" />
+{% endblock %}
 
 {% block body %}
  {% comment %}START content DIV{% endcomment %}
@@ -15,6 +18,15 @@
   {% comment %}END page-header DIV{% endcomment %}
   </div>
   
+  <div class="row">
+   <div class="span4">
+	<h2>Sample Widget</h2>
+    {% include 'widget.html' %}
+   </div>
+   <div class="span6">
+    <h2>Search</h2>
+   </div>
+  </div>
  {% comment %}END content DIV{% endcomment %}
  </div>
 {% endblock %}
