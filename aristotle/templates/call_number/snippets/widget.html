@@ -11,7 +11,7 @@
    <li>
      <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title }}</a></div>
      <div class="call-number-entity">     {% for author in entity.author %}
-     {{ author }}
+     {% trans author %}
      {% if not forloop.last %},{% endif %}
      {% endfor %}
      </div>
@@ -23,7 +23,7 @@
    <li class="current">
      <div class="call-number-entity">{{ current.title }}</div>
      <div class="call-number-entity">
-	  {{ current.author }}
+	  {% trans current.author %}
 	 </div>
      <div class="call-number-entity">{{ current.location }} &raquo;
      {{ current.call_number }} {{ current.bib_number }}
@@ -34,7 +34,7 @@
      <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title }}</a></div>
      <div class="call-number-entity">
      {% for author in entity.author %}
-     {{ author }}
+     {% trans author %}
      {% if not forloop.last %},{% endif %}
      {% endfor %}
      </div>
