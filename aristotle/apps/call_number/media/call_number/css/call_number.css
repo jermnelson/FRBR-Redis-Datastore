@@ -1,6 +1,7 @@
 #browse-controls {
  background-color: #F1ECE8;
- height: 2em;
+ height: 3em;
+ text-align: center;
 }
 
 #browse-controls div.full_view {

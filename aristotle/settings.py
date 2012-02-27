@@ -151,6 +151,9 @@ LOGGING = {
     }
 }
 
+# Constants used Call Number App
+GBS_BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q=isbn:%s' 
+GBS_PREVIE_URL = "http://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.gif"
 try:
     from local_settings import *
 except ImportError:

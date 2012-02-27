@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load call_number_extras %}
 {% comment %}START call-number-browser DIV{% endcomment %}
 <div id="call-number-browser">
  <h2>Browse by call number:</h2>
@@ -9,7 +10,10 @@
   <ol>
   {% for entity in previous %}
    <li>
-     <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title }}</a></div>
+     {% if entity.isbn %}
+     {{ entity.isbn|google_book_display }}
+     {% endif %}
+     <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title|truncatewords:7 }}</a></div>
      <div class="call-number-entity">     {% for author in entity.author %}
      {% trans author %}
      {% if not forloop.last %},{% endif %}
@@ -21,6 +25,9 @@
    </li>
   {% endfor %}
    <li class="current">
+     {% if entity.isbn %}
+     {{ entity.isbn|google_book_display }}
+     {% endif %}
      <div class="call-number-entity">{{ current.title }}</div>
      <div class="call-number-entity">
 	  {% trans current.author %}
@@ -31,6 +38,9 @@
    </li>
    {% for entity in next %}
    <li>
+     {% if entity.isbn %}
+     {{ entity.isbn|google_book_display }}
+     {% endif %}
      <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title }}</a></div>
      <div class="call-number-entity">
      {% for author in entity.author %}
@@ -48,9 +58,13 @@
   </ol>
   {% comment %}START browse-controls DIV{% endcomment %}
   <div id="browse-controls">
-   <div class="previous">&lt;Previous</div>
-   <div class="full_view">Expand</div>
-   <div class="next">Next &gt;</div>
+   {% comment %}START btn-group DIV{% endcomment %}
+   <div class="btn-group">
+     <a class="btn btn-mini" href="#">&laquo; Previous</a>
+     <a class="btn btn-mini btn-info" href="#">Expand</a>
+     <a class="btn btn-mini" href="#">Next &raquo;</a>
+   {% comment %}END btn-group DIV{% endcomment %}
+   </div>
   {% comment %}END browse-controls DIV{% endcomment %}
   </div>
  {% comment %}END nearby-entities DIV{% endcomment %}

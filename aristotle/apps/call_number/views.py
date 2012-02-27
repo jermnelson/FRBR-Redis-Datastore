@@ -18,15 +18,12 @@ def default(request):
     """
     ## return HttpResponse("Call Number Application index")
     current = redis_server.hgetall('record:78')
-    sort_position = int(current['sort-position'])
     return direct_to_template(request,
                               'call_number/default.html',
                               {'aristotle_url':'http://discovery.coloradocollege.edu/catalog/record/',
                                'current':current,
-                               'next':commands.get_slice(sort_position-2,
-                                                         sort_position-1),
-                               'previous':commands.get_slice(sort_position+1,
-                                                             sort_position+2)})
+                               'next':commands.get_next(current['call_number']),
+                               'previous':commands.get_previous(current['call_number'])})
 
 def widget(request):
     """
