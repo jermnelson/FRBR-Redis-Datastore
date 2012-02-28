@@ -14,11 +14,15 @@
      {{ entity.isbn|google_book_display }}
      {% endif %}
      <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title|truncatewords:7 }}</a></div>
-     <div class="call-number-entity">     {% for author in entity.author %}
+     {% if entity.author %}
+     <div class="call-number-entity">{% trans entity.author %}
+     {% comment %}
+     {% for author in entity.author %}
      {% trans author %}
      {% if not forloop.last %},{% endif %}
-     {% endfor %}
+     {% endcomment %}
      </div>
+     {% endif %}
      <div class="call-number-entity">{{ entity.location }} &raquo;
      {{ entity.call_number }}
      </div>
@@ -29,9 +33,11 @@
      {{ entity.isbn|google_book_display }}
      {% endif %}
      <div class="call-number-entity">{{ current.title }}</div>
+     {% if entity.author %}
      <div class="call-number-entity">
 	  {% trans current.author %}
 	 </div>
+	 {% endif %}
      <div class="call-number-entity">{{ current.location }} &raquo;
      {{ current.call_number }} {{ current.bib_number }}
      </div>
@@ -42,11 +48,12 @@
      {{ entity.isbn|google_book_display }}
      {% endif %}
      <div class="call-number-entity"><a href="{{ aristotle_url }}{{ entity.bib_number }}">{{ entity.title }}</a></div>
-     <div class="call-number-entity">
+     <div class="call-number-entity">{% trans entity.author %}
+     {% comment %}
      {% for author in entity.author %}
      {% trans author %}
      {% if not forloop.last %},{% endif %}
-     {% endfor %}
+     {% endcomment %}
      </div>
      <div class="call-number-entity">{{ entity.location }} &raquo;
      {{ entity.call_number }}

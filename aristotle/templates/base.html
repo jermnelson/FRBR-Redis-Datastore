@@ -44,13 +44,26 @@
 	   {% comment %}START secondary-nav UL{% endcomment %}
 	   <ul class="nav secondary-nav">
 		 <li data-dropdown="dropdown" class="dropdown">
-		   <a href="#" class="dropdown-toggle">Apps</a>
+		   <a href="#" class="dropdown-toggle">Access &amp; Discovery App Portfolio</a>
 		   <ul class="dropdown-menu">
 		     <li><a href="/call_number">Call Number App</a></li>
+		     <li><a href="/hours">Hours App</a></li>
 		   </ul>
 		 </li>
 	   {% comment %}END secondary-nav UL{% endcomment %}   
 	   </ul>
+	   {% comment %}START productivity apps nav UL{% endcomment %}
+	   <ul class="nav secondary-nav">
+		 <li data-dropdown="dropdown" class="dropdown">
+		   <a href="#" class="dropdown-toggle">Productivity App Portfolio</a>
+		   <ul class="dropdown-menu">
+			 <li><a href="/budget">Budget App</a></li>
+			 <li><a href="/cataloging">Cataloging Apps</a></li>
+			 <li><a href="/circulation">Circulation Apps</a></li>
+			 <li><a href="/system">Systems Status App</a></li>
+		     
+		   </ul>
+		 </li>
 	  {% comment %}END container DIV{% endcomment %}
 	  </div>
      {% comment %}START navbar-inner DIV{% endcomment %}
@@ -83,6 +96,7 @@
     <script src="{{ STATIC_URL }}js/bootstrap-twipsy.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-tooltip.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-popover.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.marcopolo.min.js"></script>
     <script src="{{ STATIC_URL }}js/utilities.js"></script>
     {% block more-js %}{% endblock %}
   

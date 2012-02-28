@@ -26,11 +26,26 @@
    <div class="span6">
     <h2>Search</h2>
     <div class="well">
-     <input type="text" class="span3" />
+     <input id="call-number-search" type="text" class="span3" />
      <button class="btn">Search</button>     
     </div>
    </div>
   </div>
  {% comment %}END content DIV{% endcomment %}
  </div>
+{% endblock %}
+<script>
+ $('#call-number-search').marcoPolo({
+	 url: 'call_number/json/search',
+	 formatItem: function (data, $item) {
+		 return data.result;
+	 },
+	 onSelect: function (data, $item) {
+		 if(data.discovery_url) {
+			window.location = data.discovery_url; 
+		 }
+	 });
+</script>
+{% block more-js %}
+
 {% endblock %}
