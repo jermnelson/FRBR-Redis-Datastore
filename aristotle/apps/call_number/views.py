@@ -23,7 +23,7 @@ def default(request):
     current = redis_server.hgetall('record:278')
     return direct_to_template(request,
                               'call_number/default.html',
-                              {'aristotle_url':'http://discovery.coloradocollege.edu/catalog/record/',
+                              {'aristotle_url':settings.DISCOVERY_RECORD_URL,
                                'current':current,
                                'next':commands.get_next(current['call_number']),
                                'previous':commands.get_previous(current['call_number'])})
