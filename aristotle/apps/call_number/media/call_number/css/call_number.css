@@ -32,6 +32,10 @@
  padding-left: 20px;
 }
 
+body.app {
+ padding-top: 0px;
+}
+
 div.call-number-entity{
  margin-bottom: -5px;
  overflow: hidden;

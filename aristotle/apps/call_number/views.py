@@ -8,25 +8,47 @@ from django.views.generic.simple import direct_to_template
 from django.http import HttpResponse
 import django.utils.simplejson as json
 from django.utils.translation import ugettext
-import config,commands,sys
+import commands,sys,settings
 from commands import search
 
-redis_server = redis.StrictRedis(host=config.REDIS_HOST,
-                                 port=config.REDIS_PORT,
-                                 db=config.CALL_NUMBER_DB)
+redis_server = redis.StrictRedis(host=settings.REDIS_HOST,
+                                 port=settings.REDIS_PORT,
+                                 db=settings.CALL_NUMBER_DB)
+
+SEED_RECORD_ID = 'record:278'
+
+def app(request):
+    """
+    Returns responsive app view for the Call Number App
+    """
+    try:
+        if request.POST.has_key('call_number'):
+            current = redis_server.hgetall(request.POST['call_number'])
+        else:
+            current = redis_server.hgetall(SEED_RECORD_ID)
+    except:
+        current = redis_server.hgetall(SEED_RECORD_ID)
+    return direct_to_template(request,
+                              'call_number/app.html',
+                             {'aristotle_url':settings.DISCOVERY_RECORD_URL,
+                              'current':current,
+                              'next':commands.get_next(current['call_number']),
+                              'previous':commands.get_previous(current['call_number']),
+                              'redis':commands.get_redis_info()})
 
 def default(request):
     """
     Returns the default view for the Call Number Application
     """
     ## return HttpResponse("Call Number Application index")
-    current = redis_server.hgetall('record:278')
+    current = redis_server.hgetall(SEED_RECORD_ID)
     return direct_to_template(request,
                               'call_number/default.html',
                               {'aristotle_url':settings.DISCOVERY_RECORD_URL,
                                'current':current,
                                'next':commands.get_next(current['call_number']),
-                               'previous':commands.get_previous(current['call_number'])})
+                               'previous':commands.get_previous(current['call_number']),
+                               'redis':commands.get_redis_info()})
 
 def json_view(func):
     """

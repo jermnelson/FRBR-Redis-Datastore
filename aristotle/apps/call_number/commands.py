@@ -4,14 +4,13 @@
 import pymarc,redis,re
 import logging,sys
 try:
-    import config
-    REDIS_HOST = config.REDIS_HOST
-    REDIS_PORT = config.REDIS_PORT
-    CALL_NUMBER_DB = config.CALL_NUMBER_DB
+    import settings 
+    REDIS_HOST = settings.REDIS_HOST
+    REDIS_PORT = settings.REDIS_PORT
+    CALL_NUMBER_DB = settings.CALL_NUMBER_DB
 except ImportError:
     # Setup for local development
-    #REDIS_HOST = '0.0.0.0'
-    REDIS_HOST = 'solr.coloradocollege.edu'
+    REDIS_HOST = '0.0.0.0'
     REDIS_PORT = 6379
     CALL_NUMBER_DB = 4
     
@@ -49,6 +48,13 @@ def get_next(call_number):
     current_rank = redis_server.zrank('call-number-sort-set',call_number)
     logging.error("Current rank is %s" % current_rank)
     return get_slice(current_rank+1,current_rank+2)
+
+
+def get_redis_info():
+    redis_info = {'dbsize':redis_server.dbsize(),
+                  'info':redis_server.info(),
+                  'call_number_size':len(redis_server.hkeys('call-number-hash'))}
+    return redis_info
 
 def get_slice(start,stop):
     """

@@ -1,0 +1,25 @@
+{% extends 'app-base.html' %}
+{% load i18n %}
+{% load portfolio_extras %}
+
+{% block more-css %}
+<link href="{{ STATIC_URL }}portfolio/css/app.less" rel="stylesheet/less" type="text/css" />
+{% endblock %}
+
+
+{% block body %}
+{% comment %}START content DIV{% endcomment %}
+<div class="content">
+ {% comment %}START row-fluid DIV{% endcomment %}
+ <div class="row-fluid">
+  <h2>App Portfolio</h2>
+ </div>
+ <div class="row-fluid portfolio-base">
+ {% for active_app in portfolio %}
+  {{ active_app|app_display }}
+ {% endfor %}
+ {% comment %}END row-fluid DIV{% endcomment %}
+ </div>
+{% comment %}END content DIV{% endcomment %}
+</div>
+{% endblock %}

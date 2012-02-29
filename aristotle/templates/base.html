@@ -20,10 +20,10 @@
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/bootstrap.min.responsive" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/prettify.css" rel="stylesheet" type="text/css" />
-    <link href="{{ STATIC_URL }}css/default.css" rel="stylesheet" type="text/css" />
     {% block more-css %}{% endblock %}
     
 
+    <script src="{{ STATIC_URL }}js/less-1.2.2.min.js"></script>
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/examples/images/favicon.ico">
@@ -34,6 +34,7 @@
   </head>
 
   <body onload="prettyPrint()">
+    {% block navbar %}
     {% comment %}START navbar DIV{% endcomment %}
     <div class="navbar navbar-fixed-top">
 	 {% comment %}START navbar-inner DIV{% endcomment %}
@@ -46,6 +47,7 @@
 		 <li data-dropdown="dropdown" class="dropdown">
 		   <a href="#" class="dropdown-toggle">Access &amp; Discovery App Portfolio</a>
 		   <ul class="dropdown-menu">
+                     <li><a href="/article">Article App</a></li>
 		     <li><a href="/call_number">Call Number App</a></li>
 		     <li><a href="/hours">Hours App</a></li>
 		   </ul>
@@ -70,7 +72,8 @@
      </div>
     {% comment %}END navbar DIV{% endcomment %}
     </div>
-    
+   {% endblock %}    
+
     {% comment %}START container DIV{% endcomment %}
     <div class="container">
      {% block body %}{% endblock %}
