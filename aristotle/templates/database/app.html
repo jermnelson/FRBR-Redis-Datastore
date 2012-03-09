@@ -1,0 +1,45 @@
+{% extends 'app-base.html' %}
+{% load i18n %}
+
+{% block more-css %}
+<link href="{{ STATIC_URL }}call_number/css/call_number.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
+{% endblock %}
+
+
+{% block body %}
+{% comment %}START content DIV{% endcomment %}
+<div class="content">
+ {% comment %}START row-fluid DIV{% endcomment %}
+ <div class="row-fluid">
+  {% comment %}START search DIV{% endcomment %}
+  <div class="row12">
+  <div class="app-icon" style="float:left">
+   <img src="{{ STATIC_URL}}img/71-compass.png" / class="app-icon" />
+  </div>
+  <h2>test app</h2>
+  <p>An app that does something. Maybe help you find a database using Gold Rush XML data?</p>
+  </div>
+ {% comment %}END row-fluid DIV{% endcomment %}
+ </div>
+ {% comment %}START row-fluid DIV{% endcomment %}
+ <div class="row-fluid">
+  {% comment %}START widget DIV{% endcomment %}
+  <div class="row12">
+  {% comment %}END widget DIV{% endcomment %}
+  </div>
+ {% comment %}END row-fluid DIV{% endcomment %}
+ </div>
+{% comment %}END content DIV{% endcomment %}
+</div>
+
+{% endblock %}
+
+{% block footer %}
+      <footer>
+       <p style="text-align:center">
+        <h2>FOOTER!</h2>
+       </p>
+      </footer>
+{% endblock %}
+
