@@ -10,7 +10,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^call_number/', include('call_number.urls')),
-    url(r'^portfolio/', include('portfolio.urls')), 
+    url(r'^portfolio/', include('portfolio.urls')),
+    url(r'^database/', include('database.urls')), 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
