@@ -19,6 +19,34 @@
   </div>
   <h2>Policies App</h2>
   <p>The Policies App is used for viewing Tutt Library's various policies.</p>
+  <div class="row">
+    <div class="span8">
+      <form class="well form-vertical">
+        <div class="control-group">
+          <label class="control-label" for="searchIcon">Find Books</label>
+          <div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-search"></i></span>
+              <input id="searchIcon" type="text" placeholder="Search TIGER!">
+            </div>
+            <div class="btn-group">
+              <button type="submit" class="btn" href="#">Search Keyword</button>
+              <button class="btn dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>Keyword</li>
+                <li>Author</li>
+                <li>Title</li>
+                <li>Subject</li>
+                <li>Journal Title</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
   {% comment %}END search DIV{% endcomment %}
   </div>
  {% comment %}END row-fluid DIV{% endcomment %}
@@ -27,7 +55,6 @@
  <div class="row-fluid">
   {% comment %}START widget DIV{% endcomment %}
   <div class="row12">
-   <a href=# onclick="alert('In Policies App')" class="btn">Policies Button</a>
   {% comment %}END widget DIV{% endcomment %}
   </div>
  {% comment %}END row-fluid DIV{% endcomment %}
