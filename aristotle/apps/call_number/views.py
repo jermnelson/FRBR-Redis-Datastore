@@ -84,6 +84,25 @@ def widget(request):
     """
     Returns rendered html snippet of call number browser widget
     """
+    standalone = False
+    call_number = 'PS21 .D5185 1978'
+    if request.method == 'POST':
+        if request.POST.has_key('standalone'):
+            standalone = request.POST['standalone']
+        if request.POST.has_key('call_number'):
+             call_number = request.POST['call_number']
+    else:
+         if request.GET.has_key('standalone'):
+            standalone = request.GET['standalone']
+         if request.GET.has_key('call_number'):
+             call_number = request.GET['call_number']
+    current = commands.get_record(call_number)
+    
     return direct_to_template(request,
                               'call_number/snippets/widget.html',
-                              {'call_number':'PS21 .D5185 1978'})
+                              {'aristotle_url':settings.DISCOVERY_RECORD_URL,
+                               'current':current,
+                               'next':commands.get_next(current['call_number']),
+                               'previous':commands.get_previous(current['call_number']),
+
+                               'standalone':standalone})
