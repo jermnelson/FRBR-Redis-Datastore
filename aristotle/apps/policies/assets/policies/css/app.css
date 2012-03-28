@@ -1,5 +1,18 @@
+#horizontalList ul
+{
+margin: 12px;
+padding: 0;
+}
+
 #horizontalList ul li
 {
 display: inline;
 padding-right: 20px;
+color: green;
+}
+
+#horizontalList ul li a
+{
+color: green;
+font-weight: bold;
 }

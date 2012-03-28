@@ -4,7 +4,7 @@
 {% block more-css %}
 <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
 <link href="{{ STATIC_URL }}policies/css/app.css" rel="stylesheet" type="text/css" />
-<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
 {% endblock %}
@@ -28,7 +28,7 @@
         <div class="control-group">
           <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="green">Articles</font></strong></label>
           <div class="controls">
-            <div class="input-prepend" style="float:left;">
+            <div class="input-prepend" style="float:left; width:248px;">
               <span class="add-on"><i class="icon-search"></i></span>
               <input id="searchIcon" type="text" placeholder="Search TIGER!">
             </div>
@@ -38,9 +38,9 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <li>Academic Search Complete</li>
-                <li>JSTOR</li>
-                <li>Google Scholar</li>
+                <li><a href="#">Academic Search Complete</a></li>
+                <li><a href="#">JSTOR</a></li>
+                <li><a href="#">Google Scholar</a></li>
               </ul>
             </div>
           </div>
@@ -48,9 +48,9 @@
       </form>
       <div id="horizontalList">
         <ul>
-          <li>&bull; Journals</li>
-          <li>&bull; Databases by Subject</li>
-          <li>&bull; Databases by Title</li>
+          <li>&bull; <a href="#">Journals</a></li>
+          <li>&bull; <a href="#">Databases by Subject</a></li>
+          <li>&bull; <a href ="#">Databases by Title</a></li>
         </ul>
       </div>
     </div>
