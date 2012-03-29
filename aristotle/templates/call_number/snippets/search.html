@@ -2,7 +2,7 @@
 {% load call_number_extras %}
 {% comment %}START autocomplete FORM{% endcomment %}
 <form class="well form-search">
- <input type="text" class="input-medium search-query">
+ <input type="text" data-provide="typeahead" id="call-num-typeahead" {% if typeahead_data %}data-source="{{ typeahead_data }}"{% endif %} class="input-medium search-query">
  <button type="submit" class="btn"><i class="icon-eye-open"></i> Find</button>
 {% comment %}END autocomplete FORM{% endcomment %} 
 </form>

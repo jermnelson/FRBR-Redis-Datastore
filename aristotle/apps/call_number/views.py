@@ -6,9 +6,10 @@ __author__ = 'Jeremy Nelson'
 import lib.frbr_rda as frbr,redis
 from django.views.generic.simple import direct_to_template
 from django.http import HttpResponse
+from django.template import Context,Template,loader
 import django.utils.simplejson as json
 from django.utils.translation import ugettext
-import commands,sys,settings
+import commands,sys,settings,logging
 from commands import search
 
 redis_server = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -67,6 +68,7 @@ def json_view(func):
             raise
         except Exception,e:
             exc_info = sys.exc_info()
+            logging.error(exc_info)
             if hasattr(e,'message'):
                 msg = e.message
             else:
@@ -77,8 +79,33 @@ def json_view(func):
         return HttpResponse(json_output,
                             mimetype='application/json')
     return wrap
-    
-    
+
+@json_view    
+def browse(request):
+    """
+    JSON view for a call number browser widget view
+
+    :param request: HTTP Request
+    """
+    call_number = request.GET['call_number']
+    current = commands.get_record(call_number)
+    context = Context({'aristotle_url':settings.DISCOVERY_RECORD_URL,
+                       'current':current,
+                       'next':commands.get_next(current['call_number']),
+                       'previous':commands.get_previous(current['call_number'])})
+    widget_template = loader.get_template('call_number/snippets/widget.html')
+    return {'html':widget_template.render(context)}
+
+@json_view
+def typeahead_search(request):
+    """
+    JSON view for typeahead search on call number
+
+    :param request: Request
+    """
+    query = request.GET['q']
+    return commands.search(query)
+
 
 def widget(request):
     """
