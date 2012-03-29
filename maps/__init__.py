@@ -1,6 +1,10 @@
 import sys,os
 
-#sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\'))
-#sys.path.insert(0, os.path.abspath('C:\\Users\\jernelson\\Development\\frbr-redis-datastore\\lib\\'))
-sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/'))
-sys.path.insert(0, os.path.abspath('../frbr-redis-datastore/lib/'))
+MAP_ROOT = os.path.abspath(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.abspath(MAP_ROOT)[0]
+FIXURES_ROOT = os.path.join(PROJECT_ROOT,'fixures')
+LIB_ROOT = os.path.join(PROJECT_ROOT,'lib')
+
+sys.path.insert(0, PROJECT_ROOT)
+sys.path.insert(0, LIB_ROOT)
+sys.path.insert(0, FIXURES_ROOT)
