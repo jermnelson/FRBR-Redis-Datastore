@@ -10,6 +10,12 @@
 {% endblock %}
 
 
+<script language="JavaScript">
+function writeText (form) {
+    form.btnsubmit.value = "success"
+}
+</script>
+
 {% block body %}
 {% comment %}START content DIV{% endcomment %}
 <div class="content">
@@ -33,7 +39,7 @@
             </div>
             <input type="hidden" name="search-type" value="search" />
             <div class="btn-group" style="float:left;">
-              <button type="submit" name="btnsubmit" class="btn">Search Keyword</button>
+              <button type="submit" name="btnsubmit" class="btn" value="Search Keyword">Search Keyword</button>
               <button class="btn dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
               </button>
