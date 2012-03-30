@@ -24,18 +24,22 @@ def app(request):
     """
     try:
         if request.POST.has_key('call_number'):
-            current = redis_server.hgetall(request.POST['call_number'])
-        else:
+            current = commands.get_record(request.POST['call_number'])
+        elif request.GET.has_key('call_number'):
+            current = commands.get_record(request.GET['call_number'])
+        if len(current) < 1:
             current = redis_server.hgetall(SEED_RECORD_ID)
     except:
         current = redis_server.hgetall(SEED_RECORD_ID)
+    typeahead_data = commands.search(current['call_number'][0:2])['result']
     return direct_to_template(request,
                               'call_number/app.html',
                              {'aristotle_url':settings.DISCOVERY_RECORD_URL,
                               'current':current,
                               'next':commands.get_next(current['call_number']),
                               'previous':commands.get_previous(current['call_number']),
-                              'redis':commands.get_redis_info()})
+                              'redis':commands.get_redis_info(),
+                              'typeahead_data':typeahead_data})
 
 def default(request):
     """
@@ -117,12 +121,12 @@ def widget(request):
         if request.POST.has_key('standalone'):
             standalone = request.POST['standalone']
         if request.POST.has_key('call_number'):
-             call_number = request.POST['call_number']
+            call_number = request.POST['call_number']
     else:
          if request.GET.has_key('standalone'):
             standalone = request.GET['standalone']
          if request.GET.has_key('call_number'):
-             call_number = request.GET['call_number']
+            call_number = request.GET['call_number']
     current = commands.get_record(call_number)
     
     return direct_to_template(request,

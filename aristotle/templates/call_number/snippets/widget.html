@@ -39,17 +39,15 @@
    </li>
   {% endfor %}
    <li class="current">
-     {% if entity.isbn %}
-     {{ entity.isbn|google_book_display }}
+     {% if current.isbn %}
+     {{ current.isbn|google_book_display }}
      {% endif %}
      <div class="call-number-entity">{{ current.title }}</div>
-     {% if entity.author %}
-     <div class="call-number-entity">
-	  {% trans current.author %}
-	 </div>
-	 {% endif %}
+     {% if current.author %}
+      <div class="call-number-entity">{% trans current.author %}</div>
+     {% endif %}
      <div class="call-number-entity">{{ current.location }} &raquo;
-     {{ current.call_number }} {{ current.bib_number }}
+     {{ current.call_number }} 
      </div>
    </li>
    {% for entity in next %}
