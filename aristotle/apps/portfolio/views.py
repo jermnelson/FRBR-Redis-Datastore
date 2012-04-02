@@ -15,7 +15,7 @@ def default(request):
     :rtype: Generated HTML template
     """
     app_listing = [{'background_color':'gold',
-                    'icon':'img/71-compass.png',
+                    'icon':'71-compass.png',
                     'name':'Call Number'}]
     return direct_to_template(request,
                               'portfolio/app.html',

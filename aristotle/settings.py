@@ -73,8 +73,9 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT,'media'),
-    os.path.join(PROJECT_ROOT,'apps/call_number/media'),
+    os.path.join(PROJECT_ROOT,'assets'),
+    os.path.join(PROJECT_ROOT,'apps/call_number/assets'),
+    os.path.join(PROJECT_ROOT,'apps/portfolio/assets'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

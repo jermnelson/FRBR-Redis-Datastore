@@ -6,11 +6,10 @@
 <link href="{{ STATIC_URL }}portfolio/css/app.less" rel="stylesheet/less" type="text/css" />
 {% endblock %}
 
+{% block navbar %}{% endblock %}
 
 {% block body %}
-{% comment %}START content DIV{% endcomment %}
-<div class="container-fluid">
- {% comment %}START row-fluid DIV{% endcomment %}
+{% comment %}START row-fluid DIV{% endcomment %}
  <div class="row-fluid">
   <h2>App Portfolio</h2>
  </div>
@@ -20,6 +19,4 @@
  {% endfor %}
  {% comment %}END row-fluid DIV{% endcomment %}
  </div>
-{% comment %}END content DIV{% endcomment %}
-</div>
 {% endblock %}
