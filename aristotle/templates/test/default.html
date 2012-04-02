@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block head-title %}{% trans "FRBR-Redis Datastore Test App by Diane W." %}{% endblock %}
+
+{% block more-css %}
+<link href="{{ STATIC_URL }}css/default.css" rel="stylesheet" type="text/css" />
+<link href="{{ STATIC_URL }}call_number/css/call_number.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+ {% comment %}START content DIV{% endcomment %}
+ <div class="content">
+  {% comment %}START page-header DIV{% endcomment %}
+  <div class="page-header">
+    <h1>{% trans "Call Number App" %} 
+    <small>{% trans "Web, mobile, and embedded widget for doing stuff" %}</small>
+    </h1>
+  {% comment %}END page-header DIV{% endcomment %}
+  </div>
+  
+  <div class="row">
+   <div class="span4">
+	<h2>Sample Widget</h2>
+    {% include 'widget.html' %}
+   </div>
+   <div class="span6">
+    <h2>Search with Autocompletation</h2>
+    {% include 'search.html' %}
+    {% comment %}START sample-redis-db-info DIV{% endcomment %}
+    <div>
+     <h2>Sample Call Number Status</h2>
+     {% include 'status.html' %}
+    {% comment %}END sample-redis-db-info DIV{% endcomment %}
+    </div>
+   </div>
+  </div>
+ {% comment %}END content DIV{% endcomment %}
+ </div>
+{% endblock %}
+<script>
+ $('#call-number-search').marcoPolo({
+	 url: 'call_number/json/search',
+	 formatItem: function (data, $item) {
+		 return data.result;
+	 },
+	 onSelect: function (data, $item) {
+		 if(data.discovery_url) {
+			window.location = data.discovery_url; 
+		 }
+	 });
+</script>
+{% block more-js %}
+
+{% endblock %}
