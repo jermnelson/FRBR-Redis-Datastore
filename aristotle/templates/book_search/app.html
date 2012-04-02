@@ -1,0 +1,83 @@
+{% extends 'app-base.html' %}
+{% load i18n %}
+
+{% block more-css %}
+<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
+<link href="{{ STATIC_URL }}policies/css/app.css" rel="stylesheet" type="text/css" />
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+{% endblock %}
+
+
+<script language="JavaScript">
+function writeText (form) {
+    form.btnsubmit.value = "success"
+}
+</script>
+
+{% block body %}
+{% comment %}START content DIV{% endcomment %}
+<div class="content">
+ {% comment %}START row-fluid DIV{% endcomment %}
+ <div class="row-fluid">
+  {% comment %}START search DIV{% endcomment %}
+  <div class="row12">
+  <div class="app-icon" style="float:left">
+   <img src="{{ STATIC_URL}}img/71-compass.png" / class="app-icon" />
+  </div>
+  <h2>Book Search App</h2>
+  <p>The Book Search App is used for performing a search in TIGER.</p>
+  <div class="row">
+    <div class="span7" style="background:#EEE9DA; border:4px solid white;">
+      <form class="form-inline" style="margin:12px;" action="http://discovery.coloradocollege.edu/catalog/search" method="get">
+        <div class="control-group">
+          <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="purple">Books</font></strong></label>
+          <div class="controls">
+            <div class="input-prepend" style="float:left; width:248px;">
+              <span class="add-on"><i class="icon-search"></i></span><input id="searchIcon" name="q" type="text" placeholder="Search TIGER!">
+            </div>
+            <input type="hidden" name="search-type" value="search" />
+            <div class="btn-group" style="float:left;">
+              <button type="submit" name="btnsubmit" class="btn" value="Search Keyword">Search Keyword</button>
+              <button class="btn dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Keyword</a></li>
+                <li><a href="#">Author</a></li>
+                <li><a href="#">Title</a></li>
+                <li><a href="#">Subject</a></li>
+                <li><a href="#">Journal Title</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="horizontalList" id="bookSearch">
+        <ul>
+          <li>&bull; <a href="http://discovery.coloradocollege.edu/catalog/advanced">Advanced Book Search</a></li>
+          <li>&bull; <a href="http://www.coalliance.org/prospector/">Prospector</a></li>
+          <li>&bull; <a href ="http://www.worldcat.org/">WorldCat</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% comment %}END search DIV{% endcomment %}
+  </div>
+ {% comment %}END row-fluid DIV{% endcomment %}
+ </div>
+ {% comment %}START row-fluid DIV{% endcomment %}
+ <div class="row-fluid">
+  {% comment %}START widget DIV{% endcomment %}
+  <div class="row12">
+  {% comment %}END widget DIV{% endcomment %}
+  </div>
+ {% comment %}END row-fluid DIV{% endcomment %}
+ </div>
+{% comment %}END content DIV{% endcomment %}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

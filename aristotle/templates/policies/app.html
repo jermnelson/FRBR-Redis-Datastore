@@ -1,0 +1,50 @@
+{% extends 'app-base.html' %}
+{% load i18n %}
+
+{% block more-css %}
+<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
+<link href="{{ STATIC_URL }}policies/css/app.css" rel="stylesheet" type="text/css" />
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+{% endblock %}
+
+
+<script language="JavaScript">
+function writeText (form) {
+    form.btnsubmit.value = "success"
+}
+</script>
+
+{% block body %}
+{% comment %}START content DIV{% endcomment %}
+<div class="content">
+ {% comment %}START row-fluid DIV{% endcomment %}
+ <div class="row-fluid">
+  {% comment %}START search DIV{% endcomment %}
+  <div class="row12">
+  <div class="app-icon" style="float:left">
+   <img src="{{ STATIC_URL}}img/71-compass.png" / class="app-icon" />
+  </div>
+  <h2>Policies App</h2>
+  <p>The Policies App is used for viewing Tutt Library's various policies.</p>
+  <div class="row">
+  </div>
+  {% comment %}END search DIV{% endcomment %}
+  </div>
+ {% comment %}END row-fluid DIV{% endcomment %}
+ </div>
+ {% comment %}START row-fluid DIV{% endcomment %}
+ <div class="row-fluid">
+  {% comment %}START widget DIV{% endcomment %}
+  <div class="row12">
+  {% comment %}END widget DIV{% endcomment %}
+  </div>
+ {% comment %}END row-fluid DIV{% endcomment %}
+ </div>
+{% comment %}END content DIV{% endcomment %}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

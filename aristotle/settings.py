@@ -8,6 +8,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Jeremy Nelson', 'jeremy.nelson@coloradocollege.edu'),
+    ('Gautam Webb', 'gautam.webb@coloradocollege.edu'),
     ('Diane Westerfield', 'diane.westerfield@coloradocollege.edu'),
 )
 
@@ -77,6 +78,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT,'assets'),
     os.path.join(PROJECT_ROOT,'apps/call_number/assets'),
     os.path.join(PROJECT_ROOT,'apps/portfolio/assets'),
+    os.path.join(PROJECT_ROOT,'apps/policies/assets'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -124,7 +126,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'article_search',
+    'book_search',
     'call_number',
+    'database',
+    'policies',
     'portfolio',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
