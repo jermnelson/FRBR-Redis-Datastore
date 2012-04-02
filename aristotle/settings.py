@@ -7,11 +7,8 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-<<<<<<< HEAD
     ('Jeremy Nelson', 'jeremy.nelson@coloradocollege.edu'),
-=======
-    # ('Diane Westerfield', 'diane.westerfield@coloradocollege.edu'),
->>>>>>> 91f22ebc4c9eb356aa464b9ec8bcb9eebaabe340
+    ('Diane Westerfield', 'diane.westerfield@coloradocollege.edu'),
 )
 
 MANAGERS = ADMINS
