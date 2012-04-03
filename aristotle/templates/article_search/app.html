@@ -97,16 +97,21 @@ function OnSubmitForm()
 {
   if (document.getElementById("dbs").innerHTML=='Search Academic Search Complete')
   {
-    url = "http://0-search.ebscohost.com.tiger.coloradocollege.edu:80/login.aspx?direct=true&db=a9h&bquery=" + document.getElementById("searchIcon").value + "&type=1&site=ehost-live";
+    var url = "";
+    url = url.concat("http://0-search.ebscohost.com.tiger.coloradocollege.edu:80/login.aspx%3Fdirect=true&db=a9h&bquery=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'), "&type=1&site=ehost-live");
     document.searchForm.action = url;
   }
   else if (document.getElementById("dbs").innerHTML=="Search JSTOR")
   {
-    document.searchForm.action ="update.html";
+    var url = "";
+    url = url.concat("http://0-www.jstor.org.tiger.coloradocollege.edu/action/doBasicSearch%3FQuery=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'), "&wc=on&acc=on");
+    document.searchForm.action = url;
   }
   else if (document.getElementById("dbs").innerHTML=="Search Google Scholar")
   {
-    document.searchForm.action ="update.html";
+    var url = "";
+    url = url.concat("http://0-scholar.google.com.tiger.coloradocollege.edu/scholar%3Fq=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'));
+    document.searchForm.action = url;
   }
   return true;
 }
