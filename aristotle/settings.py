@@ -77,6 +77,8 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT,'assets'),
+    os.path.join(PROJECT_ROOT,'apps/article_search/assets'),
+    os.path.join(PROJECT_ROOT,'apps/book_search/assets'),
     os.path.join(PROJECT_ROOT,'apps/call_number/assets'),
     os.path.join(PROJECT_ROOT,'apps/portfolio/assets'),
     os.path.join(PROJECT_ROOT,'apps/policies/assets'),

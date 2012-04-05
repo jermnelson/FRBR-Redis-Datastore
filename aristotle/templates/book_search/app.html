@@ -3,18 +3,12 @@
 
 {% block more-css %}
 <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
-<link href="{{ STATIC_URL }}policies/css/app.css" rel="stylesheet" type="text/css" />
+<link href="{{ STATIC_URL }}book_search/css/app.css" rel="stylesheet" type="text/css" />
 <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
 {% endblock %}
 
-
-<script language="JavaScript">
-function writeText (form) {
-    form.btnsubmit.value = "success"
-}
-</script>
 
 {% block body %}
 {% comment %}START content DIV{% endcomment %}
@@ -37,18 +31,18 @@ function writeText (form) {
             <div class="input-prepend" style="float:left; width:248px;">
               <span class="add-on"><i class="icon-search"></i></span><input id="searchIcon" name="q" type="text" placeholder="Search TIGER!">
             </div>
-            <input type="hidden" name="search-type" value="search" />
+            <input type="hidden" id="search-type" name="search-type" value="search" />
             <div class="btn-group" style="float:left;">
-              <button type="submit" name="btnsubmit" class="btn" value="Search Keyword">Search Keyword</button>
+              <button type="submit" id="searchby" name="btnsubmit" class="btn" value="Search Keyword">Search Keyword</button>
               <button class="btn dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="#">Keyword</a></li>
-                <li><a href="#">Author</a></li>
-                <li><a href="#">Title</a></li>
-                <li><a href="#">Subject</a></li>
-                <li><a href="#">Journal Title</a></li>
+                <li><a onclick='ChangeText("Search Keyword");' href="#">Keyword</a></li>
+                <li><a onclick='ChangeText("Search Author");' href="#">Author</a></li>
+                <li><a onclick='ChangeText("Search Title");' href="#">Title</a></li>
+                <li><a onclick='ChangeText("Search Subject");' href="#">Subject</a></li>
+                <li><a onclick='ChangeText("Search Journal Title");' href="#">Journal Title</a></li>
               </ul>
             </div>
           </div>
@@ -77,6 +71,33 @@ function writeText (form) {
  </div>
 {% comment %}END content DIV{% endcomment %}
 </div>
+<script type="text/javascript">
+function ChangeText(buttonText)
+{
+document.getElementById("searchby").innerHTML=buttonText;
+document.getElementById("searchby").value=buttonText;
+if (buttonText.charAt(7)=='K')
+  {
+  document.getElementById("search-type").value="search";
+  }
+else if (buttonText.charAt(7)=='A')
+  {
+  document.getElementById("search-type").value="author_search";
+  }
+else if (buttonText.charAt(7)=='T')
+  {
+  document.getElementById("search-type").value="title_search";
+  }
+else if (buttonText.charAt(7)=='S')
+  {
+  document.getElementById("search-type").value="subject_search";
+  }
+else if (buttonText.charAt(7)=='J')
+  {
+  document.getElementById("search-type").value="title_search";
+  }
+}
+</script>
 {% endblock %}
 
 {% block footer %}

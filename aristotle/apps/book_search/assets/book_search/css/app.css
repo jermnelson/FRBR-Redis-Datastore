@@ -1,0 +1,27 @@
+.horizontalList ul
+{
+margin: 12px;
+padding-left: 0px;
+padding-top: 24px;
+}
+
+.horizontalList ul li
+{
+display: inline;
+padding-right: 20px;
+}
+
+.horizontalList ul li a
+{
+font-weight: bold;
+}
+
+#bookSearch ul li, #bookSearch ul li a
+{
+color: purple;
+}
+
+#journalSearch ul li, #journalSearch ul li a 
+{
+color: green;
+}
