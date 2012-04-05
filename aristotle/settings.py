@@ -10,6 +10,7 @@ ADMINS = (
     ('Jeremy Nelson', 'jeremy.nelson@coloradocollege.edu'),
     ('Gautam Webb', 'gautam.webb@coloradocollege.edu'),
     ('Diane Westerfield', 'diane.westerfield@coloradocollege.edu'),
+    ('Jon Driscoll', 'jdriscoll@coloradocollege.edu'),
 )
 
 MANAGERS = ADMINS
