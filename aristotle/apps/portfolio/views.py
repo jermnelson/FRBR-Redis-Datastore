@@ -15,8 +15,21 @@ def default(request):
     :rtype: Generated HTML template
     """
     app_listing = [{'background_color':'gold',
+                    'icon':'article_search.png',
+                    'url':'/article_search',
+                    'name':'Article Search'},
+                   {'background_color':'gold',
+                    'icon':'book_search.png',
+                    'url':'/book_search',
+                    'name':'Book Search'},
+                   {'background_color':'gold',
+                    'icon':'call_number_search.png',
+                    'url':'/call_number',
+                    'name':'Call Number Search'},
+                   {'background_color':'gold',
                     'icon':'71-compass.png',
-                    'name':'Call Number'}]
+                    'url':'/database',
+                    'name':'Database'}]
     return direct_to_template(request,
                               'portfolio/app.html',
                               {'portfolio':app_listing})
