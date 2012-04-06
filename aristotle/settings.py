@@ -7,7 +7,10 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-     ('Jon Driscoll', 'jdriscoll@coloradocollege.edu'),
+    ('Jeremy Nelson', 'jeremy.nelson@coloradocollege.edu'),
+    ('Gautam Webb', 'gautam.webb@coloradocollege.edu'),
+    ('Diane Westerfield', 'diane.westerfield@coloradocollege.edu'),
+    ('Jon Driscoll', 'jdriscoll@coloradocollege.edu'),
 )
 
 MANAGERS = ADMINS
@@ -73,8 +76,12 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT,'media'),
-    os.path.join(PROJECT_ROOT,'apps/call_number/media'),
+    os.path.join(PROJECT_ROOT,'assets'),
+    os.path.join(PROJECT_ROOT,'apps/article_search/assets'),
+    os.path.join(PROJECT_ROOT,'apps/book_search/assets'),
+    os.path.join(PROJECT_ROOT,'apps/call_number/assets'),
+    os.path.join(PROJECT_ROOT,'apps/portfolio/assets'),
+    os.path.join(PROJECT_ROOT,'apps/policies/assets'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -122,7 +129,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'article_search',
+    'book_search',
     'call_number',
+    'database',
+    'policies',
     'portfolio',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
@@ -158,5 +169,6 @@ GBS_BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q=isbn:%s'
 GBS_PREVIEW_URL = "http://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.gif"
 try:
     from local_settings import *
+    #! Should load app_settings.py located in each app directory
 except ImportError:
     pass

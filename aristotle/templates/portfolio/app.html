@@ -6,20 +6,47 @@
 <link href="{{ STATIC_URL }}portfolio/css/app.less" rel="stylesheet/less" type="text/css" />
 {% endblock %}
 
+{% block navbar %}{% endblock %}
 
 {% block body %}
-{% comment %}START content DIV{% endcomment %}
-<div class="content">
- {% comment %}START row-fluid DIV{% endcomment %}
+{% comment %}START row-fluid DIV{% endcomment %}
  <div class="row-fluid">
+  <img src="{{ STATIC_URL }}img/portfolio.png" style="float:left" />
   <h2>App Portfolio</h2>
  </div>
- <div class="row-fluid portfolio-base">
- {% for active_app in portfolio %}
+ <div class="row-fluid" >
+  <ul class="nav nav-tabs">
+   <li class="active">
+     <a href="#all" data-toggle="tab">All</a>
+   </li>
+   <li>
+     <a href="#access" data-toggle="tab">Access &amp; Discovery</a>
+   </li>
+   <li>
+    <a href="#productivity" data-toggle="tab">Productivity</a>
+   </li>
+  </ul>
+ <div class="tab-content">
+  <div class="tab-pane active portfolio-base" id="all">
+  {% for active_app in portfolio %}
   {{ active_app|app_display }}
+  {% endfor %}
+  </div>
+  <div class="tab-pane portfolio-base" id="access">
+  {% for active_app in portfolio %}
+  {% if not active_app.is_productivity %}
+    {{ active_app|app_display }}
+  {% endif %}
+  {% endfor %}
+  </div>
+  <div class="tab-pane portfolio-base" id="productivity">
+  {% for active_app in portfolio %}
+  {% if active_app.is_productivity %}
+    {{ active_app|app_display }}
+  {% endif %}
  {% endfor %}
+  </div>
+ </div>
  {% comment %}END row-fluid DIV{% endcomment %}
  </div>
-{% comment %}END content DIV{% endcomment %}
-</div>
 {% endblock %}

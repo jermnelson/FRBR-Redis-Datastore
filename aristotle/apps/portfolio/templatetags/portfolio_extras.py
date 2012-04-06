@@ -19,7 +19,8 @@ def app_display(app):
     app_template = loader.get_template('app-icon.html')
     app_dict = {'bk_color':app['background_color'],
                 'icon_img':app['icon'],
-                'name':app['name']}
+                'name':app['name'],
+                'url':app['url']}
     return mark_safe(app_template.render(Context(app_dict)))
     
 

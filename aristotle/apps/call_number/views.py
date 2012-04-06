@@ -6,9 +6,10 @@ __author__ = 'Jeremy Nelson'
 import lib.frbr_rda as frbr,redis
 from django.views.generic.simple import direct_to_template
 from django.http import HttpResponse
+from django.template import Context,Template,loader
 import django.utils.simplejson as json
 from django.utils.translation import ugettext
-import commands,sys,settings
+import commands,sys,settings,logging
 from commands import search
 
 redis_server = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -23,18 +24,22 @@ def app(request):
     """
     try:
         if request.POST.has_key('call_number'):
-            current = redis_server.hgetall(request.POST['call_number'])
-        else:
+            current = commands.get_record(request.POST['call_number'])
+        elif request.GET.has_key('call_number'):
+            current = commands.get_record(request.GET['call_number'])
+        if len(current) < 1:
             current = redis_server.hgetall(SEED_RECORD_ID)
     except:
         current = redis_server.hgetall(SEED_RECORD_ID)
+    typeahead_data = commands.search(current['call_number'][0:2])['result']
     return direct_to_template(request,
                               'call_number/app.html',
                              {'aristotle_url':settings.DISCOVERY_RECORD_URL,
                               'current':current,
                               'next':commands.get_next(current['call_number']),
                               'previous':commands.get_previous(current['call_number']),
-                              'redis':commands.get_redis_info()})
+                              'redis':commands.get_redis_info(),
+                              'typeahead_data':typeahead_data})
 
 def default(request):
     """
@@ -67,6 +72,7 @@ def json_view(func):
             raise
         except Exception,e:
             exc_info = sys.exc_info()
+            logging.error(exc_info)
             if hasattr(e,'message'):
                 msg = e.message
             else:
@@ -77,13 +83,57 @@ def json_view(func):
         return HttpResponse(json_output,
                             mimetype='application/json')
     return wrap
-    
-    
+
+@json_view    
+def browse(request):
+    """
+    JSON view for a call number browser widget view
+
+    :param request: HTTP Request
+    """
+    call_number = request.GET['call_number']
+    current = commands.get_record(call_number)
+    context = Context({'aristotle_url':settings.DISCOVERY_RECORD_URL,
+                       'current':current,
+                       'next':commands.get_next(current['call_number']),
+                       'previous':commands.get_previous(current['call_number'])})
+    widget_template = loader.get_template('call_number/snippets/widget.html')
+    return {'html':widget_template.render(context)}
+
+@json_view
+def typeahead_search(request):
+    """
+    JSON view for typeahead search on call number
+
+    :param request: Request
+    """
+    query = request.GET['q']
+    return commands.search(query)
+
 
 def widget(request):
     """
     Returns rendered html snippet of call number browser widget
     """
+    standalone = False
+    call_number = 'PS21 .D5185 1978'
+    if request.method == 'POST':
+        if request.POST.has_key('standalone'):
+            standalone = request.POST['standalone']
+        if request.POST.has_key('call_number'):
+            call_number = request.POST['call_number']
+    else:
+         if request.GET.has_key('standalone'):
+            standalone = request.GET['standalone']
+         if request.GET.has_key('call_number'):
+            call_number = request.GET['call_number']
+    current = commands.get_record(call_number)
+    
     return direct_to_template(request,
                               'call_number/snippets/widget.html',
-                              {'call_number':'PS21 .D5185 1978'})
+                              {'aristotle_url':settings.DISCOVERY_RECORD_URL,
+                               'current':current,
+                               'next':commands.get_next(current['call_number']),
+                               'previous':commands.get_previous(current['call_number']),
+
+                               'standalone':standalone})

@@ -3,3 +3,4 @@ doc/_build
 doc/make.bat
 log/
 aristotle/local_*
+aristotle/static

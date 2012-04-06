@@ -10,7 +10,8 @@ try:
     CALL_NUMBER_DB = settings.CALL_NUMBER_DB
 except ImportError:
     # Setup for local development
-    REDIS_HOST = '0.0.0.0'
+    REDIS_HOST = '172.25.1.108'
+#    REDIS_HOST = '0.0.0.0'
     REDIS_PORT = 6379
     CALL_NUMBER_DB = 4
     
@@ -103,14 +104,15 @@ def ingest_records(marc_file_location):
     
 
 def search(query):
-    set_rank = redis_server.zrank('call-number-sorted-set',query)
+    set_rank = redis_server.zrank('call-number-sorted-search-set',query)
     output = {'result':[]}
-    for row in redis_server.zrange('call-number-sorted-set',set_rank,-1):
+    for row in redis_server.zrange('call-number-sorted-search-set',set_rank,-1):
         if row[-1] == "*":
             call_number = row[:-1]
             record = get_record(call_number)
             output['result'].append(call_number)
-            output['discovery_url'] = '%s%s' % (settings.settings.DISCOVERY_RECORD_URL,
+            output['record'] = record
+            output['discovery_url'] = '%s%s' % (settings.DISCOVERY_RECORD_URL,
                                                 record['bib_number'])
             return output
         else:
