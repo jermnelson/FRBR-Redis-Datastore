@@ -1,5 +1,4 @@
 {% extends 'app-base.html' %}
-{% load i18n %}
 
 {% block more-css %}
 <link href="{{ STATIC_URL }}call_number/css/call_number.css" rel="stylesheet" type="text/css" />
@@ -17,18 +16,19 @@
   <div class="app-icon" style="float:left">
    <img src="{{ STATIC_URL}}img/71-compass.png" / class="app-icon" />
   </div>
-  <h2>Tutt LIbrary Hours</h2>
-	<p>This Hours app stores a list of the hours we are open for each calendar day and returns a display of that data for each day for the website.</p>
+  <h2>Tutt Library Hours</h2>
+	<p>This is the data entry page for the hours app.</p>
+<div class="span6"><h4>Enter an entire block</h4>
+<form class="form-hroizontal">
+  <span class="help-inline">Year</span>
+  <input type="text" class="span1" placeholder="2012">
+  <span class=help-inline">Block</span>
+  
+</div>
+<div class'"span6"><h4>Examine a range of dates</h4>
+<i class="icon-arrow-left"></i>Previous Month | Next month<i class="icon-arrow-right"></i>
+</div>
   {% comment %}END search DIV{% endcomment %}
-  </div>
- {% comment %}END row-fluid DIV{% endcomment %}
- </div>
- {% comment %}START row-fluid DIV{% endcomment %}
- <div class="row-fluid">
-  {% comment %}START widget DIV{% endcomment %}
-  <div class="row12">
-<a href="#" onclick="alert('Go Home!')" class="btn">Are we open?</a>
-  {% comment %}END widget DIV{% endcomment %}
   </div>
  {% comment %}END row-fluid DIV{% endcomment %}
  </div>
