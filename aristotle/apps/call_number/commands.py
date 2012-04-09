@@ -35,19 +35,60 @@ def generate_search_set(call_number):
     redis_server.zadd('call-number-sorted-search-set',0,first_cutter)
     redis_server.zadd('call-number-sorted-search-set',0,'%s*' % call_number)   
 
-def get_callnumber(record):
-    for field_tag in ['086','090','099','050']:
+def get_callnumber(record,
+                   marc_fields=['086',
+                                '090',
+                                '099',
+                                '050']):
+    """
+    Function iterates through the marc_fields list and returns 
+    the first field that has a value. List order matters in 
+    this function!
+
+    :param record: MARC Record
+    :param marc_fields: List of MARC Fields that contain call numbers
+    :rtype str: First matched string
+    """
+    for field_tag in marc_fields:
         if record[field_tag] is not None:
             return record[field_tag].value()
 
-def get_previous(call_number):
+def get_all(call_number,slice_size=10):
+    """
+    Function returns a list of call numbers with the param centered between
+    the slice_size
+
+    :param call_number: Call Number as stored in call-number-sort-set
+    :param slice_size: Slice size, default is 10
+    :rtype list: List of call numbers
+    """
     current_rank = redis_server.zrank('call-number-sort-set',call_number)
-    entities = []
+    return redis_server.zrange('call-number-sort-set',
+                               current_rank-slice_size,
+                               current_rank+slice_size)
+
+
+def get_previous(call_number):
+    """
+    Function returns a list of two records that preceed the current
+    param call_number using the get_slice method.
+
+    :param call_number: Call Number String
+    :rtype list: List of two records 
+    """
+    current_rank = redis_server.zrank('call-number-sort-set',call_number)
     return get_slice(current_rank-2,current_rank-1)
 
 def get_next(call_number):
+    """
+    Function returns a list of two records that follow the current
+    param call_number using the get_slice method.
+
+    :param call_number: Call Number String
+    :rtype list: List of two records 
+    """
+
     current_rank = redis_server.zrank('call-number-sort-set',call_number)
-    logging.error("Current rank is %s" % current_rank)
     return get_slice(current_rank+1,current_rank+2)
 
 

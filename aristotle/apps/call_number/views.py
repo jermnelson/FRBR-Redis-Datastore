@@ -31,7 +31,7 @@ def app(request):
             current = redis_server.hgetall(SEED_RECORD_ID)
     except:
         current = redis_server.hgetall(SEED_RECORD_ID)
-    typeahead_data = commands.search(current['call_number'][0:2])['result']
+    typeahead_data = commands.get_all(current['call_number'])
     return direct_to_template(request,
                               'call_number/app.html',
                              {'aristotle_url':settings.DISCOVERY_RECORD_URL,
