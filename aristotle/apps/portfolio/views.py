@@ -43,7 +43,7 @@ def default(request):
                    {'background_color':'gold',
                     'icon':'Hourglass.png',
                     'url':'/hours',
-                    'name':'Hours',
+                    'name':'Library Hours',
                     'is_productivity':False}]
     return direct_to_template(request,
                               'portfolio/app.html',

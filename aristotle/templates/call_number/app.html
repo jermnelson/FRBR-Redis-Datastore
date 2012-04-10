@@ -11,7 +11,6 @@
 <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
 {% endblock %}
 
-{% block navbar %}{% endblock %}
 
 {% block body %}
 {% comment %}START content DIV{% endcomment %}
@@ -20,10 +19,6 @@
  <div class="row-fluid">
   {% comment %}START search DIV{% endcomment %}
   <div class="row12">
-  <div class="app-icon" style="float:left">
-   <img src="{{ STATIC_URL}}img/71-compass.png" / class="app-icon" />
-  </div>
-  <h2> Call Number App</h2>
   {% include 'search.html' %}
   {% comment %}END search DIV{% endcomment %}
   </div>
