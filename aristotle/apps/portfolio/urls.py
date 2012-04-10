@@ -2,7 +2,7 @@
  mod:`url` Portfolio Application URL routing
 """
 __author__ = 'Jeremy Nelson'
-import call_number.views
+import portfolio.views
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('portfolio.views',

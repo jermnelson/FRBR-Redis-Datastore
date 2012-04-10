@@ -35,11 +35,6 @@ function OnSubmitForm()
  <div class="row-fluid">
   {% comment %}START search DIV{% endcomment %}
   <div class="row12">
-  <div class="app-icon" style="float:left">
-   <img src="{{ STATIC_URL}}img/71-compass.png" / class="app-icon" />
-  </div>
-  <h2>Article Search App</h2>
-  <p>The Article Search App is used for finding articles in Web databases.</p>
   <div class="row">
     <div class="span7" style="background:#EEE9DA; border:4px solid white;">
       <form class="form-inline" name="searchForm" style="margin:12px;" onsubmit="return OnSubmitForm();">
@@ -116,7 +111,4 @@ function OnSubmitForm()
   return true;
 }
 </script>
-{% endblock %}
-
-{% block footer %}
 {% endblock %}

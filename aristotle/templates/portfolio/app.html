@@ -6,47 +6,32 @@
 <link href="{{ STATIC_URL }}portfolio/css/app.less" rel="stylesheet/less" type="text/css" />
 {% endblock %}
 
-{% block navbar %}{% endblock %}
+
 
 {% block body %}
-{% comment %}START row-fluid DIV{% endcomment %}
+{% if user != None %}
  <div class="row-fluid">
-  <img src="{{ STATIC_URL }}img/portfolio.png" style="float:left" />
-  <h2>App Portfolio</h2>
+  {% include 'portfolio/snippets/top-action-bar.html' %}
  </div>
- <div class="row-fluid" >
-  <ul class="nav nav-tabs">
-   <li class="active">
-     <a href="#all" data-toggle="tab">All</a>
-   </li>
-   <li>
-     <a href="#access" data-toggle="tab">Access &amp; Discovery</a>
-   </li>
-   <li>
-    <a href="#productivity" data-toggle="tab">Productivity</a>
-   </li>
-  </ul>
- <div class="tab-content">
-  <div class="tab-pane active portfolio-base" id="all">
-  {% for active_app in portfolio %}
-  {{ active_app|app_display }}
-  {% endfor %}
-  </div>
-  <div class="tab-pane portfolio-base" id="access">
-  {% for active_app in portfolio %}
-  {% if not active_app.is_productivity %}
-    {{ active_app|app_display }}
-  {% endif %}
-  {% endfor %}
-  </div>
-  <div class="tab-pane portfolio-base" id="productivity">
-  {% for active_app in portfolio %}
-  {% if active_app.is_productivity %}
-    {{ active_app|app_display }}
-  {% endif %}
- {% endfor %}
-  </div>
- </div>
+{% endif %}
+
+{% comment %}START row-fluid DIV{% endcomment %}
+ 
+ <div class="row-fluid main-pane" >
+ {% include 'portfolio/snippets/app-thumbnail.html' %}
  {% comment %}END row-fluid DIV{% endcomment %}
  </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="row-fluid">
+{% block portfolio-btn %}{% endblock %}
+ <div class="span3">
+  <div class="btn-group">
+   <a href="#" onclick="$('#about_app_dlg').modal('show')" class="btn"><i class="icon-info-sign"></i> About</a>
+   <a href="/" class="btn"><i class="icon-home"></i> Home</a>
+   <a href="#" onclick="$('#help_app_dlg').modal('show')" class="btn"><i class="icon-question-sign"></i> Help</a>
+  </div>
+ </div>
+</footer>
 {% endblock %}

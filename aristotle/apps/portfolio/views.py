@@ -5,6 +5,7 @@ __author__ = 'Jeremy Nelson'
 
 from django.views.generic.simple import direct_to_template
 import django.utils.simplejson as json
+from app_settings import APP
 
 def default(request):
     """
@@ -46,4 +47,6 @@ def default(request):
                     'is_productivity':False}]
     return direct_to_template(request,
                               'portfolio/app.html',
-                              {'portfolio':app_listing})
+                              {'app':APP,
+                               'portfolio':app_listing,
+                               'user':None})
