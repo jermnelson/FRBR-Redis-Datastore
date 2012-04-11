@@ -4,6 +4,7 @@
 __author__ = "Gautam Webb"
 
 from django.views.generic.simple import direct_to_template
+from app_settings import APP
 
 def default(request):
     """
@@ -13,4 +14,4 @@ def default(request):
 
     return direct_to_template(request,
                               'article_search/app.html',
-                              {})
+                              {'app':APP})

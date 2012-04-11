@@ -5,6 +5,7 @@
 __author__ = "Jon Driscoll"
 
 from django.views.generic.simple import direct_to_template
+from app_settings import APP
 
 def default(request):
     """
@@ -14,4 +15,4 @@ def default(request):
     """
     return direct_to_template(request,
                                'hours/app.html',
-                               {})
+                               {'app':APP})

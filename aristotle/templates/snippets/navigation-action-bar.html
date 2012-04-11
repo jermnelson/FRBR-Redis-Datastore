@@ -1,0 +1,49 @@
+{% load i18n %}
+{% comment %}START Navigation Action View ROW DIV{% endcomment %}
+<div class="row-fluid action-bar">
+<div class="span6">
+{% block up-affordance %}
+{% endblock %}
+{% block app-icon %}
+ <a class="app-ico-float" href="{% if app.url %}{{ app.url }}{% else %}/app{% endif %}">
+  <img src="{{ STATIC_URL }}img/{% if app.icon_url %}{{ app.icon_url }}{% else %}portfolio.png{% endif %}" />
+ </a>
+ {% endblock %}
+{% block action-view-title %}
+ <h2>{% if app.current_view %}{{ app.current_view.title }}{% else %}App Title{% endif %}</h2>
+</div>
+{% endblock %}
+{% block app-controls %}
+<div class="span4 btn-toolbar">
+ {% if app.controls %}
+  <div class="btn-group">
+	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+	 Views
+	<span class="caret"></span>
+	</a>
+    <ul class="dropdown-menu">
+	  <li><a href="#">Discovery</a></li>
+	 {% comment %}
+    {% for control in app.controls %}
+     <li><a href="{{ control.url }}">{% if control.glyph %}<i class="{{ control.glyph }}"></i>{% endif %}{{ control.label }}</a></li>
+    {% endfor %}
+    {% endcomment %}
+    </ul>
+  </div>
+ {% endif %}
+</div>
+{% endblock %}
+{% block action-btns %}
+{% for btn in app.action_btns %}
+{% if forloop.counter > 2 %}
+
+{% else %}
+<div class="span1">
+ <button class="btn {{ btn.class }}" onclick="{{ btn.action_url }}">{{ btn.icon }}</button>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
+
+{% comment %}END Navigation Action View ROW DIV{% endcomment %}
+</div>

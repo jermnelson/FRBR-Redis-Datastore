@@ -14,11 +14,6 @@
  <div class="row-fluid">
   {% comment %}START search DIV{% endcomment %}
   <div class="row12">
-  <div class="app-icon" style="float:left">
-   <img src="{{ STATIC_URL}}img/71-compass.png" / class="app-icon" />
-  </div>
-  <h2>test app</h2>
-  <p>An app that does something. Maybe help you find a database using Gold Rush XML data?</p>
   </div>
  {% comment %}END row-fluid DIV{% endcomment %}
  </div>
@@ -26,6 +21,7 @@
  <div class="row-fluid">
   {% comment %}START widget DIV{% endcomment %}
   <div class="row12">
+   <p>{{ app.description }}</p>
    <a href="#" onclick="alert('In database')" class ="btn">Database Button</a>
   {% comment %}END widget DIV{% endcomment %}
   </div>
@@ -33,14 +29,5 @@
  </div>
 {% comment %}END content DIV{% endcomment %}
 </div>
-
-{% endblock %}
-
-{% block footer %}
-      <footer>
-       <p style="text-align:center">
-        <h2>FOOTER!</h2>
-       </p>
-      </footer>
 {% endblock %}
 

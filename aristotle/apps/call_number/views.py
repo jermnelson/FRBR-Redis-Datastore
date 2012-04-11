@@ -11,6 +11,7 @@ import django.utils.simplejson as json
 from django.utils.translation import ugettext
 import commands,sys,settings,logging
 from commands import search
+from app_settings import APP
 
 redis_server = redis.StrictRedis(host=settings.REDIS_HOST,
                                  port=settings.REDIS_PORT,
@@ -31,10 +32,11 @@ def app(request):
             current = redis_server.hgetall(SEED_RECORD_ID)
     except:
         current = redis_server.hgetall(SEED_RECORD_ID)
-    typeahead_data = commands.search(current['call_number'][0:2])['result']
+    typeahead_data = commands.get_all(current['call_number'])
     return direct_to_template(request,
                               'call_number/app.html',
-                             {'aristotle_url':settings.DISCOVERY_RECORD_URL,
+                             {'app':APP,
+                              'aristotle_url':settings.DISCOVERY_RECORD_URL,
                               'current':current,
                               'next':commands.get_next(current['call_number']),
                               'previous':commands.get_previous(current['call_number']),
