@@ -6,11 +6,12 @@
 {% endblock %}
 {% block app-icon %}
  <a class="app-ico-float" href="{% if app.url %}{{ app.url }}{% else %}/app{% endif %}">
-  <img src="{{ STATIC_URL }}img/{% if app.icon_url %}{{ app.icon_url }}{% else %}portfolio.png{% endif %}" />
+  <img src="{{ STATIC_URL }}/img/{% if app.icon_url %}{{ app.icon_url }}{% else %}portfolio.png{% endif %}" />
  </a>
  {% endblock %}
 {% block action-view-title %}
  <h2>{% if app.current_view %}{{ app.current_view.title }}{% else %}App Title{% endif %}</h2>
+ <img src="{{ STATIC_DIR }}/img/tutt-library-spring.png" style="float:right" />
 </div>
 {% endblock %}
 {% block app-controls %}
