@@ -2,33 +2,14 @@
 {% load i18n %}
 
 {% block more-css %}
-<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
 <link href="{{ STATIC_URL }}article_search/css/app.css" rel="stylesheet" type="text/css" />
-<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
 {% endblock %}
 
 
 {% block body %}
-<script type="text/javascript">
-function OnSubmitForm()
-{
-  if (document.getElementById("dbs").innerHTML=='Search Academic Search Complete')
-  {
-    document.search-form.action = "http://0-search.ebscohost.com.tiger.coloradocollege.edu:80/login.aspx?direct=true&db=a9h&b$
-  }
-  else if (document.getElementById("dbs").innerHTML=="Search JSTOR")
-  {
-    document.search-form.action ="update.html";
-  }
-  else if (document.getElementById("dbs").innerHTML=="Search Google Scholar")
-  {
-    document.search-form.action ="update.html";
-  }
-  return true;
-}
-</script>
 {% comment %}START content DIV{% endcomment %}
 <div class="content">
  {% comment %}START row-fluid DIV{% endcomment %}
