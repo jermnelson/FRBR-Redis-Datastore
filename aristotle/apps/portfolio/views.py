@@ -5,6 +5,7 @@ __author__ = 'Jeremy Nelson'
 
 from django.views.generic.simple import direct_to_template
 import django.utils.simplejson as json
+from settings import INSTITUTION
 from app_settings import APP
 
 def default(request):
@@ -32,7 +33,7 @@ def default(request):
                     'is_productivity':True},
                    {'background_color':'gold',
                     'icon':'call_number_search.png',
-                    'url':'/call_number',
+                    'url':'/call_number/app',
                     'name':'Call Number Search',
                     'is_productivity':False},
                    {'background_color':'gold',
@@ -48,5 +49,6 @@ def default(request):
     return direct_to_template(request,
                               'portfolio/app.html',
                               {'app':APP,
+                               'institution':INSTITUTION,
                                'portfolio':app_listing,
                                'user':None})

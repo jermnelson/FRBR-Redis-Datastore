@@ -15,3 +15,12 @@ def default(request):
     return direct_to_template(request,
                               'book_search/app.html',
                               {'app':APP})
+def widget(request):
+    """
+    Returns rendered html snippet of call number browser widget
+    """
+    return direct_to_template(request,
+                              'book_search/snippets/widget.html',
+                              {'app':APP,
+                               	'standalone':True})
+

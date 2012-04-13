@@ -13,8 +13,8 @@ import commands,sys,settings,logging
 from commands import search
 from app_settings import APP
 
-redis_server = redis.StrictRedis(host=settings.REDIS_HOST,
-                                 port=settings.REDIS_PORT,
+redis_server = redis.StrictRedis(host=settings.REDIS_ACCESS_HOST,
+                                 port=settings.REDIS_ACCESS_PORT,
                                  db=settings.CALL_NUMBER_DB)
 
 SEED_RECORD_ID = 'record:278'
@@ -38,6 +38,7 @@ def app(request):
                              {'app':APP,
                               'aristotle_url':settings.DISCOVERY_RECORD_URL,
                               'current':current,
+                              'institution':settings.INSTITUTION, 
                               'next':commands.get_next(current['call_number']),
                               'previous':commands.get_previous(current['call_number']),
                               'redis':commands.get_redis_info(),
