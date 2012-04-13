@@ -1,9 +1,13 @@
+{% extends 'app-base.html' %}
+{% load i18n %}
 {% block more-css %}
-  <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
-  <link href="{{ STATIC_URL }}article_search/css/app.css" rel="stylesheet" type="text/css" />
-  <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css" />
-  <script src="{{STATIC_URL }}js/jquery-1.7.2.min.js"></script>
-  <script src="{{STATIC_URL }}js/bootstrap-dropdown.js"></script>
+ <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+ <link href="{{ STATIC_URL }}css/bootstrap.min.responsive" rel="stylesheet">
+ <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+ <link href="{{ STATIC_URL }}book_search/css/app.css" rel="stylesheet" type="text/css" />
+ <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+ <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+ <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
 {% endblock %}
 
 {% block body %}
