@@ -2,13 +2,12 @@
 {% load i18n %}
 
 {% block more-css %}
-<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
-<link href="{{ STATIC_URL }}book_search/css/app.css" rel="stylesheet" type="text/css" />
-<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+  <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
+  <link href="{{ STATIC_URL }}article_search/css/app.css" rel="stylesheet" type="text/css" />
+  <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <script src="{{STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+  <script src="{{STATIC_URL }}js/bootstrap-dropdown.js"></script>
 {% endblock %}
-
 
 {% block body %}
 {% comment %}START content DIV{% endcomment %}
@@ -94,4 +93,3 @@ else if (buttonText.charAt(7)=='J')
 }
 </script>
 {% endblock %}
-
