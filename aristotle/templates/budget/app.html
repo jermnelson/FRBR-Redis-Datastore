@@ -8,8 +8,26 @@
  <div class="row-fluid">
   {% include 'budget/snippets/top-action-bar.html' %}
  </div>
- <div class="row-fluid">
-  <div class="span8 main-pane">
+ <div class="row-fluid main-pane">
+  <div class="span2 well">
+    <p>
+      <div class="btn-group">
+       <button onclick="#" class="btn btn-primary dropdown-toggle"
+          data-toggle="dropdown">
+          Actions
+          <span class="caret"></span>
+       </button>
+       <ul class="dropdown-menu">
+        <li><a href="#">Add Data Query</a></li>
+        <li><a href="#">Database Management</a></li>
+       </ul>
+      </div>
+    </p>
+    <p>
+     <a href="#" class="btn btn-warning">Reports</a></li>
+    </p>
+  </div>
+  <div class="span7">
    <p>{{ app.description }}</p>
   </div>
  </div>

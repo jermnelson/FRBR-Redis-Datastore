@@ -1,7 +1,7 @@
 {% load i18n %}
 {% comment %}START Navigation Action View ROW DIV{% endcomment %}
 <div class="row-fluid action-bar">
-<div class="span6">
+<div class="span5">
 {% block up-affordance %}
 {% endblock %}
 {% block app-icon %}
@@ -11,7 +11,9 @@
  {% endblock %}
 {% block action-view-title %}
  <h2>{% if app.current_view %}{{ app.current_view.title }}{% else %}App Title{% endif %}</h2>
- <img src="{{ STATIC_DIR }}/img/tutt-library-spring.png" style="float:right" />
+</div>
+<div class="span2">
+ <a href="{{ institution.url }}"><img src="{{ STATIC_URL }}img/{{ institution.logo }}" class="institution_logo" /></a>
 </div>
 {% endblock %}
 {% block app-controls %}

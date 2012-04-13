@@ -5,8 +5,8 @@ import pymarc,redis,re
 import logging,sys
 try:
     import settings 
-    REDIS_HOST = settings.REDIS_HOST
-    REDIS_PORT = settings.REDIS_PORT
+    REDIS_HOST = settings.REDIS_ACCESS_HOST
+    REDIS_PORT = settings.REDIS_ACCESS_PORT
     CALL_NUMBER_DB = settings.CALL_NUMBER_DB
 except ImportError:
     # Setup for local development
