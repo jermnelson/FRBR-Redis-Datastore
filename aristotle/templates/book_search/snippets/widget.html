@@ -14,11 +14,11 @@
 {% endif %}
 
 {% block body %}
-{% comment %}START row-fluid DIV{% endcomment %}
-<div class="row-fluid">
+{% comment %}START row DIV{% endcomment %}
+<div class="row">
  {% comment %}START search DIV{% endcomment %}
- <div class="span5" style="background:#EEE9DA; border:4px solid white;">
-   <form class="form-inline" style="margin:12px;" action="http://discovery.coloradocollege.edu/catalog/search" method="get">
+ <div class="span6" style="background:#EEE9DA; border:4px solid white;">
+   <form class="form-inline" style="margin:12px;" action="http://discovery.coloradocollege.edu/catalog/search" method="get"  target="_top">
      <div class="control-group">
        <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="purple">Books</font></strong></label>
        <div class="controls">
@@ -51,7 +51,7 @@
    </div>
  {% comment %}END search DIV{% endcomment %}
  </div>
-{% comment %}END row-fluid DIV{% endcomment %}
+{% comment %}END row DIV{% endcomment %}
 </div>
 <script type="text/javascript">
 function ChangeText(buttonText)
