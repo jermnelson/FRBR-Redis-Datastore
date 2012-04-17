@@ -17,7 +17,7 @@ def set_browser():
     world.browser = Client()
     world.app = APP
 
-@step('I have the default Portfolio App with a ::(?P<section>[\w\s]_?)\s*::')
+@step('I access the default Portfolio App with a ::(?P<section>[\w\s]_?)\s*::')
 def default_portfolio_app(step,section):
     """
     Extract the section from the default portfolio app view
