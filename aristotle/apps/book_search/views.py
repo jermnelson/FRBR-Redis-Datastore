@@ -5,6 +5,7 @@ __author__ = "Gautam Webb"
 
 from django.views.generic.simple import direct_to_template
 from app_settings import APP
+from settings import INSTITUTION
 
 def default(request):
     """
@@ -14,7 +15,8 @@ def default(request):
 
     return direct_to_template(request,
                               'book_search/app.html',
-                              {'app':APP})
+                              {'app':APP,
+                               'institution':INSTITUTION})
 def widget(request):
     """
     Returns rendered html snippet of call number browser widget
