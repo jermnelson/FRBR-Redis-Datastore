@@ -1,31 +1,16 @@
+{% extends 'app-base.html' %}
+{% load i18n %}
 {% block more-css %}
-<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
-<link href="{{ STATIC_URL }}article_search/css/app.css" rel="stylesheet" type="text/css" />
-<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+ <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+ <link href="{{ STATIC_URL }}css/bootstrap.min.responsive" rel="stylesheet">
+ <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+ <link href="{{ STATIC_URL }}book_search/css/app.css" rel="stylesheet" type="text/css" />
+ <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+ <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+ <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
 {% endblock %}
 
-
 {% block body %}
-<script type="text/javascript">
-function OnSubmitForm()
-{
-  if (document.getElementById("dbs").innerHTML=='Search Academic Search Complete')
-  {
-    document.search-form.action = "http://0-search.ebscohost.com.tiger.coloradocollege.edu:80/login.aspx?direct=true&db=a9h&b$
-  }
-  else if (document.getElementById("dbs").innerHTML=="Search JSTOR")
-  {
-    document.search-form.action ="update.html";
-  }
-  else if (document.getElementById("dbs").innerHTML=="Search Google Scholar")
-  {
-    document.search-form.action ="update.html";
-  }
-  return true;
-}
-</script>
 {% comment %}START content DIV{% endcomment %}
 <div class="content">
  {% comment %}START row-fluid DIV{% endcomment %}
@@ -34,7 +19,7 @@ function OnSubmitForm()
   <div class="row12">
   <div class="row">
     <div class="span7" style="background:#EEE9DA; border:4px solid white;">
-      <form class="form-inline" name="searchForm" style="margin:12px;" onsubmit="return OnSubmitForm();">
+      <form class="form-inline" name="searchForm" style="margin:12px;" onsubmit="return OnSubmitForm();" target="_top">
         <div class="control-group">
           <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="green">Articles</font></strong></label>
           <div class="controls">

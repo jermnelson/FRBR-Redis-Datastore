@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 {% if standalone %}
 <html>
 <head>
@@ -13,56 +14,44 @@
 {% endif %}
 
 {% block body %}
-{% comment %}START content DIV{% endcomment %}
-<div class="content">
- {% comment %}START row-fluid DIV{% endcomment %}
- <div class="row-fluid">
-  {% comment %}START search DIV{% endcomment %}
-    <div class="span7" style="">
-      <form class="form-inline" style="" action="http://discovery.coloradocollege.edu/catalog/search" method="get">
-        <div class="control-group">
-          <label class="control-label" for="searchIcon" style="">Find Some <strong><font color="purple">Books</font></strong></label>
-          <div class="controls">
-            <div class="input-prepend" style="float:left; width:248px;">
-              <span class="add-on"><i class="icon-search"></i></span><input id="searchIcon" name="q" type="text" size="16" placeholder="Search TIGER!"></input>
-            </div>
-            <input type="hidden" id="search-type" name="search-type" value="search" />
-            <div class="btn-group" style="float:left;">
-              <button type="submit" id="searchby" name="btnsubmit" class="btn" value="Search Keyword">Search Keyword</button>
-              <button class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a onclick='ChangeText("Search Keyword");' href="#">Keyword</a></li>
-                <li><a onclick='ChangeText("Search Author");' href="#">Author</a></li>
-                <li><a onclick='ChangeText("Search Title");' href="#">Title</a></li>
-                <li><a onclick='ChangeText("Search Subject");' href="#">Subject</a></li>
-                <li><a onclick='ChangeText("Search Journal Title");' href="#">Journal Title</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </form>
-      <div class="horizontalList" id="bookSearch">
-        <ul>
-          <li>&bull; <a href="http://discovery.coloradocollege.edu/catalog/advanced">Advanced Book Search</a></li>
-          <li>&bull; <a href="http://www.coalliance.org/prospector/">Prospector</a></li>
-          <li>&bull; <a href ="http://www.worldcat.org/">WorldCat</a></li>
-        </ul>
-      </div>
-  {% comment %}END search DIV{% endcomment %}
-  </div>
- {% comment %}END row-fluid DIV{% endcomment %}
+{% comment %}START row DIV{% endcomment %}
+<div class="row">
+ {% comment %}START search DIV{% endcomment %}
+ <div class="span6" style="background:#EEE9DA; border:4px solid white;">
+   <form class="form-inline" style="margin:12px;" action="http://discovery.coloradocollege.edu/catalog/search" method="get"  target="_top">
+     <div class="control-group">
+       <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="purple">Books</font></strong></label>
+       <div class="controls">
+         <div class="input-prepend" style="float:left; width:248px;">
+           <span class="add-on"><i class="icon-search"></i></span><input id="searchIcon" name="q" type="text" size="16" placeholder="Search TIGER!"></input>
+         </div>
+         <input type="hidden" id="search-type" name="search-type" value="search" />
+         <div class="btn-group" style="float:left;">
+           <button type="submit" id="searchby" name="btnsubmit" class="btn" value="Search Keyword">Search Keyword</button>
+           <button class="btn dropdown-toggle" data-toggle="dropdown">
+             <span class="caret"></span>
+           </button>
+           <ul class="dropdown-menu">
+             <li><a onclick='ChangeText("Search Keyword");' href="#">Keyword</a></li>
+             <li><a onclick='ChangeText("Search Author");' href="#">Author</a></li>
+             <li><a onclick='ChangeText("Search Title");' href="#">Title</a></li>
+             <li><a onclick='ChangeText("Search Subject");' href="#">Subject</a></li>
+             <li><a onclick='ChangeText("Search Journal Title");' href="#">Journal Title</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </form>
+   <div class="horizontalList" id="bookSearch">
+     <ul>
+       <li>&bull; <a href="http://discovery.coloradocollege.edu/catalog/advanced">Advanced Book Search</a></li>
+       <li>&bull; <a href="http://www.coalliance.org/prospector/">Prospector</a></li>
+       <li>&bull; <a href ="http://www.worldcat.org/">WorldCat</a></li>
+     </ul>
+   </div>
+ {% comment %}END search DIV{% endcomment %}
  </div>
- {% comment %}START row-fluid DIV{% endcomment %}
- <div class="row-fluid">
-  {% comment %}START widget DIV{% endcomment %}
-  <div class="row12">
-  {% comment %}END widget DIV{% endcomment %}
-  </div>
- {% comment %}END row-fluid DIV{% endcomment %}
- </div>
-{% comment %}END content DIV{% endcomment %}
+{% comment %}END row DIV{% endcomment %}
 </div>
 <script type="text/javascript">
 function ChangeText(buttonText)
