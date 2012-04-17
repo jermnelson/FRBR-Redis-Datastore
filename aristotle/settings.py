@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'book_search',
     'call_number',
     'database',
+    'lettuce.django',
     'policies',
     'portfolio',
     # Uncomment the next line to enable the admin:

@@ -16,7 +16,7 @@ a.app-ico-float {
   float: left;
 }
 
-div.action-bar {
+.action-bar {
   background-color: @ActionBarColor;
   border-left: 1px solid white;
   color: white; 
@@ -32,17 +32,29 @@ div.main-pane {
  margin-top: .5em;
 }
 
+div.nav-action-bar {
+  .action-bar;
+}
+
+div.top-action-bar {
+
+}
+
+
 div.thumbnail-app {
  background-color: @PaneColor;
 }
 
-div.footer {
+
+
+div.footer-action-bar {
  background-color: @FooterColor;
  color: white;
  .rounded-corners;
  margin: .5em;
  padding: .5em;
 }
+
 
 div.main-pane {
   background-image: url('/static/img/cc-logo-gold.png');
