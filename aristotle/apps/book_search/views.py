@@ -19,7 +19,7 @@ def default(request):
                                'institution':INSTITUTION})
 def widget(request):
     """
-    Returns rendered html snippet of call number browser widget
+    Returns rendered html snippet of book_search widget
     """
     return direct_to_template(request,
                               'book_search/snippets/widget.html',
