@@ -11,6 +11,6 @@ APP = {'controls': [{'glyph':'icon-search',
                      'url':'/portfolio/productivity'}],
        'current_view': {'title':'App Portfolio'},
        'icon_url':'portfolio.png',
-       'url':'portfolio/'}
+       'url':'/apps/portfolio'}
        
        

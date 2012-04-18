@@ -1,7 +1,7 @@
 function BrowseDisplay(call_number) {
   var data = 'call_number=' + call_number;
   $.ajax({
-    url:'/call_number/json/browse',
+    url:'/apps/call_number/json/browse',
     data:data,
     success: function(response) {
       $('#call-number-browser').replaceWith(response['html']);

@@ -168,6 +168,7 @@ LOGGING = {
 # Constants used Call Number App
 GBS_BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q=isbn:%s' 
 GBS_PREVIEW_URL = "http://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.gif"
+LETTUCE_SERVER_PORT = 7000
 try:
     from local_settings import *
     #! Should load app_settings.py located in each app directory

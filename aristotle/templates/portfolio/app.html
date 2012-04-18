@@ -17,9 +17,12 @@
 
 {% comment %}START row-fluid DIV{% endcomment %}
  
- <div class="row-fluid main-pane" >
+ <div class="row-fluid main-pane" id="main-pane" >
  {% include 'portfolio/snippets/app-thumbnail.html' %}
  {% comment %}END row-fluid DIV{% endcomment %}
  </div>
 {% endblock %}
 
+{% block more-js %}
+<script src="{{ STATIC_URL }}portfolio/js/portfolio.js"></script>
+{% endblock %}
