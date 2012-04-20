@@ -8,17 +8,23 @@ try:
     REDIS_HOST = settings.REDIS_ACCESS_HOST
     REDIS_PORT = settings.REDIS_ACCESS_PORT
     CALL_NUMBER_DB = settings.CALL_NUMBER_DB
+    volatile_redis = redis.StrictRedis(host=settings.REDIS_PRODUCTIVITY_HOST,
+                                       port=settings.REDIS_PRODUCTIVITY_PORT,
+                                       db=CALL_NUMBER_DB)
+
 except ImportError:
     # Setup for local development
     REDIS_HOST = '172.25.1.108'
 #    REDIS_HOST = '0.0.0.0'
     REDIS_PORT = 6379
     CALL_NUMBER_DB = 4
+    volatile_redis = None
     
 
 redis_server = redis.StrictRedis(host=REDIS_HOST,
                                  port=REDIS_PORT,
                                  db=CALL_NUMBER_DB)
+
 
 english_alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 
                     'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 
@@ -28,6 +34,9 @@ english_alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
 lccn_first_cutter_re = re.compile(r"^(\D+)(\d+)")
 
 def generate_search_set(call_number):
+    if volatile_redis is None:
+        return None
+    redis_server = volatile_redis
     sections = call_number.split(".")
     first_cutter = sections[0].strip()
     for i in range(0,len(first_cutter)):
@@ -118,6 +127,10 @@ def get_record(call_number):
 
 
 def ingest_record(marc_record):
+    if volatile_redis is None:
+        print("Volatile Redis not available")
+        return None
+    redis_server = volatile_redis
     bib_number = marc_record['907']['a'][1:-1]
     call_number = get_callnumber(marc_record)
     if call_number is None:
@@ -139,6 +152,8 @@ def ingest_record(marc_record):
 
 
 def ingest_records(marc_file_location):
+    if volatile_redis is None:
+        return None
     marc_reader = pymarc.MARCReader(open(marc_file_location,"rb"))
     for record in marc_reader:
         ingest_record(record)

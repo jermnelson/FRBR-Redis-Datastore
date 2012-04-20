@@ -32,6 +32,7 @@ def app(request):
             current = redis_server.hgetall(SEED_RECORD_ID)
     except:
         current = redis_server.hgetall(SEED_RECORD_ID)
+    logging.error("Current call number is %s" % current)
     typeahead_data = commands.get_all(current['call_number'])
     return direct_to_template(request,
                               'call_number/app.html',
