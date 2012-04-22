@@ -8,5 +8,7 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('book_search.views',
     url(r"^$","default",name='book_search-app-default'),
     url(r'widget$','widget'),
+    url(r'dotCMS$','dotCMS'),
+
 )
                        

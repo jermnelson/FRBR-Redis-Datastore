@@ -5,6 +5,7 @@ __author__ = "Gautam Webb"
 
 from django.views.generic.simple import direct_to_template
 from app_settings import APP
+from article_search.app_settings import APP as article_app
 from settings import INSTITUTION
 
 def default(request):
@@ -26,3 +27,12 @@ def widget(request):
                               {'app':APP,
                                	'standalone':True})
 
+def dotCMS(request):
+    """
+    Returns rendered book and article search in the same widget
+    view, kludge to work in dotCMS
+    """
+    return direct_to_template(request,
+                              'snippets/dotCMS-search.html',
+                              {'book_app':APP,
+                               'article_app':article_app})
