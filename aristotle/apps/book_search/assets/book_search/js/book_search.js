@@ -6,9 +6,12 @@ function ChangeSearchBookText(btn_text) {
   case 'A':
    $('#search-type').val("author_search");
    break;
-
+  case 'J':
+   ${'#search-type').val("title_search");
   case 'K':
-
-
-
+   ${'#search-type').val("search");
+  case 'S':
+   ${'#search-type').val("subject_search");
+  case 'T':
+   ${'#search-type').val("title_search");
 }
