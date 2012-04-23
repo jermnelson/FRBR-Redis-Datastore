@@ -9,11 +9,13 @@
 
 
 {% block body %}
+{% comment %}
 {% if user != None %}
  <div class="row-fluid">
   {% include 'portfolio/snippets/top-action-bar.html' %}
  </div>
 {% endif %}
+{% endcomment %}
 
 {% comment %}START row-fluid DIV{% endcomment %}
  

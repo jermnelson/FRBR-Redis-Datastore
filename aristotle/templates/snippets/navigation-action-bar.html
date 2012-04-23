@@ -16,26 +16,7 @@
  <a href="{{ institution.url }}"><img src="{{ STATIC_URL }}img/{{ institution.logo }}" class="institution_logo" /></a>
 </div>
 {% endblock %}
-{% block app-controls %}
-<div class="span4 btn-toolbar">
- {% if app.controls %}
-  <div class="btn-group">
-	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-	 Views
-	<span class="caret"></span>
-	</a>
-    <ul class="dropdown-menu">
-	  <li><a href="#">Discovery</a></li>
-	 {% comment %}
-    {% for control in app.controls %}
-     <li><a href="{{ control.url }}">{% if control.glyph %}<i class="{{ control.glyph }}"></i>{% endif %}{{ control.label }}</a></li>
-    {% endfor %}
-    {% endcomment %}
-    </ul>
-  </div>
- {% endif %}
-</div>
-{% endblock %}
+
 {% block action-btns %}
 {% for btn in app.action_btns %}
 {% if forloop.counter > 2 %}
