@@ -6,10 +6,11 @@
  <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
  <link href="{{ STATIC_URL }}css/bootstrap.min.responsive" rel="stylesheet">
  <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
- <link href="{{ STATIC_URL }}book_search/css/app.css" rel="stylesheet" type="text/css" />
+ <link href="{{ STATIC_URL }}article_search/css/app.css" rel="stylesheet" type="text/css" />
  <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
  <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
  <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
+ <script src="{{ STATIC_URL }}article_search/js/article_search.js"></script>
 </head>
 <body>
 {% endif %}
@@ -17,23 +18,23 @@
 {% comment %}START row-fluid DIV{% endcomment %}
 <div class="row-fluid">
   {% comment %}START search DIV{% endcomment %}
-  <div class="span6" style="background:#EEE9DA; border:4px solid white;">
-    <form class="form-inline" name="searchForm" style="margin:12px;" onsubmit="return OnSubmitForm();" target="_top">
+  <div class="span7" style="background:#EEE9DA; border:4px solid white;">
+    <form class="form-inline" id="searchForm" style="margin:12px;" onsubmit="return OnSubmitForm();" action="#" target="_top">
       <div class="control-group">
         <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="green">Articles</font></strong></label>
         <div class="controls">
           <div class="input-prepend" style="float:left; width:248px;">
             <span class="add-on"><i class="icon-search"></i></span><input id="searchIcon" type="text" placeholder="Search for articles!">
           </div>
-          <div class="btn-group dropup" style="float:left;">
+          <div class="btn-group dropdown" style="float:left;">
             <button type="submit" class="btn" id="dbs" value="Search Academic Search Complete">Search Academic Search Complete</button>
             <button class="btn dropdown-toggle" data-toggle="dropdown">
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li><a onclick='ChangeText("Search Academic Search Complete");' href="#">Academic Search Complete</a></li>
-              <li><a onclick='ChangeText("Search JSTOR");' href="#">JSTOR</a></li>
-              <li><a onclick='ChangeText("Search Google Scholar");' href="#">Google Scholar</a></li>
+              <li><a onclick='ChangeSearchArticlesText("Search Academic Search Complete");' href="#">Academic Search Complete</a></li>
+              <li><a onclick='ChangeSearchArticlesText("Search JSTOR");' href="#">JSTOR</a></li>
+              <li><a onclick='ChangeSearchArticlesText("Search Google Scholar");' href="#">Google Scholar</a></li>
             </ul>
           </div>
         </div>
@@ -50,36 +51,6 @@
   </div>
 {% comment %}END row-fluid DIV{% endcomment %}
 </div>
-<script type="text/javascript">
-function ChangeText(buttonText)
-{
-document.getElementById("dbs").innerHTML=buttonText;
-}
-</script>
-<script type="text/javascript">
-function OnSubmitForm()
-{
-  if (document.getElementById("dbs").innerHTML=='Search Academic Search Complete')
-  {
-    var url = "";
-    url = url.concat("http://0-search.ebscohost.com.tiger.coloradocollege.edu:80/login.aspx%3Fdirect=true&db=a9h&bquery=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'), "&type=1&site=ehost-live");
-    document.searchForm.action = url;
-  }
-  else if (document.getElementById("dbs").innerHTML=="Search JSTOR")
-  {
-    var url = "";
-    url = url.concat("http://0-www.jstor.org.tiger.coloradocollege.edu/action/doBasicSearch%3FQuery=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'), "&wc=on&acc=on");
-    document.searchForm.action = url;
-  }
-  else if (document.getElementById("dbs").innerHTML=="Search Google Scholar")
-  {
-    var url = "";
-    url = url.concat("http://0-scholar.google.com.tiger.coloradocollege.edu/scholar%3Fq=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'));
-    document.searchForm.action = url;
-  }
-  return true;
-}
-</script>
 {% if standalone %}
 </body>
 </html>
