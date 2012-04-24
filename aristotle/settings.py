@@ -118,6 +118,7 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT,"templates/portfolio/snippets"),
     os.path.join(PROJECT_ROOT,"templates/book_search/snippets"),
     os.path.join(PROJECT_ROOT,"templates/article_search/snippets"),
+    os.path.join(PROJECT_ROOT,"templates/marc_batch/snippets"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -135,6 +136,7 @@ INSTALLED_APPS = (
     'call_number',
     'database',
     'lettuce.django',
+    'marc_batch',
     'portfolio',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
