@@ -19,10 +19,6 @@ Feature: Portfolio App Navigation Action Bar Default Display
         Given I access the Portfolio App with a nav-action-bar
         Then I see the logo in the Navigation Action Bar
 
-    Scenario: Display Views button in the Navigation Action Bar
-        Given I access the Portfolio App with a nav-action-var
-        Then I see the Views button in the Navigation Action Bar
-
 
 
 

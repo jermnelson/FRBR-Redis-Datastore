@@ -8,6 +8,7 @@ from lxml import html
 from django.test.client import Client
 from nose.tools import assert_equals
 from portfolio.app_settings import APP
+import logging,sys
 
 @before.all
 def set_browser():
@@ -26,8 +27,14 @@ def default_portfolio_app(step,section):
     :param section: Specific app section
     """
     response = world.browser.get(world.app['url'])
+    error_output = open('error.txt','a')
+    error_output.write(response.content)
+    error_output.write("\n\nNEXT %s\n" % world.browser.get('/').content)
+    error_output.close()
     world.dom = html.fromstring(response.content)
-    world.section = world.dom.xpath('div[class=%s]' % section)
+    result_list = world.dom.xpath("//div[@class='row-fluid %s']" % section)
+    if len(result_list) > 0:
+        world.section = result_list[0]
 
 @step('I see Portfolio App Navigation Action Bar')
 def access_portfolio_app(step):
@@ -38,7 +45,7 @@ def access_portfolio_app(step):
     """
     assert world.section is not None
 
-@step('I see the (\w+) in the Navigation Action Bar [is]? (.$)')
+@step('I see the (\w+) in the Navigation Action Bar\sis\b\s(.*)\b')
 def test_exists_and_value(step,section_item_name,item_value=None):
     """
     Tests if the section item exists in the section, if a value of 
