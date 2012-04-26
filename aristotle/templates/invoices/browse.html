@@ -1,0 +1,17 @@
+{% extends 'app-base.html' %}
+{% load i18n %}
+
+{% block more-css %}{% endblock %}
+
+
+{% block body %}
+ <div class="row-fluid">
+  {% include 'invoices/snippets/top-action-bar.html' %}
+ </div>
+ <div class="row-fluid main-pane">
+  <div class="span11">
+   <h2>Browse by Date</h2>
+  </div>
+ </div>
+{% endblock %}
+

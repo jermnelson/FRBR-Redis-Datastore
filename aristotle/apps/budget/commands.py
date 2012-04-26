@@ -58,15 +58,23 @@ def get_invoice(**kwargs):
     total_amt = 0
     for transaction_key in redis_transactions:
         transaction = redis_server.hgetall(transaction_key)
+        clean_transaction = dict()
         # Add transaction amount to invoice total
         total_amt += float(transaction.get('amount'))
         # Remove invoice from transaction and check to confirm that
         # transaction is for the correct invoice
         if transaction.pop('invoice') != redis_key:
             raise ValueError("Wrong invoice for %s" % transaction_key)
-        transaction['redis_key'] = transaction_key
-        invoice_redis_info['transactions'].append(transaction)
-    invoice_redis_info['total amount'] = total_amt
+        clean_transaction['redis_key'] = transaction_key
+        for k,v in transaction.iteritems():
+           template_key = k.replace(" ","_")
+           if template_key in ["date","paid_on"]:
+               clean_transaction[template_key] = datetime.datetime.strptime(v,
+                                                                            '%Y-%m-%d 00:00:00')
+           else:
+               clean_transaction[template_key] = v
+        invoice_redis_info['transactions'].append(clean_transaction)
+    invoice_redis_info['total_amount'] = total_amt
     # Return invoice_redis_info to call code
     return invoice_redis_info
 
@@ -107,6 +115,19 @@ def ingest_invoice(marc_record):
         # Converts dates to python datetimes and set in redis
         transaction_date = datetime.datetime.strptime(invoice_result.get('date'),
                                                       '%m-%d-%y')
+        if redis_server.hexists(invoice_key,'transaction date'):
+            invoice_date = datetime.datetime.strptime(redis_server.hget(invoice_key,
+                                                                        'transaction date'),
+                                                      '%Y-%m-%d 00:00:00')
+            if transaction_date > invoice_date:
+                redis_server.hset(invoice_key,
+                                  'transaction date',
+                                  transaction_date)
+        else:
+            redis_server.hset(invoice_key,
+                              'transaction date',
+                              transaction_date)
+
         redis_server.hset(transaction_key,'date',transaction_date)
         paid_on_date = datetime.datetime.strptime(invoice_result.get('paid'),
                                                   '%m-%d-%y')
@@ -127,6 +148,9 @@ def ingest_invoice(marc_record):
             redis_server.hset('invoice:vouchers',
                               invoice_result.get('voucher'),
                               voucher_key)
+            redis_server.hset(voucher_key,
+                              'name',
+                              invoice_result.get("voucher"))
         redis_server.hset(transaction_key,'voucher',voucher_key)
         
         
