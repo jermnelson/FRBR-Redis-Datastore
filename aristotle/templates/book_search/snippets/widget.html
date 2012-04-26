@@ -1,11 +1,11 @@
-<!DOCTYPE HTML>
 {% if standalone %}
+<!DOCTYPE HTML>
 <html>
 <head>
  <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
  <link href="{{ STATIC_URL }}css/bootstrap.min.responsive" rel="stylesheet">
-{% comment %}<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">{% endcomment %}
  <link href="{{ STATIC_URL }}book_search/css/app.css" rel="stylesheet" type="text/css" />
+ <script src="{{ STATIC_URL }}js/less-1.2.2.min.js"></script>
  <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
  <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
  <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
@@ -21,15 +21,15 @@
  <div class="span6" style="background:#EEE9DA; border:4px solid white;">
    <form class="form-inline" style="margin:12px;" action="http://discovery.coloradocollege.edu/catalog/search" method="get"  target="_top">
      <div class="control-group">
-       <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="purple">Books</font></strong></label>
+       <label class="control-label" for="searchBookIcon" style="font-size:18px">Find <strong><font color="purple">Books</font></strong></label>
        <div class="controls">
          <div class="input-prepend" style="float:left; width:248px;">
-           <span class="add-on"><i class="icon-search"></i></span><input id="searchIcon" name="q" type="text" size="16" placeholder="Search TIGER!"></input>
+           <span class="add-on"><i class="icon-search"></i></span><input id="searchBookIcon" name="q" type="text" size="14" placeholder="Search TIGER!"></input>
          </div>
          <input type="hidden" id="search-type" name="search-type" value="search" />
          <div class="btn-group" style="float:left;">
-           <button type="submit" id="searchby" name="btn_submit" class="btn" value="Search Keyword">Search Keyword</button>
-           <button class="btn dropdown-toggle" data-toggle="dropdown">
+           <button type="submit" id="searchby" name="btnsubmit" class="btn btn-small" value="Search Keyword">Search Keyword</button>
+           <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
              <span class="caret"></span>
            </button>
            <ul class="dropdown-menu">
@@ -59,4 +59,6 @@
 </html>
 {% endif %}
 {% endblock %}
+
+
 
