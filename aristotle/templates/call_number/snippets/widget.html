@@ -44,7 +44,7 @@
      {% endif %}
      <div class="call-number-entity">{{ current.title }}</div>
      {% if current.author %}
-      <div class="call-number-entity">{% trans current.author %}</div>
+      <div class="call-number-entity">{{ current.author }}</div>
      {% endif %}
      <div class="call-number-entity">{{ current.location }} &raquo;
      {{ current.call_number }} 

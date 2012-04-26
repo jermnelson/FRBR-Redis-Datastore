@@ -1,3 +1,7 @@
+"""
+ :mod:`commands` Budget Redis Commands
+"""
+__author__ = 'Jeremy Nelson'
 import re,redis,pymarc
 import datetime,sys
 
