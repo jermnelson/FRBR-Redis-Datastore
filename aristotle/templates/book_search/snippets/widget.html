@@ -9,6 +9,7 @@
  <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
  <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
  <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
+ <script src="{{ STATIC_URL }}book_search/js/book_search.js"></script>
 </head>
 <body>
 {% endif %}
@@ -27,16 +28,16 @@
          </div>
          <input type="hidden" id="search-type" name="search-type" value="search" />
          <div class="btn-group" style="float:left;">
-           <button type="submit" id="searchby" name="btnsubmit" class="btn" value="Search Keyword">Search Keyword</button>
+           <button type="submit" id="searchby" name="btn_submit" class="btn" value="Search Keyword">Search Keyword</button>
            <button class="btn dropdown-toggle" data-toggle="dropdown">
              <span class="caret"></span>
            </button>
            <ul class="dropdown-menu">
-             <li><a onclick='ChangeText("Search Keyword");' href="#">Keyword</a></li>
-             <li><a onclick='ChangeText("Search Author");' href="#">Author</a></li>
-             <li><a onclick='ChangeText("Search Title");' href="#">Title</a></li>
-             <li><a onclick='ChangeText("Search Subject");' href="#">Subject</a></li>
-             <li><a onclick='ChangeText("Search Journal Title");' href="#">Journal Title</a></li>
+             <li><a onclick='ChangeSearchBookText("Search Keyword");' href="#">Keyword</a></li>
+             <li><a onclick='ChangeSearchBookText("Search Author");' href="#">Author</a></li>
+             <li><a onclick='ChangeSearchBookText("Search Title");' href="#">Title</a></li>
+             <li><a onclick='ChangeSearchBookText("Search Subject");' href="#">Subject</a></li>
+             <li><a onclick='ChangeSearchBookText("Search Journal Title");' href="#">Journal Title</a></li>
            </ul>
          </div>
        </div>
@@ -53,33 +54,6 @@
  </div>
 {% comment %}END row DIV{% endcomment %}
 </div>
-<script type="text/javascript">
-function ChangeText(buttonText)
-{
-document.getElementById("searchby").innerHTML=buttonText;
-document.getElementById("searchby").value=buttonText;
-if (buttonText.charAt(7)=='K')
-  {
-  document.getElementById("search-type").value="search";
-  }
-else if (buttonText.charAt(7)=='A')
-  {
-  document.getElementById("search-type").value="author_search";
-  }
-else if (buttonText.charAt(7)=='T')
-  {
-  document.getElementById("search-type").value="title_search";
-  }
-else if (buttonText.charAt(7)=='S')
-  {
-  document.getElementById("search-type").value="subject_search";
-  }
-else if (buttonText.charAt(7)=='J')
-  {
-  document.getElementById("search-type").value="title_search";
-  }
-}
-</script>
 {% if standalone %}
 </body>
 </html>
