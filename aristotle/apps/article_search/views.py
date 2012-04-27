@@ -26,4 +26,5 @@ def widget(request):
     return direct_to_template(request,
                               'article_search/snippets/widget.html',
                               {'app':APP,
-                               'standalone':True})
+                               'standalone':True,
+                               'showappicon':True})
