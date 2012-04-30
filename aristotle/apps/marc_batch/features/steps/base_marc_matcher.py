@@ -1,12 +1,10 @@
 """
  :mod:`base_marc_matcher` Common matching steps for MARC batch jobs
 """
- __author__ = "Jeremy Nelson"
+__author__ = "Jeremy Nelson"
 
 from behave import *
 import pymarc
-
- 
 
 @given("we have a MARC record")
 def marc_exists(context):
@@ -15,9 +13,9 @@ def marc_exists(context):
 
     :param context: Context for MARC record
     """
-    assert context.marc_record
+    assert context.marc_record 
 
-@when('"<code>" field subfield "<subfield>" is "<value>"')
+@when('the "{code}" field subfield "{subfield}" is "{value}"')
 def check_field_subfield_value(context,
                                code,
                                subfield,
@@ -39,10 +37,10 @@ def check_field_subfield_value(context,
         subfields = field.get_subfields(subfield)
         for subfield_value in subfields:
             if subfield_value is value:
-                return True
-    return False
+                assert True
+    assert False
 
-@when('"<code>" subfield "<subfield>" has "<snippet>"')
+@when('"{code}" subfield "{subfield}" has "{snippet}"')
 def check_and_store_subfield_snippet(context,
                                      code,
                                      subfield,
@@ -50,14 +48,29 @@ def check_and_store_subfield_snippet(context,
     """
     Checks and stores a subfield snippet in context
 
-    :param contex
-    """
     :param context: Context
     :param code: Field code
     :param subfield: MARC subfield, if numeric and code < 050, assume
                      value is the position
-        
-@then('"<code>" subfield "<subfield>" snippet is now "<value>"')
+    """
+    context.snippet = snippet
+
+@when('any "{code}" value is "{value}"')
+def check_for_value_in_subfields(context,
+                                 code,
+                                 value):
+    """
+    Checks for any value in MARC field's subfields
+
+    :param context: Context
+    :param code: MARC Field code
+    :param subfield: MARC subfield, if numeric and code < 050, assume
+                     value is the position
+    """
+    field_value = context.marc_record.get_value()
+    
+
+@then('"{code}" subfield "{subfield}" snippet is now "{value}"')
 def update_subfield_snippet(context,
                             code,
                             subfield,
@@ -85,4 +98,5 @@ def update_subfield_snippet(context,
             new_value = subfield_value.replace(context.snippet,
                                                value)
             field.add_subfield(subfield,new_value)
-        
+       
+ 

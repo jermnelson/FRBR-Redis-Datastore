@@ -8,10 +8,10 @@ Feature: EBL MARC record customization
        When the "<code>" field subfield "<subfield>" is "<value>"
        | code | subfield | value |
        | 007  | 0       | m    |
-       | 007  | 1       | \    |
-       | 007  | 2       | \    |
-       | 007  | 3       | \    |
-       | 007  | 4       | \    |
+       | 007  | 1       | \\   |
+       | 007  | 2       | \\   |
+       | 007  | 3       | \\   |
+       | 007  | 4       | \\   |
        | 007  | 5       | d    |
        Then the 006 field value is m\\\\\\\\d\\\\\\\\
        
@@ -46,7 +46,7 @@ Feature: EBL MARC record customization
        
     Scenario: Repair 008 defect
        Given we have a MARC record
-       When the "<code>" subfield value is "<value>"
+       When any "<code>" value is "<value>"
        | code | value |
        | 008  | o     |
        Then the "<code>" subfield value is "<value>"
@@ -89,8 +89,8 @@ Feature: EBL MARC record customization
         | code | subfield | snippet |
         | 050  | b        | Band    |
         | 050  | b        | Band.   |
-        | 050  | b        | Bd\     |
-        | 050  | b        | Bd.\    |
+        | 050  | b        | Bd      |
+        | 050  | b        | Bd.     |
         Then the "<code>" subfield "<subfield>" snippet is now "<value>"
         | code | subfield | value |
         | 050  | b        | Bd.   |
