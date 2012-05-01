@@ -4,6 +4,7 @@
 """
 __author__ = "Jeremy Nelson"
 from behave import *
+import nose
 
 @when('the 050 has a second subfield a')
 def second_050_subfield_a(context):
@@ -16,10 +17,7 @@ def second_050_subfield_a(context):
     all_050_fields = context.marc_record.get_fields('050')
     for field in all_050_fields:
         all_a_subfields = field.get_subfields('a')
-        if len(all_a_subfields) > 1:
-            assert True
-        else:
-            assert False
+        nose.tools.assert_greater(all_a_subfields,1)
                
 
 @then('the 050 does not have a second subfield a')
@@ -37,6 +35,9 @@ def remove_second_050_subfield_a(context):
         for counter in range(0,len(rest_a_subfields)):
             field.delete_subfield('a')
         field.add_subfield('a',first_a_value)
+        nose.tools.eq_(len(field.get_subfields('a')),1)
+
+
         
         
 

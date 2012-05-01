@@ -12,6 +12,7 @@ def default(request):
     """
     Displays default view for the MARC Batch App
     """
+    APP['view'] = 'default'
     return direct_to_template(request,
                               'marc_batch/marc-batch-app.html',
                               {'app':APP,
@@ -20,7 +21,8 @@ def default(request):
 def ils(request):
     """
     Displays ils view for the MARC Batch App
-    """    
+    """
+    APP['view'] = 'ils'
     return direct_to_template(request,
                               'marc_batch/ils.html',
                               {'app':APP,
@@ -30,7 +32,8 @@ def ils(request):
 def redis(request):
     """
     Displays ils view for the MARC Batch App
-    """        
+    """
+    APP['view'] = 'redis'
     return direct_to_template(request,
                               'marc_batch/redis.html',
                               {'app':APP,
@@ -39,7 +42,8 @@ def redis(request):
 def solr(request):
     """
     Displays ils view for the MARC Batch App
-    """        
+    """
+    APP['view'] = 'solr'
     return direct_to_template(request,
                               'marc_batch/solr.html',
                               {'app':APP,

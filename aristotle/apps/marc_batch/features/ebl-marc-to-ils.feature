@@ -5,20 +5,20 @@ Feature: EBL MARC record customization
     
     Scenario: Repair 006 defect
        Given we have a MARC record
-       When the "<code>" field subfield "<subfield>" is "<value>"
-       | code | subfield | value |
-       | 007  | 0       | m    |
-       | 007  | 1       | \\   |
-       | 007  | 2       | \\   |
-       | 007  | 3       | \\   |
-       | 007  | 4       | \\   |
-       | 007  | 5       | d    |
+       When the "<code>" field position "<position>" is "<value>"
+       | code | position | value |
+       | 006  | 0        | m     |
+       | 006  | 1        | \     |
+       | 006  | 2        | \     |
+       | 006  | 3        | \     |
+       | 006  | 4        | \     |
+       | 006  | 5        | d     |
        Then the 006 field value is m\\\\\\\\d\\\\\\\\
        
     Scenario: Repair 007 defect
        Given we have a MARC record
-       When the "<code>" field subfield "<subfield>" is "<value>"
-       | code | subfield | value |
+       When the "<code>" field position "<position>" is "<value>"
+       | code | position | value |
        | 007  | 0        | c     |
        | 007  | 1        | r     |
        | 007  | 2        | PIPE  |
@@ -49,9 +49,9 @@ Feature: EBL MARC record customization
        When any "<code>" value is "<value>"
        | code | value |
        | 008  | o     |
-       Then the "<code>" subfield value is "<value>"
-       | code | value |
-       | 008  | \     |
+       Then any "<code>" value of "<value>" is replaced by "<replacement>"
+       | code | value | replace |
+       | 008  | o     | \       |
        
     Scenario: Delete 050 second subfield a and modify
         Given we have a MARC record

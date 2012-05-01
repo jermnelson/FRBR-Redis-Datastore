@@ -5,7 +5,7 @@ __author__ = "Jeremy Nelson"
 
 from behave import *
 import pymarc
-marc_reader = pymarc.MARCReader(open('/home/jpnelson/ybp-dda-for-ebl.mrc','rb'))
+MARC_FILENAME = 'C:\\Users\\jernelson\\Development\\ybp-dda-for-ebl.mrc'
  
 
 def before_all(context):
@@ -14,4 +14,5 @@ def before_all(context):
 
     :param context: HTML context
     """
+    marc_reader = pymarc.MARCReader(open(MARC_FILENAME,'rb'))
     context.marc_record = marc_reader.next()
