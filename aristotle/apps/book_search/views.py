@@ -25,7 +25,8 @@ def widget(request):
     return direct_to_template(request,
                               'book_search/snippets/widget.html',
                               {'app':APP,
-                               	'standalone':True})
+                               'standalone':True,
+                               'showappicon':True})
 
 def dotCMS(request):
     """
@@ -35,4 +36,5 @@ def dotCMS(request):
     return direct_to_template(request,
                               'snippets/dotCMS-search.html',
                               {'book_app':APP,
-                               'article_app':article_app})
+                               'article_app':article_app,
+                               'showappicon':True})

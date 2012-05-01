@@ -1,156 +1,22 @@
 <!DOCTYPE HTML>
 <html>
-<html>
 <head>
  <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
  <link href="{{ STATIC_URL }}css/bootstrap.min.responsive" rel="stylesheet">
  <link href="{{ STATIC_URL }}book_search/css/app.css" rel="stylesheet" type="text/css" />
- <link href="{{ STATIC_URL }}css/dotCMS-kludge.less" rel="stylesheet/less" type="text/css" />
+ <link href="{{ STATIC_URL }}article_search/css/app.css" rel="stylesheet" type="text/css" />
  <script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
  <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
  <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
  <script src="{{ STATIC_URL }}js/less-1.2.2.min.js"></script>
  <script src="{{ STATIC_URL }}book_search/js/book_search.js"></script>
+ <script src="{{ STATIC_URL }}article_search/js/article_search.js"></script>
 </head>
 <body>
 
 {% block body %}
-{% comment %}START row DIV{% endcomment %}
-<div class="row">
- {% comment %}START search DIV{% endcomment %}
- <div class="span6 search_base">
-   <form class="form-inline" action="http://discovery.coloradocollege.edu/catalog/search" method="get"  target="_top">
-     <div class="control-group">
-       <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="purple">Books</font></strong></label>
-       <div class="controls">
-         <div class="input-prepend" style="float:left; width:248px;">
-           <span class="add-on"><i class="icon-search"></i></span><input id="searchIcon" name="q" type="text" size="14" placeholder="Search TIGER!"></input>
-         </div>
-         <input type="hidden" id="search-type" name="search-type" value="search" />
-         <div class="btn-group" style="float:left;">
-           <button type="submit" id="searchby" name="btnsubmit" class="btn btn-small" value="Search Keyword">Search Keyword</button>
-           <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
-             <span class="caret"></span>
-           </button>
-           <ul class="dropdown-menu">
-             <li><a onclick='ChangeText("Search Keyword");' href="#">Keyword</a></li>
-             <li><a onclick='ChangeText("Search Author");' href="#">Author</a></li>
-             <li><a onclick='ChangeText("Search Title");' href="#">Title</a></li>
-             <li><a onclick='ChangeText("Search Subject");' href="#">Subject</a></li>
-             <li><a onclick='ChangeText("Search Journal Title");' href="#">Journal Title</a></li>
-           </ul>
-         </div>
-       </div>
-     </div>
-   </form>
-   <div class="horizontalList" id="bookSearch">
-     <ul>
-       <li>&bull; <a target="_top" href="http://discovery.coloradocollege.edu/catalog/advanced">Advanced Book Search</a></li>
-       <li>&bull; <a target="_top" href="http://www.coalliance.org/prospector/">Prospector</a></li>
-       <li>&bull; <a target="_top" href ="http://www.worldcat.org/">WorldCat</a></li>
-       <li><a href="/apps/book_search" rel="tooltip" target="_top" title="Book Search App" class="btn btn-mini"><i class="icon-share"></i></a></li>
-     </ul>
-   </div>
- {% comment %}END search DIV{% endcomment %}
- </div>
-{% comment %}END row DIV{% endcomment %}
-</div>
-<script type="text/javascript">
-function ChangeText(buttonText)
-{
-document.getElementById("searchby").innerHTML=buttonText;
-document.getElementById("searchby").value=buttonText;
-if (buttonText.charAt(7)=='K')
-  {
-  document.getElementById("search-type").value="search";
-  }
-else if (buttonText.charAt(7)=='A')
-  {
-  document.getElementById("search-type").value="author_search";
-  }
-else if (buttonText.charAt(7)=='T')
-  {
-  document.getElementById("search-type").value="title_search";
-  }
-else if (buttonText.charAt(7)=='S')
-  {
-  document.getElementById("search-type").value="subject_search";
-  }
-else if (buttonText.charAt(7)=='J')
-  {
-  document.getElementById("search-type").value="title_search";
-  }
-}
-</script>
-
-{% comment %}START row-fluid DIV{% endcomment %}
-<div class="row">
- <div class="search_base span6">
-  {% comment %}START search DIV{% endcomment %}
-  <form class="form-inline" name="searchForm" onsubmit="return OnSubmitForm();" target="_top">
-    <div class="control-group">
-     <label class="control-label article" for="searchArticleIcon">Find <span class="article">Articles</span></label>
-     <div class="controls">
-      <div class="input-prepend" style="float:left;width:200px" >
-       <span class="add-on"><i class="icon-search"></i></span><input id="searchArticleIcon" style="width:155px" type="text" class='input-small' placeholder="Search for articles!">
-      </div>
-      <div class="btn-group" style="float:left;">
-       <button type="submit" class="btn btn-small" id="dbs" value="Search Academic Search Complete">Search Academic Search Complete</button>
-       <button class="btn btn-small dropup dropdown-toggle" data-toggle="dropdown">
-        <span class="caret"></span>
-       </button>
-       <ul class="dropdown-menu">
-        <li><a onclick='ChangeText("Search Academic Search Complete");' href="#">Academic Search Complete</a></li>
-        <li><a onclick='ChangeText("Search JSTOR");' href="#">JSTOR</a></li>
-        <li><a onclick='ChangeText("Search Google Scholar");' href="#">Google Scholar</a></li>
-       </ul>
-      </div>
-     </div>
-    </div>
-   </form>
-   <div class="article" style="float:left">
-      <ul>
-        <li>&bull; <a target="_top" href="http://goldrush.coalliance.org/index.cfm?inst_code=001_CCL">Journals</a></li>
-        <li>&bull; <a target="_top" href="http://www2.coloradocollege.edu/library/index.php/collections/databases#subjects">Databases by Subject</a></li>
-        <li>&bull; <a target="_top" href ="http://coloradocollege.libguides.com/databases">Databases by Title</a></li>
-       <li><a href="/apps/article_search" target="_top" rel="tooltip" title="Article Search App" class="btn btn-mini"><i class="icon-share"></i></a></li>
-
-      </ul>
-    </div>
-  {% comment %}END search DIV{% endcomment %}
-  </div>
-{% comment %}END row-fluid DIV{% endcomment %}
-</div>
-<script type="text/javascript">
-function ChangeText(buttonText)
-{
-document.getElementById("dbs").innerHTML=buttonText;
-}
-</script>
-<script type="text/javascript">
-function OnSubmitForm()
-{
-  if (document.getElementById("dbs").innerHTML=='Search Academic Search Complete')
-  {
-    var url = "";
-    url = url.concat("http://0-search.ebscohost.com.tiger.coloradocollege.edu:80/login.aspx%3Fdirect=true&db=a9h&bquery=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'), "&type=1&site=ehost-live");
-    document.searchForm.action = url;
-  }
-  else if (document.getElementById("dbs").innerHTML=="Search JSTOR")
-  {
-    var url = "";
-    url = url.concat("http://0-www.jstor.org.tiger.coloradocollege.edu/action/doBasicSearch%3FQuery=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'), "&wc=on&acc=on");
-    document.searchForm.action = url;
-  }
-  else if (document.getElementById("dbs").innerHTML=="Search Google Scholar")
-  {
-    var url = "";
-    url = url.concat("http://0-scholar.google.com.tiger.coloradocollege.edu/scholar%3Fq=", escape(document.getElementById("searchIcon").value).replace(/%20/g, '+'));
-    document.searchForm.action = url;
-  }
-  return true;
-}
-</script>
+{% include 'book_search/snippets/widget.html' %}
+{% include 'article_search/snippets/widget.html' %}
 </body>
 </html>
 {% endblock %}

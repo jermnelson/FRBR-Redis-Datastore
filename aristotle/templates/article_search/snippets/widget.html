@@ -19,7 +19,7 @@
 {% comment %}START row DIV{% endcomment %}
 <div class="row">
  {% comment %}START search DIV{% endcomment %}
- <div class="span6" style="background:#EEE9DA; border:4px solid white;">
+ <div class="span6 search">
   <form class="form-inline" id="searchForm" style="margin:12px;" onsubmit="return OnSubmitForm();" target="_top">
     <div class="control-group">
      <label class="control-label" for="searchIcon" style="font-size:18px">Find <strong><font color="green">Articles</font></strong></label>
@@ -41,11 +41,14 @@
      </div>
     </div>
    </form>
-   <div class="horizontalList" id="journalSearch">
+   <div class="articleHorizontalList">
      <ul>
        <li>&bull; <a target="_top" href="http://goldrush.coalliance.org/index.cfm?inst_code=001_CCL">Journals</a></li>
        <li>&bull; <a target="_top" href="http://www2.coloradocollege.edu/library/index.php/collections/databases#subjects">Databases by Subject</a></li>
        <li>&bull; <a target="_top" href ="http://coloradocollege.libguides.com/databases">Databases by Title</a></li>
+       {% if showappicon %}
+       <li><a href="/apps/article_search" target="_top" rel="tooltip" title="Article Search App" class="btn btn-mini"><i class="icon-share"></i></a></li>
+       {% endif %}
      </ul>
    </div>
   {% comment %}END search DIV{% endcomment %}
