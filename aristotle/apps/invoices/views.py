@@ -20,7 +20,7 @@ def browse(request):
     for key in invoice_keys:
         raw_date = commands.redis_server.hget(key,'transaction date')
         transaction_date = datetime.datetime.strptime(raw_date,
-                                                       '%Y-%m-%d 00:00:00')
+                                                      '%Y-%m-%d 00:00:00')
         if invoices.has_key(transaction_date.year):
             year_transactions = invoices[transaction_date.year]
             if year_transactions.has_key(transaction_date.month):

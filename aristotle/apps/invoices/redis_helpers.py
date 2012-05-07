@@ -86,11 +86,14 @@ def ingest_invoice(marc_record):
     :param marc_record: MARC record
     :rtype: dictionary
     """
-    if marc_record['035']['a']:
+    if marc_record['035']:
         raw_bib = marc_record['035']['a']
         bib_number = raw_bib[1:-1]
-    if marc_record['995']['a']:
+    if marc_record['995']:
         invoice_regex = invoice_re.search(marc_record['995']['a'])
+    else:
+        print("ERROR cannot extract invoice number from %s" % marc_record.leader)
+        invoice_regex = None
     if invoice_regex is not None:
         invoice_result = invoice_regex.groupdict()
         
