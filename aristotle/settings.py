@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     'database',
     'lettuce.django',
     'marc_batch',
+    'orders',
     'portfolio',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',

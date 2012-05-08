@@ -1,5 +1,6 @@
 {% extends 'app-base.html' %}
 {% load i18n %}
+{% load order_extras %}
 
 {% block more-css %}{% endblock %}
 
@@ -10,6 +11,7 @@
  </div>
  <div class="row-fluid main-pane">
   <div class="span2 well">
+   {{ date|month_calendar }}
   </div>
   <div class="span7">
    <p>{{ app.description }}</p>
