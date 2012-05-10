@@ -37,4 +37,5 @@ def dotCMS(request):
                               'snippets/dotCMS-search.html',
                               {'book_app':APP,
                                'article_app':article_app,
-                               'showappicon':True})
+                               'showappicon':True,
+                               'usedropup':True})
