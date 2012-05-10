@@ -32,6 +32,7 @@ english_alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
                     'Y', 'Z']
 
 lccn_first_cutter_re = re.compile(r"^(\D+)(\d+)")
+lc_regex = re.compile(r"^(?P<leading>[A-Z]{1,3})(?P<number>\d{1,4}.?\w{0,1}\d*)\s*(?P<decimal>[.|\w]*\d*)\s*(?P<cutter1alpha>\w*)\s*(?P<last>\d*)")
 
 def generate_search_set(call_number):
     if volatile_redis is None:

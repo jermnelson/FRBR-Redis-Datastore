@@ -7,10 +7,10 @@
 __author__ = 'Jeremy Nelson'
 
 
-import pymarc
+import pymarc,copy
 from behave.configuration import Configuration,ConfigError
 from behave.parser import parse_file
-from behave.models import Feature
+from behave.model import Feature,Context
 from behave.runner import Runner
 
 class job(object):
@@ -29,11 +29,14 @@ class job(object):
         :param marc_record: MARC record
         :param features: List of features file names, optional
         """
+        self.original_record = marc_record
         self.marc_record = marc_record
-        self.modified_marc = None
+        self.config = Configuration()
         self.features = []
         for filename in features:
             self.features.append(parse_file(filename))
+        self.runner = Runner(self.config)
+        self.context = C
         
 
     def run(self):
