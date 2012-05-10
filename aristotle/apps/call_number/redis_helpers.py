@@ -1,5 +1,5 @@
 """
- :mod:`commands` Call Number Helper Utilities
+ :mod:`redis_helpers` Call Number Helper Utilities
 """
 import pymarc,redis,re
 import logging,sys
@@ -126,6 +126,57 @@ def get_record(call_number):
     record_key = redis_server.hget('call-number-hash',call_number)
     return redis_server.hgetall(record_key)
 
+def quick_set_callnumber(identifiers_key,
+                         call_number_type,
+                         call_number,
+                         redis_key):
+    redis_server.hset(identifiers_key,
+                      call_number_type,
+                      call_number)
+    redis_server.hset('%s-hash' % call_number_type,call_number,redis_key)
+    redis_server.zadd('%s-sort-set' % call_number_type,0,call_number)
+
+def get_set_callnumbers(redis_key,
+                        marc_record):
+    """
+    Sets sudoc, lc, and local call numbers from the MARC record values
+
+    :param redis_key: Key to RDA Core entity 
+    :param marc_record: MARC21 record
+    """
+    identifiers_key = '%s:identifiers' % redis_key
+    sudoc_field = marc_record['086']
+    if sudoc_field is not None:
+        call_number = sudoc_field.value()
+        quick_set_callnumber(identifiers_key,
+                             "sudoc",
+                             call_number,
+                             redis_key)
+    lccn_field = marc_record['050']
+    if lccn_field is not None:
+        call_number = lccn_field.value()
+        redis_server.hset(identifiers_key,
+                          'lccn',
+                          call_number)
+        redis_server.hset('lccn-hash',call_number,redis_key)
+        redis_server.zadd('lccn-sort-set',0,call_number)
+    local_090 = marc_record['090']
+    if local_090 is not None:
+        call_number = local_090.value()
+        quick_set_callnumber(identifiers_key,
+                             "local",
+                             call_number,
+                             redis_key)
+    local_099 = marc_record['099']
+    if local_099 is not None:
+        call_number = local_099.value()
+        quick_set_callnumber(identifiers_key,
+                             "local",
+                             call_number,
+                             redis_key)
+        
+    
+
 
 def ingest_record(marc_record):
     if volatile_redis is None:
@@ -136,15 +187,25 @@ def ingest_record(marc_record):
     call_number = get_callnumber(marc_record)
     if call_number is None:
         return None
-    redis_id = redis_server.incr("global:record")
-    redis_key = "record:%s" % redis_id
-    redis_server.hset(redis_key,"title",marc_record.title())
-    redis_server.hset(redis_key,"author",marc_record.author())
-    redis_server.hset(redis_key,"bib_number",bib_number)
-    redis_server.hset(redis_key,"call_number",call_number)
+    redis_id = redis_server.incr("global:frbr_rda")
+    redis_key = ":%s" % redis_id
+    redis_server.hset(redis_key,"rdaTitleOfWork",marc_record.title())
+    redis_server.hset(redis_key,
+                      "rdaRelationships:author",
+                      marc_record.author())
+    identifiers_key = '%s:identifiers' % redis_key
+    redis_server.hset(identifiers_key,
+                      'bibliographic-number',
+                      bib_number)
+    get_set_callnumbers(redis_key,
+                        marc_record)
+    redis_server.hset(redis_key,"rdaIdentifierForTheExpression",
+                      '%s:identifiers' % redis_key)
     isbn = marc_record.isbn()
     if isbn is not None:
-        redis_server.hset(redis_key,"isbn",isbn)
+        redis_server.hset('%s:identifiers' % redis_key,
+                          "isbn",
+                          isbn)
     # Create search set
     generate_search_set(call_number)
     redis_server.hset('bib-number-hash',bib_number,redis_key)
