@@ -1535,6 +1535,19 @@
 					as: "The physical embodiment of an expression of a work."</xs:documentation>
 			</xs:annotation>
 			<xs:element name="rdaAppliedMaterial"/>
+			<xs:element name="rdaCarrierType"/>
+			<xs:element name="rdaCopyrightDate"/>
+			<xs:element name="rdaDistributionStatement"/>
+			<xs:element name="rdaExtent"/>
+		    <xs:element name="rdaEditionStatement"/>
+		    <xs:element name="rdaEditionStatement"/>
+		    <xs:element name="rdaIdentifierForTheManifestation"/>
+		    <xs:element name="rdaManufactureStatement"/>
+		    <xs:element name="rdaNumberOfSerials"/>
+		    <xs:element name="rdaPublicationStatement"/>
+		    <xs:element name="rdaSeriesStatement"/>
+		    <xs:element name="rdaStatementOfResponsibility"/>
+		    <xs:element name="rdaTitle"/>
 		</xs:sequence>
 	</xs:complexType>
 

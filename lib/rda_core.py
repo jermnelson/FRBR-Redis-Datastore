@@ -29,7 +29,8 @@ def setup_rda_core(rda_core_schema_file):
         # Iterate through all of the element children of the complexType to
         # extract all of the rda properties for this entity class
         for row in properties:
-            class_params[row.attrib['name']] = None
+            # Quick hack to remove redundant rda prefix for properties
+            class_params[row.attrib['name'].replace('rda','')] = None
         new_class = type('%s' % class_name,
                          (BaseModel,),
                          class_params)

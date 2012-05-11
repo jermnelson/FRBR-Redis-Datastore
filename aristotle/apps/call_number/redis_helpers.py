@@ -14,8 +14,8 @@ try:
 
 except ImportError:
     # Setup for local development
-    REDIS_HOST = '172.25.1.108'
-#    REDIS_HOST = '0.0.0.0'
+#    REDIS_HOST = '172.25.1.108'
+    REDIS_HOST = '0.0.0.0'
     REDIS_PORT = 6379
     CALL_NUMBER_DB = 4
     volatile_redis = None
