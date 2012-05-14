@@ -81,6 +81,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT,'apps/book_search/assets'),
     os.path.join(PROJECT_ROOT,'apps/call_number/assets'),
     os.path.join(PROJECT_ROOT,'apps/portfolio/assets'),
+    os.path.join(PROJECT_ROOT,'apps/reserve_search/assets'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -120,7 +121,8 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT,"templates/article_search/snippets"),
     os.path.join(PROJECT_ROOT,"templates/marc_batch/snippets"),
     os.path.join(PROJECT_ROOT,"templates/orders/snippets"),
- 
+    os.path.join(PROJECT_ROOT,"templates/reserve_search/snippets"),
+
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -136,6 +138,7 @@ INSTALLED_APPS = (
     'article_search',
     'book_search',
     'call_number',
+    'reserve_search',
     'database',
     'lettuce.django',
     'marc_batch',

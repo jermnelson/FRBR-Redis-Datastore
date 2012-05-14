@@ -1,45 +1,123 @@
 {% extends 'app-base.html' %}
 
 {% block more-css %}
-<link href="{{ STATIC_URL }}call_number/css/call_number.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}call_number/css/app.less" />
 {% endblock %}
-
 
 {% block body %}
-{% comment %}START content DIV{% endcomment %}
-<div class="content">
- {% comment %}START row-fluid DIV{% endcomment %}
- <div class="row-fluid">
-  {% comment %}START search DIV{% endcomment %}
-  <div class="row12">
-<<<<<<< HEAD
-  <div class="app-icon" style="float:left">
-   <img src="{{ STATIC_URL}}img/71-compass.png" / class="app-icon" />
-  </div>
-  <h2>Tutt Library Hours</h2>
-	<p>This is the data entry page for the hours app.</p>
-<div class="span6"><h4>Enter an entire block</h4>
-<form class="form-hroizontal">
-  <div class="span3">
-  <span class="help-inline">Year</span>
-  <input type="text" class="span1" placeholder="2012">
-=======
-  {% comment %}END search DIV{% endcomment %}
->>>>>>> c5b4ba1fdb83aac939eae2794dd775d66b70978b
-  </div>
-  <div class="span3">
-<span class=help-inline">Block</span>
-  </div>
-</div>
-<div class'"span6"><h4>Examine a range of dates</h4>
-<i class="icon-arrow-left"></i>Previous Month | Next month<i class="icon-arrow-right"></i>
-</div>
-  {% comment %}END search DIV{% endcomment %}
-  </div>
- {% comment %}END row-fluid DIV{% endcomment %}
- </div>
+
+{%comment %}BEGIN nav tabs{% endcomment %}
+   <ul class="nav nav-tabs">
+      <li class="active"><a href="#block" data-toggle="tab">Whole Block</a></li>
+      <li><a href="#date" data-toggle="tab">Date Range</a></li>
+   </ul>
+{% comment %}END nav tabe{% endcomment %}
+   
+{% comment %}BEGIN content DIV{% endcomment %}
+<div class="tab-content">
+
+   {% comment %}BEGIN block tab content DIV{% endcomment %}
+   <div class="tab-pane active" id="block">
+      
+      <form class="form-horizontal">
+         <fieldset>
+            <div class="control-group">
+               <label class="control-label" for="year">Year:</label>
+               <div class="controls">
+                  <input type="text" id="year" placeholder="yyyy-mm-dd">
+               </div>
+            </div>
+
+
+
+            <div class="control-group">
+               <label class="control-label" for="begin">Block Begins:</label>
+               <div class="controls">
+                  <input type="text" id="begin" placeholder="yyyy-mm-dd">
+               </div>
+            </div>
+
+            <div class="control-group">
+               <label class="control-label" for="end">Block Ends:</label>
+               <div class="controls">
+                  <input type="text" id="end" placeholder="yyyy-mm-dd">
+               </div>
+            </div>
+
+            <div class="control-group">
+               <label class="control-label" for="monday">Mondays:</label>
+               <div class="controls">
+                  <input type="text" id="monday" placeholder="7:45am-2:00am">
+               </div>
+            </div>
+
+            <div class="control-group">
+               <label class="control-label" for="tuesday">Tuesdays:</label>
+               <div class="controls">
+                  <input type="text" id="tuesday" placeholder="7:45am-2:00am">
+               </div>
+            </div>
+
+            <div class="control-group">
+               <label class="control-label" for="wednesday">Wednesdays:</label>
+               <div class="controls">
+                  <input type="text" id="wednesday" placeholder="7:45am-2:00am">
+               </div>
+            </div>
+
+            <div class="control-group">
+               <label class="control-label" for="thursday">Thursdays:</label>
+               <div class="controls">
+                  <input type="text" id="thursday" placeholder="7:45am-2:00am">
+               </div>
+            </div>
+
+            <div class="control-group">
+               <label class="control-label" for="friday">Fridays:</label>
+               <div class="controls">
+                  <input type="text" id="friday" placeholder="7:45am-10:00pm">
+               </div>
+            </div>
+
+            <div class="control-group">
+               <label class="control-label" for="saturday">Saturdays:</label>
+               <div class="controls">
+                  <input type="text" id="saturday" placeholder="10:00am-10:00pm">
+               </div>
+            </div>
+
+            <div class="control-group">
+               <label class="control-label" for="sunday">Sundays:</label>
+               <div class="controls">
+                  <input type="text" id="sunday" placeholder="10:00am-2:00am">
+               </div>
+            </div>
+
+         </fieldset>
+      </form>
+<h2>Exceptions will need to be edited manually on the Date Range tab</h2>
+
+   {% comment %}END block tab content DIV{%endcomment %}
+   </div>
+
+   {% comment %}BEGIN date tab content DIV{% endcomment %}
+   <div class="tab-pane" id="date">
+      <h1>DATE</h1>
+   {% comment %}END date tab content DIV{%endcomment %}
+   </div>
+
+
+
+
+
+
+
 {% comment %}END content DIV{% endcomment %}
 </div>
-{% endblock %}
+     
+    <script>
+    $(function () {
+    $('#myTab a:last').tab('show');
+    })
+    </script>
 
+{% endblock %}
