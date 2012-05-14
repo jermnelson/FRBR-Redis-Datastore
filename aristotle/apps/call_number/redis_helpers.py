@@ -236,3 +236,13 @@ def search(query):
         else:
             output['result'].append(row)
     return output
+
+
+def lccn_normalize(raw_callnumber):
+    callnumber_regex = lc_regex.search(raw_callnumber)
+    output = None
+    if callnumber_regex is not None:
+        callnumber_result = callnumber_regex.groupdict()
+        leading = callnumber_result.get('leading')
+    return output
+        
