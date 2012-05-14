@@ -9,6 +9,11 @@ background:#EEE9DA;
 border:4px solid white;
 }
 
+.dropdown-menu
+{
+margin-right: 10px;
+}
+
 .bookHorizontalList ul
 {
 margin: 12px;
