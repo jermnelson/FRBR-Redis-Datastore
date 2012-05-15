@@ -1,6 +1,13 @@
 {% extends 'app-base.html' %}
 
 {% block more-css %}
+ <link href="{{ STATIC_URL }}css/datepicker.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}less/bootstrap.less" rel="stylesheet/less" type="text/css" />
+    <link href="{{ STATIC_URL }}less/dropdowns.less" rel="stylesheet/less" type="text/css" />
+    <link href="{{ STATIC_URL }}less/sprites.less" rel="stylesheet/less" type="text/css" />
+    <link href="{{ STATIC_URL }}less/datepicker.less" rel="stylesheet/less" type="text/css" />
+<script src="{{ STATIC_URL }}js/bootstrap-datepicker.js"></script>
+
 {% endblock %}
 
 {% block body %}
@@ -19,82 +26,97 @@
    <div class="tab-pane active" id="block">
       
       <form class="form-horizontal">
+
          <fieldset>
+
             <div class="control-group">
-               <label class="control-label" for="year">Year:</label>
+               <label class="control-label" for="Block">Block:</label>
                <div class="controls">
-                  <input type="text" id="year" placeholder="yyyy-mm-dd">
+                  <select id=block">
+                     <option>1</option>
+                     <option>2</option>
+                     <option>3</option>
+                     <option>4</option>
+                     <option>half-block</option>
+                     <option>5</option>
+                     <option>6</option>
+                     <option>7</option>
+                     <option>8</option>
+                     <option>A</option>
+                     <option>B</option>
+                     <option>C</option>
+                  </select>
                </div>
             </div>
-
-
 
             <div class="control-group">
                <label class="control-label" for="begin">Block Begins:</label>
                <div class="controls">
-                  <input type="text" id="begin" placeholder="yyyy-mm-dd">
+                  <input type="text" id="begin">
                </div>
             </div>
 
             <div class="control-group">
                <label class="control-label" for="end">Block Ends:</label>
                <div class="controls">
-                  <input type="text" id="end" placeholder="yyyy-mm-dd">
+                  <input type="text" id="end">
                </div>
             </div>
 
             <div class="control-group">
                <label class="control-label" for="monday">Mondays:</label>
                <div class="controls">
-                  <input type="text" id="monday" placeholder="7:45am-2:00am">
+                  <input type="text" id="monday" value="7:45am-2:00am">
                </div>
             </div>
 
             <div class="control-group">
                <label class="control-label" for="tuesday">Tuesdays:</label>
                <div class="controls">
-                  <input type="text" id="tuesday" placeholder="7:45am-2:00am">
+                  <input type="text" id="tuesday" value="7:45am-2:00am">
                </div>
             </div>
 
             <div class="control-group">
                <label class="control-label" for="wednesday">Wednesdays:</label>
                <div class="controls">
-                  <input type="text" id="wednesday" placeholder="7:45am-2:00am">
+                  <input type="text" id="wednesday" value="7:45am-2:00am">
                </div>
             </div>
 
             <div class="control-group">
                <label class="control-label" for="thursday">Thursdays:</label>
                <div class="controls">
-                  <input type="text" id="thursday" placeholder="7:45am-2:00am">
+                  <input type="text" id="thursday" value="7:45am-2:00am">
                </div>
             </div>
 
             <div class="control-group">
                <label class="control-label" for="friday">Fridays:</label>
                <div class="controls">
-                  <input type="text" id="friday" placeholder="7:45am-10:00pm">
+                  <input type="text" id="friday" value="7:45am-10:00pm">
                </div>
             </div>
 
             <div class="control-group">
                <label class="control-label" for="saturday">Saturdays:</label>
                <div class="controls">
-                  <input type="text" id="saturday" placeholder="10:00am-10:00pm">
+                  <input type="text" id="saturday" value="10:00am-10:00pm">
                </div>
             </div>
 
             <div class="control-group">
                <label class="control-label" for="sunday">Sundays:</label>
                <div class="controls">
-                  <input type="text" id="sunday" placeholder="10:00am-2:00am">
+                  <input type="text" id="sunday" value="10:00am-2:00am">
                </div>
             </div>
 
          </fieldset>
+
       </form>
-<h2>Exceptions will need to be edited manually on the Date Range tab</h2>
+
+<h3>Exceptions will need to be edited manually on the Date Range tab</h3>
 
    {% comment %}END block tab content DIV{%endcomment %}
    </div>
@@ -102,18 +124,13 @@
    {% comment %}BEGIN date tab content DIV{% endcomment %}
    <div class="tab-pane" id="date">
       <h1>DATE</h1>
+
    {% comment %}END date tab content DIV{%endcomment %}
    </div>
 
-
-
-
-
-
-
 {% comment %}END content DIV{% endcomment %}
 </div>
-     
+ 
     <script>
     $(function () {
     $('#myTab a:last').tab('show');
