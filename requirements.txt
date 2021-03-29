@@ -4,7 +4,7 @@ Mako==0.5.0
 Markdown==2.0.3
 MarkupSafe==0.15
 PIL==1.1.7
-Pygments==1.3.1
+Pygments==2.7.4
 Sphinx==1.1.2
 Twisted==20.3.0
 bottle
