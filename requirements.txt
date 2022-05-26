@@ -22,7 +22,7 @@ lettuce==0.1.33
 logilab-common==0.57.0
 logilab-database==1.6.3
 logilab-mtconverter==0.8.2
-lxml==4.6.2
+lxml==4.6.5
 ply==3.4
 poster==0.8.1
 pycrypto==2.4
