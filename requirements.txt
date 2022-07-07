@@ -19,7 +19,7 @@ geopy==0.94
 httplib2==0.19.0
 icalendar==2.2
 lettuce==0.1.33
-logilab-common==0.57.0
+logilab-common==0.61.0
 logilab-database==1.6.3
 logilab-mtconverter==0.8.2
 lxml==4.9.1
