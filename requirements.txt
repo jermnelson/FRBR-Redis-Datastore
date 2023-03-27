@@ -6,7 +6,7 @@ MarkupSafe==0.15
 PIL==1.1.7
 Pygments==2.7.4
 Sphinx==1.1.2
-Twisted==22.4.0
+Twisted==22.10.0
 bottle
 creole==1.1
 distribute==0.6.24
