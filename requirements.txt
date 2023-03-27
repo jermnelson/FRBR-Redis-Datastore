@@ -1,6 +1,6 @@
 Cython==0.15.1
 GnuPGInterface==0.3.2
-Mako==0.5.0
+Mako==1.2.2
 Markdown==2.0.3
 MarkupSafe==0.15
 PIL==1.1.7
