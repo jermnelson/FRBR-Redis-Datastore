@@ -32,7 +32,7 @@ python-dateutil==1.4.1
 python-openid==2.2.5
 pytz==2010h
 rdflib==3.1.0
-redis==2.4.10
+redis==4.5.3
 redisco
 simplejson==2.0.9
 soaplib==0.8.1
