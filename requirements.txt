@@ -34,7 +34,7 @@ pytz==2010h
 rdflib==3.1.0
 redis==4.5.3
 redisco
-simplejson==2.0.9
+simplejson==2.6.1
 soaplib==0.8.1
 sunburnt==0.5
 textile==2.1.4
